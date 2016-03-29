@@ -1,0 +1,12 @@
+.. securityonion_hier::
+
+
+Hierarchy
+^^^^^^^^^
+
+``/nsm`` - The root of some of the logs from SO
+
+``/nsm/sensor_data`` - Some of the sensor data
+
+
+
