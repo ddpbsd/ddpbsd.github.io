@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>SecurityOnion &mdash; notes 0.1 documentation</title>
+    <title>RPM &mdash; notes 0.1 documentation</title>
     
     <link rel="stylesheet" href="../_static/default.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -24,8 +24,9 @@
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <link rel="top" title="notes 0.1 documentation" href="../index.html" />
-    <link rel="next" title="sostat" href="commands.html" />
-    <link rel="prev" title="rsyslogd" href="../rsyslogd/index.html" /> 
+    <link rel="up" title="Linux" href="index.html" />
+    <link rel="next" title="Notes about lxc and lxd" href="../lxd/index.html" />
+    <link rel="prev" title="Linux" href="index.html" /> 
   </head>
   <body>
     <div class="related">
@@ -35,12 +36,13 @@
           <a href="../genindex.html" title="General Index"
              accesskey="I">index</a></li>
         <li class="right" >
-          <a href="commands.html" title="sostat"
+          <a href="../lxd/index.html" title="Notes about lxc and lxd"
              accesskey="N">next</a> |</li>
         <li class="right" >
-          <a href="../rsyslogd/index.html" title="rsyslogd"
+          <a href="index.html" title="Linux"
              accesskey="P">previous</a> |</li>
-        <li><a href="../index.html">notes 0.1 documentation</a> &raquo;</li> 
+        <li><a href="../index.html">notes 0.1 documentation</a> &raquo;</li>
+          <li><a href="index.html" accesskey="U">Linux</a> &raquo;</li> 
       </ul>
     </div>  
 
@@ -49,14 +51,19 @@
         <div class="bodywrapper">
           <div class="body">
             
-  <div class="section" id="securityonion">
-<h1>SecurityOnion<a class="headerlink" href="#securityonion" title="Permalink to this headline">¶</a></h1>
-<p>Contents:</p>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="commands.html">sostat</a></li>
-<li class="toctree-l1"><a class="reference internal" href="hier.html">Hierarchy</a></li>
-</ul>
+  <div class="section" id="rpm">
+<span id="linux-rpm"></span><h1>RPM<a class="headerlink" href="#rpm" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="which-rpm-contains-file">
+<h2>Which RPM contains FILE<a class="headerlink" href="#which-rpm-contains-file" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-console"><div class="highlight"><pre><span class="go">rpm -qf /path/to/FILE</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="error-zlib-devel-specifies-multiple-packages">
+<h2>error: &#8220;zlib-devel&#8221; specifies multiple packages<a class="headerlink" href="#error-zlib-devel-specifies-multiple-packages" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-console"><div class="highlight"><pre><span class="go">rpm -q --queryformat &quot;%{name}.%{arch}\n&quot; PACKAGE NAME</span>
+</pre></div>
+</div>
 </div>
 </div>
 
@@ -66,15 +73,24 @@
       </div>
       <div class="sphinxsidebar">
         <div class="sphinxsidebarwrapper">
+  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">RPM</a><ul>
+<li><a class="reference internal" href="#which-rpm-contains-file">Which RPM contains FILE</a></li>
+<li><a class="reference internal" href="#error-zlib-devel-specifies-multiple-packages">error: &#8220;zlib-devel&#8221; specifies multiple packages</a></li>
+</ul>
+</li>
+</ul>
+
   <h4>Previous topic</h4>
-  <p class="topless"><a href="../rsyslogd/index.html"
-                        title="previous chapter">rsyslogd</a></p>
+  <p class="topless"><a href="index.html"
+                        title="previous chapter">Linux</a></p>
   <h4>Next topic</h4>
-  <p class="topless"><a href="commands.html"
-                        title="next chapter">sostat</a></p>
+  <p class="topless"><a href="../lxd/index.html"
+                        title="next chapter">Notes about lxc and lxd</a></p>
   <h3>This Page</h3>
   <ul class="this-page-menu">
-    <li><a href="../_sources/securityonion/index.txt"
+    <li><a href="../_sources/linux/rpm.txt"
            rel="nofollow">Show Source</a></li>
   </ul>
 <div id="searchbox" style="display: none">
@@ -101,12 +117,13 @@
           <a href="../genindex.html" title="General Index"
              >index</a></li>
         <li class="right" >
-          <a href="commands.html" title="sostat"
+          <a href="../lxd/index.html" title="Notes about lxc and lxd"
              >next</a> |</li>
         <li class="right" >
-          <a href="../rsyslogd/index.html" title="rsyslogd"
+          <a href="index.html" title="Linux"
              >previous</a> |</li>
-        <li><a href="../index.html">notes 0.1 documentation</a> &raquo;</li> 
+        <li><a href="../index.html">notes 0.1 documentation</a> &raquo;</li>
+          <li><a href="index.html" >Linux</a> &raquo;</li> 
       </ul>
     </div>
     <div class="footer">

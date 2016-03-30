@@ -1,4 +1,4 @@
-.. lxd_limits:
+.. _lxd_limits:
 
 Setting limits
 ^^^^^^^^^^^^^^

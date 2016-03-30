@@ -18,9 +18,15 @@ Contents:
 
    elastic/index
    gpg/index
+   linux/index
    lxd/index
+   openssh/index
    ossec/index
+   postgresql/index
+   rsyslogd/index
    securityonion/index
+   tmux/index
+   vmware/index
 
    misc/index
 

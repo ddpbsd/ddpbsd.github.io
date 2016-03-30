@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>SecurityOnion &mdash; notes 0.1 documentation</title>
+    <title>rsyslogd &mdash; notes 0.1 documentation</title>
     
     <link rel="stylesheet" href="../_static/default.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -24,8 +24,8 @@
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <link rel="top" title="notes 0.1 documentation" href="../index.html" />
-    <link rel="next" title="sostat" href="commands.html" />
-    <link rel="prev" title="rsyslogd" href="../rsyslogd/index.html" /> 
+    <link rel="next" title="SecurityOnion" href="../securityonion/index.html" />
+    <link rel="prev" title="PostgreSQL" href="../postgresql/index.html" /> 
   </head>
   <body>
     <div class="related">
@@ -35,10 +35,10 @@
           <a href="../genindex.html" title="General Index"
              accesskey="I">index</a></li>
         <li class="right" >
-          <a href="commands.html" title="sostat"
+          <a href="../securityonion/index.html" title="SecurityOnion"
              accesskey="N">next</a> |</li>
         <li class="right" >
-          <a href="../rsyslogd/index.html" title="rsyslogd"
+          <a href="../postgresql/index.html" title="PostgreSQL"
              accesskey="P">previous</a> |</li>
         <li><a href="../index.html">notes 0.1 documentation</a> &raquo;</li> 
       </ul>
@@ -49,14 +49,22 @@
         <div class="bodywrapper">
           <div class="body">
             
-  <div class="section" id="securityonion">
-<h1>SecurityOnion<a class="headerlink" href="#securityonion" title="Permalink to this headline">¶</a></h1>
-<p>Contents:</p>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="commands.html">sostat</a></li>
-<li class="toctree-l1"><a class="reference internal" href="hier.html">Hierarchy</a></li>
-</ul>
+  <div class="section" id="rsyslogd">
+<h1>rsyslogd<a class="headerlink" href="#rsyslogd" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="hostname-should-log-to-var-log-hostname-instead-of-var-log">
+<h2>hostname should log to /var/log/hostname instead of /var/log<a class="headerlink" href="#hostname-should-log-to-var-log-hostname-instead-of-var-log" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-console"><div class="highlight"><pre><span class="go">-host</span>
+<span class="go">*.info                  /var/log/messages</span>
+<span class="go">+host</span>
+<span class="go">*.info                  /var/log/host/messages</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="listen-on-a-unix-socket">
+<h2>Listen on a unix socket<a class="headerlink" href="#listen-on-a-unix-socket" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-console"><div class="highlight"><pre><span class="gp">$</span>AddUnixListenSocket /var/log/socket
+</pre></div>
+</div>
 </div>
 </div>
 
@@ -66,15 +74,24 @@
       </div>
       <div class="sphinxsidebar">
         <div class="sphinxsidebarwrapper">
+  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">rsyslogd</a><ul>
+<li><a class="reference internal" href="#hostname-should-log-to-var-log-hostname-instead-of-var-log">hostname should log to /var/log/hostname instead of /var/log</a></li>
+<li><a class="reference internal" href="#listen-on-a-unix-socket">Listen on a unix socket</a></li>
+</ul>
+</li>
+</ul>
+
   <h4>Previous topic</h4>
-  <p class="topless"><a href="../rsyslogd/index.html"
-                        title="previous chapter">rsyslogd</a></p>
+  <p class="topless"><a href="../postgresql/index.html"
+                        title="previous chapter">PostgreSQL</a></p>
   <h4>Next topic</h4>
-  <p class="topless"><a href="commands.html"
-                        title="next chapter">sostat</a></p>
+  <p class="topless"><a href="../securityonion/index.html"
+                        title="next chapter">SecurityOnion</a></p>
   <h3>This Page</h3>
   <ul class="this-page-menu">
-    <li><a href="../_sources/securityonion/index.txt"
+    <li><a href="../_sources/rsyslogd/index.txt"
            rel="nofollow">Show Source</a></li>
   </ul>
 <div id="searchbox" style="display: none">
@@ -101,10 +118,10 @@
           <a href="../genindex.html" title="General Index"
              >index</a></li>
         <li class="right" >
-          <a href="commands.html" title="sostat"
+          <a href="../securityonion/index.html" title="SecurityOnion"
              >next</a> |</li>
         <li class="right" >
-          <a href="../rsyslogd/index.html" title="rsyslogd"
+          <a href="../postgresql/index.html" title="PostgreSQL"
              >previous</a> |</li>
         <li><a href="../index.html">notes 0.1 documentation</a> &raquo;</li> 
       </ul>

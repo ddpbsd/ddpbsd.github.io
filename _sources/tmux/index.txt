@@ -1,0 +1,13 @@
+tmux
+====
+
+
+Resize a pane
+^^^^^^^^^^^^^
+
+Increase size down:
+
+.. code-block:: console
+
+   ^o :resize-pane -D 10
+

@@ -1,4 +1,4 @@
-.. securityonion_commands::
+.. _securityonion_commands:
 
 
 sostat

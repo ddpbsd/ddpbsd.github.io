@@ -1,4 +1,4 @@
-.. securityonion_hier::
+.. _securityonion_hier:
 
 
 Hierarchy

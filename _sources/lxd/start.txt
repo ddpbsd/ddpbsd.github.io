@@ -1,4 +1,4 @@
-.. lxd_start:
+.. _lxd_start:
 
 Auto start on boot
 ^^^^^^^^^^^^^^^^^^

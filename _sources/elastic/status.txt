@@ -1,4 +1,4 @@
-.. elastic_status:
+.. _elastic_status:
 
 
 Get the status of ES

@@ -1,0 +1,22 @@
+rsyslogd
+========
+
+
+hostname should log to /var/log/hostname instead of /var/log
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: console
+
+   -host
+   *.info                  /var/log/messages
+   +host
+   *.info                  /var/log/host/messages
+
+Listen on a unix socket
+^^^^^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: console
+
+   $AddUnixListenSocket /var/log/socket
+
+ 

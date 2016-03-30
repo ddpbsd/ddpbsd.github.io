@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>SecurityOnion &mdash; notes 0.1 documentation</title>
+    <title>PostgreSQL &mdash; notes 0.1 documentation</title>
     
     <link rel="stylesheet" href="../_static/default.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -24,8 +24,8 @@
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <link rel="top" title="notes 0.1 documentation" href="../index.html" />
-    <link rel="next" title="sostat" href="commands.html" />
-    <link rel="prev" title="rsyslogd" href="../rsyslogd/index.html" /> 
+    <link rel="next" title="rsyslogd" href="../rsyslogd/index.html" />
+    <link rel="prev" title="OSSEC" href="../ossec/index.html" /> 
   </head>
   <body>
     <div class="related">
@@ -35,10 +35,10 @@
           <a href="../genindex.html" title="General Index"
              accesskey="I">index</a></li>
         <li class="right" >
-          <a href="commands.html" title="sostat"
+          <a href="../rsyslogd/index.html" title="rsyslogd"
              accesskey="N">next</a> |</li>
         <li class="right" >
-          <a href="../rsyslogd/index.html" title="rsyslogd"
+          <a href="../ossec/index.html" title="OSSEC"
              accesskey="P">previous</a> |</li>
         <li><a href="../index.html">notes 0.1 documentation</a> &raquo;</li> 
       </ul>
@@ -49,14 +49,13 @@
         <div class="bodywrapper">
           <div class="body">
             
-  <div class="section" id="securityonion">
-<h1>SecurityOnion<a class="headerlink" href="#securityonion" title="Permalink to this headline">¶</a></h1>
-<p>Contents:</p>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="commands.html">sostat</a></li>
-<li class="toctree-l1"><a class="reference internal" href="hier.html">Hierarchy</a></li>
-</ul>
+  <div class="section" id="postgresql">
+<h1>PostgreSQL<a class="headerlink" href="#postgresql" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="timestamps-as-unix-epoch">
+<h2>timestamps as unix epoch<a class="headerlink" href="#timestamps-as-unix-epoch" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-sql"><div class="highlight"><pre><span class="k">SELECT</span> <span class="k">extract</span><span class="p">(</span><span class="n">epoch</span> <span class="k">FROM</span> <span class="k">timestamp</span><span class="p">)</span> <span class="k">FROM</span> <span class="n">sensors</span><span class="p">;</span>
+</pre></div>
+</div>
 </div>
 </div>
 
@@ -66,15 +65,23 @@
       </div>
       <div class="sphinxsidebar">
         <div class="sphinxsidebarwrapper">
+  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">PostgreSQL</a><ul>
+<li><a class="reference internal" href="#timestamps-as-unix-epoch">timestamps as unix epoch</a></li>
+</ul>
+</li>
+</ul>
+
   <h4>Previous topic</h4>
-  <p class="topless"><a href="../rsyslogd/index.html"
-                        title="previous chapter">rsyslogd</a></p>
+  <p class="topless"><a href="../ossec/index.html"
+                        title="previous chapter">OSSEC</a></p>
   <h4>Next topic</h4>
-  <p class="topless"><a href="commands.html"
-                        title="next chapter">sostat</a></p>
+  <p class="topless"><a href="../rsyslogd/index.html"
+                        title="next chapter">rsyslogd</a></p>
   <h3>This Page</h3>
   <ul class="this-page-menu">
-    <li><a href="../_sources/securityonion/index.txt"
+    <li><a href="../_sources/postgresql/index.txt"
            rel="nofollow">Show Source</a></li>
   </ul>
 <div id="searchbox" style="display: none">
@@ -101,10 +108,10 @@
           <a href="../genindex.html" title="General Index"
              >index</a></li>
         <li class="right" >
-          <a href="commands.html" title="sostat"
+          <a href="../rsyslogd/index.html" title="rsyslogd"
              >next</a> |</li>
         <li class="right" >
-          <a href="../rsyslogd/index.html" title="rsyslogd"
+          <a href="../ossec/index.html" title="OSSEC"
              >previous</a> |</li>
         <li><a href="../index.html">notes 0.1 documentation</a> &raquo;</li> 
       </ul>
