@@ -1,0 +1,14 @@
+Imagemagick
+===========
+
+Screen shot
+^^^^^^^^^^^
+
+May have to click on the window if cross hairs come up.
+
+.. code-block:: console
+
+   import FILE.png
+   
+   
+

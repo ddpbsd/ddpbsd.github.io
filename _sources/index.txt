@@ -16,9 +16,13 @@ Contents:
 .. toctree::
    :maxdepth: 2
 
+   elastic/index
+   gpg/index
    lxd/index
+   ossec/index
    securityonion/index
 
+   misc/index
 
 
 
