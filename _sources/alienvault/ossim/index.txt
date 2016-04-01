@@ -1,0 +1,11 @@
+OSSEC
+=====
+
+Contents:
+
+.. toctree::
+   :maxdepth: 2
+
+   plugins   
+   
+

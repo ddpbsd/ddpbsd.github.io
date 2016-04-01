@@ -13,3 +13,6 @@ Contents:
    
    imagemagick/index   
    kernel_build/index
+   ksh/index
+   laptops/index
+
