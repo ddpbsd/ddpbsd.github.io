@@ -1,0 +1,39 @@
+.. _alienvault_otx_bro_ids:
+
+
+In the 3 minutes I looked for documentation, I was unable to find any.
+
+Prerequisites
+^^^^^^^^^^^^^
+
+  * python (2.7?)
+  * python simplejson
+  * Maybe more? It ran on OpenBSD after I added the simple json package, but who knows what I had already installed.
+
+How do you do it?
+^^^^^^^^^^^^^^^^^
+
+First, modify the config.cfg. Add your api_key from the OTX site, and change the base_path if necessary.
+Next create the following directory tree under the base_path:
+
+.. code-block:: console
+
+   mkdir -p base_path/OTX-Apps-Bro_IDS/pulses
+
+Copy the ``__load__.bro to ``base_path/OTX-Apps-Bro_IDS``.
+
+.. code-block:: console
+
+   cp __load__.bro base_path/OTX-Apps-Bro_IDS
+
+Finally, run the script. Select ``first_run`` or ``check_new`` appropriately.
+
+.. code-block:: console
+
+   python ./otxv2-bro.py [first_run|check_new]
+
+Where can I get it?
+^^^^^^^^^^^^^^^^^^^
+
+https://github.com/AlienVault-Labs/OTX-Apps-Bro-IDS
+

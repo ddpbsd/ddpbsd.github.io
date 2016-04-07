@@ -7,5 +7,5 @@ Contents:
    :maxdepth: 2
 
    ossim/index
-   
+   otx/index
 
