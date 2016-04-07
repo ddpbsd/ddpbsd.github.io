@@ -1,5 +1,7 @@
 .. _alienvault_otx_bro_ids:
 
+Bro-IDS agent
+^^^^^^^^^^^^^
 
 In the 3 minutes I looked for documentation, I was unable to find any.
 
@@ -10,10 +12,17 @@ Prerequisites
   * python simplejson
   * Maybe more? It ran on OpenBSD after I added the simple json package, but who knows what I had already installed.
 
-How do you do it?
-^^^^^^^^^^^^^^^^^
+Basic usage
+^^^^^^^^^^^
 
-First, modify the config.cfg. Add your api_key from the OTX site, and change the base_path if necessary.
+First, modify the config.cfg. Add your ``api_key`` from the OTX site, and change the ``base_path`` if necessary.
+Use the following ``base_path`` for securityonion:
+
+.. code-block:: console
+
+   base_path=/opt/bro/share/bro/site/
+
+
 Next create the following directory tree under the base_path:
 
 .. code-block:: console
@@ -31,6 +40,13 @@ Finally, run the script. Select ``first_run`` or ``check_new`` appropriately.
 .. code-block:: console
 
    python ./otxv2-bro.py [first_run|check_new]
+
+Restart bro:
+
+.. code-block:: console
+
+   sudo nsm_sensor_ps-restart --only-bro
+
 
 Where can I get it?
 ^^^^^^^^^^^^^^^^^^^
