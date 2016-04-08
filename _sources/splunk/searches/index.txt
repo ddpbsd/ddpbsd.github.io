@@ -1,0 +1,15 @@
+.. _splunk_searches:
+
+
+
+See the sourcetypes
+^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: console
+
+   | metadata type=sourcetypes sourcetype=* | table sourcetype
+
+
+
+
+

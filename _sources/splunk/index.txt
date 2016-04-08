@@ -1,11 +1,11 @@
-git
-===
+splunk
+======
 
 Contents:
 
 .. toctree::
    :maxdepth: 2
 
-   gpg 
-   remote   
+   searches/index
+   
 

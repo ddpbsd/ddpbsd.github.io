@@ -28,6 +28,7 @@ Contents:
    postgresql/index
    rsyslogd/index
    securityonion/index
+   splunk/index
    tmux/index
    vmware/index
 
