@@ -1,0 +1,22 @@
+.. _linux_ubuntu:
+
+
+Only upgrade security related packages
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. note::
+
+   From iam-TJ at https://news.ycombinator.com/item?id=11475474
+
+.. code-block:: console
+
+   sudo /usr/bin/unattended-upgrade
+
+
+.. note::
+
+   This will only use the ${dist}-security target. Most systems should have this installed and available.
+   The default configuration is at: ``/etc/apt/apt.conf.d/50unattended-upgrades``
+   It is configured as a system service that runs automatically at shutdown.
+
+

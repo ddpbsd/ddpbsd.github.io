@@ -1,0 +1,208 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>pledge(2) &mdash; notes 0.1 documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="notes 0.1 documentation" href="../../index.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li><a href="../../index.html">notes 0.1 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="pledge-2">
+<h1>pledge(2)<a class="headerlink" href="#pledge-2" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="javascript">
+<h2>Javascript:<a class="headerlink" href="#javascript" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="https://www.npmjs.com/package/node-pledge">node-pledge</a></p>
+</div>
+<div class="section" id="perl">
+<h2>Perl:<a class="headerlink" href="#perl" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="http://cvsweb.openbsd.org/cgi-bin/cvsweb/src/gnu/usr.bin/perl/cpan/OpenBSD-Pledge/">by Andrew Fresh (mirror)</a></p>
+<p><a class="reference external" href="https://github.com/rfarr/Unix-Pledge">by rfarr</a></p>
+</div>
+<div class="section" id="python">
+<h2>Python<a class="headerlink" href="#python" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="https://github.com/jarmani/py-openbsd-pledge">https://github.com/jarmani/py-openbsd-pledge</a></p>
+</div>
+<div class="section" id="lua">
+<h2>Lua<a class="headerlink" href="#lua" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="https://github.com/n0la/lua-openbsd">https://github.com/n0la/lua-openbsd</a></p>
+</div>
+<div class="section" id="haskell">
+<h2>Haskell<a class="headerlink" href="#haskell" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="http://openbsd-archive.7691.n7.nabble.com/pledge-2-binding-for-Haskell-td287889.html">http://openbsd-archive.7691.n7.nabble.com/pledge-2-binding-for-Haskell-td287889.html</a></p>
+</div>
+<div class="section" id="golang">
+<h2>golang<a class="headerlink" href="#golang" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="https://github.com/ylih/extrasys">https://github.com/ylih/extrasys</a></p>
+</div>
+<div class="section" id="c">
+<h2>c#<a class="headerlink" href="#c" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="https://github.com/NattyNarwhal/pledge.cs">https://github.com/NattyNarwhal/pledge.cs</a></p>
+</div>
+<div class="section" id="rust">
+<h2>Rust<a class="headerlink" href="#rust" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-rust"><div class="highlight"><pre><span class="c1">// OpenBSD 5.9 pledge(2) bindings</span>
+<span class="c1">// http://www.openbsd.org/cgi-bin/man.cgi/OpenBSD-current/man2/pledge.2</span>
+
+<span class="c1">// rustc --crate-type=lib pledge.rs</span>
+<span class="c1">// rustc -L . main.rs</span>
+
+<span class="c1">//</span>
+<span class="c1">// pledge_ffi.rs</span>
+<span class="kn">use</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">os</span><span class="o">::</span><span class="n">raw</span><span class="o">::</span><span class="n">c_char</span><span class="p">;</span><span class="w"></span>
+<span class="kn">use</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">os</span><span class="o">::</span><span class="n">raw</span><span class="o">::</span><span class="n">c_int</span><span class="p">;</span><span class="w"></span>
+
+<span class="cp">#[link(name = </span><span class="s">&quot;c&quot;</span><span class="cp">)]</span><span class="w"></span>
+<span class="k">extern</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">	</span><span class="k">pub</span><span class="w"> </span><span class="k">fn</span><span class="w"> </span><span class="n">pledge</span><span class="p">(</span><span class="n">promises</span><span class="o">:</span><span class="w"> </span><span class="o">*</span><span class="kr">const</span><span class="w"> </span><span class="n">c_char</span><span class="p">,</span><span class="w"> </span><span class="n">paths</span><span class="o">:</span><span class="w"> </span><span class="o">*</span><span class="kr">const</span><span class="w"> </span><span class="o">*</span><span class="kr">const</span><span class="w"> </span><span class="n">c_char</span><span class="p">)</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">c_int</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+
+<span class="c1">//</span>
+<span class="c1">// pledge.rs</span>
+<span class="cp">#![crate_type = </span><span class="s">&quot;lib&quot;</span><span class="cp">]</span><span class="w"></span>
+
+<span class="kn">use</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">ffi</span><span class="o">::</span><span class="n">CString</span><span class="p">;</span><span class="w"></span>
+<span class="kn">mod</span><span class="w"> </span><span class="n">pledge_ffi</span><span class="p">;</span><span class="w"></span>
+
+<span class="k">pub</span><span class="w"> </span><span class="k">fn</span><span class="w"> </span><span class="n">pledge</span><span class="p">(</span><span class="n">promises</span><span class="o">:</span><span class="w"> </span><span class="o">&amp;</span><span class="kt">str</span><span class="p">)</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">	</span><span class="k">if</span><span class="w"> </span><span class="kd">let</span><span class="w"> </span><span class="nb">Ok</span><span class="p">(</span><span class="n">c_str</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">CString</span><span class="o">::</span><span class="n">new</span><span class="p">(</span><span class="n">promises</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">		</span><span class="k">unsafe</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">			</span><span class="kd">let</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pledge_ffi</span><span class="o">::</span><span class="n">pledge</span><span class="p">(</span><span class="n">c_str</span><span class="p">.</span><span class="n">as_ptr</span><span class="p">(),</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">ptr</span><span class="o">::</span><span class="n">null</span><span class="p">());</span><span class="w"></span>
+<span class="w">			</span><span class="k">return</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
+<span class="w">		</span><span class="p">}</span><span class="w"></span>
+<span class="w">	</span><span class="p">}</span><span class="w"></span>
+<span class="w">	</span><span class="k">return</span><span class="w"> </span><span class="kc">false</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+
+<span class="c1">//</span>
+<span class="c1">// main.rs</span>
+<span class="k">extern</span><span class="w"> </span><span class="n">crate</span><span class="w"> </span><span class="n">pledge</span><span class="p">;</span><span class="w"></span>
+
+<span class="kn">use</span><span class="w"> </span><span class="n">pledge</span><span class="o">::</span><span class="n">pledge</span><span class="p">;</span><span class="w"></span>
+
+<span class="kn">use</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">process</span><span class="o">::</span><span class="n">exit</span><span class="p">;</span><span class="w"></span>
+<span class="kn">use</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">fs</span><span class="o">::</span><span class="n">File</span><span class="p">;</span><span class="w"></span>
+<span class="kn">use</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">io</span><span class="o">::</span><span class="n">Write</span><span class="p">;</span><span class="w"></span>
+
+<span class="k">fn</span><span class="w"> </span><span class="n">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">	</span><span class="kd">let</span><span class="w"> </span><span class="k">mut</span><span class="w"> </span><span class="n">stderr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">io</span><span class="o">::</span><span class="n">stderr</span><span class="p">();</span><span class="w"></span>
+<span class="w">	</span><span class="c1">// example will crash</span>
+<span class="w">	</span><span class="c1">// change to &quot;stdio rpath&quot;</span>
+<span class="w">	</span><span class="k">if</span><span class="w"> </span><span class="o">!</span><span class="n">pledge</span><span class="p">(</span><span class="s">&quot;stdio&quot;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">		</span><span class="n">writeln</span><span class="o">!</span><span class="p">(</span><span class="o">&amp;</span><span class="k">mut</span><span class="w"> </span><span class="n">stderr</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;pledge&quot;</span><span class="p">).</span><span class="n">unwrap</span><span class="p">();</span><span class="w"></span>
+<span class="w">		</span><span class="n">exit</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span><span class="w"></span>
+<span class="w">	</span><span class="p">}</span><span class="w"></span>
+
+<span class="w">	</span><span class="nb">println</span><span class="o">!</span><span class="p">(</span><span class="s">&quot;Now pledged.&quot;</span><span class="p">);</span><span class="w"></span>
+
+<span class="w">	</span><span class="c1">// attempt elevation</span>
+<span class="w">	</span><span class="k">if</span><span class="w"> </span><span class="o">!</span><span class="n">pledge</span><span class="p">(</span><span class="s">&quot;stdio rpath&quot;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">		</span><span class="n">writeln</span><span class="o">!</span><span class="p">(</span><span class="o">&amp;</span><span class="k">mut</span><span class="w"> </span><span class="n">stderr</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;pledge elevation fail&quot;</span><span class="p">).</span><span class="n">unwrap</span><span class="p">();</span><span class="w"></span>
+<span class="w">		</span><span class="c1">//exit(1);</span>
+<span class="w">	</span><span class="p">}</span><span class="w"></span>
+<span class="w">	</span><span class="c1">// .. promises were equal or reduced</span>
+
+<span class="w">	</span><span class="nb">println</span><span class="o">!</span><span class="p">(</span><span class="s">&quot;Opening a file!&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w">	</span><span class="c1">// kernel should abort here, unless promises changed</span>
+<span class="w">	</span><span class="kd">let</span><span class="w"> </span><span class="n">file</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">match</span><span class="w"> </span><span class="n">File</span><span class="o">::</span><span class="n">open</span><span class="p">(</span><span class="s">&quot;/tmp/bogus/file&quot;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">		</span><span class="nb">Err</span><span class="p">(</span><span class="n">_</span><span class="p">)</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">exit</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span><span class="w"></span>
+<span class="w">		</span><span class="nb">Ok</span><span class="p">(</span><span class="n">file</span><span class="p">)</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">file</span><span class="p">,</span><span class="w"></span>
+<span class="w">	</span><span class="p">};</span><span class="w"></span>
+<span class="w">	</span><span class="nb">drop</span><span class="p">(</span><span class="n">file</span><span class="p">);</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">pledge(2)</a><ul>
+<li><a class="reference internal" href="#javascript">Javascript:</a></li>
+<li><a class="reference internal" href="#perl">Perl:</a></li>
+<li><a class="reference internal" href="#python">Python</a></li>
+<li><a class="reference internal" href="#lua">Lua</a></li>
+<li><a class="reference internal" href="#haskell">Haskell</a></li>
+<li><a class="reference internal" href="#golang">golang</a></li>
+<li><a class="reference internal" href="#c">c#</a></li>
+<li><a class="reference internal" href="#rust">Rust</a></li>
+</ul>
+</li>
+</ul>
+
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../../_sources/openbsd/pledge/index.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+        <li><a href="../../index.html">notes 0.1 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2016, ddp.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.3.
+    </div>
+  </body>
+</html>
