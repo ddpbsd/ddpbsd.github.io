@@ -1,33 +1,12 @@
 VMWare
 ======
 
-.. warning::
 
-   These are probably way outdated now.
-   You probably shouldn't use these.
+Contents:
 
+.. toctree::
+   :maxdepth: 2
 
-List all VMs
-^^^^^^^^^^^^
-
-.. code-block:: console
-
-   vim-cmd vmsvc/getallvms
-
-Power on a device
-^^^^^^^^^^^^^^^^^
-
-.. code-block:: console
-
-   vim-cmd vmsvc/power.on 320
-
-
-Reboot a VM if vmtools is installed
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-.. code-block:: console
-
-   vim-cmd vmsvc/power.reboot 176
-
-
+   vcenter/index
+   esxi/index
 

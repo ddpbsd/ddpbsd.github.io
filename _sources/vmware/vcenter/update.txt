@@ -1,0 +1,16 @@
+.. _vmware_vcenter_update:
+
+
+How to update
+^^^^^^^^^^^^^
+
+.. code-block:: console
+
+   Go to https://VCENTER:5480
+   Login to web interface
+   Go to Update tab
+   Click "Check Updates"
+   Click "Install Updates"
+   Pray
+
+

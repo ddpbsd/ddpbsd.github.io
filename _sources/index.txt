@@ -23,6 +23,7 @@ Contents:
    gpg/index
    linux/index
    lxd/index
+   openbsd/index
    openssh/index
    ossec/index
    postgresql/index

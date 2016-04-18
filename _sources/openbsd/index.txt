@@ -1,0 +1,11 @@
+OpenBSD
+=======
+
+
+Contents:
+
+.. toctree::
+   :maxdepth: 2
+
+   pledge/index
+
