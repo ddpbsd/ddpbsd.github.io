@@ -4,41 +4,45 @@
 esxi Update process
 ^^^^^^^^^^^^^^^^^^^
 
-  * Download patches from the `patch portal <http://www.vmware.com/patchmgr/download.portal>`_
+Download patches from the `patch portal <http://www.vmware.com/patchmgr/download.portal>`_
 
-  * Upload the patch to the esxi system's datastore.
+Upload the patch to the esxi system's datastore.
 
-  * Suspend, shutdown, or migrate all running VMs.
+Suspend, shutdown, or migrate all running VMs.
 
-  * Put the host into maintenance mode:
+Put the host into maintenance mode:
 
 .. code-block:: console
 
    vim-cmd hostsvc/maintenance_mode_enter
 
-  * cd to the directory containing the patch file
 
-  * Install the patch:
+``cd`` to the directory containing the patch file
+
+Install the patch:
 
 .. code-block:: console
 
    esxcli software vib update -d "/full/path/to/patch.zip"
 
-  * Verity the installation.
+
+Verity the installation.
 
 .. code-block:: console
 
    esxcli software vib list
 
-  * Reboot.
 
-  * Exit maintenance mode:
+Reboot.
+
+Exit maintenance mode:
 
 .. code-block:: console
 
    vim-cmd hostsvc/maintenance_mode_exit
 
-  * Restore the Vms.
+
+Restore the Vms.
 
 .. note::
 

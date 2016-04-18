@@ -54,38 +54,28 @@
             
   <div class="section" id="esxi-update-process">
 <span id="vmware-esxi-update"></span><h1>esxi Update process<a class="headerlink" href="#esxi-update-process" title="Permalink to this headline">¶</a></h1>
-<blockquote>
-<div><ul class="simple">
-<li>Download patches from the <a class="reference external" href="http://www.vmware.com/patchmgr/download.portal">patch portal</a></li>
-<li>Upload the patch to the esxi system&#8217;s datastore.</li>
-<li>Suspend, shutdown, or migrate all running VMs.</li>
-<li>Put the host into maintenance mode:</li>
-</ul>
-</div></blockquote>
-<div class="highlight-console"><div class="highlight"><pre><span class="go"> vim-cmd hostsvc/maintenance_mode_enter</span>
-
-<span class="go">* cd to the directory containing the patch file</span>
-
-<span class="go">* Install the patch:</span>
+<p>Download patches from the <a class="reference external" href="http://www.vmware.com/patchmgr/download.portal">patch portal</a></p>
+<p>Upload the patch to the esxi system&#8217;s datastore.</p>
+<p>Suspend, shutdown, or migrate all running VMs.</p>
+<p>Put the host into maintenance mode:</p>
+<div class="highlight-console"><div class="highlight"><pre><span class="go">vim-cmd hostsvc/maintenance_mode_enter</span>
 </pre></div>
 </div>
-<div class="highlight-console"><div class="highlight"><pre><span class="go"> esxcli software vib update -d &quot;/full/path/to/patch.zip&quot;</span>
-
-<span class="go">* Verity the installation.</span>
+<p><tt class="docutils literal"><span class="pre">cd</span></tt> to the directory containing the patch file</p>
+<p>Install the patch:</p>
+<div class="highlight-console"><div class="highlight"><pre><span class="go">esxcli software vib update -d &quot;/full/path/to/patch.zip&quot;</span>
 </pre></div>
 </div>
-<div class="highlight-console"><div class="highlight"><pre><span class="go"> esxcli software vib list</span>
-
-<span class="go">* Reboot.</span>
-
-<span class="go">* Exit maintenance mode:</span>
+<p>Verity the installation.</p>
+<div class="highlight-console"><div class="highlight"><pre><span class="go">esxcli software vib list</span>
 </pre></div>
 </div>
-<div class="highlight-console"><div class="highlight"><pre><span class="go"> vim-cmd hostsvc/maintenance_mode_exit</span>
-
-<span class="go">* Restore the Vms.</span>
+<p>Reboot.</p>
+<p>Exit maintenance mode:</p>
+<div class="highlight-console"><div class="highlight"><pre><span class="go">vim-cmd hostsvc/maintenance_mode_exit</span>
 </pre></div>
 </div>
+<p>Restore the Vms.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p class="last">Instructions are from <a class="reference external" href="https://kb.vmware.com/selfservice/microsites/search.do?language=en_US&amp;cmd=displayKC&amp;externalId=2008939">VMWare kb 2008939</a></p>
