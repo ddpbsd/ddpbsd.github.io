@@ -1,13 +1,8 @@
 .. _vmware_esxi_update:
 
 
-Update process
-^^^^^^^^^^^^^^
-
-.. note::
-
-   Instructions are from `VMWare kb 2008939 <https://kb.vmware.com/selfservice/microsites/search.do?language=en_US&cmd=displayKC&externalId=2008939>`_
-
+esxi Update process
+^^^^^^^^^^^^^^^^^^^
 
   * Download patches from the `patch portal <http://www.vmware.com/patchmgr/download.portal>`_
 
@@ -21,7 +16,7 @@ Update process
 
    vim-cmd hostsvc/maintenance_mode_enter
 
-  * ``cd`` to the directory containing the patch file
+  * cd to the directory containing the patch file
 
   * Install the patch:
 
@@ -45,3 +40,6 @@ Update process
 
   * Restore the Vms.
 
+.. note::
+
+   Instructions are from `VMWare kb 2008939 <https://kb.vmware.com/selfservice/microsites/search.do?language=en_US&cmd=displayKC&externalId=2008939>`_

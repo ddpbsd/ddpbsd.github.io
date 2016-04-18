@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Update process &mdash; notes 0.1 documentation</title>
+    <title>esxi Update process &mdash; notes 0.1 documentation</title>
     
     <link rel="stylesheet" href="../../_static/default.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
@@ -52,22 +52,19 @@
         <div class="bodywrapper">
           <div class="body">
             
-  <div class="section" id="update-process">
-<span id="vmware-esxi-update"></span><h1>Update process<a class="headerlink" href="#update-process" title="Permalink to this headline">¶</a></h1>
-<div class="admonition note">
-<p class="first admonition-title">Note</p>
+  <div class="section" id="esxi-update-process">
+<span id="vmware-esxi-update"></span><h1>esxi Update process<a class="headerlink" href="#esxi-update-process" title="Permalink to this headline">¶</a></h1>
 <blockquote>
-<div>Instructions are from <a class="reference external" href="https://kb.vmware.com/selfservice/microsites/search.do?language=en_US&amp;cmd=displayKC&amp;externalId=2008939">VMWare kb 2008939</a></div></blockquote>
-<ul class="last simple">
+<div><ul class="simple">
 <li>Download patches from the <a class="reference external" href="http://www.vmware.com/patchmgr/download.portal">patch portal</a></li>
 <li>Upload the patch to the esxi system&#8217;s datastore.</li>
 <li>Suspend, shutdown, or migrate all running VMs.</li>
 <li>Put the host into maintenance mode:</li>
 </ul>
-</div>
+</div></blockquote>
 <div class="highlight-console"><div class="highlight"><pre><span class="go"> vim-cmd hostsvc/maintenance_mode_enter</span>
 
-<span class="go">* ``cd`` to the directory containing the patch file</span>
+<span class="go">* cd to the directory containing the patch file</span>
 
 <span class="go">* Install the patch:</span>
 </pre></div>
@@ -88,6 +85,10 @@
 
 <span class="go">* Restore the Vms.</span>
 </pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Instructions are from <a class="reference external" href="https://kb.vmware.com/selfservice/microsites/search.do?language=en_US&amp;cmd=displayKC&amp;externalId=2008939">VMWare kb 2008939</a></p>
 </div>
 </div>
 

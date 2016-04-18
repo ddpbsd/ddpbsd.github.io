@@ -1,8 +1,8 @@
 .. _vmware_vcenter_update:
 
 
-How to update
-^^^^^^^^^^^^^
+vcenter update process
+^^^^^^^^^^^^^^^^^^^^^^
 
 .. code-block:: console
 
