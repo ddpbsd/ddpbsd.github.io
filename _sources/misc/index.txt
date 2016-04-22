@@ -15,4 +15,5 @@ Contents:
    kernel_build/index
    ksh/index
    laptops/index
+   vim/index
 
