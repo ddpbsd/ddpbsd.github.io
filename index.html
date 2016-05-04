@@ -8,7 +8,7 @@
     
     <title>Welcome to ddpbsd’s notes! &mdash; notes 0.1 documentation</title>
     
-    <link rel="stylesheet" href="_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="_static/classic.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     
     <script type="text/javascript">
@@ -26,8 +26,8 @@
     <link rel="top" title="notes 0.1 documentation" href="#" />
     <link rel="next" title="AlienVault" href="alienvault/index.html" /> 
   </head>
-  <body>
-    <div class="related">
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -36,14 +36,14 @@
         <li class="right" >
           <a href="alienvault/index.html" title="AlienVault"
              accesskey="N">next</a> |</li>
-        <li><a href="#">notes 0.1 documentation</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="#">notes 0.1 documentation</a> &raquo;</li> 
       </ul>
     </div>  
 
     <div class="document">
       <div class="documentwrapper">
         <div class="bodywrapper">
-          <div class="body">
+          <div class="body" role="main">
             
   <div class="section" id="welcome-to-ddpbsd-s-notes">
 <h1>Welcome to ddpbsd&#8217;s notes!<a class="headerlink" href="#welcome-to-ddpbsd-s-notes" title="Permalink to this headline">¶</a></h1>
@@ -63,6 +63,7 @@ Use at your own risk.</p>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="git/index.html">git</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="git/archive.html">Create an archive of the OSSEC code</a></li>
 <li class="toctree-l2"><a class="reference internal" href="git/gpg.html">Sign commits</a></li>
 <li class="toctree-l2"><a class="reference internal" href="git/gpg.html#set-email-username">Set email/username</a></li>
 <li class="toctree-l2"><a class="reference internal" href="git/remote.html">Add multiple origins</a></li>
@@ -85,6 +86,9 @@ Use at your own risk.</p>
 <li class="toctree-l2"><a class="reference internal" href="lxd/limits.html#memory">Memory</a></li>
 <li class="toctree-l2"><a class="reference internal" href="lxd/limits.html#disk-block-io">Disk/block IO</a></li>
 <li class="toctree-l2"><a class="reference internal" href="lxd/limits.html#network">Network</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lxd/profiles.html">Show the profiles</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lxd/profiles.html#show-the-configuration-of-a-profile">Show the configuration of a profile</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lxd/profiles.html#unset-the-http-proxy">Unset the http_proxy</a></li>
 <li class="toctree-l2"><a class="reference internal" href="lxd/start.html">Auto start on boot</a></li>
 </ul>
 </li>
@@ -143,9 +147,9 @@ Use at your own risk.</p>
 <div class="section" id="indices-and-tables">
 <h1>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Permalink to this headline">¶</a></h1>
 <ul class="simple">
-<li><a class="reference internal" href="genindex.html"><em>Index</em></a></li>
-<li><a class="reference internal" href="py-modindex.html"><em>Module Index</em></a></li>
-<li><a class="reference internal" href="search.html"><em>Search Page</em></a></li>
+<li><a class="reference internal" href="genindex.html"><span class="std std-ref">Index</span></a></li>
+<li><a class="reference internal" href="py-modindex.html"><span class="std std-ref">Module Index</span></a></li>
+<li><a class="reference internal" href="search.html"><span class="std std-ref">Search Page</span></a></li>
 </ul>
 </div>
 
@@ -153,7 +157,7 @@ Use at your own risk.</p>
           </div>
         </div>
       </div>
-      <div class="sphinxsidebar">
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
   <h3><a href="#">Table Of Contents</a></h3>
   <ul>
@@ -164,12 +168,14 @@ Use at your own risk.</p>
   <h4>Next topic</h4>
   <p class="topless"><a href="alienvault/index.html"
                         title="next chapter">AlienVault</a></p>
-  <h3>This Page</h3>
-  <ul class="this-page-menu">
-    <li><a href="_sources/index.txt"
-           rel="nofollow">Show Source</a></li>
-  </ul>
-<div id="searchbox" style="display: none">
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/index.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
     <form class="search" action="search.html" method="get">
       <input type="text" name="q" />
@@ -177,16 +183,13 @@ Use at your own risk.</p>
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
-    <p class="searchtip" style="font-size: 90%">
-    Enter search terms or a module, class or function name.
-    </p>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
       </div>
       <div class="clearer"></div>
     </div>
-    <div class="related">
+    <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -195,12 +198,12 @@ Use at your own risk.</p>
         <li class="right" >
           <a href="alienvault/index.html" title="AlienVault"
              >next</a> |</li>
-        <li><a href="#">notes 0.1 documentation</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="#">notes 0.1 documentation</a> &raquo;</li> 
       </ul>
     </div>
-    <div class="footer">
+    <div class="footer" role="contentinfo">
         &copy; Copyright 2016, ddp.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.3.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.1.
     </div>
   </body>
 </html>

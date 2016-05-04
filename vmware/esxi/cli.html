@@ -8,7 +8,7 @@
     
     <title>List all VMs &mdash; notes 0.1 documentation</title>
     
-    <link rel="stylesheet" href="../../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/classic.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     
     <script type="text/javascript">
@@ -25,32 +25,32 @@
     <script type="text/javascript" src="../../_static/doctools.js"></script>
     <link rel="top" title="notes 0.1 documentation" href="../../index.html" />
     <link rel="up" title="&lt;no title&gt;" href="index.html" />
-    <link rel="next" title="MISC" href="../../misc/index.html" />
+    <link rel="next" title="esxi Update process" href="update.html" />
     <link rel="prev" title="&lt;no title&gt;" href="index.html" /> 
   </head>
-  <body>
-    <div class="related">
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
           <a href="../../genindex.html" title="General Index"
              accesskey="I">index</a></li>
         <li class="right" >
-          <a href="../../misc/index.html" title="MISC"
+          <a href="update.html" title="esxi Update process"
              accesskey="N">next</a> |</li>
         <li class="right" >
           <a href="index.html" title="&lt;no title&gt;"
              accesskey="P">previous</a> |</li>
-        <li><a href="../../index.html">notes 0.1 documentation</a> &raquo;</li>
-          <li><a href="../index.html" >VMWare</a> &raquo;</li>
-          <li><a href="index.html" accesskey="U">&lt;no title&gt;</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="../../index.html">notes 0.1 documentation</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="../index.html" >VMWare</a> &raquo;</li>
+          <li class="nav-item nav-item-2"><a href="index.html" accesskey="U">&lt;no title&gt;</a> &raquo;</li> 
       </ul>
     </div>  
 
     <div class="document">
       <div class="documentwrapper">
         <div class="bodywrapper">
-          <div class="body">
+          <div class="body" role="main">
             
   <div class="admonition warning">
 <p class="first admonition-title">Warning</p>
@@ -59,19 +59,19 @@ You probably shouldn&#8217;t use these.</p>
 </div>
 <div class="section" id="list-all-vms">
 <h1>List all VMs<a class="headerlink" href="#list-all-vms" title="Permalink to this headline">¶</a></h1>
-<div class="highlight-console"><div class="highlight"><pre><span class="go">vim-cmd vmsvc/getallvms</span>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">vim-cmd vmsvc/getallvms</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="power-on-a-device">
 <h1>Power on a device<a class="headerlink" href="#power-on-a-device" title="Permalink to this headline">¶</a></h1>
-<div class="highlight-console"><div class="highlight"><pre><span class="go">vim-cmd vmsvc/power.on 320</span>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">vim-cmd vmsvc/power.on 320</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="reboot-a-vm-if-vmtools-is-installed">
 <h1>Reboot a VM if vmtools is installed<a class="headerlink" href="#reboot-a-vm-if-vmtools-is-installed" title="Permalink to this headline">¶</a></h1>
-<div class="highlight-console"><div class="highlight"><pre><span class="go">vim-cmd vmsvc/power.reboot 176</span>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">vim-cmd vmsvc/power.reboot 176</span>
 </pre></div>
 </div>
 </div>
@@ -80,7 +80,7 @@ You probably shouldn&#8217;t use these.</p>
           </div>
         </div>
       </div>
-      <div class="sphinxsidebar">
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
   <h3><a href="../../index.html">Table Of Contents</a></h3>
   <ul>
@@ -93,14 +93,16 @@ You probably shouldn&#8217;t use these.</p>
   <p class="topless"><a href="index.html"
                         title="previous chapter">&lt;no title&gt;</a></p>
   <h4>Next topic</h4>
-  <p class="topless"><a href="../../misc/index.html"
-                        title="next chapter">MISC</a></p>
-  <h3>This Page</h3>
-  <ul class="this-page-menu">
-    <li><a href="../../_sources/vmware/esxi/cli.txt"
-           rel="nofollow">Show Source</a></li>
-  </ul>
-<div id="searchbox" style="display: none">
+  <p class="topless"><a href="update.html"
+                        title="next chapter">esxi Update process</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../_sources/vmware/esxi/cli.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
     <form class="search" action="../../search.html" method="get">
       <input type="text" name="q" />
@@ -108,35 +110,32 @@ You probably shouldn&#8217;t use these.</p>
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
-    <p class="searchtip" style="font-size: 90%">
-    Enter search terms or a module, class or function name.
-    </p>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
       </div>
       <div class="clearer"></div>
     </div>
-    <div class="related">
+    <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
           <a href="../../genindex.html" title="General Index"
              >index</a></li>
         <li class="right" >
-          <a href="../../misc/index.html" title="MISC"
+          <a href="update.html" title="esxi Update process"
              >next</a> |</li>
         <li class="right" >
           <a href="index.html" title="&lt;no title&gt;"
              >previous</a> |</li>
-        <li><a href="../../index.html">notes 0.1 documentation</a> &raquo;</li>
-          <li><a href="../index.html" >VMWare</a> &raquo;</li>
-          <li><a href="index.html" >&lt;no title&gt;</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="../../index.html">notes 0.1 documentation</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="../index.html" >VMWare</a> &raquo;</li>
+          <li class="nav-item nav-item-2"><a href="index.html" >&lt;no title&gt;</a> &raquo;</li> 
       </ul>
     </div>
-    <div class="footer">
+    <div class="footer" role="contentinfo">
         &copy; Copyright 2016, ddp.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.3.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.1.
     </div>
   </body>
 </html>

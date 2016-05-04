@@ -8,7 +8,7 @@
     
     <title>Bro-IDS agent &mdash; notes 0.1 documentation</title>
     
-    <link rel="stylesheet" href="../../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/classic.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     
     <script type="text/javascript">
@@ -28,8 +28,8 @@
     <link rel="next" title="elastic" href="../../elastic/index.html" />
     <link rel="prev" title="OTX" href="index.html" /> 
   </head>
-  <body>
-    <div class="related">
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -41,16 +41,16 @@
         <li class="right" >
           <a href="index.html" title="OTX"
              accesskey="P">previous</a> |</li>
-        <li><a href="../../index.html">notes 0.1 documentation</a> &raquo;</li>
-          <li><a href="../index.html" >AlienVault</a> &raquo;</li>
-          <li><a href="index.html" accesskey="U">OTX</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="../../index.html">notes 0.1 documentation</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="../index.html" >AlienVault</a> &raquo;</li>
+          <li class="nav-item nav-item-2"><a href="index.html" accesskey="U">OTX</a> &raquo;</li> 
       </ul>
     </div>  
 
     <div class="document">
       <div class="documentwrapper">
         <div class="bodywrapper">
-          <div class="body">
+          <div class="body" role="main">
             
   <div class="section" id="bro-ids-agent">
 <span id="alienvault-otx-bro-ids"></span><h1>Bro-IDS agent<a class="headerlink" href="#bro-ids-agent" title="Permalink to this headline">¶</a></h1>
@@ -68,25 +68,25 @@
 </div>
 <div class="section" id="basic-usage">
 <h1>Basic usage<a class="headerlink" href="#basic-usage" title="Permalink to this headline">¶</a></h1>
-<p>First, modify the config.cfg. Add your <tt class="docutils literal"><span class="pre">api_key</span></tt> from the OTX site, and change the <tt class="docutils literal"><span class="pre">base_path</span></tt> if necessary.
-Use the following <tt class="docutils literal"><span class="pre">base_path</span></tt> for securityonion:</p>
-<div class="highlight-console"><div class="highlight"><pre><span class="go">base_path=/opt/bro/share/bro/site/</span>
+<p>First, modify the config.cfg. Add your <code class="docutils literal"><span class="pre">api_key</span></code> from the OTX site, and change the <code class="docutils literal"><span class="pre">base_path</span></code> if necessary.
+Use the following <code class="docutils literal"><span class="pre">base_path</span></code> for securityonion:</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">base_path=/opt/bro/share/bro/site/</span>
 </pre></div>
 </div>
 <p>Next create the following directory tree under the base_path:</p>
-<div class="highlight-console"><div class="highlight"><pre><span class="go">mkdir -p base_path/OTX-Apps-Bro_IDS/pulses</span>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">mkdir -p base_path/OTX-Apps-Bro_IDS/pulses</span>
 </pre></div>
 </div>
-<p>Copy the <tt class="docutils literal"><span class="pre">__load__.bro</span> <span class="pre">to</span> <span class="pre">``base_path/OTX-Apps-Bro_IDS</span></tt>.</p>
-<div class="highlight-console"><div class="highlight"><pre><span class="go">cp __load__.bro base_path/OTX-Apps-Bro_IDS</span>
+<p>Copy the <code class="docutils literal"><span class="pre">__load__.bro</span> <span class="pre">to</span> <span class="pre">``base_path/OTX-Apps-Bro_IDS</span></code>.</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">cp __load__.bro base_path/OTX-Apps-Bro_IDS</span>
 </pre></div>
 </div>
-<p>Finally, run the script. Select <tt class="docutils literal"><span class="pre">first_run</span></tt> or <tt class="docutils literal"><span class="pre">check_new</span></tt> appropriately.</p>
-<div class="highlight-console"><div class="highlight"><pre><span class="go">python ./otxv2-bro.py [first_run|check_new]</span>
+<p>Finally, run the script. Select <code class="docutils literal"><span class="pre">first_run</span></code> or <code class="docutils literal"><span class="pre">check_new</span></code> appropriately.</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">python ./otxv2-bro.py [first_run|check_new]</span>
 </pre></div>
 </div>
 <p>Restart bro:</p>
-<div class="highlight-console"><div class="highlight"><pre><span class="go">sudo nsm_sensor_ps-restart --only-bro</span>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">sudo nsm_sensor_ps-restart --only-bro</span>
 </pre></div>
 </div>
 </div>
@@ -99,7 +99,7 @@ Use the following <tt class="docutils literal"><span class="pre">base_path</span
           </div>
         </div>
       </div>
-      <div class="sphinxsidebar">
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
   <h3><a href="../../index.html">Table Of Contents</a></h3>
   <ul>
@@ -115,12 +115,14 @@ Use the following <tt class="docutils literal"><span class="pre">base_path</span
   <h4>Next topic</h4>
   <p class="topless"><a href="../../elastic/index.html"
                         title="next chapter">elastic</a></p>
-  <h3>This Page</h3>
-  <ul class="this-page-menu">
-    <li><a href="../../_sources/alienvault/otx/Bro-IDS.txt"
-           rel="nofollow">Show Source</a></li>
-  </ul>
-<div id="searchbox" style="display: none">
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../_sources/alienvault/otx/Bro-IDS.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
     <form class="search" action="../../search.html" method="get">
       <input type="text" name="q" />
@@ -128,16 +130,13 @@ Use the following <tt class="docutils literal"><span class="pre">base_path</span
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
-    <p class="searchtip" style="font-size: 90%">
-    Enter search terms or a module, class or function name.
-    </p>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
       </div>
       <div class="clearer"></div>
     </div>
-    <div class="related">
+    <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -149,14 +148,14 @@ Use the following <tt class="docutils literal"><span class="pre">base_path</span
         <li class="right" >
           <a href="index.html" title="OTX"
              >previous</a> |</li>
-        <li><a href="../../index.html">notes 0.1 documentation</a> &raquo;</li>
-          <li><a href="../index.html" >AlienVault</a> &raquo;</li>
-          <li><a href="index.html" >OTX</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="../../index.html">notes 0.1 documentation</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="../index.html" >AlienVault</a> &raquo;</li>
+          <li class="nav-item nav-item-2"><a href="index.html" >OTX</a> &raquo;</li> 
       </ul>
     </div>
-    <div class="footer">
+    <div class="footer" role="contentinfo">
         &copy; Copyright 2016, ddp.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.3.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.1.
     </div>
   </body>
 </html>

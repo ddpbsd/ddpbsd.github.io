@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>RPM &mdash; notes 0.1 documentation</title>
+    <title>Create an archive of the OSSEC code &mdash; notes 0.1 documentation</title>
     
     <link rel="stylesheet" href="../_static/classic.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -24,9 +24,9 @@
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <link rel="top" title="notes 0.1 documentation" href="../index.html" />
-    <link rel="up" title="Linux" href="index.html" />
-    <link rel="next" title="Only upgrade security related packages" href="ubuntu.html" />
-    <link rel="prev" title="Linux" href="index.html" /> 
+    <link rel="up" title="git" href="index.html" />
+    <link rel="next" title="Sign commits" href="gpg.html" />
+    <link rel="prev" title="git" href="index.html" /> 
   </head>
   <body role="document">
     <div class="related" role="navigation" aria-label="related navigation">
@@ -36,13 +36,13 @@
           <a href="../genindex.html" title="General Index"
              accesskey="I">index</a></li>
         <li class="right" >
-          <a href="ubuntu.html" title="Only upgrade security related packages"
+          <a href="gpg.html" title="Sign commits"
              accesskey="N">next</a> |</li>
         <li class="right" >
-          <a href="index.html" title="Linux"
+          <a href="index.html" title="git"
              accesskey="P">previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="../index.html">notes 0.1 documentation</a> &raquo;</li>
-          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">Linux</a> &raquo;</li> 
+          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">git</a> &raquo;</li> 
       </ul>
     </div>  
 
@@ -51,19 +51,10 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="rpm">
-<span id="linux-rpm"></span><h1>RPM<a class="headerlink" href="#rpm" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="which-rpm-contains-file">
-<h2>Which RPM contains FILE<a class="headerlink" href="#which-rpm-contains-file" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">rpm -qf /path/to/FILE</span>
+  <div class="section" id="create-an-archive-of-the-ossec-code">
+<span id="git-archive"></span><h1>Create an archive of the OSSEC code<a class="headerlink" href="#create-an-archive-of-the-ossec-code" title="Permalink to this headline">¶</a></h1>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">git archive --prefix=&quot;ossec-hids-2.9b5/&quot; -o /tmp/ossec-hids-2.9b5.tar origin/2.9b5</span>
 </pre></div>
-</div>
-</div>
-<div class="section" id="error-zlib-devel-specifies-multiple-packages">
-<h2>error: &#8220;zlib-devel&#8221; specifies multiple packages<a class="headerlink" href="#error-zlib-devel-specifies-multiple-packages" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">rpm -q --queryformat &quot;%{name}.%{arch}\n&quot; PACKAGE NAME</span>
-</pre></div>
-</div>
 </div>
 </div>
 
@@ -73,25 +64,16 @@
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-  <h3><a href="../index.html">Table Of Contents</a></h3>
-  <ul>
-<li><a class="reference internal" href="#">RPM</a><ul>
-<li><a class="reference internal" href="#which-rpm-contains-file">Which RPM contains FILE</a></li>
-<li><a class="reference internal" href="#error-zlib-devel-specifies-multiple-packages">error: &#8220;zlib-devel&#8221; specifies multiple packages</a></li>
-</ul>
-</li>
-</ul>
-
   <h4>Previous topic</h4>
   <p class="topless"><a href="index.html"
-                        title="previous chapter">Linux</a></p>
+                        title="previous chapter">git</a></p>
   <h4>Next topic</h4>
-  <p class="topless"><a href="ubuntu.html"
-                        title="next chapter">Only upgrade security related packages</a></p>
+  <p class="topless"><a href="gpg.html"
+                        title="next chapter">Sign commits</a></p>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
-      <li><a href="../_sources/linux/rpm.txt"
+      <li><a href="../_sources/git/archive.txt"
             rel="nofollow">Show Source</a></li>
     </ul>
    </div>
@@ -116,13 +98,13 @@
           <a href="../genindex.html" title="General Index"
              >index</a></li>
         <li class="right" >
-          <a href="ubuntu.html" title="Only upgrade security related packages"
+          <a href="gpg.html" title="Sign commits"
              >next</a> |</li>
         <li class="right" >
-          <a href="index.html" title="Linux"
+          <a href="index.html" title="git"
              >previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="../index.html">notes 0.1 documentation</a> &raquo;</li>
-          <li class="nav-item nav-item-1"><a href="index.html" >Linux</a> &raquo;</li> 
+          <li class="nav-item nav-item-1"><a href="index.html" >git</a> &raquo;</li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">

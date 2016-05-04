@@ -8,7 +8,7 @@
     
     <title>Only upgrade security related packages &mdash; notes 0.1 documentation</title>
     
-    <link rel="stylesheet" href="../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/classic.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     
     <script type="text/javascript">
@@ -28,8 +28,8 @@
     <link rel="next" title="Notes about lxc and lxd" href="../lxd/index.html" />
     <link rel="prev" title="RPM" href="rpm.html" /> 
   </head>
-  <body>
-    <div class="related">
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -41,15 +41,15 @@
         <li class="right" >
           <a href="rpm.html" title="RPM"
              accesskey="P">previous</a> |</li>
-        <li><a href="../index.html">notes 0.1 documentation</a> &raquo;</li>
-          <li><a href="index.html" accesskey="U">Linux</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="../index.html">notes 0.1 documentation</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">Linux</a> &raquo;</li> 
       </ul>
     </div>  
 
     <div class="document">
       <div class="documentwrapper">
         <div class="bodywrapper">
-          <div class="body">
+          <div class="body" role="main">
             
   <div class="section" id="only-upgrade-security-related-packages">
 <span id="linux-ubuntu"></span><h1>Only upgrade security related packages<a class="headerlink" href="#only-upgrade-security-related-packages" title="Permalink to this headline">¶</a></h1>
@@ -57,13 +57,13 @@
 <p class="first admonition-title">Note</p>
 <p class="last">From iam-TJ at <a class="reference external" href="https://news.ycombinator.com/item?id=11475474">https://news.ycombinator.com/item?id=11475474</a></p>
 </div>
-<div class="highlight-console"><div class="highlight"><pre><span class="go">sudo /usr/bin/unattended-upgrade</span>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">sudo /usr/bin/unattended-upgrade</span>
 </pre></div>
 </div>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p class="last">This will only use the ${dist}-security target. Most systems should have this installed and available.
-The default configuration is at: <tt class="docutils literal"><span class="pre">/etc/apt/apt.conf.d/50unattended-upgrades</span></tt>
+The default configuration is at: <code class="docutils literal"><span class="pre">/etc/apt/apt.conf.d/50unattended-upgrades</span></code>
 It is configured as a system service that runs automatically at shutdown.</p>
 </div>
 </div>
@@ -72,7 +72,7 @@ It is configured as a system service that runs automatically at shutdown.</p>
           </div>
         </div>
       </div>
-      <div class="sphinxsidebar">
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
   <h4>Previous topic</h4>
   <p class="topless"><a href="rpm.html"
@@ -80,12 +80,14 @@ It is configured as a system service that runs automatically at shutdown.</p>
   <h4>Next topic</h4>
   <p class="topless"><a href="../lxd/index.html"
                         title="next chapter">Notes about lxc and lxd</a></p>
-  <h3>This Page</h3>
-  <ul class="this-page-menu">
-    <li><a href="../_sources/linux/ubuntu.txt"
-           rel="nofollow">Show Source</a></li>
-  </ul>
-<div id="searchbox" style="display: none">
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/linux/ubuntu.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
     <form class="search" action="../search.html" method="get">
       <input type="text" name="q" />
@@ -93,16 +95,13 @@ It is configured as a system service that runs automatically at shutdown.</p>
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
-    <p class="searchtip" style="font-size: 90%">
-    Enter search terms or a module, class or function name.
-    </p>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
       </div>
       <div class="clearer"></div>
     </div>
-    <div class="related">
+    <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -114,13 +113,13 @@ It is configured as a system service that runs automatically at shutdown.</p>
         <li class="right" >
           <a href="rpm.html" title="RPM"
              >previous</a> |</li>
-        <li><a href="../index.html">notes 0.1 documentation</a> &raquo;</li>
-          <li><a href="index.html" >Linux</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="../index.html">notes 0.1 documentation</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >Linux</a> &raquo;</li> 
       </ul>
     </div>
-    <div class="footer">
+    <div class="footer" role="contentinfo">
         &copy; Copyright 2016, ddp.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.3.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.1.
     </div>
   </body>
 </html>

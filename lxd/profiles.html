@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>RPM &mdash; notes 0.1 documentation</title>
+    <title>Show the profiles &mdash; notes 0.1 documentation</title>
     
     <link rel="stylesheet" href="../_static/classic.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -24,9 +24,9 @@
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <link rel="top" title="notes 0.1 documentation" href="../index.html" />
-    <link rel="up" title="Linux" href="index.html" />
-    <link rel="next" title="Only upgrade security related packages" href="ubuntu.html" />
-    <link rel="prev" title="Linux" href="index.html" /> 
+    <link rel="up" title="Notes about lxc and lxd" href="index.html" />
+    <link rel="next" title="Auto start on boot" href="start.html" />
+    <link rel="prev" title="Setting limits" href="limits.html" /> 
   </head>
   <body role="document">
     <div class="related" role="navigation" aria-label="related navigation">
@@ -36,13 +36,13 @@
           <a href="../genindex.html" title="General Index"
              accesskey="I">index</a></li>
         <li class="right" >
-          <a href="ubuntu.html" title="Only upgrade security related packages"
+          <a href="start.html" title="Auto start on boot"
              accesskey="N">next</a> |</li>
         <li class="right" >
-          <a href="index.html" title="Linux"
+          <a href="limits.html" title="Setting limits"
              accesskey="P">previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="../index.html">notes 0.1 documentation</a> &raquo;</li>
-          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">Linux</a> &raquo;</li> 
+          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">Notes about lxc and lxd</a> &raquo;</li> 
       </ul>
     </div>  
 
@@ -51,19 +51,22 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="rpm">
-<span id="linux-rpm"></span><h1>RPM<a class="headerlink" href="#rpm" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="which-rpm-contains-file">
-<h2>Which RPM contains FILE<a class="headerlink" href="#which-rpm-contains-file" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">rpm -qf /path/to/FILE</span>
+  <div class="section" id="show-the-profiles">
+<span id="lxc-profiles"></span><h1>Show the profiles<a class="headerlink" href="#show-the-profiles" title="Permalink to this headline">¶</a></h1>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">lxc profile list</span>
 </pre></div>
 </div>
 </div>
-<div class="section" id="error-zlib-devel-specifies-multiple-packages">
-<h2>error: &#8220;zlib-devel&#8221; specifies multiple packages<a class="headerlink" href="#error-zlib-devel-specifies-multiple-packages" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">rpm -q --queryformat &quot;%{name}.%{arch}\n&quot; PACKAGE NAME</span>
+<div class="section" id="show-the-configuration-of-a-profile">
+<h1>Show the configuration of a profile<a class="headerlink" href="#show-the-configuration-of-a-profile" title="Permalink to this headline">¶</a></h1>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">lxc profile show default</span>
 </pre></div>
 </div>
+</div>
+<div class="section" id="unset-the-http-proxy">
+<h1>Unset the http_proxy<a class="headerlink" href="#unset-the-http-proxy" title="Permalink to this headline">¶</a></h1>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">lxc profile unset default environment.http_proxy</span>
+</pre></div>
 </div>
 </div>
 
@@ -75,23 +78,21 @@
         <div class="sphinxsidebarwrapper">
   <h3><a href="../index.html">Table Of Contents</a></h3>
   <ul>
-<li><a class="reference internal" href="#">RPM</a><ul>
-<li><a class="reference internal" href="#which-rpm-contains-file">Which RPM contains FILE</a></li>
-<li><a class="reference internal" href="#error-zlib-devel-specifies-multiple-packages">error: &#8220;zlib-devel&#8221; specifies multiple packages</a></li>
-</ul>
-</li>
+<li><a class="reference internal" href="#">Show the profiles</a></li>
+<li><a class="reference internal" href="#show-the-configuration-of-a-profile">Show the configuration of a profile</a></li>
+<li><a class="reference internal" href="#unset-the-http-proxy">Unset the http_proxy</a></li>
 </ul>
 
   <h4>Previous topic</h4>
-  <p class="topless"><a href="index.html"
-                        title="previous chapter">Linux</a></p>
+  <p class="topless"><a href="limits.html"
+                        title="previous chapter">Setting limits</a></p>
   <h4>Next topic</h4>
-  <p class="topless"><a href="ubuntu.html"
-                        title="next chapter">Only upgrade security related packages</a></p>
+  <p class="topless"><a href="start.html"
+                        title="next chapter">Auto start on boot</a></p>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
-      <li><a href="../_sources/linux/rpm.txt"
+      <li><a href="../_sources/lxd/profiles.txt"
             rel="nofollow">Show Source</a></li>
     </ul>
    </div>
@@ -116,13 +117,13 @@
           <a href="../genindex.html" title="General Index"
              >index</a></li>
         <li class="right" >
-          <a href="ubuntu.html" title="Only upgrade security related packages"
+          <a href="start.html" title="Auto start on boot"
              >next</a> |</li>
         <li class="right" >
-          <a href="index.html" title="Linux"
+          <a href="limits.html" title="Setting limits"
              >previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="../index.html">notes 0.1 documentation</a> &raquo;</li>
-          <li class="nav-item nav-item-1"><a href="index.html" >Linux</a> &raquo;</li> 
+          <li class="nav-item nav-item-1"><a href="index.html" >Notes about lxc and lxd</a> &raquo;</li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">

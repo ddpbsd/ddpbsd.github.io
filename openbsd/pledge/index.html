@@ -8,7 +8,7 @@
     
     <title>pledge(2) &mdash; notes 0.1 documentation</title>
     
-    <link rel="stylesheet" href="../../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/classic.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     
     <script type="text/javascript">
@@ -23,23 +23,33 @@
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
-    <link rel="top" title="notes 0.1 documentation" href="../../index.html" /> 
+    <link rel="top" title="notes 0.1 documentation" href="../../index.html" />
+    <link rel="up" title="OpenBSD" href="../index.html" />
+    <link rel="next" title="OpenSSH" href="../../openssh/index.html" />
+    <link rel="prev" title="OpenBSD" href="../index.html" /> 
   </head>
-  <body>
-    <div class="related">
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
           <a href="../../genindex.html" title="General Index"
              accesskey="I">index</a></li>
-        <li><a href="../../index.html">notes 0.1 documentation</a> &raquo;</li> 
+        <li class="right" >
+          <a href="../../openssh/index.html" title="OpenSSH"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="../index.html" title="OpenBSD"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../index.html">notes 0.1 documentation</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="../index.html" accesskey="U">OpenBSD</a> &raquo;</li> 
       </ul>
     </div>  
 
     <div class="document">
       <div class="documentwrapper">
         <div class="bodywrapper">
-          <div class="body">
+          <div class="body" role="main">
             
   <div class="section" id="pledge-2">
 <h1>pledge(2)<a class="headerlink" href="#pledge-2" title="Permalink to this headline">¶</a></h1>
@@ -74,7 +84,7 @@
 </div>
 <div class="section" id="rust">
 <h2>Rust<a class="headerlink" href="#rust" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-rust"><div class="highlight"><pre><span class="c1">// OpenBSD 5.9 pledge(2) bindings</span>
+<div class="highlight-rust"><div class="highlight"><pre><span></span><span class="c1">// OpenBSD 5.9 pledge(2) bindings</span>
 <span class="c1">// http://www.openbsd.org/cgi-bin/man.cgi/OpenBSD-current/man2/pledge.2</span>
 
 <span class="c1">// rustc --crate-type=lib pledge.rs</span>
@@ -109,7 +119,7 @@
 
 <span class="c1">//</span>
 <span class="c1">// main.rs</span>
-<span class="k">extern</span><span class="w"> </span><span class="n">crate</span><span class="w"> </span><span class="n">pledge</span><span class="p">;</span><span class="w"></span>
+<span class="k">extern</span><span class="w"> </span><span class="k">crate</span><span class="w"> </span><span class="n">pledge</span><span class="p">;</span><span class="w"></span>
 
 <span class="kn">use</span><span class="w"> </span><span class="n">pledge</span><span class="o">::</span><span class="n">pledge</span><span class="p">;</span><span class="w"></span>
 
@@ -126,7 +136,7 @@
 <span class="w">		</span><span class="n">exit</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span><span class="w"></span>
 <span class="w">	</span><span class="p">}</span><span class="w"></span>
 
-<span class="w">	</span><span class="nb">println</span><span class="o">!</span><span class="p">(</span><span class="s">&quot;Now pledged.&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w">	</span><span class="n">println</span><span class="o">!</span><span class="p">(</span><span class="s">&quot;Now pledged.&quot;</span><span class="p">);</span><span class="w"></span>
 
 <span class="w">	</span><span class="c1">// attempt elevation</span>
 <span class="w">	</span><span class="k">if</span><span class="w"> </span><span class="o">!</span><span class="n">pledge</span><span class="p">(</span><span class="s">&quot;stdio rpath&quot;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
@@ -135,7 +145,7 @@
 <span class="w">	</span><span class="p">}</span><span class="w"></span>
 <span class="w">	</span><span class="c1">// .. promises were equal or reduced</span>
 
-<span class="w">	</span><span class="nb">println</span><span class="o">!</span><span class="p">(</span><span class="s">&quot;Opening a file!&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w">	</span><span class="n">println</span><span class="o">!</span><span class="p">(</span><span class="s">&quot;Opening a file!&quot;</span><span class="p">);</span><span class="w"></span>
 <span class="w">	</span><span class="c1">// kernel should abort here, unless promises changed</span>
 <span class="w">	</span><span class="kd">let</span><span class="w"> </span><span class="n">file</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">match</span><span class="w"> </span><span class="n">File</span><span class="o">::</span><span class="n">open</span><span class="p">(</span><span class="s">&quot;/tmp/bogus/file&quot;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">		</span><span class="nb">Err</span><span class="p">(</span><span class="n">_</span><span class="p">)</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">exit</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span><span class="w"></span>
@@ -152,7 +162,7 @@
           </div>
         </div>
       </div>
-      <div class="sphinxsidebar">
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
   <h3><a href="../../index.html">Table Of Contents</a></h3>
   <ul>
@@ -169,12 +179,20 @@
 </li>
 </ul>
 
-  <h3>This Page</h3>
-  <ul class="this-page-menu">
-    <li><a href="../../_sources/openbsd/pledge/index.txt"
-           rel="nofollow">Show Source</a></li>
-  </ul>
-<div id="searchbox" style="display: none">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="../index.html"
+                        title="previous chapter">OpenBSD</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="../../openssh/index.html"
+                        title="next chapter">OpenSSH</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../_sources/openbsd/pledge/index.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
     <form class="search" action="../../search.html" method="get">
       <input type="text" name="q" />
@@ -182,27 +200,31 @@
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
-    <p class="searchtip" style="font-size: 90%">
-    Enter search terms or a module, class or function name.
-    </p>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
       </div>
       <div class="clearer"></div>
     </div>
-    <div class="related">
+    <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
           <a href="../../genindex.html" title="General Index"
              >index</a></li>
-        <li><a href="../../index.html">notes 0.1 documentation</a> &raquo;</li> 
+        <li class="right" >
+          <a href="../../openssh/index.html" title="OpenSSH"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="../index.html" title="OpenBSD"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../index.html">notes 0.1 documentation</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="../index.html" >OpenBSD</a> &raquo;</li> 
       </ul>
     </div>
-    <div class="footer">
+    <div class="footer" role="contentinfo">
         &copy; Copyright 2016, ddp.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.3.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.1.
     </div>
   </body>
 </html>
