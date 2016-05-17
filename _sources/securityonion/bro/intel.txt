@@ -3,8 +3,9 @@
 Bro Intel Framwork
 ------------------
 
+.. note::
 
-Some information can be referenced `here <../../alienvault/otx/index.html>`_.
+   Some information can be referenced `here <../../alienvault/otx/index.html>`_.
 
  
 Add the following to `/opt/bro/share/bro/site/local.bro`:
