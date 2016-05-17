@@ -1,0 +1,19 @@
+.. _securityonion_bro_intel:
+
+Bro Intel Framwork
+------------------
+
+
+Some information can be referenced `here <../../alienvault/otx/index.html>`_.
+
+ 
+Add the following to `/opt/bro/share/bro/site/local.bro`:
+
+.. code-block:: console
+
+   @load intel
+   @load policy/frameworks/intel/seen
+   @load policy/frameworks/intel/do_notice
+
+
+

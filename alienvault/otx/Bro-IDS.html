@@ -69,8 +69,9 @@
 <div class="section" id="basic-usage">
 <h1>Basic usage<a class="headerlink" href="#basic-usage" title="Permalink to this headline">¶</a></h1>
 <p>First, modify the config.cfg. Add your <code class="docutils literal"><span class="pre">api_key</span></code> from the OTX site, and change the <code class="docutils literal"><span class="pre">base_path</span></code> if necessary.
-Use the following <code class="docutils literal"><span class="pre">base_path</span></code> for securityonion:</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">base_path=/opt/bro/share/bro/site/</span>
+Use the following <code class="docutils literal"><span class="pre">base_path</span></code> for securityonion (either of these are probably fine, adjust as necessary below):</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">#</span><span class="nv">base_path</span><span class="o">=</span>/opt/bro/share/bro/site/
+<span class="go">base_path=/opt/bro/share/bro/intel/</span>
 </pre></div>
 </div>
 <p>Next create the following directory tree under the base_path:</p>
@@ -83,6 +84,14 @@ Use the following <code class="docutils literal"><span class="pre">base_path</sp
 </div>
 <p>Finally, run the script. Select <code class="docutils literal"><span class="pre">first_run</span></code> or <code class="docutils literal"><span class="pre">check_new</span></code> appropriately.</p>
 <div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">python ./otxv2-bro.py [first_run|check_new]</span>
+</pre></div>
+</div>
+<p>Make sure bro intel is enabled:</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">grep &#39;load intel&#39; /opt/bro/share/bro/site/local.bro</span>
+</pre></div>
+</div>
+<p>Add the OTX files to bro in <cite>/opt/bro/share/bro/site/local.bro</cite>:</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">@load base_path/OTX-Apps-Bro-IDS</span>
 </pre></div>
 </div>
 <p>Restart bro:</p>

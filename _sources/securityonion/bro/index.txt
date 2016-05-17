@@ -6,7 +6,6 @@ Contents:
 .. toctree::
    :maxdepth: 2
 
-   commands
-   hier
-   bro/index
+   intel
+   process_control
 
