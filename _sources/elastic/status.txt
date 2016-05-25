@@ -6,5 +6,5 @@ Get the status of ES
 
 .. code-block:: console
 
-   curl -XGET http://localhost:9200/_cluster/health
+   curl -XGET http://localhost:9200/_cluster/health?pretty=true
 
