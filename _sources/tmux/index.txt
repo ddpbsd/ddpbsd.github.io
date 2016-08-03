@@ -1,6 +1,15 @@
 tmux
 ====
 
+I use ``o`` as my prefix key. The default is ``b``. 
+
+Set the prefix key to ``o``:
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: console
+
+   set-option -g prefix C-c
+
 
 Resize a pane
 ^^^^^^^^^^^^^
@@ -10,4 +19,12 @@ Increase size down:
 .. code-block:: console
 
    ^o :resize-pane -D 10
+
+Zoom in/out in a pane
+^^^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: console
+
+   ^o z
+
 

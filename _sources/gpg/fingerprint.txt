@@ -1,0 +1,13 @@
+.. _gpg_fingerprint:
+
+
+
+Get a fingerprint
+^^^^^^^^^^^^^^^^^
+
+.. code-block:: console
+
+   gpg --fingerprint 
+
+
+

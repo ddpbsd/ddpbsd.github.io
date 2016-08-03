@@ -32,6 +32,7 @@ Contents:
    splunk/index
    tmux/index
    vmware/index
+   windows/index
 
    misc/index
 

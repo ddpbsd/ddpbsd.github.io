@@ -1,6 +1,9 @@
 OTX
 ===
 
+Alienvault's Open Threat Exchange. The Bro-IDS stuff kinda works.
+Sometimes. Sorta. I guess.
+
 Contents:
 
 .. toctree::
