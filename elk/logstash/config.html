@@ -83,7 +83,7 @@
 <span class="go">output {</span>
 <span class="go">    if [type] == &#39;generic&#39; {</span>
 <span class="go">        elasticsearch {</span>
-<span class="go">            index =&gt; &quot;logstash-%Y.%m.%d&quot;</span>
+<span class="go">            index =&gt; &quot;logstash-%{+YYYY.MM.dd}&quot;</span>
 <span class="go">        }</span>
 <span class="go">    }</span>
 

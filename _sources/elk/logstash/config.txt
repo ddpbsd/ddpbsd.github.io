@@ -34,7 +34,7 @@ Example config
   output {
       if [type] == 'generic' {
           elasticsearch {
-              index => "logstash-%Y.%m.%d"
+              index => "logstash-%{+YYYY.MM.dd}"
           }
       }
   
