@@ -1,0 +1,51 @@
+.. elk_logstash_indexes::
+
+Example config
+^^^^^^^^^^^^^^  
+  
+.. code-block:: console
+  
+     input {
+      syslog {
+          port => "2514"
+          type => "generic"
+      }
+  
+      tcp {
+          port => "2515"
+          type => "squid-access"
+      }
+  
+  }
+  
+  
+  filter {
+      if [type] == 'squid-access' {
+          grok {
+            match => {
+                "message" => "%{POSINT:timestamp}.%{WORD:timestamp_ms}\s+%{NUMBER:response_time} %{IPORHOST:src_ip} %{WORD:squid_request_status}/%{NUMBER:http_status_code} %{NUMBER:reply_size_include_header} %{WORD:http_method} %{NOTSPA
+  CE:request_url} %{NOTSPACE:user} %{WORD:squid}/%{IP:server_ip} %{NOTSPACE:content_type}"
+            }
+          }
+      }
+  }
+  
+  
+  output {
+      if [type] == 'generic' {
+          elasticsearch {
+              index => "logstash-%Y.%m.%d"
+          }
+      }
+  
+      if [type] == 'squid-access' {
+          elasticsearch {
+              index => "squid-access"
+          }
+      }
+  
+  
+  }
+  
+  
+  

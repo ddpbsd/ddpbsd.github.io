@@ -18,7 +18,7 @@ Contents:
 
 
    alienvault/index
-   elastic/index
+   elk/index
    git/index
    gpg/index
    linux/index
