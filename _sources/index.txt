@@ -30,6 +30,7 @@ Contents:
    rsyslogd/index
    securityonion/index
    splunk/index
+   ssl/index
    tmux/index
    vmware/index
    windows/index
