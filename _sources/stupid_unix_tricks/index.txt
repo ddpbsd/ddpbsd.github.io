@@ -1,0 +1,11 @@
+Stupid Unix Tricks
+==================
+
+Contents:
+
+.. toctree::
+   :maxdepth: 2
+
+   to_lower   
+   
+

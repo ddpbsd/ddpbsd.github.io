@@ -1,0 +1,24 @@
+.. _stupid_unix_tricks_to_lower::
+
+Convert a string to lower case:
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tr:
+
+.. code-block:: console
+
+   $ echo "$a" | tr '[:upper:]' '[:lower:]'
+   hi all
+
+awk:
+
+.. code-block:: console
+
+   $ echo "$a" | awk '{print tolower($0)}'
+
+perl:
+
+.. code-block:: console
+
+   $ echo "$a" | perl -ne 'print lc'
+

@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>OpenBSD &#8212; notes 0.1 documentation</title>
+    <title>I used my USB drive to install SecurityOnion and now it’s all messed up. &#8212; notes 0.1 documentation</title>
     
     <link rel="stylesheet" href="../_static/classic.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -24,8 +24,9 @@
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <link rel="top" title="notes 0.1 documentation" href="../index.html" />
-    <link rel="next" title="I used my USB drive to install SecurityOnion and now it’s all messed up." href="fix_disk.html" />
-    <link rel="prev" title="Auto start on boot" href="../lxd/start.html" /> 
+    <link rel="up" title="OpenBSD" href="index.html" />
+    <link rel="next" title="pledge(2)" href="pledge/index.html" />
+    <link rel="prev" title="OpenBSD" href="index.html" /> 
   </head>
   <body role="document">
     <div class="related" role="navigation" aria-label="related navigation">
@@ -35,12 +36,13 @@
           <a href="../genindex.html" title="General Index"
              accesskey="I">index</a></li>
         <li class="right" >
-          <a href="fix_disk.html" title="I used my USB drive to install SecurityOnion and now it’s all messed up."
+          <a href="pledge/index.html" title="pledge(2)"
              accesskey="N">next</a> |</li>
         <li class="right" >
-          <a href="../lxd/start.html" title="Auto start on boot"
+          <a href="index.html" title="OpenBSD"
              accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../index.html">notes 0.1 documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="../index.html">notes 0.1 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">OpenBSD</a> &#187;</li> 
       </ul>
     </div>  
 
@@ -49,26 +51,17 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="openbsd">
-<h1>OpenBSD<a class="headerlink" href="#openbsd" title="Permalink to this headline">¶</a></h1>
-<p>Contents:</p>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="fix_disk.html">I used my USB drive to install SecurityOnion and now it&#8217;s all messed up.</a></li>
-<li class="toctree-l1"><a class="reference internal" href="pledge/index.html">pledge(2)</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="pledge/index.html#javascript">Javascript:</a></li>
-<li class="toctree-l2"><a class="reference internal" href="pledge/index.html#perl">Perl:</a></li>
-<li class="toctree-l2"><a class="reference internal" href="pledge/index.html#python">Python</a></li>
-<li class="toctree-l2"><a class="reference internal" href="pledge/index.html#lua">Lua</a></li>
-<li class="toctree-l2"><a class="reference internal" href="pledge/index.html#haskell">Haskell</a></li>
-<li class="toctree-l2"><a class="reference internal" href="pledge/index.html#golang">golang</a></li>
-<li class="toctree-l2"><a class="reference internal" href="pledge/index.html#c">c#</a></li>
-<li class="toctree-l2"><a class="reference internal" href="pledge/index.html#rust">Rust</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="vi.html">Insert a tab in a <code class="docutils literal"><span class="pre">:s</span></code> command:</a></li>
-</ul>
+  <div class="section" id="i-used-my-usb-drive-to-install-securityonion-and-now-it-s-all-messed-up">
+<h1>I used my USB drive to install SecurityOnion and now it&#8217;s all messed up.<a class="headerlink" href="#i-used-my-usb-drive-to-install-securityonion-and-now-it-s-all-messed-up" title="Permalink to this headline">¶</a></h1>
+<p>I tried formatting it in Windows and adding the files I wanted to transfer, but the linux
+boot stuff still showed up.</p>
+<p>Formatting didn&#8217;t help, fdisk didn&#8217;t help. disklabl showed only the <cite>c</cite> partition as an ISO9660
+partition, which could be mounted, but showed me the wrong stuff.</p>
+<p>Using <cite>disklabel</cite> to change the <cite>c</cite> partition to unused did not help. Does <cite>dd</cite> help? YES!</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">#</span> dd <span class="k">if</span><span class="o">=</span>/dev/zero <span class="nv">of</span><span class="o">=</span>/dev/sd4c
+</pre></div>
 </div>
+<p>That seemed to help. I can now read my files! Yay me!</p>
 </div>
 
 
@@ -78,15 +71,15 @@
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
   <h4>Previous topic</h4>
-  <p class="topless"><a href="../lxd/start.html"
-                        title="previous chapter">Auto start on boot</a></p>
+  <p class="topless"><a href="index.html"
+                        title="previous chapter">OpenBSD</a></p>
   <h4>Next topic</h4>
-  <p class="topless"><a href="fix_disk.html"
-                        title="next chapter">I used my USB drive to install SecurityOnion and now it&#8217;s all messed up.</a></p>
+  <p class="topless"><a href="pledge/index.html"
+                        title="next chapter">pledge(2)</a></p>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
-      <li><a href="../_sources/openbsd/index.txt"
+      <li><a href="../_sources/openbsd/fix_disk.txt"
             rel="nofollow">Show Source</a></li>
     </ul>
    </div>
@@ -111,12 +104,13 @@
           <a href="../genindex.html" title="General Index"
              >index</a></li>
         <li class="right" >
-          <a href="fix_disk.html" title="I used my USB drive to install SecurityOnion and now it’s all messed up."
+          <a href="pledge/index.html" title="pledge(2)"
              >next</a> |</li>
         <li class="right" >
-          <a href="../lxd/start.html" title="Auto start on boot"
+          <a href="index.html" title="OpenBSD"
              >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../index.html">notes 0.1 documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="../index.html">notes 0.1 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >OpenBSD</a> &#187;</li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">

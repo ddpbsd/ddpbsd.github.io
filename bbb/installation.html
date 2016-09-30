@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>OpenBSD &#8212; notes 0.1 documentation</title>
+    <title>Installation links: &#8212; notes 0.1 documentation</title>
     
     <link rel="stylesheet" href="../_static/classic.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -24,8 +24,9 @@
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <link rel="top" title="notes 0.1 documentation" href="../index.html" />
-    <link rel="next" title="I used my USB drive to install SecurityOnion and now it’s all messed up." href="fix_disk.html" />
-    <link rel="prev" title="Auto start on boot" href="../lxd/start.html" /> 
+    <link rel="up" title="BeagleBone Black" href="index.html" />
+    <link rel="next" title="elk stack" href="../elk/index.html" />
+    <link rel="prev" title="BeagleBone Black" href="index.html" /> 
   </head>
   <body role="document">
     <div class="related" role="navigation" aria-label="related navigation">
@@ -35,12 +36,13 @@
           <a href="../genindex.html" title="General Index"
              accesskey="I">index</a></li>
         <li class="right" >
-          <a href="fix_disk.html" title="I used my USB drive to install SecurityOnion and now it’s all messed up."
+          <a href="../elk/index.html" title="elk stack"
              accesskey="N">next</a> |</li>
         <li class="right" >
-          <a href="../lxd/start.html" title="Auto start on boot"
+          <a href="index.html" title="BeagleBone Black"
              accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../index.html">notes 0.1 documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="../index.html">notes 0.1 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">BeagleBone Black</a> &#187;</li> 
       </ul>
     </div>  
 
@@ -49,25 +51,16 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="openbsd">
-<h1>OpenBSD<a class="headerlink" href="#openbsd" title="Permalink to this headline">¶</a></h1>
-<p>Contents:</p>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="fix_disk.html">I used my USB drive to install SecurityOnion and now it&#8217;s all messed up.</a></li>
-<li class="toctree-l1"><a class="reference internal" href="pledge/index.html">pledge(2)</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="pledge/index.html#javascript">Javascript:</a></li>
-<li class="toctree-l2"><a class="reference internal" href="pledge/index.html#perl">Perl:</a></li>
-<li class="toctree-l2"><a class="reference internal" href="pledge/index.html#python">Python</a></li>
-<li class="toctree-l2"><a class="reference internal" href="pledge/index.html#lua">Lua</a></li>
-<li class="toctree-l2"><a class="reference internal" href="pledge/index.html#haskell">Haskell</a></li>
-<li class="toctree-l2"><a class="reference internal" href="pledge/index.html#golang">golang</a></li>
-<li class="toctree-l2"><a class="reference internal" href="pledge/index.html#c">c#</a></li>
-<li class="toctree-l2"><a class="reference internal" href="pledge/index.html#rust">Rust</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="vi.html">Insert a tab in a <code class="docutils literal"><span class="pre">:s</span></code> command:</a></li>
-</ul>
+  <div class="section" id="installation-links">
+<h1>Installation links:<a class="headerlink" href="#installation-links" title="Permalink to this headline">¶</a></h1>
+<p><a class="reference external" href="http://ftp.openbsd.org/pub/OpenBSD/6.0/armv7/INSTALL.armv7">http://ftp.openbsd.org/pub/OpenBSD/6.0/armv7/INSTALL.armv7</a>
+<a class="reference external" href="http://elinux.org/Beagleboard:Debian_On_BeagleBone_Black">http://elinux.org/Beagleboard:Debian_On_BeagleBone_Black</a>
+<a class="reference external" href="http://thethingsystem.com/dev/Bootstrapping-the-BeagleBone-Black-with-Debian.html">http://thethingsystem.com/dev/Bootstrapping-the-BeagleBone-Black-with-Debian.html</a></p>
+</div>
+<div class="section" id="use-dd-to-install-debian">
+<h1>Use dd to install debian:<a class="headerlink" href="#use-dd-to-install-debian" title="Permalink to this headline">¶</a></h1>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">dd bs=1m if=IMAGE of=/dev/rsdXc</span>
+</pre></div>
 </div>
 </div>
 
@@ -77,16 +70,22 @@
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
+  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Installation links:</a></li>
+<li><a class="reference internal" href="#use-dd-to-install-debian">Use dd to install debian:</a></li>
+</ul>
+
   <h4>Previous topic</h4>
-  <p class="topless"><a href="../lxd/start.html"
-                        title="previous chapter">Auto start on boot</a></p>
+  <p class="topless"><a href="index.html"
+                        title="previous chapter">BeagleBone Black</a></p>
   <h4>Next topic</h4>
-  <p class="topless"><a href="fix_disk.html"
-                        title="next chapter">I used my USB drive to install SecurityOnion and now it&#8217;s all messed up.</a></p>
+  <p class="topless"><a href="../elk/index.html"
+                        title="next chapter">elk stack</a></p>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
-      <li><a href="../_sources/openbsd/index.txt"
+      <li><a href="../_sources/bbb/installation.txt"
             rel="nofollow">Show Source</a></li>
     </ul>
    </div>
@@ -111,12 +110,13 @@
           <a href="../genindex.html" title="General Index"
              >index</a></li>
         <li class="right" >
-          <a href="fix_disk.html" title="I used my USB drive to install SecurityOnion and now it’s all messed up."
+          <a href="../elk/index.html" title="elk stack"
              >next</a> |</li>
         <li class="right" >
-          <a href="../lxd/start.html" title="Auto start on boot"
+          <a href="index.html" title="BeagleBone Black"
              >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../index.html">notes 0.1 documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="../index.html">notes 0.1 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >BeagleBone Black</a> &#187;</li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">

@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>OpenBSD &#8212; notes 0.1 documentation</title>
+    <title>Convert a string to lower case: &#8212; notes 0.1 documentation</title>
     
     <link rel="stylesheet" href="../_static/classic.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -24,8 +24,9 @@
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <link rel="top" title="notes 0.1 documentation" href="../index.html" />
-    <link rel="next" title="I used my USB drive to install SecurityOnion and now it’s all messed up." href="fix_disk.html" />
-    <link rel="prev" title="Auto start on boot" href="../lxd/start.html" /> 
+    <link rel="up" title="Stupid Unix Tricks" href="index.html" />
+    <link rel="next" title="tmux" href="../tmux/index.html" />
+    <link rel="prev" title="Stupid Unix Tricks" href="index.html" /> 
   </head>
   <body role="document">
     <div class="related" role="navigation" aria-label="related navigation">
@@ -35,12 +36,13 @@
           <a href="../genindex.html" title="General Index"
              accesskey="I">index</a></li>
         <li class="right" >
-          <a href="fix_disk.html" title="I used my USB drive to install SecurityOnion and now it’s all messed up."
+          <a href="../tmux/index.html" title="tmux"
              accesskey="N">next</a> |</li>
         <li class="right" >
-          <a href="../lxd/start.html" title="Auto start on boot"
+          <a href="index.html" title="Stupid Unix Tricks"
              accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../index.html">notes 0.1 documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="../index.html">notes 0.1 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">Stupid Unix Tricks</a> &#187;</li> 
       </ul>
     </div>  
 
@@ -49,25 +51,20 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="openbsd">
-<h1>OpenBSD<a class="headerlink" href="#openbsd" title="Permalink to this headline">¶</a></h1>
-<p>Contents:</p>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="fix_disk.html">I used my USB drive to install SecurityOnion and now it&#8217;s all messed up.</a></li>
-<li class="toctree-l1"><a class="reference internal" href="pledge/index.html">pledge(2)</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="pledge/index.html#javascript">Javascript:</a></li>
-<li class="toctree-l2"><a class="reference internal" href="pledge/index.html#perl">Perl:</a></li>
-<li class="toctree-l2"><a class="reference internal" href="pledge/index.html#python">Python</a></li>
-<li class="toctree-l2"><a class="reference internal" href="pledge/index.html#lua">Lua</a></li>
-<li class="toctree-l2"><a class="reference internal" href="pledge/index.html#haskell">Haskell</a></li>
-<li class="toctree-l2"><a class="reference internal" href="pledge/index.html#golang">golang</a></li>
-<li class="toctree-l2"><a class="reference internal" href="pledge/index.html#c">c#</a></li>
-<li class="toctree-l2"><a class="reference internal" href="pledge/index.html#rust">Rust</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="vi.html">Insert a tab in a <code class="docutils literal"><span class="pre">:s</span></code> command:</a></li>
-</ul>
+  <div class="section" id="convert-a-string-to-lower-case">
+<h1>Convert a string to lower case:<a class="headerlink" href="#convert-a-string-to-lower-case" title="Permalink to this headline">¶</a></h1>
+<p>tr:</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> <span class="nb">echo</span> <span class="s2">&quot;</span><span class="nv">$a</span><span class="s2">&quot;</span> <span class="p">|</span> tr <span class="s1">&#39;[:upper:]&#39;</span> <span class="s1">&#39;[:lower:]&#39;</span>
+<span class="go">hi all</span>
+</pre></div>
+</div>
+<p>awk:</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> <span class="nb">echo</span> <span class="s2">&quot;</span><span class="nv">$a</span><span class="s2">&quot;</span> <span class="p">|</span> awk <span class="s1">&#39;{print tolower($0)}&#39;</span>
+</pre></div>
+</div>
+<p>perl:</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> <span class="nb">echo</span> <span class="s2">&quot;</span><span class="nv">$a</span><span class="s2">&quot;</span> <span class="p">|</span> perl -ne <span class="s1">&#39;print lc&#39;</span>
+</pre></div>
 </div>
 </div>
 
@@ -78,15 +75,15 @@
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
   <h4>Previous topic</h4>
-  <p class="topless"><a href="../lxd/start.html"
-                        title="previous chapter">Auto start on boot</a></p>
+  <p class="topless"><a href="index.html"
+                        title="previous chapter">Stupid Unix Tricks</a></p>
   <h4>Next topic</h4>
-  <p class="topless"><a href="fix_disk.html"
-                        title="next chapter">I used my USB drive to install SecurityOnion and now it&#8217;s all messed up.</a></p>
+  <p class="topless"><a href="../tmux/index.html"
+                        title="next chapter">tmux</a></p>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
-      <li><a href="../_sources/openbsd/index.txt"
+      <li><a href="../_sources/stupid_unix_tricks/to_lower.txt"
             rel="nofollow">Show Source</a></li>
     </ul>
    </div>
@@ -111,12 +108,13 @@
           <a href="../genindex.html" title="General Index"
              >index</a></li>
         <li class="right" >
-          <a href="fix_disk.html" title="I used my USB drive to install SecurityOnion and now it’s all messed up."
+          <a href="../tmux/index.html" title="tmux"
              >next</a> |</li>
         <li class="right" >
-          <a href="../lxd/start.html" title="Auto start on boot"
+          <a href="index.html" title="Stupid Unix Tricks"
              >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../index.html">notes 0.1 documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="../index.html">notes 0.1 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >Stupid Unix Tricks</a> &#187;</li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">

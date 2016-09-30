@@ -1,0 +1,58 @@
+.. linux_lvm::
+
+.. note::
+
+   Taken from http://www.howtogeek.com/howto/40702/how-to-manage-and-use-lvm-logical-volume-management-in-ubuntu/
+   The instructions there give a lot more detail.
+
+
+
+View current lvm info
+^^^^^^^^^^^^^^^^^^^^^
+
+
+.. code-block:: console
+
+   # pvdisplay
+
+Create a partition:
+^^^^^^^^^^^^^^^^^^^
+
+Apparently not always necessary or something.
+
+.. code-block:: console
+
+   # fdisk /dev/sdb
+
+
+Create a physical volume:
+^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: console
+
+   # pvcreate /dev/sdb1
+
+
+Add to the volume group:
+^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: console
+
+   # lvs
+   # vgextend buzzell-vg /dev/sdb1
+
+Create a logical volume:
+^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: console
+
+   # lvcreate -L 50G -n var buzzell-vg
+
+Format and Mount:
+^^^^^^^^^^^^^^^^^
+
+.. code-block:: console
+
+   # mkfs -t ext4 /dev/mapper/buzzell--vg-var
+   # mount /dev/mapper/buzzell--vg-var /mnt
+

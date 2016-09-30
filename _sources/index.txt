@@ -18,6 +18,7 @@ Contents:
 
 
    alienvault/index
+   bbb/index
    elk/index
    git/index
    gpg/index
@@ -31,6 +32,7 @@ Contents:
    securityonion/index
    splunk/index
    ssl/index
+   stupid_unix_tricks/index
    tmux/index
    vmware/index
    windows/index
