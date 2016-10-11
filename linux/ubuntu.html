@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Only upgrade security related packages &#8212; notes 0.1 documentation</title>
+    <title>Only upgrade security related packages: &#8212; notes 0.1 documentation</title>
     
     <link rel="stylesheet" href="../_static/classic.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -25,7 +25,7 @@
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <link rel="top" title="notes 0.1 documentation" href="../index.html" />
     <link rel="up" title="Linux" href="index.html" />
-    <link rel="next" title="Notes about lxc and lxd" href="../lxd/index.html" />
+    <link rel="next" title="moloch" href="../moloch/index.html" />
     <link rel="prev" title="systemctl enable SOMETHING.something: “Failed to execute operation: No such file or directory”" href="systemd/systemctl.html" /> 
   </head>
   <body role="document">
@@ -36,7 +36,7 @@
           <a href="../genindex.html" title="General Index"
              accesskey="I">index</a></li>
         <li class="right" >
-          <a href="../lxd/index.html" title="Notes about lxc and lxd"
+          <a href="../moloch/index.html" title="moloch"
              accesskey="N">next</a> |</li>
         <li class="right" >
           <a href="systemd/systemctl.html" title="systemctl enable SOMETHING.something: “Failed to execute operation: No such file or directory”"
@@ -52,7 +52,7 @@
           <div class="body" role="main">
             
   <div class="section" id="only-upgrade-security-related-packages">
-<span id="linux-ubuntu"></span><h1>Only upgrade security related packages<a class="headerlink" href="#only-upgrade-security-related-packages" title="Permalink to this headline">¶</a></h1>
+<span id="linux-ubuntu"></span><h1>Only upgrade security related packages:<a class="headerlink" href="#only-upgrade-security-related-packages" title="Permalink to this headline">¶</a></h1>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p class="last">From iam-TJ at <a class="reference external" href="https://news.ycombinator.com/item?id=11475474">https://news.ycombinator.com/item?id=11475474</a></p>
@@ -68,8 +68,25 @@ It is configured as a system service that runs automatically at shutdown.</p>
 </div>
 </div>
 <div class="section" id="enable-a-service">
-<h1>Enable a service<a class="headerlink" href="#enable-a-service" title="Permalink to this headline">¶</a></h1>
+<h1>Enable a service:<a class="headerlink" href="#enable-a-service" title="Permalink to this headline">¶</a></h1>
 <div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">update-rc.d ssh enable</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="import-a-gpg-key-into-apt">
+<h1>Import a gpg key into apt:<a class="headerlink" href="#import-a-gpg-key-into-apt" title="Permalink to this headline">¶</a></h1>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">apt-key adv --keyserver pgp.mit.edu --recv-key KEY_STUFF</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="find-the-ubuntu-version">
+<h1>Find the Ubuntu version:<a class="headerlink" href="#find-the-ubuntu-version" title="Permalink to this headline">¶</a></h1>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> lsb_release -a
+<span class="go">No LSB modules are available.</span>
+<span class="go">Distributor ID: Ubuntu</span>
+<span class="go">Description:    Ubuntu 14.04.5 LTS</span>
+<span class="go">Release:        14.04</span>
+<span class="go">Codename:       trusty</span>
 </pre></div>
 </div>
 </div>
@@ -82,16 +99,18 @@ It is configured as a system service that runs automatically at shutdown.</p>
         <div class="sphinxsidebarwrapper">
   <h3><a href="../index.html">Table Of Contents</a></h3>
   <ul>
-<li><a class="reference internal" href="#">Only upgrade security related packages</a></li>
-<li><a class="reference internal" href="#enable-a-service">Enable a service</a></li>
+<li><a class="reference internal" href="#">Only upgrade security related packages:</a></li>
+<li><a class="reference internal" href="#enable-a-service">Enable a service:</a></li>
+<li><a class="reference internal" href="#import-a-gpg-key-into-apt">Import a gpg key into apt:</a></li>
+<li><a class="reference internal" href="#find-the-ubuntu-version">Find the Ubuntu version:</a></li>
 </ul>
 
   <h4>Previous topic</h4>
   <p class="topless"><a href="systemd/systemctl.html"
                         title="previous chapter">systemctl enable SOMETHING.something: &#8220;Failed to execute operation: No such file or directory&#8221;</a></p>
   <h4>Next topic</h4>
-  <p class="topless"><a href="../lxd/index.html"
-                        title="next chapter">Notes about lxc and lxd</a></p>
+  <p class="topless"><a href="../moloch/index.html"
+                        title="next chapter">moloch</a></p>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
@@ -120,7 +139,7 @@ It is configured as a system service that runs automatically at shutdown.</p>
           <a href="../genindex.html" title="General Index"
              >index</a></li>
         <li class="right" >
-          <a href="../lxd/index.html" title="Notes about lxc and lxd"
+          <a href="../moloch/index.html" title="moloch"
              >next</a> |</li>
         <li class="right" >
           <a href="systemd/systemctl.html" title="systemctl enable SOMETHING.something: “Failed to execute operation: No such file or directory”"

@@ -19,21 +19,20 @@ Contents:
 
    alienvault/index
    bbb/index
+   db/index
    elk/index
    git/index
-   gpg/index
    linux/index
-   lxd/index
+   moloch/index
    openbsd/index
    openssh/index
    ossec/index
-   postgresql/index
    rsyslogd/index
    securityonion/index
    splunk/index
    ssl/index
    stupid_unix_tricks/index
-   tmux/index
+   tools/index
    vmware/index
    windows/index
 

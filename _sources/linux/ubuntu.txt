@@ -1,8 +1,8 @@
 .. _linux_ubuntu:
 
 
-Only upgrade security related packages
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Only upgrade security related packages:
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. note::
 
@@ -20,10 +20,32 @@ Only upgrade security related packages
    It is configured as a system service that runs automatically at shutdown.
 
 
-Enable a service
-^^^^^^^^^^^^^^^^
+Enable a service:
+^^^^^^^^^^^^^^^^^
 
 .. code-block:: console
 
    update-rc.d ssh enable
+
+
+Import a gpg key into apt:
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: console
+
+   apt-key adv --keyserver pgp.mit.edu --recv-key KEY_STUFF
+
+Find the Ubuntu version:
+^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: console
+
+   $ lsb_release -a
+   No LSB modules are available.
+   Distributor ID: Ubuntu
+   Description:    Ubuntu 14.04.5 LTS
+   Release:        14.04
+   Codename:       trusty
+
+
 

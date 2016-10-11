@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Example config &#8212; notes 0.1 documentation</title>
+    <title>tags: &#8212; notes 0.1 documentation</title>
     
     <link rel="stylesheet" href="../../_static/classic.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
@@ -25,7 +25,7 @@
     <script type="text/javascript" src="../../_static/doctools.js"></script>
     <link rel="top" title="notes 0.1 documentation" href="../../index.html" />
     <link rel="up" title="logstash" href="index.html" />
-    <link rel="next" title="git" href="../../git/index.html" />
+    <link rel="next" title="Simple config testing:" href="testing.html" />
     <link rel="prev" title="logstash" href="index.html" /> 
   </head>
   <body role="document">
@@ -36,7 +36,7 @@
           <a href="../../genindex.html" title="General Index"
              accesskey="I">index</a></li>
         <li class="right" >
-          <a href="../../git/index.html" title="git"
+          <a href="testing.html" title="Simple config testing:"
              accesskey="N">next</a> |</li>
         <li class="right" >
           <a href="index.html" title="logstash"
@@ -52,7 +52,36 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="example-config">
+  <p>There&#8217;s probably a better way to do everything I&#8217;m doing here.</p>
+<div class="section" id="tags">
+<h1>tags:<a class="headerlink" href="#tags" title="Permalink to this headline">¶</a></h1>
+<p>Tags seem to be important inside the logstash configuration file.
+Something I&#8217;ve started doing is tagging events that come in with <cite>parse</cite>.
+Then in the filter I remove the tag.</p>
+<p>Example:</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">input {</span>
+<span class="go">   file {</span>
+<span class="go">      path =&gt; &quot;/var/log/logfile&quot;</span>
+<span class="go">      tags =&gt; &quot;parse&quot;</span>
+<span class="go">   }</span>
+<span class="go">}</span>
+<span class="go">filter {</span>
+<span class="go">   if &quot;parse&quot; in [tags] and [message] =~ &quot;Something something&quot; {</span>
+<span class="go">       grok {</span>
+<span class="go">          match =&gt; {</span>
+<span class="go">             &quot;message&quot; =&gt; &quot;GROK STUFF&quot;</span>
+<span class="go">          }</span>
+<span class="go">          remove_tag =&gt; &quot;parse&quot;</span>
+<span class="go">       }</span>
+<span class="go">   }</span>
+
+<span class="go">}</span>
+</pre></div>
+</div>
+<p>This allows me to use multiple grok parsers for a message without (hopefully)
+going through each one for each message.</p>
+</div>
+<div class="section" id="example-config">
 <h1>Example config<a class="headerlink" href="#example-config" title="Permalink to this headline">¶</a></h1>
 <div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">   input {</span>
 <span class="go">    syslog {</span>
@@ -105,12 +134,18 @@
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
+  <h3><a href="../../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">tags:</a></li>
+<li><a class="reference internal" href="#example-config">Example config</a></li>
+</ul>
+
   <h4>Previous topic</h4>
   <p class="topless"><a href="index.html"
                         title="previous chapter">logstash</a></p>
   <h4>Next topic</h4>
-  <p class="topless"><a href="../../git/index.html"
-                        title="next chapter">git</a></p>
+  <p class="topless"><a href="testing.html"
+                        title="next chapter">Simple config testing:</a></p>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
@@ -139,7 +174,7 @@
           <a href="../../genindex.html" title="General Index"
              >index</a></li>
         <li class="right" >
-          <a href="../../git/index.html" title="git"
+          <a href="testing.html" title="Simple config testing:"
              >next</a> |</li>
         <li class="right" >
           <a href="index.html" title="logstash"

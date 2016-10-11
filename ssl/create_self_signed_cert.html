@@ -53,7 +53,7 @@
             
   <div class="section" id="create-a-self-signed-cert">
 <h1>Create a self signed cert:<a class="headerlink" href="#create-a-self-signed-cert" title="Permalink to this headline">¶</a></h1>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">openssl genrsa -out key.pem 2048</span>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">openssl genrsa -aes256 -out key.pem 2048</span>
 <span class="go">openssl req -new -sha256 -key key.pem -out csr.csr</span>
 <span class="go">openssl req -x509 -sha256 -days 365 -key key.pem -in csr.csr -out certificate.pem</span>
 </pre></div>
