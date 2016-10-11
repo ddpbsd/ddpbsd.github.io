@@ -1,0 +1,25 @@
+.. _lxc_profiles:
+
+Show the profiles
+^^^^^^^^^^^^^^^^^
+
+.. code-block:: console
+
+   lxc profile list
+
+Show the configuration of a profile
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: console
+
+   lxc profile show default
+
+
+Unset the http_proxy
+^^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: console
+
+   lxc profile unset default environment.http_proxy
+
+

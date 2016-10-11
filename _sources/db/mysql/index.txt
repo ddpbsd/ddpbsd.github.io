@@ -1,0 +1,10 @@
+MySQL
+=====
+
+Contents:
+
+.. toctree::
+   :maxdepth: 2
+
+   timediff.rst
+

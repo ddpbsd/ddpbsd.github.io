@@ -1,0 +1,19 @@
+.. _bbb_tips::
+
+Random Tips
+===========
+
+Disable lightdm and run headless:
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Add the following to `/boot/uEnv.txt
+
+.. code-block:: console
+
+   # Disable lightdm
+   optargs=text
+
+.. note::
+
+   Tip was from http://pix.cs.olemiss.edu/csci581/beagleBoneTips.txt
+

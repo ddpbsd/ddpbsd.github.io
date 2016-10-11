@@ -1,0 +1,11 @@
+PostgreSQL
+==========
+
+timestamps as unix epoch
+^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: sql
+
+   SELECT extract(epoch FROM timestamp) FROM sensors;
+
+

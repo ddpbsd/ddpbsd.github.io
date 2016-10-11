@@ -1,0 +1,86 @@
+.. _tools_osquery_tables::
+
+Available tables:
+^^^^^^^^^^^^^^^^^
+
+.. code-block:: console
+
+   root@ircd:~/ossec-hids-2.8.3/src# osqueryi ".tables" | more
+     => acpi_tables
+     => apt_sources
+     => arp_cache
+     => authorized_keys
+     => block_devices
+     => carbon_black_info
+     => chrome_extensions
+     => cpu_time
+     => cpuid
+     => crontab
+     => deb_packages
+     => device_file
+     => device_hash
+     => device_partitions
+     => disk_encryption
+     => dns_resolvers
+     => etc_hosts
+     => etc_protocols
+     => etc_services
+     => file
+     => file_events
+     => firefox_addons
+     => groups
+     => hardware_events
+     => hash
+     => interface_addresses
+     => interface_details
+     => iptables
+     => kernel_info
+     => kernel_integrity
+     => kernel_modules
+     => known_hosts
+     => last
+     => listening_ports
+     => logged_in_users
+     => magic
+     => memory_info
+     => memory_map
+     => mounts
+     => msr
+     => opera_extensions
+     => os_version
+     => osquery_events
+     => osquery_extensions
+     => osquery_flags
+     => osquery_info
+     => osquery_packs
+     => osquery_registry
+     => osquery_schedule
+     => pci_devices
+     => platform_info
+     => process_envs
+     => process_events
+     => process_memory_map
+     => process_open_files
+     => process_open_sockets
+     => processes
+     => routes
+     => rpm_package_files
+     => rpm_packages
+     => shared_memory
+     => shell_history
+     => smbios_tables
+     => socket_events
+     => suid_bin
+     => syslog
+     => system_controls
+     => system_info
+     => time
+     => uptime
+     => usb_devices
+     => user_events
+     => user_groups
+     => user_ssh_keys
+     => users
+     => yara
+     => yara_events
+   

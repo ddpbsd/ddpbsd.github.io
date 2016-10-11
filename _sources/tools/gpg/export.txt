@@ -1,0 +1,13 @@
+.. _tools_gpg_export:
+
+
+
+Export key
+^^^^^^^^^^
+
+.. code-block:: console
+
+   gpg --armor --export --export-options export-minimal email@example.com
+
+
+
