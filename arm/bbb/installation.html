@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>grok documentation &#8212; notes 0.1 documentation</title>
+    <title>Installation links: &#8212; notes 0.1 documentation</title>
     
     <link rel="stylesheet" href="../../_static/classic.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
@@ -24,9 +24,9 @@
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
     <link rel="top" title="notes 0.1 documentation" href="../../index.html" />
-    <link rel="up" title="logstash" href="index.html" />
-    <link rel="next" title="Simple config testing:" href="testing.html" />
-    <link rel="prev" title="tags:" href="config.html" /> 
+    <link rel="up" title="BeagleBone Black" href="index.html" />
+    <link rel="next" title="Random Tips" href="tips.html" />
+    <link rel="prev" title="BeagleBone Black" href="index.html" /> 
   </head>
   <body role="document">
     <div class="related" role="navigation" aria-label="related navigation">
@@ -36,14 +36,14 @@
           <a href="../../genindex.html" title="General Index"
              accesskey="I">index</a></li>
         <li class="right" >
-          <a href="testing.html" title="Simple config testing:"
+          <a href="tips.html" title="Random Tips"
              accesskey="N">next</a> |</li>
         <li class="right" >
-          <a href="config.html" title="tags:"
+          <a href="index.html" title="BeagleBone Black"
              accesskey="P">previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="../../index.html">notes 0.1 documentation</a> &#187;</li>
-          <li class="nav-item nav-item-1"><a href="../index.html" >elk stack</a> &#187;</li>
-          <li class="nav-item nav-item-2"><a href="index.html" accesskey="U">logstash</a> &#187;</li> 
+          <li class="nav-item nav-item-1"><a href="../index.html" >arm</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="index.html" accesskey="U">BeagleBone Black</a> &#187;</li> 
       </ul>
     </div>  
 
@@ -52,10 +52,17 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="grok-documentation">
-<h1>grok documentation<a class="headerlink" href="#grok-documentation" title="Permalink to this headline">¶</a></h1>
-<p id="elk-logstash-grok">The <a class="reference external" href="https://www.elastic.co/guide/en/logstash/current/plugins-filters-grok.html">grok</a> documentation almost
-makes sense to me.</p>
+  <div class="section" id="installation-links">
+<span id="bbb-installation"></span><h1>Installation links:<a class="headerlink" href="#installation-links" title="Permalink to this headline">¶</a></h1>
+<p><a class="reference external" href="http://ftp.openbsd.org/pub/OpenBSD/6.0/armv7/INSTALL.armv7">http://ftp.openbsd.org/pub/OpenBSD/6.0/armv7/INSTALL.armv7</a>
+<a class="reference external" href="http://elinux.org/Beagleboard:Debian_On_BeagleBone_Black">http://elinux.org/Beagleboard:Debian_On_BeagleBone_Black</a>
+<a class="reference external" href="http://thethingsystem.com/dev/Bootstrapping-the-BeagleBone-Black-with-Debian.html">http://thethingsystem.com/dev/Bootstrapping-the-BeagleBone-Black-with-Debian.html</a></p>
+</div>
+<div class="section" id="use-dd-to-install-debian">
+<h1>Use dd to install debian:<a class="headerlink" href="#use-dd-to-install-debian" title="Permalink to this headline">¶</a></h1>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">dd bs=1m if=IMAGE of=/dev/rsdXc</span>
+</pre></div>
+</div>
 </div>
 
 
@@ -64,16 +71,22 @@ makes sense to me.</p>
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
+  <h3><a href="../../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Installation links:</a></li>
+<li><a class="reference internal" href="#use-dd-to-install-debian">Use dd to install debian:</a></li>
+</ul>
+
   <h4>Previous topic</h4>
-  <p class="topless"><a href="config.html"
-                        title="previous chapter">tags:</a></p>
+  <p class="topless"><a href="index.html"
+                        title="previous chapter">BeagleBone Black</a></p>
   <h4>Next topic</h4>
-  <p class="topless"><a href="testing.html"
-                        title="next chapter">Simple config testing:</a></p>
+  <p class="topless"><a href="tips.html"
+                        title="next chapter">Random Tips</a></p>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
-      <li><a href="../../_sources/elk/logstash/grok.txt"
+      <li><a href="../../_sources/arm/bbb/installation.txt"
             rel="nofollow">Show Source</a></li>
     </ul>
    </div>
@@ -98,14 +111,14 @@ makes sense to me.</p>
           <a href="../../genindex.html" title="General Index"
              >index</a></li>
         <li class="right" >
-          <a href="testing.html" title="Simple config testing:"
+          <a href="tips.html" title="Random Tips"
              >next</a> |</li>
         <li class="right" >
-          <a href="config.html" title="tags:"
+          <a href="index.html" title="BeagleBone Black"
              >previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="../../index.html">notes 0.1 documentation</a> &#187;</li>
-          <li class="nav-item nav-item-1"><a href="../index.html" >elk stack</a> &#187;</li>
-          <li class="nav-item nav-item-2"><a href="index.html" >logstash</a> &#187;</li> 
+          <li class="nav-item nav-item-1"><a href="../index.html" >arm</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="index.html" >BeagleBone Black</a> &#187;</li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">

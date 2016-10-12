@@ -1,0 +1,25 @@
+.. _git_gpg:
+
+
+.. note::
+
+   Can probably use ``local`` instead of ``global`` for per-project settings.
+   Not sure if local settings override global, but I would hope so.
+
+Sign commits
+^^^^^^^^^^^^
+
+.. code-block:: console
+
+   git config --global user.signkey public 80E6A369  ## Replace 80E6A369 will private key ID
+
+Set email/username
+^^^^^^^^^^^^^^^^^^
+
+.. code-block:: console
+
+   git config --global user.email=ddpbsd@gmail.com
+   git config --global user.name=ddp
+
+
+

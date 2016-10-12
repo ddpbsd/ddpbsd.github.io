@@ -17,6 +17,7 @@ Contents:
    :maxdepth: 2
 
    ansible/index
+   git/index
    gpg/index
    osquery/index
    tcpdump/index

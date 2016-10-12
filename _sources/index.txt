@@ -17,25 +17,19 @@ Contents:
    :maxdepth: 2
 
 
-   alienvault/index
-   bbb/index
+   arm/index
    db/index
    elk/index
-   git/index
-   linux/index
    moloch/index
-   openbsd/index
    openssh/index
+   operating_systems/index
    ossec/index
    rsyslogd/index
    securityonion/index
-   splunk/index
    ssl/index
    stupid_unix_tricks/index
    tools/index
-   vmware/index
-   windows/index
-
+   vendor_stuff/index
    misc/index
 
 

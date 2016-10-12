@@ -1,0 +1,15 @@
+Vendor Stuff
+============
+
+Stuff from various vendors. Usually proprietary.
+
+
+Contents:
+
+.. toctree::
+   :maxdepth: 2
+
+   alienvault/index
+   splunk/index   
+   vmware/index
+

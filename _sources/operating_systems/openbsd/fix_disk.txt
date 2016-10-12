@@ -1,0 +1,19 @@
+.. _openbsd_fix_disk:
+
+
+I used my USB drive to install SecurityOnion and now it's all messed up.
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+I tried formatting it in Windows and adding the files I wanted to transfer, but the linux
+boot stuff still showed up.
+
+Formatting didn't help, fdisk didn't help. disklabl showed only the `c` partition as an ISO9660
+partition, which could be mounted, but showed me the wrong stuff.
+
+Using `disklabel` to change the `c` partition to unused did not help. Does `dd` help? YES!
+
+.. code-block:: console
+
+   # dd if=/dev/zero of=/dev/sd4c
+
+That seemed to help. I can now read my files! Yay me!

@@ -1,0 +1,11 @@
+BeagleBone Black
+================
+
+Contents:
+
+.. toctree::
+   :maxdepth: 2
+
+   installation
+   tips
+
