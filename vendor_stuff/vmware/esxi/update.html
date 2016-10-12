@@ -1,0 +1,142 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>esxi Update process &#8212; notes 0.1 documentation</title>
+    
+    <link rel="stylesheet" href="../../../_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <link rel="top" title="notes 0.1 documentation" href="../../../index.html" />
+    <link rel="up" title="&lt;no title&gt;" href="index.html" />
+    <link rel="next" title="MISC" href="../../../misc/index.html" />
+    <link rel="prev" title="List all VMs" href="cli.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../../misc/index.html" title="MISC"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="cli.html" title="List all VMs"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">notes 0.1 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../../index.html" >Vendor Stuff</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../index.html" >VMWare</a> &#187;</li>
+          <li class="nav-item nav-item-3"><a href="index.html" accesskey="U">&lt;no title&gt;</a> &#187;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="esxi-update-process">
+<span id="vmware-esxi-update"></span><h1>esxi Update process<a class="headerlink" href="#esxi-update-process" title="Permalink to this headline">¶</a></h1>
+<p>Download patches from the <a class="reference external" href="http://www.vmware.com/patchmgr/download.portal">patch portal</a></p>
+<p>Upload the patch to the esxi system&#8217;s datastore.</p>
+<p>Suspend, shutdown, or migrate all running VMs.</p>
+<p>Put the host into maintenance mode:</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">vim-cmd hostsvc/maintenance_mode_enter</span>
+</pre></div>
+</div>
+<p><code class="docutils literal"><span class="pre">cd</span></code> to the directory containing the patch file</p>
+<p>Install the patch:</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">esxcli software vib update -d &quot;/full/path/to/patch.zip&quot;</span>
+</pre></div>
+</div>
+<p>Verity the installation.</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">esxcli software vib list</span>
+</pre></div>
+</div>
+<p>Reboot.</p>
+<p>Exit maintenance mode:</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">vim-cmd hostsvc/maintenance_mode_exit</span>
+</pre></div>
+</div>
+<p>Restore the Vms.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Instructions are from <a class="reference external" href="https://kb.vmware.com/selfservice/microsites/search.do?language=en_US&amp;cmd=displayKC&amp;externalId=2008939">VMWare kb 2008939</a></p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="cli.html"
+                        title="previous chapter">List all VMs</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="../../../misc/index.html"
+                        title="next chapter">MISC</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../../_sources/vendor_stuff/vmware/esxi/update.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../../misc/index.html" title="MISC"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="cli.html" title="List all VMs"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">notes 0.1 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../../index.html" >Vendor Stuff</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../index.html" >VMWare</a> &#187;</li>
+          <li class="nav-item nav-item-3"><a href="index.html" >&lt;no title&gt;</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2016, ddp.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.6.
+    </div>
+  </body>
+</html>

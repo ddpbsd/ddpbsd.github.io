@@ -1,0 +1,172 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Bro-IDS agent &#8212; notes 0.1 documentation</title>
+    
+    <link rel="stylesheet" href="../../../_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <link rel="top" title="notes 0.1 documentation" href="../../../index.html" />
+    <link rel="up" title="OTX" href="index.html" />
+    <link rel="next" title="splunk" href="../../splunk/index.html" />
+    <link rel="prev" title="OTX" href="index.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../splunk/index.html" title="splunk"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="OTX"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">notes 0.1 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../../index.html" >Vendor Stuff</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../index.html" >AlienVault</a> &#187;</li>
+          <li class="nav-item nav-item-3"><a href="index.html" accesskey="U">OTX</a> &#187;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="bro-ids-agent">
+<span id="alienvault-otx-bro-ids"></span><h1>Bro-IDS agent<a class="headerlink" href="#bro-ids-agent" title="Permalink to this headline">¶</a></h1>
+<p>In the 3 minutes I looked for documentation, I was unable to find any.</p>
+</div>
+<div class="section" id="prerequisites">
+<h1>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this headline">¶</a></h1>
+<blockquote>
+<div><ul class="simple">
+<li>python (2.7?)</li>
+<li>python simplejson</li>
+<li>Maybe more? It ran on OpenBSD after I added the simple json package, but who knows what I had already installed.</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="basic-usage">
+<h1>Basic usage<a class="headerlink" href="#basic-usage" title="Permalink to this headline">¶</a></h1>
+<p>First, modify the config.cfg. Add your <code class="docutils literal"><span class="pre">api_key</span></code> from the OTX site, and change the <code class="docutils literal"><span class="pre">base_path</span></code> if necessary.
+Use the following <code class="docutils literal"><span class="pre">base_path</span></code> for securityonion (either of these are probably fine, adjust as necessary below):</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">#</span><span class="nv">base_path</span><span class="o">=</span>/opt/bro/share/bro/site/
+<span class="go">base_path=/opt/bro/share/bro/intel/</span>
+</pre></div>
+</div>
+<p>Next create the following directory tree under the base_path:</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">mkdir -p base_path/OTX-Apps-Bro_IDS/pulses</span>
+</pre></div>
+</div>
+<p>Copy the <code class="docutils literal"><span class="pre">__load__.bro</span> <span class="pre">to</span> <span class="pre">``base_path/OTX-Apps-Bro_IDS</span></code>.</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">cp __load__.bro base_path/OTX-Apps-Bro_IDS</span>
+</pre></div>
+</div>
+<p>Finally, run the script. Select <code class="docutils literal"><span class="pre">first_run</span></code> or <code class="docutils literal"><span class="pre">check_new</span></code> appropriately.</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">python ./otxv2-bro.py [first_run|check_new]</span>
+</pre></div>
+</div>
+<p>Make sure bro intel is enabled:</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">grep &#39;load intel&#39; /opt/bro/share/bro/site/local.bro</span>
+</pre></div>
+</div>
+<p>Add the OTX files to bro in <cite>/opt/bro/share/bro/site/local.bro</cite>:</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">@load base_path/OTX-Apps-Bro-IDS</span>
+</pre></div>
+</div>
+<p>Restart bro:</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">sudo nsm_sensor_ps-restart --only-bro</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="where-can-i-get-it">
+<h1>Where can I get it?<a class="headerlink" href="#where-can-i-get-it" title="Permalink to this headline">¶</a></h1>
+<p><a class="reference external" href="https://github.com/AlienVault-Labs/OTX-Apps-Bro-IDS">https://github.com/AlienVault-Labs/OTX-Apps-Bro-IDS</a></p>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../../../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Bro-IDS agent</a></li>
+<li><a class="reference internal" href="#prerequisites">Prerequisites</a></li>
+<li><a class="reference internal" href="#basic-usage">Basic usage</a></li>
+<li><a class="reference internal" href="#where-can-i-get-it">Where can I get it?</a></li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="index.html"
+                        title="previous chapter">OTX</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="../../splunk/index.html"
+                        title="next chapter">splunk</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../../_sources/vendor_stuff/alienvault/otx/Bro-IDS.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../splunk/index.html" title="splunk"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="OTX"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">notes 0.1 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../../index.html" >Vendor Stuff</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../index.html" >AlienVault</a> &#187;</li>
+          <li class="nav-item nav-item-3"><a href="index.html" >OTX</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2016, ddp.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.6.
+    </div>
+  </body>
+</html>
