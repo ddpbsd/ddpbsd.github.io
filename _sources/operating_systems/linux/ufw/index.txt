@@ -1,11 +1,12 @@
-OpenSSH
-=======
+ufw
+===
+
+uncomplicated firewall?
 
 Contents:
 
 .. toctree::
    :maxdepth: 2
 
-   commands   
-   misc   
+   notes
 

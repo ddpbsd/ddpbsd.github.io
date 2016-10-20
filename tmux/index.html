@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>OpenSSH &#8212; notes 0.1 documentation</title>
+    <title>tmux &#8212; notes 0.1 documentation</title>
     
     <link rel="stylesheet" href="../_static/classic.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -24,8 +24,8 @@
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <link rel="top" title="notes 0.1 documentation" href="../index.html" />
-    <link rel="next" title="Command note" href="commands.html" />
-    <link rel="prev" title="Run capture:" href="../moloch/run.html" /> 
+    <link rel="next" title="VMWare" href="../vmware/index.html" />
+    <link rel="prev" title="&lt;no title&gt;" href="../ssl/download_cert.html" /> 
   </head>
   <body role="document">
     <div class="related" role="navigation" aria-label="related navigation">
@@ -35,10 +35,10 @@
           <a href="../genindex.html" title="General Index"
              accesskey="I">index</a></li>
         <li class="right" >
-          <a href="commands.html" title="Command note"
+          <a href="../vmware/index.html" title="VMWare"
              accesskey="N">next</a> |</li>
         <li class="right" >
-          <a href="../moloch/run.html" title="Run capture:"
+          <a href="../ssl/download_cert.html" title="&lt;no title&gt;"
              accesskey="P">previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="../index.html">notes 0.1 documentation</a> &#187;</li> 
       </ul>
@@ -49,15 +49,27 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="openssh">
-<h1>OpenSSH<a class="headerlink" href="#openssh" title="Permalink to this headline">¶</a></h1>
-<p>Contents:</p>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="commands.html">Command note</a></li>
-<li class="toctree-l1"><a class="reference internal" href="misc.html">Disconnect from an SSH session:</a></li>
-<li class="toctree-l1"><a class="reference internal" href="misc.html#disconnect-from-a-nested-ssh-session">Disconnect from a nested SSH session:</a></li>
-</ul>
+  <div class="section" id="tmux">
+<h1>tmux<a class="headerlink" href="#tmux" title="Permalink to this headline">¶</a></h1>
+<p>I use <code class="docutils literal"><span class="pre">o</span></code> as my prefix key. The default is <code class="docutils literal"><span class="pre">b</span></code>.</p>
+<div class="section" id="set-the-prefix-key-to-o">
+<h2>Set the prefix key to <code class="docutils literal"><span class="pre">o</span></code>:<a class="headerlink" href="#set-the-prefix-key-to-o" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">set-option -g prefix C-c</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="resize-a-pane">
+<h2>Resize a pane<a class="headerlink" href="#resize-a-pane" title="Permalink to this headline">¶</a></h2>
+<p>Increase size down:</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">^o :resize-pane -D 10</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="zoom-in-out-in-a-pane">
+<h2>Zoom in/out in a pane<a class="headerlink" href="#zoom-in-out-in-a-pane" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">^o z</span>
+</pre></div>
+</div>
 </div>
 </div>
 
@@ -67,16 +79,26 @@
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
+  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">tmux</a><ul>
+<li><a class="reference internal" href="#set-the-prefix-key-to-o">Set the prefix key to <code class="docutils literal"><span class="pre">o</span></code>:</a></li>
+<li><a class="reference internal" href="#resize-a-pane">Resize a pane</a></li>
+<li><a class="reference internal" href="#zoom-in-out-in-a-pane">Zoom in/out in a pane</a></li>
+</ul>
+</li>
+</ul>
+
   <h4>Previous topic</h4>
-  <p class="topless"><a href="../moloch/run.html"
-                        title="previous chapter">Run capture:</a></p>
+  <p class="topless"><a href="../ssl/download_cert.html"
+                        title="previous chapter">&lt;no title&gt;</a></p>
   <h4>Next topic</h4>
-  <p class="topless"><a href="commands.html"
-                        title="next chapter">Command note</a></p>
+  <p class="topless"><a href="../vmware/index.html"
+                        title="next chapter">VMWare</a></p>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
-      <li><a href="../_sources/openssh/index.txt"
+      <li><a href="../_sources/tmux/index.txt"
             rel="nofollow">Show Source</a></li>
     </ul>
    </div>
@@ -101,10 +123,10 @@
           <a href="../genindex.html" title="General Index"
              >index</a></li>
         <li class="right" >
-          <a href="commands.html" title="Command note"
+          <a href="../vmware/index.html" title="VMWare"
              >next</a> |</li>
         <li class="right" >
-          <a href="../moloch/run.html" title="Run capture:"
+          <a href="../ssl/download_cert.html" title="&lt;no title&gt;"
              >previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="../index.html">notes 0.1 documentation</a> &#187;</li> 
       </ul>

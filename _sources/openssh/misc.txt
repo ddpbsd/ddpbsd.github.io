@@ -1,0 +1,18 @@
+.. _openssh_notes:
+
+Disconnect from an SSH session:
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: console
+
+   ~.
+
+Disconnect from a nested SSH session:
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Disconnect from an ssh session 2 levels deep.
+
+.. code-block:: console
+
+   ~~.
+

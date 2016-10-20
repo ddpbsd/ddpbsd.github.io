@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>OpenSSH &#8212; notes 0.1 documentation</title>
+    <title>Notes about lxc and lxd &#8212; notes 0.1 documentation</title>
     
     <link rel="stylesheet" href="../_static/classic.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -24,8 +24,8 @@
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <link rel="top" title="notes 0.1 documentation" href="../index.html" />
-    <link rel="next" title="Command note" href="commands.html" />
-    <link rel="prev" title="Run capture:" href="../moloch/run.html" /> 
+    <link rel="next" title="How to set a container to auto start:" href="autostart.html" />
+    <link rel="prev" title="Only upgrade security related packages" href="../linux/ubuntu.html" /> 
   </head>
   <body role="document">
     <div class="related" role="navigation" aria-label="related navigation">
@@ -35,10 +35,10 @@
           <a href="../genindex.html" title="General Index"
              accesskey="I">index</a></li>
         <li class="right" >
-          <a href="commands.html" title="Command note"
+          <a href="autostart.html" title="How to set a container to auto start:"
              accesskey="N">next</a> |</li>
         <li class="right" >
-          <a href="../moloch/run.html" title="Run capture:"
+          <a href="../linux/ubuntu.html" title="Only upgrade security related packages"
              accesskey="P">previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="../index.html">notes 0.1 documentation</a> &#187;</li> 
       </ul>
@@ -49,14 +49,28 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="openssh">
-<h1>OpenSSH<a class="headerlink" href="#openssh" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="notes-about-lxc-and-lxd">
+<h1>Notes about lxc and lxd<a class="headerlink" href="#notes-about-lxc-and-lxd" title="Permalink to this headline">¶</a></h1>
 <p>Contents:</p>
 <div class="toctree-wrapper compound">
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="commands.html">Command note</a></li>
-<li class="toctree-l1"><a class="reference internal" href="misc.html">Disconnect from an SSH session:</a></li>
-<li class="toctree-l1"><a class="reference internal" href="misc.html#disconnect-from-a-nested-ssh-session">Disconnect from a nested SSH session:</a></li>
+<li class="toctree-l1"><a class="reference internal" href="autostart.html">How to set a container to auto start:</a></li>
+<li class="toctree-l1"><a class="reference internal" href="images.html">Add a remote image server:</a></li>
+<li class="toctree-l1"><a class="reference internal" href="images.html#list-images-on-image-server">List images on image server:</a></li>
+<li class="toctree-l1"><a class="reference internal" href="images.html#launch-a-container-from-a-new-image">Launch a container from a &#8220;new&#8221; image:</a></li>
+<li class="toctree-l1"><a class="reference internal" href="images.html#stop-a-running-container">Stop a running container:</a></li>
+<li class="toctree-l1"><a class="reference internal" href="limits.html">Setting limits</a></li>
+<li class="toctree-l1"><a class="reference internal" href="limits.html#get-current-resource-usage">Get current resource usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="limits.html#reference">reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="limits.html#cpu">CPU</a></li>
+<li class="toctree-l1"><a class="reference internal" href="limits.html#memory">Memory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="limits.html#disk-block-io">Disk/block IO</a></li>
+<li class="toctree-l1"><a class="reference internal" href="limits.html#network">Network</a></li>
+<li class="toctree-l1"><a class="reference internal" href="list.html">List container names</a></li>
+<li class="toctree-l1"><a class="reference internal" href="profiles.html">Show the profiles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="profiles.html#show-the-configuration-of-a-profile">Show the configuration of a profile</a></li>
+<li class="toctree-l1"><a class="reference internal" href="profiles.html#unset-the-http-proxy">Unset the http_proxy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="start.html">Auto start on boot</a></li>
 </ul>
 </div>
 </div>
@@ -68,15 +82,15 @@
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
   <h4>Previous topic</h4>
-  <p class="topless"><a href="../moloch/run.html"
-                        title="previous chapter">Run capture:</a></p>
+  <p class="topless"><a href="../linux/ubuntu.html"
+                        title="previous chapter">Only upgrade security related packages</a></p>
   <h4>Next topic</h4>
-  <p class="topless"><a href="commands.html"
-                        title="next chapter">Command note</a></p>
+  <p class="topless"><a href="autostart.html"
+                        title="next chapter">How to set a container to auto start:</a></p>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
-      <li><a href="../_sources/openssh/index.txt"
+      <li><a href="../_sources/lxd/index.txt"
             rel="nofollow">Show Source</a></li>
     </ul>
    </div>
@@ -101,10 +115,10 @@
           <a href="../genindex.html" title="General Index"
              >index</a></li>
         <li class="right" >
-          <a href="commands.html" title="Command note"
+          <a href="autostart.html" title="How to set a container to auto start:"
              >next</a> |</li>
         <li class="right" >
-          <a href="../moloch/run.html" title="Run capture:"
+          <a href="../linux/ubuntu.html" title="Only upgrade security related packages"
              >previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="../index.html">notes 0.1 documentation</a> &#187;</li> 
       </ul>

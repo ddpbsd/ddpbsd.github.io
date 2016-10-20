@@ -1,0 +1,123 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>I used my USB drive to install SecurityOnion and now it’s all messed up. &#8212; notes 0.1 documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="notes 0.1 documentation" href="../../index.html" />
+    <link rel="up" title="OpenBSD" href="index.html" />
+    <link rel="next" title="pledge(2)" href="pledge/index.html" />
+    <link rel="prev" title="OpenBSD" href="index.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="pledge/index.html" title="pledge(2)"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="OpenBSD"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../index.html">notes 0.1 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../index.html" >Operating Systems</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="index.html" accesskey="U">OpenBSD</a> &#187;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="i-used-my-usb-drive-to-install-securityonion-and-now-it-s-all-messed-up">
+<span id="openbsd-fix-disk"></span><h1>I used my USB drive to install SecurityOnion and now it&#8217;s all messed up.<a class="headerlink" href="#i-used-my-usb-drive-to-install-securityonion-and-now-it-s-all-messed-up" title="Permalink to this headline">¶</a></h1>
+<p>I tried formatting it in Windows and adding the files I wanted to transfer, but the linux
+boot stuff still showed up.</p>
+<p>Formatting didn&#8217;t help, fdisk didn&#8217;t help. disklabl showed only the <cite>c</cite> partition as an ISO9660
+partition, which could be mounted, but showed me the wrong stuff.</p>
+<p>Using <cite>disklabel</cite> to change the <cite>c</cite> partition to unused did not help. Does <cite>dd</cite> help? YES!</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">#</span> dd <span class="k">if</span><span class="o">=</span>/dev/zero <span class="nv">of</span><span class="o">=</span>/dev/sd4c
+</pre></div>
+</div>
+<p>That seemed to help. I can now read my files! Yay me!</p>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="index.html"
+                        title="previous chapter">OpenBSD</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="pledge/index.html"
+                        title="next chapter">pledge(2)</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../_sources/operating_systems/openbsd/fix_disk.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../../search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="pledge/index.html" title="pledge(2)"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="OpenBSD"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../index.html">notes 0.1 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../index.html" >Operating Systems</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="index.html" >OpenBSD</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2016, ddp.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.6.
+    </div>
+  </body>
+</html>

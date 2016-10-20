@@ -6,10 +6,12 @@ Contents:
 .. toctree::
    :maxdepth: 2
 
+   apt
    containers/index
    iptables/index
    lvm
    rpm
    systemd/index
-   ubuntu   
+   ubuntu
+   ufw/index
 
