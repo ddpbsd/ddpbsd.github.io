@@ -3,4 +3,11 @@ Books
 
   * Thomas Covenant series
   * Canticle for Lebowitz
+  * Foundation series
+  * I, Robot
+  * Everything by Harlan Ellison
+  * Dune - Dune 7
+  * Everything by Warren Ellis
+  * `Daemon <https://smile.amazon.com/DAEMON-Daniel-Suarez/dp/0451228731/ref=sr_1_1?ie=UTF8&qid=1477070040&sr=8-1&keywords=daemon>`_ & `Freedom TM <https://smile.amazon.com/Freedom-TM-Daniel-Suarez/dp/0451231899/ref=sr_1_3?ie=UTF8&qid=1477070040&sr=8-3&keywords=daemon`_ by Daniel Suarez
+  * `The Windup Girl <https://smile.amazon.com/Windup-Girl-Paolo-Bacigalupi/dp/1597808210/ref=sr_1_1?ie=UTF8&qid=1477069648&sr=8-1&keywords=windup+girl>`_ & `Ship Breaker <https://smile.amazon.com/Ship-Breaker-Paolo-Bacigalupi/dp/0316056197/ref=sr_1_4?ie=UTF8&qid=1477069648&sr=8-4&keywords=windup+girl>`_by Paolo Bacigalupi
 

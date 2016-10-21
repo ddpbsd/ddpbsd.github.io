@@ -1,4 +1,4 @@
-.. elk_logstash_testing:
+.. _elk_logstash_testing:
 
 Simple config testing:
 ^^^^^^^^^^^^^^^^^^^^^^
