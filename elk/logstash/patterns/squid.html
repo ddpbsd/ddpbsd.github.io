@@ -54,7 +54,7 @@
           <div class="body" role="main">
             
   <div class="section" id="squid-pattern">
-<h1>Squid pattern:<a class="headerlink" href="#squid-pattern" title="Permalink to this headline">¶</a></h1>
+<span id="elk-logstash-patterns"></span><h1>Squid pattern:<a class="headerlink" href="#squid-pattern" title="Permalink to this headline">¶</a></h1>
 <div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">match =&gt; {</span>
 <span class="go">   &quot;message&quot; =&gt; &quot;%{POSINT:timestamp}.%{WORD:timestamp_ms}\s+%{NUMBER:response_time} %{IPORHOST:src_ip} %{WORD:squid_request_status}/%{NUMBER:http_status_code} %{NUMBER:reply_size_include_header} %{WORD:http_method} %{NOTSPACE:request_url} %{NOTSPACE:user} %{WORD:squid}/%{NOTSPACE:server_ip} %{NOTSPACE:content_type}&quot;</span>
 <span class="go">}</span>

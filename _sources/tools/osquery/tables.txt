@@ -1,4 +1,4 @@
-.. _tools_osquery_tables::
+.. _tools_osquery_tables:
 
 Available tables:
 ^^^^^^^^^^^^^^^^^

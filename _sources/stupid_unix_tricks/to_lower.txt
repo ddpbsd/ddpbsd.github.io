@@ -1,4 +1,4 @@
-.. _stupid_unix_tricks_to_lower::
+.. _stupid_unix_tricks_to_lower:
 
 Convert a string to lower case:
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^

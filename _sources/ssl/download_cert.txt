@@ -1,4 +1,4 @@
-.. ssl_download_a_cert::
+.. ssl_download_a_cert:
 
 Download a certificate:
 ^^^^^^^^^^^^^^^^^^^^^^^

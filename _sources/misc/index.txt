@@ -16,4 +16,5 @@ Contents:
    ksh/index
    laptops/index
    vim/index
+   junk/index
 

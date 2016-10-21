@@ -1,4 +1,4 @@
-.. _moloch_run::
+.. _moloch_run:
 
 
 Run capture:

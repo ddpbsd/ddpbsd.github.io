@@ -1,4 +1,4 @@
-.. _elk_logstash_patterns::
+.. _elk_logstash_patterns:
 
 Squid pattern:
 ^^^^^^^^^^^^^^
