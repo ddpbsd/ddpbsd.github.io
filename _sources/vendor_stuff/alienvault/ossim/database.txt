@@ -234,4 +234,24 @@ tables
    219 rows in set (0.01 sec)
    
    
-   
+  
+hids_agents table
+^^^^^^^^^^^^^^^^^
+
+Columns:
+
+.. code-block:: console
+
+   sensor_id | agent_id | agent_name | agent_ip | agent_status | host_id
+
+agent_status translation:
+
+I'm not sure this is correct.
+
+.. code-block:: console
+
+   1: 
+   2: 
+   3: connected
+   4: 
+ 

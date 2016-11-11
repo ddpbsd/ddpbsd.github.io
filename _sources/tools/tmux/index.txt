@@ -11,8 +11,8 @@ Set the prefix key to ``o``:
    set-option -g prefix C-c
 
 
-Resize a pane
-^^^^^^^^^^^^^
+Resize a pane:
+^^^^^^^^^^^^^^
 
 Increase size down:
 
@@ -20,11 +20,25 @@ Increase size down:
 
    ^o :resize-pane -D 10
 
-Zoom in/out in a pane
-^^^^^^^^^^^^^^^^^^^^^
+Zoom in/out in a pane:
+^^^^^^^^^^^^^^^^^^^^^^
 
 .. code-block:: console
 
    ^o z
+
+Misc:
+^^^^^
+
+.. code-block:: console
+
+   ctrl+b followed by...
+   % - split pane vertically
+   " - split pane horizontally
+   arrow keys - change pane you're typing in
+   :new-window
+   2 - switch to window 2
+   x - kill pane
+   d - detach
 
 

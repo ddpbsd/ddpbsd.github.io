@@ -1,0 +1,25 @@
+.. _operating_systems_linux_containers_docker:
+
+
+List of images:
+^^^^^^^^^^^^^^^
+
+.. code-block:: console
+
+   docker images
+
+Delete an image:
+^^^^^^^^^^^^^^^^
+
+.. code-block:: console
+
+   docker rmi IMAGE
+
+Delete a container:
+^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: console
+
+   docker rm CONTAINER
+
+

@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>tcpdump &#8212; notes 0.1 documentation</title>
+    <title>Delete files from a remote PC: &#8212; notes 0.1 documentation</title>
     
     <link rel="stylesheet" href="../../_static/classic.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
@@ -26,9 +26,9 @@
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="top" title="notes 0.1 documentation" href="../../index.html" />
-    <link rel="up" title="Welcome to ddpbsd’s notes!" href="../index.html" />
-    <link rel="next" title="Sniff ipv6 packets:" href="ipv6.html" />
-    <link rel="prev" title="Available tables:" href="../osquery/tables.html" /> 
+    <link rel="up" title="Windows" href="index.html" />
+    <link rel="next" title="Sysmon" href="sysmon.html" />
+    <link rel="prev" title="Cheet Sheets" href="cheatsheets.html" /> 
   </head>
   <body role="document">
     <div class="related" role="navigation" aria-label="related navigation">
@@ -38,13 +38,14 @@
           <a href="../../genindex.html" title="General Index"
              accesskey="I">index</a></li>
         <li class="right" >
-          <a href="ipv6.html" title="Sniff ipv6 packets:"
+          <a href="sysmon.html" title="Sysmon"
              accesskey="N">next</a> |</li>
         <li class="right" >
-          <a href="../osquery/tables.html" title="Available tables:"
+          <a href="cheatsheets.html" title="Cheet Sheets"
              accesskey="P">previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="../../index.html">notes 0.1 documentation</a> &#187;</li>
-          <li class="nav-item nav-item-1"><a href="../index.html" accesskey="U">Welcome to ddpbsd&#8217;s notes!</a> &#187;</li> 
+          <li class="nav-item nav-item-1"><a href="../index.html" >Operating Systems</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="index.html" accesskey="U">Windows</a> &#187;</li> 
       </ul>
     </div>  
 
@@ -53,14 +54,32 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="tcpdump">
-<h1>tcpdump<a class="headerlink" href="#tcpdump" title="Permalink to this headline">¶</a></h1>
-<p>Contents:</p>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="ipv6.html">Sniff ipv6 packets:</a></li>
-<li class="toctree-l1"><a class="reference internal" href="mac_address.html">Filter on MAC address:</a></li>
-</ul>
+  <div class="section" id="delete-files-from-a-remote-pc">
+<span id="operating-systems-windows-powershell"></span><h1>Delete files from a remote PC:<a class="headerlink" href="#delete-files-from-a-remote-pc" title="Permalink to this headline">¶</a></h1>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">Remove-Item &quot;\\$computer\path\to\file.ext&quot;</span>
+</pre></div>
+</div>
+<p>Add <cite>-Recurse</cite> to delete recursively:</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">Remove-Item &quot;\\$computer\path\to\directory&quot; -Recurse</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="stop-a-service-on-a-remote-pc">
+<h1>Stop a service on a remote PC:<a class="headerlink" href="#stop-a-service-on-a-remote-pc" title="Permalink to this headline">¶</a></h1>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">(get-service -ComputerName $computer -Name service_name).Stop()</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="start-a-service-on-a-remote-pc">
+<h1>Start a service on a remote PC:<a class="headerlink" href="#start-a-service-on-a-remote-pc" title="Permalink to this headline">¶</a></h1>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">(get-service -ComputerName $computer -Name service_name).Start()</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="sleep-for-10-seconds">
+<h1>Sleep for 10 seconds:<a class="headerlink" href="#sleep-for-10-seconds" title="Permalink to this headline">¶</a></h1>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">Start-Sleep -s 10</span>
+</pre></div>
 </div>
 </div>
 
@@ -70,16 +89,24 @@
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
+  <h3><a href="../../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Delete files from a remote PC:</a></li>
+<li><a class="reference internal" href="#stop-a-service-on-a-remote-pc">Stop a service on a remote PC:</a></li>
+<li><a class="reference internal" href="#start-a-service-on-a-remote-pc">Start a service on a remote PC:</a></li>
+<li><a class="reference internal" href="#sleep-for-10-seconds">Sleep for 10 seconds:</a></li>
+</ul>
+
   <h4>Previous topic</h4>
-  <p class="topless"><a href="../osquery/tables.html"
-                        title="previous chapter">Available tables:</a></p>
+  <p class="topless"><a href="cheatsheets.html"
+                        title="previous chapter">Cheet Sheets</a></p>
   <h4>Next topic</h4>
-  <p class="topless"><a href="ipv6.html"
-                        title="next chapter">Sniff ipv6 packets:</a></p>
+  <p class="topless"><a href="sysmon.html"
+                        title="next chapter">Sysmon</a></p>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
-      <li><a href="../../_sources/tools/tcpdump/index.txt"
+      <li><a href="../../_sources/operating_systems/windows/powershell.txt"
             rel="nofollow">Show Source</a></li>
     </ul>
    </div>
@@ -104,13 +131,14 @@
           <a href="../../genindex.html" title="General Index"
              >index</a></li>
         <li class="right" >
-          <a href="ipv6.html" title="Sniff ipv6 packets:"
+          <a href="sysmon.html" title="Sysmon"
              >next</a> |</li>
         <li class="right" >
-          <a href="../osquery/tables.html" title="Available tables:"
+          <a href="cheatsheets.html" title="Cheet Sheets"
              >previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="../../index.html">notes 0.1 documentation</a> &#187;</li>
-          <li class="nav-item nav-item-1"><a href="../index.html" >Welcome to ddpbsd&#8217;s notes!</a> &#187;</li> 
+          <li class="nav-item nav-item-1"><a href="../index.html" >Operating Systems</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="index.html" >Windows</a> &#187;</li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
