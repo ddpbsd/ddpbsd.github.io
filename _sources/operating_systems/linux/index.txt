@@ -10,6 +10,7 @@ Contents:
    containers/index
    iptables/index
    lvm
+   network/index
    rpm
    systemd/index
    ubuntu

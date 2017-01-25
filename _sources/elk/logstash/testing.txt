@@ -67,6 +67,10 @@ Next create a file (junos.log) with a small selection of log samples.
 
 Run logstash.
 
+.. warning::
+
+   Not sure this works exactly. It worked at one point, but seemed to cause issues with the latest logstash?
+
 .. code-block:: console
 
    /opt/logstash/bin/logstash -f ./logstash.conf --verbose

@@ -18,3 +18,8 @@ Add the following to `/opt/bro/share/bro/site/local.bro`:
 
 
 
+
+.. warning::
+
+   Do not add blank lines to the file, and always use tabs as the delimeters!
+
