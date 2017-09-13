@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>CentOS 7 firewall-cmd &#8212; notes 0.1 documentation</title>
+    <title>CentOS: &#8212; notes 0.1 documentation</title>
     
     <link rel="stylesheet" href="../../_static/classic.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
@@ -54,32 +54,9 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="centos-7-firewall-cmd">
-<span id="linux-centos"></span><h1>CentOS 7 firewall-cmd<a class="headerlink" href="#centos-7-firewall-cmd" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="get-active-zones">
-<h2>Get active zones:<a class="headerlink" href="#get-active-zones" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">firewall-cmd --get-active-zones</span>
-</pre></div>
-</div>
-</div>
-<div class="section" id="open-a-port">
-<h2>Open a port:<a class="headerlink" href="#open-a-port" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">firewall-cmd --permanent --zone=public --add-port=80/tcp</span>
-</pre></div>
-</div>
-</div>
-<div class="section" id="enable-the-change">
-<h2>Enable the change:<a class="headerlink" href="#enable-the-change" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">firewall-cmd --reload</span>
-</pre></div>
-</div>
-</div>
-<div class="section" id="make-sure-the-change-is-in-effect">
-<h2>Make sure the change is in effect:<a class="headerlink" href="#make-sure-the-change-is-in-effect" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">firewall-cmd --zone=public --query-port=80/tcp</span>
-</pre></div>
-</div>
-</div>
+  <div class="section" id="centos">
+<span id="linux-centos"></span><h1>CentOS:<a class="headerlink" href="#centos" title="Permalink to this headline">¶</a></h1>
+<p>Why do I do this to myself?</p>
 </div>
 
 
@@ -88,17 +65,6 @@
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-  <h3><a href="../../index.html">Table Of Contents</a></h3>
-  <ul>
-<li><a class="reference internal" href="#">CentOS 7 firewall-cmd</a><ul>
-<li><a class="reference internal" href="#get-active-zones">Get active zones:</a></li>
-<li><a class="reference internal" href="#open-a-port">Open a port:</a></li>
-<li><a class="reference internal" href="#enable-the-change">Enable the change:</a></li>
-<li><a class="reference internal" href="#make-sure-the-change-is-in-effect">Make sure the change is in effect:</a></li>
-</ul>
-</li>
-</ul>
-
   <h4>Previous topic</h4>
   <p class="topless"><a href="apt.html"
                         title="previous chapter">Find out which repository a package comes from:</a></p>

@@ -9,11 +9,10 @@ Contents:
    apt
    centos
    containers/index
-   iptables/index
+   firewalls/index
    lvm
    network/index
    rpm
    systemd/index
    ubuntu
-   ufw/index
 
