@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>docker &#8212; notes 0.1 documentation</title>
+    <title>Docker options on startup: &#8212; notes 0.1 documentation</title>
     
     <link rel="stylesheet" href="../../../../_static/classic.css" type="text/css" />
     <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
@@ -26,9 +26,9 @@
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
     <link rel="top" title="notes 0.1 documentation" href="../../../../index.html" />
-    <link rel="up" title="containers" href="../index.html" />
-    <link rel="next" title="List of images:" href="basics.html" />
-    <link rel="prev" title="containers" href="../index.html" /> 
+    <link rel="up" title="docker" href="index.html" />
+    <link rel="next" title="Notes about lxc and lxd" href="../lxd/index.html" />
+    <link rel="prev" title="Change the log driver:" href="logging.html" /> 
   </head>
   <body role="document">
     <div class="related" role="navigation" aria-label="related navigation">
@@ -38,15 +38,16 @@
           <a href="../../../../genindex.html" title="General Index"
              accesskey="I">index</a></li>
         <li class="right" >
-          <a href="basics.html" title="List of images:"
+          <a href="../lxd/index.html" title="Notes about lxc and lxd"
              accesskey="N">next</a> |</li>
         <li class="right" >
-          <a href="../index.html" title="containers"
+          <a href="logging.html" title="Change the log driver:"
              accesskey="P">previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="../../../../index.html">notes 0.1 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../../../index.html" >Operating Systems</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="../../index.html" >Linux</a> &#187;</li>
-          <li class="nav-item nav-item-3"><a href="../index.html" accesskey="U">containers</a> &#187;</li> 
+          <li class="nav-item nav-item-3"><a href="../index.html" >containers</a> &#187;</li>
+          <li class="nav-item nav-item-4"><a href="index.html" accesskey="U">docker</a> &#187;</li> 
       </ul>
     </div>  
 
@@ -55,18 +56,10 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="docker">
-<h1>docker<a class="headerlink" href="#docker" title="Permalink to this headline">¶</a></h1>
-<p>Contents:</p>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="basics.html">List of images:</a></li>
-<li class="toctree-l1"><a class="reference internal" href="basics.html#delete-an-image">Delete an image:</a></li>
-<li class="toctree-l1"><a class="reference internal" href="basics.html#delete-a-container">Delete a container:</a></li>
-<li class="toctree-l1"><a class="reference internal" href="basics.html#container-run-example">Container run example:</a></li>
-<li class="toctree-l1"><a class="reference internal" href="logging.html">Change the log driver:</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ubuntu.html">Docker options on startup:</a></li>
-</ul>
+  <div class="section" id="docker-options-on-startup">
+<span id="operating-systems-linux-containers-docker-ubuntu"></span><h1>Docker options on startup:<a class="headerlink" href="#docker-options-on-startup" title="Permalink to this headline">¶</a></h1>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">/etc/systemd/system/multi-user.target.wants/docker.service</span>
+</pre></div>
 </div>
 </div>
 
@@ -77,15 +70,15 @@
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
   <h4>Previous topic</h4>
-  <p class="topless"><a href="../index.html"
-                        title="previous chapter">containers</a></p>
+  <p class="topless"><a href="logging.html"
+                        title="previous chapter">Change the log driver:</a></p>
   <h4>Next topic</h4>
-  <p class="topless"><a href="basics.html"
-                        title="next chapter">List of images:</a></p>
+  <p class="topless"><a href="../lxd/index.html"
+                        title="next chapter">Notes about lxc and lxd</a></p>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
-      <li><a href="../../../../_sources/operating_systems/linux/containers/docker/index.txt"
+      <li><a href="../../../../_sources/operating_systems/linux/containers/docker/ubuntu.txt"
             rel="nofollow">Show Source</a></li>
     </ul>
    </div>
@@ -110,15 +103,16 @@
           <a href="../../../../genindex.html" title="General Index"
              >index</a></li>
         <li class="right" >
-          <a href="basics.html" title="List of images:"
+          <a href="../lxd/index.html" title="Notes about lxc and lxd"
              >next</a> |</li>
         <li class="right" >
-          <a href="../index.html" title="containers"
+          <a href="logging.html" title="Change the log driver:"
              >previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="../../../../index.html">notes 0.1 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../../../index.html" >Operating Systems</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="../../index.html" >Linux</a> &#187;</li>
-          <li class="nav-item nav-item-3"><a href="../index.html" >containers</a> &#187;</li> 
+          <li class="nav-item nav-item-3"><a href="../index.html" >containers</a> &#187;</li>
+          <li class="nav-item nav-item-4"><a href="index.html" >docker</a> &#187;</li> 
       </ul>
     </div>
         <!-- your html code here -->

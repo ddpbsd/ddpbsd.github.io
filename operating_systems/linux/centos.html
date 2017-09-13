@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>gpg &#8212; notes 0.1 documentation</title>
+    <title>CentOS 7 firewall-cmd &#8212; notes 0.1 documentation</title>
     
     <link rel="stylesheet" href="../../_static/classic.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
@@ -26,9 +26,9 @@
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="top" title="notes 0.1 documentation" href="../../index.html" />
-    <link rel="up" title="Welcome to ddpbsd’s notes!" href="../index.html" />
-    <link rel="next" title="Export key" href="export.html" />
-    <link rel="prev" title="Add multiple origins" href="../git/remote.html" /> 
+    <link rel="up" title="Linux" href="index.html" />
+    <link rel="next" title="containers" href="containers/index.html" />
+    <link rel="prev" title="Find out which repository a package comes from:" href="apt.html" /> 
   </head>
   <body role="document">
     <div class="related" role="navigation" aria-label="related navigation">
@@ -38,13 +38,14 @@
           <a href="../../genindex.html" title="General Index"
              accesskey="I">index</a></li>
         <li class="right" >
-          <a href="export.html" title="Export key"
+          <a href="containers/index.html" title="containers"
              accesskey="N">next</a> |</li>
         <li class="right" >
-          <a href="../git/remote.html" title="Add multiple origins"
+          <a href="apt.html" title="Find out which repository a package comes from:"
              accesskey="P">previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="../../index.html">notes 0.1 documentation</a> &#187;</li>
-          <li class="nav-item nav-item-1"><a href="../index.html" accesskey="U">Welcome to ddpbsd&#8217;s notes!</a> &#187;</li> 
+          <li class="nav-item nav-item-1"><a href="../index.html" >Operating Systems</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="index.html" accesskey="U">Linux</a> &#187;</li> 
       </ul>
     </div>  
 
@@ -53,16 +54,31 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="gpg">
-<h1>gpg<a class="headerlink" href="#gpg" title="Permalink to this headline">¶</a></h1>
-<p>Cheatsheet: <a class="reference external" href="http://irtfweb.ifa.hawaii.edu/~lockhart/gpg/">http://irtfweb.ifa.hawaii.edu/~lockhart/gpg/</a></p>
-<p>Contents:</p>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="export.html">Export key</a></li>
-<li class="toctree-l1"><a class="reference internal" href="export.html#export-private-key">Export private key</a></li>
-<li class="toctree-l1"><a class="reference internal" href="fingerprint.html">Get a fingerprint</a></li>
-</ul>
+  <div class="section" id="centos-7-firewall-cmd">
+<span id="linux-centos"></span><h1>CentOS 7 firewall-cmd<a class="headerlink" href="#centos-7-firewall-cmd" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="get-active-zones">
+<h2>Get active zones:<a class="headerlink" href="#get-active-zones" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">firewall-cmd --get-active-zones</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="open-a-port">
+<h2>Open a port:<a class="headerlink" href="#open-a-port" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">firewall-cmd --permanent --zone=public --add-port=80/tcp</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="enable-the-change">
+<h2>Enable the change:<a class="headerlink" href="#enable-the-change" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">firewall-cmd --reload</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="make-sure-the-change-is-in-effect">
+<h2>Make sure the change is in effect:<a class="headerlink" href="#make-sure-the-change-is-in-effect" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">firewall-cmd --zone=public --query-port=80/tcp</span>
+</pre></div>
+</div>
 </div>
 </div>
 
@@ -72,16 +88,27 @@
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
+  <h3><a href="../../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">CentOS 7 firewall-cmd</a><ul>
+<li><a class="reference internal" href="#get-active-zones">Get active zones:</a></li>
+<li><a class="reference internal" href="#open-a-port">Open a port:</a></li>
+<li><a class="reference internal" href="#enable-the-change">Enable the change:</a></li>
+<li><a class="reference internal" href="#make-sure-the-change-is-in-effect">Make sure the change is in effect:</a></li>
+</ul>
+</li>
+</ul>
+
   <h4>Previous topic</h4>
-  <p class="topless"><a href="../git/remote.html"
-                        title="previous chapter">Add multiple origins</a></p>
+  <p class="topless"><a href="apt.html"
+                        title="previous chapter">Find out which repository a package comes from:</a></p>
   <h4>Next topic</h4>
-  <p class="topless"><a href="export.html"
-                        title="next chapter">Export key</a></p>
+  <p class="topless"><a href="containers/index.html"
+                        title="next chapter">containers</a></p>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
-      <li><a href="../../_sources/tools/gpg/index.txt"
+      <li><a href="../../_sources/operating_systems/linux/centos.txt"
             rel="nofollow">Show Source</a></li>
     </ul>
    </div>
@@ -106,13 +133,14 @@
           <a href="../../genindex.html" title="General Index"
              >index</a></li>
         <li class="right" >
-          <a href="export.html" title="Export key"
+          <a href="containers/index.html" title="containers"
              >next</a> |</li>
         <li class="right" >
-          <a href="../git/remote.html" title="Add multiple origins"
+          <a href="apt.html" title="Find out which repository a package comes from:"
              >previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="../../index.html">notes 0.1 documentation</a> &#187;</li>
-          <li class="nav-item nav-item-1"><a href="../index.html" >Welcome to ddpbsd&#8217;s notes!</a> &#187;</li> 
+          <li class="nav-item nav-item-1"><a href="../index.html" >Operating Systems</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="index.html" >Linux</a> &#187;</li> 
       </ul>
     </div>
         <!-- your html code here -->

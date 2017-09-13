@@ -8,4 +8,5 @@ Contents:
 
    mysql/index
    postgresql/index
+   sql/index
 

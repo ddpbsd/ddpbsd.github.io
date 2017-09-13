@@ -1,0 +1,15 @@
+.. _securityonion_elsa:
+
+
+ELSA Logs
+^^^^^^^^^
+
+`/nsm/elsa/data/elsa/log`
+
+Sphinx search process:
+^^^^^^^^^^^^^^^^^^^^^^
+
+`searchd` can be restarted with `service sphinxsearch restart`
+
+
+

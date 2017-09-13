@@ -1,0 +1,13 @@
+.. _operating_systems_linux_containers_docker_logging:
+
+
+Change the log driver:
+^^^^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: console
+
+   --log-driver=syslog
+
+
+From `Configuring Logging Drivers <https://docs.docker.com/engine/admin/logging/overview/>`_
+

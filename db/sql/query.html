@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>gpg &#8212; notes 0.1 documentation</title>
+    <title>Count the number of times each domain is entered, sort by count, and display descending: &#8212; notes 0.1 documentation</title>
     
     <link rel="stylesheet" href="../../_static/classic.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
@@ -25,10 +25,7 @@
     <script type="text/javascript" src="../../_static/doctools.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="top" title="notes 0.1 documentation" href="../../index.html" />
-    <link rel="up" title="Welcome to ddpbsd’s notes!" href="../index.html" />
-    <link rel="next" title="Export key" href="export.html" />
-    <link rel="prev" title="Add multiple origins" href="../git/remote.html" /> 
+    <link rel="top" title="notes 0.1 documentation" href="../../index.html" /> 
   </head>
   <body role="document">
     <div class="related" role="navigation" aria-label="related navigation">
@@ -37,14 +34,7 @@
         <li class="right" style="margin-right: 10px">
           <a href="../../genindex.html" title="General Index"
              accesskey="I">index</a></li>
-        <li class="right" >
-          <a href="export.html" title="Export key"
-             accesskey="N">next</a> |</li>
-        <li class="right" >
-          <a href="../git/remote.html" title="Add multiple origins"
-             accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../../index.html">notes 0.1 documentation</a> &#187;</li>
-          <li class="nav-item nav-item-1"><a href="../index.html" accesskey="U">Welcome to ddpbsd&#8217;s notes!</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="../../index.html">notes 0.1 documentation</a> &#187;</li> 
       </ul>
     </div>  
 
@@ -53,16 +43,22 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="gpg">
-<h1>gpg<a class="headerlink" href="#gpg" title="Permalink to this headline">¶</a></h1>
-<p>Cheatsheet: <a class="reference external" href="http://irtfweb.ifa.hawaii.edu/~lockhart/gpg/">http://irtfweb.ifa.hawaii.edu/~lockhart/gpg/</a></p>
-<p>Contents:</p>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="export.html">Export key</a></li>
-<li class="toctree-l1"><a class="reference internal" href="export.html#export-private-key">Export private key</a></li>
-<li class="toctree-l1"><a class="reference internal" href="fingerprint.html">Get a fingerprint</a></li>
-</ul>
+  <div class="section" id="count-the-number-of-times-each-domain-is-entered-sort-by-count-and-display-descending">
+<h1>Count the number of times each domain is entered, sort by count, and display descending:<a class="headerlink" href="#count-the-number-of-times-each-domain-is-entered-sort-by-count-and-display-descending" title="Permalink to this headline">¶</a></h1>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">SEELCT domain, count(*) FROM dump WHERE domain IS NOT NULL GROUP BY domain ORDER BY count DESC;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="as-above-but-csv">
+<h1>As above, but csv:<a class="headerlink" href="#as-above-but-csv" title="Permalink to this headline">¶</a></h1>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">COPY(SEELCT domain, count(*) FROM dump WHERE domain IS NOT NULL GROUP BY domain ORDER BY count DESC) TO STDOUT WITH CSV;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="count-password-length">
+<h1>Count password length:<a class="headerlink" href="#count-password-length" title="Permalink to this headline">¶</a></h1>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">select char_length(password) as length, count(*) as count from dump where password is not null group by length order by count desc;</span>
+</pre></div>
 </div>
 </div>
 
@@ -72,16 +68,17 @@
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-  <h4>Previous topic</h4>
-  <p class="topless"><a href="../git/remote.html"
-                        title="previous chapter">Add multiple origins</a></p>
-  <h4>Next topic</h4>
-  <p class="topless"><a href="export.html"
-                        title="next chapter">Export key</a></p>
+  <h3><a href="../../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Count the number of times each domain is entered, sort by count, and display descending:</a></li>
+<li><a class="reference internal" href="#as-above-but-csv">As above, but csv:</a></li>
+<li><a class="reference internal" href="#count-password-length">Count password length:</a></li>
+</ul>
+
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
-      <li><a href="../../_sources/tools/gpg/index.txt"
+      <li><a href="../../_sources/db/sql/query.txt"
             rel="nofollow">Show Source</a></li>
     </ul>
    </div>
@@ -105,14 +102,7 @@
         <li class="right" style="margin-right: 10px">
           <a href="../../genindex.html" title="General Index"
              >index</a></li>
-        <li class="right" >
-          <a href="export.html" title="Export key"
-             >next</a> |</li>
-        <li class="right" >
-          <a href="../git/remote.html" title="Add multiple origins"
-             >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../../index.html">notes 0.1 documentation</a> &#187;</li>
-          <li class="nav-item nav-item-1"><a href="../index.html" >Welcome to ddpbsd&#8217;s notes!</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="../../index.html">notes 0.1 documentation</a> &#187;</li> 
       </ul>
     </div>
         <!-- your html code here -->

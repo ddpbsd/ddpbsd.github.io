@@ -23,3 +23,14 @@ Delete a container:
    docker rm CONTAINER
 
 
+Container run example:
+^^^^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: console
+
+   docker run --name=gogs -p 10022:22 -p 10080:3000 -v /var/gogs:/data gogs/gogs
+
+This runs a container named gogs. You can connect to it on port 10022 and port 10080 of the host.
+It stores stuff in `/var/gogs` on the host, which translates to `/data` in the container
+
+

@@ -27,7 +27,7 @@
     <link rel="search" title="Search" href="../../../../search.html" />
     <link rel="top" title="notes 0.1 documentation" href="../../../../index.html" />
     <link rel="up" title="docker" href="index.html" />
-    <link rel="next" title="Notes about lxc and lxd" href="../lxd/index.html" />
+    <link rel="next" title="Change the log driver:" href="logging.html" />
     <link rel="prev" title="docker" href="index.html" /> 
   </head>
   <body role="document">
@@ -38,7 +38,7 @@
           <a href="../../../../genindex.html" title="General Index"
              accesskey="I">index</a></li>
         <li class="right" >
-          <a href="../lxd/index.html" title="Notes about lxc and lxd"
+          <a href="logging.html" title="Change the log driver:"
              accesskey="N">next</a> |</li>
         <li class="right" >
           <a href="index.html" title="docker"
@@ -74,6 +74,14 @@
 </pre></div>
 </div>
 </div>
+<div class="section" id="container-run-example">
+<h1>Container run example:<a class="headerlink" href="#container-run-example" title="Permalink to this headline">¶</a></h1>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">docker run --name=gogs -p 10022:22 -p 10080:3000 -v /var/gogs:/data gogs/gogs</span>
+</pre></div>
+</div>
+<p>This runs a container named gogs. You can connect to it on port 10022 and port 10080 of the host.
+It stores stuff in <cite>/var/gogs</cite> on the host, which translates to <cite>/data</cite> in the container</p>
+</div>
 
 
           </div>
@@ -86,14 +94,15 @@
 <li><a class="reference internal" href="#">List of images:</a></li>
 <li><a class="reference internal" href="#delete-an-image">Delete an image:</a></li>
 <li><a class="reference internal" href="#delete-a-container">Delete a container:</a></li>
+<li><a class="reference internal" href="#container-run-example">Container run example:</a></li>
 </ul>
 
   <h4>Previous topic</h4>
   <p class="topless"><a href="index.html"
                         title="previous chapter">docker</a></p>
   <h4>Next topic</h4>
-  <p class="topless"><a href="../lxd/index.html"
-                        title="next chapter">Notes about lxc and lxd</a></p>
+  <p class="topless"><a href="logging.html"
+                        title="next chapter">Change the log driver:</a></p>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
@@ -122,7 +131,7 @@
           <a href="../../../../genindex.html" title="General Index"
              >index</a></li>
         <li class="right" >
-          <a href="../lxd/index.html" title="Notes about lxc and lxd"
+          <a href="logging.html" title="Change the log driver:"
              >next</a> |</li>
         <li class="right" >
           <a href="index.html" title="docker"

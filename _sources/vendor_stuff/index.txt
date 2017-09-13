@@ -10,6 +10,7 @@ Contents:
    :maxdepth: 2
 
    alienvault/index
+   juniper/index
    splunk/index   
    vmware/index
 
