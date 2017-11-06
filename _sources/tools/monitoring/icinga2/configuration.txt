@@ -1,0 +1,25 @@
+.. _tools_monitoring_icinga_configuration:
+
+Validate the configuration:
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: console
+
+   icinga2 daemon --validate
+
+
+Reload the configuration:
+^^^^^^^^^^^^^^^^^^^^^^^^^
+
+This assumes the host is using systemd!
+
+.. code-block:: console
+
+   systemctl reload icinga2
+
+List the available features:
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: console
+
+   icinga2 feature list

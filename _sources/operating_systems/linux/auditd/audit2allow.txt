@@ -1,0 +1,10 @@
+.. _operating_systems_linux_auditd:
+
+Find out how to allow something that is being denied:
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+
+.. code-block:: console
+
+   audit2allow -w -i /tmp/FILE_WITH_DENY_LOG
+

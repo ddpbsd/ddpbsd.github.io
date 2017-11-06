@@ -1,0 +1,13 @@
+
+
+
+Test connectivity between 2 AD controllers:
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+This `Microsoft page <https://support.microsoft.com/en-us/help/2090913/troubleshooting-ad-replication-error-2146893022-the-target-principal-n>`_
+is missing the slash before `replsource`.
+
+.. code-block:: console
+
+   dcdiag /test:checksecurityerror /replsource:REMOTE_DC
+

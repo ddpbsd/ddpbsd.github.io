@@ -66,9 +66,36 @@
 <span class="go">@load policy/frameworks/intel/do_notice</span>
 </pre></div>
 </div>
+<div class="section" id="available-categories">
+<h2>Available categories:<a class="headerlink" href="#available-categories" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">Intel::ADDR</span>
+<span class="go">Intel::URL</span>
+<span class="go">Intel::SOFTWARE</span>
+<span class="go">Intel::EMAIL</span>
+<span class="go">Intel::DOMAIN</span>
+<span class="go">Intel::USER_NAME</span>
+<span class="go">Intel::FILE_HASH</span>
+<span class="go">Intel::FILE_NAME</span>
+<span class="go">Intel::CERT_HASH</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="push-updates-to-sensors">
+<h2>Push updates to sensors:<a class="headerlink" href="#push-updates-to-sensors" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">Run sudo salt &#39;*&#39; state.highstate</span>
+<span class="go">Run sudo salt &#39;*&#39; cmd.run &#39;nsm_sensor_ps-restart --only-bro&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="check-bro-status">
+<h2>Check bro status:<a class="headerlink" href="#check-bro-status" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">salt &#39;*&#39; cmd.run &#39;nsm_sensor_ps-status --only-bro&#39;</span>
+</pre></div>
+</div>
 <div class="admonition warning">
 <p class="first admonition-title">Warning</p>
 <p class="last">Do not add blank lines to the file, and always use tabs as the delimeters!</p>
+</div>
 </div>
 </div>
 
@@ -78,6 +105,16 @@
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
+  <h3><a href="../../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Bro Intel Framwork</a><ul>
+<li><a class="reference internal" href="#available-categories">Available categories:</a></li>
+<li><a class="reference internal" href="#push-updates-to-sensors">Push updates to sensors:</a></li>
+<li><a class="reference internal" href="#check-bro-status">Check bro status:</a></li>
+</ul>
+</li>
+</ul>
+
   <h4>Previous topic</h4>
   <p class="topless"><a href="index.html"
                         title="previous chapter">Bro on SecurityOnion</a></p>

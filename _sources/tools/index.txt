@@ -19,6 +19,7 @@ Contents:
    ansible/index
    git/index
    gpg/index
+   monitoring/index
    osquery/index
    tcpdump/index
    tmux/index

@@ -11,6 +11,8 @@ Add a remote image server:
 List images on image server:
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+`images:` is the name of the remote image server.
+
 .. code-block:: console
 
    ddplxc@earth:~$ lxc images list images:

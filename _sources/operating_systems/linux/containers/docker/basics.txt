@@ -14,6 +14,7 @@ Delete an image:
 .. code-block:: console
 
    docker rmi IMAGE
+   docker image rm IMAGE
 
 Delete a container:
 ^^^^^^^^^^^^^^^^^^^
@@ -21,6 +22,7 @@ Delete a container:
 .. code-block:: console
 
    docker rm CONTAINER
+   docker container rm CONTAINER
 
 
 Container run example:

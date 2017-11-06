@@ -1,0 +1,36 @@
+.. _operating_systems_linux_firewalls_firewalld:
+
+firewall-cmd
+============
+
+CentOS 7 firewall-cmd
+---------------------
+
+Get active zones:
+^^^^^^^^^^^^^^^^^
+
+.. code-block:: console
+
+   firewall-cmd --get-active-zones
+
+   Open a port:
+   ^^^^^^^^^^^^
+
+.. code-block:: console
+
+   firewall-cmd --permanent --zone=public --add-port=80/tcp
+
+   Enable the change:
+   ^^^^^^^^^^^^^^^^^^
+
+.. code-block:: console
+
+   firewall-cmd --reload
+
+   Make sure the change is in effect:
+   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: console
+
+   firewall-cmd --zone=public --query-port=80/tcp
+

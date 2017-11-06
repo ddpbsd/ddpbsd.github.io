@@ -1,0 +1,8 @@
+.. _operating_systems_windows_active_directory_replication:
+
+Show replication status:
+^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: console
+
+   repadmin /showrepl
