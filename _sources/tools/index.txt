@@ -1,15 +1,7 @@
-.. notes documentation master file, created by
-   sphinx-quickstart on Tue Mar 29 09:06:17 2016.
-   You can adapt this file completely to your liking, but it should at least
-   contain the root `toctree` directive.
+.. _tools:
 
-Welcome to ddpbsd's notes!
-==========================
-
-There are no guarantees that any of this information is up to date or accurate.
-I just wanted a place where it would be less likely that I'd lose my silly notes.
-Use at your own risk. 
-
+Tools
+=====
 
 Contents:
 
