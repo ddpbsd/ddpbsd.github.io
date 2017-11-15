@@ -11,8 +11,10 @@ Contents:
    ansible/index
    git/index
    gpg/index
+   moloch/index
    monitoring/index
    osquery/index
    tcpdump/index
    tmux/index
+   virtualization/index
 

@@ -8,12 +8,12 @@ Contents:
 
    apt
    auditd/index
-   centos
+   centos/index
    containers/index
    firewalls/index
-   lvm
+   lvm/index
    network/index
    rpm
    systemd/index
-   ubuntu
+   ubuntu/index
 

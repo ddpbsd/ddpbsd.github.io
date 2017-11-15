@@ -1,0 +1,9 @@
+CentOS
+======
+
+Contents:
+
+.. toctree::
+   :maxdepth: 2
+
+   centos

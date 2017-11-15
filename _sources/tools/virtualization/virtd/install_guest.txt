@@ -1,0 +1,22 @@
+.. _virtualization_virtd_install_guest:
+
+Install a guest:
+^^^^^^^^^^^^^^^^
+
+Create the image:
+^^^^^^^^^^^^^^^^^
+
+.. code-block:: console
+
+   cd /data2tb/virtualmachines
+   qemu-img create -f qcow2 ./name.qcow2 8G
+
+Install a guest:
+^^^^^^^^^^^^^^^^
+
+.. code-block:: console
+
+   virt-install --name kaitain --ram 1024 --disk path=/data2tb/virtualmachines/kaitain.img,size=100 --vcpus 1 --os-type linux --os-variant ubuntu16.04 --network bridge=br1 --cdrom /data1tb/ISO/ubuntu-16.04.3-server-amd64.iso
+
+Use `osinfo-query os` to find the available variants.
+

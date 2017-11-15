@@ -20,7 +20,6 @@ Contents:
    arm/index
    db/index
    elk/index
-   moloch/index
    openssh/index
    operating_systems/index
    ossec/index

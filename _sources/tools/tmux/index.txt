@@ -41,4 +41,10 @@ Misc:
    x - kill pane
    d - detach
 
+Run a program in a new session:
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: console
+
+   tmux new-session -d -s "top" /usr/bin/top
 

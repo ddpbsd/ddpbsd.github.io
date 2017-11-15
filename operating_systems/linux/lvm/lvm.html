@@ -1,0 +1,172 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>View current lvm info &#8212; notes 0.1 documentation</title>
+    
+    <link rel="stylesheet" href="../../../_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="top" title="notes 0.1 documentation" href="../../../index.html" />
+    <link rel="up" title="lvm" href="index.html" />
+    <link rel="next" title="networking" href="../network/index.html" />
+    <link rel="prev" title="lvm" href="index.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../network/index.html" title="networking"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="lvm"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">notes 0.1 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../../index.html" >Operating Systems</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../index.html" >Linux</a> &#187;</li>
+          <li class="nav-item nav-item-3"><a href="index.html" accesskey="U">lvm</a> &#187;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="admonition note" id="linux-lvm">
+<p class="first admonition-title">Note</p>
+<p class="last">Taken from <a class="reference external" href="http://www.howtogeek.com/howto/40702/how-to-manage-and-use-lvm-logical-volume-management-in-ubuntu/">http://www.howtogeek.com/howto/40702/how-to-manage-and-use-lvm-logical-volume-management-in-ubuntu/</a>
+The instructions there give a lot more detail.</p>
+</div>
+<div class="section" id="view-current-lvm-info">
+<h1>View current lvm info<a class="headerlink" href="#view-current-lvm-info" title="Permalink to this headline">¶</a></h1>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">#</span> pvdisplay
+</pre></div>
+</div>
+</div>
+<div class="section" id="create-a-partition">
+<h1>Create a partition:<a class="headerlink" href="#create-a-partition" title="Permalink to this headline">¶</a></h1>
+<p>Apparently not always necessary or something.</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">#</span> fdisk /dev/sdb
+</pre></div>
+</div>
+</div>
+<div class="section" id="create-a-physical-volume">
+<h1>Create a physical volume:<a class="headerlink" href="#create-a-physical-volume" title="Permalink to this headline">¶</a></h1>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">#</span> pvcreate /dev/sdb1
+</pre></div>
+</div>
+</div>
+<div class="section" id="add-to-the-volume-group">
+<h1>Add to the volume group:<a class="headerlink" href="#add-to-the-volume-group" title="Permalink to this headline">¶</a></h1>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">#</span> lvs
+<span class="gp">#</span> vgextend buzzell-vg /dev/sdb1
+</pre></div>
+</div>
+</div>
+<div class="section" id="create-a-logical-volume">
+<h1>Create a logical volume:<a class="headerlink" href="#create-a-logical-volume" title="Permalink to this headline">¶</a></h1>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">#</span> lvcreate -L 50G -n var buzzell-vg
+</pre></div>
+</div>
+</div>
+<div class="section" id="format-and-mount">
+<h1>Format and Mount:<a class="headerlink" href="#format-and-mount" title="Permalink to this headline">¶</a></h1>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">#</span> mkfs -t ext4 /dev/mapper/buzzell--vg-var
+<span class="gp">#</span> mount /dev/mapper/buzzell--vg-var /mnt
+</pre></div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../../../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">View current lvm info</a></li>
+<li><a class="reference internal" href="#create-a-partition">Create a partition:</a></li>
+<li><a class="reference internal" href="#create-a-physical-volume">Create a physical volume:</a></li>
+<li><a class="reference internal" href="#add-to-the-volume-group">Add to the volume group:</a></li>
+<li><a class="reference internal" href="#create-a-logical-volume">Create a logical volume:</a></li>
+<li><a class="reference internal" href="#format-and-mount">Format and Mount:</a></li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="index.html"
+                        title="previous chapter">lvm</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="../network/index.html"
+                        title="next chapter">networking</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../../_sources/operating_systems/linux/lvm/lvm.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../network/index.html" title="networking"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="lvm"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">notes 0.1 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../../index.html" >Operating Systems</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../index.html" >Linux</a> &#187;</li>
+          <li class="nav-item nav-item-3"><a href="index.html" >lvm</a> &#187;</li> 
+      </ul>
+    </div>
+        <!-- your html code here -->
+	<div class="footer">
+		<em>This information has a good chance of being wrong, inconsistent, out of date, or just bad. Use at your own risk.
+		Feel free to notify me of any issues though.</em>
+	</div>
+
+
+  </body>
+</html>

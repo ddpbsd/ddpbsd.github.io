@@ -1,5 +1,5 @@
-Notes about lxc and lxd
-=======================
+lxc and lxd
+===========
 
 Contents:
 

@@ -1,11 +1,6 @@
 .. _securityonion_elsa:
 
 
-ELSA Logs
-^^^^^^^^^
-
-`/nsm/elsa/data/elsa/log`
-
 Sphinx search process:
 ^^^^^^^^^^^^^^^^^^^^^^
 

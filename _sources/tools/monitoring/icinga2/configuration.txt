@@ -23,3 +23,11 @@ List the available features:
 .. code-block:: console
 
    icinga2 feature list
+
+Enable a feature:
+^^^^^^^^^^^^^^^^^
+
+.. code-block:: console
+
+   icinga2 feature enable FEATURE
+
