@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>VMWare &#8212; notes 0.1 documentation</title>
+    <title>Enter the cli: &#8212; notes 0.1 documentation</title>
     
     <link rel="stylesheet" href="../../_static/classic.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
@@ -26,9 +26,9 @@
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="top" title="notes 0.1 documentation" href="../../index.html" />
-    <link rel="up" title="Vendor Stuff" href="../index.html" />
-    <link rel="next" title="&lt;no title&gt;" href="vcenter/index.html" />
-    <link rel="prev" title="See the sourcetypes" href="../splunk/searches/index.html" /> 
+    <link rel="up" title="Juniper" href="index.html" />
+    <link rel="next" title="Commit the configuration changes, then roll back after 10 minutes:" href="commit_confirm.html" />
+    <link rel="prev" title="Juniper" href="index.html" /> 
   </head>
   <body role="document">
     <div class="related" role="navigation" aria-label="related navigation">
@@ -38,13 +38,14 @@
           <a href="../../genindex.html" title="General Index"
              accesskey="I">index</a></li>
         <li class="right" >
-          <a href="vcenter/index.html" title="&lt;no title&gt;"
+          <a href="commit_confirm.html" title="Commit the configuration changes, then roll back after 10 minutes:"
              accesskey="N">next</a> |</li>
         <li class="right" >
-          <a href="../splunk/searches/index.html" title="See the sourcetypes"
+          <a href="index.html" title="Juniper"
              accesskey="P">previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="../../index.html">notes 0.1 documentation</a> &#187;</li>
-          <li class="nav-item nav-item-1"><a href="../index.html" accesskey="U">Vendor Stuff</a> &#187;</li> 
+          <li class="nav-item nav-item-1"><a href="../index.html" >Vendor Stuff</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="index.html" accesskey="U">Juniper</a> &#187;</li> 
       </ul>
     </div>  
 
@@ -53,19 +54,30 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="vmware">
-<h1>VMWare<a class="headerlink" href="#vmware" title="Permalink to this headline">¶</a></h1>
-<p>Contents:</p>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="vcenter/inventory.html">Get a list of VMs in vCenter:</a></li>
-<li class="toctree-l1"><a class="reference internal" href="vcenter/update.html">vcenter update process</a></li>
-<li class="toctree-l1"><a class="reference internal" href="esxi/cli.html">List all VMs</a></li>
-<li class="toctree-l1"><a class="reference internal" href="esxi/cli.html#power-on-a-device">Power on a device</a></li>
-<li class="toctree-l1"><a class="reference internal" href="esxi/cli.html#reboot-a-vm-if-vmtools-is-installed">Reboot a VM if vmtools is installed</a></li>
-<li class="toctree-l1"><a class="reference internal" href="esxi/update.html">esxi Update process</a></li>
-</ul>
+  <div class="section" id="enter-the-cli">
+<span id="vendor-stuff-juniper-cli"></span><h1>Enter the cli:<a class="headerlink" href="#enter-the-cli" title="Permalink to this headline">¶</a></h1>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">user@host%</span> cli
+</pre></div>
 </div>
+</div>
+<div class="section" id="enter-the-configuration">
+<h1>Enter the configuration:<a class="headerlink" href="#enter-the-configuration" title="Permalink to this headline">¶</a></h1>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">user@host&gt; configure</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="get-the-hardware-information">
+<h1>Get the hardware information:<a class="headerlink" href="#get-the-hardware-information" title="Permalink to this headline">¶</a></h1>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">user@host#</span> cli show chassis hardware
+</pre></div>
+</div>
+</div>
+<div class="section" id="get-the-software-version">
+<h1>Get the software version:<a class="headerlink" href="#get-the-software-version" title="Permalink to this headline">¶</a></h1>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">user@host#</span> cli show version
+</pre></div>
+</div>
+<p>More info <a class="reference external" href="http://www.juniper.net/techpubs/en_US/junos12.1x46/information-products/pathway-pages/junos-cli/junos-cli.html">here</a></p>
 </div>
 
 
@@ -74,16 +86,24 @@
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
+  <h3><a href="../../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Enter the cli:</a></li>
+<li><a class="reference internal" href="#enter-the-configuration">Enter the configuration:</a></li>
+<li><a class="reference internal" href="#get-the-hardware-information">Get the hardware information:</a></li>
+<li><a class="reference internal" href="#get-the-software-version">Get the software version:</a></li>
+</ul>
+
   <h4>Previous topic</h4>
-  <p class="topless"><a href="../splunk/searches/index.html"
-                        title="previous chapter">See the sourcetypes</a></p>
+  <p class="topless"><a href="index.html"
+                        title="previous chapter">Juniper</a></p>
   <h4>Next topic</h4>
-  <p class="topless"><a href="vcenter/index.html"
-                        title="next chapter">&lt;no title&gt;</a></p>
+  <p class="topless"><a href="commit_confirm.html"
+                        title="next chapter">Commit the configuration changes, then roll back after 10 minutes:</a></p>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
-      <li><a href="../../_sources/vendor_stuff/vmware/index.txt"
+      <li><a href="../../_sources/vendor_stuff/juniper/cli.txt"
             rel="nofollow">Show Source</a></li>
     </ul>
    </div>
@@ -108,13 +128,14 @@
           <a href="../../genindex.html" title="General Index"
              >index</a></li>
         <li class="right" >
-          <a href="vcenter/index.html" title="&lt;no title&gt;"
+          <a href="commit_confirm.html" title="Commit the configuration changes, then roll back after 10 minutes:"
              >next</a> |</li>
         <li class="right" >
-          <a href="../splunk/searches/index.html" title="See the sourcetypes"
+          <a href="index.html" title="Juniper"
              >previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="../../index.html">notes 0.1 documentation</a> &#187;</li>
-          <li class="nav-item nav-item-1"><a href="../index.html" >Vendor Stuff</a> &#187;</li> 
+          <li class="nav-item nav-item-1"><a href="../index.html" >Vendor Stuff</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="index.html" >Juniper</a> &#187;</li> 
       </ul>
     </div>
         <!-- your html code here -->

@@ -9,5 +9,6 @@ Contents:
 .. toctree::
    :maxdepth: 2
 
+   cli
    commit_confirm
 

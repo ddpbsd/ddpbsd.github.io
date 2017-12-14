@@ -2,8 +2,8 @@ rsyslogd
 ========
 
 
-hostname should log to /var/log/hostname instead of /var/log
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Log to /var/log/hostname/messages instead of /var/log/messages:
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code-block:: console
 
@@ -12,8 +12,8 @@ hostname should log to /var/log/hostname instead of /var/log
    +host
    *.info                  /var/log/host/messages
 
-Listen on a unix socket
-^^^^^^^^^^^^^^^^^^^^^^^
+Listen on a unix socket:
+^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code-block:: console
 
