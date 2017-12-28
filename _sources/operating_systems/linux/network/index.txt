@@ -8,4 +8,5 @@ Contents:
 
    interfaces
    network_manager
+   vnstat
 

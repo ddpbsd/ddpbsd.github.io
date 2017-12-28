@@ -1,0 +1,22 @@
+.. _operating_systems_linux_network_vnstat:
+
+
+How to get some simple network stats:
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+`vnstat`
+
+Daily summary:
+^^^^^^^^^^^^^^
+
+.. code-block:: console
+
+   vnstat -d
+
+Per interface:
+^^^^^^^^^^^^^^
+
+.. code-block:: console
+
+   vnstat -i eth0
+

@@ -67,9 +67,16 @@ Again.</p>
 <span class="go">ufw limit 2222/tcp comment &#39;SSH port&#39;</span>
 </pre></div>
 </div>
-<p>Note form the man page:</p>
+</div>
+<div class="section" id="note-form-the-man-page">
+<h1>Note form the man page:<a class="headerlink" href="#note-form-the-man-page" title="Permalink to this headline">¶</a></h1>
 <div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">ufw allow 8080/tcp</span>
 <span class="go">ufw allow proto tcp from 192.168.17.11 to 192.168.17.8 port 8080</span>
+</pre></div>
+</div>
+<p>On ubuntu 14.04 rules are saved in:</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">/etc/ufw     # system rules</span>
+<span class="go">/lib/ufw     # user rules</span>
 </pre></div>
 </div>
 </div>
@@ -80,6 +87,12 @@ Again.</p>
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
+  <h3><a href="../../../../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Basic stuff:</a></li>
+<li><a class="reference internal" href="#note-form-the-man-page">Note form the man page:</a></li>
+</ul>
+
   <h4>Previous topic</h4>
   <p class="topless"><a href="index.html"
                         title="previous chapter">ufw</a></p>

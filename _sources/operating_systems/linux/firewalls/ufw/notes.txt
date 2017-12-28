@@ -18,9 +18,17 @@ From the man page.
    ufw limit 2222/tcp comment 'SSH port'
 
 Note form the man page:
-
+^^^^^^^^^^^^^^^^^^^^^^^
 .. code-block:: console
 
    ufw allow 8080/tcp
    ufw allow proto tcp from 192.168.17.11 to 192.168.17.8 port 8080
+
+
+On ubuntu 14.04 rules are saved in:
+
+.. code-block:: console
+
+   /etc/ufw	# system rules
+   /lib/ufw	# user rules
 

@@ -63,23 +63,23 @@
 <div class="section" id="get-active-zones">
 <h3>Get active zones:<a class="headerlink" href="#get-active-zones" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">firewall-cmd --get-active-zones</span>
-
-<span class="go">Open a port:</span>
-<span class="go">^^^^^^^^^^^^</span>
 </pre></div>
 </div>
+</div>
+<div class="section" id="open-a-port">
+<h3>Open a port:<a class="headerlink" href="#open-a-port" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">firewall-cmd --permanent --zone=public --add-port=80/tcp</span>
-
-<span class="go">Enable the change:</span>
-<span class="go">^^^^^^^^^^^^^^^^^^</span>
 </pre></div>
 </div>
+</div>
+<div class="section" id="enable-the-change">
+<h3>Enable the change:<a class="headerlink" href="#enable-the-change" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">firewall-cmd --reload</span>
-
-<span class="go">Make sure the change is in effect:</span>
-<span class="go">^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^</span>
 </pre></div>
 </div>
+</div>
+<div class="section" id="make-sure-the-change-is-in-effect">
+<h3>Make sure the change is in effect:<a class="headerlink" href="#make-sure-the-change-is-in-effect" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">firewall-cmd --zone=public --query-port=80/tcp</span>
 </pre></div>
 </div>
@@ -98,6 +98,9 @@
 <li><a class="reference internal" href="#">firewall-cmd</a><ul>
 <li><a class="reference internal" href="#centos-7-firewall-cmd">CentOS 7 firewall-cmd</a><ul>
 <li><a class="reference internal" href="#get-active-zones">Get active zones:</a></li>
+<li><a class="reference internal" href="#open-a-port">Open a port:</a></li>
+<li><a class="reference internal" href="#enable-the-change">Enable the change:</a></li>
+<li><a class="reference internal" href="#make-sure-the-change-is-in-effect">Make sure the change is in effect:</a></li>
 </ul>
 </li>
 </ul>
