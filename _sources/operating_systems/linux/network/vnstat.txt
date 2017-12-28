@@ -4,7 +4,7 @@
 How to get some simple network stats:
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-`vnstat`
+`vnstat` and `vnstatd`
 
 Daily summary:
 ^^^^^^^^^^^^^^
