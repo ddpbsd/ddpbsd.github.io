@@ -15,6 +15,7 @@ Contents:
    kernel_build/index
    ksh/index
    laptops/index
+   mynet/index
    random
    vim/index
    junk/index

@@ -1,0 +1,113 @@
+.. _misc_mynet_dmesgs_ipyr:
+
+dmesg for ipyr:
+^^^^^^^^^^^^^^^
+
+.. code-block:: console
+
+   OpenBSD 6.2-current (GENERIC.MP) #308: Tue Dec 26 17:12:09 MST 2017
+       deraadt@amd64.openbsd.org:/usr/src/sys/arch/amd64/compile/GENERIC.MP
+   real mem = 2009427968 (1916MB)
+   avail mem = 1941667840 (1851MB)
+   mpath0 at root
+   scsibus0 at mpath0: 256 targets
+   mainbus0 at root
+   bios0 at mainbus0: SMBIOS rev. 2.8 @ 0xebd30 (51 entries)
+   bios0: vendor American Megatrends Inc. version "5.6.5" date 12/02/2014
+   bios0: ECS LIVA-XBAT2NBW-232
+   acpi0 at bios0: rev 2
+   acpi0: sleep states S0 S3 S4 S5
+   acpi0: tables DSDT FACP APIC FPDT MCFG LPIT HPET SSDT SSDT SSDT UEFI
+   acpi0: wakeup devices XHC1(S3) PXSX(S4) PXSX(S4) PXSX(S4) PXSX(S4) PWRB(S0)
+   acpitimer0 at acpi0: 3579545 Hz, 24 bits
+   acpimadt0 at acpi0 addr 0xfee00000: PC-AT compat
+   cpu0 at mainbus0: apid 0 (boot processor)
+   cpu0: Intel(R) Celeron(R) CPU N2808 @ 1.58GHz, 1583.63 MHz
+   cpu0: FPU,VME,DE,PSE,TSC,MSR,PAE,MCE,CX8,APIC,SEP,MTRR,PGE,MCA,CMOV,PAT,PSE36,CFLUSH,DS,ACPI,MMX,FXSR,SSE,SSE2,SS,HTT,TM,PBE,SSE3,PCLMUL,DTES64,MWAIT,DS-CPL,VMX,EST,TM2,SSSE3,CX16,xTPR,PDCM,SSE4.1,SSE4.2,MOVBE,POPCNT,DEADLINE,RDRAND,NXE,RDTSCP,LONG,LAHF,3DNOWP,PERF,ITSC,SMEP,ERMS,SENSOR,ARAT
+   cpu0: 1MB 64b/line 16-way L2 cache
+   acpitimer0: recalibrated TSC frequency 1583335296 Hz
+   cpu0: smt 0, core 0, package 0
+   mtrr: Pentium Pro MTRR support, 8 var ranges, 88 fixed ranges
+   cpu0: apic clock running at 83MHz
+   cpu0: mwait min=64, max=64, C-substates=0.2.0.0.0.0.3.3, IBE
+   cpu1 at mainbus0: apid 2 (application processor)
+   cpu1: Intel(R) Celeron(R) CPU N2808 @ 1.58GHz, 1583.34 MHz
+   cpu1: FPU,VME,DE,PSE,TSC,MSR,PAE,MCE,CX8,APIC,SEP,MTRR,PGE,MCA,CMOV,PAT,PSE36,CFLUSH,DS,ACPI,MMX,FXSR,SSE,SSE2,SS,HTT,TM,PBE,SSE3,PCLMUL,DTES64,MWAIT,DS-CPL,VMX,EST,TM2,SSSE3,CX16,xTPR,PDCM,SSE4.1,SSE4.2,MOVBE,POPCNT,DEADLINE,RDRAND,NXE,RDTSCP,LONG,LAHF,3DNOWP,PERF,ITSC,SMEP,ERMS,SENSOR,ARAT
+   cpu1: 1MB 64b/line 16-way L2 cache
+   cpu1: smt 0, core 1, package 0
+   ioapic0 at mainbus0: apid 1 pa 0xfec00000, version 20, 87 pins
+   acpimcfg0 at acpi0 addr 0xe0000000, bus 0-255
+   acpihpet0 at acpi0: 14318179 Hz
+   acpihpet0: recalibrated TSC frequency 1583334536 Hz
+   acpiprt0 at acpi0: bus 0 (PCI0)
+   acpiprt1 at acpi0: bus 1 (RP01)
+   acpiprt2 at acpi0: bus 2 (RP02)
+   acpiprt3 at acpi0: bus 3 (RP03)
+   acpiprt4 at acpi0: bus -1 (RP04)
+   acpiec0 at acpi0: not present
+   acpicpu0 at acpi0: C3(10@1500 mwait.1@0x52), C2(10@500 mwait.1@0x51), C1(1000@1 mwait.1), PSS
+   acpicpu1 at acpi0: C3(10@1500 mwait.1@0x52), C2(10@500 mwait.1@0x51), C1(1000@1 mwait.1), PSS
+   acpipwrres0 at acpi0: PLPE
+   acpipwrres1 at acpi0: PLPE
+   acpipwrres2 at acpi0: USBC, resource for EHC1, OTG1
+   "DMA0F28" at acpi0 not configured
+   acpibtn0 at acpi0: PWRB
+   acpibtn1 at acpi0: SLPB
+   "INT33BD" at acpi0 not configured
+   acpivideo0 at acpi0: GFX0
+   acpivout0 at acpivideo0: DD1F
+   cpu0: Enhanced SpeedStep 1583 MHz: speeds: 1578, 1577, 1494, 1411, 1328, 1245, 1162, 1079, 996, 913, 830, 747, 664, 581, 498 MHz
+   pci0 at mainbus0 bus 0
+   pchb0 at pci0 dev 0 function 0 "Intel Bay Trail Host" rev 0x0e
+   inteldrm0 at pci0 dev 2 function 0 "Intel Bay Trail Video" rev 0x0e
+   drm0 at inteldrm0
+   inteldrm0: msi
+   inteldrm0: 1280x1024, 32bpp
+   wsdisplay0 at inteldrm0 mux 1: console (std, vt100 emulation)
+   wsdisplay0: screen 1-5 added (std, vt100 emulation)
+   ahci0 at pci0 dev 19 function 0 "Intel Bay Trail AHCI" rev 0x0e: msi, AHCI 1.3
+   ahci0: port 0: 3.0Gb/s
+   scsibus1 at ahci0: 32 targets
+   sd0 at scsibus1 targ 0 lun 0: <ATA, Crucial_CT250MX2, MU02> SCSI3 0/direct fixed naa.500a0751112833cd
+   sd0: 238475MB, 512 bytes/sector, 488397168 sectors, thin
+   xhci0 at pci0 dev 20 function 0 "Intel Bay Trail xHCI" rev 0x0e: msi
+   usb0 at xhci0: USB revision 3.0
+   uhub0 at usb0 configuration 1 interface 0 "Intel xHCI root hub" rev 3.00/1.00 addr 1
+   "Intel Bay Trail TXE" rev 0x0e at pci0 dev 26 function 0 not configured
+   ppb0 at pci0 dev 28 function 0 "Intel Bay Trail PCIE" rev 0x0e: msi
+   pci1 at ppb0 bus 1
+   ppb1 at pci0 dev 28 function 1 "Intel Bay Trail PCIE" rev 0x0e: msi
+   pci2 at ppb1 bus 2
+   "Realtek 8191SE" rev 0x00 at pci2 dev 0 function 0 not configured
+   ppb2 at pci0 dev 28 function 2 "Intel Bay Trail PCIE" rev 0x0e: msi
+   pci3 at ppb2 bus 3
+   re0 at pci3 dev 0 function 0 "Realtek 8168" rev 0x0c: RTL8168G/8111G (0x4c00), msi, address b8:ae:ed:3f:0c:4c
+   rgephy0 at re0 phy 7: RTL8251 PHY, rev. 0
+   ehci0 at pci0 dev 29 function 0 "Intel Bay Trail EHCI" rev 0x0e: apic 1 int 23
+   usb1 at ehci0: USB revision 2.0
+   uhub1 at usb1 configuration 1 interface 0 "Intel EHCI root hub" rev 2.00/1.00 addr 1
+   pcib0 at pci0 dev 31 function 0 "Intel Bay Trail LPC" rev 0x0e
+   ichiic0 at pci0 dev 31 function 3 "Intel Bay Trail SMBus" rev 0x0e: apic 1 int 18
+   iic0 at ichiic0
+   isa0 at pcib0
+   isadma0 at isa0
+   com0 at isa0 port 0x3f8/8 irq 4: ns16550a, 16 byte fifo
+   pcppi0 at isa0 port 0x61
+   spkr0 at pcppi0
+   vmm0 at mainbus0: VMX/EPT
+   efifb at mainbus0 not configured
+   ugen0 at uhub0 port 4 "Realtek Bluetooth Radio" rev 2.10/2.00 addr 2
+   ehci_sync_hc: tsleep() = 35
+   ehci_sync_hc: tsleep() = 35
+   ehci_sync_hc: tsleep() = 35
+   ehci_sync_hc: tsleep() = 35
+   ehci_sync_hc: tsleep() = 35
+   ehci_sync_hc: tsleep() = 35
+   ehci_sync_hc: tsleep() = 35
+   ehci_sync_hc: tsleep() = 35
+   uhub1: device problem, disabling port 1
+   vscsi0 at root
+   scsibus2 at vscsi0: 256 targets
+   softraid0 at root
+   scsibus3 at softraid0: 256 targets
+   root on sd0a (be818b5818b500ac.a) swap on sd0b dump on sd0b
