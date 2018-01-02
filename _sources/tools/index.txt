@@ -11,6 +11,7 @@ Contents:
    ansible/index
    git/index
    gpg/index
+   ldap/index
    moloch/index
    monitoring/index
    osquery/index

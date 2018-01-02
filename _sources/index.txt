@@ -19,6 +19,7 @@ Contents:
 
    arm/index
    db/index
+   dns/index
    elk/index
    openssh/index
    operating_systems/index

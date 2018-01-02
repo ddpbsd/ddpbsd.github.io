@@ -1,0 +1,15 @@
+.. _tools_ldap_ldapsearch:
+
+Example ldapsearch:
+^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: console
+
+   ldapsearch -P 3 -H "ldap://ldap_server:389" -D "cn=exampleuser,CN=Users,DC=example,DC=com" -W -b "CN=Users,DC=example,DC=com" -s "sub" -z 0 -l 0 -a "never" "(&(objectClass=user)(sAMAccountName=exampleuser@example.com))"
+
+.. code-block:: console
+
+   -D "cn=exampleuser,CN=Users,DC=example,DC=com" -- Binding user
+   "(&(objectClass=user)(sAMAccountName=exampleuser@example.com))" -- user to lookup
+   -b "CN=Users,DC=example,DC=com" -- base dn
+
