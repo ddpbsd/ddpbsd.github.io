@@ -11,4 +11,5 @@ Currently running:
 * nsd
 * unbound
 
- 
+.. include:: ../dmesgs/ix.rst
+
