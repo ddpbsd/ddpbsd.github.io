@@ -1,0 +1,24 @@
+.. _operating_systems_linux_containers_docker_volumes:
+
+
+Create a volume:
+^^^^^^^^^^^^^^^^
+
+.. code-block:: console
+
+   docker volume create volume
+
+List volumes:
+^^^^^^^^^^^^^
+
+.. code-block:: console
+
+   docker volume ls
+
+Inspect a volume:
+^^^^^^^^^^^^^^^^^
+
+.. code-block:: console
+
+   docker volume inspect volume
+

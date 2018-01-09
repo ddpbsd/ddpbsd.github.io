@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>vim &#8212; notes 0.1 documentation</title>
+    <title>Allow another user to use your $DISPLAY: &#8212; notes 0.1 documentation</title>
     
     <link rel="stylesheet" href="../../_static/classic.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
@@ -25,10 +25,7 @@
     <script type="text/javascript" src="../../_static/doctools.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="top" title="notes 0.1 documentation" href="../../index.html" />
-    <link rel="up" title="MISC" href="../index.html" />
-    <link rel="next" title="Junk" href="../junk/index.html" />
-    <link rel="prev" title="Stupid random stuff:" href="../random.html" /> 
+    <link rel="top" title="notes 0.1 documentation" href="../../index.html" /> 
   </head>
   <body role="document">
     <div class="related" role="navigation" aria-label="related navigation">
@@ -37,14 +34,7 @@
         <li class="right" style="margin-right: 10px">
           <a href="../../genindex.html" title="General Index"
              accesskey="I">index</a></li>
-        <li class="right" >
-          <a href="../junk/index.html" title="Junk"
-             accesskey="N">next</a> |</li>
-        <li class="right" >
-          <a href="../random.html" title="Stupid random stuff:"
-             accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../../index.html">notes 0.1 documentation</a> &#187;</li>
-          <li class="nav-item nav-item-1"><a href="../index.html" accesskey="U">MISC</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="../../index.html">notes 0.1 documentation</a> &#187;</li> 
       </ul>
     </div>  
 
@@ -53,25 +43,14 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="vim">
-<span id="misc-vim"></span><h1>vim<a class="headerlink" href="#vim" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="tabs-as-spaces">
-<h2>tabs as spaces<a class="headerlink" href="#tabs-as-spaces" title="Permalink to this headline">¶</a></h2>
-<p>In the <code class="docutils literal"><span class="pre">.vimrc</span></code> file:</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">filetype plugin indent on</span>
-<span class="go">&quot; show existing tab with 4 spaces width</span>
-<span class="go">set tabstop=4</span>
-<span class="go">&quot; when indenting with &#39;&gt;&#39;, use 4 spaces width</span>
-<span class="go">set shiftwidth=4</span>
-<span class="go">&quot; On pressing tab, insert 4 spaces</span>
-<span class="go">set expandtab</span>
+  <div class="section" id="allow-another-user-to-use-your-display">
+<span id="tools-xll-xauth"></span><h1>Allow another user to use your <cite>$DISPLAY</cite>:<a class="headerlink" href="#allow-another-user-to-use-your-display" title="Permalink to this headline">¶</a></h1>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> xauth list
+<span class="go">OUTPUT</span>
+
+<span class="gp">$</span> su USER
+<span class="gp">$</span> xuath add OUTPUT
 </pre></div>
-</div>
-<p>In <code class="docutils literal"><span class="pre">vim</span></code>:</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">:set tabstop=4</span>
-<span class="go">:set expandtab</span>
-</pre></div>
-</div>
 </div>
 </div>
 
@@ -81,24 +60,10 @@
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-  <h3><a href="../../index.html">Table Of Contents</a></h3>
-  <ul>
-<li><a class="reference internal" href="#">vim</a><ul>
-<li><a class="reference internal" href="#tabs-as-spaces">tabs as spaces</a></li>
-</ul>
-</li>
-</ul>
-
-  <h4>Previous topic</h4>
-  <p class="topless"><a href="../random.html"
-                        title="previous chapter">Stupid random stuff:</a></p>
-  <h4>Next topic</h4>
-  <p class="topless"><a href="../junk/index.html"
-                        title="next chapter">Junk</a></p>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
-      <li><a href="../../_sources/misc/vim/index.txt"
+      <li><a href="../../_sources/tools/x11/xauth.txt"
             rel="nofollow">Show Source</a></li>
     </ul>
    </div>
@@ -122,14 +87,7 @@
         <li class="right" style="margin-right: 10px">
           <a href="../../genindex.html" title="General Index"
              >index</a></li>
-        <li class="right" >
-          <a href="../junk/index.html" title="Junk"
-             >next</a> |</li>
-        <li class="right" >
-          <a href="../random.html" title="Stupid random stuff:"
-             >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../../index.html">notes 0.1 documentation</a> &#187;</li>
-          <li class="nav-item nav-item-1"><a href="../index.html" >MISC</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="../../index.html">notes 0.1 documentation</a> &#187;</li> 
       </ul>
     </div>
         <!-- your html code here -->

@@ -1,0 +1,3 @@
+.. _tools_virtualization_virtd_diary:
+
+

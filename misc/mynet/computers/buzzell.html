@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>virtd &#8212; notes 0.1 documentation</title>
+    <title>Run the gogs docker container: &#8212; notes 0.1 documentation</title>
     
     <link rel="stylesheet" href="../../../_static/classic.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
@@ -26,9 +26,9 @@
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
     <link rel="top" title="notes 0.1 documentation" href="../../../index.html" />
-    <link rel="up" title="Virtualization" href="../index.html" />
-    <link rel="next" title="Install a guest:" href="install_guest.html" />
-    <link rel="prev" title="Virtualization" href="../index.html" /> 
+    <link rel="up" title="computers" href="index.html" />
+    <link rel="next" title="ix:" href="ix.html" />
+    <link rel="prev" title="computers" href="index.html" /> 
   </head>
   <body role="document">
     <div class="related" role="navigation" aria-label="related navigation">
@@ -38,14 +38,15 @@
           <a href="../../../genindex.html" title="General Index"
              accesskey="I">index</a></li>
         <li class="right" >
-          <a href="install_guest.html" title="Install a guest:"
+          <a href="ix.html" title="ix:"
              accesskey="N">next</a> |</li>
         <li class="right" >
-          <a href="../index.html" title="Virtualization"
+          <a href="index.html" title="computers"
              accesskey="P">previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="../../../index.html">notes 0.1 documentation</a> &#187;</li>
-          <li class="nav-item nav-item-1"><a href="../../index.html" >Tools</a> &#187;</li>
-          <li class="nav-item nav-item-2"><a href="../index.html" accesskey="U">Virtualization</a> &#187;</li> 
+          <li class="nav-item nav-item-1"><a href="../../index.html" >MISC</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../index.html" >mynet</a> &#187;</li>
+          <li class="nav-item nav-item-3"><a href="index.html" accesskey="U">computers</a> &#187;</li> 
       </ul>
     </div>  
 
@@ -54,24 +55,28 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="virtd">
-<h1>virtd<a class="headerlink" href="#virtd" title="Permalink to this headline">¶</a></h1>
-<p>Contents:</p>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="install_guest.html">Install a guest:</a></li>
-<li class="toctree-l1"><a class="reference internal" href="install_guest.html#create-the-image">Create the image:</a></li>
-<li class="toctree-l1"><a class="reference internal" href="install_guest.html#id1">Install a guest:</a></li>
-<li class="toctree-l1"><a class="reference internal" href="virsh.html">List guests:</a></li>
-<li class="toctree-l1"><a class="reference internal" href="virsh.html#list-all-guests">List all guests:</a></li>
-<li class="toctree-l1"><a class="reference internal" href="virsh.html#power-off-a-guest">Power off a guest:</a></li>
-<li class="toctree-l1"><a class="reference internal" href="virsh.html#edit-a-host-s-configuration">Edit a host&#8217;s configuration:</a></li>
-<li class="toctree-l1"><a class="reference internal" href="virsh.html#list-the-networks">List the networks:</a></li>
-<li class="toctree-l1"><a class="reference internal" href="virsh.html#destroy-a-network">Destroy a network:</a></li>
-<li class="toctree-l1"><a class="reference internal" href="virsh.html#see-the-dhcp-leases">See the dhcp leases:</a></li>
-<li class="toctree-l1"><a class="reference internal" href="virsh.html#edit-the-networks">Edit the networks:</a></li>
-<li class="toctree-l1"><a class="reference internal" href="virsh.html#find-the-vnc-display-of-a-guest">Find the vnc display of a guest:</a></li>
-</ul>
+  <div class="section" id="run-the-gogs-docker-container">
+<span id="misc-mynet-computers-buzzell"></span><h1>Run the gogs docker container:<a class="headerlink" href="#run-the-gogs-docker-container" title="Permalink to this headline">¶</a></h1>
+<p>After an update of the image, the container should be run again from scratch.</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">docker run --name=gogs -p 10022:22 -p 10080:3000 -v /var/gogs:/data gogs/gogs</span>
+</pre></div>
+</div>
+<p>After this initial run (if it was stopped), it can be run with:</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">docker start gogs</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="build-the-nmap-image">
+<h1>Build the nmap image:<a class="headerlink" href="#build-the-nmap-image" title="Permalink to this headline">¶</a></h1>
+<p>Replace the X with the version number.</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">docker build -t nmap:X .</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="run-the-nmap-container">
+<h1>Run the nmap container:<a class="headerlink" href="#run-the-nmap-container" title="Permalink to this headline">¶</a></h1>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">docker run --mount source=nmap,target=/nmap --rm nmap:3 -sS -A -oG /nmap/2nmap_$(date +%Y%m%d) --append-output HOST</span>
+</pre></div>
 </div>
 </div>
 
@@ -81,16 +86,23 @@
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
+  <h3><a href="../../../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Run the gogs docker container:</a></li>
+<li><a class="reference internal" href="#build-the-nmap-image">Build the nmap image:</a></li>
+<li><a class="reference internal" href="#run-the-nmap-container">Run the nmap container:</a></li>
+</ul>
+
   <h4>Previous topic</h4>
-  <p class="topless"><a href="../index.html"
-                        title="previous chapter">Virtualization</a></p>
+  <p class="topless"><a href="index.html"
+                        title="previous chapter">computers</a></p>
   <h4>Next topic</h4>
-  <p class="topless"><a href="install_guest.html"
-                        title="next chapter">Install a guest:</a></p>
+  <p class="topless"><a href="ix.html"
+                        title="next chapter">ix:</a></p>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
-      <li><a href="../../../_sources/tools/virtualization/virtd/index.txt"
+      <li><a href="../../../_sources/misc/mynet/computers/buzzell.txt"
             rel="nofollow">Show Source</a></li>
     </ul>
    </div>
@@ -115,14 +127,15 @@
           <a href="../../../genindex.html" title="General Index"
              >index</a></li>
         <li class="right" >
-          <a href="install_guest.html" title="Install a guest:"
+          <a href="ix.html" title="ix:"
              >next</a> |</li>
         <li class="right" >
-          <a href="../index.html" title="Virtualization"
+          <a href="index.html" title="computers"
              >previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="../../../index.html">notes 0.1 documentation</a> &#187;</li>
-          <li class="nav-item nav-item-1"><a href="../../index.html" >Tools</a> &#187;</li>
-          <li class="nav-item nav-item-2"><a href="../index.html" >Virtualization</a> &#187;</li> 
+          <li class="nav-item nav-item-1"><a href="../../index.html" >MISC</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../index.html" >mynet</a> &#187;</li>
+          <li class="nav-item nav-item-3"><a href="index.html" >computers</a> &#187;</li> 
       </ul>
     </div>
         <!-- your html code here -->

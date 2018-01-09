@@ -35,6 +35,13 @@ List the networks:
 
    virsh net-list
 
+Destroy a network:
+^^^^^^^^^^^^^^^^^^
+
+.. code-block:: console
+
+   virsh destroy NETWORK
+
 See the dhcp leases:
 ^^^^^^^^^^^^^^^^^^^^
 

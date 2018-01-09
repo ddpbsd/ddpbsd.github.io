@@ -5,12 +5,14 @@ dmesg for pine:
 
 .. code-block:: console
 
-   OpenBSD 6.2-current (GENERIC) #128: Thu Dec 28 02:25:24 MST 2017
+   OpenBSD 6.2-current (GENERIC) #138: Sat Jan  6 20:56:31 MST 2018
        deraadt@arm64.openbsd.org:/usr/src/sys/arch/arm64/compile/GENERIC
-   real mem  = 2021748736 (1928MB)
-   avail mem = 1935704064 (1846MB)
+   real mem  = 2021666816 (1928MB)
+   avail mem = 1935560704 (1845MB)
    mainbus0 at root: Pine64+
    cpu0 at mainbus0: ARM Cortex-A53 r0p4
+   efi0 at mainbus0: UEFI 2.0.5
+   efi0: Das U-boot rev 0x0
    psci0 at mainbus0
    agtimer0 at mainbus0: tick rate 24000 KHz
    simplebus0 at mainbus0: "soc"
@@ -50,3 +52,4 @@ dmesg for pine:
    bootfile: sd0a:/bsd
    boot device: sd0
    root on sd0a (74c4340a4a226f85.a) swap on sd0b dump on sd0b
+

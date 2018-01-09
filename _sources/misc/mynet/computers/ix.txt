@@ -11,5 +11,10 @@ Currently running:
 * nsd
 * unbound
 
+Hardware:
+^^^^^^^^^
+
+Dell Poweredge T110 (I think)
+
 .. include:: ../dmesgs/ix.rst
 

@@ -1,0 +1,34 @@
+.. _misc_mynet_computers_buzzell:
+
+
+Run the gogs docker container:
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+After an update of the image, the container should be run again from scratch.
+
+.. code-block:: console
+
+   docker run --name=gogs -p 10022:22 -p 10080:3000 -v /var/gogs:/data gogs/gogs
+
+After this initial run (if it was stopped), it can be run with:
+
+.. code-block:: console
+
+   docker start gogs
+
+Build the nmap image:
+^^^^^^^^^^^^^^^^^^^^^
+
+Replace the X with the version number.
+
+.. code-block:: console
+
+   docker build -t nmap:X .
+
+Run the nmap container:
+^^^^^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: console
+
+   docker run --mount source=nmap,target=/nmap --rm nmap:3 -sS -A -oG /nmap/2nmap_$(date +%Y%m%d) --append-output HOST
+ 
