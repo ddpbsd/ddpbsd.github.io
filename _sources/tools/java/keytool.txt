@@ -1,0 +1,33 @@
+
+
+keytool
+=======
+
+Default password for a keystore:
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: console
+
+   changeit
+
+List the vertificates in the store:
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: console
+
+   keytool -list -keystore ./keystore.jks
+
+Export a cert:
+^^^^^^^^^^^^^^
+
+.. code-block:: console
+
+   keytool -export -alias ALIAS -keystore ./keystore.jks -file /tmp/FILE
+
+Look at the exported cert with openssl:
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: console
+
+   openssl x509 -text -inform DER -in /tmp/FILE
+
