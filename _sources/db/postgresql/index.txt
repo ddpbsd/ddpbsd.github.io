@@ -1,11 +1,8 @@
 PostgreSQL
 ==========
 
-timestamps as unix epoch
-^^^^^^^^^^^^^^^^^^^^^^^^
+.. toctree::
+   :maxdepth: 2
 
-.. code-block:: sql
-
-   SELECT extract(epoch FROM timestamp) FROM sensors;
-
+   simplestuff
 

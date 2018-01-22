@@ -10,4 +10,5 @@ Contents:
    build
    logging
    ubuntu
+   volumes
 

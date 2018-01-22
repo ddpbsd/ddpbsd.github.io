@@ -14,7 +14,6 @@ Contents:
    imagemagick/index   
    kernel_build/index
    ksh/index
-   laptops/index
    mynet/index
    random
    vim/index
