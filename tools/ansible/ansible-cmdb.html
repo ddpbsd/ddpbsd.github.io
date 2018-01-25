@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>ansible &#8212; notes 0.1 documentation</title>
+    <title>Get setup output: &#8212; notes 0.1 documentation</title>
     
     <link rel="stylesheet" href="../../_static/classic.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
@@ -26,9 +26,9 @@
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="top" title="notes 0.1 documentation" href="../../index.html" />
-    <link rel="up" title="Tools" href="../index.html" />
-    <link rel="next" title="Does it support Windows?" href="ansible.html" />
-    <link rel="prev" title="Tools" href="../index.html" /> 
+    <link rel="up" title="ansible" href="index.html" />
+    <link rel="next" title="git" href="../git/index.html" />
+    <link rel="prev" title="Create a new file:" href="ansible-vault.html" /> 
   </head>
   <body role="document">
     <div class="related" role="navigation" aria-label="related navigation">
@@ -38,13 +38,14 @@
           <a href="../../genindex.html" title="General Index"
              accesskey="I">index</a></li>
         <li class="right" >
-          <a href="ansible.html" title="Does it support Windows?"
+          <a href="../git/index.html" title="git"
              accesskey="N">next</a> |</li>
         <li class="right" >
-          <a href="../index.html" title="Tools"
+          <a href="ansible-vault.html" title="Create a new file:"
              accesskey="P">previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="../../index.html">notes 0.1 documentation</a> &#187;</li>
-          <li class="nav-item nav-item-1"><a href="../index.html" accesskey="U">Tools</a> &#187;</li> 
+          <li class="nav-item nav-item-1"><a href="../index.html" >Tools</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="index.html" accesskey="U">ansible</a> &#187;</li> 
       </ul>
     </div>  
 
@@ -53,19 +54,22 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="ansible">
-<h1>ansible<a class="headerlink" href="#ansible" title="Permalink to this headline">¶</a></h1>
-<p>Contents:</p>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="ansible.html">Does it support Windows?</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ansible-vault.html">Create a new file:</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ansible-vault.html#use-a-file">Use a file:</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ansible-cmdb.html">Get setup output:</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ansible-cmdb.html#get-the-overview-page">Get the overview page:</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ansible-cmdb.html#where-can-i-get-it">Where can I get it?</a></li>
-</ul>
+  <div class="section" id="get-setup-output">
+<h1>Get setup output:<a class="headerlink" href="#get-setup-output" title="Permalink to this headline">¶</a></h1>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">mkdir out</span>
+<span class="go">ansible -m setup --tree out/ all</span>
+</pre></div>
 </div>
+</div>
+<div class="section" id="get-the-overview-page">
+<h1>Get the overview page:<a class="headerlink" href="#get-the-overview-page" title="Permalink to this headline">¶</a></h1>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">ansible-cmdb out/ &gt; overview.html</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="where-can-i-get-it">
+<h1>Where can I get it?<a class="headerlink" href="#where-can-i-get-it" title="Permalink to this headline">¶</a></h1>
+<p><a class="reference external" href="https://github.com/fboender/ansible-cmdb">https://github.com/fboender/ansible-cmdb</a></p>
 </div>
 
 
@@ -74,16 +78,23 @@
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
+  <h3><a href="../../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Get setup output:</a></li>
+<li><a class="reference internal" href="#get-the-overview-page">Get the overview page:</a></li>
+<li><a class="reference internal" href="#where-can-i-get-it">Where can I get it?</a></li>
+</ul>
+
   <h4>Previous topic</h4>
-  <p class="topless"><a href="../index.html"
-                        title="previous chapter">Tools</a></p>
+  <p class="topless"><a href="ansible-vault.html"
+                        title="previous chapter">Create a new file:</a></p>
   <h4>Next topic</h4>
-  <p class="topless"><a href="ansible.html"
-                        title="next chapter">Does it support Windows?</a></p>
+  <p class="topless"><a href="../git/index.html"
+                        title="next chapter">git</a></p>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
-      <li><a href="../../_sources/tools/ansible/index.txt"
+      <li><a href="../../_sources/tools/ansible/ansible-cmdb.txt"
             rel="nofollow">Show Source</a></li>
     </ul>
    </div>
@@ -108,13 +119,14 @@
           <a href="../../genindex.html" title="General Index"
              >index</a></li>
         <li class="right" >
-          <a href="ansible.html" title="Does it support Windows?"
+          <a href="../git/index.html" title="git"
              >next</a> |</li>
         <li class="right" >
-          <a href="../index.html" title="Tools"
+          <a href="ansible-vault.html" title="Create a new file:"
              >previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="../../index.html">notes 0.1 documentation</a> &#187;</li>
-          <li class="nav-item nav-item-1"><a href="../index.html" >Tools</a> &#187;</li> 
+          <li class="nav-item nav-item-1"><a href="../index.html" >Tools</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="index.html" >ansible</a> &#187;</li> 
       </ul>
     </div>
         <!-- your html code here -->

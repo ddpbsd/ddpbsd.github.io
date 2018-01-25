@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Delete files from a remote PC: &#8212; notes 0.1 documentation</title>
+    <title>Get the version of powershell: &#8212; notes 0.1 documentation</title>
     
     <link rel="stylesheet" href="../../_static/classic.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
@@ -54,8 +54,18 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="delete-files-from-a-remote-pc">
-<span id="operating-systems-windows-powershell"></span><h1>Delete files from a remote PC:<a class="headerlink" href="#delete-files-from-a-remote-pc" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="get-the-version-of-powershell">
+<span id="operating-systems-windows-powershell"></span><h1>Get the version of powershell:<a class="headerlink" href="#get-the-version-of-powershell" title="Permalink to this headline">¶</a></h1>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">PS C:\&gt; $PSVersionTable.PSVersion</span>
+
+<span class="go">Major  Minor  Build  Revision</span>
+<span class="go">-----  -----  -----  --------</span>
+<span class="go">4      0      -1     -1</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="delete-files-from-a-remote-pc">
+<h1>Delete files from a remote PC:<a class="headerlink" href="#delete-files-from-a-remote-pc" title="Permalink to this headline">¶</a></h1>
 <div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">Remove-Item &quot;\\$computer\path\to\file.ext&quot;</span>
 </pre></div>
 </div>
@@ -91,7 +101,8 @@
         <div class="sphinxsidebarwrapper">
   <h3><a href="../../index.html">Table Of Contents</a></h3>
   <ul>
-<li><a class="reference internal" href="#">Delete files from a remote PC:</a></li>
+<li><a class="reference internal" href="#">Get the version of powershell:</a></li>
+<li><a class="reference internal" href="#delete-files-from-a-remote-pc">Delete files from a remote PC:</a></li>
 <li><a class="reference internal" href="#stop-a-service-on-a-remote-pc">Stop a service on a remote PC:</a></li>
 <li><a class="reference internal" href="#start-a-service-on-a-remote-pc">Start a service on a remote PC:</a></li>
 <li><a class="reference internal" href="#sleep-for-10-seconds">Sleep for 10 seconds:</a></li>

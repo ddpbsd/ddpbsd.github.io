@@ -6,3 +6,4 @@ Download a certificate:
 .. code-block:: console
 
    openssl s_client -connect ecx.dellroad.org:443
+
