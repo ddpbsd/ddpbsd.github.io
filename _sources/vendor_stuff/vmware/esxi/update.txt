@@ -1,8 +1,18 @@
 .. _vmware_esxi_update:
 
-
 esxi Update process
 ^^^^^^^^^^^^^^^^^^^
+
+Find the ESXi version information:
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: console
+
+   ~ # vmware -l
+   VMware ESXi 5.5.0 Update 3
+   ~ # vmware --version
+   VMware ESXi 5.5.0 build-5230635
+
 
 Download patches from the `patch portal <http://www.vmware.com/patchmgr/download.portal>`_
 
@@ -23,7 +33,7 @@ Install the patch:
 
 .. code-block:: console
 
-   esxcli software vib update -d "/full/path/to/patch.zip"
+   esxcli software vib update --depot=/full/path/to/patch.zip
 
 
 Verity the installation.
@@ -47,3 +57,4 @@ Restore the Vms.
 .. note::
 
    Instructions are from `VMWare kb 2008939 <https://kb.vmware.com/selfservice/microsites/search.do?language=en_US&cmd=displayKC&externalId=2008939>`_
+

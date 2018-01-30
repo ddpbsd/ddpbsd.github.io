@@ -57,6 +57,15 @@
             
   <div class="section" id="esxi-update-process">
 <span id="vmware-esxi-update"></span><h1>esxi Update process<a class="headerlink" href="#esxi-update-process" title="Permalink to this headline">¶</a></h1>
+</div>
+<div class="section" id="find-the-esxi-version-information">
+<h1>Find the ESXi version information:<a class="headerlink" href="#find-the-esxi-version-information" title="Permalink to this headline">¶</a></h1>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">~ # vmware -l</span>
+<span class="go">VMware ESXi 5.5.0 Update 3</span>
+<span class="go">~ # vmware --version</span>
+<span class="go">VMware ESXi 5.5.0 build-5230635</span>
+</pre></div>
+</div>
 <p>Download patches from the <a class="reference external" href="http://www.vmware.com/patchmgr/download.portal">patch portal</a></p>
 <p>Upload the patch to the esxi system&#8217;s datastore.</p>
 <p>Suspend, shutdown, or migrate all running VMs.</p>
@@ -66,7 +75,7 @@
 </div>
 <p><code class="docutils literal"><span class="pre">cd</span></code> to the directory containing the patch file</p>
 <p>Install the patch:</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">esxcli software vib update -d &quot;/full/path/to/patch.zip&quot;</span>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">esxcli software vib update --depot=/full/path/to/patch.zip</span>
 </pre></div>
 </div>
 <p>Verity the installation.</p>
@@ -91,6 +100,12 @@
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
+  <h3><a href="../../../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">esxi Update process</a></li>
+<li><a class="reference internal" href="#find-the-esxi-version-information">Find the ESXi version information:</a></li>
+</ul>
+
   <h4>Previous topic</h4>
   <p class="topless"><a href="cli.html"
                         title="previous chapter">List all VMs</a></p>

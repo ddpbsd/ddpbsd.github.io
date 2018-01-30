@@ -11,11 +11,14 @@ Contents:
    ansible/index
    git/index
    gpg/index
+   java/index
    ldap/index
    moloch/index
    monitoring/index
    osquery/index
+   tableau/tableau
    tcpdump/index
    tmux/index
    virtualization/index
+   x11/index
 

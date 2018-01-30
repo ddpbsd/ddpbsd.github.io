@@ -13,6 +13,13 @@ List all VMs
 
    vim-cmd vmsvc/getallvms
 
+Get the power state of a VM:
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: console
+
+   vim-cmd vmsvc/power.getstate 1
+
 Power on a device
 ^^^^^^^^^^^^^^^^^
 

@@ -1,0 +1,12 @@
+.. _tools_x11:
+
+x11
+===
+
+
+Contents:
+
+.. toctree::
+   :maxdepth: 2
+
+   xauth
