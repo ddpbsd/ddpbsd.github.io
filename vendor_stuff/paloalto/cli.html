@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Juniper &#8212; notes 0.1 documentation</title>
+    <title>Save config to a file: &#8212; notes 0.1 documentation</title>
     
     <link rel="stylesheet" href="../../_static/classic.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
@@ -26,9 +26,9 @@
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="top" title="notes 0.1 documentation" href="../../index.html" />
-    <link rel="up" title="Vendor Stuff" href="../index.html" />
-    <link rel="next" title="Enter the cli:" href="cli.html" />
-    <link rel="prev" title="Bro-IDS agent" href="../alienvault/otx/Bro-IDS.html" /> 
+    <link rel="up" title="PaloAlto" href="index.html" />
+    <link rel="next" title="splunk" href="../splunk/index.html" />
+    <link rel="prev" title="PaloAlto" href="index.html" /> 
   </head>
   <body role="document">
     <div class="related" role="navigation" aria-label="related navigation">
@@ -38,13 +38,14 @@
           <a href="../../genindex.html" title="General Index"
              accesskey="I">index</a></li>
         <li class="right" >
-          <a href="cli.html" title="Enter the cli:"
+          <a href="../splunk/index.html" title="splunk"
              accesskey="N">next</a> |</li>
         <li class="right" >
-          <a href="../alienvault/otx/Bro-IDS.html" title="Bro-IDS agent"
+          <a href="index.html" title="PaloAlto"
              accesskey="P">previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="../../index.html">notes 0.1 documentation</a> &#187;</li>
-          <li class="nav-item nav-item-1"><a href="../index.html" accesskey="U">Vendor Stuff</a> &#187;</li> 
+          <li class="nav-item nav-item-1"><a href="../index.html" >Vendor Stuff</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="index.html" accesskey="U">PaloAlto</a> &#187;</li> 
       </ul>
     </div>  
 
@@ -53,19 +54,13 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="juniper">
-<h1>Juniper<a class="headerlink" href="#juniper" title="Permalink to this headline">¶</a></h1>
-<p>Stuff from various vendors. Usually proprietary.</p>
-<p>Contents:</p>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="cli.html">Enter the cli:</a></li>
-<li class="toctree-l1"><a class="reference internal" href="cli.html#enter-the-configuration">Enter the configuration:</a></li>
-<li class="toctree-l1"><a class="reference internal" href="cli.html#get-the-hardware-information">Get the hardware information:</a></li>
-<li class="toctree-l1"><a class="reference internal" href="cli.html#get-the-software-version">Get the software version:</a></li>
-<li class="toctree-l1"><a class="reference internal" href="cli.html#dump-the-configuration-to-a-file">Dump the configuration to a file:</a></li>
-<li class="toctree-l1"><a class="reference internal" href="commit_confirm.html">Commit the configuration changes, then roll back after 10 minutes:</a></li>
-</ul>
+  <div class="section" id="save-config-to-a-file">
+<h1>Save config to a file:<a class="headerlink" href="#save-config-to-a-file" title="Permalink to this headline">¶</a></h1>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">admin@device&gt; configure</span>
+<span class="gp">admin@device#</span> save config to 20180206_palo_config
+<span class="gp">admin@device#</span> <span class="nb">exit</span>
+<span class="go">admin@device&gt; scp export configuration remote-port 22 from 20180206_palo_config to USER@other-host:/tmp/config</span>
+</pre></div>
 </div>
 </div>
 
@@ -76,15 +71,15 @@
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
   <h4>Previous topic</h4>
-  <p class="topless"><a href="../alienvault/otx/Bro-IDS.html"
-                        title="previous chapter">Bro-IDS agent</a></p>
+  <p class="topless"><a href="index.html"
+                        title="previous chapter">PaloAlto</a></p>
   <h4>Next topic</h4>
-  <p class="topless"><a href="cli.html"
-                        title="next chapter">Enter the cli:</a></p>
+  <p class="topless"><a href="../splunk/index.html"
+                        title="next chapter">splunk</a></p>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
-      <li><a href="../../_sources/vendor_stuff/juniper/index.txt"
+      <li><a href="../../_sources/vendor_stuff/paloalto/cli.txt"
             rel="nofollow">Show Source</a></li>
     </ul>
    </div>
@@ -109,13 +104,14 @@
           <a href="../../genindex.html" title="General Index"
              >index</a></li>
         <li class="right" >
-          <a href="cli.html" title="Enter the cli:"
+          <a href="../splunk/index.html" title="splunk"
              >next</a> |</li>
         <li class="right" >
-          <a href="../alienvault/otx/Bro-IDS.html" title="Bro-IDS agent"
+          <a href="index.html" title="PaloAlto"
              >previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="../../index.html">notes 0.1 documentation</a> &#187;</li>
-          <li class="nav-item nav-item-1"><a href="../index.html" >Vendor Stuff</a> &#187;</li> 
+          <li class="nav-item nav-item-1"><a href="../index.html" >Vendor Stuff</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="index.html" >PaloAlto</a> &#187;</li> 
       </ul>
     </div>
         <!-- your html code here -->

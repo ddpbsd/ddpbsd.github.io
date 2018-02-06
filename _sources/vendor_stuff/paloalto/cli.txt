@@ -1,0 +1,12 @@
+
+
+Save config to a file:
+^^^^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: console
+
+   admin@device> configure
+   admin@device# save config to 20180206_palo_config
+   admin@device# exit
+   admin@device> scp export configuration remote-port 22 from 20180206_palo_config to USER@other-host:/tmp/config
+

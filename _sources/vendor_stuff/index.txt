@@ -11,6 +11,7 @@ Contents:
 
    alienvault/index
    juniper/index
+   paloalto/index
    splunk/index   
    vmware/index
 

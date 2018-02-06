@@ -1,0 +1,9 @@
+.. _securityonion_salt:
+
+List keys:
+^^^^^^^^^^
+
+.. code-block:: console
+
+   salt-key list
+
