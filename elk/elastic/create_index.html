@@ -56,26 +56,24 @@
             
   <div class="section" id="create-an-index-on-es">
 <span id="elastic-create-index"></span><h1>Create an index on ES<a class="headerlink" href="#create-an-index-on-es" title="Permalink to this headline">¶</a></h1>
-<p>There are defaults for shards and replicas, so if those are okay, drop the <cite>-d</cite> and everything after it.
-.. code-block:: console</p>
-<blockquote>
-<div><p>curl -XPUT &#8216;localhost:9200/twitter?pretty&#8217; -d&#8217;
-{</p>
-<blockquote>
-<div><dl class="docutils">
-<dt>&#8220;settings&#8221;</dt>
- <span class="classifier-delimiter">:</span> <span class="classifier">{</span><dd><dl class="first docutils">
-<dt>&#8220;index&#8221;</dt>
- <span class="classifier-delimiter">:</span> <span class="classifier">{</span><dd>&#8220;number_of_shards&#8221; : 3,
-&#8220;number_of_replicas&#8221; : 2</dd>
-</dl>
-<p class="last">}</p>
-</dd>
-</dl>
-<p>}</p>
-</div></blockquote>
-<p>}</p>
-</div></blockquote>
+<p>There are defaults for shards and replicas, so if those are okay, drop the <cite>-d</cite> and everything after it.</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">curl -H&#39;Content-Type: application/json&#39; -XPUT &#39;localhost:9200/ossec?pretty&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="old-and-broken">
+<h1>Old and broken:<a class="headerlink" href="#old-and-broken" title="Permalink to this headline">¶</a></h1>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">curl -XPUT &#39;localhost:9200/twitter?pretty&#39; -d&#39;</span>
+<span class="go">{</span>
+<span class="go">    &quot;settings&quot; : {</span>
+<span class="go">        &quot;index&quot; : {</span>
+<span class="go">            &quot;number_of_shards&quot; : 3,</span>
+<span class="go">            &quot;number_of_replicas&quot; : 2</span>
+<span class="go">        }</span>
+<span class="go">    }</span>
+<span class="go">}</span>
+</pre></div>
+</div>
 </div>
 
 
@@ -84,6 +82,12 @@
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
+  <h3><a href="../../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Create an index on ES</a></li>
+<li><a class="reference internal" href="#old-and-broken">Old and broken:</a></li>
+</ul>
+
   <h4>Previous topic</h4>
   <p class="topless"><a href="index.html"
                         title="previous chapter">elastic</a></p>

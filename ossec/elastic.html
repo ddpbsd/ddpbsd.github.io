@@ -1,0 +1,174 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>OSSEC and Elasticstack &#8212; notes 0.1 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="top" title="notes 0.1 documentation" href="../index.html" />
+    <link rel="up" title="OSSEC" href="index.html" />
+    <link rel="next" title="rsyslogd" href="../rsyslogd/index.html" />
+    <link rel="prev" title="OSSEC" href="index.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../rsyslogd/index.html" title="rsyslogd"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="OSSEC"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">notes 0.1 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">OSSEC</a> &#187;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="ossec-and-elasticstack">
+<h1>OSSEC and Elasticstack<a class="headerlink" href="#ossec-and-elasticstack" title="Permalink to this headline">¶</a></h1>
+<p>A tale of dread and woe.</p>
+<div class="section" id="turn-on-json-logging-in-ossec">
+<h2>Turn on json logging in OSSEC:<a class="headerlink" href="#turn-on-json-logging-in-ossec" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;global&gt;</span>
+  <span class="nt">&lt;jsonout_output&gt;</span>yes<span class="nt">&lt;/jsonout_output&gt;</span>
+<span class="nt">&lt;/global&gt;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="logstash-config">
+<h2>Logstash Config:<a class="headerlink" href="#logstash-config" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">input {</span>
+  <span class="l l-Scalar l-Scalar-Plain">beats {</span>
+    <span class="l l-Scalar l-Scalar-Plain">id =&gt; &quot;beats_test&quot;</span>
+    <span class="l l-Scalar l-Scalar-Plain">port =&gt; 9001</span>
+  <span class="l l-Scalar l-Scalar-Plain">}</span>
+<span class="l l-Scalar l-Scalar-Plain">}</span>
+
+
+<span class="l l-Scalar l-Scalar-Plain">output {</span>
+  <span class="l l-Scalar l-Scalar-Plain">elasticsearch {</span>
+    <span class="l l-Scalar l-Scalar-Plain">index =&gt; &quot;ossec-%{+YYYY.MM.dd}&quot;</span>
+  <span class="l l-Scalar l-Scalar-Plain">}</span>
+
+<span class="l l-Scalar l-Scalar-Plain">#  stdout {</span>
+<span class="l l-Scalar l-Scalar-Plain">#  }</span>
+
+<span class="l l-Scalar l-Scalar-Plain">}</span>
+</pre></div>
+</div>
+<p>Install filebeat.</p>
+</div>
+<div class="section" id="filebeat-config">
+<h2>Filebeat Config:<a class="headerlink" href="#filebeat-config" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">filebeat.prospectors</span><span class="p p-Indicator">:</span>
+
+<span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">input_type</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">log</span>
+  <span class="l l-Scalar l-Scalar-Plain">paths</span><span class="p p-Indicator">:</span>
+    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">/var/ossec/logs/alerts/alerts.json</span>
+
+  <span class="l l-Scalar l-Scalar-Plain">json.keys_under_root</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">true</span>
+
+<span class="l l-Scalar l-Scalar-Plain">output.logstash</span><span class="p p-Indicator">:</span>
+  <span class="l l-Scalar l-Scalar-Plain">hosts</span><span class="p p-Indicator">:</span> <span class="p p-Indicator">[</span><span class="s">&quot;elastic:9001&quot;</span><span class="p p-Indicator">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">OSSEC and Elasticstack</a><ul>
+<li><a class="reference internal" href="#turn-on-json-logging-in-ossec">Turn on json logging in OSSEC:</a></li>
+<li><a class="reference internal" href="#logstash-config">Logstash Config:</a></li>
+<li><a class="reference internal" href="#filebeat-config">Filebeat Config:</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="index.html"
+                        title="previous chapter">OSSEC</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="../rsyslogd/index.html"
+                        title="next chapter">rsyslogd</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/ossec/elastic.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../rsyslogd/index.html" title="rsyslogd"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="OSSEC"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">notes 0.1 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >OSSEC</a> &#187;</li> 
+      </ul>
+    </div>
+        <!-- your html code here -->
+	<div class="footer">
+		<em>This information has a good chance of being wrong, inconsistent, out of date, or just bad. Use at your own risk.
+		Feel free to notify me of any issues though.</em>
+	</div>
+
+
+  </body>
+</html>
