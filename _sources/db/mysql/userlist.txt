@@ -1,0 +1,7 @@
+Get a list of users:
+^^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: sql
+
+   SELECT User FROM mysql.user;
+

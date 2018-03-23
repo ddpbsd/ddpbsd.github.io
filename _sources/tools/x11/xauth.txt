@@ -1,7 +1,7 @@
 .. _tools_xll_xauth:
 
 Allow another user to use your `$DISPLAY`:
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code-block:: console
 

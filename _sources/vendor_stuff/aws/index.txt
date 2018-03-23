@@ -1,0 +1,13 @@
+aws
+===
+
+Amazon Web Services stuff
+
+
+Contents:
+
+.. toctree::
+   :maxdepth: 2
+
+   vpn
+

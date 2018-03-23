@@ -39,4 +39,11 @@ Dump the configuration to a file:
 
    ssh root@DEVICE "cli show config" > saved_config
 
+Show config changes before commit:
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: console
+
+   show | compare
+
 

@@ -9,5 +9,6 @@ Contents:
    active_directory/index.rst
    cheatsheets
    powershell
+   smb
    sysmon   
 

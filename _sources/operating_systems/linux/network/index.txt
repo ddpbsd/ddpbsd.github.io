@@ -6,6 +6,7 @@ Contents:
 .. toctree::
    :maxdepth: 2
 
+   commands
    interfaces
    network_manager
    vnstat

@@ -10,4 +10,5 @@ Contents:
 
    buzzell
    ix
+   pine64_clusterboard/index
 

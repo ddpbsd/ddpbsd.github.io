@@ -11,5 +11,6 @@ Contents:
    testing
 
    patterns/index
+   examples/index
    
 

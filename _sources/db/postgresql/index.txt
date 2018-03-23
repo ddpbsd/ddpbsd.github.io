@@ -5,4 +5,5 @@ PostgreSQL
    :maxdepth: 2
 
    simplestuff
+   userlist
 

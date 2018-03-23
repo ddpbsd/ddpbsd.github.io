@@ -1,4 +1,4 @@
-.. elk_logstash_indexes::
+.. _elk_logstash_indexes:
 
 There's probably a better way to do everything I'm doing here.
 
