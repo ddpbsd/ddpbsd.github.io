@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>computers &#8212; notes 0.1 documentation</title>
+    <title>Compile the Windows agent with libsodium support &#8212; notes 0.1 documentation</title>
     
     <link rel="stylesheet" href="../../../_static/classic.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
@@ -26,9 +26,9 @@
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
     <link rel="top" title="notes 0.1 documentation" href="../../../index.html" />
-    <link rel="up" title="mynet" href="../index.html" />
-    <link rel="next" title="Run the gogs docker container:" href="buzzell.html" />
-    <link rel="prev" title="Physical Systems:" href="../systems.html" /> 
+    <link rel="up" title="Windows" href="index.html" />
+    <link rel="next" title="rsyslogd" href="../../../rsyslogd/index.html" />
+    <link rel="prev" title="Windows" href="index.html" /> 
   </head>
   <body role="document">
     <div class="related" role="navigation" aria-label="related navigation">
@@ -38,14 +38,15 @@
           <a href="../../../genindex.html" title="General Index"
              accesskey="I">index</a></li>
         <li class="right" >
-          <a href="buzzell.html" title="Run the gogs docker container:"
+          <a href="../../../rsyslogd/index.html" title="rsyslogd"
              accesskey="N">next</a> |</li>
         <li class="right" >
-          <a href="../systems.html" title="Physical Systems:"
+          <a href="index.html" title="Windows"
              accesskey="P">previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="../../../index.html">notes 0.1 documentation</a> &#187;</li>
-          <li class="nav-item nav-item-1"><a href="../../index.html" >MISC</a> &#187;</li>
-          <li class="nav-item nav-item-2"><a href="../index.html" accesskey="U">mynet</a> &#187;</li> 
+          <li class="nav-item nav-item-1"><a href="../../index.html" >OSSEC</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../index.html" >OSSEC src</a> &#187;</li>
+          <li class="nav-item nav-item-3"><a href="index.html" accesskey="U">Windows</a> &#187;</li> 
       </ul>
     </div>  
 
@@ -54,27 +55,20 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="computers">
-<h1>computers<a class="headerlink" href="#computers" title="Permalink to this headline">¶</a></h1>
-<p>More information about systems</p>
-<p>Contents:</p>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="buzzell.html">Run the gogs docker container:</a></li>
-<li class="toctree-l1"><a class="reference internal" href="buzzell.html#build-the-nmap-image">Build the nmap image:</a></li>
-<li class="toctree-l1"><a class="reference internal" href="buzzell.html#run-the-nmap-container">Run the nmap container:</a></li>
-<li class="toctree-l1"><a class="reference internal" href="buzzell.html#run-the-influxdb-container">Run the influxdb container:</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ix.html">ix:</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="ix.html#currently-running">Currently running:</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ix.html#hardware">Hardware:</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ix.html#dmesg">dmesg:</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="pine64_clusterboard/index.html">pine64 clusterboard</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="pine64_clusterboard/diary.html">Pine64 Cluterboard</a></li>
-</ul>
-</li>
-</ul>
+  <div class="section" id="compile-the-windows-agent-with-libsodium-support">
+<h1>Compile the Windows agent with libsodium support<a class="headerlink" href="#compile-the-windows-agent-with-libsodium-support" title="Permalink to this headline">¶</a></h1>
+<p>Download the libsodium mingw release from: <a class="reference external" href="https://download.libsodium.org/libsodium/releases/">https://download.libsodium.org/libsodium/releases/</a></p>
+<p>Untar it in <cite>ossec-hids-*/src/external/</cite></p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go"> @@ -646,7 +650,7 @@ $(error Do not use &#39;winagent&#39; directly, use &#39;TARGET=winagent&#39;)</span>
+<span class="go"> endif</span>
+<span class="go"> .PHONY: winagent</span>
+<span class="go"> winagent:</span>
+<span class="go">-       ${MAKE} ${WINDOWS_BINS} CFLAGS=&quot;-DCLIENT -DWIN32 -I./${EXTERNAL_ZLIB}&quot; LDFLAGS=&quot;-lwsock32 -lwevtapi -lshlwapi -lcomctl32 -lws2_32&quot;</span>
+<span class="go">+       ${MAKE} ${WINDOWS_BINS} CFLAGS=&quot;-DCLIENT -DWIN32 -I./${EXTERNAL_ZLIB} -I./external/libsodium-win64/include -L./external/libsodium-win64/lib&quot; LDFLAGS=&quot;-lwsock32 -lwevtapi -lshlwapi -lcomctl32 -lws2_32 -lsodium&quot;</span>
+<span class="go">        cd ${EXTERNAL_LUA}src/ &amp;&amp; ${MAKE} CC=${MING_BASE}${CC} -f Makefile.mingw mingw</span>
+<span class="go">        cp ${EXTERNAL_LUA}src/ossec-lua.exe win32/</span>
+<span class="go">        cp ${EXTERNAL_LUA}src/ossec-luac.exe win32/</span>
+</pre></div>
 </div>
 </div>
 
@@ -85,15 +79,15 @@
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
   <h4>Previous topic</h4>
-  <p class="topless"><a href="../systems.html"
-                        title="previous chapter">Physical Systems:</a></p>
+  <p class="topless"><a href="index.html"
+                        title="previous chapter">Windows</a></p>
   <h4>Next topic</h4>
-  <p class="topless"><a href="buzzell.html"
-                        title="next chapter">Run the gogs docker container:</a></p>
+  <p class="topless"><a href="../../../rsyslogd/index.html"
+                        title="next chapter">rsyslogd</a></p>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
-      <li><a href="../../../_sources/misc/mynet/computers/index.txt"
+      <li><a href="../../../_sources/ossec/src/windows/libsodium.txt"
             rel="nofollow">Show Source</a></li>
     </ul>
    </div>
@@ -118,14 +112,15 @@
           <a href="../../../genindex.html" title="General Index"
              >index</a></li>
         <li class="right" >
-          <a href="buzzell.html" title="Run the gogs docker container:"
+          <a href="../../../rsyslogd/index.html" title="rsyslogd"
              >next</a> |</li>
         <li class="right" >
-          <a href="../systems.html" title="Physical Systems:"
+          <a href="index.html" title="Windows"
              >previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="../../../index.html">notes 0.1 documentation</a> &#187;</li>
-          <li class="nav-item nav-item-1"><a href="../../index.html" >MISC</a> &#187;</li>
-          <li class="nav-item nav-item-2"><a href="../index.html" >mynet</a> &#187;</li> 
+          <li class="nav-item nav-item-1"><a href="../../index.html" >OSSEC</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../index.html" >OSSEC src</a> &#187;</li>
+          <li class="nav-item nav-item-3"><a href="index.html" >Windows</a> &#187;</li> 
       </ul>
     </div>
         <!-- your html code here -->

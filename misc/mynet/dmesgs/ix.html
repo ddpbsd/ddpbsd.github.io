@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>dmesg for ix: &#8212; notes 0.1 documentation</title>
+    <title>dmesg: &#8212; notes 0.1 documentation</title>
     
     <link rel="stylesheet" href="../../../_static/classic.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
@@ -55,12 +55,12 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="dmesg-for-ix">
-<span id="misc-mynet-dmesgs-ix"></span><h1>dmesg for ix:<a class="headerlink" href="#dmesg-for-ix" title="Permalink to this headline">¶</a></h1>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">OpenBSD 6.2-current (GENERIC.MP) #264: Fri Dec  8 22:28:52 MST 2017</span>
+  <div class="section" id="dmesg">
+<span id="misc-mynet-dmesgs-ix"></span><h1>dmesg:<a class="headerlink" href="#dmesg" title="Permalink to this headline">¶</a></h1>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">OpenBSD 6.3-beta (GENERIC.MP) #47: Sat Mar 10 06:25:57 MST 2018</span>
 <span class="go">    deraadt@amd64.openbsd.org:/usr/src/sys/arch/amd64/compile/GENERIC.MP</span>
 <span class="go">real mem = 2120847360 (2022MB)</span>
-<span class="go">avail mem = 2049712128 (1954MB)</span>
+<span class="go">avail mem = 2049568768 (1954MB)</span>
 <span class="go">mpath0 at root</span>
 <span class="go">scsibus0 at mpath0: 256 targets</span>
 <span class="go">mainbus0 at root</span>
@@ -74,22 +74,22 @@
 <span class="go">acpitimer0 at acpi0: 3579545 Hz, 24 bits</span>
 <span class="go">acpimadt0 at acpi0 addr 0xfee00000: PC-AT compat</span>
 <span class="go">cpu0 at mainbus0: apid 0 (boot processor)</span>
-<span class="go">cpu0: Intel(R) Celeron(R) CPU G1101 @ 2.27GHz, 2261.32 MHz</span>
-<span class="go">cpu0: FPU,VME,DE,PSE,TSC,MSR,PAE,MCE,CX8,APIC,SEP,MTRR,PGE,MCA,CMOV,PAT,PSE36,CFLUSH,DS,ACPI,MMX,FXSR,SSE,SSE2,SS,HTT,TM,PBE,SSE3,DTES64,MWAIT,DS-CPL,VMX,EST,TM2,SSSE3,CX16,xTPR,PDCM,POPCNT,NXE,RDTSCP,LONG,LAHF,PERF,ITSC,SENSOR,ARAT</span>
+<span class="go">cpu0: Intel(R) Celeron(R) CPU G1101 @ 2.27GHz, 2261.34 MHz</span>
+<span class="go">cpu0: FPU,VME,DE,PSE,TSC,MSR,PAE,MCE,CX8,APIC,SEP,MTRR,PGE,MCA,CMOV,PAT,PSE36,CFLUSH,DS,ACPI,MMX,FXSR,SSE,SSE2,SS,HTT,TM,PBE,SSE3,DTES64,MWAIT,DS-CPL,VMX,EST,TM2,SSSE3,CX16,xTPR,PDCM,POPCNT,NXE,RDTSCP,LONG,LAHF,PERF,ITSC,SENSOR,ARAT,MELTDOWN</span>
 <span class="go">cpu0: 256KB 64b/line 8-way L2 cache</span>
-<span class="go">acpitimer0: recalibrated TSC frequency 2260988351 Hz</span>
+<span class="go">acpitimer0: recalibrated TSC frequency 2260993860 Hz</span>
 <span class="go">cpu0: smt 0, core 0, package 0</span>
 <span class="go">mtrr: Pentium Pro MTRR support, 8 var ranges, 88 fixed ranges</span>
 <span class="go">cpu0: apic clock running at 132MHz</span>
 <span class="go">cpu0: mwait min=64, max=64, C-substates=0.2.1.1, IBE</span>
 <span class="go">cpu1 at mainbus0: apid 4 (application processor)</span>
 <span class="go">cpu1: Intel(R) Celeron(R) CPU G1101 @ 2.27GHz, 2260.98 MHz</span>
-<span class="go">cpu1: FPU,VME,DE,PSE,TSC,MSR,PAE,MCE,CX8,APIC,SEP,MTRR,PGE,MCA,CMOV,PAT,PSE36,CFLUSH,DS,ACPI,MMX,FXSR,SSE,SSE2,SS,HTT,TM,PBE,SSE3,DTES64,MWAIT,DS-CPL,VMX,EST,TM2,SSSE3,CX16,xTPR,PDCM,POPCNT,NXE,RDTSCP,LONG,LAHF,PERF,ITSC,SENSOR,ARAT</span>
+<span class="go">cpu1: FPU,VME,DE,PSE,TSC,MSR,PAE,MCE,CX8,APIC,SEP,MTRR,PGE,MCA,CMOV,PAT,PSE36,CFLUSH,DS,ACPI,MMX,FXSR,SSE,SSE2,SS,HTT,TM,PBE,SSE3,DTES64,MWAIT,DS-CPL,VMX,EST,TM2,SSSE3,CX16,xTPR,PDCM,POPCNT,NXE,RDTSCP,LONG,LAHF,PERF,ITSC,SENSOR,ARAT,MELTDOWN</span>
 <span class="go">cpu1: 256KB 64b/line 8-way L2 cache</span>
 <span class="go">cpu1: smt 0, core 2, package 0</span>
 <span class="go">ioapic0 at mainbus0: apid 0 pa 0xfec00000, version 20, 24 pins</span>
 <span class="go">acpihpet0 at acpi0: 14318179 Hz</span>
-<span class="go">acpihpet0: recalibrated TSC frequency 2260991040 Hz</span>
+<span class="go">acpihpet0: recalibrated TSC frequency 2260990640 Hz</span>
 <span class="go">acpimcfg0 at acpi0 addr 0xe0000000, bus 0-255</span>
 <span class="go">acpiprt0 at acpi0: bus 0 (PCI0)</span>
 <span class="go">acpiprt1 at acpi0: bus -1 (LYD0)</span>
@@ -131,12 +131,15 @@
 <span class="go">ahci0 at pci0 dev 31 function 2 &quot;Intel 3400 AHCI&quot; rev 0x05: msi, AHCI 1.3</span>
 <span class="go">ahci0: port 0: 3.0Gb/s</span>
 <span class="go">ahci0: port 1: 3.0Gb/s</span>
+<span class="go">ahci0: port 2: 3.0Gb/s</span>
 <span class="go">ahci0: port 4: 1.5Gb/s</span>
 <span class="go">scsibus1 at ahci0: 32 targets</span>
-<span class="go">sd0 at scsibus1 targ 0 lun 0: &lt;ATA, WDC WD10EADS-00L, 01.0&gt; SCSI3 0/direct fixed naa.50014ee1ac95dac9</span>
-<span class="go">sd0: 953869MB, 512 bytes/sector, 1953525168 sectors</span>
-<span class="go">sd1 at scsibus1 targ 1 lun 0: &lt;ATA, SAMSUNG HD103SJ, 1AJ1&gt; SCSI3 0/direct fixed naa.50024e900404611c</span>
+<span class="go">sd0 at scsibus1 targ 0 lun 0: &lt;ATA, INTEL SSDSC2KW25, LHF&gt; SCSI3 0/direct fixed naa.55cd2e414eeccc28</span>
+<span class="go">sd0: 244198MB, 512 bytes/sector, 500118192 sectors, thin</span>
+<span class="go">sd1 at scsibus1 targ 1 lun 0: &lt;ATA, WDC WD10EADS-00L, 01.0&gt; SCSI3 0/direct fixed naa.50014ee1ac95dac9</span>
 <span class="go">sd1: 953869MB, 512 bytes/sector, 1953525168 sectors</span>
+<span class="go">sd2 at scsibus1 targ 2 lun 0: &lt;ATA, SAMSUNG HD103SJ, 1AJ1&gt; SCSI3 0/direct fixed naa.50024e900404611c</span>
+<span class="go">sd2: 953869MB, 512 bytes/sector, 1953525168 sectors</span>
 <span class="go">cd0 at scsibus1 targ 4 lun 0: &lt;PLDS, DVD-ROM DH-16D5S, VD15&gt; ATAPI 5/cdrom removable</span>
 <span class="go">isa0 at pcib0</span>
 <span class="go">isadma0 at isa0</span>
@@ -156,16 +159,23 @@
 <span class="go">uthum1 at uhidev1</span>
 <span class="go">uthum1: type sht1x (temperature)</span>
 <span class="go">uthum1: type sht1x (humidity)</span>
-<span class="go">uhidev2 at uhub3 port 3 configuration 1 interface 0 &quot;ThingM blink(1) mk2&quot; rev 2.00/0.02 addr 4</span>
-<span class="go">uhidev2: iclass 3/0, 1 report id</span>
-<span class="go">uhid0 at uhidev2 reportid 1: input=0, output=0, feature=8</span>
-<span class="go">zyd0 at uhub3 port 5 configuration 1 interface 0 &quot;ZyDAS USB2.0 WLAN&quot; rev 2.00/48.10 addr 5</span>
+<span class="go">uhidev2 at uhub3 port 2 configuration 1 interface 0 &quot;Logitech USB Keyboard&quot; rev 1.10/64.00 addr 4</span>
+<span class="go">uhidev2: iclass 3/1</span>
+<span class="go">ukbd0 at uhidev2: 8 variable keys, 6 key codes</span>
+<span class="go">wskbd0 at ukbd0: console keyboard, using wsdisplay0</span>
+<span class="go">uhidev3 at uhub3 port 2 configuration 1 interface 1 &quot;Logitech USB Keyboard&quot; rev 1.10/64.00 addr 4</span>
+<span class="go">uhidev3: iclass 3/0, 3 report ids</span>
+<span class="go">uhid0 at uhidev3 reportid 1: input=1, output=0, feature=0</span>
+<span class="go">uhid1 at uhidev3 reportid 2: input=1, output=0, feature=0</span>
+<span class="go">uhid2 at uhidev3 reportid 3: input=3, output=0, feature=0</span>
+<span class="go">uslcom0 at uhub3 port 5 configuration 1 interface 0 &quot;Silicon Labs CP2102 USB to UART Bridge Controller&quot; rev 1.10/1.00 addr 5</span>
+<span class="go">ucom0 at uslcom0 portno 0</span>
 <span class="go">vscsi0 at root</span>
 <span class="go">scsibus2 at vscsi0: 256 targets</span>
 <span class="go">softraid0 at root</span>
 <span class="go">scsibus3 at softraid0: 256 targets</span>
-<span class="go">root on sd0a swap on sd0b dump on sd0b</span>
-<span class="go">zyd0: HMAC ZD1211, FW 46.05, RF AL7230B, PA 0, address 00:13:49:22:fe:0d</span>
+<span class="go">root on sd0a (98bb51e72297c22c.a) swap on sd0b dump on sd0b</span>
+<span class="go">WARNING: / was not properly unmounted</span>
 </pre></div>
 </div>
 </div>

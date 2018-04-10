@@ -31,4 +31,11 @@ Run the nmap container:
 .. code-block:: console
 
    docker run --mount source=nmap,target=/nmap --rm nmap:3 -sS -A -oG /nmap/2nmap_$(date +%Y%m%d) --append-output HOST
+
+Run the influxdb container:
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: console
+
+   docker run -p 8086:8086 -p 8088:8088 -p 8089:8089/udp -v /home/ddp/influx/influxdb.conf:/etc/influxdb/influxdb.conf:ro -v influxdb:/var/lib/influxdb influxdb  -config /etc/influxdb/influxdb.conf
  

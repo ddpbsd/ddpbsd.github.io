@@ -79,6 +79,12 @@
 </pre></div>
 </div>
 </div>
+<div class="section" id="run-the-influxdb-container">
+<h1>Run the influxdb container:<a class="headerlink" href="#run-the-influxdb-container" title="Permalink to this headline">¶</a></h1>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">docker run -p 8086:8086 -p 8088:8088 -p 8089:8089/udp -v /home/ddp/influx/influxdb.conf:/etc/influxdb/influxdb.conf:ro -v influxdb:/var/lib/influxdb influxdb  -config /etc/influxdb/influxdb.conf</span>
+</pre></div>
+</div>
+</div>
 
 
           </div>
@@ -91,6 +97,7 @@
 <li><a class="reference internal" href="#">Run the gogs docker container:</a></li>
 <li><a class="reference internal" href="#build-the-nmap-image">Build the nmap image:</a></li>
 <li><a class="reference internal" href="#run-the-nmap-container">Run the nmap container:</a></li>
+<li><a class="reference internal" href="#run-the-influxdb-container">Run the influxdb container:</a></li>
 </ul>
 
   <h4>Previous topic</h4>
