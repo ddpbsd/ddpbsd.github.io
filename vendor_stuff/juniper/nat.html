@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>&lt;no title&gt; &#8212; notes 0.1 documentation</title>
+    <title>Example NAT setup: &#8212; notes 0.1 documentation</title>
     
     <link rel="stylesheet" href="../../_static/classic.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
@@ -25,7 +25,10 @@
     <script type="text/javascript" src="../../_static/doctools.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="top" title="notes 0.1 documentation" href="../../index.html" /> 
+    <link rel="top" title="notes 0.1 documentation" href="../../index.html" />
+    <link rel="up" title="Juniper" href="index.html" />
+    <link rel="next" title="PaloAlto" href="../paloalto/index.html" />
+    <link rel="prev" title="Commit the configuration changes, then roll back after 10 minutes:" href="commit_confirm.html" /> 
   </head>
   <body role="document">
     <div class="related" role="navigation" aria-label="related navigation">
@@ -34,7 +37,15 @@
         <li class="right" style="margin-right: 10px">
           <a href="../../genindex.html" title="General Index"
              accesskey="I">index</a></li>
-        <li class="nav-item nav-item-0"><a href="../../index.html">notes 0.1 documentation</a> &#187;</li> 
+        <li class="right" >
+          <a href="../paloalto/index.html" title="PaloAlto"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="commit_confirm.html" title="Commit the configuration changes, then roll back after 10 minutes:"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../index.html">notes 0.1 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../index.html" >Vendor Stuff</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="index.html" accesskey="U">Juniper</a> &#187;</li> 
       </ul>
     </div>  
 
@@ -43,26 +54,30 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <blockquote>
-<div>set security nat destination pool dst-nat-pool-1 address 192.168.1.200/32
-set security nat destination pool dst-nat-pool-1 address port 80
-set security nat destination pool dst-nat-pool-2 address 192.168.1.220/32
-set security nat destination pool dst-nat-pool-2 address port 8000
-set security nat destination rule-set rs1 from zone untrust
-set security nat destination rule-set rs1 rule r1 match destination-address 203.0.113.200/32
-set security nat destination rule-set rs1 rule r1 match destination-port 80
-set security nat destination rule-set rs1 rule r1 then destination-nat pool dst-nat-pool-1
-set security nat destination rule-set rs1 rule r2 match destination-address 203.0.113.200/32
-set security nat destination rule-set rs1 rule r2 match destination-port 8000
-set security nat destination rule-set rs1 rule r2 then destination-nat pool dst-nat-pool-2
-set security nat proxy-arp interface ge-0/0/0.0 address 203.0.113.200/32
-set security address-book global address server-2 192.168.1.220/32
-set security address-book global address server-1 192.168.1.200/32
-set security policies from-zone untrust to-zone trust policy server-access match source-address any
-set security policies from-zone untrust to-zone trust policy server-access match destination-address server-1
-set security policies from-zone untrust to-zone trust policy server-access match destination-address server-2
-set security policies from-zone untrust to-zone trust policy server-access match application any
-set security policies from-zone untrust to-zone trust policy server-access then permit</div></blockquote>
+  <div class="section" id="example-nat-setup">
+<h1>Example NAT setup:<a class="headerlink" href="#example-nat-setup" title="Permalink to this headline">¶</a></h1>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">set security nat destination pool dst-nat-pool-1 address 192.168.1.200/32</span>
+<span class="go">set security nat destination pool dst-nat-pool-1 address port 80</span>
+<span class="go">set security nat destination pool dst-nat-pool-2 address 192.168.1.220/32</span>
+<span class="go">set security nat destination pool dst-nat-pool-2 address port 8000</span>
+<span class="go">set security nat destination rule-set rs1 from zone untrust</span>
+<span class="go">set security nat destination rule-set rs1 rule r1 match destination-address 203.0.113.200/32</span>
+<span class="go">set security nat destination rule-set rs1 rule r1 match destination-port 80</span>
+<span class="go">set security nat destination rule-set rs1 rule r1 then destination-nat pool dst-nat-pool-1</span>
+<span class="go">set security nat destination rule-set rs1 rule r2 match destination-address 203.0.113.200/32</span>
+<span class="go">set security nat destination rule-set rs1 rule r2 match destination-port 8000</span>
+<span class="go">set security nat destination rule-set rs1 rule r2 then destination-nat pool dst-nat-pool-2</span>
+<span class="go">set security nat proxy-arp interface ge-0/0/0.0 address 203.0.113.200/32</span>
+<span class="go">set security address-book global address server-2 192.168.1.220/32</span>
+<span class="go">set security address-book global address server-1 192.168.1.200/32</span>
+<span class="go">set security policies from-zone untrust to-zone trust policy server-access match source-address any</span>
+<span class="go">set security policies from-zone untrust to-zone trust policy server-access match destination-address server-1</span>
+<span class="go">set security policies from-zone untrust to-zone trust policy server-access match destination-address server-2</span>
+<span class="go">set security policies from-zone untrust to-zone trust policy server-access match application any</span>
+<span class="go">set security policies from-zone untrust to-zone trust policy server-access then permit</span>
+</pre></div>
+</div>
+</div>
 
 
           </div>
@@ -70,6 +85,12 @@ set security policies from-zone untrust to-zone trust policy server-access then 
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="commit_confirm.html"
+                        title="previous chapter">Commit the configuration changes, then roll back after 10 minutes:</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="../paloalto/index.html"
+                        title="next chapter">PaloAlto</a></p>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
@@ -97,7 +118,15 @@ set security policies from-zone untrust to-zone trust policy server-access then 
         <li class="right" style="margin-right: 10px">
           <a href="../../genindex.html" title="General Index"
              >index</a></li>
-        <li class="nav-item nav-item-0"><a href="../../index.html">notes 0.1 documentation</a> &#187;</li> 
+        <li class="right" >
+          <a href="../paloalto/index.html" title="PaloAlto"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="commit_confirm.html" title="Commit the configuration changes, then roll back after 10 minutes:"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../index.html">notes 0.1 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../index.html" >Vendor Stuff</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="index.html" >Juniper</a> &#187;</li> 
       </ul>
     </div>
         <!-- your html code here -->

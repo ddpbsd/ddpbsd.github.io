@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Create a self signed cert: &#8212; notes 0.1 documentation</title>
+    <title>Look at certs! &#8212; notes 0.1 documentation</title>
     
     <link rel="stylesheet" href="../_static/classic.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -27,8 +27,8 @@
     <link rel="search" title="Search" href="../search.html" />
     <link rel="top" title="notes 0.1 documentation" href="../index.html" />
     <link rel="up" title="ssl" href="index.html" />
-    <link rel="next" title="Check to see if ssl3 works:" href="test_for_ssl3.html" />
-    <link rel="prev" title="Download a certificate:" href="download_cert.html" /> 
+    <link rel="next" title="Stupid Unix Tricks" href="../stupid_unix_tricks/index.html" />
+    <link rel="prev" title="Where I got this information:" href="create_ca.html" /> 
   </head>
   <body role="document">
     <div class="related" role="navigation" aria-label="related navigation">
@@ -38,10 +38,10 @@
           <a href="../genindex.html" title="General Index"
              accesskey="I">index</a></li>
         <li class="right" >
-          <a href="test_for_ssl3.html" title="Check to see if ssl3 works:"
+          <a href="../stupid_unix_tricks/index.html" title="Stupid Unix Tricks"
              accesskey="N">next</a> |</li>
         <li class="right" >
-          <a href="download_cert.html" title="Download a certificate:"
+          <a href="create_ca.html" title="Where I got this information:"
              accesskey="P">previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="../index.html">notes 0.1 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">ssl</a> &#187;</li> 
@@ -53,25 +53,25 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="create-a-self-signed-cert">
-<h1>Create a self signed cert:<a class="headerlink" href="#create-a-self-signed-cert" title="Permalink to this headline">¶</a></h1>
-<p>Create the initial key:</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">openssl genrsa -aes256 -out key.key 2048</span>
-</pre></div>
-</div>
-<p>Create a Certificate Signing Request:</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">openssl req -new -sha256 -key key.key -out csr.csr</span>
-</pre></div>
-</div>
-<p>Create the final Certificate:</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">openssl req -x509 -sha256 -days 365 -key key.key -in csr.csr -out certificate.crt</span>
+  <div class="section" id="look-at-certs">
+<h1>Look at certs!<a class="headerlink" href="#look-at-certs" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="check-a-private-key">
+<h2>Check a private key:<a class="headerlink" href="#check-a-private-key" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">openssl rsa -in privateKey.key -check</span>
 </pre></div>
 </div>
 </div>
-<div class="section" id="remove-passphrase">
-<h1>Remove passphrase:<a class="headerlink" href="#remove-passphrase" title="Permalink to this headline">¶</a></h1>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">openssl rsa -in [file1.key] -out [file2.key]</span>
+<div class="section" id="check-a-certificate">
+<h2>Check a certificate:<a class="headerlink" href="#check-a-certificate" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">openssl x509 -in certificate.crt -text -noout</span>
 </pre></div>
+</div>
+</div>
+<div class="section" id="check-the-subject-in-a-certificate">
+<h2>Check the subject in a certificate:<a class="headerlink" href="#check-the-subject-in-a-certificate" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">openssl x509 -noout -subject -in certificate.crt</span>
+</pre></div>
+</div>
 </div>
 </div>
 
@@ -83,20 +83,24 @@
         <div class="sphinxsidebarwrapper">
   <h3><a href="../index.html">Table Of Contents</a></h3>
   <ul>
-<li><a class="reference internal" href="#">Create a self signed cert:</a></li>
-<li><a class="reference internal" href="#remove-passphrase">Remove passphrase:</a></li>
+<li><a class="reference internal" href="#">Look at certs!</a><ul>
+<li><a class="reference internal" href="#check-a-private-key">Check a private key:</a></li>
+<li><a class="reference internal" href="#check-a-certificate">Check a certificate:</a></li>
+<li><a class="reference internal" href="#check-the-subject-in-a-certificate">Check the subject in a certificate:</a></li>
+</ul>
+</li>
 </ul>
 
   <h4>Previous topic</h4>
-  <p class="topless"><a href="download_cert.html"
-                        title="previous chapter">Download a certificate:</a></p>
+  <p class="topless"><a href="create_ca.html"
+                        title="previous chapter">Where I got this information:</a></p>
   <h4>Next topic</h4>
-  <p class="topless"><a href="test_for_ssl3.html"
-                        title="next chapter">Check to see if ssl3 works:</a></p>
+  <p class="topless"><a href="../stupid_unix_tricks/index.html"
+                        title="next chapter">Stupid Unix Tricks</a></p>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
-      <li><a href="../_sources/ssl/create_self_signed_cert.txt"
+      <li><a href="../_sources/ssl/cert_checks.txt"
             rel="nofollow">Show Source</a></li>
     </ul>
    </div>
@@ -121,10 +125,10 @@
           <a href="../genindex.html" title="General Index"
              >index</a></li>
         <li class="right" >
-          <a href="test_for_ssl3.html" title="Check to see if ssl3 works:"
+          <a href="../stupid_unix_tricks/index.html" title="Stupid Unix Tricks"
              >next</a> |</li>
         <li class="right" >
-          <a href="download_cert.html" title="Download a certificate:"
+          <a href="create_ca.html" title="Where I got this information:"
              >previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="../index.html">notes 0.1 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="index.html" >ssl</a> &#187;</li> 

@@ -3,10 +3,22 @@
 Create a self signed cert:
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Create the initial key:
+
 .. code-block:: console
 
    openssl genrsa -aes256 -out key.key 2048
+
+Create a Certificate Signing Request:
+
+.. code-block:: console
+
    openssl req -new -sha256 -key key.key -out csr.csr
+
+Create the final Certificate:
+
+.. code-block:: console
+
    openssl req -x509 -sha256 -days 365 -key key.key -in csr.csr -out certificate.crt
 
 

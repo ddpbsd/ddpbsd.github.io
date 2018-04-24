@@ -10,4 +10,5 @@ Contents:
    create_self_signed_cert
    test_for_ssl3
    create_ca
+   cert_checks
 

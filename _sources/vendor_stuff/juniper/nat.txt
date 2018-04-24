@@ -1,5 +1,7 @@
+Example NAT setup:
+^^^^^^^^^^^^^^^^^^
 
-
+.. code-block:: console
 
    set security nat destination pool dst-nat-pool-1 address 192.168.1.200/32
    set security nat destination pool dst-nat-pool-1 address port 80
@@ -20,3 +22,4 @@
    set security policies from-zone untrust to-zone trust policy server-access match destination-address server-2
    set security policies from-zone untrust to-zone trust policy server-access match application any
    set security policies from-zone untrust to-zone trust policy server-access then permit
+
