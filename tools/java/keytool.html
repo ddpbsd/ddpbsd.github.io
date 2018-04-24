@@ -62,8 +62,8 @@
 </pre></div>
 </div>
 </div>
-<div class="section" id="list-the-vertificates-in-the-store">
-<h2>List the vertificates in the store:<a class="headerlink" href="#list-the-vertificates-in-the-store" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="list-the-certificates-in-the-store">
+<h2>List the certificates in the store:<a class="headerlink" href="#list-the-certificates-in-the-store" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">keytool -list -keystore ./keystore.jks</span>
 </pre></div>
 </div>
@@ -80,6 +80,12 @@
 </pre></div>
 </div>
 </div>
+<div class="section" id="import-a-certificate">
+<h2>Import a certificate:<a class="headerlink" href="#import-a-certificate" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">keytool -import -alias root -keystore ../cacerts -file ./certificate.crt</span>
+</pre></div>
+</div>
+</div>
 </div>
 
 
@@ -92,9 +98,10 @@
   <ul>
 <li><a class="reference internal" href="#">keytool</a><ul>
 <li><a class="reference internal" href="#default-password-for-a-keystore">Default password for a keystore:</a></li>
-<li><a class="reference internal" href="#list-the-vertificates-in-the-store">List the vertificates in the store:</a></li>
+<li><a class="reference internal" href="#list-the-certificates-in-the-store">List the certificates in the store:</a></li>
 <li><a class="reference internal" href="#export-a-cert">Export a cert:</a></li>
 <li><a class="reference internal" href="#look-at-the-exported-cert-with-openssl">Look at the exported cert with openssl:</a></li>
+<li><a class="reference internal" href="#import-a-certificate">Import a certificate:</a></li>
 </ul>
 </li>
 </ul>

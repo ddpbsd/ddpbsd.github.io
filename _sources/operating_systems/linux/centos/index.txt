@@ -8,3 +8,7 @@ Contents:
 
    centos
    automatic_updates
+   selinux
+   active_directory/index
+   packages
+

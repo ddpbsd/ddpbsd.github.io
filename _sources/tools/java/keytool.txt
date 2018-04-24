@@ -10,7 +10,7 @@ Default password for a keystore:
 
    changeit
 
-List the vertificates in the store:
+List the certificates in the store:
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code-block:: console
@@ -30,4 +30,11 @@ Look at the exported cert with openssl:
 .. code-block:: console
 
    openssl x509 -text -inform DER -in /tmp/FILE
+
+Import a certificate:
+^^^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: console
+
+   keytool -import -alias root -keystore ../cacerts -file ./certificate.crt
 
