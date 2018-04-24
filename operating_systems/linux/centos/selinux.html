@@ -1,0 +1,138 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>SELinux &#8212; notes 0.1 documentation</title>
+    
+    <link rel="stylesheet" href="../../../_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="top" title="notes 0.1 documentation" href="../../../index.html" />
+    <link rel="up" title="CentOS" href="index.html" />
+    <link rel="next" title="Active Directory" href="active_directory/index.html" />
+    <link rel="prev" title="Automatic updates:" href="automatic_updates.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="active_directory/index.html" title="Active Directory"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="automatic_updates.html" title="Automatic updates:"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">notes 0.1 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../../index.html" >Operating Systems</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../index.html" >Linux</a> &#187;</li>
+          <li class="nav-item nav-item-3"><a href="index.html" accesskey="U">CentOS</a> &#187;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="selinux">
+<h1>SELinux<a class="headerlink" href="#selinux" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="allow-ssh-keys-for-auth">
+<h2>Allow ssh keys for auth:<a class="headerlink" href="#allow-ssh-keys-for-auth" title="Permalink to this headline">¶</a></h2>
+<p>For some reason <cite>authorized_keys</cite> isn&#8217;t installed in the correct context.
+So make sure it&#8217;s in the right context so it can work. Don&#8217;t be fooled
+by key auth working under <cite>/usr/sbin/sshd -ddd</cite>, it&#8217;s a lie.</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">restorecon -R ~/.ssh</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../../../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">SELinux</a><ul>
+<li><a class="reference internal" href="#allow-ssh-keys-for-auth">Allow ssh keys for auth:</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="automatic_updates.html"
+                        title="previous chapter">Automatic updates:</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="active_directory/index.html"
+                        title="next chapter">Active Directory</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../../_sources/operating_systems/linux/centos/selinux.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="active_directory/index.html" title="Active Directory"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="automatic_updates.html" title="Automatic updates:"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">notes 0.1 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../../index.html" >Operating Systems</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../index.html" >Linux</a> &#187;</li>
+          <li class="nav-item nav-item-3"><a href="index.html" >CentOS</a> &#187;</li> 
+      </ul>
+    </div>
+        <!-- your html code here -->
+	<div class="footer">
+		<em>This information has a good chance of being wrong, inconsistent, out of date, or just bad. Use at your own risk.
+		Feel free to notify me of any issues though.</em>
+	</div>
+
+
+  </body>
+</html>

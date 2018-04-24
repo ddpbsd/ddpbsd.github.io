@@ -1,0 +1,204 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Active Directory Auth &#8212; notes 0.1 documentation</title>
+    
+    <link rel="stylesheet" href="../../../../_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../../',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../../_static/doctools.js"></script>
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+    <link rel="top" title="notes 0.1 documentation" href="../../../../index.html" />
+    <link rel="up" title="Active Directory" href="index.html" />
+    <link rel="next" title="containers" href="../../containers/index.html" />
+    <link rel="prev" title="Packages to install:" href="google-auth.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../containers/index.html" title="containers"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="google-auth.html" title="Packages to install:"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../../../index.html">notes 0.1 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../../../index.html" >Operating Systems</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../../index.html" >Linux</a> &#187;</li>
+          <li class="nav-item nav-item-3"><a href="../index.html" >CentOS</a> &#187;</li>
+          <li class="nav-item nav-item-4"><a href="index.html" accesskey="U">Active Directory</a> &#187;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="active-directory-auth">
+<h1>Active Directory Auth<a class="headerlink" href="#active-directory-auth" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="install-prerequisites">
+<h2>Install Prerequisites:<a class="headerlink" href="#install-prerequisites" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">yum install -y samba pam_krb5 krb5-workstation samba</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="configure-kerberos">
+<h2>Configure kerberos:<a class="headerlink" href="#configure-kerberos" title="Permalink to this headline">¶</a></h2>
+<p>Edit <cite>/etc/krb5.conf</cite></p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">#</span> Configuration snippets may be placed in this directory as well
+<span class="go">includedir /etc/krb5.conf.d/</span>
+
+<span class="go">[logging]</span>
+<span class="go"> default = FILE:/var/log/krb5libs.log</span>
+<span class="go"> kdc = FILE:/var/log/krb5kdc.log</span>
+<span class="go"> admin_server = FILE:/var/log/kadmind.log</span>
+
+<span class="go">[libdefaults]</span>
+<span class="go"> dns_lookup_realm = true</span>
+<span class="go"> dns_lookup_kdc = true</span>
+<span class="go"> ticket_lifetime = 24h</span>
+<span class="go"> renew_lifetime = 7d</span>
+<span class="go"> forwardable = true</span>
+<span class="go"> proxiable = true</span>
+<span class="go"> rdns = false</span>
+<span class="gp">#</span> <span class="nv">default_realm</span> <span class="o">=</span> EXAMPLE.COM
+<span class="go"> default_realm = MYDOMAIN.COM</span>
+<span class="go"> default_ccache_name = KEYRING:persistent:%{uid}</span>
+
+<span class="go">[realms]</span>
+<span class="go"> MYDOMAIN.COM = {</span>
+<span class="go">  kdc = AD_SERVER.MYDOMAIN.COM</span>
+<span class="go">  admin_server = AD_SERVER.MYDOMAIN.COM</span>
+<span class="go">  default_domain = MYDOMAIN.COM</span>
+<span class="go"> }</span>
+
+<span class="go">[domain_realm]</span>
+<span class="go"> .kerberos.server = MYDOMAIN.COM</span>
+<span class="go"> .intelgd.com = MYDOMAIN.COM</span>
+<span class="go"> intelgd.com = MYDOMAIN.COM</span>
+<span class="go"> intelgd = MYDOMAIN.COM</span>
+
+<span class="go">[appdefaults]</span>
+<span class="go"> pam = {</span>
+<span class="go">  ticket_lifetime = 1d</span>
+<span class="go">  renew_lifetime = 1d</span>
+<span class="go">  forwardable = true</span>
+<span class="go">  proxiable = false</span>
+<span class="go">  retain_after_close = false</span>
+<span class="go">  minimum_uid = 0</span>
+<span class="go">  debug = false</span>
+<span class="go"> }</span>
+
+<span class="go">[realms]</span>
+<span class="gp">#</span> EXAMPLE.COM <span class="o">=</span> <span class="o">{</span>
+<span class="gp">#</span>  <span class="nv">kdc</span> <span class="o">=</span> kerberos.example.com
+<span class="gp">#</span>  <span class="nv">admin_server</span> <span class="o">=</span> kerberos.example.com
+<span class="gp">#</span> <span class="o">}</span>
+
+<span class="go">[domain_realm]</span>
+<span class="gp">#</span> .example.com <span class="o">=</span> EXAMPLE.COM
+<span class="gp">#</span> example.com <span class="o">=</span> EXAMPLE.COM
+</pre></div>
+</div>
+</div>
+<div class="section" id="test-it-out">
+<h2>Test it out:<a class="headerlink" href="#test-it-out" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">kinit user@MYDOMAIN.COM</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../../../../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Active Directory Auth</a><ul>
+<li><a class="reference internal" href="#install-prerequisites">Install Prerequisites:</a></li>
+<li><a class="reference internal" href="#configure-kerberos">Configure kerberos:</a></li>
+<li><a class="reference internal" href="#test-it-out">Test it out:</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="google-auth.html"
+                        title="previous chapter">Packages to install:</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="../../containers/index.html"
+                        title="next chapter">containers</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../../../_sources/operating_systems/linux/centos/active_directory/help.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../../search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../containers/index.html" title="containers"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="google-auth.html" title="Packages to install:"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../../../index.html">notes 0.1 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../../../index.html" >Operating Systems</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../../index.html" >Linux</a> &#187;</li>
+          <li class="nav-item nav-item-3"><a href="../index.html" >CentOS</a> &#187;</li>
+          <li class="nav-item nav-item-4"><a href="index.html" >Active Directory</a> &#187;</li> 
+      </ul>
+    </div>
+        <!-- your html code here -->
+	<div class="footer">
+		<em>This information has a good chance of being wrong, inconsistent, out of date, or just bad. Use at your own risk.
+		Feel free to notify me of any issues though.</em>
+	</div>
+
+
+  </body>
+</html>
