@@ -1,0 +1,10 @@
+Random commands
+===============
+
+
+List disks:
+^^^^^^^^^^^
+
+.. code-block:: console
+
+   lsblk
