@@ -1,0 +1,231 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Logical Volumes &#8212; notes 0.1 documentation</title>
+    
+    <link rel="stylesheet" href="../../../_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="top" title="notes 0.1 documentation" href="../../../index.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">notes 0.1 documentation</a> &#187;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="logical-volumes">
+<h1>Logical Volumes<a class="headerlink" href="#logical-volumes" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="display-the-lv">
+<h2>Display the LV:<a class="headerlink" href="#display-the-lv" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">root@buzzell:/var/VM#</span> lvdisplay
+<span class="go">  --- Logical volume ---</span>
+<span class="go">  LV Path                /dev/buzzell-vg/root</span>
+<span class="go">  LV Name                root</span>
+<span class="go">  VG Name                buzzell-vg</span>
+<span class="go">  LV UUID                QLwq48-72bW-TzQ9-g10P-rim2-cmwo-7CcoVk</span>
+<span class="go">  LV Write Access        read/write</span>
+<span class="go">  LV Creation host, time buzzell, 2016-09-05 19:22:25 -0400</span>
+<span class="go">  LV Status              available</span>
+<span class="gp">  #</span> open                 1
+<span class="go">  LV Size                20.93 GiB</span>
+<span class="go">  Current LE             5359</span>
+<span class="go">  Segments               1</span>
+<span class="go">  Allocation             inherit</span>
+<span class="go">  Read ahead sectors     auto</span>
+<span class="go">  - currently set to     256</span>
+<span class="go">  Block device           252:0</span>
+
+<span class="go">  --- Logical volume ---</span>
+<span class="go">  LV Path                /dev/buzzell-vg/swap_1</span>
+<span class="go">  LV Name                swap_1</span>
+<span class="go">  VG Name                buzzell-vg</span>
+<span class="go">  LV UUID                ui1amd-cA0f-bPrC-pGiJ-IUG4-Qc4L-qRlQGQ</span>
+<span class="go">  LV Write Access        read/write</span>
+<span class="go">  LV Creation host, time buzzell, 2016-09-05 19:22:25 -0400</span>
+<span class="go">  LV Status              available</span>
+<span class="gp">  #</span> open                 2
+<span class="go">  LV Size                7.90 GiB</span>
+<span class="go">  Current LE             2023</span>
+<span class="go">  Segments               1</span>
+<span class="go">  Allocation             inherit</span>
+<span class="go">  Read ahead sectors     auto</span>
+<span class="go">  - currently set to     256</span>
+<span class="go">  Block device           252:1</span>
+
+<span class="go">  --- Logical volume ---</span>
+<span class="go">  LV Path                /dev/buzzell-vg/var</span>
+<span class="go">  LV Name                var</span>
+<span class="go">  VG Name                buzzell-vg</span>
+<span class="go">  LV UUID                ou9CP7-9Gkg-kbqb-OiAS-S7N5-90ki-3RQcsv</span>
+<span class="go">  LV Write Access        read/write</span>
+<span class="go">  LV Creation host, time buzzell, 2016-09-22 10:52:46 -0400</span>
+<span class="go">  LV Status              available</span>
+<span class="gp">  #</span> open                 1
+<span class="go">  LV Size                50.00 GiB</span>
+<span class="go">  Current LE             12800</span>
+<span class="go">  Segments               1</span>
+<span class="go">  Allocation             inherit</span>
+<span class="go">  Read ahead sectors     auto</span>
+<span class="go">  - currently set to     256</span>
+<span class="go">  Block device           252:2</span>
+
+<span class="go">  --- Logical volume ---</span>
+<span class="go">  LV Path                /dev/buzzell-vg/VM</span>
+<span class="go">  LV Name                VM</span>
+<span class="go">  VG Name                buzzell-vg</span>
+<span class="go">  LV UUID                fu7oGE-ZplT-AsHv-v6d7-ioVa-zc54-GPvOQu</span>
+<span class="go">  LV Write Access        read/write</span>
+<span class="go">  LV Creation host, time buzzell, 2018-04-27 08:35:06 -0400</span>
+<span class="go">  LV Status              available</span>
+<span class="gp">  #</span> open                 1
+<span class="go">  LV Size                90.00 GiB</span>
+<span class="go">  Current LE             23040</span>
+<span class="go">  Segments               1</span>
+<span class="go">  Allocation             inherit</span>
+<span class="go">  Read ahead sectors     auto</span>
+<span class="go">  - currently set to     256</span>
+<span class="go">  Block device           252:3</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="add-to-the-volume-group">
+<h2>Add to the volume group:<a class="headerlink" href="#add-to-the-volume-group" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">#</span> lvdisplay
+<span class="gp">#</span> vgextend buzzell-vg /dev/sdb1
+</pre></div>
+</div>
+</div>
+<div class="section" id="create-a-logical-volume">
+<h2>Create a logical volume:<a class="headerlink" href="#create-a-logical-volume" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">#</span> lvcreate -L 50G -n var buzzell-vg
+</pre></div>
+</div>
+</div>
+<div class="section" id="more-specific-logical-volume-info">
+<h2>More specific logical volume info:<a class="headerlink" href="#more-specific-logical-volume-info" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">root@buzzell:/var/VM#</span> lvdisplay -m /dev/buzzell-vg/var
+<span class="go">  --- Logical volume ---</span>
+<span class="go">  LV Path                /dev/buzzell-vg/var</span>
+<span class="go">  LV Name                var</span>
+<span class="go">  VG Name                buzzell-vg</span>
+<span class="go">  LV UUID                ou9CP7-9Gkg-kbqb-OiAS-S7N5-90ki-3RQcsv</span>
+<span class="go">  LV Write Access        read/write</span>
+<span class="go">  LV Creation host, time buzzell, 2016-09-22 10:52:46 -0400</span>
+<span class="go">  LV Status              available</span>
+<span class="gp">  #</span> open                 1
+<span class="go">  LV Size                50.00 GiB</span>
+<span class="go">  Current LE             12800</span>
+<span class="go">  Segments               1</span>
+<span class="go">  Allocation             inherit</span>
+<span class="go">  Read ahead sectors     auto</span>
+<span class="go">  - currently set to     256</span>
+<span class="go">  Block device           252:2</span>
+
+<span class="go">  --- Segments ---</span>
+<span class="go">  Logical extents 0 to 12799:</span>
+<span class="go">    Type                linear</span>
+<span class="go">    Physical volume     /dev/sdb</span>
+<span class="go">    Physical extents    0 to 12799</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="alternatives">
+<h2>Alternatives:<a class="headerlink" href="#alternatives" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">root@buzzell:/var/VM#</span> lvs
+<span class="go">  LV     VG         Attr       LSize  Pool Origin Data%  Meta%  Move Log Cpy%Sync Convert</span>
+<span class="go">  VM     buzzell-vg -wi-ao---- 90.00g</span>
+<span class="go">  root   buzzell-vg -wi-ao---- 20.93g</span>
+<span class="go">  swap_1 buzzell-vg -wi-ao----  7.90g</span>
+<span class="go">  var    buzzell-vg -wi-ao---- 50.00g</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../../../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Logical Volumes</a><ul>
+<li><a class="reference internal" href="#display-the-lv">Display the LV:</a></li>
+<li><a class="reference internal" href="#add-to-the-volume-group">Add to the volume group:</a></li>
+<li><a class="reference internal" href="#create-a-logical-volume">Create a logical volume:</a></li>
+<li><a class="reference internal" href="#more-specific-logical-volume-info">More specific logical volume info:</a></li>
+<li><a class="reference internal" href="#alternatives">Alternatives:</a></li>
+</ul>
+</li>
+</ul>
+
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../../_sources/operating_systems/linux/lvm/lv.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">notes 0.1 documentation</a> &#187;</li> 
+      </ul>
+    </div>
+        <!-- your html code here -->
+	<div class="footer">
+		<em>This information has a good chance of being wrong, inconsistent, out of date, or just bad. Use at your own risk.
+		Feel free to notify me of any issues though.</em>
+	</div>
+
+
+  </body>
+</html>

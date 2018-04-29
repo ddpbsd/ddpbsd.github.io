@@ -55,14 +55,40 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="admonition note" id="linux-lvm">
+  <p id="linux-lvm">Linux LVM is complicated alchemy. It&#8217;s entirely possible this is very wrong.</p>
+<p><cite>Physical Volumes</cite> (PV) consist of a group of physical disks (disks, partitions, or LUNs).
+A <cite>Volume Group</cite> (VG) consists of some number of PVs.
+<cite>Logical Volumes</cite> are virtual disk partitions on top of the VG.</p>
+<div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">Taken from <a class="reference external" href="http://www.howtogeek.com/howto/40702/how-to-manage-and-use-lvm-logical-volume-management-in-ubuntu/">http://www.howtogeek.com/howto/40702/how-to-manage-and-use-lvm-logical-volume-management-in-ubuntu/</a>
+<p class="last">Some of this was taken from
+<a class="reference external" href="http://www.howtogeek.com/howto/40702/how-to-manage-and-use-lvm-logical-volume-management-in-ubuntu/">howtogeek</a>
 The instructions there give a lot more detail.</p>
 </div>
 <div class="section" id="view-current-lvm-info">
 <h1>View current lvm info<a class="headerlink" href="#view-current-lvm-info" title="Permalink to this headline">¶</a></h1>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">#</span> pvdisplay
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">root@buzzell:/var/VM#</span> pvdisplay
+<span class="go">  --- Physical volume ---</span>
+<span class="go">  PV Name               /dev/sda3</span>
+<span class="go">  VG Name               buzzell-vg</span>
+<span class="go">  PV Size               28.84 GiB / not usable 4.00 MiB</span>
+<span class="go">  Allocatable           yes (but full)</span>
+<span class="go">  PE Size               4.00 MiB</span>
+<span class="go">  Total PE              7382</span>
+<span class="go">  Free PE               0</span>
+<span class="go">  Allocated PE          7382</span>
+<span class="go">  PV UUID               qeoUD3-Yj11-Z7Jl-kSkR-uo4j-XTXz-OF3y4g</span>
+
+<span class="go">  --- Physical volume ---</span>
+<span class="go">  PV Name               /dev/sdb</span>
+<span class="go">  VG Name               buzzell-vg</span>
+<span class="go">  PV Size               149.01 GiB / not usable 3.89 MiB</span>
+<span class="go">  Allocatable           yes</span>
+<span class="go">  PE Size               4.00 MiB</span>
+<span class="go">  Total PE              38146</span>
+<span class="go">  Free PE               2306</span>
+<span class="go">  Allocated PE          35840</span>
+<span class="go">  PV UUID               3SCOg4-Wr50-Lped-6KvB-taJE-KhUd-innUoN</span>
 </pre></div>
 </div>
 </div>
@@ -99,6 +125,120 @@ The instructions there give a lot more detail.</p>
 </pre></div>
 </div>
 </div>
+<div class="section" id="display-information-about-a-volume-group">
+<h1>Display information about a volume group:<a class="headerlink" href="#display-information-about-a-volume-group" title="Permalink to this headline">¶</a></h1>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">root@buzzell:/var/VM#</span> vgdisplay
+<span class="go">  --- Volume group ---</span>
+<span class="go">  VG Name               buzzell-vg</span>
+<span class="go">  System ID</span>
+<span class="go">  Format                lvm2</span>
+<span class="go">  Metadata Areas        2</span>
+<span class="go">  Metadata Sequence No  9</span>
+<span class="go">  VG Access             read/write</span>
+<span class="go">  VG Status             resizable</span>
+<span class="go">  MAX LV                0</span>
+<span class="go">  Cur LV                3</span>
+<span class="go">  Open LV               3</span>
+<span class="go">  Max PV                0</span>
+<span class="go">  Cur PV                2</span>
+<span class="go">  Act PV                2</span>
+<span class="go">  VG Size               177.84 GiB</span>
+<span class="go">  PE Size               4.00 MiB</span>
+<span class="go">  Total PE              45528</span>
+<span class="go">  Alloc PE / Size       20182 / 78.84 GiB</span>
+<span class="go">  Free  PE / Size       25346 / 99.01 GiB</span>
+<span class="go">  VG UUID               bPlGsE-Vmza-glR9-1fDd-SXtX-rR0A-F72a24</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="alternatives">
+<h1>Alternatives:<a class="headerlink" href="#alternatives" title="Permalink to this headline">¶</a></h1>
+<p><cite>pvs</cite>, <cite>vgs</cite>, <cite>lvs</cite></p>
+</div>
+<div class="section" id="display-logical-volumes">
+<h1>Display logical volumes:<a class="headerlink" href="#display-logical-volumes" title="Permalink to this headline">¶</a></h1>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">root@buzzell:/var/VM#</span> lvdisplay
+<span class="go">  --- Logical volume ---</span>
+<span class="go">  LV Path                /dev/buzzell-vg/root</span>
+<span class="go">  LV Name                root</span>
+<span class="go">  VG Name                buzzell-vg</span>
+<span class="go">  LV UUID                QLwq48-72bW-TzQ9-g10P-rim2-cmwo-7CcoVk</span>
+<span class="go">  LV Write Access        read/write</span>
+<span class="go">  LV Creation host, time buzzell, 2016-09-05 19:22:25 -0400</span>
+<span class="go">  LV Status              available</span>
+<span class="gp">  #</span> open                 1
+<span class="go">  LV Size                20.93 GiB</span>
+<span class="go">  Current LE             5359</span>
+<span class="go">  Segments               1</span>
+<span class="go">  Allocation             inherit</span>
+<span class="go">  Read ahead sectors     auto</span>
+<span class="go">  - currently set to     256</span>
+<span class="go">  Block device           252:0</span>
+
+<span class="go">  --- Logical volume ---</span>
+<span class="go">  LV Path                /dev/buzzell-vg/swap_1</span>
+<span class="go">  LV Name                swap_1</span>
+<span class="go">  VG Name                buzzell-vg</span>
+<span class="go">  LV UUID                ui1amd-cA0f-bPrC-pGiJ-IUG4-Qc4L-qRlQGQ</span>
+<span class="go">  LV Write Access        read/write</span>
+<span class="go">  LV Creation host, time buzzell, 2016-09-05 19:22:25 -0400</span>
+<span class="go">  LV Status              available</span>
+<span class="gp">  #</span> open                 2
+<span class="go">  LV Size                7.90 GiB</span>
+<span class="go">  Current LE             2023</span>
+<span class="go">  Segments               1</span>
+<span class="go">  Allocation             inherit</span>
+<span class="go">  Read ahead sectors     auto</span>
+<span class="go">  - currently set to     256</span>
+<span class="go">  Block device           252:1</span>
+
+<span class="go">  --- Logical volume ---</span>
+<span class="go">  LV Path                /dev/buzzell-vg/var</span>
+<span class="go">  LV Name                var</span>
+<span class="go">  VG Name                buzzell-vg</span>
+<span class="go">  LV UUID                ou9CP7-9Gkg-kbqb-OiAS-S7N5-90ki-3RQcsv</span>
+<span class="go">  LV Write Access        read/write</span>
+<span class="go">  LV Creation host, time buzzell, 2016-09-22 10:52:46 -0400</span>
+<span class="go">  LV Status              available</span>
+<span class="gp">  #</span> open                 1
+<span class="go">  LV Size                50.00 GiB</span>
+<span class="go">  Current LE             12800</span>
+<span class="go">  Segments               1</span>
+<span class="go">  Allocation             inherit</span>
+<span class="go">  Read ahead sectors     auto</span>
+<span class="go">  - currently set to     256</span>
+<span class="go">  Block device           252:2</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="more-specific-logical-volume-info">
+<h1>More specific logical volume info:<a class="headerlink" href="#more-specific-logical-volume-info" title="Permalink to this headline">¶</a></h1>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">root@buzzell:/var/VM#</span> lvdisplay -m /dev/buzzell-vg/var
+<span class="go">  --- Logical volume ---</span>
+<span class="go">  LV Path                /dev/buzzell-vg/var</span>
+<span class="go">  LV Name                var</span>
+<span class="go">  VG Name                buzzell-vg</span>
+<span class="go">  LV UUID                ou9CP7-9Gkg-kbqb-OiAS-S7N5-90ki-3RQcsv</span>
+<span class="go">  LV Write Access        read/write</span>
+<span class="go">  LV Creation host, time buzzell, 2016-09-22 10:52:46 -0400</span>
+<span class="go">  LV Status              available</span>
+<span class="gp">  #</span> open                 1
+<span class="go">  LV Size                50.00 GiB</span>
+<span class="go">  Current LE             12800</span>
+<span class="go">  Segments               1</span>
+<span class="go">  Allocation             inherit</span>
+<span class="go">  Read ahead sectors     auto</span>
+<span class="go">  - currently set to     256</span>
+<span class="go">  Block device           252:2</span>
+
+<span class="go">  --- Segments ---</span>
+<span class="go">  Logical extents 0 to 12799:</span>
+<span class="go">    Type                linear</span>
+<span class="go">    Physical volume     /dev/sdb</span>
+<span class="go">    Physical extents    0 to 12799</span>
+</pre></div>
+</div>
+</div>
 
 
           </div>
@@ -114,6 +254,10 @@ The instructions there give a lot more detail.</p>
 <li><a class="reference internal" href="#add-to-the-volume-group">Add to the volume group:</a></li>
 <li><a class="reference internal" href="#create-a-logical-volume">Create a logical volume:</a></li>
 <li><a class="reference internal" href="#format-and-mount">Format and Mount:</a></li>
+<li><a class="reference internal" href="#display-information-about-a-volume-group">Display information about a volume group:</a></li>
+<li><a class="reference internal" href="#alternatives">Alternatives:</a></li>
+<li><a class="reference internal" href="#display-logical-volumes">Display logical volumes:</a></li>
+<li><a class="reference internal" href="#more-specific-logical-volume-info">More specific logical volume info:</a></li>
 </ul>
 
   <h4>Previous topic</h4>
