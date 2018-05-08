@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>&lt;no title&gt; &#8212; notes 0.1 documentation</title>
+    <title>Network stuff &#8212; notes 0.1 documentation</title>
     
     <link rel="stylesheet" href="../../../_static/classic.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
@@ -26,9 +26,9 @@
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
     <link rel="top" title="notes 0.1 documentation" href="../../../index.html" />
-    <link rel="up" title="VMWare" href="../index.html" />
-    <link rel="next" title="List all VMs" href="cli.html" />
-    <link rel="prev" title="vcenter update process" href="../vcenter/update.html" /> 
+    <link rel="up" title="&lt;no title&gt;" href="index.html" />
+    <link rel="next" title="esxi Update process" href="update.html" />
+    <link rel="prev" title="List all VMs" href="cli.html" /> 
   </head>
   <body role="document">
     <div class="related" role="navigation" aria-label="related navigation">
@@ -38,14 +38,15 @@
           <a href="../../../genindex.html" title="General Index"
              accesskey="I">index</a></li>
         <li class="right" >
-          <a href="cli.html" title="List all VMs"
+          <a href="update.html" title="esxi Update process"
              accesskey="N">next</a> |</li>
         <li class="right" >
-          <a href="../vcenter/update.html" title="vcenter update process"
+          <a href="cli.html" title="List all VMs"
              accesskey="P">previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="../../../index.html">notes 0.1 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../../index.html" >Vendor Stuff</a> &#187;</li>
-          <li class="nav-item nav-item-2"><a href="../index.html" accesskey="U">VMWare</a> &#187;</li> 
+          <li class="nav-item nav-item-2"><a href="../index.html" >VMWare</a> &#187;</li>
+          <li class="nav-item nav-item-3"><a href="index.html" accesskey="U">&lt;no title&gt;</a> &#187;</li> 
       </ul>
     </div>  
 
@@ -54,21 +55,24 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <p id="vmware-esxi">Contents:</p>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="cli.html">List all VMs</a></li>
-<li class="toctree-l1"><a class="reference internal" href="cli.html#get-the-power-state-of-a-vm">Get the power state of a VM:</a></li>
-<li class="toctree-l1"><a class="reference internal" href="cli.html#power-on-a-device">Power on a device</a></li>
-<li class="toctree-l1"><a class="reference internal" href="cli.html#reboot-a-vm-if-vmtools-is-installed">Reboot a VM if vmtools is installed</a></li>
-<li class="toctree-l1"><a class="reference internal" href="networking.html">Network stuff</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="networking.html#change-ip-of-management-network">Change IP of management network:</a></li>
-<li class="toctree-l2"><a class="reference internal" href="networking.html#change-default-route">Change default route:</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="update.html">esxi Update process</a></li>
-<li class="toctree-l1"><a class="reference internal" href="update.html#find-the-esxi-version-information">Find the ESXi version information:</a></li>
-</ul>
+  <div class="section" id="network-stuff">
+<h1>Network stuff<a class="headerlink" href="#network-stuff" title="Permalink to this headline">¶</a></h1>
+<p>ESXi networking is a bundle of sadness.
+Hopefully these commands help.</p>
+<div class="section" id="change-ip-of-management-network">
+<h2>Change IP of management network:<a class="headerlink" href="#change-ip-of-management-network" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">esxcfg-vmknic &quot;Management Network&quot; -i [newip] -n [newsubnetmask]</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="change-default-route">
+<h2>Change default route:<a class="headerlink" href="#change-default-route" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">esxcfg-route -d default 0.0.0.0 [olddefaultgw]</span>
+<span class="go">esxcfg-route -a default 0.0.0.0 [newdefaultgw]</span>
+<span class="go">/sbin/services.sh restart</span>
+</pre></div>
+</div>
+</div>
 </div>
 
 
@@ -77,16 +81,25 @@
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
+  <h3><a href="../../../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Network stuff</a><ul>
+<li><a class="reference internal" href="#change-ip-of-management-network">Change IP of management network:</a></li>
+<li><a class="reference internal" href="#change-default-route">Change default route:</a></li>
+</ul>
+</li>
+</ul>
+
   <h4>Previous topic</h4>
-  <p class="topless"><a href="../vcenter/update.html"
-                        title="previous chapter">vcenter update process</a></p>
-  <h4>Next topic</h4>
   <p class="topless"><a href="cli.html"
-                        title="next chapter">List all VMs</a></p>
+                        title="previous chapter">List all VMs</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="update.html"
+                        title="next chapter">esxi Update process</a></p>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
-      <li><a href="../../../_sources/vendor_stuff/vmware/esxi/index.txt"
+      <li><a href="../../../_sources/vendor_stuff/vmware/esxi/networking.txt"
             rel="nofollow">Show Source</a></li>
     </ul>
    </div>
@@ -111,14 +124,15 @@
           <a href="../../../genindex.html" title="General Index"
              >index</a></li>
         <li class="right" >
-          <a href="cli.html" title="List all VMs"
+          <a href="update.html" title="esxi Update process"
              >next</a> |</li>
         <li class="right" >
-          <a href="../vcenter/update.html" title="vcenter update process"
+          <a href="cli.html" title="List all VMs"
              >previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="../../../index.html">notes 0.1 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../../index.html" >Vendor Stuff</a> &#187;</li>
-          <li class="nav-item nav-item-2"><a href="../index.html" >VMWare</a> &#187;</li> 
+          <li class="nav-item nav-item-2"><a href="../index.html" >VMWare</a> &#187;</li>
+          <li class="nav-item nav-item-3"><a href="index.html" >&lt;no title&gt;</a> &#187;</li> 
       </ul>
     </div>
         <!-- your html code here -->
