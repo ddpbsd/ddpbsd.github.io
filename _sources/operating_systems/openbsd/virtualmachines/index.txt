@@ -1,0 +1,15 @@
+Virtual Machines
+================
+
+Notes on vmm/vmd to help me figure
+it all out.
+
+Contents:
+
+.. toctree::
+   :maxdepth: 2
+
+   networking
+   vmd
+   vmm
+

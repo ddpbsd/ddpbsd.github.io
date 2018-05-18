@@ -1,0 +1,40 @@
+
+Get Domain Admins:
+^^^^^^^^^^^^^^^^^^
+
+.. code-block:: console
+
+   Get-ADGroupMember "Domain Admins" | select name,distinguishedName
+
+
+List disabled accounts:
+^^^^^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: console
+
+   Search-ADAccount -AccountDisabled
+
+Sorted by last logon date:
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: console
+
+   Search-ADAccount -AccountDisabled -UsersOnly | Sort-Object lastlogondate
+
+Disabled users:
+^^^^^^^^^^^^^^^
+
+.. code-block:: console
+
+   Get-ADUser -Filter {enabled -eq "false" -and objectclass -eq "user"} -properties modified | sort-object modified
+
+
+Another list of domain admins:
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: console
+
+   Get-ADGroup -Identity S-1-5-21-DOMAIN-512 | Get-ADGroupMember | Get-ADUser -Filter {enabled -eq "false"} -Properties *
+
+
+
