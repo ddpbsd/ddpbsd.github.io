@@ -12,4 +12,6 @@ Contents:
 
    
    bbb/index
+   clusterboard/index
+   pine64aplus/index
 

@@ -8,7 +8,7 @@ Contents:
 
    active_directory/index.rst
    cheatsheets
-   powershell
+   powershell/index
    smb
    sysmon   
 

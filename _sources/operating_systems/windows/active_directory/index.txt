@@ -9,4 +9,5 @@ Contents:
    dcdiag
    fsmo
    replication
+   sids
 

@@ -12,4 +12,5 @@ Contents:
    fix_disk
    pledge/index
    vi
+   virtualmachines/index
 

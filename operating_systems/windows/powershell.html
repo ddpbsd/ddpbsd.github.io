@@ -1,0 +1,163 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Get the version of powershell: &#8212; notes 0.1 documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="top" title="notes 0.1 documentation" href="../../index.html" />
+    <link rel="up" title="Windows" href="index.html" />
+    <link rel="next" title="SMB" href="smb.html" />
+    <link rel="prev" title="Cheet Sheets" href="cheatsheets.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="smb.html" title="SMB"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="cheatsheets.html" title="Cheet Sheets"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../index.html">notes 0.1 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../index.html" >Operating Systems</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="index.html" accesskey="U">Windows</a> &#187;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="get-the-version-of-powershell">
+<span id="operating-systems-windows-powershell"></span><h1>Get the version of powershell:<a class="headerlink" href="#get-the-version-of-powershell" title="Permalink to this headline">¶</a></h1>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">PS C:\&gt; $PSVersionTable.PSVersion</span>
+
+<span class="go">Major  Minor  Build  Revision</span>
+<span class="go">-----  -----  -----  --------</span>
+<span class="go">4      0      -1     -1</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="delete-files-from-a-remote-pc">
+<h1>Delete files from a remote PC:<a class="headerlink" href="#delete-files-from-a-remote-pc" title="Permalink to this headline">¶</a></h1>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">Remove-Item &quot;\\$computer\path\to\file.ext&quot;</span>
+</pre></div>
+</div>
+<p>Add <cite>-Recurse</cite> to delete recursively:</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">Remove-Item &quot;\\$computer\path\to\directory&quot; -Recurse</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="stop-a-service-on-a-remote-pc">
+<h1>Stop a service on a remote PC:<a class="headerlink" href="#stop-a-service-on-a-remote-pc" title="Permalink to this headline">¶</a></h1>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">(get-service -ComputerName $computer -Name service_name).Stop()</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="start-a-service-on-a-remote-pc">
+<h1>Start a service on a remote PC:<a class="headerlink" href="#start-a-service-on-a-remote-pc" title="Permalink to this headline">¶</a></h1>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">(get-service -ComputerName $computer -Name service_name).Start()</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="sleep-for-10-seconds">
+<h1>Sleep for 10 seconds:<a class="headerlink" href="#sleep-for-10-seconds" title="Permalink to this headline">¶</a></h1>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">Start-Sleep -s 10</span>
+</pre></div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Get the version of powershell:</a></li>
+<li><a class="reference internal" href="#delete-files-from-a-remote-pc">Delete files from a remote PC:</a></li>
+<li><a class="reference internal" href="#stop-a-service-on-a-remote-pc">Stop a service on a remote PC:</a></li>
+<li><a class="reference internal" href="#start-a-service-on-a-remote-pc">Start a service on a remote PC:</a></li>
+<li><a class="reference internal" href="#sleep-for-10-seconds">Sleep for 10 seconds:</a></li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="cheatsheets.html"
+                        title="previous chapter">Cheet Sheets</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="smb.html"
+                        title="next chapter">SMB</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../_sources/operating_systems/windows/powershell.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../../search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="smb.html" title="SMB"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="cheatsheets.html" title="Cheet Sheets"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../index.html">notes 0.1 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../index.html" >Operating Systems</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="index.html" >Windows</a> &#187;</li> 
+      </ul>
+    </div>
+        <!-- your html code here -->
+	<div class="footer">
+		<em>This information has a good chance of being wrong, inconsistent, out of date, or just bad. Use at your own risk.
+		Feel free to notify me of any issues though.</em>
+	</div>
+
+
+  </body>
+</html>
