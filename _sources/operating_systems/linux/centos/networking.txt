@@ -14,6 +14,8 @@ Interface configuration:
 
 Interfaces are configured in `/etc/sysconfig/network-scripts/ifcfg-IF`
 
+CentOS `docs <https://www.centos.org/docs/5/html/Deployment_Guide-en-US/s1-networkscripts-interfaces.html>`_
+
 .. code-block:: console
 
    TYPE=Ethernet
@@ -42,6 +44,8 @@ Static route:
 ^^^^^^^^^^^^^
 
 Static routes can be added to `/etc/sysconfig/network-scripts/route-IF`
+
+CentOS `documentation <https://www.centos.org/docs/5/html/5.2/Deployment_Guide/s1-networkscripts-static-routes.html>`_
 
 .. code-block:: console
 
