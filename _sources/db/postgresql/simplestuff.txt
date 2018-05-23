@@ -27,3 +27,13 @@ Change a user's password:
 .. code-block:: sql
 
    ALTER USER my_user_name with password 'my_secure_password';
+
+
+pg_hba.conf location:
+^^^^^^^^^^^^^^^^^^^^^
+
+On ubuntu:
+
+.. code-block:: console
+
+   /etc/postgresql/9.5/main/pg_hba.conf

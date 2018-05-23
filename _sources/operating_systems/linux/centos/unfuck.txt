@@ -1,0 +1,30 @@
+Making CentOS minimally useful
+==============================
+
+
+Packages:
+^^^^^^^^^
+
+Minimal list of packages to be installed.
+
+.. code-block:: console
+
+   yum install -y net-tools tcpdump epel-release tmux
+
+ansible:
+^^^^^^^^
+
+.. code-block:: console
+
+   yum install -y libselinux-python
+
+
+Virtual servers:
+^^^^^^^^^^^^^^^^
+
+Useful on VMWare, maybe others?
+
+.. code-block:: console
+
+   yum install -y open-vm-tools
+

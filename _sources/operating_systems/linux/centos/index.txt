@@ -10,5 +10,7 @@ Contents:
    automatic_updates
    selinux
    active_directory/index
+   networking
    packages
+   unfuck
 
