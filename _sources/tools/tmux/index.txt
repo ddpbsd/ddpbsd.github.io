@@ -48,3 +48,21 @@ Run a program in a new session:
 
    tmux new-session -d -s "top" /usr/bin/top
 
+
+Scrollback:
+^^^^^^^^^^^
+
+Enter copy mode.
+
+.. code-block:: console
+
+   ^b [
+
+After the above, the Up/Down arrows or PageUp/PageDown can be used to navigate.
+
+Exit copy mode.
+
+.. code-block:: console
+
+   q
+
