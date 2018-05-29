@@ -1,0 +1,21 @@
+.. _misc_mynet_systems_junction:
+
+junction
+========
+
+Firewall
+
+Currently running:
+^^^^^^^^^^^^^^^^^^
+
+* bro-ids
+
+* unbound
+
+Hardware:
+^^^^^^^^^
+
+pcengines apu2c4
+
+.. include:: ../dmesgs/junction.rst
+

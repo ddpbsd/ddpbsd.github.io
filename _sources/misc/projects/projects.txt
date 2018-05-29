@@ -19,6 +19,10 @@ Current tasks:
 
   * lua support in `rootcheck` would make it much more powerful.
 
+  * Some kind of stats for `remoted` (number of msgs).
+
+  * Some more stats for `analysisd`, or current stats in json.
+
 OSSEC Documentation:
 ^^^^^^^^^^^^^^^^^^^^
 
@@ -55,7 +59,8 @@ I have a small, but growing, group of ARM based systems.
 
 `pine` is my DNS server. It's a pine64 A64+ running OpenBSD.
 
-`clusterboard` is a pine64 clusterboard with 4 modules. I'm hoping
+`clusterboard <../mynet/computers/pine64_clusterboard/index.html>`_
+is a pine64 clusterboard with 4 modules. I'm hoping
 to create a kubernetes cluster out of it to build a system to help
 test OSSEc. This idea is in the very early stages though, so don't
 ask me many questions about it (unless you're trying to help :)).
