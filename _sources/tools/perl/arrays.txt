@@ -1,0 +1,18 @@
+
+
+Size of an array:
+^^^^^^^^^^^^^^^^^
+
+scalar:
+
+.. code-block:: perl
+
+   print scalar @arr
+
+something:
+
+.. code-block:: perl
+
+   my $arraysize = @array;
+   print $arraysize;
+

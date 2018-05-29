@@ -13,5 +13,6 @@ Contents:
    
    bbb/index
    clusterboard/index
+   espressobin/index
    pine64aplus/index
 

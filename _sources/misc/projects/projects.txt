@@ -1,0 +1,72 @@
+Projects
+========
+
+Personal technology projects I try to spend time on.
+
+OSSEC:
+^^^^^^
+
+`OSSEC <https://ossec.github.io>`_ is an open source 
+Host Intrusion Detection systems. It does file integrity
+monitoring, log decoding, alerting, and active response.
+
+Current tasks:
+  * Add libsodium support to get better file hashes. 
+    SHA256 support has been added, but not integrated.
+
+  * Pull the `analysisd` changes from Wazuh. the adjustable
+    fields support would be nice.
+
+  * lua support in `rootcheck` would make it much more powerful.
+
+OSSEC Documentation:
+^^^^^^^^^^^^^^^^^^^^
+
+People who write documentation regularly are saints and deserve all
+of the praise. *I need to get back into this.*
+
+Sensornet:
+^^^^^^^^^^
+
+A centralized collection of environmental sensors.
+Currently focuses on OpenBSD's sensors since `collectd`
+and friends don't seem to support them. The sensors and
+values are logged to graphite an viewed through grafana.
+Might be switching to influxdb in the future.
+
+I eventually plan on adding `esp8266` sensors to the mix.
+I'd love to track temperature and humidity throughout my
+home. Maybe moisture levels in the few plants I have.
+
+MQTT?
+
+ESP8266:
+^^^^^^^^
+
+Ties into sensornet above. The goal is to make small and
+inexpensive devices I can sprinkle throughout an area to 
+collect environmental information. Temperature and humidity
+are the first I want to monitor. Others may follow.
+
+ARM:
+^^^^
+
+I have a small, but growing, group of ARM based systems.
+
+`pine` is my DNS server. It's a pine64 A64+ running OpenBSD.
+
+`clusterboard` is a pine64 clusterboard with 4 modules. I'm hoping
+to create a kubernetes cluster out of it to build a system to help
+test OSSEc. This idea is in the very early stages though, so don't
+ask me many questions about it (unless you're trying to help :)).
+
+`espressobin` was going to be the head of my k8 cluster, but it seems
+much more DIY than I was hoping for. Currently running Ubuntu, but it
+seems flaky. I may find more reliable USB storage for the k8 cluster head
+and use a clusterboard module, or invest in some network storage.
+
+`beaglebone black` Not currently in use, but I was thinking of putting it
+to use with the esp8266 sensornet as the aggregator.
+
+
+

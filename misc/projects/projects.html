@@ -1,0 +1,186 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Projects &#8212; notes 0.1 documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="top" title="notes 0.1 documentation" href="../../index.html" />
+    <link rel="up" title="MISC" href="../index.html" />
+    <link rel="next" title="Stupid random stuff:" href="../random.html" />
+    <link rel="prev" title="Pine64 Cluterboard" href="../mynet/computers/pine64_clusterboard/diary.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../random.html" title="Stupid random stuff:"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="../mynet/computers/pine64_clusterboard/diary.html" title="Pine64 Cluterboard"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../index.html">notes 0.1 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../index.html" accesskey="U">MISC</a> &#187;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="projects">
+<h1>Projects<a class="headerlink" href="#projects" title="Permalink to this headline">¶</a></h1>
+<p>Personal technology projects I try to spend time on.</p>
+<div class="section" id="ossec">
+<h2>OSSEC:<a class="headerlink" href="#ossec" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="https://ossec.github.io">OSSEC</a> is an open source
+Host Intrusion Detection systems. It does file integrity
+monitoring, log decoding, alerting, and active response.</p>
+<dl class="docutils">
+<dt>Current tasks:</dt>
+<dd><ul class="first last simple">
+<li>Add libsodium support to get better file hashes.
+SHA256 support has been added, but not integrated.</li>
+<li>Pull the <cite>analysisd</cite> changes from Wazuh. the adjustable
+fields support would be nice.</li>
+<li>lua support in <cite>rootcheck</cite> would make it much more powerful.</li>
+</ul>
+</dd>
+</dl>
+</div>
+<div class="section" id="ossec-documentation">
+<h2>OSSEC Documentation:<a class="headerlink" href="#ossec-documentation" title="Permalink to this headline">¶</a></h2>
+<p>People who write documentation regularly are saints and deserve all
+of the praise. <em>I need to get back into this.</em></p>
+</div>
+<div class="section" id="sensornet">
+<h2>Sensornet:<a class="headerlink" href="#sensornet" title="Permalink to this headline">¶</a></h2>
+<p>A centralized collection of environmental sensors.
+Currently focuses on OpenBSD&#8217;s sensors since <cite>collectd</cite>
+and friends don&#8217;t seem to support them. The sensors and
+values are logged to graphite an viewed through grafana.
+Might be switching to influxdb in the future.</p>
+<p>I eventually plan on adding <cite>esp8266</cite> sensors to the mix.
+I&#8217;d love to track temperature and humidity throughout my
+home. Maybe moisture levels in the few plants I have.</p>
+<p>MQTT?</p>
+</div>
+<div class="section" id="esp8266">
+<h2>ESP8266:<a class="headerlink" href="#esp8266" title="Permalink to this headline">¶</a></h2>
+<p>Ties into sensornet above. The goal is to make small and
+inexpensive devices I can sprinkle throughout an area to
+collect environmental information. Temperature and humidity
+are the first I want to monitor. Others may follow.</p>
+</div>
+<div class="section" id="arm">
+<h2>ARM:<a class="headerlink" href="#arm" title="Permalink to this headline">¶</a></h2>
+<p>I have a small, but growing, group of ARM based systems.</p>
+<p><cite>pine</cite> is my DNS server. It&#8217;s a pine64 A64+ running OpenBSD.</p>
+<p><cite>clusterboard</cite> is a pine64 clusterboard with 4 modules. I&#8217;m hoping
+to create a kubernetes cluster out of it to build a system to help
+test OSSEc. This idea is in the very early stages though, so don&#8217;t
+ask me many questions about it (unless you&#8217;re trying to help :)).</p>
+<p><cite>espressobin</cite> was going to be the head of my k8 cluster, but it seems
+much more DIY than I was hoping for. Currently running Ubuntu, but it
+seems flaky. I may find more reliable USB storage for the k8 cluster head
+and use a clusterboard module, or invest in some network storage.</p>
+<p><cite>beaglebone black</cite> Not currently in use, but I was thinking of putting it
+to use with the esp8266 sensornet as the aggregator.</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Projects</a><ul>
+<li><a class="reference internal" href="#ossec">OSSEC:</a></li>
+<li><a class="reference internal" href="#ossec-documentation">OSSEC Documentation:</a></li>
+<li><a class="reference internal" href="#sensornet">Sensornet:</a></li>
+<li><a class="reference internal" href="#esp8266">ESP8266:</a></li>
+<li><a class="reference internal" href="#arm">ARM:</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="../mynet/computers/pine64_clusterboard/diary.html"
+                        title="previous chapter">Pine64 Cluterboard</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="../random.html"
+                        title="next chapter">Stupid random stuff:</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../_sources/misc/projects/projects.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../../search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../random.html" title="Stupid random stuff:"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="../mynet/computers/pine64_clusterboard/diary.html" title="Pine64 Cluterboard"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../index.html">notes 0.1 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../index.html" >MISC</a> &#187;</li> 
+      </ul>
+    </div>
+        <!-- your html code here -->
+	<div class="footer">
+		<em>This information has a good chance of being wrong, inconsistent, out of date, or just bad. Use at your own risk.
+		Feel free to notify me of any issues though.</em>
+	</div>
+
+
+  </body>
+</html>

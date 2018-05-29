@@ -1,0 +1,8 @@
+
+Network status:
+^^^^^^^^^^^^^^^
+
+`wan` interface will come up if `eth0` is up, but `ifup` is totally fubar.
+It then works if manually brought up. Not sure why it won't work the same way Ubuntu's worked for years.
+Maybe netplan.io will help?
+

@@ -1,0 +1,175 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Important commands: &#8212; notes 0.1 documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="top" title="notes 0.1 documentation" href="../../index.html" />
+    <link rel="up" title="Espressobin" href="index.html" />
+    <link rel="next" title="Network status:" href="network.html" />
+    <link rel="prev" title="Espressobin" href="index.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="network.html" title="Network status:"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="Espressobin"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../index.html">notes 0.1 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../index.html" >arm</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="index.html" accesskey="U">Espressobin</a> &#187;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <p>Basics to get it booted (more details to follow).</p>
+<div class="section" id="important-commands">
+<h1>Important commands:<a class="headerlink" href="#important-commands" title="Permalink to this headline">¶</a></h1>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">scsi scan</span>
+<span class="go">setenv fdt_name /armada-3720-community.dtb</span>
+<span class="go">setenv image_name /image</span>
+<span class="go">setenv bootcmd scsi dev 0; fatload scsi 0:1 $kernel_addr $image_name; fatload scsi 0:1 $fdt_addr $fdt_name; setenv bootargs $console root=/dev/sda2 rw rootwait net.ifname=0 biosdevname=0; booti $kernel_addr - $fdt_addr</span>
+</pre></div>
+</div>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">Marvell&gt;&gt; printenv</span>
+<span class="go">baudrate=115200</span>
+<span class="go">bootcmd=mmc dev 0; ext4load mmc 0:1 $kernel_addr $image_name;ext4load mmc 0:1 $fdt_addr $fdt_name;setenv bootargs $console root=/dev/mmcblk0p1 rw rootwait net.ifnames=0 biosdevname=0; booti $kernel_addr - $fdt_addr</span>
+<span class="go">bootdelay=2</span>
+<span class="go">console=console=ttyMV0,115200 earlycon=ar3700_uart,0xd0012000</span>
+<span class="go">eth1addr=00:51:82:11:22:01</span>
+<span class="go">eth2addr=00:51:82:11:22:02</span>
+<span class="go">eth3addr=00:51:82:11:22:03</span>
+<span class="go">ethact=neta@30000</span>
+<span class="go">ethaddr=F0:AD:4E:05:35:A2</span>
+<span class="go">ethprime=eth0</span>
+<span class="go">fdt_addr=0x4f00000</span>
+<span class="go">fdt_high=0xffffffffffffffff</span>
+<span class="go">fdt_name=/armada-3720-community.dtb</span>
+<span class="go">fdtcontroladdr=3f7161b8</span>
+<span class="go">gatewayip=10.4.50.254</span>
+<span class="go">get_images=tftpboot $kernel_addr $image_name; tftpboot $fdt_addr $fdt_name; run get_ramfs</span>
+<span class="go">get_ramfs=if test &quot;${ramfs_name}&quot; != &quot;-&quot;; then setenv ramfs_addr 0x8000000; tftpboot $ramfs_addr $ramfs_name; else setenv ramfs_addr -;fi</span>
+<span class="go">hostname=marvell</span>
+<span class="go">image_name=/image</span>
+<span class="go">initrd_addr=0xa00000</span>
+<span class="go">initrd_size=0x2000000</span>
+<span class="go">ipaddr=0.0.0.0</span>
+<span class="go">kernel_addr=0x5000000</span>
+<span class="go">loadaddr=0x5000000</span>
+<span class="go">netdev=eth0</span>
+<span class="go">netmask=255.255.255.0</span>
+<span class="go">ramfs_addr=0x8000000</span>
+<span class="go">ramfs_name=-</span>
+<span class="go">root=/dev/sda2 rw</span>
+<span class="go">rootfstype=ext4</span>
+<span class="go">rootpath=/srv/nfs/</span>
+<span class="go">serverip=0.0.0.0</span>
+<span class="go">set_bootargs=setenv bootargs $console $root ip=$ipaddr:$serverip:$gatewayip:$netmask:$hostname:$netdev:none nfsroot=$serverip:$rootpath $extra_params</span>
+<span class="go">stderr=serial@12000</span>
+<span class="go">stdin=serial@12000</span>
+<span class="go">stdout=serial@12000</span>
+
+<span class="go">Environment size: 1355/65532 bytes</span>
+<span class="go">Marvell&gt;&gt; setenv bootcmd scsi dev 0; fatload scsi 0:1 $kernel_addr $image_name; fatload scsi 0:1 $fdt_addr $fdt_name; setenv bootargs $console root=/dev/sda2 rw rootwait net.ifname=0 biosdevname=0; booti $kernel_addr - $fdt_addr</span>
+<span class="go">reading /image</span>
+<span class="go">12358656 bytes read in 194 ms (60.8 MiB/s)</span>
+<span class="go">reading /armada-3720-community.dtb</span>
+<span class="go">8175 bytes read in 6 ms (1.3 MiB/s)</span>
+<span class="gp">#</span><span class="c1"># Flattened Device Tree blob at 04f00000</span>
+<span class="go">   Booting using the fdt blob at 0x4f00000</span>
+<span class="go">   Using Device Tree in place at 0000000004f00000, end 0000000004f04fee</span>
+</pre></div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="index.html"
+                        title="previous chapter">Espressobin</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="network.html"
+                        title="next chapter">Network status:</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../_sources/arm/espressobin/boot.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../../search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="network.html" title="Network status:"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="Espressobin"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../index.html">notes 0.1 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../index.html" >arm</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="index.html" >Espressobin</a> &#187;</li> 
+      </ul>
+    </div>
+        <!-- your html code here -->
+	<div class="footer">
+		<em>This information has a good chance of being wrong, inconsistent, out of date, or just bad. Use at your own risk.
+		Feel free to notify me of any issues though.</em>
+	</div>
+
+
+  </body>
+</html>

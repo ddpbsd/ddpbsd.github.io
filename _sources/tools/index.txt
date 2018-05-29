@@ -17,6 +17,7 @@ Contents:
    moloch/index
    monitoring/index
    osquery/index
+   perl/index
    tableau/tableau
    tcpdump/index
    tmux/index

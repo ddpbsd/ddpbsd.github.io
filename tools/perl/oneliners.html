@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Junk &#8212; notes 0.1 documentation</title>
+    <title>One Liners &#8212; notes 0.1 documentation</title>
     
     <link rel="stylesheet" href="../../_static/classic.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
@@ -26,9 +26,9 @@
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="top" title="notes 0.1 documentation" href="../../index.html" />
-    <link rel="up" title="MISC" href="../index.html" />
-    <link rel="next" title="Books" href="books.html" />
-    <link rel="prev" title="vim" href="../vim/index.html" /> 
+    <link rel="up" title="Perl" href="index.html" />
+    <link rel="next" title="Reset the server state:" href="../tableau/tableau.html" />
+    <link rel="prev" title="Size of an array:" href="arrays.html" /> 
   </head>
   <body role="document">
     <div class="related" role="navigation" aria-label="related navigation">
@@ -38,13 +38,14 @@
           <a href="../../genindex.html" title="General Index"
              accesskey="I">index</a></li>
         <li class="right" >
-          <a href="books.html" title="Books"
+          <a href="../tableau/tableau.html" title="Reset the server state:"
              accesskey="N">next</a> |</li>
         <li class="right" >
-          <a href="../vim/index.html" title="vim"
+          <a href="arrays.html" title="Size of an array:"
              accesskey="P">previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="../../index.html">notes 0.1 documentation</a> &#187;</li>
-          <li class="nav-item nav-item-1"><a href="../index.html" accesskey="U">MISC</a> &#187;</li> 
+          <li class="nav-item nav-item-1"><a href="../index.html" >Tools</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="index.html" accesskey="U">Perl</a> &#187;</li> 
       </ul>
     </div>  
 
@@ -53,16 +54,13 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="junk">
-<h1>Junk<a class="headerlink" href="#junk" title="Permalink to this headline">¶</a></h1>
-<p>Random junk</p>
-<p>Contents:</p>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="books.html">Books</a></li>
-<li class="toctree-l1"><a class="reference internal" href="chicken.html">Chieken</a></li>
-<li class="toctree-l1"><a class="reference internal" href="creepypastas.html">Creepypasta Readings</a></li>
-</ul>
+  <div class="section" id="one-liners">
+<h1>One Liners<a class="headerlink" href="#one-liners" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="remove-new-lines-and-carriage-returns">
+<h2>Remove new lines and carriage returns:<a class="headerlink" href="#remove-new-lines-and-carriage-returns" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">perl -p -i -e &#39;s/\r\n$/\n/g&#39; file1.txt file2.txt ... filen.txt</span>
+</pre></div>
+</div>
 </div>
 </div>
 
@@ -72,16 +70,24 @@
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
+  <h3><a href="../../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">One Liners</a><ul>
+<li><a class="reference internal" href="#remove-new-lines-and-carriage-returns">Remove new lines and carriage returns:</a></li>
+</ul>
+</li>
+</ul>
+
   <h4>Previous topic</h4>
-  <p class="topless"><a href="../vim/index.html"
-                        title="previous chapter">vim</a></p>
+  <p class="topless"><a href="arrays.html"
+                        title="previous chapter">Size of an array:</a></p>
   <h4>Next topic</h4>
-  <p class="topless"><a href="books.html"
-                        title="next chapter">Books</a></p>
+  <p class="topless"><a href="../tableau/tableau.html"
+                        title="next chapter">Reset the server state:</a></p>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
-      <li><a href="../../_sources/misc/junk/index.txt"
+      <li><a href="../../_sources/tools/perl/oneliners.txt"
             rel="nofollow">Show Source</a></li>
     </ul>
    </div>
@@ -106,13 +112,14 @@
           <a href="../../genindex.html" title="General Index"
              >index</a></li>
         <li class="right" >
-          <a href="books.html" title="Books"
+          <a href="../tableau/tableau.html" title="Reset the server state:"
              >next</a> |</li>
         <li class="right" >
-          <a href="../vim/index.html" title="vim"
+          <a href="arrays.html" title="Size of an array:"
              >previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="../../index.html">notes 0.1 documentation</a> &#187;</li>
-          <li class="nav-item nav-item-1"><a href="../index.html" >MISC</a> &#187;</li> 
+          <li class="nav-item nav-item-1"><a href="../index.html" >Tools</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="index.html" >Perl</a> &#187;</li> 
       </ul>
     </div>
         <!-- your html code here -->

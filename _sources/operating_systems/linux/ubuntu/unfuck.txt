@@ -1,0 +1,18 @@
+
+
+Necessary packages:
+^^^^^^^^^^^^^^^^^^^
+
+Install these for basic functionality.
+
+.. code-block:: console
+
+   apt-get install -y dnsutils net-tools tcpdump tmux ethtool
+
+
+On the arm boards:
+^^^^^^^^^^^^^^^^^^
+
+.. code-block:: console
+
+   apt-get install -y dosfsutils

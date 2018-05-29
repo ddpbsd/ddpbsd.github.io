@@ -1,0 +1,9 @@
+One Liners
+==========
+
+Remove new lines and carriage returns:
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: console
+
+   perl -p -i -e 's/\r\n$/\n/g' file1.txt file2.txt ... filen.txt
