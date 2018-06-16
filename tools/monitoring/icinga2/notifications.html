@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>icinga2 &#8212; notes 0.1 documentation</title>
+    <title>Disable notifications for a host: &#8212; notes 0.1 documentation</title>
     
     <link rel="stylesheet" href="../../../_static/classic.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
@@ -26,9 +26,9 @@
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
     <link rel="top" title="notes 0.1 documentation" href="../../../index.html" />
-    <link rel="up" title="Monitoring Tools" href="../index.html" />
-    <link rel="next" title="Validate the configuration:" href="configuration.html" />
-    <link rel="prev" title="Monitoring Tools" href="../index.html" /> 
+    <link rel="up" title="icinga2" href="index.html" />
+    <link rel="next" title="osquery" href="../../osquery/index.html" />
+    <link rel="prev" title="Validate the configuration:" href="configuration.html" /> 
   </head>
   <body role="document">
     <div class="related" role="navigation" aria-label="related navigation">
@@ -38,14 +38,15 @@
           <a href="../../../genindex.html" title="General Index"
              accesskey="I">index</a></li>
         <li class="right" >
-          <a href="configuration.html" title="Validate the configuration:"
+          <a href="../../osquery/index.html" title="osquery"
              accesskey="N">next</a> |</li>
         <li class="right" >
-          <a href="../index.html" title="Monitoring Tools"
+          <a href="configuration.html" title="Validate the configuration:"
              accesskey="P">previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="../../../index.html">notes 0.1 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../../index.html" >Tools</a> &#187;</li>
-          <li class="nav-item nav-item-2"><a href="../index.html" accesskey="U">Monitoring Tools</a> &#187;</li> 
+          <li class="nav-item nav-item-2"><a href="../index.html" >Monitoring Tools</a> &#187;</li>
+          <li class="nav-item nav-item-3"><a href="index.html" accesskey="U">icinga2</a> &#187;</li> 
       </ul>
     </div>  
 
@@ -54,17 +55,12 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="icinga2">
-<h1>icinga2<a class="headerlink" href="#icinga2" title="Permalink to this headline">¶</a></h1>
-<p>Contents:</p>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="configuration.html">Validate the configuration:</a></li>
-<li class="toctree-l1"><a class="reference internal" href="configuration.html#reload-the-configuration">Reload the configuration:</a></li>
-<li class="toctree-l1"><a class="reference internal" href="configuration.html#list-the-available-features">List the available features:</a></li>
-<li class="toctree-l1"><a class="reference internal" href="configuration.html#enable-a-feature">Enable a feature:</a></li>
-<li class="toctree-l1"><a class="reference internal" href="notifications.html">Disable notifications for a host:</a></li>
-</ul>
+  <div class="section" id="disable-notifications-for-a-host">
+<span id="tools-monitoring-icinga-notifications"></span><h1>Disable notifications for a host:<a class="headerlink" href="#disable-notifications-for-a-host" title="Permalink to this headline">¶</a></h1>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">object Host &quot;testhost&quot; {</span>
+<span class="go">  vars.notification.disabled = &quot;True&quot;</span>
+<span class="go">}</span>
+</pre></div>
 </div>
 </div>
 
@@ -75,15 +71,15 @@
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
   <h4>Previous topic</h4>
-  <p class="topless"><a href="../index.html"
-                        title="previous chapter">Monitoring Tools</a></p>
-  <h4>Next topic</h4>
   <p class="topless"><a href="configuration.html"
-                        title="next chapter">Validate the configuration:</a></p>
+                        title="previous chapter">Validate the configuration:</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="../../osquery/index.html"
+                        title="next chapter">osquery</a></p>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
-      <li><a href="../../../_sources/tools/monitoring/icinga2/index.txt"
+      <li><a href="../../../_sources/tools/monitoring/icinga2/notifications.txt"
             rel="nofollow">Show Source</a></li>
     </ul>
    </div>
@@ -108,14 +104,15 @@
           <a href="../../../genindex.html" title="General Index"
              >index</a></li>
         <li class="right" >
-          <a href="configuration.html" title="Validate the configuration:"
+          <a href="../../osquery/index.html" title="osquery"
              >next</a> |</li>
         <li class="right" >
-          <a href="../index.html" title="Monitoring Tools"
+          <a href="configuration.html" title="Validate the configuration:"
              >previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="../../../index.html">notes 0.1 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../../index.html" >Tools</a> &#187;</li>
-          <li class="nav-item nav-item-2"><a href="../index.html" >Monitoring Tools</a> &#187;</li> 
+          <li class="nav-item nav-item-2"><a href="../index.html" >Monitoring Tools</a> &#187;</li>
+          <li class="nav-item nav-item-3"><a href="index.html" >icinga2</a> &#187;</li> 
       </ul>
     </div>
         <!-- your html code here -->

@@ -8,6 +8,7 @@ Contents:
 
    commands
    interfaces
+   ip
    netplan
    network_manager
    vnstat

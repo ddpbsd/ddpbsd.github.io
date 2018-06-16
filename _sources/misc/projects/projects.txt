@@ -12,7 +12,12 @@ monitoring, log decoding, alerting, and active response.
 
 Current tasks:
   * Add libsodium support to get better file hashes. 
-    SHA256 support has been added, but not integrated.
+
+    * SHA256 support has been added, but not integrated.
+      
+    * blake2b would be nice
+
+    * Still need to look at possible changes in `analysisd`
 
   * Pull the `analysisd` changes from Wazuh. the adjustable
     fields support would be nice.
@@ -22,6 +27,21 @@ Current tasks:
   * Some kind of stats for `remoted` (number of msgs).
 
   * Some more stats for `analysisd`, or current stats in json.
+
+  * Better `syscheckd` alerts. 
+
+    * Different alerts for owner/perm/hash/etc?
+
+  * `strlcat` & `strlcpy` conversion
+
+    * Some parts are easier than others.
+
+  * Pledge?
+
+  * `yara` in `rootcheck`?
+
+  * `openscap`
+
 
 OSSEC Documentation:
 ^^^^^^^^^^^^^^^^^^^^

@@ -7,7 +7,7 @@ Install these for basic functionality.
 
 .. code-block:: console
 
-   apt-get install -y dnsutils net-tools tcpdump tmux ethtool
+   apt-get install -y dnsutils net-tools tcpdump tmux ethtool openssh-server
 
 
 On the arm boards:

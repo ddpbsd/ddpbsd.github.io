@@ -1,0 +1,13 @@
+
+message too long:
+^^^^^^^^^^^^^^^^^
+
+Output in `~/.bashrc` causes sftp to fail.
+Silence it.
+
+.. code-block:: console
+
+   [ansible@ansible playbook]$ sftp localhost
+   Received message too long 1097295214
+
+

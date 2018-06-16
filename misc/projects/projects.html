@@ -64,13 +64,28 @@ monitoring, log decoding, alerting, and active response.</p>
 <dl class="docutils">
 <dt>Current tasks:</dt>
 <dd><ul class="first last simple">
-<li>Add libsodium support to get better file hashes.
-SHA256 support has been added, but not integrated.</li>
+<li>Add libsodium support to get better file hashes.<ul>
+<li>SHA256 support has been added, but not integrated.</li>
+<li>blake2b would be nice</li>
+<li>Still need to look at possible changes in <cite>analysisd</cite></li>
+</ul>
+</li>
 <li>Pull the <cite>analysisd</cite> changes from Wazuh. the adjustable
 fields support would be nice.</li>
 <li>lua support in <cite>rootcheck</cite> would make it much more powerful.</li>
 <li>Some kind of stats for <cite>remoted</cite> (number of msgs).</li>
 <li>Some more stats for <cite>analysisd</cite>, or current stats in json.</li>
+<li>Better <cite>syscheckd</cite> alerts.<ul>
+<li>Different alerts for owner/perm/hash/etc?</li>
+</ul>
+</li>
+<li><cite>strlcat</cite> &amp; <cite>strlcpy</cite> conversion<ul>
+<li>Some parts are easier than others.</li>
+</ul>
+</li>
+<li>Pledge?</li>
+<li><cite>yara</cite> in <cite>rootcheck</cite>?</li>
+<li><cite>openscap</cite></li>
 </ul>
 </dd>
 </dl>
