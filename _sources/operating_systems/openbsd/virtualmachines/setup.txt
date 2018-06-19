@@ -1,0 +1,36 @@
+
+Make sure `host` can forward the packets:
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+**THE PACKETS!**
+
+.. code-block:: console
+
+   sysctl net.inet.ip.forwarding=1
+   sysctl net.inet6.ip6.forwarding=1
+
+Enable and start `vmd`:
+^^^^^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: console
+
+   rcctl enable vmd
+   rcctl start vmd
+
+Create a disk:
+^^^^^^^^^^^^^^
+
+.. code-block:: console
+
+   vmctl create /data2/VM/openbsd0.img -s 5G
+
+Start the install:
+^^^^^^^^^^^^^^^^^^
+
+.. code-block:: console
+
+   vmctl start openbsd0 -c -b /bsd.rd -m 512M -i 1 -n uplink -d /data2/VM/openbsd0.img
+   
+
+
+

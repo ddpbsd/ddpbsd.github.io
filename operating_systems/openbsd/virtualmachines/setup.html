@@ -1,0 +1,153 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Make sure host can forward the packets: &#8212; notes 0.1 documentation</title>
+    
+    <link rel="stylesheet" href="../../../_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="top" title="notes 0.1 documentation" href="../../../index.html" />
+    <link rel="up" title="Virtual Machines" href="index.html" />
+    <link rel="next" title="Windows" href="../../windows/index.html" />
+    <link rel="prev" title="Networking" href="networking.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../windows/index.html" title="Windows"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="networking.html" title="Networking"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">notes 0.1 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../../index.html" >Operating Systems</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../index.html" >OpenBSD</a> &#187;</li>
+          <li class="nav-item nav-item-3"><a href="index.html" accesskey="U">Virtual Machines</a> &#187;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="make-sure-host-can-forward-the-packets">
+<h1>Make sure <cite>host</cite> can forward the packets:<a class="headerlink" href="#make-sure-host-can-forward-the-packets" title="Permalink to this headline">¶</a></h1>
+<p><strong>THE PACKETS!</strong></p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">sysctl net.inet.ip.forwarding=1</span>
+<span class="go">sysctl net.inet6.ip6.forwarding=1</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="enable-and-start-vmd">
+<h1>Enable and start <cite>vmd</cite>:<a class="headerlink" href="#enable-and-start-vmd" title="Permalink to this headline">¶</a></h1>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">rcctl enable vmd</span>
+<span class="go">rcctl start vmd</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="create-a-disk">
+<h1>Create a disk:<a class="headerlink" href="#create-a-disk" title="Permalink to this headline">¶</a></h1>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">vmctl create /data2/VM/openbsd0.img -s 5G</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="start-the-install">
+<h1>Start the install:<a class="headerlink" href="#start-the-install" title="Permalink to this headline">¶</a></h1>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">vmctl start openbsd0 -c -b /bsd.rd -m 512M -i 1 -n uplink -d /data2/VM/openbsd0.img</span>
+</pre></div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../../../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Make sure <cite>host</cite> can forward the packets:</a></li>
+<li><a class="reference internal" href="#enable-and-start-vmd">Enable and start <cite>vmd</cite>:</a></li>
+<li><a class="reference internal" href="#create-a-disk">Create a disk:</a></li>
+<li><a class="reference internal" href="#start-the-install">Start the install:</a></li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="networking.html"
+                        title="previous chapter">Networking</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="../../windows/index.html"
+                        title="next chapter">Windows</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../../_sources/operating_systems/openbsd/virtualmachines/setup.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../windows/index.html" title="Windows"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="networking.html" title="Networking"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">notes 0.1 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../../index.html" >Operating Systems</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../index.html" >OpenBSD</a> &#187;</li>
+          <li class="nav-item nav-item-3"><a href="index.html" >Virtual Machines</a> &#187;</li> 
+      </ul>
+    </div>
+        <!-- your html code here -->
+	<div class="footer">
+		<em>This information has a good chance of being wrong, inconsistent, out of date, or just bad. Use at your own risk.
+		Feel free to notify me of any issues though.</em>
+	</div>
+
+
+  </body>
+</html>
