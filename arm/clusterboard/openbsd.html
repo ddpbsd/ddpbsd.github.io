@@ -1,0 +1,170 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>OpenBSD &#8212; notes 0.1 documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="top" title="notes 0.1 documentation" href="../../index.html" />
+    <link rel="up" title="Pine64 Clusterboard" href="index.html" />
+    <link rel="next" title="Pinouts:" href="pins.html" />
+    <link rel="prev" title="Possibly turn off the heartbeat led:" href="leds.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="pins.html" title="Pinouts:"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="leds.html" title="Possibly turn off the heartbeat led:"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../index.html">notes 0.1 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../index.html" >arm</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="index.html" accesskey="U">Pine64 Clusterboard</a> &#187;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="openbsd">
+<h1>OpenBSD<a class="headerlink" href="#openbsd" title="Permalink to this headline">¶</a></h1>
+<p>None of this worked. Will get back to it eventually.</p>
+<div class="section" id="load-the-dtb">
+<h2>Load the dtb:<a class="headerlink" href="#load-the-dtb" title="Permalink to this headline">¶</a></h2>
+<p>From Jonathan Gray on an OpenBSD mailing list.
+<a class="reference external" href="https://marc.info/?l=openbsd-misc&amp;m=152363766318429&amp;w=2">https://marc.info/?l=openbsd-misc&amp;m=152363766318429&amp;w=2</a></p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">The sopine U-Boot image does not currently include the sopine device</span>
+<span class="go">tree as there isn&#39;t a sopine device tree in U-Boot.</span>
+
+<span class="go">Until that changes, on the msdos/efi partition create an &#39;allwinner&#39;</span>
+<span class="go">directory, install the dtb port and copy</span>
+<span class="go">/usr/local/share/dtb/arm64/allwinner/sun50i-a64-sopine-baseboard.dtb</span>
+<span class="go">to</span>
+<span class="go">allwinner/sun50i-a64-pine64-plus.dtb</span>
+
+<span class="go">or to a different path and change fdtfile in the U-Boot environment.</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="random">
+<h2>Random:<a class="headerlink" href="#random" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">#</span> <span class="nb">pwd</span>
+<span class="go">/usr/local/share/u-boot/sopine_baseboard</span>
+<span class="go">ix# ls</span>
+<span class="go">sunxi-spl.bin               u-boot                      u-boot-sunxi-with-spl.bin   u-boot.bin                  u-boot.img                  u-boot.itb</span>
+<span class="go">ix# dd if=./u-boot-sunxi-with-spl.bin of=/dev/rsd4c bs=1024 seek=8</span>
+<span class="go">dd: /dev/rsd4c: Invalid argument</span>
+<span class="go">546+1 records in</span>
+<span class="go">546+0 records out</span>
+<span class="go">559104 bytes transferred in 0.429 secs (1301555 bytes/sec)</span>
+<span class="go">ix# mount /dev/sd4i /mnt</span>
+<span class="go">ix# cd /mnt</span>
+<span class="go">ix# ls</span>
+<span class="go">System Volume Information   bcm2710-rpi-3-b.dtb         config.txt                  old                         u-boot.bin</span>
+<span class="go">allwinner                   bcm2710-rpi-cm3.dtb         efi                         pine64</span>
+<span class="go">bcm2710-rpi-3-b-plus.dtb    bootcode.bin                fixup.dat                   start.elf</span>
+<span class="go">ix# cd allwinner/</span>
+<span class="go">ix# ls</span>
+<span class="go">sun50i-a64-pine64-plus.dtb       sun50i-a64-pine64.dtb            sun50i-a64-sopine-baseboard.dtb  sun50i-h6-pine-h64.dtb</span>
+<span class="go">ix# cp /usr/local/share/dtb/arm64/allwinner/sun50i-a64-sopine-baseboard.dtb sun50i-a64-pine64-plus.dtb</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">OpenBSD</a><ul>
+<li><a class="reference internal" href="#load-the-dtb">Load the dtb:</a></li>
+<li><a class="reference internal" href="#random">Random:</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="leds.html"
+                        title="previous chapter">Possibly turn off the heartbeat led:</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="pins.html"
+                        title="next chapter">Pinouts:</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../_sources/arm/clusterboard/openbsd.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../../search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="pins.html" title="Pinouts:"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="leds.html" title="Possibly turn off the heartbeat led:"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../index.html">notes 0.1 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../index.html" >arm</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="index.html" >Pine64 Clusterboard</a> &#187;</li> 
+      </ul>
+    </div>
+        <!-- your html code here -->
+	<div class="footer">
+		<em>This information has a good chance of being wrong, inconsistent, out of date, or just bad. Use at your own risk.
+		Feel free to notify me of any issues though.</em>
+	</div>
+
+
+  </body>
+</html>

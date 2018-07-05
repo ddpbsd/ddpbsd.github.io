@@ -15,6 +15,7 @@ Contents:
    lvm/index
    network/index
    rpm
+   selinux/php
    systemd/index
    ubuntu/index
 

@@ -1,0 +1,12 @@
+
+ThinkStick
+==========
+
+Model: 300?
+
+Enter BIOS on boot:
+^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: console
+
+   ESC on boot
