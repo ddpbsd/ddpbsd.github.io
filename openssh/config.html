@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>OSSEC &#8212; notes 0.1 documentation</title>
+    <title>Automatically add ssh keys to ssh-agent: &#8212; notes 0.1 documentation</title>
     
     <link rel="stylesheet" href="../_static/classic.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -26,8 +26,9 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="top" title="notes 0.1 documentation" href="../index.html" />
-    <link rel="next" title="OSSEC and Elasticstack" href="elastic.html" />
-    <link rel="prev" title="Sysmon" href="../operating_systems/windows/sysmon.html" /> 
+    <link rel="up" title="OpenSSH" href="index.html" />
+    <link rel="next" title="Disconnect from an SSH session:" href="misc.html" />
+    <link rel="prev" title="Command note" href="commands.html" /> 
   </head>
   <body role="document">
     <div class="related" role="navigation" aria-label="related navigation">
@@ -37,12 +38,13 @@
           <a href="../genindex.html" title="General Index"
              accesskey="I">index</a></li>
         <li class="right" >
-          <a href="elastic.html" title="OSSEC and Elasticstack"
+          <a href="misc.html" title="Disconnect from an SSH session:"
              accesskey="N">next</a> |</li>
         <li class="right" >
-          <a href="../operating_systems/windows/sysmon.html" title="Sysmon"
+          <a href="commands.html" title="Command note"
              accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../index.html">notes 0.1 documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="../index.html">notes 0.1 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">OpenSSH</a> &#187;</li> 
       </ul>
     </div>  
 
@@ -51,24 +53,11 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="ossec">
-<h1>OSSEC<a class="headerlink" href="#ossec" title="Permalink to this headline">¶</a></h1>
-<p>Contents:</p>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="elastic.html">OSSEC and Elasticstack</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="elastic.html#turn-on-json-logging-in-ossec">Turn on json logging in OSSEC:</a></li>
-<li class="toctree-l2"><a class="reference internal" href="elastic.html#logstash-config">Logstash Config:</a></li>
-<li class="toctree-l2"><a class="reference internal" href="elastic.html#filebeat-config">Filebeat Config:</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="src/index.html">OSSEC src</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="src/rootcheck/index.html">rootcheck</a></li>
-<li class="toctree-l2"><a class="reference internal" href="src/windows/index.html">Windows</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="win-build.html">Required packages:</a></li>
-</ul>
+  <div class="section" id="automatically-add-ssh-keys-to-ssh-agent">
+<h1>Automatically add ssh keys to ssh-agent:<a class="headerlink" href="#automatically-add-ssh-keys-to-ssh-agent" title="Permalink to this headline">¶</a></h1>
+<p>In <cite>~/.ssh/config</cite> add:</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">AddKeysToAgent yes</span>
+</pre></div>
 </div>
 </div>
 
@@ -79,15 +68,15 @@
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
   <h4>Previous topic</h4>
-  <p class="topless"><a href="../operating_systems/windows/sysmon.html"
-                        title="previous chapter">Sysmon</a></p>
+  <p class="topless"><a href="commands.html"
+                        title="previous chapter">Command note</a></p>
   <h4>Next topic</h4>
-  <p class="topless"><a href="elastic.html"
-                        title="next chapter">OSSEC and Elasticstack</a></p>
+  <p class="topless"><a href="misc.html"
+                        title="next chapter">Disconnect from an SSH session:</a></p>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
-      <li><a href="../_sources/ossec/index.txt"
+      <li><a href="../_sources/openssh/config.txt"
             rel="nofollow">Show Source</a></li>
     </ul>
    </div>
@@ -112,12 +101,13 @@
           <a href="../genindex.html" title="General Index"
              >index</a></li>
         <li class="right" >
-          <a href="elastic.html" title="OSSEC and Elasticstack"
+          <a href="misc.html" title="Disconnect from an SSH session:"
              >next</a> |</li>
         <li class="right" >
-          <a href="../operating_systems/windows/sysmon.html" title="Sysmon"
+          <a href="commands.html" title="Command note"
              >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../index.html">notes 0.1 documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="../index.html">notes 0.1 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >OpenSSH</a> &#187;</li> 
       </ul>
     </div>
         <!-- your html code here -->

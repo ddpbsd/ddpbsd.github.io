@@ -8,5 +8,6 @@ Contents:
 
    elastic
    src/index
+   win-build
    
 

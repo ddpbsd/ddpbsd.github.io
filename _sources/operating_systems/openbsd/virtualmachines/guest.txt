@@ -1,0 +1,10 @@
+
+
+Change the timecounter:
+^^^^^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: console
+
+   sysctl kern.timecounter.hardware=tsc
+
+

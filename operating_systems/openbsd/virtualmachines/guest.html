@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Virtual Machines &#8212; notes 0.1 documentation</title>
+    <title>Change the timecounter: &#8212; notes 0.1 documentation</title>
     
     <link rel="stylesheet" href="../../../_static/classic.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
@@ -26,9 +26,9 @@
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
     <link rel="top" title="notes 0.1 documentation" href="../../../index.html" />
-    <link rel="up" title="OpenBSD" href="../index.html" />
-    <link rel="next" title="Change the timecounter:" href="guest.html" />
-    <link rel="prev" title="Insert a tab in a :s command:" href="../vi.html" /> 
+    <link rel="up" title="Virtual Machines" href="index.html" />
+    <link rel="next" title="Networking" href="networking.html" />
+    <link rel="prev" title="Virtual Machines" href="index.html" /> 
   </head>
   <body role="document">
     <div class="related" role="navigation" aria-label="related navigation">
@@ -38,14 +38,15 @@
           <a href="../../../genindex.html" title="General Index"
              accesskey="I">index</a></li>
         <li class="right" >
-          <a href="guest.html" title="Change the timecounter:"
+          <a href="networking.html" title="Networking"
              accesskey="N">next</a> |</li>
         <li class="right" >
-          <a href="../vi.html" title="Insert a tab in a :s command:"
+          <a href="index.html" title="Virtual Machines"
              accesskey="P">previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="../../../index.html">notes 0.1 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../../index.html" >Operating Systems</a> &#187;</li>
-          <li class="nav-item nav-item-2"><a href="../index.html" accesskey="U">OpenBSD</a> &#187;</li> 
+          <li class="nav-item nav-item-2"><a href="../index.html" >OpenBSD</a> &#187;</li>
+          <li class="nav-item nav-item-3"><a href="index.html" accesskey="U">Virtual Machines</a> &#187;</li> 
       </ul>
     </div>  
 
@@ -54,23 +55,10 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="virtual-machines">
-<h1>Virtual Machines<a class="headerlink" href="#virtual-machines" title="Permalink to this headline">¶</a></h1>
-<p>Notes on vmm/vmd to help me figure
-it all out.</p>
-<p>Contents:</p>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="guest.html">Change the timecounter:</a></li>
-<li class="toctree-l1"><a class="reference internal" href="networking.html">Networking</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="networking.html#exit-a-vm-cu">Exit a VM cu:</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="setup.html">Make sure <cite>host</cite> can forward the packets:</a></li>
-<li class="toctree-l1"><a class="reference internal" href="setup.html#enable-and-start-vmd">Enable and start <cite>vmd</cite>:</a></li>
-<li class="toctree-l1"><a class="reference internal" href="setup.html#create-a-disk">Create a disk:</a></li>
-<li class="toctree-l1"><a class="reference internal" href="setup.html#start-the-install">Start the install:</a></li>
-</ul>
+  <div class="section" id="change-the-timecounter">
+<h1>Change the timecounter:<a class="headerlink" href="#change-the-timecounter" title="Permalink to this headline">¶</a></h1>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">sysctl kern.timecounter.hardware=tsc</span>
+</pre></div>
 </div>
 </div>
 
@@ -81,15 +69,15 @@ it all out.</p>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
   <h4>Previous topic</h4>
-  <p class="topless"><a href="../vi.html"
-                        title="previous chapter">Insert a tab in a <code class="docutils literal"><span class="pre">:s</span></code> command:</a></p>
+  <p class="topless"><a href="index.html"
+                        title="previous chapter">Virtual Machines</a></p>
   <h4>Next topic</h4>
-  <p class="topless"><a href="guest.html"
-                        title="next chapter">Change the timecounter:</a></p>
+  <p class="topless"><a href="networking.html"
+                        title="next chapter">Networking</a></p>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
-      <li><a href="../../../_sources/operating_systems/openbsd/virtualmachines/index.txt"
+      <li><a href="../../../_sources/operating_systems/openbsd/virtualmachines/guest.txt"
             rel="nofollow">Show Source</a></li>
     </ul>
    </div>
@@ -114,14 +102,15 @@ it all out.</p>
           <a href="../../../genindex.html" title="General Index"
              >index</a></li>
         <li class="right" >
-          <a href="guest.html" title="Change the timecounter:"
+          <a href="networking.html" title="Networking"
              >next</a> |</li>
         <li class="right" >
-          <a href="../vi.html" title="Insert a tab in a :s command:"
+          <a href="index.html" title="Virtual Machines"
              >previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="../../../index.html">notes 0.1 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../../index.html" >Operating Systems</a> &#187;</li>
-          <li class="nav-item nav-item-2"><a href="../index.html" >OpenBSD</a> &#187;</li> 
+          <li class="nav-item nav-item-2"><a href="../index.html" >OpenBSD</a> &#187;</li>
+          <li class="nav-item nav-item-3"><a href="index.html" >Virtual Machines</a> &#187;</li> 
       </ul>
     </div>
         <!-- your html code here -->
