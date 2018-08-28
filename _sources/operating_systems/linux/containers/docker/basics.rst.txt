@@ -1,0 +1,38 @@
+.. _operating_systems_linux_containers_docker:
+
+
+List of images:
+^^^^^^^^^^^^^^^
+
+.. code-block:: console
+
+   docker images
+
+Delete an image:
+^^^^^^^^^^^^^^^^
+
+.. code-block:: console
+
+   docker rmi IMAGE
+   docker image rm IMAGE
+
+Delete a container:
+^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: console
+
+   docker rm CONTAINER
+   docker container rm CONTAINER
+
+
+Container run example:
+^^^^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: console
+
+   docker run --name=gogs -p 10022:22 -p 10080:3000 -v /var/gogs:/data gogs/gogs
+
+This runs a container named gogs. You can connect to it on port 10022 and port 10080 of the host.
+It stores stuff in `/var/gogs` on the host, which translates to `/data` in the container
+
+

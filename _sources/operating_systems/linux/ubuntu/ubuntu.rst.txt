@@ -1,0 +1,51 @@
+.. _linux_ubuntu:
+
+
+Only upgrade security related packages:
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. note::
+
+   From iam-TJ at https://news.ycombinator.com/item?id=11475474
+
+.. code-block:: console
+
+   sudo /usr/bin/unattended-upgrade
+
+
+.. note::
+
+   This will only use the ${dist}-security target. Most systems should have this installed and available.
+   The default configuration is at: ``/etc/apt/apt.conf.d/50unattended-upgrades``
+   It is configured as a system service that runs automatically at shutdown.
+
+
+Enable a service:
+^^^^^^^^^^^^^^^^^
+
+.. code-block:: console
+
+   update-rc.d ssh enable
+
+
+Import a gpg key into apt:
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: console
+
+   apt-key adv --keyserver pgp.mit.edu --recv-key KEY_STUFF
+
+Find the Ubuntu version:
+^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: console
+
+   $ lsb_release -a
+   No LSB modules are available.
+   Distributor ID: Ubuntu
+   Description:    Ubuntu 14.04.5 LTS
+   Release:        14.04
+   Codename:       trusty
+
+
+

@@ -1,0 +1,18 @@
+.. _misc_mynet_systems_earth:
+
+earth
+=====
+
+Proxmox virtualization server.
+
+Currently running:
+^^^^^^^^^^^^^^^^^^
+
+* A bunch of VMs and containers
+
+Hardware:
+^^^^^^^^^
+
+Dell Poweredge T310
+
+

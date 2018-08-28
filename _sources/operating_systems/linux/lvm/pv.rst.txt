@@ -1,0 +1,52 @@
+Physical Volumes
+================
+
+View current PV info:
+^^^^^^^^^^^^^^^^^^^^^
+
+
+.. code-block:: console
+
+   root@buzzell:/var/VM# pvdisplay
+     --- Physical volume ---
+     PV Name               /dev/sda3
+     VG Name               buzzell-vg
+     PV Size               28.84 GiB / not usable 4.00 MiB
+     Allocatable           yes (but full)
+     PE Size               4.00 MiB
+     Total PE              7382
+     Free PE               0
+     Allocated PE          7382
+     PV UUID               qeoUD3-Yj11-Z7Jl-kSkR-uo4j-XTXz-OF3y4g
+
+     --- Physical volume ---
+     PV Name               /dev/sdb
+     VG Name               buzzell-vg
+     PV Size               149.01 GiB / not usable 3.89 MiB
+     Allocatable           yes
+     PE Size               4.00 MiB
+     Total PE              38146
+     Free PE               2306
+     Allocated PE          35840
+     PV UUID               3SCOg4-Wr50-Lped-6KvB-taJE-KhUd-innUoN
+
+Create a physical volume:
+^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: console
+
+   # pvcreate /dev/sdb1
+
+
+Alternatives:
+^^^^^^^^^^^^^
+
+`pvs`
+
+.. code-block:: console
+
+   root@buzzell:/var/VM# pvs
+     PV         VG         Fmt  Attr PSize   PFree
+     /dev/sda3  buzzell-vg lvm2 a--   28.84g    0
+     /dev/sdb   buzzell-vg lvm2 a--  149.01g 9.01g
+

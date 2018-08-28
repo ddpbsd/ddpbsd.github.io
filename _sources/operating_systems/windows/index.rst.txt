@@ -1,0 +1,14 @@
+Windows
+=======
+
+Contents:
+
+.. toctree::
+   :maxdepth: 2
+
+   active_directory/index.rst
+   cheatsheets
+   powershell/index
+   smb
+   sysmon   
+

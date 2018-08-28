@@ -1,0 +1,19 @@
+.. _bbb_installation:
+
+
+Installation links:
+^^^^^^^^^^^^^^^^^^^
+
+http://ftp.openbsd.org/pub/OpenBSD/6.0/armv7/INSTALL.armv7
+http://elinux.org/Beagleboard:Debian_On_BeagleBone_Black
+http://thethingsystem.com/dev/Bootstrapping-the-BeagleBone-Black-with-Debian.html
+
+
+Use dd to install debian:
+^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: console
+
+   dd bs=1m if=IMAGE of=/dev/rsdXc
+
+

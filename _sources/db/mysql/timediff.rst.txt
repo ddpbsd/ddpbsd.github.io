@@ -1,0 +1,12 @@
+
+Do a timediff:
+^^^^^^^^^^^^^^
+
+.. code-block:: console
+
+   SELECT TIMEDIFF('2007-12-31 10:02:00','2007-12-30 12:01:01');
+   -- result: 22:00:59.
+
+
+   SELECT TIMESTAMPDIFF(SECOND,'2007-12-30 12:01:01','2007-12-31 10:02:00'); 
+   -- result: 79259  the difference in seconds with the time.

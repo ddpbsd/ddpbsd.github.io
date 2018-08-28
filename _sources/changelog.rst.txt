@@ -1,0 +1,11 @@
+2018-08-10
+^^^^^^^^^^
+
+* A couple more commands to check on AD replication
+
+2018-08-28
+^^^^^^^^^^
+
+* Commands to use firewall-cmd to reject connections
+
+* update breweries

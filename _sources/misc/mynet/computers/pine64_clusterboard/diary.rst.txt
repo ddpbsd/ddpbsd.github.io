@@ -1,0 +1,22 @@
+Pine64 Cluterboard
+==================
+
+I'm thinking about jotting down some notes on the pine64 `clusterboard <http://wiki.pine64.org/index.php/PINE_A64-LTS/SOPine_Main_Page#Pine64_Cluster_Board_Resource>`_.
+
+
+20180306:
+^^^^^^^^^
+
+When I saw the `announcement <https://forum.pine64.org/showthread.php?tid=5614>`_ my technolust kicked in. I had to have one. So I bought one.
+It came with one SOPine module, and I figured I could purchase more when I figured that one out.
+It arrived quicker than I thought it would.
+
+.. Insert pictures of the equipment
+
+
+At some point I will have to figure out the powersupply thing, using a flexATX powersupply looks like a better option in the long run.
+
+References:
+^^^^^^^^^^^
+
+`Forum <https://forum.pine64.org/forumdisplay.php?fid=91>`_

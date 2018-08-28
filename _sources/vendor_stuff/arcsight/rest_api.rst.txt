@@ -1,0 +1,24 @@
+.. _vendor_stuff_arcsight_rest_api:
+
+
+Banned password characters:
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: console
+
+   ^
+
+Example login:
+^^^^^^^^^^^^^^
+
+.. code-block:: console
+
+   curl -D- -k -H "Content-Type: application/x-www-form-urlencoded" -XPOST  'https://ESM_HOST:8443/www/core-service/rest/LoginService/login?login=USERNAME&password=PASSWORD&alt=json'
+
+Example logout:
+^^^^^^^^^^^^^^^
+
+.. code-block:: console
+
+   curl -D- -k -H "Content-Type: application/x-www-form-urlencoded" -XPOST  'https://ESM_HOST:8443/www/core-service/rest/LoginService/logout?authToken=HBfedZ5AefEosvFXSbgIfy5wzj9v426giAp7OihCabg.'
+

@@ -1,0 +1,20 @@
+SecurityOnion
+=============
+
+General securityonion information I don't want to have to rediscover.
+
+
+`Security Onion Cheat Sheet <http://chrissanders.org/2017/06/security-onion-cheat-sheet/>`_
+by Chris Sanders
+
+Contents:
+
+.. toctree::
+   :maxdepth: 2
+
+   cef
+   commands
+   elsa
+   hier
+   bro/index
+   salt

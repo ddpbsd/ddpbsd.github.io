@@ -1,0 +1,31 @@
+.. _lxc_profiles:
+
+Show the profiles
+^^^^^^^^^^^^^^^^^
+
+.. code-block:: console
+
+   lxc profile list
+
+Show the configuration of a profile
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: console
+
+   lxc profile show default
+
+
+Unset the http_proxy
+^^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: console
+
+   lxc profile unset default environment.http_proxy
+
+Edit the default profile:
+^^^^^^^^^^^^^^^^^^^^^^^^^
+
+I had to do this when my network interface changed from ens3 to ens18.
+.. code-block:: console
+
+   lxc profile edit default

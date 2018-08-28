@@ -1,0 +1,12 @@
+ksh
+=====
+
+Simple addition
+^^^^^^^^^^^^^^^
+
+.. code-block:: console
+
+   EX2=$((1+1))
+   
+   
+

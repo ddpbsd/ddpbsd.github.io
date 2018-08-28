@@ -1,0 +1,15 @@
+mynet
+=====
+
+My network stuff.
+
+Contents:
+
+.. toctree::
+   :maxdepth: 2
+
+   dmesgs/index
+   systems
+   computers/index
+
+

@@ -1,0 +1,13 @@
+.. _tools_java:
+
+Java
+====
+
+Not the good `java <https://www.deathwishcoffee.com/>`_.
+
+Contents:
+
+.. toctree::
+   :maxdepth: 2
+
+   keytool

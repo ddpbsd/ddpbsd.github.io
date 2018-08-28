@@ -1,0 +1,10 @@
+.. _git_archive:
+
+Create an archive of the OSSEC code
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: console
+
+   git archive --prefix="ossec-hids-2.9b5/" -o /tmp/ossec-hids-2.9b5.tar origin/2.9b5
+
+

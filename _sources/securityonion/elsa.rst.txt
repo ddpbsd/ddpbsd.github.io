@@ -1,0 +1,10 @@
+.. _securityonion_elsa:
+
+
+Sphinx search process:
+^^^^^^^^^^^^^^^^^^^^^^
+
+`searchd` can be restarted with `service sphinxsearch restart`
+
+
+

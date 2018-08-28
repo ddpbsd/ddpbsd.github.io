@@ -1,0 +1,61 @@
+.. _operating_systems_windows_powershell:
+
+
+Get the version of powershell:
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: console
+
+   PS C:\> $PSVersionTable.PSVersion
+
+   Major  Minor  Build  Revision
+   -----  -----  -----  --------
+   4      0      -1     -1
+
+Delete files from a remote PC:
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: console
+
+   Remove-Item "\\$computer\path\to\file.ext" 
+
+Add `-Recurse` to delete recursively:
+
+.. code-block:: console
+
+   Remove-Item "\\$computer\path\to\directory" -Recurse
+
+
+Stop a service on a remote PC:
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: console
+
+   (get-service -ComputerName $computer -Name service_name).Stop()
+
+Start a service on a remote PC:
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: console
+
+   (get-service -ComputerName $computer -Name service_name).Start()
+
+
+Sleep for 10 seconds:
+^^^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: console
+
+   Start-Sleep -s 10
+
+
+Get creds in a PSCredential object:
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Useful for `-PSCredential`
+
+.. code-block:: console
+
+   $mycreds = Get-Credential
+
+

@@ -1,0 +1,8 @@
+
+Required packages:
+^^^^^^^^^^^^^^^^^^
+
+.. code-block:: console
+
+   apt-get install -y msitools binutils-mingw-w64 g++-mingw-w64 gcc-mingw-w64 mingw-w64 nsis 
+

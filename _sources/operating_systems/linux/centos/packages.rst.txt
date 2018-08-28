@@ -1,0 +1,10 @@
+Unfuck centos
+-------------
+
+Install net-tools:
+^^^^^^^^^^^^^^^^^^
+
+.. code-block:: console
+
+   yum install -y net-tools
+

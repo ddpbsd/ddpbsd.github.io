@@ -1,0 +1,10 @@
+.. _securityonion_commands:
+
+
+sostat
+^^^^^^
+**sostat** - A long winded script to show a bunch of stuff you don't care about at this time, and maybe what you do.
+
+
+
+

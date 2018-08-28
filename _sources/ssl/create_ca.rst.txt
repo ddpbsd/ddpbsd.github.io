@@ -1,0 +1,7 @@
+.. _ssl_create_ca:
+
+Where I got this information:
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+https://jamielinux.com/docs/openssl-certificate-authority/create-the-root-pair.html
+

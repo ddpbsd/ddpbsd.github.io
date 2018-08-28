@@ -1,0 +1,16 @@
+CentOS
+======
+
+Contents:
+
+.. toctree::
+   :maxdepth: 2
+
+   centos
+   automatic_updates
+   selinux
+   active_directory/index
+   networking
+   packages
+   unfuck
+

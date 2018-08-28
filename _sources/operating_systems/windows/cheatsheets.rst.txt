@@ -1,0 +1,15 @@
+.. _windows_cheatsheets:
+
+Cheet Sheets
+^^^^^^^^^^^^
+
+I need to look at these later for OSSEC related stuff:
+
+`Windows logging <http://www.malwarearchaeology.com/s/Windows-Logging-Cheat-Sheet_ver_Jan_2016.pdf>`_
+
+`Windows File Auditing <http://www.malwarearchaeology.com/s/Windows-File-Auditing-Cheat-Sheet-ver-Jan-2016.pdf>`_
+
+`Windows Registry Auditing <http://www.malwarearchaeology.com/s/Windows-Registry-Auditing-Cheat-Sheet-ver-11-Jan-2016.pdf>`_
+
+`Windows PowerShell Logging <http://www.malwarearchaeology.com/s/Windows-PowerShell-Logging-Cheat-Sheet-ver-June-2016-v2-s5kc.pdf>`_
+

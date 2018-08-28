@@ -1,0 +1,12 @@
+.. _operating_systems_linux_containers_docker_ubuntu:
+
+
+Docker options on startup:
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: console
+
+   /etc/systemd/system/multi-user.target.wants/docker.service
+
+
+

@@ -1,0 +1,24 @@
+Look at certs!
+==============
+
+Check a private key:
+^^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: console
+
+   openssl rsa -in privateKey.key -check
+
+Check a certificate: 
+^^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: console
+
+   openssl x509 -in certificate.crt -text -noout
+
+Check the subject in a certificate:
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: console
+
+   openssl x509 -noout -subject -in certificate.crt
+

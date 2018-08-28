@@ -1,0 +1,64 @@
+
+
+
+OSSEC and Elasticstack
+======================
+
+A tale of dread and woe.
+
+
+Turn on json logging in OSSEC:
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: xml
+
+   <global>
+     <jsonout_output>yes</jsonout_output>
+   </global>
+
+Logstash Config:
+^^^^^^^^^^^^^^^^
+
+.. code-block:: yaml
+
+   input {
+     beats {
+       id => "beats_test"
+       port => 9001
+     }
+   }
+
+
+   output {
+     elasticsearch {
+       index => "ossec-%{+YYYY.MM.dd}"
+     }
+
+   #  stdout {
+   #  }
+
+   }
+
+
+
+Install filebeat.
+
+Filebeat Config:
+^^^^^^^^^^^^^^^^
+
+.. code-block:: yaml
+
+   filebeat.prospectors:
+
+   - input_type: log
+     paths:
+       - /var/ossec/logs/alerts/alerts.json
+
+     json.keys_under_root: true
+
+   output.logstash:
+     hosts: ["elastic:9001"]
+
+
+
+

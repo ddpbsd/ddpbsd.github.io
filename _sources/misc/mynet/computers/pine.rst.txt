@@ -1,0 +1,22 @@
+.. _misc_mynet_systems_pine:
+
+
+pine
+====
+
+Currently a DNS server using `nsd` and `unbound`.
+
+Currently running:
+^^^^^^^^^^^^^^^^^^
+
+* nsd
+
+* unbound
+
+Hardware:
+^^^^^^^^^
+
+Pine64 A64+
+
+.. include:: ../dmesgs/pine.rst
+

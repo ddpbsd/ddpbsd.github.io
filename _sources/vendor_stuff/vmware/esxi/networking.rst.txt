@@ -1,0 +1,24 @@
+Network stuff
+=============
+
+ESXi networking is a bundle of sadness.
+Hopefully these commands help.
+
+
+Change IP of management network:
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: console
+
+   esxcfg-vmknic "Management Network" -i [newip] -n [newsubnetmask]
+
+
+Change default route:
+^^^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: console
+
+   esxcfg-route -d default 0.0.0.0 [olddefaultgw]
+   esxcfg-route -a default 0.0.0.0 [newdefaultgw]
+   /sbin/services.sh restart
+

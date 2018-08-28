@@ -1,0 +1,29 @@
+.. _elastic_create_index:
+
+
+Create an index on ES
+^^^^^^^^^^^^^^^^^^^^^
+
+There are defaults for shards and replicas, so if those are okay, drop the `-d` and everything after it.
+
+.. code-block:: console
+
+   curl -H'Content-Type: application/json' -XPUT 'localhost:9200/ossec?pretty'
+
+Old and broken:
+^^^^^^^^^^^^^^^
+
+.. code-block:: console
+
+   curl -XPUT 'localhost:9200/twitter?pretty' -d'
+   {
+       "settings" : {
+           "index" : {
+               "number_of_shards" : 3, 
+               "number_of_replicas" : 2 
+           }
+       }
+   }
+
+
+

@@ -1,0 +1,22 @@
+MISC
+====
+
+Stuff that will probably be much much less in depth
+ (or less frequently used) than the rest.
+
+
+Contents:
+
+.. toctree::
+   :maxdepth: 2
+
+   
+   imagemagick/index   
+   kernel_build/index
+   ksh/index
+   mynet/index
+   projects/projects
+   random
+   vim/index
+   junk/index
+

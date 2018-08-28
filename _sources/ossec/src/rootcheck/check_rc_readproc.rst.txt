@@ -1,0 +1,36 @@
+check_rc_readproc
+=================
+
+
+read_proc_file:
+^^^^^^^^^^^^^^^
+
+`static int read_proc_file(const char *file_name, const char *pid, int position)`
+
+** PROCESS: **
+
+
+** RETURN VALUES: **
+
+
+
+read_proc_dir:
+^^^^^^^^^^^^^^
+
+`int read_proc_dir(const char *dir_name, const char *pid, int position)`
+
+** PROCESS: **
+
+** RETURN VALUES: **
+
+
+check_rc_readproc:
+^^^^^^^^^^^^^^^^^^
+
+`int check_rc_readproc(int pid)`
+
+** PROCESS: **
+
+** RETURN VALUES: **
+
+

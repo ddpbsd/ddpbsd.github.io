@@ -1,0 +1,12 @@
+.. _tools_ldap:
+
+ldap
+====
+
+Contents:
+
+.. toctree::
+   :maxdepth: 2
+
+   ldapsearch
+

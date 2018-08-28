@@ -1,0 +1,21 @@
+
+AWS VPN
+=======
+
+Setting up the AWS VPN
+
+Virtual Private Cloud:
+^^^^^^^^^^^^^^^^^^^^^^
+
+`VPC Documentation <https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Introduction.html>`_
+
+VPC is a customer defined virtual network. Logically isolated from the rest of AWS.
+
+"A virtual private gateway is the VPN concentrator on the Amazon side of the VPN connection."
+
+
+CloudHub:
+^^^^^^^^^
+
+`CloudHub Documentation <https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPN_CloudHub.html>`_
+

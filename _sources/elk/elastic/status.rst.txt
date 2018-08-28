@@ -1,0 +1,17 @@
+.. _elastic_status:
+
+
+Get the status of ES:
+^^^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: console
+
+   curl -XGET http://localhost:9200/_cluster/health?pretty=true
+
+Get a list of indexes:
+^^^^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: console
+
+   curl -XGET http://localhost:9200/_cat/indices?v
+

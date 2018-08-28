@@ -1,0 +1,53 @@
+CentOS Networking
+=================
+
+`IF` should be replaced with the name of an interface.
+
+Interfaces:
+^^^^^^^^^^^
+
+They can be named any damn thing, so be careful.
+
+
+Interface configuration:
+^^^^^^^^^^^^^^^^^^^^^^^^
+
+Interfaces are configured in `/etc/sysconfig/network-scripts/ifcfg-IF`
+
+CentOS `docs <https://www.centos.org/docs/5/html/Deployment_Guide-en-US/s1-networkscripts-interfaces.html>`_
+
+.. code-block:: console
+
+   TYPE=Ethernet
+   PROXY_METHOD=none
+   BROWSER_ONLY=no
+   BOOTPROTO=static
+   DEFROUTE=yes
+   IPV4_FAILURE_FATAL=no
+   IPV6INIT=yes
+   IPV6_AUTOCONF=yes
+   IPV6_DEFROUTE=yes
+   IPV6_FAILURE_FATAL=no
+   IPV6_ADDR_GEN_MODE=stable-privacy
+   NAME=ens192
+   UUID=0942a8b4-882f-4989-a937-8600c2c1740b
+   DEVICE=ens192
+   ONBOOT=yes
+   IPADDRESS=10.0.1.23
+   NETMASK=255.255.255.0
+   GATEWAY=10.0.1.1
+   DNS=10.0.1.53
+
+
+
+Static route:
+^^^^^^^^^^^^^
+
+Static routes can be added to `/etc/sysconfig/network-scripts/route-IF`
+
+CentOS `documentation <https://www.centos.org/docs/5/html/5.2/Deployment_Guide/s1-networkscripts-static-routes.html>`_
+
+.. code-block:: console
+
+   10.0.1.0/24 via 10.0.2.1 dev eth1
+
