@@ -1,36 +1,23 @@
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
-
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
     <title>I used my USB drive to install SecurityOnion and now it’s all messed up. &#8212; notes 0.1 documentation</title>
-    
     <link rel="stylesheet" href="../../_static/classic.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-    
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    '../../',
-        VERSION:     '0.1',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true
-      };
-    </script>
+    <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="top" title="notes 0.1 documentation" href="../../index.html" />
-    <link rel="up" title="OpenBSD" href="index.html" />
     <link rel="next" title="pledge(2)" href="pledge/index.html" />
     <link rel="prev" title="Full Disk Encryption" href="fde.html" /> 
-  </head>
-  <body role="document">
+  </head><body>
     <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
@@ -55,13 +42,13 @@
           <div class="body" role="main">
             
   <div class="section" id="i-used-my-usb-drive-to-install-securityonion-and-now-it-s-all-messed-up">
-<span id="openbsd-fix-disk"></span><h1>I used my USB drive to install SecurityOnion and now it&#8217;s all messed up.<a class="headerlink" href="#i-used-my-usb-drive-to-install-securityonion-and-now-it-s-all-messed-up" title="Permalink to this headline">¶</a></h1>
+<span id="openbsd-fix-disk"></span><h1>I used my USB drive to install SecurityOnion and now it’s all messed up.<a class="headerlink" href="#i-used-my-usb-drive-to-install-securityonion-and-now-it-s-all-messed-up" title="Permalink to this headline">¶</a></h1>
 <p>I tried formatting it in Windows and adding the files I wanted to transfer, but the linux
 boot stuff still showed up.</p>
-<p>Formatting didn&#8217;t help, fdisk didn&#8217;t help. disklabl showed only the <cite>c</cite> partition as an ISO9660
+<p>Formatting didn’t help, fdisk didn’t help. disklabl showed only the <cite>c</cite> partition as an ISO9660
 partition, which could be mounted, but showed me the wrong stuff.</p>
 <p>Using <cite>disklabel</cite> to change the <cite>c</cite> partition to unused did not help. Does <cite>dd</cite> help? YES!</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">#</span> dd <span class="k">if</span><span class="o">=</span>/dev/zero <span class="nv">of</span><span class="o">=</span>/dev/sd4c
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">#</span> dd <span class="k">if</span><span class="o">=</span>/dev/zero <span class="nv">of</span><span class="o">=</span>/dev/sd4c
 </pre></div>
 </div>
 <p>That seemed to help. I can now read my files! Yay me!</p>
@@ -82,18 +69,20 @@ partition, which could be mounted, but showed me the wrong stuff.</p>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
-      <li><a href="../../_sources/operating_systems/openbsd/fix_disk.txt"
+      <li><a href="../../_sources/operating_systems/openbsd/fix_disk.rst.txt"
             rel="nofollow">Show Source</a></li>
     </ul>
    </div>
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
+    <div class="searchformwrapper">
     <form class="search" action="../../search.html" method="get">
-      <div><input type="text" name="q" /></div>
-      <div><input type="submit" value="Go" /></div>
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
+    </div>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>

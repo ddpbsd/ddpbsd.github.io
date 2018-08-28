@@ -1,36 +1,23 @@
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
-
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
     <title>CentOS Networking &#8212; notes 0.1 documentation</title>
-    
     <link rel="stylesheet" href="../../../_static/classic.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
-    
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    '../../../',
-        VERSION:     '0.1',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true
-      };
-    </script>
+    <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
     <script type="text/javascript" src="../../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../../_static/doctools.js"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="top" title="notes 0.1 documentation" href="../../../index.html" />
-    <link rel="up" title="CentOS" href="index.html" />
     <link rel="next" title="Unfuck centos" href="packages.html" />
     <link rel="prev" title="Active Directory Auth" href="active_directory/help.html" /> 
-  </head>
-  <body role="document">
+  </head><body>
     <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
@@ -66,7 +53,7 @@
 <h2>Interface configuration:<a class="headerlink" href="#interface-configuration" title="Permalink to this headline">¶</a></h2>
 <p>Interfaces are configured in <cite>/etc/sysconfig/network-scripts/ifcfg-IF</cite></p>
 <p>CentOS <a class="reference external" href="https://www.centos.org/docs/5/html/Deployment_Guide-en-US/s1-networkscripts-interfaces.html">docs</a></p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">TYPE=Ethernet</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">TYPE=Ethernet</span>
 <span class="go">PROXY_METHOD=none</span>
 <span class="go">BROWSER_ONLY=no</span>
 <span class="go">BOOTPROTO=static</span>
@@ -92,7 +79,7 @@
 <h2>Static route:<a class="headerlink" href="#static-route" title="Permalink to this headline">¶</a></h2>
 <p>Static routes can be added to <cite>/etc/sysconfig/network-scripts/route-IF</cite></p>
 <p>CentOS <a class="reference external" href="https://www.centos.org/docs/5/html/5.2/Deployment_Guide/s1-networkscripts-static-routes.html">documentation</a></p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">10.0.1.0/24 via 10.0.2.1 dev eth1</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">10.0.1.0/24 via 10.0.2.1 dev eth1</span>
 </pre></div>
 </div>
 </div>
@@ -123,18 +110,20 @@
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
-      <li><a href="../../../_sources/operating_systems/linux/centos/networking.txt"
+      <li><a href="../../../_sources/operating_systems/linux/centos/networking.rst.txt"
             rel="nofollow">Show Source</a></li>
     </ul>
    </div>
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
+    <div class="searchformwrapper">
     <form class="search" action="../../../search.html" method="get">
-      <div><input type="text" name="q" /></div>
-      <div><input type="submit" value="Go" /></div>
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
+    </div>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>

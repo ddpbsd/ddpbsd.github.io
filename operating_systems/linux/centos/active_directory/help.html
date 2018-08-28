@@ -1,36 +1,23 @@
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
-
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
     <title>Active Directory Auth &#8212; notes 0.1 documentation</title>
-    
     <link rel="stylesheet" href="../../../../_static/classic.css" type="text/css" />
     <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
-    
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    '../../../../',
-        VERSION:     '0.1',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true
-      };
-    </script>
+    <script type="text/javascript" id="documentation_options" data-url_root="../../../../" src="../../../../_static/documentation_options.js"></script>
     <script type="text/javascript" src="../../../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../../../_static/doctools.js"></script>
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
-    <link rel="top" title="notes 0.1 documentation" href="../../../../index.html" />
-    <link rel="up" title="Active Directory" href="index.html" />
-    <link rel="next" title="containers" href="../../containers/index.html" />
+    <link rel="next" title="CentOS Networking" href="../networking.html" />
     <link rel="prev" title="Packages to install:" href="google-auth.html" /> 
-  </head>
-  <body role="document">
+  </head><body>
     <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
@@ -38,7 +25,7 @@
           <a href="../../../../genindex.html" title="General Index"
              accesskey="I">index</a></li>
         <li class="right" >
-          <a href="../../containers/index.html" title="containers"
+          <a href="../networking.html" title="CentOS Networking"
              accesskey="N">next</a> |</li>
         <li class="right" >
           <a href="google-auth.html" title="Packages to install:"
@@ -60,14 +47,14 @@
 <h1>Active Directory Auth<a class="headerlink" href="#active-directory-auth" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="install-prerequisites">
 <h2>Install Prerequisites:<a class="headerlink" href="#install-prerequisites" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">yum install -y samba pam_krb5 krb5-workstation samba</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">yum install -y samba pam_krb5 krb5-workstation samba</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="configure-kerberos">
 <h2>Configure kerberos:<a class="headerlink" href="#configure-kerberos" title="Permalink to this headline">¶</a></h2>
 <p>Edit <cite>/etc/krb5.conf</cite></p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">#</span> Configuration snippets may be placed in this directory as well
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">#</span> Configuration snippets may be placed in this directory as well
 <span class="go">includedir /etc/krb5.conf.d/</span>
 
 <span class="go">[logging]</span>
@@ -125,7 +112,7 @@
 </div>
 <div class="section" id="test-it-out">
 <h2>Test it out:<a class="headerlink" href="#test-it-out" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">kinit user@MYDOMAIN.COM</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">kinit user@MYDOMAIN.COM</span>
 </pre></div>
 </div>
 </div>
@@ -151,23 +138,25 @@
   <p class="topless"><a href="google-auth.html"
                         title="previous chapter">Packages to install:</a></p>
   <h4>Next topic</h4>
-  <p class="topless"><a href="../../containers/index.html"
-                        title="next chapter">containers</a></p>
+  <p class="topless"><a href="../networking.html"
+                        title="next chapter">CentOS Networking</a></p>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
-      <li><a href="../../../../_sources/operating_systems/linux/centos/active_directory/help.txt"
+      <li><a href="../../../../_sources/operating_systems/linux/centos/active_directory/help.rst.txt"
             rel="nofollow">Show Source</a></li>
     </ul>
    </div>
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
+    <div class="searchformwrapper">
     <form class="search" action="../../../../search.html" method="get">
-      <div><input type="text" name="q" /></div>
-      <div><input type="submit" value="Go" /></div>
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
+    </div>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -181,7 +170,7 @@
           <a href="../../../../genindex.html" title="General Index"
              >index</a></li>
         <li class="right" >
-          <a href="../../containers/index.html" title="containers"
+          <a href="../networking.html" title="CentOS Networking"
              >next</a> |</li>
         <li class="right" >
           <a href="google-auth.html" title="Packages to install:"

@@ -1,36 +1,23 @@
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
-
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
     <title>Ubuntu notes &#8212; notes 0.1 documentation</title>
-    
     <link rel="stylesheet" href="../../_static/classic.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-    
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    '../../',
-        VERSION:     '0.1',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true
-      };
-    </script>
+    <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="top" title="notes 0.1 documentation" href="../../index.html" />
-    <link rel="up" title="Espressobin" href="index.html" />
     <link rel="next" title="Pine64 A64+" href="../pine64aplus/index.html" />
-    <link rel="prev" title="Network status:" href="network.html" /> 
-  </head>
-  <body role="document">
+    <link rel="prev" title="Espressobin network:" href="network.html" /> 
+  </head><body>
     <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
@@ -41,7 +28,7 @@
           <a href="../pine64aplus/index.html" title="Pine64 A64+"
              accesskey="N">next</a> |</li>
         <li class="right" >
-          <a href="network.html" title="Network status:"
+          <a href="network.html" title="Espressobin network:"
              accesskey="P">previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="../../index.html">notes 0.1 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../index.html" >arm</a> &#187;</li>
@@ -65,7 +52,7 @@
 <h2>Armbian:<a class="headerlink" href="#armbian" title="Permalink to this headline">¶</a></h2>
 <p>Unrelated, but link was useful</p>
 <p><a class="reference external" href="https://github.com/armbian/build/blob/master/config/bootscripts/boot-espressobin.cmd">https://github.com/armbian/build/blob/master/config/bootscripts/boot-espressobin.cmd</a></p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">Marvell&gt;&gt; printenv</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">Marvell&gt;&gt; printenv</span>
 <span class="go">baudrate=115200</span>
 <span class="go">bootcmd=mmc dev 0; ext4load mmc 0:1 $kernel_addr $image_name;ext4load mmc 0:1 $fdt_addr $fdt_name;setenv bootargs $console root=/dev/mmcblk0p1 rw rootwait net.ifnames=0 biosdevname=0; booti $kernel_addr - $fdt_addr</span>
 <span class="go">bootdelay=2</span>
@@ -134,25 +121,27 @@
 
   <h4>Previous topic</h4>
   <p class="topless"><a href="network.html"
-                        title="previous chapter">Network status:</a></p>
+                        title="previous chapter">Espressobin network:</a></p>
   <h4>Next topic</h4>
   <p class="topless"><a href="../pine64aplus/index.html"
                         title="next chapter">Pine64 A64+</a></p>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
-      <li><a href="../../_sources/arm/espressobin/ubuntu.txt"
+      <li><a href="../../_sources/arm/espressobin/ubuntu.rst.txt"
             rel="nofollow">Show Source</a></li>
     </ul>
    </div>
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
+    <div class="searchformwrapper">
     <form class="search" action="../../search.html" method="get">
-      <div><input type="text" name="q" /></div>
-      <div><input type="submit" value="Go" /></div>
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
+    </div>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -169,7 +158,7 @@
           <a href="../pine64aplus/index.html" title="Pine64 A64+"
              >next</a> |</li>
         <li class="right" >
-          <a href="network.html" title="Network status:"
+          <a href="network.html" title="Espressobin network:"
              >previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="../../index.html">notes 0.1 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../index.html" >arm</a> &#187;</li>

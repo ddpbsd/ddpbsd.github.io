@@ -1,36 +1,23 @@
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
-
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
     <title>tmux &#8212; notes 0.1 documentation</title>
-    
     <link rel="stylesheet" href="../../_static/classic.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-    
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    '../../',
-        VERSION:     '0.1',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true
-      };
-    </script>
+    <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="top" title="notes 0.1 documentation" href="../../index.html" />
-    <link rel="up" title="Tools" href="../index.html" />
     <link rel="next" title="Virtualization" href="../virtualization/index.html" />
     <link rel="prev" title="Filter on MAC address:" href="../tcpdump/mac_address.html" /> 
-  </head>
-  <body role="document">
+  </head><body>
     <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
@@ -55,29 +42,29 @@
             
   <div class="section" id="tmux">
 <h1>tmux<a class="headerlink" href="#tmux" title="Permalink to this headline">¶</a></h1>
-<p>I use <code class="docutils literal"><span class="pre">o</span></code> as my prefix key. The default is <code class="docutils literal"><span class="pre">b</span></code>.</p>
+<p>I use <code class="docutils literal notranslate"><span class="pre">o</span></code> as my prefix key. The default is <code class="docutils literal notranslate"><span class="pre">b</span></code>.</p>
 <div class="section" id="set-the-prefix-key-to-o">
-<h2>Set the prefix key to <code class="docutils literal"><span class="pre">o</span></code>:<a class="headerlink" href="#set-the-prefix-key-to-o" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">set-option -g prefix C-c</span>
+<h2>Set the prefix key to <code class="docutils literal notranslate"><span class="pre">o</span></code>:<a class="headerlink" href="#set-the-prefix-key-to-o" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">set-option -g prefix C-c</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="resize-a-pane">
 <h2>Resize a pane:<a class="headerlink" href="#resize-a-pane" title="Permalink to this headline">¶</a></h2>
 <p>Increase size down:</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">^o :resize-pane -D 10</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">^o :resize-pane -D 10</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="zoom-in-out-in-a-pane">
 <h2>Zoom in/out in a pane:<a class="headerlink" href="#zoom-in-out-in-a-pane" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">^o z</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">^o z</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="misc">
 <h2>Misc:<a class="headerlink" href="#misc" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">ctrl+b followed by...</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">ctrl+b followed by...</span>
 <span class="gp">%</span> - split pane vertically
 <span class="go">&quot; - split pane horizontally</span>
 <span class="go">arrow keys - change pane you&#39;re typing in</span>
@@ -90,19 +77,19 @@
 </div>
 <div class="section" id="run-a-program-in-a-new-session">
 <h2>Run a program in a new session:<a class="headerlink" href="#run-a-program-in-a-new-session" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">tmux new-session -d -s &quot;top&quot; /usr/bin/top</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">tmux new-session -d -s &quot;top&quot; /usr/bin/top</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="scrollback">
 <h2>Scrollback:<a class="headerlink" href="#scrollback" title="Permalink to this headline">¶</a></h2>
 <p>Enter copy mode.</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">^b [</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">^b [</span>
 </pre></div>
 </div>
 <p>After the above, the Up/Down arrows or PageUp/PageDown can be used to navigate.</p>
 <p>Exit copy mode.</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">q</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">q</span>
 </pre></div>
 </div>
 </div>
@@ -117,7 +104,7 @@
   <h3><a href="../../index.html">Table Of Contents</a></h3>
   <ul>
 <li><a class="reference internal" href="#">tmux</a><ul>
-<li><a class="reference internal" href="#set-the-prefix-key-to-o">Set the prefix key to <code class="docutils literal"><span class="pre">o</span></code>:</a></li>
+<li><a class="reference internal" href="#set-the-prefix-key-to-o">Set the prefix key to <code class="docutils literal notranslate"><span class="pre">o</span></code>:</a></li>
 <li><a class="reference internal" href="#resize-a-pane">Resize a pane:</a></li>
 <li><a class="reference internal" href="#zoom-in-out-in-a-pane">Zoom in/out in a pane:</a></li>
 <li><a class="reference internal" href="#misc">Misc:</a></li>
@@ -136,18 +123,20 @@
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
-      <li><a href="../../_sources/tools/tmux/index.txt"
+      <li><a href="../../_sources/tools/tmux/index.rst.txt"
             rel="nofollow">Show Source</a></li>
     </ul>
    </div>
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
+    <div class="searchformwrapper">
     <form class="search" action="../../search.html" method="get">
-      <div><input type="text" name="q" /></div>
-      <div><input type="submit" value="Go" /></div>
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
+    </div>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>

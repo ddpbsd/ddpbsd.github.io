@@ -1,36 +1,23 @@
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
-
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
     <title>Only upgrade security related packages: &#8212; notes 0.1 documentation</title>
-    
     <link rel="stylesheet" href="../../../_static/classic.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
-    
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    '../../../',
-        VERSION:     '0.1',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true
-      };
-    </script>
+    <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
     <script type="text/javascript" src="../../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../../_static/doctools.js"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="top" title="notes 0.1 documentation" href="../../../index.html" />
-    <link rel="up" title="Ubuntu" href="index.html" />
-    <link rel="next" title="OpenBSD" href="../../openbsd/index.html" />
+    <link rel="next" title="Necessary packages:" href="unfuck.html" />
     <link rel="prev" title="Ubuntu" href="index.html" /> 
-  </head>
-  <body role="document">
+  </head><body>
     <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
@@ -38,7 +25,7 @@
           <a href="../../../genindex.html" title="General Index"
              accesskey="I">index</a></li>
         <li class="right" >
-          <a href="../../openbsd/index.html" title="OpenBSD"
+          <a href="unfuck.html" title="Necessary packages:"
              accesskey="N">next</a> |</li>
         <li class="right" >
           <a href="index.html" title="Ubuntu"
@@ -61,31 +48,31 @@
 <p class="first admonition-title">Note</p>
 <p class="last">From iam-TJ at <a class="reference external" href="https://news.ycombinator.com/item?id=11475474">https://news.ycombinator.com/item?id=11475474</a></p>
 </div>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">sudo /usr/bin/unattended-upgrade</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">sudo /usr/bin/unattended-upgrade</span>
 </pre></div>
 </div>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p class="last">This will only use the ${dist}-security target. Most systems should have this installed and available.
-The default configuration is at: <code class="docutils literal"><span class="pre">/etc/apt/apt.conf.d/50unattended-upgrades</span></code>
+The default configuration is at: <code class="docutils literal notranslate"><span class="pre">/etc/apt/apt.conf.d/50unattended-upgrades</span></code>
 It is configured as a system service that runs automatically at shutdown.</p>
 </div>
 </div>
 <div class="section" id="enable-a-service">
 <h1>Enable a service:<a class="headerlink" href="#enable-a-service" title="Permalink to this headline">¶</a></h1>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">update-rc.d ssh enable</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">update-rc.d ssh enable</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="import-a-gpg-key-into-apt">
 <h1>Import a gpg key into apt:<a class="headerlink" href="#import-a-gpg-key-into-apt" title="Permalink to this headline">¶</a></h1>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">apt-key adv --keyserver pgp.mit.edu --recv-key KEY_STUFF</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">apt-key adv --keyserver pgp.mit.edu --recv-key KEY_STUFF</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="find-the-ubuntu-version">
 <h1>Find the Ubuntu version:<a class="headerlink" href="#find-the-ubuntu-version" title="Permalink to this headline">¶</a></h1>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> lsb_release -a
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> lsb_release -a
 <span class="go">No LSB modules are available.</span>
 <span class="go">Distributor ID: Ubuntu</span>
 <span class="go">Description:    Ubuntu 14.04.5 LTS</span>
@@ -113,23 +100,25 @@ It is configured as a system service that runs automatically at shutdown.</p>
   <p class="topless"><a href="index.html"
                         title="previous chapter">Ubuntu</a></p>
   <h4>Next topic</h4>
-  <p class="topless"><a href="../../openbsd/index.html"
-                        title="next chapter">OpenBSD</a></p>
+  <p class="topless"><a href="unfuck.html"
+                        title="next chapter">Necessary packages:</a></p>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
-      <li><a href="../../../_sources/operating_systems/linux/ubuntu/ubuntu.txt"
+      <li><a href="../../../_sources/operating_systems/linux/ubuntu/ubuntu.rst.txt"
             rel="nofollow">Show Source</a></li>
     </ul>
    </div>
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
+    <div class="searchformwrapper">
     <form class="search" action="../../../search.html" method="get">
-      <div><input type="text" name="q" /></div>
-      <div><input type="submit" value="Go" /></div>
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
+    </div>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -143,7 +132,7 @@ It is configured as a system service that runs automatically at shutdown.</p>
           <a href="../../../genindex.html" title="General Index"
              >index</a></li>
         <li class="right" >
-          <a href="../../openbsd/index.html" title="OpenBSD"
+          <a href="unfuck.html" title="Necessary packages:"
              >next</a> |</li>
         <li class="right" >
           <a href="index.html" title="Ubuntu"

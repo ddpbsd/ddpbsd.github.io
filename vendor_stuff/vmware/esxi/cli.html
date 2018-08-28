@@ -1,36 +1,23 @@
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
-
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
     <title>List all VMs &#8212; notes 0.1 documentation</title>
-    
     <link rel="stylesheet" href="../../../_static/classic.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
-    
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    '../../../',
-        VERSION:     '0.1',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true
-      };
-    </script>
+    <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
     <script type="text/javascript" src="../../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../../_static/doctools.js"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="top" title="notes 0.1 documentation" href="../../../index.html" />
-    <link rel="up" title="&lt;no title&gt;" href="index.html" />
-    <link rel="next" title="esxi Update process" href="update.html" />
+    <link rel="next" title="Network stuff" href="networking.html" />
     <link rel="prev" title="&lt;no title&gt;" href="index.html" /> 
-  </head>
-  <body role="document">
+  </head><body>
     <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
@@ -38,7 +25,7 @@
           <a href="../../../genindex.html" title="General Index"
              accesskey="I">index</a></li>
         <li class="right" >
-          <a href="update.html" title="esxi Update process"
+          <a href="networking.html" title="Network stuff"
              accesskey="N">next</a> |</li>
         <li class="right" >
           <a href="index.html" title="&lt;no title&gt;"
@@ -58,29 +45,29 @@
   <div class="admonition warning">
 <p class="first admonition-title">Warning</p>
 <p class="last">These are probably way outdated now.
-You probably shouldn&#8217;t use these.</p>
+You probably shouldn’t use these.</p>
 </div>
 <div class="section" id="list-all-vms">
 <h1>List all VMs<a class="headerlink" href="#list-all-vms" title="Permalink to this headline">¶</a></h1>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">vim-cmd vmsvc/getallvms</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">vim-cmd vmsvc/getallvms</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="get-the-power-state-of-a-vm">
 <h1>Get the power state of a VM:<a class="headerlink" href="#get-the-power-state-of-a-vm" title="Permalink to this headline">¶</a></h1>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">vim-cmd vmsvc/power.getstate 1</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">vim-cmd vmsvc/power.getstate 1</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="power-on-a-device">
 <h1>Power on a device<a class="headerlink" href="#power-on-a-device" title="Permalink to this headline">¶</a></h1>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">vim-cmd vmsvc/power.on 320</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">vim-cmd vmsvc/power.on 320</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="reboot-a-vm-if-vmtools-is-installed">
 <h1>Reboot a VM if vmtools is installed<a class="headerlink" href="#reboot-a-vm-if-vmtools-is-installed" title="Permalink to this headline">¶</a></h1>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">vim-cmd vmsvc/power.reboot 176</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">vim-cmd vmsvc/power.reboot 176</span>
 </pre></div>
 </div>
 </div>
@@ -103,23 +90,25 @@ You probably shouldn&#8217;t use these.</p>
   <p class="topless"><a href="index.html"
                         title="previous chapter">&lt;no title&gt;</a></p>
   <h4>Next topic</h4>
-  <p class="topless"><a href="update.html"
-                        title="next chapter">esxi Update process</a></p>
+  <p class="topless"><a href="networking.html"
+                        title="next chapter">Network stuff</a></p>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
-      <li><a href="../../../_sources/vendor_stuff/vmware/esxi/cli.txt"
+      <li><a href="../../../_sources/vendor_stuff/vmware/esxi/cli.rst.txt"
             rel="nofollow">Show Source</a></li>
     </ul>
    </div>
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
+    <div class="searchformwrapper">
     <form class="search" action="../../../search.html" method="get">
-      <div><input type="text" name="q" /></div>
-      <div><input type="submit" value="Go" /></div>
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
+    </div>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -133,7 +122,7 @@ You probably shouldn&#8217;t use these.</p>
           <a href="../../../genindex.html" title="General Index"
              >index</a></li>
         <li class="right" >
-          <a href="update.html" title="esxi Update process"
+          <a href="networking.html" title="Network stuff"
              >next</a> |</li>
         <li class="right" >
           <a href="index.html" title="&lt;no title&gt;"
