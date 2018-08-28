@@ -1,0 +1,177 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>My adventures with securityonion and cef &#8212; notes 0.1 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="top" title="notes 0.1 documentation" href="../index.html" />
+    <link rel="up" title="SecurityOnion" href="index.html" />
+    <link rel="next" title="sostat" href="commands.html" />
+    <link rel="prev" title="SecurityOnion" href="index.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="commands.html" title="sostat"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="SecurityOnion"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">notes 0.1 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">SecurityOnion</a> &#187;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="my-adventures-with-securityonion-and-cef">
+<h1>My adventures with securityonion and cef<a class="headerlink" href="#my-adventures-with-securityonion-and-cef" title="Permalink to this headline">¶</a></h1>
+<p>There should be an xkcd tag to insert an appropriate xkcd.</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">.. xkcd: standards</span>
+</pre></div>
+</div>
+<div class="section" id="barnyard2">
+<h2>Barnyard2:<a class="headerlink" href="#barnyard2" title="Permalink to this headline">¶</a></h2>
+<p>The CEF support is broken, use <a class="reference external" href="https://github.com/ddpbsd/barnyard2/tree/cef">https://github.com/ddpbsd/barnyard2/tree/cef</a>
+The upstream by2 seems dead. I need to talk to the SO people to see if they can
+integrate this patch.</p>
+</div>
+<div class="section" id="barnyard2-configuration">
+<h2>Barnyard2 configuration:<a class="headerlink" href="#barnyard2-configuration" title="Permalink to this headline">¶</a></h2>
+<p>Eh, not as hard as I made it out to be originally.</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">config alert_with_interface_name</span>
+<span class="go">config logdir: /nsm/sensor_data/va-is-securityonion0-ens192</span>
+<span class="go">config classification_file: /etc/nsm/va-is-securityonion0-ens192/classification.config</span>
+<span class="go">config reference_file:      /etc/nsm/va-is-securityonion0-ens192/reference.config</span>
+<span class="go">config sid_file:            /etc/nsm/va-is-securityonion0-ens192/sid-msg.map</span>
+<span class="go">config gen_file:            /etc/nsm/va-is-securityonion0-ens192/gen-msg.map</span>
+<span class="go">config hostname: va-is-securityonion0-ens192</span>
+<span class="go">config interface: ens192</span>
+<span class="go">input unified2</span>
+<span class="go">output alert_cef: LOG_INFO LOG_LOCAL7</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="syslog-ng">
+<h2>syslog-ng:<a class="headerlink" href="#syslog-ng" title="Permalink to this headline">¶</a></h2>
+<p>I believe it&#8217;s written by sadists.</p>
+<p>We need to define a source, filter, and destination. Then put them together.</p>
+</div>
+<div class="section" id="syslog-ng-conf">
+<h2>syslog-ng conf:<a class="headerlink" href="#syslog-ng-conf" title="Permalink to this headline">¶</a></h2>
+<p>I&#8217;m logging everything to a file as well as the syslog-collector host.
+This isn&#8217;t necessary, and I&#8217;ll probably stop it soon.</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">destination d_arcsight { tcp(&quot;syslog-collector&quot; port(514)); };</span>
+<span class="go">destination d_cef_log { file(&quot;/var/log/test.log&quot;); };</span>
+
+<span class="go">filter test_filter { facility(local7); };</span>
+
+<span class="go">log {</span>
+<span class="go">    source(s_syslog);</span>
+<span class="go">    filter(test_filter);</span>
+<span class="go">    destination(d_cef_log);</span>
+<span class="go">    destination(d_arcsight);</span>
+<span class="go">};</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">My adventures with securityonion and cef</a><ul>
+<li><a class="reference internal" href="#barnyard2">Barnyard2:</a></li>
+<li><a class="reference internal" href="#barnyard2-configuration">Barnyard2 configuration:</a></li>
+<li><a class="reference internal" href="#syslog-ng">syslog-ng:</a></li>
+<li><a class="reference internal" href="#syslog-ng-conf">syslog-ng conf:</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="index.html"
+                        title="previous chapter">SecurityOnion</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="commands.html"
+                        title="next chapter">sostat</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/securityonion/cef.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="commands.html" title="sostat"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="SecurityOnion"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">notes 0.1 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >SecurityOnion</a> &#187;</li> 
+      </ul>
+    </div>
+        <!-- your html code here -->
+	<div class="footer">
+		<em>This information has a good chance of being wrong, inconsistent, out of date, or just bad. Use at your own risk.
+		Feel free to notify me of any issues though.</em>
+	</div>
+
+
+  </body>
+</html>

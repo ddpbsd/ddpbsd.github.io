@@ -3,6 +3,25 @@
 Show replication status:
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
+For inbound replication?
+
 .. code-block:: console
 
    repadmin /showrepl
+
+Check the replication queue:
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: console
+
+   Repadmin /Queue
+
+Check the replication summary:
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+
+.. code-block:: console
+
+   Repadmin /replsummary
+
+

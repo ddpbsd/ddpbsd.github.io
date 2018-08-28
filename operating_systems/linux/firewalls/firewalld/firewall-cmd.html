@@ -84,6 +84,16 @@
 </pre></div>
 </div>
 </div>
+<div class="section" id="reject-connections-to-a-port">
+<h3>Reject connections to a port:<a class="headerlink" href="#reject-connections-to-a-port" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">#</span> Simply reject all traffic to 443
+<span class="go">firewall-cmd --permanent --zone=public --add-rich-rule=&#39;rule family=&quot;ipv4&quot; port protocol=&quot;tcp&quot; port=&quot;443&quot; reject&#39;</span>
+
+<span class="gp">#</span> add a src ip into the mix
+<span class="go">firewall-cmd --permanent --zone=public --add-rich-rule=&#39;rule family=&quot;ipv4&quot; source address=&quot;10.0.0.2&quot; port protocol=&quot;tcp&quot; port=&quot;443&quot; reject&#39;</span>
+</pre></div>
+</div>
+</div>
 </div>
 </div>
 
@@ -101,6 +111,7 @@
 <li><a class="reference internal" href="#open-a-port">Open a port:</a></li>
 <li><a class="reference internal" href="#enable-the-change">Enable the change:</a></li>
 <li><a class="reference internal" href="#make-sure-the-change-is-in-effect">Make sure the change is in effect:</a></li>
+<li><a class="reference internal" href="#reject-connections-to-a-port">Reject connections to a port:</a></li>
 </ul>
 </li>
 </ul>

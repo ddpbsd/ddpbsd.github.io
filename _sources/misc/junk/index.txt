@@ -10,6 +10,7 @@ Contents:
 
    
    books
+   breweries
    chicken
    creepypastas
 

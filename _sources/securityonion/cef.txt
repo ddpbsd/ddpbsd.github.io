@@ -1,0 +1,65 @@
+
+My adventures with securityonion and cef
+========================================
+
+There should be an xkcd tag to insert an appropriate xkcd. 
+
+.. code-block:: console
+
+   .. xkcd: standards
+
+Barnyard2:
+^^^^^^^^^^
+
+The CEF support is broken, use https://github.com/ddpbsd/barnyard2/tree/cef
+The upstream by2 seems dead. I need to talk to the SO people to see if they can 
+integrate this patch.
+
+Barnyard2 configuration:
+^^^^^^^^^^^^^^^^^^^^^^^^
+
+Eh, not as hard as I made it out to be originally.
+
+.. code-block:: console
+
+
+   config alert_with_interface_name
+   config logdir: /nsm/sensor_data/va-is-securityonion0-ens192
+   config classification_file: /etc/nsm/va-is-securityonion0-ens192/classification.config
+   config reference_file:      /etc/nsm/va-is-securityonion0-ens192/reference.config
+   config sid_file:            /etc/nsm/va-is-securityonion0-ens192/sid-msg.map
+   config gen_file:            /etc/nsm/va-is-securityonion0-ens192/gen-msg.map
+   config hostname: va-is-securityonion0-ens192
+   config interface: ens192
+   input unified2
+   output alert_cef: LOG_INFO LOG_LOCAL7
+
+
+
+syslog-ng:
+^^^^^^^^^^
+
+I believe it's written by sadists.
+
+We need to define a source, filter, and destination. Then put them together.
+
+syslog-ng conf:
+^^^^^^^^^^^^^^^
+
+I'm logging everything to a file as well as the syslog-collector host.
+This isn't necessary, and I'll probably stop it soon.
+
+.. code-block:: console
+
+   destination d_arcsight { tcp("syslog-collector" port(514)); };
+   destination d_cef_log { file("/var/log/test.log"); };
+
+   filter test_filter { facility(local7); };
+
+   log {
+       source(s_syslog);
+       filter(test_filter);
+       destination(d_cef_log);
+       destination(d_arcsight);
+   };
+

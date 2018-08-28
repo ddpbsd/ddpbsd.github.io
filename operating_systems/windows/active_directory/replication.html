@@ -27,7 +27,7 @@
     <link rel="search" title="Search" href="../../../search.html" />
     <link rel="top" title="notes 0.1 documentation" href="../../../index.html" />
     <link rel="up" title="Active Directory" href="index.html" />
-    <link rel="next" title="Cheet Sheets" href="../cheatsheets.html" />
+    <link rel="next" title="Common SIDS:" href="sids.html" />
     <link rel="prev" title="Find the FSMO roles of a server:" href="fsmo.html" /> 
   </head>
   <body role="document">
@@ -38,7 +38,7 @@
           <a href="../../../genindex.html" title="General Index"
              accesskey="I">index</a></li>
         <li class="right" >
-          <a href="../cheatsheets.html" title="Cheet Sheets"
+          <a href="sids.html" title="Common SIDS:"
              accesskey="N">next</a> |</li>
         <li class="right" >
           <a href="fsmo.html" title="Find the FSMO roles of a server:"
@@ -57,7 +57,20 @@
             
   <div class="section" id="show-replication-status">
 <span id="operating-systems-windows-active-directory-replication"></span><h1>Show replication status:<a class="headerlink" href="#show-replication-status" title="Permalink to this headline">¶</a></h1>
+<p>For inbound replication?</p>
 <div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">repadmin /showrepl</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="check-the-replication-queue">
+<h1>Check the replication queue:<a class="headerlink" href="#check-the-replication-queue" title="Permalink to this headline">¶</a></h1>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">Repadmin /Queue</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="check-the-replication-summary">
+<h1>Check the replication summary:<a class="headerlink" href="#check-the-replication-summary" title="Permalink to this headline">¶</a></h1>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">Repadmin /replsummary</span>
 </pre></div>
 </div>
 </div>
@@ -68,12 +81,19 @@
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
+  <h3><a href="../../../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Show replication status:</a></li>
+<li><a class="reference internal" href="#check-the-replication-queue">Check the replication queue:</a></li>
+<li><a class="reference internal" href="#check-the-replication-summary">Check the replication summary:</a></li>
+</ul>
+
   <h4>Previous topic</h4>
   <p class="topless"><a href="fsmo.html"
                         title="previous chapter">Find the FSMO roles of a server:</a></p>
   <h4>Next topic</h4>
-  <p class="topless"><a href="../cheatsheets.html"
-                        title="next chapter">Cheet Sheets</a></p>
+  <p class="topless"><a href="sids.html"
+                        title="next chapter">Common SIDS:</a></p>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
@@ -102,7 +122,7 @@
           <a href="../../../genindex.html" title="General Index"
              >index</a></li>
         <li class="right" >
-          <a href="../cheatsheets.html" title="Cheet Sheets"
+          <a href="sids.html" title="Common SIDS:"
              >next</a> |</li>
         <li class="right" >
           <a href="fsmo.html" title="Find the FSMO roles of a server:"

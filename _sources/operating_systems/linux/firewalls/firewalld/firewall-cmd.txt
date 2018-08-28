@@ -34,3 +34,13 @@ Make sure the change is in effect:
 
    firewall-cmd --zone=public --query-port=80/tcp
 
+Reject connections to a port:
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: console
+
+   # Simply reject all traffic to 443
+   firewall-cmd --permanent --zone=public --add-rich-rule='rule family="ipv4" port protocol="tcp" port="443" reject'
+
+   # add a src ip into the mix
+   firewall-cmd --permanent --zone=public --add-rich-rule='rule family="ipv4" source address="10.0.0.2" port protocol="tcp" port="443" reject'
