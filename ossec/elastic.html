@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>OSSEC and Elasticstack &#8212; notes 0.1 documentation</title>
-    <link rel="stylesheet" href="../_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
     <script type="text/javascript" src="../_static/jquery.js"></script>
@@ -16,24 +16,15 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="OSSEC src" href="src/index.html" />
-    <link rel="prev" title="OSSEC" href="index.html" /> 
+    <link rel="prev" title="OSSEC" href="index.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
   </head><body>
-    <div class="related" role="navigation" aria-label="related navigation">
-      <h3>Navigation</h3>
-      <ul>
-        <li class="right" style="margin-right: 10px">
-          <a href="../genindex.html" title="General Index"
-             accesskey="I">index</a></li>
-        <li class="right" >
-          <a href="src/index.html" title="OSSEC src"
-             accesskey="N">next</a> |</li>
-        <li class="right" >
-          <a href="index.html" title="OSSEC"
-             accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../index.html">notes 0.1 documentation</a> &#187;</li>
-          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">OSSEC</a> &#187;</li> 
-      </ul>
-    </div>  
+  
 
     <div class="document">
       <div class="documentwrapper">
@@ -97,29 +88,51 @@
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-  <h3><a href="../index.html">Table Of Contents</a></h3>
-  <ul>
-<li><a class="reference internal" href="#">OSSEC and Elasticstack</a><ul>
-<li><a class="reference internal" href="#turn-on-json-logging-in-ossec">Turn on json logging in OSSEC:</a></li>
-<li><a class="reference internal" href="#logstash-config">Logstash Config:</a></li>
-<li><a class="reference internal" href="#filebeat-config">Filebeat Config:</a></li>
+<h1 class="logo"><a href="../index.html">notes</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../arm/index.html">arm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../db/index.html">databases</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dns/index.html">DNS stuff</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../elk/index.html">elk stack</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../openssh/index.html">OpenSSH</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../operating_systems/index.html">Operating Systems</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">OSSEC</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">OSSEC and Elasticstack</a></li>
+<li class="toctree-l2"><a class="reference internal" href="src/index.html">OSSEC src</a></li>
+<li class="toctree-l2"><a class="reference internal" href="win-build.html">Required packages:</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="../rsyslogd/index.html">rsyslogd</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../securityonion/index.html">SecurityOnion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ssl/index.html">ssl</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../stupid_unix_tricks/index.html">Stupid Unix Tricks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tools/index.html">Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../vendor_stuff/index.html">Vendor Stuff</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../misc/index.html">MISC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../changelog.html">2018-08-10</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../changelog.html#id2">2018-08-28</a></li>
 </ul>
 
-  <h4>Previous topic</h4>
-  <p class="topless"><a href="index.html"
-                        title="previous chapter">OSSEC</a></p>
-  <h4>Next topic</h4>
-  <p class="topless"><a href="src/index.html"
-                        title="next chapter">OSSEC src</a></p>
-  <div role="note" aria-label="source link">
-    <h3>This Page</h3>
-    <ul class="this-page-menu">
-      <li><a href="../_sources/ossec/elastic.rst.txt"
-            rel="nofollow">Show Source</a></li>
-    </ul>
-   </div>
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+  <li><a href="index.html">OSSEC</a><ul>
+      <li>Previous: <a href="index.html" title="previous chapter">OSSEC</a></li>
+      <li>Next: <a href="src/index.html" title="next chapter">OSSEC src</a></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
     <div class="searchformwrapper">
@@ -135,22 +148,6 @@
         </div>
       </div>
       <div class="clearer"></div>
-    </div>
-    <div class="related" role="navigation" aria-label="related navigation">
-      <h3>Navigation</h3>
-      <ul>
-        <li class="right" style="margin-right: 10px">
-          <a href="../genindex.html" title="General Index"
-             >index</a></li>
-        <li class="right" >
-          <a href="src/index.html" title="OSSEC src"
-             >next</a> |</li>
-        <li class="right" >
-          <a href="index.html" title="OSSEC"
-             >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../index.html">notes 0.1 documentation</a> &#187;</li>
-          <li class="nav-item nav-item-1"><a href="index.html" >OSSEC</a> &#187;</li> 
-      </ul>
     </div>
         <!-- your html code here -->
 	<div class="footer">

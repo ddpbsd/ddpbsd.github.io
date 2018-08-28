@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>Get the version of powershell: &#8212; notes 0.1 documentation</title>
-    <link rel="stylesheet" href="../../../_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
     <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
     <script type="text/javascript" src="../../../_static/jquery.js"></script>
@@ -16,26 +16,15 @@
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
     <link rel="next" title="Get Domain Admins:" href="active_directory.html" />
-    <link rel="prev" title="Powershell" href="index.html" /> 
+    <link rel="prev" title="Powershell" href="index.html" />
+   
+  <link rel="stylesheet" href="../../../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
   </head><body>
-    <div class="related" role="navigation" aria-label="related navigation">
-      <h3>Navigation</h3>
-      <ul>
-        <li class="right" style="margin-right: 10px">
-          <a href="../../../genindex.html" title="General Index"
-             accesskey="I">index</a></li>
-        <li class="right" >
-          <a href="active_directory.html" title="Get Domain Admins:"
-             accesskey="N">next</a> |</li>
-        <li class="right" >
-          <a href="index.html" title="Powershell"
-             accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../../../index.html">notes 0.1 documentation</a> &#187;</li>
-          <li class="nav-item nav-item-1"><a href="../../index.html" >Operating Systems</a> &#187;</li>
-          <li class="nav-item nav-item-2"><a href="../index.html" >Windows</a> &#187;</li>
-          <li class="nav-item nav-item-3"><a href="index.html" accesskey="U">Powershell</a> &#187;</li> 
-      </ul>
-    </div>  
+  
 
     <div class="document">
       <div class="documentwrapper">
@@ -94,29 +83,55 @@
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-  <h3><a href="../../../index.html">Table Of Contents</a></h3>
-  <ul>
-<li><a class="reference internal" href="#">Get the version of powershell:</a></li>
-<li><a class="reference internal" href="#delete-files-from-a-remote-pc">Delete files from a remote PC:</a></li>
-<li><a class="reference internal" href="#stop-a-service-on-a-remote-pc">Stop a service on a remote PC:</a></li>
-<li><a class="reference internal" href="#start-a-service-on-a-remote-pc">Start a service on a remote PC:</a></li>
-<li><a class="reference internal" href="#sleep-for-10-seconds">Sleep for 10 seconds:</a></li>
-<li><a class="reference internal" href="#get-creds-in-a-pscredential-object">Get creds in a PSCredential object:</a></li>
+<h1 class="logo"><a href="../../../index.html">notes</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../arm/index.html">arm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../db/index.html">databases</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../dns/index.html">DNS stuff</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../elk/index.html">elk stack</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../openssh/index.html">OpenSSH</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../index.html">Operating Systems</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../linux/index.html">Linux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../openbsd/index.html">OpenBSD</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html">Windows</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../ossec/index.html">OSSEC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../rsyslogd/index.html">rsyslogd</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../securityonion/index.html">SecurityOnion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../ssl/index.html">ssl</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../stupid_unix_tricks/index.html">Stupid Unix Tricks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../tools/index.html">Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../vendor_stuff/index.html">Vendor Stuff</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../misc/index.html">MISC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../changelog.html">2018-08-10</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../changelog.html#id2">2018-08-28</a></li>
 </ul>
 
-  <h4>Previous topic</h4>
-  <p class="topless"><a href="index.html"
-                        title="previous chapter">Powershell</a></p>
-  <h4>Next topic</h4>
-  <p class="topless"><a href="active_directory.html"
-                        title="next chapter">Get Domain Admins:</a></p>
-  <div role="note" aria-label="source link">
-    <h3>This Page</h3>
-    <ul class="this-page-menu">
-      <li><a href="../../../_sources/operating_systems/windows/powershell/powershell.rst.txt"
-            rel="nofollow">Show Source</a></li>
-    </ul>
-   </div>
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../../index.html">Documentation overview</a><ul>
+  <li><a href="../../index.html">Operating Systems</a><ul>
+  <li><a href="../index.html">Windows</a><ul>
+  <li><a href="index.html">Powershell</a><ul>
+      <li>Previous: <a href="index.html" title="previous chapter">Powershell</a></li>
+      <li>Next: <a href="active_directory.html" title="next chapter">Get Domain Admins:</a></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
     <div class="searchformwrapper">
@@ -132,24 +147,6 @@
         </div>
       </div>
       <div class="clearer"></div>
-    </div>
-    <div class="related" role="navigation" aria-label="related navigation">
-      <h3>Navigation</h3>
-      <ul>
-        <li class="right" style="margin-right: 10px">
-          <a href="../../../genindex.html" title="General Index"
-             >index</a></li>
-        <li class="right" >
-          <a href="active_directory.html" title="Get Domain Admins:"
-             >next</a> |</li>
-        <li class="right" >
-          <a href="index.html" title="Powershell"
-             >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../../../index.html">notes 0.1 documentation</a> &#187;</li>
-          <li class="nav-item nav-item-1"><a href="../../index.html" >Operating Systems</a> &#187;</li>
-          <li class="nav-item nav-item-2"><a href="../index.html" >Windows</a> &#187;</li>
-          <li class="nav-item nav-item-3"><a href="index.html" >Powershell</a> &#187;</li> 
-      </ul>
     </div>
         <!-- your html code here -->
 	<div class="footer">

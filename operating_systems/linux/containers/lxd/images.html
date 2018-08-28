@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>Add a remote image server: &#8212; notes 0.1 documentation</title>
-    <link rel="stylesheet" href="../../../../_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="../../../../_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
     <script type="text/javascript" id="documentation_options" data-url_root="../../../../" src="../../../../_static/documentation_options.js"></script>
     <script type="text/javascript" src="../../../../_static/jquery.js"></script>
@@ -16,27 +16,15 @@
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
     <link rel="next" title="Setting limits" href="limits.html" />
-    <link rel="prev" title="How to set a container to auto start:" href="autostart.html" /> 
+    <link rel="prev" title="How to set a container to auto start:" href="autostart.html" />
+   
+  <link rel="stylesheet" href="../../../../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
   </head><body>
-    <div class="related" role="navigation" aria-label="related navigation">
-      <h3>Navigation</h3>
-      <ul>
-        <li class="right" style="margin-right: 10px">
-          <a href="../../../../genindex.html" title="General Index"
-             accesskey="I">index</a></li>
-        <li class="right" >
-          <a href="limits.html" title="Setting limits"
-             accesskey="N">next</a> |</li>
-        <li class="right" >
-          <a href="autostart.html" title="How to set a container to auto start:"
-             accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../../../../index.html">notes 0.1 documentation</a> &#187;</li>
-          <li class="nav-item nav-item-1"><a href="../../../index.html" >Operating Systems</a> &#187;</li>
-          <li class="nav-item nav-item-2"><a href="../../index.html" >Linux</a> &#187;</li>
-          <li class="nav-item nav-item-3"><a href="../index.html" >containers</a> &#187;</li>
-          <li class="nav-item nav-item-4"><a href="index.html" accesskey="U">lxc and lxd</a> &#187;</li> 
-      </ul>
-    </div>  
+  
 
     <div class="document">
       <div class="documentwrapper">
@@ -79,27 +67,57 @@
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-  <h3><a href="../../../../index.html">Table Of Contents</a></h3>
-  <ul>
-<li><a class="reference internal" href="#">Add a remote image server:</a></li>
-<li><a class="reference internal" href="#list-images-on-image-server">List images on image server:</a></li>
-<li><a class="reference internal" href="#launch-a-container-from-a-new-image">Launch a container from a “new” image:</a></li>
-<li><a class="reference internal" href="#stop-a-running-container">Stop a running container:</a></li>
+<h1 class="logo"><a href="../../../../index.html">notes</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../../arm/index.html">arm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../db/index.html">databases</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../dns/index.html">DNS stuff</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../elk/index.html">elk stack</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../openssh/index.html">OpenSSH</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../../index.html">Operating Systems</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../../index.html">Linux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../openbsd/index.html">OpenBSD</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../windows/index.html">Windows</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../ossec/index.html">OSSEC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../rsyslogd/index.html">rsyslogd</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../securityonion/index.html">SecurityOnion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../ssl/index.html">ssl</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../stupid_unix_tricks/index.html">Stupid Unix Tricks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../tools/index.html">Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../vendor_stuff/index.html">Vendor Stuff</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../misc/index.html">MISC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../changelog.html">2018-08-10</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../changelog.html#id2">2018-08-28</a></li>
 </ul>
 
-  <h4>Previous topic</h4>
-  <p class="topless"><a href="autostart.html"
-                        title="previous chapter">How to set a container to auto start:</a></p>
-  <h4>Next topic</h4>
-  <p class="topless"><a href="limits.html"
-                        title="next chapter">Setting limits</a></p>
-  <div role="note" aria-label="source link">
-    <h3>This Page</h3>
-    <ul class="this-page-menu">
-      <li><a href="../../../../_sources/operating_systems/linux/containers/lxd/images.rst.txt"
-            rel="nofollow">Show Source</a></li>
-    </ul>
-   </div>
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../../../index.html">Documentation overview</a><ul>
+  <li><a href="../../../index.html">Operating Systems</a><ul>
+  <li><a href="../../index.html">Linux</a><ul>
+  <li><a href="../index.html">containers</a><ul>
+  <li><a href="index.html">lxc and lxd</a><ul>
+      <li>Previous: <a href="autostart.html" title="previous chapter">How to set a container to auto start:</a></li>
+      <li>Next: <a href="limits.html" title="next chapter">Setting limits</a></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
     <div class="searchformwrapper">
@@ -115,25 +133,6 @@
         </div>
       </div>
       <div class="clearer"></div>
-    </div>
-    <div class="related" role="navigation" aria-label="related navigation">
-      <h3>Navigation</h3>
-      <ul>
-        <li class="right" style="margin-right: 10px">
-          <a href="../../../../genindex.html" title="General Index"
-             >index</a></li>
-        <li class="right" >
-          <a href="limits.html" title="Setting limits"
-             >next</a> |</li>
-        <li class="right" >
-          <a href="autostart.html" title="How to set a container to auto start:"
-             >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../../../../index.html">notes 0.1 documentation</a> &#187;</li>
-          <li class="nav-item nav-item-1"><a href="../../../index.html" >Operating Systems</a> &#187;</li>
-          <li class="nav-item nav-item-2"><a href="../../index.html" >Linux</a> &#187;</li>
-          <li class="nav-item nav-item-3"><a href="../index.html" >containers</a> &#187;</li>
-          <li class="nav-item nav-item-4"><a href="index.html" >lxc and lxd</a> &#187;</li> 
-      </ul>
     </div>
         <!-- your html code here -->
 	<div class="footer">
