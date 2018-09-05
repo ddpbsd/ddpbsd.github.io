@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>CentOS &#8212; notes 0.1 documentation</title>
+    <title>pledge(2) &#8212; notes 0.1 documentation</title>
     <link rel="stylesheet" href="../../../_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
     <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
@@ -15,8 +15,8 @@
     <script type="text/javascript" src="../../../_static/doctools.js"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="Active Directory" href="active_directory/index.html" />
-    <link rel="prev" title="Find out how to allow something that is being denied:" href="../auditd/audit2allow.html" />
+    <link rel="next" title="unveil(2)" href="unveil.html" />
+    <link rel="prev" title="pledge(2) and unveil(2)" href="index.html" />
    
   <link rel="stylesheet" href="../../../_static/custom.css" type="text/css" />
   
@@ -31,45 +31,39 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="centos">
-<h1>CentOS<a class="headerlink" href="#centos" title="Permalink to this headline">¶</a></h1>
-<p>Contents:</p>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="active_directory/index.html">Active Directory</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="active_directory/ad.html">Active Directory Stuff</a></li>
-<li class="toctree-l2"><a class="reference internal" href="active_directory/google-auth.html">Packages to install:</a></li>
-<li class="toctree-l2"><a class="reference internal" href="active_directory/google-auth.html#etc-raddb-radiusd-conf"><cite>/etc/raddb/radiusd.conf</cite>:</a></li>
-<li class="toctree-l2"><a class="reference internal" href="active_directory/google-auth.html#etc-pam-d-radiusd"><cite>/etc/pam.d/radiusd</cite>:</a></li>
-<li class="toctree-l2"><a class="reference internal" href="active_directory/google-auth.html#etc-raddb-users"><cite>/etc/raddb/users</cite>:</a></li>
-<li class="toctree-l2"><a class="reference internal" href="active_directory/help.html">Active Directory Auth</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="automatic_updates.html">Automatic updates:</a></li>
-<li class="toctree-l1"><a class="reference internal" href="automatic_updates.html#automatic-security-updates-only">Automatic security updates only:</a></li>
-<li class="toctree-l1"><a class="reference internal" href="centos.html">CentOS:</a></li>
-<li class="toctree-l1"><a class="reference internal" href="config.html">Reconfigure the system on the next boot:</a></li>
-<li class="toctree-l1"><a class="reference internal" href="networking.html">CentOS Networking</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="networking.html#interfaces">Interfaces:</a></li>
-<li class="toctree-l2"><a class="reference internal" href="networking.html#interface-configuration">Interface configuration:</a></li>
-<li class="toctree-l2"><a class="reference internal" href="networking.html#static-route">Static route:</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="packages.html">Unfuck centos</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="packages.html#install-net-tools">Install net-tools:</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="selinux.html">SELinux</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="selinux.html#allow-ssh-keys-for-auth">Allow ssh keys for auth:</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="unfuck.html">Making CentOS minimally useful</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="unfuck.html#packages">Packages:</a></li>
-<li class="toctree-l2"><a class="reference internal" href="unfuck.html#ansible">ansible:</a></li>
-<li class="toctree-l2"><a class="reference internal" href="unfuck.html#virtual-servers">Virtual servers:</a></li>
-</ul>
-</li>
-</ul>
+  <div class="section" id="pledge-2">
+<span id="operating-systems-openbsd-pledge-pledge"></span><h1>pledge(2)<a class="headerlink" href="#pledge-2" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="javascript">
+<h2>Javascript:<a class="headerlink" href="#javascript" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="https://www.npmjs.com/package/node-pledge">node-pledge</a></p>
+</div>
+<div class="section" id="perl">
+<h2>Perl:<a class="headerlink" href="#perl" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="http://cvsweb.openbsd.org/cgi-bin/cvsweb/src/gnu/usr.bin/perl/cpan/OpenBSD-Pledge/">by Andrew Fresh (mirror)</a></p>
+<p><a class="reference external" href="https://github.com/rfarr/Unix-Pledge">by rfarr</a></p>
+</div>
+<div class="section" id="python">
+<h2>Python<a class="headerlink" href="#python" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="https://github.com/jarmani/py-openbsd-pledge">https://github.com/jarmani/py-openbsd-pledge</a></p>
+</div>
+<div class="section" id="lua">
+<h2>Lua<a class="headerlink" href="#lua" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="https://github.com/n0la/lua-openbsd">https://github.com/n0la/lua-openbsd</a></p>
+</div>
+<div class="section" id="haskell">
+<h2>Haskell<a class="headerlink" href="#haskell" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="http://openbsd-archive.7691.n7.nabble.com/pledge-2-binding-for-Haskell-td287889.html">http://openbsd-archive.7691.n7.nabble.com/pledge-2-binding-for-Haskell-td287889.html</a></p>
+</div>
+<div class="section" id="golang">
+<h2>golang<a class="headerlink" href="#golang" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="https://github.com/ylih/extrasys">https://github.com/ylih/extrasys</a></p>
+</div>
+<div class="section" id="c">
+<h2>c#<a class="headerlink" href="#c" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="https://github.com/NattyNarwhal/pledge.cs">https://github.com/NattyNarwhal/pledge.cs</a></p>
+</div>
+<div class="section" id="rust">
+<h2>Rust<a class="headerlink" href="#rust" title="Permalink to this headline">¶</a></h2>
 </div>
 </div>
 
@@ -96,8 +90,8 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../elk/index.html">elk stack</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../openssh/index.html">OpenSSH</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../../index.html">Operating Systems</a><ul class="current">
-<li class="toctree-l2 current"><a class="reference internal" href="../index.html">Linux</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../openbsd/index.html">OpenBSD</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../linux/index.html">Linux</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html">OpenBSD</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../windows/index.html">Windows</a></li>
 </ul>
 </li>
@@ -118,9 +112,11 @@
 <ul>
   <li><a href="../../../index.html">Documentation overview</a><ul>
   <li><a href="../../index.html">Operating Systems</a><ul>
-  <li><a href="../index.html">Linux</a><ul>
-      <li>Previous: <a href="../auditd/audit2allow.html" title="previous chapter">Find out how to allow something that is being denied:</a></li>
-      <li>Next: <a href="active_directory/index.html" title="next chapter">Active Directory</a></li>
+  <li><a href="../index.html">OpenBSD</a><ul>
+  <li><a href="index.html">pledge(2) and unveil(2)</a><ul>
+      <li>Previous: <a href="index.html" title="previous chapter">pledge(2) and unveil(2)</a></li>
+      <li>Next: <a href="unveil.html" title="next chapter">unveil(2)</a></li>
+  </ul></li>
   </ul></li>
   </ul></li>
   </ul></li>

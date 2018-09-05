@@ -6,11 +6,12 @@ Contents:
 .. toctree::
    :maxdepth: 2
 
-   centos
-   automatic_updates
-   selinux
    active_directory/index
+   automatic_updates
+   centos
+   config
    networking
    packages
+   selinux
    unfuck
 

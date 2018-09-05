@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Banned password characters: &#8212; notes 0.1 documentation</title>
+    <title>Location of some useful logs (auth and stuff): &#8212; notes 0.1 documentation</title>
     <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
@@ -29,8 +29,14 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="banned-password-characters">
-<span id="vendor-stuff-arcsight-rest-api"></span><h1>Banned password characters:<a class="headerlink" href="#banned-password-characters" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="location-of-some-useful-logs-auth-and-stuff">
+<span id="vendor-stuff-arcsight-rest-api"></span><h1>Location of some useful logs (auth and stuff):<a class="headerlink" href="#location-of-some-useful-logs-auth-and-stuff" title="Permalink to this headline">¶</a></h1>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">/opt/arcsight/manager/logs/default/server.log</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="banned-password-characters">
+<h1>Banned password characters:<a class="headerlink" href="#banned-password-characters" title="Permalink to this headline">¶</a></h1>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">^</span>
 </pre></div>
 </div>
@@ -44,6 +50,18 @@
 <div class="section" id="example-logout">
 <h1>Example logout:<a class="headerlink" href="#example-logout" title="Permalink to this headline">¶</a></h1>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">curl -D- -k -H &quot;Content-Type: application/x-www-form-urlencoded&quot; -XPOST  &#39;https://ESM_HOST:8443/www/core-service/rest/LoginService/logout?authToken=HBfedZ5AefEosvFXSbgIfy5wzj9v426giAp7OihCabg.&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="view-all-entries-in-an-active-list">
+<h1>View all entries in an active list:<a class="headerlink" href="#view-all-entries-in-an-active-list" title="Permalink to this headline">¶</a></h1>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">URL: https://&lt;ESM manager host&gt;:8443/www/manager-service/rest/ActiveListService/getEntries?authToken=xxxxxxxxxxxxxxx.&amp;resourceId=xxxxxxxxxxxxxxxxxxx</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="some-stuff">
+<h1>Some stuff:<a class="headerlink" href="#some-stuff" title="Permalink to this headline">¶</a></h1>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">https://community.softwaregrp.com/t5/Archive-Discussion-Board/Full-REST-API-Documentation-For-ESM/td-p/1538807</span>
 </pre></div>
 </div>
 </div>
