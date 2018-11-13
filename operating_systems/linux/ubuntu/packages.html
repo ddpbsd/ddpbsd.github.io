@@ -1,0 +1,155 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>dpkg &#8212; notes 0.1 documentation</title>
+    
+    <link rel="stylesheet" href="../../../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="top" title="notes 0.1 documentation" href="../../../index.html" />
+    <link rel="up" title="Ubuntu" href="index.html" />
+    <link rel="next" title="Necessary packages:" href="unfuck.html" />
+    <link rel="prev" title="Only upgrade security related packages:" href="ubuntu.html" />
+   
+  <link rel="stylesheet" href="../../../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body role="document">
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="dpkg">
+<h1>dpkg<a class="headerlink" href="#dpkg" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="lock-a-version-of-a-package">
+<h2>Lock a version of a package:<a class="headerlink" href="#lock-a-version-of-a-package" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">echo &quot;PKG_NAME hold&quot; | dpkg --set-selections</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="release-the-lock">
+<h2>Release the lock:<a class="headerlink" href="#release-the-lock" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">echo &quot;&lt;package-name&gt; install&quot; | sudo dpkg --set-selections</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="see-the-current-selections">
+<h2>See the current selections:<a class="headerlink" href="#see-the-current-selections" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">dpkg --get-selections</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="apt">
+<h1>apt<a class="headerlink" href="#apt" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="lock-a-version">
+<h2>Lock a version:<a class="headerlink" href="#lock-a-version" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">sudo apt-mark hold &lt;package-name&gt;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="remove-the-hold">
+<h2>Remove the hold:<a class="headerlink" href="#remove-the-hold" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">sudo apt-mark unhold &lt;package-name&gt;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="look-at-info-for-a-package">
+<h2>Look at info for a package:<a class="headerlink" href="#look-at-info-for-a-package" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">apt show &lt;package-name&gt;</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../../../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">dpkg</a><ul>
+<li><a class="reference internal" href="#lock-a-version-of-a-package">Lock a version of a package:</a></li>
+<li><a class="reference internal" href="#release-the-lock">Release the lock:</a></li>
+<li><a class="reference internal" href="#see-the-current-selections">See the current selections:</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#apt">apt</a><ul>
+<li><a class="reference internal" href="#lock-a-version">Lock a version:</a></li>
+<li><a class="reference internal" href="#remove-the-hold">Remove the hold:</a></li>
+<li><a class="reference internal" href="#look-at-info-for-a-package">Look at info for a package:</a></li>
+</ul>
+</li>
+</ul>
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../../index.html">Documentation overview</a><ul>
+  <li><a href="../../index.html">Operating Systems</a><ul>
+  <li><a href="../index.html">Linux</a><ul>
+  <li><a href="index.html">Ubuntu</a><ul>
+      <li>Previous: <a href="ubuntu.html" title="previous chapter">Only upgrade security related packages:</a></li>
+      <li>Next: <a href="unfuck.html" title="next chapter">Necessary packages:</a></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../../_sources/operating_systems/linux/ubuntu/packages.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+        <!-- your html code here -->
+	<div class="footer">
+		<em>This information has a good chance of being wrong, inconsistent, out of date, or just bad. Use at your own risk.
+		Feel free to notify me of any issues though.</em>
+	</div>
+
+
+  </body>
+</html>

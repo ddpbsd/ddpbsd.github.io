@@ -1,0 +1,12 @@
+
+arrakis
+=======
+
+Thinkpad X1 Carbon 4th Gen.
+Runs an OpenBSD snapshot, usually not the latest one.
+
+Update the BIOS:
+^^^^^^^^^^^^^^^^
+
+Use the geteltorito package.
+

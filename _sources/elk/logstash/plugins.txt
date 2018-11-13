@@ -1,0 +1,26 @@
+
+
+
+
+Fix the kafka plugin:
+^^^^^^^^^^^^^^^^^^^^^
+
+Error in logstash 6.4:
+
+.. code-block:: console
+
+   error=>"Invalid value 32768 for configuration receive.buffer.bytes: Expected value to be a 32-bit integer, but it was a java.lang.Long"
+
+Uninstall the plugin:
+
+.. code-block:: ocnsole
+
+   /usr/share/logstash/bin/logstash-plugin uninstall logstash-output-kafka
+
+Install version 7.1.1 of the plugin:
+
+.. code-block:: console
+
+   /usr/share/logstash/bin/logstash-plugin install --version 7.1.1 logstash-output-kafka
+
+

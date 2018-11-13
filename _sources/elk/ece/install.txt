@@ -1,0 +1,38 @@
+
+
+
+Setting up apt:
+^^^^^^^^^^^^^^^
+
+Add the following to `/etc/apt/sources.list`:
+
+.. code-block:: console
+
+   deb https://apt.dockerproject.org/repo ubuntu-xenial main
+
+Add the gpg key:
+
+.. code-block:: console
+
+   apt-key adv --keyserver hkp://p80.pool.sks-keyservers.net:80 --recv-keys 58118E89F3A912897C070ADBF76221572C52609D
+
+Install docker-engine 1.11:
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: console
+
+   apt-get install docker-engine=1.11.2-0~xenial
+
+Make sure `docker-engine` is not updated:
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+See the ubuntu section for more information.
+
+.. code-block:: cosnole
+
+   echo "docker-engine hold" | dpkg --set-selections
+
+
+
+
+

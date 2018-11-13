@@ -1,0 +1,166 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>USB ethernet devices &#8212; notes 0.1 documentation</title>
+    
+    <link rel="stylesheet" href="../../../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="top" title="notes 0.1 documentation" href="../../../index.html" />
+    <link rel="up" title="Hardware Notes" href="index.html" />
+    <link rel="next" title="pledge(2) and unveil(2)" href="../pledge/index.html" />
+    <link rel="prev" title="Hardware Notes" href="index.html" />
+   
+  <link rel="stylesheet" href="../../../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body role="document">
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="usb-ethernet-devices">
+<h1>USB ethernet devices<a class="headerlink" href="#usb-ethernet-devices" title="Permalink to this headline">¶</a></h1>
+<p>These are mostly untested. <cite>axen(4)</cite> devices had proven to be unusable previously.
+The first <cite>ure(4)</cite> dees get used in a <cite>bridge(4)</cite> for <cite>vmd(8)</cite>.</p>
+<div class="section" id="unknown">
+<h2>UNKNOWN<a class="headerlink" href="#unknown" title="Permalink to this headline">¶</a></h2>
+<p>I can&#8217;t remember any designation on it, and I&#8217;m not near it at the moment.
+USB3 I think.</p>
+<p>dmesg info:</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">ure0 at uhub3 port 5 configuration 1 interface 0 &quot;Realtek USB 10/100/1000 LAN&quot; rev 2.10/30.00 addr 5</span>
+<span class="go">ure0: ver 5c20, address 00:e0:97:00:51:17</span>
+<span class="go">rgephy0 at ure0 phy 0: RTL8251 PHY, rev. 0</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="ugreen">
+<h2>UGREEN<a class="headerlink" href="#ugreen" title="Permalink to this headline">¶</a></h2>
+<p>USB3.</p>
+<p>dmesg info:</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">Sep 25 07:18:38 arrakis /bsd: axen0 at uhub0 port 18 configuration 1 interface 0 &quot;ASIX Elec. Corp. AX88179&quot; rev 3.00/1.00 addr 5</span>
+<span class="go">Sep 25 07:18:38 arrakis /bsd: axen0: AX88179, address 00:0e:c6:a9:69:47</span>
+<span class="go">Sep 25 07:18:39 arrakis /bsd: rgephy0 at axen0 phy 3: RTL8169S/8110S/8211 PHY, rev. 5</span>
+<span class="go">Sep 25 07:18:58 arrakis /bsd: rgephy0 detached</span>
+<span class="go">Sep 25 07:18:58 arrakis /bsd: axen0 detached</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="cable-matters">
+<h2>Cable Matters<a class="headerlink" href="#cable-matters" title="Permalink to this headline">¶</a></h2>
+<p>USB2.</p>
+<p>dmesg info:</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">Sep 25 07:20:12 arrakis /bsd: ure0 at uhub0 port 6 configuration 1 interface 0 &quot;Realtek USB 10/100 LAN&quot; rev 2.10/20.00 addr 5</span>
+<span class="go">Sep 25 07:20:12 arrakis /bsd: ure0:</span>
+<span class="go">Sep 25 07:20:12 arrakis /bsd: ver 4c10</span>
+<span class="go">Sep 25 07:20:12 arrakis /bsd: , address a0:ce:c8:06:e0:8a</span>
+<span class="go">Sep 25 07:20:12 arrakis /bsd: rlphy0 at ure0 phy 0: RTL8201E 10/100 PHY, rev. 2</span>
+<span class="go">Sep 25 07:20:21 arrakis /bsd: rlphy0 detached</span>
+<span class="go">Sep 25 07:20:21 arrakis /bsd: ure0 detached</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="unitek-y-3057">
+<h2>UNITEK Y-3057<a class="headerlink" href="#unitek-y-3057" title="Permalink to this headline">¶</a></h2>
+<p>This device has a built in USB3 hub. I haven&#8217;t bothered to test it yet.</p>
+<p>dmesg info:</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">Sep 25 07:20:56 arrakis /bsd: uhub1 at uhub0 port 18 configuration 1 interface 0 &quot;VIA Labs, Inc. USB3.0 Hub&quot; rev 3.00/90.01 addr 5</span>
+<span class="go">Sep 25 07:20:57 arrakis /bsd: axen0 at uhub1 port 1 configuration 1 interface 0 &quot;ASIX Elec. Corp. AX88179&quot; rev 3.00/1.00 addr 6</span>
+<span class="go">Sep 25 07:20:57 arrakis /bsd: axen0: AX88179, address 00:0e:c6:c8:4d:72</span>
+<span class="go">Sep 25 07:20:57 arrakis /bsd: rgephy0 at axen0 phy 3: RTL8169S/8110S/8211 PHY, rev. 5</span>
+<span class="go">Sep 25 07:20:58 arrakis /bsd: uhub2 at uhub0 port 6 configuration 1 interface 0 &quot;VIA Labs, Inc. USB2.0 Hub&quot; rev 2.10/90.01 addr 7</span>
+<span class="go">Sep 25 07:21:01 arrakis /bsd: rgephy0 detached</span>
+<span class="go">Sep 25 07:21:01 arrakis /bsd: axen0 detached</span>
+<span class="go">Sep 25 07:21:01 arrakis /bsd: uhub1 detached</span>
+<span class="go">Sep 25 07:21:01 arrakis /bsd: uhub2 detached</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../../../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">USB ethernet devices</a><ul>
+<li><a class="reference internal" href="#unknown">UNKNOWN</a></li>
+<li><a class="reference internal" href="#ugreen">UGREEN</a></li>
+<li><a class="reference internal" href="#cable-matters">Cable Matters</a></li>
+<li><a class="reference internal" href="#unitek-y-3057">UNITEK Y-3057</a></li>
+</ul>
+</li>
+</ul>
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../../index.html">Documentation overview</a><ul>
+  <li><a href="../../index.html">Operating Systems</a><ul>
+  <li><a href="../index.html">OpenBSD</a><ul>
+  <li><a href="index.html">Hardware Notes</a><ul>
+      <li>Previous: <a href="index.html" title="previous chapter">Hardware Notes</a></li>
+      <li>Next: <a href="../pledge/index.html" title="next chapter">pledge(2) and unveil(2)</a></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../../_sources/operating_systems/openbsd/hardware/usb_ethernet.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+        <!-- your html code here -->
+	<div class="footer">
+		<em>This information has a good chance of being wrong, inconsistent, out of date, or just bad. Use at your own risk.
+		Feel free to notify me of any issues though.</em>
+	</div>
+
+
+  </body>
+</html>

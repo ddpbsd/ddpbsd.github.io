@@ -1,0 +1,13 @@
+.. _tools_dns:
+
+dns
+===
+
+Contents:
+
+.. toctree::
+   :maxdepth: 2
+
+   nsd/index
+   unbound/index
+

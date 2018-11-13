@@ -1,0 +1,12 @@
+su
+==
+
+Run a command as a user with nologin as their shell:
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Pass it a shell!
+
+.. code-block:: console
+
+   su -s /bin/sh -c COMMAND USER
+

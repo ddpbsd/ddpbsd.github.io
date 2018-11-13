@@ -1,0 +1,139 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Check services via ssh &#8212; notes 0.1 documentation</title>
+    
+    <link rel="stylesheet" href="../../../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="top" title="notes 0.1 documentation" href="../../../index.html" />
+    <link rel="up" title="icinga2" href="index.html" />
+    <link rel="next" title="osquery" href="../../osquery/index.html" />
+    <link rel="prev" title="Disable notifications for a host:" href="notifications.html" />
+   
+  <link rel="stylesheet" href="../../../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body role="document">
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="check-services-via-ssh">
+<h1>Check services via ssh<a class="headerlink" href="#check-services-via-ssh" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="command-definition">
+<h2>Command definition:<a class="headerlink" href="#command-definition" title="Permalink to this headline">¶</a></h2>
+<p>Create a command in <cite>commands.conf</cite> for the specific check.
+<cite>vars.by_ssh_command</cite> is the check, and <cite>vars.by_ssh_identity</cite>
+is the ssh key for the user to login.</p>
+<p>This example uses the <cite>nagios-plugins-disk</cite> package on CentOS,
+but should work with any actual check.</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">object CheckCommand &quot;check_disk_by_ssh&quot; {</span>
+<span class="go">  import &quot;by_ssh&quot;</span>
+<span class="go">  vars.by_ssh_command = &quot;/usr/lib64/nagios/plugins/check_disk -w 20% -c 10%&quot;</span>
+<span class="go">  vars.by_ssh_identity = &quot;/var/spool/icinga2/.ssh/icingacheck&quot;</span>
+<span class="go">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="services-definition">
+<h2>Services definition:<a class="headerlink" href="#services-definition" title="Permalink to this headline">¶</a></h2>
+<p>This uses the <cite>check_disk_by_ssh</cite> command above (in <cite>check_command</cite>).
+<cite>vars.by_ssh_logname</cite> is the login to use.
+<cite>hostr.vars.sshcheck_root</cite> has to be set in the <cite>hosts.conf</cite> file for
+the specific host this should be run against.</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">apply Service &quot;disk_sshcheck_root&quot; {</span>
+<span class="go">  import &quot;generic-service&quot;</span>
+<span class="go">  check_command = &quot;check_disk_by_ssh&quot;</span>
+<span class="go">  vars.by_ssh_logname = &quot;icingacheck&quot;</span>
+<span class="go">  assign where host.vars.sshcheck_root == &quot;True&quot;</span>
+<span class="go">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../../../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Check services via ssh</a><ul>
+<li><a class="reference internal" href="#command-definition">Command definition:</a></li>
+<li><a class="reference internal" href="#services-definition">Services definition:</a></li>
+</ul>
+</li>
+</ul>
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../../index.html">Documentation overview</a><ul>
+  <li><a href="../../index.html">Tools</a><ul>
+  <li><a href="../index.html">Monitoring Tools</a><ul>
+  <li><a href="index.html">icinga2</a><ul>
+      <li>Previous: <a href="notifications.html" title="previous chapter">Disable notifications for a host:</a></li>
+      <li>Next: <a href="../../osquery/index.html" title="next chapter">osquery</a></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../../_sources/tools/monitoring/icinga2/ssh_checks.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+        <!-- your html code here -->
+	<div class="footer">
+		<em>This information has a good chance of being wrong, inconsistent, out of date, or just bad. Use at your own risk.
+		Feel free to notify me of any issues though.</em>
+	</div>
+
+
+  </body>
+</html>
