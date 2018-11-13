@@ -12,9 +12,12 @@ Contents:
 .. toctree::
    :maxdepth: 2
 
+   1604
    cef
    commands
    elsa
    hier
    bro/index
    salt
+   sostat
+

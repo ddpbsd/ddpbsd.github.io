@@ -1,20 +1,32 @@
-
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
+
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
-    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
     <title>Create user: &#8212; notes 0.1 documentation</title>
+    
     <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-    <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
+    <link rel="top" title="notes 0.1 documentation" href="../../index.html" />
+    <link rel="up" title="PostgreSQL" href="index.html" />
     <link rel="next" title="Create a list of database users:" href="userlist.html" />
     <link rel="prev" title="PostgreSQL" href="index.html" />
    
@@ -23,7 +35,8 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
 
-  </head><body>
+  </head>
+  <body role="document">
   
 
     <div class="document">
@@ -33,32 +46,32 @@
             
   <div class="section" id="create-user">
 <span id="tools-databases-postgresql-simplestuff"></span><h1>Create user:<a class="headerlink" href="#create-user" title="Permalink to this headline">¶</a></h1>
-<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">CREATE</span> <span class="k">ROLE</span> <span class="n">ansibledb</span> <span class="n">LOGIN</span><span class="p">;</span>
+<div class="highlight-sql"><div class="highlight"><pre><span></span><span class="k">CREATE</span> <span class="k">ROLE</span> <span class="n">ansibledb</span> <span class="n">LOGIN</span><span class="p">;</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="create-database">
 <h1>Create database:<a class="headerlink" href="#create-database" title="Permalink to this headline">¶</a></h1>
-<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">CREATE</span> <span class="k">DATABASE</span> <span class="n">ansibledb</span> <span class="k">WITH</span> <span class="k">OWNER</span><span class="o">=</span><span class="s1">&#39;ansibledb&#39;</span><span class="p">;</span>
+<div class="highlight-sql"><div class="highlight"><pre><span></span><span class="k">CREATE</span> <span class="k">DATABASE</span> <span class="n">ansibledb</span> <span class="k">WITH</span> <span class="k">OWNER</span><span class="o">=</span><span class="s1">&#39;ansibledb&#39;</span><span class="p">;</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="timestamps-as-unix-epoch">
 <h1>timestamps as unix epoch<a class="headerlink" href="#timestamps-as-unix-epoch" title="Permalink to this headline">¶</a></h1>
-<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="k">extract</span><span class="p">(</span><span class="n">epoch</span> <span class="k">FROM</span> <span class="k">timestamp</span><span class="p">)</span> <span class="k">FROM</span> <span class="n">sensors</span><span class="p">;</span>
+<div class="highlight-sql"><div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="k">extract</span><span class="p">(</span><span class="n">epoch</span> <span class="k">FROM</span> <span class="k">timestamp</span><span class="p">)</span> <span class="k">FROM</span> <span class="n">sensors</span><span class="p">;</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="change-a-user-s-password">
-<h1>Change a user’s password:<a class="headerlink" href="#change-a-user-s-password" title="Permalink to this headline">¶</a></h1>
-<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">ALTER</span> <span class="k">USER</span> <span class="n">my_user_name</span> <span class="k">with</span> <span class="n">password</span> <span class="s1">&#39;my_secure_password&#39;</span><span class="p">;</span>
+<h1>Change a user&#8217;s password:<a class="headerlink" href="#change-a-user-s-password" title="Permalink to this headline">¶</a></h1>
+<div class="highlight-sql"><div class="highlight"><pre><span></span><span class="k">ALTER</span> <span class="k">USER</span> <span class="n">my_user_name</span> <span class="k">with</span> <span class="n">password</span> <span class="s1">&#39;my_secure_password&#39;</span><span class="p">;</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="pg-hba-conf-location">
 <h1>pg_hba.conf location:<a class="headerlink" href="#pg-hba-conf-location" title="Permalink to this headline">¶</a></h1>
 <p>On ubuntu:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">/etc/postgresql/9.5/main/pg_hba.conf</span>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">/etc/postgresql/9.5/main/pg_hba.conf</span>
 </pre></div>
 </div>
 </div>
@@ -69,40 +82,14 @@
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-<h1 class="logo"><a href="../../index.html">notes</a></h1>
-
-
-
-
-
-
-
-
-<h3>Navigation</h3>
-<ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../../arm/index.html">arm</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="../index.html">databases</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="../mysql/index.html">MySQL</a></li>
-<li class="toctree-l2 current"><a class="reference internal" href="index.html">PostgreSQL</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../sql/index.html">SQL Stuff</a></li>
+  <h3><a href="../../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Create user:</a></li>
+<li><a class="reference internal" href="#create-database">Create database:</a></li>
+<li><a class="reference internal" href="#timestamps-as-unix-epoch">timestamps as unix epoch</a></li>
+<li><a class="reference internal" href="#change-a-user-s-password">Change a user&#8217;s password:</a></li>
+<li><a class="reference internal" href="#pg-hba-conf-location">pg_hba.conf location:</a></li>
 </ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="../../dns/index.html">DNS stuff</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../elk/index.html">elk stack</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../openssh/index.html">OpenSSH</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../operating_systems/index.html">Operating Systems</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../ossec/index.html">OSSEC</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../rsyslogd/index.html">rsyslogd</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../securityonion/index.html">SecurityOnion</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../ssl/index.html">ssl</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../stupid_unix_tricks/index.html">Stupid Unix Tricks</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../tools/index.html">Tools</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../vendor_stuff/index.html">Vendor Stuff</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../misc/index.html">MISC</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../changelog.html">2018-08-10</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../changelog.html#id2">2018-08-28</a></li>
-</ul>
-
 <div class="relations">
 <h3>Related Topics</h3>
 <ul>
@@ -116,16 +103,21 @@
   </ul></li>
 </ul>
 </div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../_sources/db/postgresql/simplestuff.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
-    <div class="searchformwrapper">
     <form class="search" action="../../search.html" method="get">
-      <input type="text" name="q" />
-      <input type="submit" value="Go" />
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
-    </div>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>

@@ -1,5 +1,20 @@
 .. _securityonion_salt:
 
+salt
+====
+
+The configuration management utility from heck.
+
+Test saltiness:
+^^^^^^^^^^^^^^^
+
+Ping all of the systems.
+
+.. code-block:: console
+
+   salt  '*' test.ping
+
+
 List keys:
 ^^^^^^^^^^
 

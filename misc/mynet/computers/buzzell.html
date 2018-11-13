@@ -1,29 +1,42 @@
-
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
+
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
-    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
     <title>Run the gogs docker container: &#8212; notes 0.1 documentation</title>
+    
     <link rel="stylesheet" href="../../../_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
-    <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
     <script type="text/javascript" src="../../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../../_static/doctools.js"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="top" title="notes 0.1 documentation" href="../../../index.html" />
+    <link rel="up" title="computers" href="index.html" />
     <link rel="next" title="earth" href="earth.html" />
-    <link rel="prev" title="computers" href="index.html" />
+    <link rel="prev" title="arrakis" href="arrakis.html" />
    
   <link rel="stylesheet" href="../../../_static/custom.css" type="text/css" />
   
   
   <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
 
-  </head><body>
+  </head>
+  <body role="document">
   
 
     <div class="document">
@@ -34,30 +47,30 @@
   <div class="section" id="run-the-gogs-docker-container">
 <span id="misc-mynet-computers-buzzell"></span><h1>Run the gogs docker container:<a class="headerlink" href="#run-the-gogs-docker-container" title="Permalink to this headline">¶</a></h1>
 <p>After an update of the image, the container should be run again from scratch.</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">docker run --name=gogs -p 10022:22 -p 10080:3000 -v /var/gogs:/data gogs/gogs</span>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">docker run --name=gogs -p 10022:22 -p 10080:3000 -v /var/gogs:/data gogs/gogs</span>
 </pre></div>
 </div>
 <p>After this initial run (if it was stopped), it can be run with:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">docker start gogs</span>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">docker start gogs</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="build-the-nmap-image">
 <h1>Build the nmap image:<a class="headerlink" href="#build-the-nmap-image" title="Permalink to this headline">¶</a></h1>
 <p>Replace the X with the version number.</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">docker build -t nmap:X .</span>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">docker build -t nmap:X .</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="run-the-nmap-container">
 <h1>Run the nmap container:<a class="headerlink" href="#run-the-nmap-container" title="Permalink to this headline">¶</a></h1>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">docker run --mount source=nmap,target=/nmap --rm nmap:3 -sS -A -oG /nmap/2nmap_$(date +%Y%m%d) --append-output HOST</span>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">docker run --mount source=nmap,target=/nmap --rm nmap:3 -sS -A -oG /nmap/2nmap_$(date +%Y%m%d) --append-output HOST</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="run-the-influxdb-container">
 <h1>Run the influxdb container:<a class="headerlink" href="#run-the-influxdb-container" title="Permalink to this headline">¶</a></h1>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">docker run -p 8086:8086 -p 8088:8088 -p 8089:8089/udp -v /home/ddp/influx/influxdb.conf:/etc/influxdb/influxdb.conf:ro -v influxdb:/var/lib/influxdb influxdb  -config /etc/influxdb/influxdb.conf</span>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">docker run -p 8086:8086 -p 8088:8088 -p 8089:8089/udp -v /home/ddp/influx/influxdb.conf:/etc/influxdb/influxdb.conf:ro -v influxdb:/var/lib/influxdb influxdb  -config /etc/influxdb/influxdb.conf</span>
 </pre></div>
 </div>
 </div>
@@ -68,45 +81,13 @@
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-<h1 class="logo"><a href="../../../index.html">notes</a></h1>
-
-
-
-
-
-
-
-
-<h3>Navigation</h3>
-<ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../../../arm/index.html">arm</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../db/index.html">databases</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../dns/index.html">DNS stuff</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../elk/index.html">elk stack</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../openssh/index.html">OpenSSH</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../operating_systems/index.html">Operating Systems</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../ossec/index.html">OSSEC</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../rsyslogd/index.html">rsyslogd</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../securityonion/index.html">SecurityOnion</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../ssl/index.html">ssl</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../stupid_unix_tricks/index.html">Stupid Unix Tricks</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../tools/index.html">Tools</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../vendor_stuff/index.html">Vendor Stuff</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="../../index.html">MISC</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="../../imagemagick/index.html">Imagemagick</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../kernel_build/index.html">Building a custom kernel</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../ksh/index.html">ksh</a></li>
-<li class="toctree-l2 current"><a class="reference internal" href="../index.html">mynet</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../projects/projects.html">Projects</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../random.html">Stupid random stuff:</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../vim/index.html">vim</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../junk/index.html">Junk</a></li>
+  <h3><a href="../../../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Run the gogs docker container:</a></li>
+<li><a class="reference internal" href="#build-the-nmap-image">Build the nmap image:</a></li>
+<li><a class="reference internal" href="#run-the-nmap-container">Run the nmap container:</a></li>
+<li><a class="reference internal" href="#run-the-influxdb-container">Run the influxdb container:</a></li>
 </ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="../../../changelog.html">2018-08-10</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../changelog.html#id2">2018-08-28</a></li>
-</ul>
-
 <div class="relations">
 <h3>Related Topics</h3>
 <ul>
@@ -114,7 +95,7 @@
   <li><a href="../../index.html">MISC</a><ul>
   <li><a href="../index.html">mynet</a><ul>
   <li><a href="index.html">computers</a><ul>
-      <li>Previous: <a href="index.html" title="previous chapter">computers</a></li>
+      <li>Previous: <a href="arrakis.html" title="previous chapter">arrakis</a></li>
       <li>Next: <a href="earth.html" title="next chapter">earth</a></li>
   </ul></li>
   </ul></li>
@@ -122,16 +103,21 @@
   </ul></li>
 </ul>
 </div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../../_sources/misc/mynet/computers/buzzell.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
-    <div class="searchformwrapper">
     <form class="search" action="../../../search.html" method="get">
-      <input type="text" name="q" />
-      <input type="submit" value="Go" />
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
-    </div>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>

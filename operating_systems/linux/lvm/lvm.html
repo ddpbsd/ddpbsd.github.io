@@ -1,20 +1,32 @@
-
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
+
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
-    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
     <title>View current lvm info &#8212; notes 0.1 documentation</title>
+    
     <link rel="stylesheet" href="../../../_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
-    <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
     <script type="text/javascript" src="../../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../../_static/doctools.js"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="top" title="notes 0.1 documentation" href="../../../index.html" />
+    <link rel="up" title="lvm" href="index.html" />
     <link rel="next" title="networking" href="../network/index.html" />
     <link rel="prev" title="lvm" href="index.html" />
    
@@ -23,7 +35,8 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
 
-  </head><body>
+  </head>
+  <body role="document">
   
 
     <div class="document">
@@ -31,7 +44,7 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <p id="linux-lvm">Linux LVM is complicated alchemy. It’s entirely possible this is very wrong.</p>
+  <p id="linux-lvm">Linux LVM is complicated alchemy. It&#8217;s entirely possible this is very wrong.</p>
 <p><cite>Physical Volumes</cite> (PV) consist of a group of physical disks (disks, partitions, or LUNs).
 A <cite>Volume Group</cite> (VG) consists of some number of PVs.
 <cite>Logical Volumes</cite> are virtual disk partitions on top of the VG.</p>
@@ -43,7 +56,7 @@ The instructions there give a lot more detail.</p>
 </div>
 <div class="section" id="view-current-lvm-info">
 <h1>View current lvm info<a class="headerlink" href="#view-current-lvm-info" title="Permalink to this headline">¶</a></h1>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">root@buzzell:/var/VM#</span> pvdisplay
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">root@buzzell:/var/VM#</span> pvdisplay
 <span class="go">  --- Physical volume ---</span>
 <span class="go">  PV Name               /dev/sda3</span>
 <span class="go">  VG Name               buzzell-vg</span>
@@ -71,39 +84,39 @@ The instructions there give a lot more detail.</p>
 <div class="section" id="create-a-partition">
 <h1>Create a partition:<a class="headerlink" href="#create-a-partition" title="Permalink to this headline">¶</a></h1>
 <p>Apparently not always necessary or something.</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">#</span> fdisk /dev/sdb
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">#</span> fdisk /dev/sdb
 </pre></div>
 </div>
 </div>
 <div class="section" id="create-a-physical-volume">
 <h1>Create a physical volume:<a class="headerlink" href="#create-a-physical-volume" title="Permalink to this headline">¶</a></h1>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">#</span> pvcreate /dev/sdb1
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">#</span> pvcreate /dev/sdb1
 </pre></div>
 </div>
 </div>
 <div class="section" id="add-to-the-volume-group">
 <h1>Add to the volume group:<a class="headerlink" href="#add-to-the-volume-group" title="Permalink to this headline">¶</a></h1>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">#</span> lvs
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">#</span> lvs
 <span class="gp">#</span> vgextend buzzell-vg /dev/sdb1
 </pre></div>
 </div>
 </div>
 <div class="section" id="create-a-logical-volume">
 <h1>Create a logical volume:<a class="headerlink" href="#create-a-logical-volume" title="Permalink to this headline">¶</a></h1>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">#</span> lvcreate -L 50G -n var buzzell-vg
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">#</span> lvcreate -L 50G -n var buzzell-vg
 </pre></div>
 </div>
 </div>
 <div class="section" id="format-and-mount">
 <h1>Format and Mount:<a class="headerlink" href="#format-and-mount" title="Permalink to this headline">¶</a></h1>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">#</span> mkfs -t ext4 /dev/mapper/buzzell--vg-var
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">#</span> mkfs -t ext4 /dev/mapper/buzzell--vg-var
 <span class="gp">#</span> mount /dev/mapper/buzzell--vg-var /mnt
 </pre></div>
 </div>
 </div>
 <div class="section" id="display-information-about-a-volume-group">
 <h1>Display information about a volume group:<a class="headerlink" href="#display-information-about-a-volume-group" title="Permalink to this headline">¶</a></h1>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">root@buzzell:/var/VM#</span> vgdisplay
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">root@buzzell:/var/VM#</span> vgdisplay
 <span class="go">  --- Volume group ---</span>
 <span class="go">  VG Name               buzzell-vg</span>
 <span class="go">  System ID</span>
@@ -133,7 +146,7 @@ The instructions there give a lot more detail.</p>
 </div>
 <div class="section" id="display-logical-volumes">
 <h1>Display logical volumes:<a class="headerlink" href="#display-logical-volumes" title="Permalink to this headline">¶</a></h1>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">root@buzzell:/var/VM#</span> lvdisplay
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">root@buzzell:/var/VM#</span> lvdisplay
 <span class="go">  --- Logical volume ---</span>
 <span class="go">  LV Path                /dev/buzzell-vg/root</span>
 <span class="go">  LV Name                root</span>
@@ -189,7 +202,7 @@ The instructions there give a lot more detail.</p>
 </div>
 <div class="section" id="more-specific-logical-volume-info">
 <h1>More specific logical volume info:<a class="headerlink" href="#more-specific-logical-volume-info" title="Permalink to this headline">¶</a></h1>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">root@buzzell:/var/VM#</span> lvdisplay -m /dev/buzzell-vg/var
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">root@buzzell:/var/VM#</span> lvdisplay -m /dev/buzzell-vg/var
 <span class="go">  --- Logical volume ---</span>
 <span class="go">  LV Path                /dev/buzzell-vg/var</span>
 <span class="go">  LV Name                var</span>
@@ -222,40 +235,19 @@ The instructions there give a lot more detail.</p>
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-<h1 class="logo"><a href="../../../index.html">notes</a></h1>
-
-
-
-
-
-
-
-
-<h3>Navigation</h3>
-<ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../../../arm/index.html">arm</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../db/index.html">databases</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../dns/index.html">DNS stuff</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../elk/index.html">elk stack</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../openssh/index.html">OpenSSH</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="../../index.html">Operating Systems</a><ul class="current">
-<li class="toctree-l2 current"><a class="reference internal" href="../index.html">Linux</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../openbsd/index.html">OpenBSD</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../windows/index.html">Windows</a></li>
+  <h3><a href="../../../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">View current lvm info</a></li>
+<li><a class="reference internal" href="#create-a-partition">Create a partition:</a></li>
+<li><a class="reference internal" href="#create-a-physical-volume">Create a physical volume:</a></li>
+<li><a class="reference internal" href="#add-to-the-volume-group">Add to the volume group:</a></li>
+<li><a class="reference internal" href="#create-a-logical-volume">Create a logical volume:</a></li>
+<li><a class="reference internal" href="#format-and-mount">Format and Mount:</a></li>
+<li><a class="reference internal" href="#display-information-about-a-volume-group">Display information about a volume group:</a></li>
+<li><a class="reference internal" href="#alternatives">Alternatives:</a></li>
+<li><a class="reference internal" href="#display-logical-volumes">Display logical volumes:</a></li>
+<li><a class="reference internal" href="#more-specific-logical-volume-info">More specific logical volume info:</a></li>
 </ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="../../../ossec/index.html">OSSEC</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../rsyslogd/index.html">rsyslogd</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../securityonion/index.html">SecurityOnion</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../ssl/index.html">ssl</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../stupid_unix_tricks/index.html">Stupid Unix Tricks</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../tools/index.html">Tools</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../vendor_stuff/index.html">Vendor Stuff</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../misc/index.html">MISC</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../changelog.html">2018-08-10</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../changelog.html#id2">2018-08-28</a></li>
-</ul>
-
 <div class="relations">
 <h3>Related Topics</h3>
 <ul>
@@ -271,16 +263,21 @@ The instructions there give a lot more detail.</p>
   </ul></li>
 </ul>
 </div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../../_sources/operating_systems/linux/lvm/lvm.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
-    <div class="searchformwrapper">
     <form class="search" action="../../../search.html" method="get">
-      <input type="text" name="q" />
-      <input type="submit" value="Go" />
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
-    </div>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
