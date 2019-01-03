@@ -1,0 +1,265 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>logstash usage &#8212; notes 0.1 documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="top" title="notes 0.1 documentation" href="../../index.html" />
+    <link rel="up" title="logstash" href="index.html" />
+    <link rel="next" title="logstash patterns" href="patterns/index.html" />
+    <link rel="prev" title="Simple config testing:" href="testing.html" />
+   
+  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body role="document">
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="logstash-usage">
+<h1>logstash usage<a class="headerlink" href="#logstash-usage" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="command-line-options">
+<h2>Command line options:<a class="headerlink" href="#command-line-options" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">Usage:</span>
+<span class="go">    bin/logstash [OPTIONS]</span>
+
+<span class="go">Options:</span>
+<span class="go">    -n, --node.name NAME          Specify the name of this logstash instance, if no value is given</span>
+<span class="go">                                  it will default to the current hostname.</span>
+<span class="go">                                   (default: &quot;va-is-logstash0&quot;)</span>
+<span class="go">    -f, --path.config CONFIG_PATH Load the logstash config from a specific file</span>
+<span class="go">                                  or directory.  If a directory is given, all</span>
+<span class="go">                                  files in that directory will be concatenated</span>
+<span class="go">                                  in lexicographical order and then parsed as a</span>
+<span class="go">                                  single config file. You can also specify</span>
+<span class="go">                                  wildcards (globs) and any matched files will</span>
+<span class="go">                                  be loaded in the order described above.</span>
+<span class="go">    -e, --config.string CONFIG_STRING Use the given string as the configuration</span>
+<span class="go">                                  data. Same syntax as the config file. If no</span>
+<span class="go">                                  input is specified, then the following is</span>
+<span class="go">                                  used as the default input:</span>
+<span class="go">                                  &quot;input { stdin { type =&gt; stdin } }&quot;</span>
+<span class="go">                                  and if no output is specified, then the</span>
+<span class="go">                                  following is used as the default output:</span>
+<span class="go">                                  &quot;output { stdout { codec =&gt; rubydebug } }&quot;</span>
+<span class="go">                                  If you wish to use both defaults, please use</span>
+<span class="go">                                  the empty string for the &#39;-e&#39; flag.</span>
+<span class="go">                                   (default: nil)</span>
+<span class="go">    --field-reference-parser MODE Use the given MODE when parsing field</span>
+<span class="go">                                  references.</span>
+
+<span class="go">                                  The field reference parser is used to expand</span>
+<span class="go">                                  field references in your pipeline configs,</span>
+<span class="go">                                  and will be becoming more strict to better</span>
+<span class="go">                                  handle illegal and ambbiguous inputs in a</span>
+<span class="go">                                  future release of Logstash.</span>
+
+<span class="go">                                  Available MODEs are:</span>
+<span class="go">                                   - `LEGACY`: parse with the legacy parser,</span>
+<span class="go">                                     which is known to handle ambiguous- and</span>
+<span class="go">                                     illegal-syntax in surprising ways;</span>
+<span class="go">                                     warnings will not be emitted.</span>
+<span class="go">                                   - `COMPAT`: warn once for each distinct</span>
+<span class="go">                                     ambiguous- or illegal-syntax input, but</span>
+<span class="go">                                     continue to expand field references with</span>
+<span class="go">                                     the legacy parser.</span>
+<span class="go">                                   - `STRICT`: parse in a strict manner; when</span>
+<span class="go">                                     given ambiguous- or illegal-syntax input,</span>
+<span class="go">                                     raises a runtime exception that should</span>
+<span class="go">                                     be handled by the calling plugin.</span>
+
+<span class="go">                                   The MODE can also be set with</span>
+<span class="go">                                   `config.field_reference.parser`</span>
+
+<span class="go">                                   (default: &quot;COMPAT&quot;)</span>
+<span class="go">    --modules MODULES             Load Logstash modules.</span>
+<span class="go">                                  Modules can be defined using multiple instances</span>
+<span class="go">                                  &#39;--modules module1 --modules module2&#39;,</span>
+<span class="go">                                     or comma-separated syntax</span>
+<span class="go">                                  &#39;--modules=module1,module2&#39;</span>
+<span class="go">                                  Cannot be used in conjunction with &#39;-e&#39; or &#39;-f&#39;</span>
+<span class="go">                                  Use of &#39;--modules&#39; will override modules declared</span>
+<span class="go">                                  in the &#39;logstash.yml&#39; file.</span>
+<span class="go">    -M, --modules.variable MODULES_VARIABLE Load variables for module template.</span>
+<span class="go">                                  Multiple instances of &#39;-M&#39; or</span>
+<span class="go">                                  &#39;--modules.variable&#39; are supported.</span>
+<span class="go">                                  Ignored if &#39;--modules&#39; flag is not used.</span>
+<span class="go">                                  Should be in the format of</span>
+<span class="go">                                  &#39;-M &quot;MODULE_NAME.var.PLUGIN_TYPE.PLUGIN_NAME.VARIABLE_NAME=VALUE&quot;&#39;</span>
+<span class="go">                                  as in</span>
+<span class="go">                                  &#39;-M &quot;example.var.filter.mutate.fieldname=fieldvalue&quot;&#39;</span>
+<span class="go">    --setup                       Load index template into Elasticsearch, and saved searches,</span>
+<span class="go">                                  index-pattern, visualizations, and dashboards into Kibana when</span>
+<span class="go">                                  running modules.</span>
+<span class="go">                                   (default: false)</span>
+<span class="go">    --cloud.id CLOUD_ID           Sets the elasticsearch and kibana host settings for</span>
+<span class="go">                                  module connections in Elastic Cloud.</span>
+<span class="go">                                  Your Elastic Cloud User interface or the Cloud support</span>
+<span class="go">                                  team should provide this.</span>
+<span class="go">                                  Add an optional label prefix &#39;&lt;label&gt;:&#39; to help you</span>
+<span class="go">                                  identify multiple cloud.ids.</span>
+<span class="go">                                  e.g. &#39;staging:dXMtZWFzdC0xLmF3cy5mb3VuZC5pbyRub3RhcmVhbCRpZGVudGlmaWVy&#39;</span>
+<span class="go">    --cloud.auth CLOUD_AUTH       Sets the elasticsearch and kibana username and password</span>
+<span class="go">                                  for module connections in Elastic Cloud</span>
+<span class="go">                                  e.g. &#39;username:&lt;password&gt;&#39;</span>
+<span class="go">    --pipeline.id ID              Sets the ID of the pipeline.</span>
+<span class="go">                                   (default: &quot;main&quot;)</span>
+<span class="go">    -w, --pipeline.workers COUNT  Sets the number of pipeline workers to run.</span>
+<span class="go">                                   (default: 40)</span>
+<span class="go">    --java-execution              (Beta) Use new Java execution engine.</span>
+<span class="go">                                   (default: false)</span>
+<span class="go">    -b, --pipeline.batch.size SIZE Size of batches the pipeline is to work in.</span>
+<span class="go">                                   (default: 125)</span>
+<span class="go">    -u, --pipeline.batch.delay DELAY_IN_MS When creating pipeline batches, how long to wait while polling</span>
+<span class="go">                                  for the next event.</span>
+<span class="go">                                   (default: 50)</span>
+<span class="go">    --pipeline.unsafe_shutdown    Force logstash to exit during shutdown even</span>
+<span class="go">                                  if there are still inflight events in memory.</span>
+<span class="go">                                  By default, logstash will refuse to quit until all</span>
+<span class="go">                                  received events have been pushed to the outputs.</span>
+<span class="go">                                   (default: false)</span>
+<span class="go">    --path.data PATH              This should point to a writable directory. Logstash</span>
+<span class="go">                                  will use this directory whenever it needs to store</span>
+<span class="go">                                  data. Plugins will also have access to this path.</span>
+<span class="go">                                   (default: &quot;/mnt/data/logstash/data&quot;)</span>
+<span class="go">    -p, --path.plugins PATH       A path of where to find plugins. This flag</span>
+<span class="go">                                  can be given multiple times to include</span>
+<span class="go">                                  multiple paths. Plugins are expected to be</span>
+<span class="go">                                  in a specific directory hierarchy:</span>
+<span class="go">                                  &#39;PATH/logstash/TYPE/NAME.rb&#39; where TYPE is</span>
+<span class="go">                                  &#39;inputs&#39; &#39;filters&#39;, &#39;outputs&#39; or &#39;codecs&#39;</span>
+<span class="go">                                  and NAME is the name of the plugin.</span>
+<span class="go">                                   (default: [])</span>
+<span class="go">    -l, --path.logs PATH          Write logstash internal logs to the given</span>
+<span class="go">                                  file. Without this flag, logstash will emit</span>
+<span class="go">                                  logs to standard output.</span>
+<span class="go">                                   (default: &quot;/mnt/data/logstash/logs&quot;)</span>
+<span class="go">    --log.level LEVEL             Set the log level for logstash. Possible values are:</span>
+<span class="go">                                    - fatal</span>
+<span class="go">                                    - error</span>
+<span class="go">                                    - warn</span>
+<span class="go">                                    - info</span>
+<span class="go">                                    - debug</span>
+<span class="go">                                    - trace</span>
+<span class="go">                                   (default: &quot;info&quot;)</span>
+<span class="go">    --config.debug                Print the compiled config ruby code out as a debug log (you must also have --log.level=debug enabled).</span>
+<span class="go">                                  WARNING: This will include any &#39;password&#39; options passed to plugin configs as plaintext, and may result</span>
+<span class="go">                                  in plaintext passwords appearing in your logs!</span>
+<span class="go">                                   (default: false)</span>
+<span class="go">    -i, --interactive SHELL       Drop to shell instead of running as normal.</span>
+<span class="go">                                  Valid shells are &quot;irb&quot; and &quot;pry&quot;</span>
+<span class="go">    -V, --version                 Emit the version of logstash and its friends,</span>
+<span class="go">                                  then exit.</span>
+<span class="go">    -t, --config.test_and_exit    Check configuration for valid syntax and then exit.</span>
+<span class="go">                                   (default: false)</span>
+<span class="go">    -r, --config.reload.automatic Monitor configuration changes and reload</span>
+<span class="go">                                  whenever it is changed.</span>
+<span class="go">                                  NOTE: use SIGHUP to manually reload the config</span>
+<span class="go">                                   (default: false)</span>
+<span class="go">    --config.reload.interval RELOAD_INTERVAL How frequently to poll the configuration location</span>
+<span class="go">                                  for changes, in seconds.</span>
+<span class="go">                                   (default: 3000000000)</span>
+<span class="go">    --http.host HTTP_HOST         Web API binding host (default: &quot;127.0.0.1&quot;)</span>
+<span class="go">    --http.port HTTP_PORT         Web API http port (default: 9600..9700)</span>
+<span class="go">    --log.format FORMAT           Specify if Logstash should write its own logs in JSON form (one</span>
+<span class="go">                                  event per line) or in plain text (using Ruby&#39;s Object#inspect)</span>
+<span class="go">                                   (default: &quot;plain&quot;)</span>
+<span class="go">    --path.settings SETTINGS_DIR  Directory containing logstash.yml file. This can also be</span>
+<span class="go">                                  set through the LS_SETTINGS_DIR environment variable.</span>
+<span class="go">                                   (default: &quot;/mnt/data/logstash/config&quot;)</span>
+<span class="go">    --verbose                     Set the log level to info.</span>
+<span class="go">                                  DEPRECATED: use --log.level=info instead.</span>
+<span class="go">    --debug                       Set the log level to debug.</span>
+<span class="go">                                  DEPRECATED: use --log.level=debug instead.</span>
+<span class="go">    --quiet                       Set the log level to info.</span>
+<span class="go">                                  DEPRECATED: use --log.level=info instead.</span>
+<span class="go">    -h, --help                    print help</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">logstash usage</a><ul>
+<li><a class="reference internal" href="#command-line-options">Command line options:</a></li>
+</ul>
+</li>
+</ul>
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../index.html">Documentation overview</a><ul>
+  <li><a href="../index.html">elk stack</a><ul>
+  <li><a href="index.html">logstash</a><ul>
+      <li>Previous: <a href="testing.html" title="previous chapter">Simple config testing:</a></li>
+      <li>Next: <a href="patterns/index.html" title="next chapter">logstash patterns</a></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../_sources/elk/logstash/usage.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../../search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+        <!-- your html code here -->
+	<div class="footer">
+		<em>This information has a good chance of being wrong, inconsistent, out of date, or just bad. Use at your own risk.
+		Feel free to notify me of any issues though.</em>
+	</div>
+
+
+  </body>
+</html>

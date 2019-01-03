@@ -76,5 +76,13 @@ Run logstash.
    /opt/logstash/bin/logstash -f ./logstash.conf --verbose
 
 
+This is working with 6.5:
+^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: console
+
+   bin/logstash --path.config ./config/conf.d --path.settings ./config -t
+
+
 Observe output.
 

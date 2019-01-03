@@ -27,7 +27,7 @@
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="top" title="notes 0.1 documentation" href="../../index.html" />
     <link rel="up" title="logstash" href="index.html" />
-    <link rel="next" title="logstash patterns" href="patterns/index.html" />
+    <link rel="next" title="logstash usage" href="usage.html" />
     <link rel="prev" title="SSL with logstash and elasticsearch" href="ssl.html" />
    
   <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
@@ -110,6 +110,12 @@
 <div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">/opt/logstash/bin/logstash -f ./logstash.conf --verbose</span>
 </pre></div>
 </div>
+</div>
+<div class="section" id="this-is-working-with-6-5">
+<h1>This is working with 6.5:<a class="headerlink" href="#this-is-working-with-6-5" title="Permalink to this headline">¶</a></h1>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">bin/logstash --path.config ./config/conf.d --path.settings ./config -t</span>
+</pre></div>
+</div>
 <p>Observe output.</p>
 </div>
 
@@ -118,14 +124,20 @@
         </div>
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
-        <div class="sphinxsidebarwrapper"><div class="relations">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Simple config testing:</a></li>
+<li><a class="reference internal" href="#this-is-working-with-6-5">This is working with 6.5:</a></li>
+</ul>
+<div class="relations">
 <h3>Related Topics</h3>
 <ul>
   <li><a href="../../index.html">Documentation overview</a><ul>
   <li><a href="../index.html">elk stack</a><ul>
   <li><a href="index.html">logstash</a><ul>
       <li>Previous: <a href="ssl.html" title="previous chapter">SSL with logstash and elasticsearch</a></li>
-      <li>Next: <a href="patterns/index.html" title="next chapter">logstash patterns</a></li>
+      <li>Next: <a href="usage.html" title="next chapter">logstash usage</a></li>
   </ul></li>
   </ul></li>
   </ul></li>

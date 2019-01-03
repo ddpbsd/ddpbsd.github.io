@@ -10,3 +10,5 @@ Contents:
    :maxdepth: 2
 
    xauth
+   xrandr
+

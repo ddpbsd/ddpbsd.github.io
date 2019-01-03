@@ -35,3 +35,18 @@ Reboot a VM if vmtools is installed
 
    vim-cmd vmsvc/power.reboot 176
 
+List current tasks:
+^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: console
+
+   vim-cmd vimsvc/get.tasklist 112
+
+
+Get info for a task:
+^^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: console
+
+   vim-cmd vimsvc/task_info TASK_ID
+
