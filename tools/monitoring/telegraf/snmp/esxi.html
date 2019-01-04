@@ -1,0 +1,248 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>esxi &#8212; notes 0.1 documentation</title>
+    
+    <link rel="stylesheet" href="../../../../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../../',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../../_static/doctools.js"></script>
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+    <link rel="top" title="notes 0.1 documentation" href="../../../../index.html" />
+    <link rel="up" title="telegraf snmp" href="index.html" />
+    <link rel="next" title="osquery" href="../../../osquery/index.html" />
+    <link rel="prev" title="telegraf snmp" href="index.html" />
+   
+  <link rel="stylesheet" href="../../../../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body role="document">
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="esxi">
+<h1>esxi<a class="headerlink" href="#esxi" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="enabling-snmp-on-esxi-5-5">
+<h2>Enabling snmp on esxi 5.5:<a class="headerlink" href="#enabling-snmp-on-esxi-5-5" title="Permalink to this headline">¶</a></h2>
+<p>This is for version 2c.</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">esxcli system snmp set --communities STRING</span>
+<span class="go">esxcli system snmp set --port 161</span>
+<span class="go">esxcli system snmp set -e true</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="esxi-firewalling">
+<h2>esxi firewalling:<a class="headerlink" href="#esxi-firewalling" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">esxcli network firewall ruleset set --ruleset-id snmp --allowed-all false</span>
+<span class="go">esxcli network firewall ruleset allowedip add --ruleset-id snmp --ip-address IP_ADDRESS/MASK</span>
+<span class="go">esxcli network firewall ruleset set --ruleset-id snmp --enabled true</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="telegraf-configuration">
+<h2>telegraf configuration:<a class="headerlink" href="#telegraf-configuration" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">[[inputs.snmp]]</span>
+<span class="go">   agents = [ &quot;10.20.20.20:161&quot; ]</span>
+<span class="go">   timeout = &quot;5s&quot;</span>
+<span class="go">   retries = 3</span>
+<span class="go">   version = 2</span>
+<span class="go">   community = &quot;public&quot;</span>
+<span class="go">   max_repetitions = 10</span>
+<span class="go">   name = &quot;system&quot;</span>
+<span class="go">   [[inputs.snmp.field]]</span>
+<span class="go">     name = &quot;esxi-uptime&quot;</span>
+<span class="go">     oid = &quot;iso.3.6.1.2.1.25.1.1.0&quot;</span>
+<span class="go">   [[inputs.snmp.field]]</span>
+<span class="go">     name = &quot;esxi-cpuload1&quot;</span>
+<span class="go">     oid = &quot;.1.3.6.1.2.1.25.3.3.1.2.1&quot;</span>
+<span class="go">   [[inputs.snmp.field]]</span>
+<span class="go">     name = &quot;esxi-cpuload2&quot;</span>
+<span class="go">     oid = &quot;.1.3.6.1.2.1.25.3.3.1.2.2&quot;</span>
+<span class="go">   [[inputs.snmp.field]]</span>
+<span class="go">     name = &quot;esxi-cpuload3&quot;</span>
+<span class="go">     oid = &quot;.1.3.6.1.2.1.25.3.3.1.2.3&quot;</span>
+<span class="go">   [[inputs.snmp.field]]</span>
+<span class="go">     name = &quot;esxi-cpuload4&quot;</span>
+<span class="go">     oid = &quot;.1.3.6.1.2.1.25.3.3.1.2.4&quot;</span>
+<span class="go">   [[inputs.snmp.field]]</span>
+<span class="go">     name = &quot;esxi-cpuload5&quot;</span>
+<span class="go">     oid = &quot;.1.3.6.1.2.1.25.3.3.1.2.5&quot;</span>
+<span class="go">   [[inputs.snmp.field]]</span>
+<span class="go">     name = &quot;esxi-cpuload6&quot;</span>
+<span class="go">     oid = &quot;.1.3.6.1.2.1.25.3.3.1.2.6&quot;</span>
+<span class="go">   [[inputs.snmp.field]]</span>
+<span class="go">     name = &quot;esxi-cpuload7&quot;</span>
+<span class="go">     oid = &quot;.1.3.6.1.2.1.25.3.3.1.2.7&quot;</span>
+<span class="go">   [[inputs.snmp.field]]</span>
+<span class="go">     name = &quot;esxi-cpuload8&quot;</span>
+<span class="go">     oid = &quot;.1.3.6.1.2.1.25.3.3.1.2.8&quot;</span>
+<span class="go">   [[inputs.snmp.field]]</span>
+<span class="go">     name = &quot;esxi-cpuload9&quot;</span>
+<span class="go">     oid = &quot;.1.3.6.1.2.1.25.3.3.1.2.9&quot;</span>
+<span class="go">   [[inputs.snmp.field]]</span>
+<span class="go">     name = &quot;esxi-cpuload10&quot;</span>
+<span class="go">     oid = &quot;.1.3.6.1.2.1.25.3.3.1.2.10&quot;</span>
+<span class="go">   [[inputs.snmp.field]]</span>
+<span class="go">     name = &quot;esxi-cpuload11&quot;</span>
+<span class="go">     oid = &quot;.1.3.6.1.2.1.25.3.3.1.2.11&quot;</span>
+<span class="go">   [[inputs.snmp.field]]</span>
+<span class="go">     name = &quot;esxi-cpuload12&quot;</span>
+<span class="go">     oid = &quot;.1.3.6.1.2.1.25.3.3.1.2.12&quot;</span>
+<span class="go">   [[inputs.snmp.field]]</span>
+<span class="go">     name = &quot;esxi-cpuload13&quot;</span>
+<span class="go">     oid = &quot;.1.3.6.1.2.1.25.3.3.1.2.13&quot;</span>
+<span class="go">   [[inputs.snmp.field]]</span>
+<span class="go">     name = &quot;esxi-cpuload14&quot;</span>
+<span class="go">     oid = &quot;.1.3.6.1.2.1.25.3.3.1.2.14&quot;</span>
+<span class="go">   [[inputs.snmp.field]]</span>
+<span class="go">     name = &quot;esxi-cpuload15&quot;</span>
+<span class="go">     oid = &quot;.1.3.6.1.2.1.25.3.3.1.2.15&quot;</span>
+<span class="go">   [[inputs.snmp.field]]</span>
+<span class="go">     name = &quot;esxi-cpuload16&quot;</span>
+<span class="go">     oid = &quot;.1.3.6.1.2.1.25.3.3.1.2.16&quot;</span>
+<span class="go">   [[inputs.snmp.field]]</span>
+<span class="go">     name = &quot;esxi-cpuload17&quot;</span>
+<span class="go">     oid = &quot;.1.3.6.1.2.1.25.3.3.1.2.17&quot;</span>
+<span class="go">   [[inputs.snmp.field]]</span>
+<span class="go">     name = &quot;esxi-cpuload18&quot;</span>
+<span class="go">     oid = &quot;.1.3.6.1.2.1.25.3.3.1.2.18&quot;</span>
+<span class="go">   [[inputs.snmp.field]]</span>
+<span class="go">     name = &quot;esxi-cpuload19&quot;</span>
+<span class="go">     oid = &quot;.1.3.6.1.2.1.25.3.3.1.2.19&quot;</span>
+<span class="go">   [[inputs.snmp.field]]</span>
+<span class="go">     name = &quot;esxi-cpuload20&quot;</span>
+<span class="go">     oid = &quot;.1.3.6.1.2.1.25.3.3.1.2.20&quot;</span>
+<span class="go">   [[inputs.snmp.field]]</span>
+<span class="go">     name = &quot;esxi-cpuload21&quot;</span>
+<span class="go">     oid = &quot;.1.3.6.1.2.1.25.3.3.1.2.21&quot;</span>
+<span class="go">   [[inputs.snmp.field]]</span>
+<span class="go">     name = &quot;esxi-cpuload22&quot;</span>
+<span class="go">     oid = &quot;.1.3.6.1.2.1.25.3.3.1.2.22&quot;</span>
+<span class="go">   [[inputs.snmp.field]]</span>
+<span class="go">     name = &quot;esxi-cpuload23&quot;</span>
+<span class="go">     oid = &quot;.1.3.6.1.2.1.25.3.3.1.2.23&quot;</span>
+<span class="go">   [[inputs.snmp.field]]</span>
+<span class="go">     name = &quot;esxi-cpuload24&quot;</span>
+<span class="go">     oid = &quot;.1.3.6.1.2.1.25.3.3.1.2.24&quot;</span>
+<span class="go">   [[inputs.snmp.field]]</span>
+<span class="go">     name = &quot;esxi-cpuload25&quot;</span>
+<span class="go">     oid = &quot;.1.3.6.1.2.1.25.3.3.1.2.25&quot;</span>
+<span class="go">   [[inputs.snmp.field]]</span>
+<span class="go">     name = &quot;esxi-cpuload26&quot;</span>
+<span class="go">     oid = &quot;.1.3.6.1.2.1.25.3.3.1.2.26&quot;</span>
+<span class="go">   [[inputs.snmp.field]]</span>
+<span class="go">     name = &quot;esxi-cpuload27&quot;</span>
+<span class="go">     oid = &quot;.1.3.6.1.2.1.25.3.3.1.2.27&quot;</span>
+<span class="go">   [[inputs.snmp.field]]</span>
+<span class="go">     name = &quot;esxi-cpuload28&quot;</span>
+<span class="go">     oid = &quot;.1.3.6.1.2.1.25.3.3.1.2.28&quot;</span>
+<span class="go">   [[inputs.snmp.field]]</span>
+<span class="go">     name = &quot;esxi-cpuload29&quot;</span>
+<span class="go">     oid = &quot;.1.3.6.1.2.1.25.3.3.1.2.29&quot;</span>
+<span class="go">   [[inputs.snmp.field]]</span>
+<span class="go">     name = &quot;esxi-cpuload30&quot;</span>
+<span class="go">     oid = &quot;.1.3.6.1.2.1.25.3.3.1.2.30&quot;</span>
+<span class="go">   [[inputs.snmp.field]]</span>
+<span class="go">     name = &quot;esxi-cpuload31&quot;</span>
+<span class="go">     oid = &quot;.1.3.6.1.2.1.25.3.3.1.2.31&quot;</span>
+<span class="go">   [[inputs.snmp.field]]</span>
+<span class="go">     name = &quot;esxi-cpuload32&quot;</span>
+<span class="go">     oid = &quot;.1.3.6.1.2.1.25.3.3.1.2.32&quot;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="troubleshooting">
+<h2>Troubleshooting:<a class="headerlink" href="#troubleshooting" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="https://kb.vmware.com/s/article/2042772?lang=en_US">This</a> knowledge base
+article helped with a few mischevious systems.</p>
+<p>A lot of information came from <a class="reference external" href="https://viclab.se/combining-influxdb-telegraf-and-grafana-for-esxi-monitoring-2/">here</a></p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../../../../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">esxi</a><ul>
+<li><a class="reference internal" href="#enabling-snmp-on-esxi-5-5">Enabling snmp on esxi 5.5:</a></li>
+<li><a class="reference internal" href="#esxi-firewalling">esxi firewalling:</a></li>
+<li><a class="reference internal" href="#telegraf-configuration">telegraf configuration:</a></li>
+<li><a class="reference internal" href="#troubleshooting">Troubleshooting:</a></li>
+</ul>
+</li>
+</ul>
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../../../index.html">Documentation overview</a><ul>
+  <li><a href="../../../index.html">Tools</a><ul>
+  <li><a href="../../index.html">Monitoring Tools</a><ul>
+  <li><a href="../index.html">telegraf</a><ul>
+  <li><a href="index.html">telegraf snmp</a><ul>
+      <li>Previous: <a href="index.html" title="previous chapter">telegraf snmp</a></li>
+      <li>Next: <a href="../../../osquery/index.html" title="next chapter">osquery</a></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../../../_sources/tools/monitoring/telegraf/snmp/esxi.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../../search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+        <!-- your html code here -->
+	<div class="footer">
+		<em>This information has a good chance of being wrong, inconsistent, out of date, or just bad. Use at your own risk.
+		Feel free to notify me of any issues though.</em>
+	</div>
+
+
+  </body>
+</html>
