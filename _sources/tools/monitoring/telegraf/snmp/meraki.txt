@@ -1,0 +1,77 @@
+meraki
+======
+
+
+Sample config:
+^^^^^^^^^^^^^^
+
+.. code-block:: console
+
+   [[inputs.snmp]]
+     agents = [ "meraki:161" ]
+     timeout = "5s"
+     retries = 3
+     version = 2
+     community = "public"
+     max_repetitions = 10
+
+     name = "system"
+     [[inputs.snmp.field]]
+       name = "hostname"
+       oid = "SNMPv2-MIB::sysName"
+       is_tag = true
+     [[inputs.snmp.field]]
+       name = "uptime"
+       oid = "DISMAN-EXPRESSION-MIB::sysUpTimeInstance"
+     [[inputs.snmp.table]]
+       name = "interface"
+       inherit_tags = [ "hostname" ]
+       oid = "IF-MIB::ifTable"
+     [[inputs.snmp.table.field]]
+       name = "ifDescr"
+       oid = "IF-MIB::ifDescr"
+       is_tag = true
+     [[inputs.snmp.table]]
+       name = "interface"
+       inherit_tags = [ "hostname" ]
+       oid = "IF-MIB::ifXTable"
+       [[inputs.snmp.table.field]]
+         name = "ifDescr"
+         oid = "IF-MIB::ifDescr"
+         is_tag = true
+     [[inputs.snmp.field]]
+       name = "ifAdmin"
+       oid = "IF-MIB::ifAdminStatus"
+     [[inputs.snmp.field]]
+       name = "ifOper"
+       oid = "IF-MIB::ifOperStatus"
+     [[inputs.snmp.field]]
+       name = "ifInOctets"
+       oid = "IF-MIB::ifInOctets"
+     [[inputs.snmp.field]]
+       name = "ifOutOctets"
+       oid = "IF-MIB::ifOutOctets"
+     [[inputs.snmp.field]]
+       name = "ifInErrors"
+       oid = "IF-MIB::ifInErrors"
+     [[inputs.snmp.field]]
+       name = "ifOutErrors"
+       oid = "IF-MIB::ifOutErrors"
+     [[inputs.snmp.field]]
+       name = "ifHCInOctets"
+       oid = "IF-MIB::ifHCInOctets"
+     [[inputs.snmp.field]]
+       name = "ifHCOutOctets"
+       oid = "IF-MIB::ifHCOutOctets"
+     [[inputs.snmp.field]]
+       name = "ifHCInUcastPkts"
+       oid = "IF-MIB::ifHCInUcastPkts"
+     [[inputs.snmp.field]]
+       name = "ifHCOutUcastPkts"
+       oid = "IF-MIB::ifHCOutUcastPkts"
+     [[inputs.snmp.field]]
+       name = "ifHCInMulticastPkts"
+       oid = "IF-MIB::ifHCInMulticastPkts"
+     [[inputs.snmp.field]]
+       name = "ifHCOutMulticastPkts"
+       oid = "IF-MIB::ifHCOutMulticastPkts"
