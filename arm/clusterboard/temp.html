@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Pine64 Clusterboard &#8212; notes 0.1 documentation</title>
+    <title>Temperature: &#8212; notes 0.1 documentation</title>
     
     <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
@@ -26,9 +26,9 @@
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="top" title="notes 0.1 documentation" href="../../index.html" />
-    <link rel="up" title="arm" href="../index.html" />
-    <link rel="next" title="Possibly turn off the heartbeat led:" href="leds.html" />
-    <link rel="prev" title="Random Tips" href="../bbb/tips.html" />
+    <link rel="up" title="Pine64 Clusterboard" href="index.html" />
+    <link rel="next" title="Espressobin" href="../espressobin/index.html" />
+    <link rel="prev" title="Pinouts:" href="pins.html" />
    
   <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
   
@@ -44,21 +44,12 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="pine64-clusterboard">
-<h1>Pine64 Clusterboard<a class="headerlink" href="#pine64-clusterboard" title="Permalink to this headline">¶</a></h1>
-<p>Future home of Clusterboard notes.</p>
-<p>Contents:</p>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="leds.html">Possibly turn off the heartbeat led:</a></li>
-<li class="toctree-l1"><a class="reference internal" href="openbsd.html">OpenBSD</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="openbsd.html#load-the-dtb">Load the dtb:</a></li>
-<li class="toctree-l2"><a class="reference internal" href="openbsd.html#random">Random:</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="pins.html">Pinouts:</a></li>
-<li class="toctree-l1"><a class="reference internal" href="temp.html">Temperature:</a></li>
-</ul>
+  <div class="section" id="temperature">
+<h1>Temperature:<a class="headerlink" href="#temperature" title="Permalink to this headline">¶</a></h1>
+<p>Don&#8217;t trust lm-sensors.</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">root@sopine4:/etc/apt/sources.list.d#</span> cat /sys/devices/virtual/thermal/thermal_zone0/temp
+<span class="go">46</span>
+</pre></div>
 </div>
 </div>
 
@@ -72,8 +63,10 @@
 <ul>
   <li><a href="../../index.html">Documentation overview</a><ul>
   <li><a href="../index.html">arm</a><ul>
-      <li>Previous: <a href="../bbb/tips.html" title="previous chapter">Random Tips</a></li>
-      <li>Next: <a href="leds.html" title="next chapter">Possibly turn off the heartbeat led:</a></li>
+  <li><a href="index.html">Pine64 Clusterboard</a><ul>
+      <li>Previous: <a href="pins.html" title="previous chapter">Pinouts:</a></li>
+      <li>Next: <a href="../espressobin/index.html" title="next chapter">Espressobin</a></li>
+  </ul></li>
   </ul></li>
   </ul></li>
 </ul>
@@ -81,7 +74,7 @@
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
-      <li><a href="../../_sources/arm/clusterboard/index.txt"
+      <li><a href="../../_sources/arm/clusterboard/temp.txt"
             rel="nofollow">Show Source</a></li>
     </ul>
    </div>

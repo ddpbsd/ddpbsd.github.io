@@ -1,6 +1,12 @@
 .. _misc_mynet_computers_buzzell:
 
 
+buzzell:
+^^^^^^^^
+
+Switched from Ubuntu to HardenedBSD. Docker stuff is useless right now.
+
+
 Run the gogs docker container:
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 

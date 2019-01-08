@@ -9,6 +9,7 @@ Contents:
    :maxdepth: 2
 
    ansible/index
+   freeradius/index
    git/index
    gpg/index
    grafana/index

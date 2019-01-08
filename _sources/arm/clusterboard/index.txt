@@ -10,5 +10,6 @@ Contents:
 
    leds
    openbsd
-   pins   
+   pins
+   temp
 

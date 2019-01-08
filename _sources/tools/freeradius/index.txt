@@ -1,0 +1,11 @@
+.. _tools_freeradius:
+
+FreeRadius
+==========
+
+Contents:
+
+.. toctree::
+   :maxdepth: 2
+
+   auth

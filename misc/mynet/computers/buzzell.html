@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Run the gogs docker container: &#8212; notes 0.1 documentation</title>
+    <title>buzzell: &#8212; notes 0.1 documentation</title>
     
     <link rel="stylesheet" href="../../../_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
@@ -44,8 +44,12 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="run-the-gogs-docker-container">
-<span id="misc-mynet-computers-buzzell"></span><h1>Run the gogs docker container:<a class="headerlink" href="#run-the-gogs-docker-container" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="buzzell">
+<span id="misc-mynet-computers-buzzell"></span><h1>buzzell:<a class="headerlink" href="#buzzell" title="Permalink to this headline">¶</a></h1>
+<p>Switched from Ubuntu to HardenedBSD. Docker stuff is useless right now.</p>
+</div>
+<div class="section" id="run-the-gogs-docker-container">
+<h1>Run the gogs docker container:<a class="headerlink" href="#run-the-gogs-docker-container" title="Permalink to this headline">¶</a></h1>
 <p>After an update of the image, the container should be run again from scratch.</p>
 <div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">docker run --name=gogs -p 10022:22 -p 10080:3000 -v /var/gogs:/data gogs/gogs</span>
 </pre></div>
@@ -83,7 +87,8 @@
         <div class="sphinxsidebarwrapper">
   <h3><a href="../../../index.html">Table Of Contents</a></h3>
   <ul>
-<li><a class="reference internal" href="#">Run the gogs docker container:</a></li>
+<li><a class="reference internal" href="#">buzzell:</a></li>
+<li><a class="reference internal" href="#run-the-gogs-docker-container">Run the gogs docker container:</a></li>
 <li><a class="reference internal" href="#build-the-nmap-image">Build the nmap image:</a></li>
 <li><a class="reference internal" href="#run-the-nmap-container">Run the nmap container:</a></li>
 <li><a class="reference internal" href="#run-the-influxdb-container">Run the influxdb container:</a></li>
