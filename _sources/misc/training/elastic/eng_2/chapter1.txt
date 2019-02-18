@@ -1,0 +1,70 @@
+
+
+Max # of docs in a shard is `Integer.MAX_VALUE - 128` What is `Integer.MAX_VALUE`?
+
+Documents are kept in a buffer until it is flushed.
+
+`refresh_interval` under `index/_settings` can be adjusted to flush more or less frequently.
+
+.. code-block:: console
+
+   PUT my_index/_settings
+   {
+     "refresh_interval": "30s"
+   }
+
+
+Wait for a lucene flush before the succeeded response goes back:
+
+.. code-block:: console
+
+   PUT my_index/_doc/102/?refresh=wait_for
+   {
+     stuff
+   }
+
+
+A shard is a collection of segments. Don't want too many segments.
+Each segment is a fully independent index.
+They are immutable, and can't be changed. Deleting them just marks them as deleted.
+
+
+BKD trees
+
+single and multi-dimensional numerics.
+
+
+normalization factors
+whoops, wasn't paying attention
+
+doc_values
+Every field has 2 inverted indexes! 1 for query, 1 for aggregation.
+
+
+Segments can be merged.
+This is an automated thing on the shard level.
+merges will get rid of "deleted" segments.
+6.5+ a single segment can be merged with itself.
+
+Force merge API
+Just in case you know better than elasticsearch/lucene
+
+.. code-block:: console
+
+   POST blogs/_forcemerge
+
+Try not to do this. It seems like a bad idea to do it manually.
+
+ES indexing
+segments are fsync'd to disk during a lucene commit
+transaction log tracks stuff that isn't written to disk.
+
+
+Segments store: inverted index, list of fields, term frequency, proximity, field values, deletes, doc values,  and a bunch of other stuff
+
+
+
+
+
+
+

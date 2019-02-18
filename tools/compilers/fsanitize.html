@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>dns &#8212; notes 0.1 documentation</title>
+    <title>-fsanitize &#8212; notes 0.1 documentation</title>
     
     <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
@@ -26,9 +26,6 @@
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="top" title="notes 0.1 documentation" href="../../index.html" />
-    <link rel="up" title="Tools" href="../index.html" />
-    <link rel="next" title="dns" href="nsd/index.html" />
-    <link rel="prev" title="Get setup output:" href="../ansible/ansible-cmdb.html" />
    
   <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
   
@@ -44,18 +41,14 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="dns">
-<span id="tools-dns"></span><h1>dns<a class="headerlink" href="#dns" title="Permalink to this headline">¶</a></h1>
-<p>Contents:</p>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="nsd/index.html">dns</a><ul class="simple">
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="unbound/index.html">dns</a><ul class="simple">
-</ul>
-</li>
-</ul>
+  <div class="section" id="fsanitize">
+<h1>-fsanitize<a class="headerlink" href="#fsanitize" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="some-memory-stuff">
+<h2>Some memory stuff:<a class="headerlink" href="#some-memory-stuff" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="https://fuzzing-project.org/tutorial-cflags.html">More info</a></p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">-fsanitize=undefined -fsanitize=address -fno-omit-frame-pointer</span>
+</pre></div>
+</div>
 </div>
 </div>
 
@@ -64,21 +57,25 @@
         </div>
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
-        <div class="sphinxsidebarwrapper"><div class="relations">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">-fsanitize</a><ul>
+<li><a class="reference internal" href="#some-memory-stuff">Some memory stuff:</a></li>
+</ul>
+</li>
+</ul>
+<div class="relations">
 <h3>Related Topics</h3>
 <ul>
   <li><a href="../../index.html">Documentation overview</a><ul>
-  <li><a href="../index.html">Tools</a><ul>
-      <li>Previous: <a href="../ansible/ansible-cmdb.html" title="previous chapter">Get setup output:</a></li>
-      <li>Next: <a href="nsd/index.html" title="next chapter">dns</a></li>
-  </ul></li>
   </ul></li>
 </ul>
 </div>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
-      <li><a href="../../_sources/tools/dns/index.txt"
+      <li><a href="../../_sources/tools/compilers/fsanitize.txt"
             rel="nofollow">Show Source</a></li>
     </ul>
    </div>

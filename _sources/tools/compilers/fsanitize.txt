@@ -1,0 +1,13 @@
+
+-fsanitize
+==========
+
+Some memory stuff:
+^^^^^^^^^^^^^^^^^^
+
+`More info <https://fuzzing-project.org/tutorial-cflags.html>`_
+
+.. code-block:: console
+
+   -fsanitize=undefined -fsanitize=address -fno-omit-frame-pointer 
+

@@ -8,7 +8,9 @@ Set the prefix key to ``o``:
 
 .. code-block:: console
 
+   unbind C-b
    set-option -g prefix C-c
+   bind-key C-c send-prefix
 
 
 Resize a pane:
