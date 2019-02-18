@@ -1,6 +1,6 @@
-.. _tools_dns:
+.. _tools_dns_nsd:
 
-dns
+nsd
 ===
 
 Contents:
@@ -8,6 +8,4 @@ Contents:
 .. toctree::
    :maxdepth: 2
 
-   nsd/index
-   unbound/index
 

@@ -14,5 +14,5 @@ Contents:
    chicken
    creepypastas
    podcasts
-   restaurants
+   restaurants/index
 
