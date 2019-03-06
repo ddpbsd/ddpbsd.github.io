@@ -9,6 +9,7 @@ Contents:
    active_directory/index.rst
    cheatsheets
    powershell/index
+   sid_stuff
    smb
    sysmon   
 

@@ -8,3 +8,14 @@ The `grok <https://www.elastic.co/guide/en/logstash/current/plugins-filters-grok
 makes sense to me.  
 
 
+
+optional fields:
+^^^^^^^^^^^^^^^^
+
+.. code-block:: console
+
+
+  (stuff=%{WORD:value})?
+
+
+

@@ -1,0 +1,10 @@
+Beats
+=====
+
+Contents:
+
+.. toctree::
+   :maxdepth: 2
+
+   filebeat/index
+
