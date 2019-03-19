@@ -13,7 +13,7 @@ Error in logstash 6.4:
 
 Uninstall the plugin:
 
-.. code-block:: ocnsole
+.. code-block:: console
 
    /usr/share/logstash/bin/logstash-plugin uninstall logstash-output-kafka
 
