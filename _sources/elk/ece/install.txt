@@ -28,7 +28,7 @@ Make sure `docker-engine` is not updated:
 
 See the ubuntu section for more information.
 
-.. code-block:: cosnole
+.. code-block:: console
 
    echo "docker-engine hold" | dpkg --set-selections
 

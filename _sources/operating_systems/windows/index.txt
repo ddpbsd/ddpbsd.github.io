@@ -11,5 +11,6 @@ Contents:
    powershell/index
    sid_stuff
    smb
-   sysmon   
+   sysmon
+   windows_credential_mgr.rst
 
