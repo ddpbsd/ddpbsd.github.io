@@ -31,7 +31,6 @@ Contents:
    tools/index
    vendor_stuff/index
    misc/index
-   changelog
 
 
 
