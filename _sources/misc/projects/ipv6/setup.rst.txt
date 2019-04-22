@@ -1,0 +1,18 @@
+firewall
+========
+
+Make sure the firewall isn't blocking everything.
+
+extif:
+^^^^^^
+
+`slaacd` - Get router advertisements from the isp
+
+`dhcp6c` - Get some IPs for the other systems
+
+
+intif:
+^^^^^^
+
+`rad` - distribute IPs to the other systems
+

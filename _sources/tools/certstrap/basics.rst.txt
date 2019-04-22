@@ -1,0 +1,27 @@
+
+Init CA:
+^^^^^^^^
+
+`todo`
+
+CA certificate to load on clients:
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+`todo`
+
+
+Create a request:
+^^^^^^^^^^^^^^^^^
+
+.. code-block:: console
+
+   certstrap request-cert --common-name host.example.com
+
+Sign a request:
+^^^^^^^^^^^^^^^
+
+.. code-block:: console
+
+   certstrap sign host --CA example.com
+
+

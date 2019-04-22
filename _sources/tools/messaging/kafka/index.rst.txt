@@ -1,0 +1,14 @@
+.. tools_messaging_kafka:
+
+
+
+Kafka
+=====
+
+
+
+Questions:
+^^^^^^^^^^
+
+Does a Kafka cluster require a shared virtual IP?
+

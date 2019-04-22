@@ -1,0 +1,9 @@
+
+
+Enable the HDMI monitor above my laptop:
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: console
+
+   xrandr --output HDMI-2 --auto --rotate normal --above eDP-1
+

@@ -1,0 +1,10 @@
+Temperature:
+^^^^^^^^^^^^
+
+Don't trust lm-sensors.
+
+.. code-block:: console
+
+   root@sopine4:/etc/apt/sources.list.d# cat /sys/devices/virtual/thermal/thermal_zone0/temp
+   46
+

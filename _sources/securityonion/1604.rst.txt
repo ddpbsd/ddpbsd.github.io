@@ -1,0 +1,69 @@
+Security Onion 16.04
+====================
+
+14.x wasn't complicated enough, let's add docker!
+
+I assume most of the bro stuff is the same.
+Elsa doesn't exist anymore (yay!), but we get the elk stack instead.
+
+
+Docker:
+^^^^^^^
+
+docker images:
+
++==================+============================+======================+
+|    Name          | What do?                   |      Link            |
++==================+============================+======================+
+| so-curator       | Helps manage elasticsearch | `el-curator`_        |
++------------------+----------------------------+----------------------+
+| so-elastalert    | Creates alerts?            | `yelp-elastalert`_   |
++------------------+----------------------------+----------------------+
+| so-kibana        | Kibana                     | `el-kibana`_         |
++------------------+----------------------------+----------------------+
+| so-logstash      | logstash                   | `el-logstash`_       |
++------------------+----------------------------+----------------------+
+| so-elasticsearch | elasticsearch              | `el-elasticsearch`_  |
++------------------+----------------------------+----------------------+
+
+.. _el-curator: https://www.elastic.co/guide/en/elasticsearch/client/curator/current/about.html
+.. _yelp-elastalert: https://github.com/Yelp/elastalert
+.. _el-elasticsearch: https://www.elastic.co/products/elasticsearch
+.. _el-kibana: https://www.elastic.co/products/kibana
+.. _el-logstash: https://www.elastic.co/products/logstash
+
+OSSEC:
+^^^^^^
+
+Nope! Now it's `Wazuh`_!
+Another complication of simpler times.
+
+
+.. _Wazuh: https://wazuh.com/
+
+
+
+sostat:
+^^^^^^^
+
+The output got longer. Bigger is better, amirite?
+
+sostat - Cross Cluster Search:
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+The meat and potatoes (from an admin perspective, instead of an analyst perspective I guess?) is
+the sensor status portion of the script. It's at the end. This is good because it doesn't scroll
+off the screen in the first 20 seconds of output. It's also bad because it takes forever to see 
+it.
+
+It basically queries elasticsearch `_cluster/settings` and parses the output. Then attempts to 
+connect to the hosts with `nc` and determines whether it can connect or not.
+
+`/usr/sbin/so-crossclustercheck` uses `curl` to query elasticsearch. `jq` is used to parse the 
+json. There's more magic in there, but that should be enough for now. Copy and pasting the 14 
+lines from `sostat` give the appropriate output, so now I have that.
+
+
+
+
+

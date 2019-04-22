@@ -1,0 +1,9 @@
+.. _operating_systems_openbsd_install:
+
+
+Create usb image on Windows:
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Use `win32 disk imager <http://sourceforge.net/projects/win32diskimager/>`_
+to burn one of the `.fs` images to a usb disk.
+

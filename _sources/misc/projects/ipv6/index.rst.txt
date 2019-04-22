@@ -1,0 +1,12 @@
+IPv6
+====
+
+Trying to learn some IPv6.
+
+Contents:
+
+.. toctree::
+   :maxdepth: 2
+
+   setup   
+
