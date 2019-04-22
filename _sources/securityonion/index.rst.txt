@@ -1,6 +1,11 @@
 SecurityOnion
 =============
 
+.. notes::
+
+   Most of these notes will be about Securityonion 14.04.
+   I'm not sure how applicable all of it is to the current version.
+
 General securityonion information I don't want to have to rediscover.
 
 

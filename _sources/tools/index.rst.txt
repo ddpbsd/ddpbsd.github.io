@@ -22,9 +22,9 @@ Contents:
    osquery/index
    perl/index
    su
-   tableau/tableau
    tcpdump/index
    tmux/index
    virtualization/index
    x11/index
+   retired/index
 

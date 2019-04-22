@@ -1,6 +1,9 @@
 moloch
 ======
 
+.. warning::
+
+   I have not looked at moloch in ages.
 
 https://github.com/aol/moloch
 

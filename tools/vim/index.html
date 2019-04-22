@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>moloch &#8212; notes 0.1 documentation</title>
+    <title>vim &#8212; notes 0.1 documentation</title>
     
     <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
@@ -26,8 +26,6 @@
     <script type="text/javascript" src="../../_static/doctools.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Run capture:" href="run.html" />
-    <link rel="prev" title="Kafka" href="../messaging/kafka/index.html" />
    
   <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
   
@@ -45,18 +43,25 @@
 
           <div class="body" role="main">
             
-  <div class="section" id="moloch">
-<h1>moloch<a class="headerlink" href="#moloch" title="Permalink to this headline">¶</a></h1>
-<div class="admonition warning">
-<p class="first admonition-title">Warning</p>
-<p class="last">I have not looked at moloch in ages.</p>
+  <div class="section" id="vim">
+<span id="misc-vim"></span><h1>vim<a class="headerlink" href="#vim" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="tabs-as-spaces">
+<h2>tabs as spaces<a class="headerlink" href="#tabs-as-spaces" title="Permalink to this headline">¶</a></h2>
+<p>In the <code class="docutils literal"><span class="pre">.vimrc</span></code> file:</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">filetype plugin indent on</span>
+<span class="go">&quot; show existing tab with 4 spaces width</span>
+<span class="go">set tabstop=4</span>
+<span class="go">&quot; when indenting with &#39;&gt;&#39;, use 4 spaces width</span>
+<span class="go">set shiftwidth=4</span>
+<span class="go">&quot; On pressing tab, insert 4 spaces</span>
+<span class="go">set expandtab</span>
+</pre></div>
 </div>
-<p><a class="reference external" href="https://github.com/aol/moloch">https://github.com/aol/moloch</a></p>
-<p>Contents:</p>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="run.html">Run capture:</a></li>
-</ul>
+<p>In <code class="docutils literal"><span class="pre">vim</span></code>:</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">:set tabstop=4</span>
+<span class="go">:set expandtab</span>
+</pre></div>
+</div>
 </div>
 </div>
 
@@ -66,21 +71,25 @@
         </div>
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
-        <div class="sphinxsidebarwrapper"><div class="relations">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">vim</a><ul>
+<li><a class="reference internal" href="#tabs-as-spaces">tabs as spaces</a></li>
+</ul>
+</li>
+</ul>
+<div class="relations">
 <h3>Related Topics</h3>
 <ul>
   <li><a href="../../index.html">Documentation overview</a><ul>
-  <li><a href="../index.html">Tools</a><ul>
-      <li>Previous: <a href="../messaging/kafka/index.html" title="previous chapter">Kafka</a></li>
-      <li>Next: <a href="run.html" title="next chapter">Run capture:</a></li>
-  </ul></li>
   </ul></li>
 </ul>
 </div>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
-      <li><a href="../../_sources/tools/moloch/index.rst.txt"
+      <li><a href="../../_sources/tools/vim/index.rst.txt"
             rel="nofollow">Show Source</a></li>
     </ul>
    </div>
