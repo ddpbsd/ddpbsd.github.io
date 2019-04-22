@@ -8,9 +8,12 @@ Contents:
 
    config
    grok
+   kv
+   ssl
    testing
+   usage
 
    patterns/index
    examples/index
-   
+   errors/index
 

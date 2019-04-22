@@ -8,7 +8,9 @@ Set the prefix key to ``o``:
 
 .. code-block:: console
 
+   unbind C-b
    set-option -g prefix C-c
+   bind-key C-c send-prefix
 
 
 Resize a pane:
@@ -65,4 +67,21 @@ Exit copy mode.
 .. code-block:: console
 
    q
+
+
+Name a session:
+^^^^^^^^^^^^^^^
+
+.. code-block:: console
+
+   tmux new-session -s "NAME"
+
+Start a detatched session:
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Start a new session, run a program, and detatch it.
+
+.. code-block:: console
+
+   tmux new-session -d -s "NAME" /path/to/program/to/run
 

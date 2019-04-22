@@ -9,3 +9,5 @@ Contents:
 
    configuration
    notifications
+   ssh_checks
+

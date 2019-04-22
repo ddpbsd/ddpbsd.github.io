@@ -17,7 +17,8 @@
         VERSION:     '0.1',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
       };
     </script>
     <script type="text/javascript" src="../../_static/jquery.js"></script>
@@ -25,8 +26,6 @@
     <script type="text/javascript" src="../../_static/doctools.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="top" title="notes 0.1 documentation" href="../../index.html" />
-    <link rel="up" title="Espressobin" href="index.html" />
     <link rel="next" title="Ubuntu notes" href="ubuntu.html" />
     <link rel="prev" title="Important commands:" href="boot.html" />
    
@@ -42,6 +41,8 @@
     <div class="document">
       <div class="documentwrapper">
         <div class="bodywrapper">
+          
+
           <div class="body" role="main">
             
   <div class="section" id="espressobin-network">
@@ -74,9 +75,9 @@ The configuration lives in <cite>/etc/systemd/network</cite>.</p>
 <span class="go">Name=br0</span>
 
 <span class="go">[Network]</span>
-<span class="gp">#</span><span class="nv">Address</span><span class="o">=</span>192.168.28.219
-<span class="gp">#</span><span class="nv">Gateway</span><span class="o">=</span>192.168.28.1
-<span class="gp">#</span><span class="nv">DNS</span><span class="o">=</span>192.168.17.17
+<span class="gp">#</span><span class="nv">Address</span><span class="o">=</span><span class="m">192</span>.168.28.219
+<span class="gp">#</span><span class="nv">Gateway</span><span class="o">=</span><span class="m">192</span>.168.28.1
+<span class="gp">#</span><span class="nv">DNS</span><span class="o">=</span><span class="m">192</span>.168.17.17
 </pre></div>
 </div>
 </div>
@@ -126,6 +127,7 @@ The configuration lives in <cite>/etc/systemd/network</cite>.</p>
 
 
           </div>
+          
         </div>
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
@@ -158,7 +160,7 @@ The configuration lives in <cite>/etc/systemd/network</cite>.</p>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
-      <li><a href="../../_sources/arm/espressobin/network.txt"
+      <li><a href="../../_sources/arm/espressobin/network.rst.txt"
             rel="nofollow">Show Source</a></li>
     </ul>
    </div>

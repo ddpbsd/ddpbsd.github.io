@@ -17,7 +17,8 @@
         VERSION:     '0.1',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
       };
     </script>
     <script type="text/javascript" src="../_static/jquery.js"></script>
@@ -25,8 +26,6 @@
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="top" title="notes 0.1 documentation" href="../index.html" />
-    <link rel="up" title="OSSEC" href="index.html" />
     <link rel="next" title="OSSEC src" href="src/index.html" />
     <link rel="prev" title="OSSEC" href="index.html" />
    
@@ -42,6 +41,8 @@
     <div class="document">
       <div class="documentwrapper">
         <div class="bodywrapper">
+          
+
           <div class="body" role="main">
             
   <div class="section" id="ossec-and-elasticstack">
@@ -80,16 +81,16 @@
 </div>
 <div class="section" id="filebeat-config">
 <h2>Filebeat Config:<a class="headerlink" href="#filebeat-config" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">filebeat.prospectors</span><span class="p p-Indicator">:</span>
+<div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="nt">filebeat.prospectors</span><span class="p">:</span>
 
-<span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">input_type</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">log</span>
-  <span class="l l-Scalar l-Scalar-Plain">paths</span><span class="p p-Indicator">:</span>
+<span class="p p-Indicator">-</span> <span class="nt">input_type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">log</span>
+  <span class="nt">paths</span><span class="p">:</span>
     <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">/var/ossec/logs/alerts/alerts.json</span>
 
-  <span class="l l-Scalar l-Scalar-Plain">json.keys_under_root</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">true</span>
+  <span class="nt">json.keys_under_root</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">true</span>
 
-<span class="l l-Scalar l-Scalar-Plain">output.logstash</span><span class="p p-Indicator">:</span>
-  <span class="l l-Scalar l-Scalar-Plain">hosts</span><span class="p p-Indicator">:</span> <span class="p p-Indicator">[</span><span class="s">&quot;elastic:9001&quot;</span><span class="p p-Indicator">]</span>
+<span class="nt">output.logstash</span><span class="p">:</span>
+  <span class="nt">hosts</span><span class="p">:</span> <span class="p p-Indicator">[</span><span class="s">&quot;elastic:9001&quot;</span><span class="p p-Indicator">]</span>
 </pre></div>
 </div>
 </div>
@@ -97,6 +98,7 @@
 
 
           </div>
+          
         </div>
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
@@ -124,7 +126,7 @@
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
-      <li><a href="../_sources/ossec/elastic.txt"
+      <li><a href="../_sources/ossec/elastic.rst.txt"
             rel="nofollow">Show Source</a></li>
     </ul>
    </div>

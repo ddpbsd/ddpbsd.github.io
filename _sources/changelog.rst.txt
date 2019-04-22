@@ -1,3 +1,10 @@
+2018-09-13
+^^^^^^^^^^
+
+* Add some ECE notes as I go along
+* Add some notes on holding or releasing a package in apt/dpkg
+
+
 2018-08-10
 ^^^^^^^^^^
 

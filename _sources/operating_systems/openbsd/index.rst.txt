@@ -10,6 +10,8 @@ Contents:
    daemons/index
    fde
    fix_disk
+   hardware/index
+   install
    pledge/index
    vi
    virtualmachines/index

@@ -17,7 +17,8 @@
         VERSION:     '0.1',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
       };
     </script>
     <script type="text/javascript" src="../../_static/jquery.js"></script>
@@ -25,8 +26,6 @@
     <script type="text/javascript" src="../../_static/doctools.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="top" title="notes 0.1 documentation" href="../../index.html" />
-    <link rel="up" title="MISC" href="../index.html" />
     <link rel="next" title="Stupid random stuff:" href="../random.html" />
     <link rel="prev" title="ThinkStick" href="../mynet/computers/thinkstick.html" />
    
@@ -42,6 +41,8 @@
     <div class="document">
       <div class="documentwrapper">
         <div class="bodywrapper">
+          
+
           <div class="body" role="main">
             
   <div class="section" id="projects">
@@ -61,17 +62,11 @@ monitoring, log decoding, alerting, and active response.</p>
 <li>Still need to look at possible changes in <cite>analysisd</cite></li>
 </ul>
 </li>
-<li>Pull the <cite>analysisd</cite> changes from Wazuh. the adjustable
-fields support would be nice.</li>
 <li>lua support in <cite>rootcheck</cite> would make it much more powerful.</li>
 <li>Some kind of stats for <cite>remoted</cite> (number of msgs).</li>
 <li>Some more stats for <cite>analysisd</cite>, or current stats in json.</li>
 <li>Better <cite>syscheckd</cite> alerts.<ul>
 <li>Different alerts for owner/perm/hash/etc?</li>
-</ul>
-</li>
-<li><cite>strlcat</cite> &amp; <cite>strlcpy</cite> conversion<ul>
-<li>Some parts are easier than others.</li>
 </ul>
 </li>
 <li>Pledge?</li>
@@ -86,18 +81,6 @@ fields support would be nice.</li>
 <p>People who write documentation regularly are saints and deserve all
 of the praise. <em>I need to get back into this.</em></p>
 </div>
-<div class="section" id="sensornet">
-<h2>Sensornet:<a class="headerlink" href="#sensornet" title="Permalink to this headline">¶</a></h2>
-<p>A centralized collection of environmental sensors.
-Currently focuses on OpenBSD&#8217;s sensors since <cite>collectd</cite>
-and friends don&#8217;t seem to support them. The sensors and
-values are logged to graphite an viewed through grafana.
-Might be switching to influxdb in the future.</p>
-<p>I eventually plan on adding <cite>esp8266</cite> sensors to the mix.
-I&#8217;d love to track temperature and humidity throughout my
-home. Maybe moisture levels in the few plants I have.</p>
-<p>MQTT?</p>
-</div>
 <div class="section" id="esp8266">
 <h2>ESP8266:<a class="headerlink" href="#esp8266" title="Permalink to this headline">¶</a></h2>
 <p>Ties into sensornet above. The goal is to make small and
@@ -110,14 +93,10 @@ are the first I want to monitor. Others may follow.</p>
 <p>I have a small, but growing, group of ARM based systems.</p>
 <p><cite>pine</cite> is my DNS server. It&#8217;s a pine64 A64+ running OpenBSD.</p>
 <p><a class="reference external" href="../mynet/computers/pine64_clusterboard/index.html">clusterboard</a>
-is a pine64 clusterboard with 4 modules. I&#8217;m hoping
-to create a kubernetes cluster out of it to build a system to help
-test OSSEc. This idea is in the very early stages though, so don&#8217;t
-ask me many questions about it (unless you&#8217;re trying to help :)).</p>
-<p><cite>espressobin</cite> was going to be the head of my k8 cluster, but it seems
-much more DIY than I was hoping for. Currently running Ubuntu, but it
-seems flaky. I may find more reliable USB storage for the k8 cluster head
-and use a clusterboard module, or invest in some network storage.</p>
+is a pine64 clusterboard with 7 modules. I&#8217;m playing with k3s on it,
+but haven&#8217;t gotten very far.</p>
+<p><cite>espressobin</cite> I haven&#8217;t gotten this one working yet. After it blew up my
+network, I put it off to the side.</p>
 <p><cite>beaglebone black</cite> Not currently in use, but I was thinking of putting it
 to use with the esp8266 sensornet as the aggregator.</p>
 </div>
@@ -125,6 +104,7 @@ to use with the esp8266 sensornet as the aggregator.</p>
 
 
           </div>
+          
         </div>
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
@@ -134,7 +114,6 @@ to use with the esp8266 sensornet as the aggregator.</p>
 <li><a class="reference internal" href="#">Projects</a><ul>
 <li><a class="reference internal" href="#ossec">OSSEC:</a></li>
 <li><a class="reference internal" href="#ossec-documentation">OSSEC Documentation:</a></li>
-<li><a class="reference internal" href="#sensornet">Sensornet:</a></li>
 <li><a class="reference internal" href="#esp8266">ESP8266:</a></li>
 <li><a class="reference internal" href="#arm">ARM:</a></li>
 </ul>
@@ -154,7 +133,7 @@ to use with the esp8266 sensornet as the aggregator.</p>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
-      <li><a href="../../_sources/misc/projects/projects.txt"
+      <li><a href="../../_sources/misc/projects/projects.rst.txt"
             rel="nofollow">Show Source</a></li>
     </ul>
    </div>

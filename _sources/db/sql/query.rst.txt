@@ -20,3 +20,14 @@ Count password length:
 .. code-block:: console
 
    select char_length(password) as length, count(*) as count from dump where password is not null group by length order by count desc;
+
+
+multiple SELECT statements:
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+This will output `filename|COUNT` for all distinct filenames in the `syscheck` table.
+
+.. code-block:: console
+
+   select filename,count(*) from syscheck where filename in (select distinct filename from syscheck) group by filename;
+

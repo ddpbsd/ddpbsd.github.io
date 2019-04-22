@@ -19,9 +19,6 @@ Current tasks:
 
     * Still need to look at possible changes in `analysisd`
 
-  * Pull the `analysisd` changes from Wazuh. the adjustable
-    fields support would be nice.
-
   * lua support in `rootcheck` would make it much more powerful.
 
   * Some kind of stats for `remoted` (number of msgs).
@@ -31,10 +28,6 @@ Current tasks:
   * Better `syscheckd` alerts. 
 
     * Different alerts for owner/perm/hash/etc?
-
-  * `strlcat` & `strlcpy` conversion
-
-    * Some parts are easier than others.
 
   * Pledge?
 
@@ -49,20 +42,6 @@ OSSEC Documentation:
 People who write documentation regularly are saints and deserve all
 of the praise. *I need to get back into this.*
 
-Sensornet:
-^^^^^^^^^^
-
-A centralized collection of environmental sensors.
-Currently focuses on OpenBSD's sensors since `collectd`
-and friends don't seem to support them. The sensors and
-values are logged to graphite an viewed through grafana.
-Might be switching to influxdb in the future.
-
-I eventually plan on adding `esp8266` sensors to the mix.
-I'd love to track temperature and humidity throughout my
-home. Maybe moisture levels in the few plants I have.
-
-MQTT?
 
 ESP8266:
 ^^^^^^^^
@@ -80,15 +59,11 @@ I have a small, but growing, group of ARM based systems.
 `pine` is my DNS server. It's a pine64 A64+ running OpenBSD.
 
 `clusterboard <../mynet/computers/pine64_clusterboard/index.html>`_
-is a pine64 clusterboard with 4 modules. I'm hoping
-to create a kubernetes cluster out of it to build a system to help
-test OSSEc. This idea is in the very early stages though, so don't
-ask me many questions about it (unless you're trying to help :)).
+is a pine64 clusterboard with 7 modules. I'm playing with k3s on it,
+but haven't gotten very far.
 
-`espressobin` was going to be the head of my k8 cluster, but it seems
-much more DIY than I was hoping for. Currently running Ubuntu, but it
-seems flaky. I may find more reliable USB storage for the k8 cluster head
-and use a clusterboard module, or invest in some network storage.
+`espressobin` I haven't gotten this one working yet. After it blew up my
+network, I put it off to the side.
 
 `beaglebone black` Not currently in use, but I was thinking of putting it
 to use with the esp8266 sensornet as the aggregator.

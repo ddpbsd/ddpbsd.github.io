@@ -17,7 +17,8 @@
         VERSION:     '0.1',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
       };
     </script>
     <script type="text/javascript" src="../../../_static/jquery.js"></script>
@@ -25,8 +26,6 @@
     <script type="text/javascript" src="../../../_static/doctools.js"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="top" title="notes 0.1 documentation" href="../../../index.html" />
-    <link rel="up" title="networking" href="index.html" />
     <link rel="next" title="Switch from network manager to plain networking in Fedora:" href="network_manager.html" />
     <link rel="prev" title="ip" href="ip.html" />
    
@@ -42,6 +41,8 @@
     <div class="document">
       <div class="documentwrapper">
         <div class="bodywrapper">
+          
+
           <div class="body" role="main">
             
   <div class="section" id="netplan">
@@ -85,17 +86,17 @@ I&#8217;ll reboot and see if it helps.</p>
 <div class="section" id="basic-example">
 <h2>Basic example:<a class="headerlink" href="#basic-example" title="Permalink to this headline">¶</a></h2>
 <p>I&#8217;m praying this works, but I&#8217;m not holding my breath.</p>
-<div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">network</span><span class="p p-Indicator">:</span>
-  <span class="l l-Scalar l-Scalar-Plain">version</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">2</span>
-  <span class="l l-Scalar l-Scalar-Plain">renderer</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">networkd</span>
-  <span class="l l-Scalar l-Scalar-Plain">ethernets</span><span class="p p-Indicator">:</span>
-    <span class="l l-Scalar l-Scalar-Plain">enp3s0</span><span class="p p-Indicator">:</span>
-      <span class="l l-Scalar l-Scalar-Plain">addresses</span><span class="p p-Indicator">:</span>
+<div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="nt">network</span><span class="p">:</span>
+  <span class="nt">version</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">2</span>
+  <span class="nt">renderer</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">networkd</span>
+  <span class="nt">ethernets</span><span class="p">:</span>
+    <span class="nt">enp3s0</span><span class="p">:</span>
+      <span class="nt">addresses</span><span class="p">:</span>
         <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">10.10.10.2/24</span>
-      <span class="l l-Scalar l-Scalar-Plain">gateway4</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">10.10.10.1</span>
-      <span class="l l-Scalar l-Scalar-Plain">nameservers</span><span class="p p-Indicator">:</span>
-          <span class="l l-Scalar l-Scalar-Plain">search</span><span class="p p-Indicator">:</span> <span class="p p-Indicator">[</span><span class="nv">mydomain</span><span class="p p-Indicator">,</span> <span class="nv">otherdomain</span><span class="p p-Indicator">]</span>
-          <span class="l l-Scalar l-Scalar-Plain">addresses</span><span class="p p-Indicator">:</span> <span class="p p-Indicator">[</span><span class="nv">10.10.10.1</span><span class="p p-Indicator">,</span> <span class="nv">1.1.1.1</span><span class="p p-Indicator">]</span>
+      <span class="nt">gateway4</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">10.10.10.1</span>
+      <span class="nt">nameservers</span><span class="p">:</span>
+          <span class="nt">search</span><span class="p">:</span> <span class="p p-Indicator">[</span><span class="nv">mydomain</span><span class="p p-Indicator">,</span> <span class="nv">otherdomain</span><span class="p p-Indicator">]</span>
+          <span class="nt">addresses</span><span class="p">:</span> <span class="p p-Indicator">[</span><span class="nv">10.10.10.1</span><span class="p p-Indicator">,</span> <span class="nv">1.1.1.1</span><span class="p p-Indicator">]</span>
 </pre></div>
 </div>
 </div>
@@ -103,6 +104,7 @@ I&#8217;ll reboot and see if it helps.</p>
 
 
           </div>
+          
         </div>
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
@@ -135,7 +137,7 @@ I&#8217;ll reboot and see if it helps.</p>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
-      <li><a href="../../../_sources/operating_systems/linux/network/netplan.txt"
+      <li><a href="../../../_sources/operating_systems/linux/network/netplan.rst.txt"
             rel="nofollow">Show Source</a></li>
     </ul>
    </div>

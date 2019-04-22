@@ -9,6 +9,8 @@ Contents:
    active_directory/index.rst
    cheatsheets
    powershell/index
+   sid_stuff
    smb
-   sysmon   
+   sysmon
+   windows_credential_mgr.rst
 
