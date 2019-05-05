@@ -13,5 +13,6 @@ Contents:
    :maxdepth: 2
 
    arduino/index
+   homelab/index
    ipv6/index
 
