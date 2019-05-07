@@ -35,6 +35,11 @@ Inventory:
 +----------------------------+----------+-----+
 | Sweet Mint                 | mint     | 1   |
 +----------------------------+----------+-----+
+| Lunchbox Red Pepper        | Pepper   | 2   |
++----------------------------+----------+-----+
+| Chocolate Sprinkles        | tomato   | 2   |
++----------------------------+----------+-----+
+
 
 Planting:
 ^^^^^^^^^
@@ -54,5 +59,6 @@ Notes:
 ^^^^^^
 
 Never tried most of these, so it will be interesting.
-
+I did manage to find the Lunchbox Red Peppers and Chocolate Sprinkle Tomatoes, which I really wanted.
+They were great last year, and I'm hoping they do well again this year.
 

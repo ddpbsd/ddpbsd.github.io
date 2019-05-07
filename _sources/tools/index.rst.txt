@@ -17,13 +17,13 @@ Contents:
    java/index
    ldap/index
    messaging/index
-   moloch/index
    monitoring/index
    osquery/index
    perl/index
    su
    tcpdump/index
    tmux/index
+   vim/index
    virtualization/index
    x11/index
    retired/index

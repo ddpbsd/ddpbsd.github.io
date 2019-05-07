@@ -17,6 +17,5 @@ Contents:
    mynet/index
    projects/projects
    random
-   vim/index
    junk/index
 
