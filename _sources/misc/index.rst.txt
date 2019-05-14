@@ -15,7 +15,7 @@ Contents:
    kernel_build/index
    ksh/index
    mynet/index
-   projects/projects
+   projects/index
    random
    junk/index
 
