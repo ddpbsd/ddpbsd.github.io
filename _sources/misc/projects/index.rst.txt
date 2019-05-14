@@ -12,6 +12,7 @@ Contents:
 .. toctree::
    :maxdepth: 2
 
+   projects
    arduino/index
    homelab/index
    ipv6/index

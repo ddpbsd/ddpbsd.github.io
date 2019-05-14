@@ -16,4 +16,5 @@ Contents:
    patterns/index
    examples/index
    errors/index
+   plugins
 

@@ -9,6 +9,7 @@ Contents:
    :maxdepth: 2
 
    ansible/index
+   certstrap/index
    dns/index
    freeradius/index
    git/index
@@ -20,6 +21,7 @@ Contents:
    monitoring/index
    osquery/index
    perl/index
+   python/index
    su
    tcpdump/index
    tmux/index

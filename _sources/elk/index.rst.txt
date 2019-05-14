@@ -6,6 +6,7 @@ Contents:
 .. toctree::
    :maxdepth: 2
 
+   beats/index
    elastic/index
    logstash/index
     
