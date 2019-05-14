@@ -53,19 +53,41 @@ Elsa doesn&#8217;t exist anymore (yay!), but we get the elk stack instead.</p>
 <div class="section" id="docker">
 <h2>Docker:<a class="headerlink" href="#docker" title="Permalink to this headline">¶</a></h2>
 <p>docker images:</p>
-<p>+==================+============================+======================+
-|    Name          | What do?                   |      Link            |
-+==================+============================+======================+
-| so-curator       | Helps manage elasticsearch | <a class="reference external" href="https://www.elastic.co/guide/en/elasticsearch/client/curator/current/about.html">el-curator</a>        |
-+&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;+&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;-+&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;-+
-| so-elastalert    | Creates alerts?            | <a class="reference external" href="https://github.com/Yelp/elastalert">yelp-elastalert</a>   |
-+&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;+&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;-+&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;-+
-| so-kibana        | Kibana                     | <a class="reference external" href="https://www.elastic.co/products/kibana">el-kibana</a>         |
-+&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;+&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;-+&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;-+
-| so-logstash      | logstash                   | <a class="reference external" href="https://www.elastic.co/products/logstash">el-logstash</a>       |
-+&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;+&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;-+&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;-+
-| so-elasticsearch | elasticsearch              | <a class="reference external" href="https://www.elastic.co/products/elasticsearch">el-elasticsearch</a>  |
-+&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;+&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;-+&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;-+</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="26%" />
+<col width="41%" />
+<col width="32%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Name</th>
+<th class="head">What do?</th>
+<th class="head">Link</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>so-curator</td>
+<td>Helps manage elasticsearch</td>
+<td><a class="reference external" href="https://www.elastic.co/guide/en/elasticsearch/client/curator/current/about.html">el-curator</a></td>
+</tr>
+<tr class="row-odd"><td>so-elastalert</td>
+<td>Creates alerts?</td>
+<td><a class="reference external" href="https://github.com/Yelp/elastalert">yelp-elastalert</a></td>
+</tr>
+<tr class="row-even"><td>so-kibana</td>
+<td>Kibana</td>
+<td><a class="reference external" href="https://www.elastic.co/products/kibana">el-kibana</a></td>
+</tr>
+<tr class="row-odd"><td>so-logstash</td>
+<td>logstash</td>
+<td><a class="reference external" href="https://www.elastic.co/products/logstash">el-logstash</a></td>
+</tr>
+<tr class="row-even"><td>so-elasticsearch</td>
+<td>elasticsearch</td>
+<td><a class="reference external" href="https://www.elastic.co/products/elasticsearch">el-elasticsearch</a></td>
+</tr>
+</tbody>
+</table>
 </div>
 <div class="section" id="ossec">
 <h2>OSSEC:<a class="headerlink" href="#ossec" title="Permalink to this headline">¶</a></h2>
@@ -87,6 +109,14 @@ connect to the hosts with <cite>nc</cite> and determines whether it can connect 
 <p><cite>/usr/sbin/so-crossclustercheck</cite> uses <cite>curl</cite> to query elasticsearch. <cite>jq</cite> is used to parse the
 json. There&#8217;s more magic in there, but that should be enough for now. Copy and pasting the 14
 lines from <cite>sostat</cite> give the appropriate output, so now I have that.</p>
+</div>
+<div class="section" id="restart-logstash">
+<h2>Restart logstash:<a class="headerlink" href="#restart-logstash" title="Permalink to this headline">¶</a></h2>
+<p>If changes are made to the <cite>LOGSTASH_OPTIONS</cite> in the <cite>securityonion.conf</cite>, logstash should be
+restarted with:</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">sudo so-logstash-restart</span>
+</pre></div>
+</div>
 </div>
 </div>
 
