@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>osquery &#8212; notes 0.1 documentation</title>
+    <title>Setup a Python virtual environment: &#8212; notes 0.1 documentation</title>
     
     <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
@@ -26,8 +26,8 @@
     <script type="text/javascript" src="../../_static/doctools.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Available tables:" href="tables.html" />
-    <link rel="prev" title="meraki" href="../monitoring/telegraf/snmp/meraki.html" />
+    <link rel="next" title="su" href="../su.html" />
+    <link rel="prev" title="Package named unknown:" href="pip.html" />
    
   <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
   
@@ -45,13 +45,21 @@
 
           <div class="body" role="main">
             
-  <div class="section" id="osquery">
-<h1>osquery<a class="headerlink" href="#osquery" title="Permalink to this headline">¶</a></h1>
-<p>Contents:</p>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="tables.html">Available tables:</a></li>
-</ul>
+  <div class="section" id="setup-a-python-virtual-environment">
+<span id="tools-python-venv"></span><h1>Setup a Python virtual environment:<a class="headerlink" href="#setup-a-python-virtual-environment" title="Permalink to this headline">¶</a></h1>
+<p>To setup a virtual environment with python 3 run:</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> python3 -m venv /path/to/virtualenv
+</pre></div>
+</div>
+</div>
+<div class="section" id="activate-the-python-venv">
+<h1>Activate the python venv:<a class="headerlink" href="#activate-the-python-venv" title="Permalink to this headline">¶</a></h1>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> . /path/to/virtualenv/bin/activate
+</pre></div>
+</div>
+<p>or</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> <span class="nb">source</span> /path/to/virtualenv/bin/activate
+</pre></div>
 </div>
 </div>
 
@@ -96,9 +104,9 @@
 <li class="toctree-l2"><a class="reference internal" href="../ldap/index.html">ldap</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../messaging/index.html">Messaging</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../monitoring/index.html">Monitoring Tools</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">osquery</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../osquery/index.html">osquery</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../perl/index.html">Perl</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../python/index.html">Python</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">Python</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../su.html">su</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../tcpdump/index.html">tcpdump</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../tmux/index.html">tmux</a></li>
@@ -117,8 +125,10 @@
 <ul>
   <li><a href="../../index.html">Documentation overview</a><ul>
   <li><a href="../index.html">Tools</a><ul>
-      <li>Previous: <a href="../monitoring/telegraf/snmp/meraki.html" title="previous chapter">meraki</a></li>
-      <li>Next: <a href="tables.html" title="next chapter">Available tables:</a></li>
+  <li><a href="index.html">Python</a><ul>
+      <li>Previous: <a href="pip.html" title="previous chapter">Package named unknown:</a></li>
+      <li>Next: <a href="../su.html" title="next chapter">su</a></li>
+  </ul></li>
   </ul></li>
   </ul></li>
 </ul>

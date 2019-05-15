@@ -6,4 +6,5 @@ Python
 .. toctree::
 
    pip
+   venv
 
