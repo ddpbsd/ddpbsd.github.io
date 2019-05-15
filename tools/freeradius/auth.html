@@ -123,6 +123,20 @@ There&#8217;s more to it than setting up the <cite>sssd.conf</cite>, but I&#8217
 <h2>radiusd pam:<a class="headerlink" href="#radiusd-pam" title="Permalink to this headline">¶</a></h2>
 <p>Setup <cite>pam_google_authenticator.so</cite> to <cite>forward_pass</cite> to the next piece.
 Use <cite>pam_sss.so</cite> to auth to active directory.</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">#</span>%PAM-1.0
+<span class="gp">#</span>auth       include     password-auth
+<span class="gp">#</span>account    required    pam_nologin.so
+<span class="gp">#</span>account    include     password-auth
+<span class="gp">#</span>password   include     password-auth
+<span class="gp">#</span>session    include     password-auth
+
+<span class="go">auth required pam_google_authenticator.so debug forward_pass</span>
+<span class="gp">#</span>auth required pam_unix.so debug use_first_pass
+<span class="gp">#</span>auth required pam_unix.so debug
+<span class="go">auth required pam_sss.so use_first_pass</span>
+<span class="go">account required        pam_unix.so</span>
+</pre></div>
+</div>
 </div>
 </div>
 

@@ -20,6 +20,7 @@ Armbian uses sytemd-networkd to configure the network.
 The configuration lives in `/etc/systemd/network`.
 
 .. code-block:: console
+
    ddp@espresso:/etc/systemd/network$ ls
    10-br0.netdev   10-eth0.network  10-lan1.network
    10-br0.network  10-lan0.network  10-wan.network

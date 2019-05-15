@@ -60,6 +60,11 @@ Maybe netplan.io will help?</p>
 <h1>Configurations:<a class="headerlink" href="#configurations" title="Permalink to this headline">¶</a></h1>
 <p>Armbian uses sytemd-networkd to configure the network.
 The configuration lives in <cite>/etc/systemd/network</cite>.</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">ddp@espresso:/etc/systemd/network$</span> ls
+<span class="go">10-br0.netdev   10-eth0.network  10-lan1.network</span>
+<span class="go">10-br0.network  10-lan0.network  10-wan.network</span>
+</pre></div>
+</div>
 </div>
 <div class="section" id="br0-netdev">
 <h1>10-br0.netdev:<a class="headerlink" href="#br0-netdev" title="Permalink to this headline">¶</a></h1>

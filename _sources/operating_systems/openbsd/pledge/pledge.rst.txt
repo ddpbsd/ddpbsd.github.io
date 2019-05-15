@@ -43,6 +43,6 @@ https://github.com/NattyNarwhal/pledge.cs
 Rust
 ^^^^
 
-.. literalinclude:: pledge.rs
-   :language: rust
+I guess the included file is gone?
+
 

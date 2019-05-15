@@ -47,6 +47,9 @@
             
   <div class="section" id="packages-to-install">
 <h1>Packages to install:<a class="headerlink" href="#packages-to-install" title="Permalink to this headline">¶</a></h1>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">yum install -y google-authenticator freeradius freeradius-utils</span>
+</pre></div>
+</div>
 </div>
 <div class="section" id="etc-raddb-radiusd-conf">
 <h1><cite>/etc/raddb/radiusd.conf</cite>:<a class="headerlink" href="#etc-raddb-radiusd-conf" title="Permalink to this headline">¶</a></h1>
@@ -68,16 +71,14 @@
 </div>
 <div class="section" id="etc-raddb-users">
 <h1><cite>/etc/raddb/users</cite>:<a class="headerlink" href="#etc-raddb-users" title="Permalink to this headline">¶</a></h1>
-<p>Add the first <cite>DEFAULT</cite> line above the second.
-.. code-block:: console</p>
-<blockquote>
-<div><p>DEFAULT Auth-Type := PAM</p>
-<dl class="docutils">
-<dt>DEFAULT Framed-Protocol == PPP</dt>
-<dd>Framed-Protocol = PPP,
-Framed-Compression = Van-Jacobson-TCP-IP</dd>
-</dl>
-</div></blockquote>
+<p>Add the first <cite>DEFAULT</cite> line above the second.</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">DEFAULT Auth-Type := PAM</span>
+
+<span class="go">DEFAULT Framed-Protocol == PPP</span>
+<span class="go">        Framed-Protocol = PPP,</span>
+<span class="go">        Framed-Compression = Van-Jacobson-TCP-IP</span>
+</pre></div>
+</div>
 </div>
 
 
