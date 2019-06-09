@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Virtual Machines &#8212; notes 0.1 documentation</title>
+    <title>Errors &#8212; notes 0.1 documentation</title>
     
     <link rel="stylesheet" href="../../../_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
@@ -26,8 +26,8 @@
     <script type="text/javascript" src="../../../_static/doctools.js"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="Change the timecounter:" href="guest.html" />
-    <link rel="prev" title="Insert a tab in a :s command:" href="../vi.html" />
+    <link rel="next" title="Windows" href="../../windows/index.html" />
+    <link rel="prev" title="Make sure host can forward the packets:" href="setup.html" />
    
   <link rel="stylesheet" href="../../../_static/custom.css" type="text/css" />
   
@@ -45,27 +45,26 @@
 
           <div class="body" role="main">
             
-  <div class="section" id="virtual-machines">
-<h1>Virtual Machines<a class="headerlink" href="#virtual-machines" title="Permalink to this headline">¶</a></h1>
-<p>Notes on vmm/vmd to help me figure
-it all out.</p>
-<p>Contents:</p>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="guest.html">Change the timecounter:</a></li>
-<li class="toctree-l1"><a class="reference internal" href="networking.html">Networking</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="networking.html#exit-a-vm-cu">Exit a VM cu:</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="setup.html">Make sure <cite>host</cite> can forward the packets:</a></li>
-<li class="toctree-l1"><a class="reference internal" href="setup.html#enable-and-start-vmd">Enable and start <cite>vmd</cite>:</a></li>
-<li class="toctree-l1"><a class="reference internal" href="setup.html#create-a-disk">Create a disk:</a></li>
-<li class="toctree-l1"><a class="reference internal" href="setup.html#start-the-install">Start the install:</a></li>
-<li class="toctree-l1"><a class="reference internal" href="errors.html">Errors</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="errors.html#no-such-file-or-directory">No such file or directory:</a></li>
-</ul>
-</li>
-</ul>
+  <div class="section" id="errors">
+<span id="operating-systems-openbsd-virtualmachines-errors"></span><h1>Errors<a class="headerlink" href="#errors" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="no-such-file-or-directory">
+<h2>No such file or directory:<a class="headerlink" href="#no-such-file-or-directory" title="Permalink to this headline">¶</a></h2>
+<p>Error displayed when starting a VM.</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">jupiter# vmctl start serve</span>
+<span class="go">vmctl: start vm command failed: No such file or directory</span>
+</pre></div>
+</div>
+<p>Check <cite>/var/log/daemon</cite> for further details.
+Probably need more <a href="#id1"><span class="problematic" id="id2">`</span></a>tap(4)ce nodes:</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">Jun  9 15:54:32 jupiter vmd[81524]: failed to start vm serve</span>
+<span class="go">Jun  9 15:54:37 jupiter vmd[81524]: config_setvm: can&#39;t open tap tap: No such file or directory`</span>
+</pre></div>
+</div>
+<p>Make more:</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">#</span> <span class="nb">cd</span> /dev
+<span class="gp">#</span> /bin/sh ./MAKEDEV tap4
+</pre></div>
+</div>
 </div>
 </div>
 
@@ -114,8 +113,10 @@ it all out.</p>
   <li><a href="../../../index.html">Documentation overview</a><ul>
   <li><a href="../../index.html">Operating Systems</a><ul>
   <li><a href="../index.html">OpenBSD</a><ul>
-      <li>Previous: <a href="../vi.html" title="previous chapter">Insert a tab in a <code class="docutils literal"><span class="pre">:s</span></code> command:</a></li>
-      <li>Next: <a href="guest.html" title="next chapter">Change the timecounter:</a></li>
+  <li><a href="index.html">Virtual Machines</a><ul>
+      <li>Previous: <a href="setup.html" title="previous chapter">Make sure <cite>host</cite> can forward the packets:</a></li>
+      <li>Next: <a href="../../windows/index.html" title="next chapter">Windows</a></li>
+  </ul></li>
   </ul></li>
   </ul></li>
   </ul></li>

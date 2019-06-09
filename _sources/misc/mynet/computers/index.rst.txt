@@ -13,6 +13,7 @@ Contents:
    earth
    ix
    junction
+   jupiter
    pine
    pine64_clusterboard/index
    thinkstick

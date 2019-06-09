@@ -8,6 +8,7 @@ Contents:
 
    dcdiag
    fsmo
+   laps
    replication
    sids
 

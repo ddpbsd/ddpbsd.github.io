@@ -1,0 +1,22 @@
+.. _tools_jq:
+
+jq
+==
+
+`jq <https://stedolan.github.io/jq/>`_ is a cli json parsing program.
+
+
+Examples:
+^^^^^^^^^
+
+.. code-block:: console
+
+   cat ct_log.json | jq '.["Records"][].userIdentity.type'
+
+
+MFA authenticated?
+
+.. code-block:: console
+
+   cat ct_log.json | jq '.["Records"][].userIdentity["sessionContext"].attributes.mfaAuthenticated'
+

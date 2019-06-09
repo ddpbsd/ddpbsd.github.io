@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>ssl &#8212; notes 0.1 documentation</title>
+    <title>jq &#8212; notes 0.1 documentation</title>
     
     <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -26,8 +26,8 @@
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Download a certificate:" href="download_cert.html" />
-    <link rel="prev" title="sostat" href="../securityonion/sostat.html" />
+    <link rel="next" title="ldap" href="ldap/index.html" />
+    <link rel="prev" title="keytool" href="java/keytool.html" />
    
   <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
   
@@ -45,28 +45,18 @@
 
           <div class="body" role="main">
             
-  <div class="section" id="ssl">
-<h1>ssl<a class="headerlink" href="#ssl" title="Permalink to this headline">¶</a></h1>
-<p>Contents:</p>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="download_cert.html">Download a certificate:</a></li>
-<li class="toctree-l1"><a class="reference internal" href="certstore.html">Adding a cert to the cert store</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="certstore.html#centos-7">CentOS 7:</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="create_self_signed_cert.html">Create a self signed cert:</a></li>
-<li class="toctree-l1"><a class="reference internal" href="create_self_signed_cert.html#remove-passphrase">Remove passphrase:</a></li>
-<li class="toctree-l1"><a class="reference internal" href="test_for_ssl3.html">Check to see if ssl3 works:</a></li>
-<li class="toctree-l1"><a class="reference internal" href="test_for_ssl3.html#check-to-see-if-tls-1-2-works">Check to see if tls 1.2 works:</a></li>
-<li class="toctree-l1"><a class="reference internal" href="create_ca.html">Where I got this information:</a></li>
-<li class="toctree-l1"><a class="reference internal" href="cert_checks.html">Look at certs!</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="cert_checks.html#check-a-private-key">Check a private key:</a></li>
-<li class="toctree-l2"><a class="reference internal" href="cert_checks.html#check-a-certificate">Check a certificate:</a></li>
-<li class="toctree-l2"><a class="reference internal" href="cert_checks.html#check-the-subject-in-a-certificate">Check the subject in a certificate:</a></li>
-</ul>
-</li>
-</ul>
+  <div class="section" id="jq">
+<span id="tools-jq"></span><h1>jq<a class="headerlink" href="#jq" title="Permalink to this headline">¶</a></h1>
+<p><a class="reference external" href="https://stedolan.github.io/jq/">jq</a> is a cli json parsing program.</p>
+<div class="section" id="examples">
+<h2>Examples:<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">cat ct_log.json | jq &#39;.[&quot;Records&quot;][].userIdentity.type&#39;</span>
+</pre></div>
+</div>
+<p>MFA authenticated?</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">cat ct_log.json | jq &#39;.[&quot;Records&quot;][].userIdentity[&quot;sessionContext&quot;].attributes.mfaAuthenticated&#39;</span>
+</pre></div>
+</div>
 </div>
 </div>
 
@@ -97,19 +87,33 @@
 <li class="toctree-l1"><a class="reference internal" href="../ossec/index.html">OSSEC</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../rsyslogd/index.html">rsyslogd</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../securityonion/index.html">SecurityOnion</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">ssl</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="download_cert.html">Download a certificate:</a></li>
-<li class="toctree-l2"><a class="reference internal" href="certstore.html">Adding a cert to the cert store</a></li>
-<li class="toctree-l2"><a class="reference internal" href="create_self_signed_cert.html">Create a self signed cert:</a></li>
-<li class="toctree-l2"><a class="reference internal" href="create_self_signed_cert.html#remove-passphrase">Remove passphrase:</a></li>
-<li class="toctree-l2"><a class="reference internal" href="test_for_ssl3.html">Check to see if ssl3 works:</a></li>
-<li class="toctree-l2"><a class="reference internal" href="test_for_ssl3.html#check-to-see-if-tls-1-2-works">Check to see if tls 1.2 works:</a></li>
-<li class="toctree-l2"><a class="reference internal" href="create_ca.html">Where I got this information:</a></li>
-<li class="toctree-l2"><a class="reference internal" href="cert_checks.html">Look at certs!</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ssl/index.html">ssl</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../stupid_unix_tricks/index.html">Stupid Unix Tricks</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Tools</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="ansible/index.html">ansible</a></li>
+<li class="toctree-l2"><a class="reference internal" href="certstrap/index.html">certstrap</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dns/index.html">dns</a></li>
+<li class="toctree-l2"><a class="reference internal" href="freeradius/index.html">FreeRadius</a></li>
+<li class="toctree-l2"><a class="reference internal" href="git/index.html">git</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gpg/index.html">gpg</a></li>
+<li class="toctree-l2"><a class="reference internal" href="grafana/index.html">grafana</a></li>
+<li class="toctree-l2"><a class="reference internal" href="java/index.html">Java</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">jq</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ldap/index.html">ldap</a></li>
+<li class="toctree-l2"><a class="reference internal" href="messaging/index.html">Messaging</a></li>
+<li class="toctree-l2"><a class="reference internal" href="monitoring/index.html">Monitoring Tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="osquery/index.html">osquery</a></li>
+<li class="toctree-l2"><a class="reference internal" href="perl/index.html">Perl</a></li>
+<li class="toctree-l2"><a class="reference internal" href="python/index.html">Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="su.html">su</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tcpdump/index.html">tcpdump</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tmux/index.html">tmux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vim/index.html">vim</a></li>
+<li class="toctree-l2"><a class="reference internal" href="virtualization/index.html">Virtualization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="x11/index.html">x11</a></li>
+<li class="toctree-l2"><a class="reference internal" href="retired/index.html">Retired</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../stupid_unix_tricks/index.html">Stupid Unix Tricks</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../tools/index.html">Tools</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../vendor_stuff/index.html">Vendor Stuff</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../misc/index.html">MISC</a></li>
 </ul>
@@ -118,8 +122,10 @@
 <h3>Related Topics</h3>
 <ul>
   <li><a href="../index.html">Documentation overview</a><ul>
-      <li>Previous: <a href="../securityonion/sostat.html" title="previous chapter">sostat</a></li>
-      <li>Next: <a href="download_cert.html" title="next chapter">Download a certificate:</a></li>
+  <li><a href="index.html">Tools</a><ul>
+      <li>Previous: <a href="java/keytool.html" title="previous chapter">keytool</a></li>
+      <li>Next: <a href="ldap/index.html" title="next chapter">ldap</a></li>
+  </ul></li>
   </ul></li>
 </ul>
 </div>

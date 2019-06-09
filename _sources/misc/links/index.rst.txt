@@ -1,0 +1,24 @@
+.. _misc_links:
+
+Links
+=====
+
+Programming:
+^^^^^^^^^^^^
+
+`dev docs <https://devdocs.io/>`_
+
+
+
+Networking:
+^^^^^^^^^^^
+
+`Wireshark Certified Network Analyst Class #10 <https://www.youtube.com/watch?v=IzUxiLBEhoE&list=PLTIJiKI4vOA37qUl-5ztWYcCE6zpscF6j>`_
+
+`Malware Traffic Analysis <https://www.malware-traffic-analysis.net/>`_
+
+Cheat Sheets:
+^^^^^^^^^^^^^
+
+`Packet Life <http://packetlife.net/library/cheat-sheets/>`_
+

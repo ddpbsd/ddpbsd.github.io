@@ -12,3 +12,4 @@ Contents:
    guest
    networking
    setup
+   errors

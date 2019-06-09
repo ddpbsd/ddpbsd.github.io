@@ -12,5 +12,6 @@ Contents:
    ix
    ipyr
    junction   
+   jupiter
    pine
 

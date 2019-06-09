@@ -16,6 +16,7 @@ Contents:
    gpg/index
    grafana/index
    java/index
+   jq
    ldap/index
    messaging/index
    monitoring/index
