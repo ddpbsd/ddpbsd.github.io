@@ -22,15 +22,12 @@ Create a disk:
 
 .. code-block:: console
 
-   vmctl create /data2/VM/openbsd0.img -s 5G
+   vmctl create -s 5G /data2/VM/openbsd0.img
 
 Start the install:
 ^^^^^^^^^^^^^^^^^^
 
 .. code-block:: console
 
-   vmctl start openbsd0 -c -b /bsd.rd -m 512M -i 1 -n uplink -d /data2/VM/openbsd0.img
-   
-
-
+   vmctl start -c -b /bsd.rd -m 512M -i 1 -n uplink -d /data2/VM/openbsd0.img openbsd0
 

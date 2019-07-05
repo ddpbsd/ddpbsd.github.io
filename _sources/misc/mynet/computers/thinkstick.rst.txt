@@ -4,6 +4,11 @@ ThinkStick
 
 Model: 300?
 
+Current status:
+^^^^^^^^^^^^^^^
+
+Refuses to power on.
+
 Enter BIOS on boot:
 ^^^^^^^^^^^^^^^^^^^
 

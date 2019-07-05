@@ -26,7 +26,7 @@
     <script type="text/javascript" src="../../../_static/doctools.js"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="Windows" href="../../windows/index.html" />
+    <link rel="next" title="Errors" href="errors.html" />
     <link rel="prev" title="Networking" href="networking.html" />
    
   <link rel="stylesheet" href="../../../_static/custom.css" type="text/css" />
@@ -62,13 +62,13 @@
 </div>
 <div class="section" id="create-a-disk">
 <h1>Create a disk:<a class="headerlink" href="#create-a-disk" title="Permalink to this headline">¶</a></h1>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">vmctl create /data2/VM/openbsd0.img -s 5G</span>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">vmctl create -s 5G /data2/VM/openbsd0.img</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="start-the-install">
 <h1>Start the install:<a class="headerlink" href="#start-the-install" title="Permalink to this headline">¶</a></h1>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">vmctl start openbsd0 -c -b /bsd.rd -m 512M -i 1 -n uplink -d /data2/VM/openbsd0.img</span>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">vmctl start -c -b /bsd.rd -m 512M -i 1 -n uplink -d /data2/VM/openbsd0.img openbsd0</span>
 </pre></div>
 </div>
 </div>
@@ -120,7 +120,7 @@
   <li><a href="../index.html">OpenBSD</a><ul>
   <li><a href="index.html">Virtual Machines</a><ul>
       <li>Previous: <a href="networking.html" title="previous chapter">Networking</a></li>
-      <li>Next: <a href="../../windows/index.html" title="next chapter">Windows</a></li>
+      <li>Next: <a href="errors.html" title="next chapter">Errors</a></li>
   </ul></li>
   </ul></li>
   </ul></li>

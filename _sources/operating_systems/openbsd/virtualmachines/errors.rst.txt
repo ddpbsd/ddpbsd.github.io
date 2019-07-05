@@ -14,7 +14,8 @@ Error displayed when starting a VM.
    vmctl: start vm command failed: No such file or directory
 
 Check `/var/log/daemon` for further details.
-Probably need more `tap(4)ce nodes:
+
+Probably need more `tap(4)` nodes:
 
 .. code-block:: console
 

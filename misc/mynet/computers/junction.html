@@ -26,7 +26,7 @@
     <script type="text/javascript" src="../../../_static/doctools.js"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="pine" href="pine.html" />
+    <link rel="next" title="jupiter" href="jupiter.html" />
     <link rel="prev" title="ix:" href="ix.html" />
    
   <link rel="stylesheet" href="../../../_static/custom.css" type="text/css" />
@@ -185,6 +185,33 @@
 </pre></div>
 </div>
 </div>
+<div class="section" id="upgrade-bios">
+<h2>Upgrade BIOS:<a class="headerlink" href="#upgrade-bios" title="Permalink to this headline">¶</a></h2>
+<p>From Stuart Henderson on <a class="reference external" href="https://marc.info/?l=openbsd-misc&amp;m=156037126231372&amp;w=2">misc&#64;</a>:</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">If you&#39;re on an old BIOS revision for the APU (more than a couple of</span>
+<span class="go">months old), try updating, they have enabled &quot;core performance boost&quot;</span>
+<span class="go">which increases speed of a single core if the others are not under</span>
+<span class="go">heavy load.</span>
+
+<span class="go">I haven&#39;t done network benchmarks but there is a noticable improvement</span>
+<span class="go">in some other things (md5 -tt goes from 12 -&gt; 9 seconds).</span>
+
+<span class="go">To update BIOS from OpenBSD, pkg_add flashrom and download the BIOS</span>
+<span class="go">version for your board (https://pcengines.github.io/). Go to serial</span>
+<span class="go">console and reboot in single-user mode (boot -s), mount -a, and run</span>
+<span class="go">&quot;flashrom --programmer internal -w apuX_vXXX.rom&quot;. Then reboot back</span>
+<span class="go">as normal.</span>
+
+<span class="go">If you&#39;d like to compare benchmarks, the feature can be toggled</span>
+<span class="go">from the setup menu in BIOS.</span>
+
+<span class="go">https://blog.3mdeb.com/2019/2019-02-14-enabling-cpb-on-pcengines-apu2/</span>
+
+<span class="go">Apologies I should have said: it should be power cycled at this point,</span>
+<span class="go">not just a standard reboot.</span>
+</pre></div>
+</div>
+</div>
 </div>
 
 
@@ -222,10 +249,12 @@
 <li class="toctree-l2"><a class="reference internal" href="../../imagemagick/index.html">Imagemagick</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../kernel_build/index.html">Building a custom kernel</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../ksh/index.html">ksh</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../links/index.html">Links</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="../index.html">mynet</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../projects/index.html">projects</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../random.html">Stupid random stuff</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../junk/index.html">Junk</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../fediverse/glitch-soc.html">glitch-soc</a></li>
 </ul>
 </li>
 </ul>
@@ -238,7 +267,7 @@
   <li><a href="../index.html">mynet</a><ul>
   <li><a href="index.html">computers</a><ul>
       <li>Previous: <a href="ix.html" title="previous chapter">ix:</a></li>
-      <li>Next: <a href="pine.html" title="next chapter">pine</a></li>
+      <li>Next: <a href="jupiter.html" title="next chapter">jupiter</a></li>
   </ul></li>
   </ul></li>
   </ul></li>

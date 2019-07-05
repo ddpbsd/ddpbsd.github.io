@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>earth &#8212; notes 0.1 documentation</title>
+    <title>LAPS &#8212; notes 0.1 documentation</title>
     
     <link rel="stylesheet" href="../../../_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
@@ -26,8 +26,8 @@
     <script type="text/javascript" src="../../../_static/doctools.js"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="ix:" href="ix.html" />
-    <link rel="prev" title="buzzell:" href="buzzell.html" />
+    <link rel="next" title="Show replication status:" href="replication.html" />
+    <link rel="prev" title="Find the FSMO roles of a server:" href="fsmo.html" />
    
   <link rel="stylesheet" href="../../../_static/custom.css" type="text/css" />
   
@@ -45,18 +45,33 @@
 
           <div class="body" role="main">
             
-  <div class="section" id="earth">
-<span id="misc-mynet-systems-earth"></span><h1>earth<a class="headerlink" href="#earth" title="Permalink to this headline">¶</a></h1>
-<p>Proxmox virtualization server.</p>
-<div class="section" id="currently-running">
-<h2>Currently running:<a class="headerlink" href="#currently-running" title="Permalink to this headline">¶</a></h2>
-<ul class="simple">
-<li>A bunch of VMs and containers</li>
-</ul>
+  <div class="section" id="laps">
+<span id="operating-systems-windows-active-directory-laps"></span><h1>LAPS<a class="headerlink" href="#laps" title="Permalink to this headline">¶</a></h1>
+<p>Local Administrator Password Solution provides management of local account passwords for domain
+connected systems.</p>
+<div class="section" id="installation">
+<h2>Installation:<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h2>
+<p>Some of it has to be installed on the server, some of it on the clients.</p>
 </div>
-<div class="section" id="hardware">
-<h2>Hardware:<a class="headerlink" href="#hardware" title="Permalink to this headline">¶</a></h2>
-<p>Dell Poweredge T310</p>
+<div class="section" id="server">
+<h2>Server:<a class="headerlink" href="#server" title="Permalink to this headline">¶</a></h2>
+<p>Modify the registry!</p>
+</div>
+<div class="section" id="clients">
+<h2>Clients:<a class="headerlink" href="#clients" title="Permalink to this headline">¶</a></h2>
+<p>Only need the GPO CSE (which seems to amount to <cite>AdmPwd.dll</cite>).</p>
+</div>
+<div class="section" id="errors">
+<h2>Errors:<a class="headerlink" href="#errors" title="Permalink to this headline">¶</a></h2>
+<p>Insufficient rights when running Schema Update PS.
+From <a class="reference external" href="https://blog.truedigitalsecurity.com/blog/part-2-defending-against-pass-the-hash">truedigitalsecurity</a></p>
+<blockquote>
+<div>If you receive the error &#8220;The user has insufficient access rights.&#8221; you will want to place yourself in the Schema Admin group, but only until the process is complete, then immediately take the account back out of the group because Schema Admins have access to make changes to the Active Directory Schema, which is the entire backbone of the Active Directory forest environment.</div></blockquote>
+</div>
+<div class="section" id="link">
+<h2>Link:<a class="headerlink" href="#link" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="https://www.microsoft.com/en-us/download/details.aspx?id=46899">Download here</a>.
+The instructions are pretty good, and I managed to get it running (even without much Windows experience).</p>
 </div>
 </div>
 
@@ -83,7 +98,12 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../dns/index.html">DNS stuff</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../elk/index.html">elk stack</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../openssh/index.html">OpenSSH</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../operating_systems/index.html">Operating Systems</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../index.html">Operating Systems</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../linux/index.html">Linux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../openbsd/index.html">OpenBSD</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html">Windows</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="../../../ossec/index.html">OSSEC</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../rsyslogd/index.html">rsyslogd</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../securityonion/index.html">SecurityOnion</a></li>
@@ -91,29 +111,18 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../stupid_unix_tricks/index.html">Stupid Unix Tricks</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../tools/index.html">Tools</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../vendor_stuff/index.html">Vendor Stuff</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="../../index.html">MISC</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="../../imagemagick/index.html">Imagemagick</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../kernel_build/index.html">Building a custom kernel</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../ksh/index.html">ksh</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../links/index.html">Links</a></li>
-<li class="toctree-l2 current"><a class="reference internal" href="../index.html">mynet</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../projects/index.html">projects</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../random.html">Stupid random stuff</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../junk/index.html">Junk</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../fediverse/glitch-soc.html">glitch-soc</a></li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../misc/index.html">MISC</a></li>
 </ul>
 
 <div class="relations">
 <h3>Related Topics</h3>
 <ul>
   <li><a href="../../../index.html">Documentation overview</a><ul>
-  <li><a href="../../index.html">MISC</a><ul>
-  <li><a href="../index.html">mynet</a><ul>
-  <li><a href="index.html">computers</a><ul>
-      <li>Previous: <a href="buzzell.html" title="previous chapter">buzzell:</a></li>
-      <li>Next: <a href="ix.html" title="next chapter">ix:</a></li>
+  <li><a href="../../index.html">Operating Systems</a><ul>
+  <li><a href="../index.html">Windows</a><ul>
+  <li><a href="index.html">Active Directory</a><ul>
+      <li>Previous: <a href="fsmo.html" title="previous chapter">Find the FSMO roles of a server:</a></li>
+      <li>Next: <a href="replication.html" title="next chapter">Show replication status:</a></li>
   </ul></li>
   </ul></li>
   </ul></li>

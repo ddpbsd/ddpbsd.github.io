@@ -19,4 +19,5 @@ Contents:
    projects/index
    random
    junk/index
+   fediverse/glitch-soc.rst
 
