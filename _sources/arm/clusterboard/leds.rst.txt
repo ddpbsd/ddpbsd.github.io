@@ -6,3 +6,4 @@ Possibly turn off the heartbeat led:
 
   cd /sys/class/leds/system_status
   echo 0 > brightness
+

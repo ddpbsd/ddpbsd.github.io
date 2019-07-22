@@ -1,5 +1,6 @@
 .. _tools:
 
+=====
 Tools
 =====
 
@@ -20,6 +21,7 @@ Contents:
    ldap/index
    messaging/index
    monitoring/index
+   opensmtpd/index
    osquery/index
    perl/index
    python/index
