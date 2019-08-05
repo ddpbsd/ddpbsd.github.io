@@ -1,4 +1,4 @@
-
+==========
 Monitoring
 ==========
 
@@ -13,12 +13,17 @@ Checking the status of a cluster or an index seems simple, but my brain is havin
 
 .. warning::
 
-   Space delimited line is a bit of a lie. There are multiple spaces. It's a nightmare.
+   "Space delimited line" is a bit of a lie.
+   There are multiple spaces.
+   It's a nightmare, built for looks instead of functionality.
 
-Cluster allocation
-^^^^^^^^^^^^^^^^^^
+Stuff
+=====
 
-**Output:** space delimited line
+   Cluster allocation
+   ^^^^^^^^^^^^^^^^^^
+
+   **Output:** space delimited line
 
 .. code-block:: console
 
@@ -27,11 +32,11 @@ Cluster allocation
 Get a list of indexes
 ^^^^^^^^^^^^^^^^^^^^^
 
-**Output:** space delimited line
+   **Output:** space delimited line
 
-.. code-block:: console
+   .. code-block:: console
 
-   curl -sk -XGET 'https://USER:PASSWORD1234@elastic.example.com:9200/_cat/indices
+      curl -sk -XGET 'https://USER:PASSWORD1234@elastic.example.com:9200/_cat/indices
 
 Check read-only status
 ^^^^^^^^^^^^^^^^^^^^^^
