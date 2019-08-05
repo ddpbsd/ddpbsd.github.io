@@ -11,6 +11,19 @@ Checking the status of a cluster or an index seems simple, but my brain is havin
 
    Adding `?v` at the end of some of these (the delimited line output ones anyway) adds headers to each column.
 
+.. warning::
+
+   Space delimited line is a bit of a lie. There are multiple spaces. It's a nightmare.
+
+Cluster allocation
+^^^^^^^^^^^^^^^^^^
+
+**Output:** space delimited line
+
+.. code-block:: console
+
+   curl 'http://USER:PASSWORD4321@elastic.example.com:9200/_cat/allocation?v'
+
 Get a list of indexes
 ^^^^^^^^^^^^^^^^^^^^^
 
@@ -37,6 +50,8 @@ Use `jq` to see do the thing.
 Will return `null` if the field does not exist.
 
 **Output:** `"true"|"false"`
+
+.. code-block:: console
 
    curl -sk -XGET 'https://USER:PASSWORD1234@elastic.example.com:9200/fluttershy-2019.08.*/_settings/index.blocks.read_only_allow_delete' \
    | jq '.["fluttershy-2019.08.02"].settings.index.blocks.read_only_allow_delete'

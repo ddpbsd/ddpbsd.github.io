@@ -53,6 +53,17 @@
 <p class="first admonition-title">Note</p>
 <p class="last">Adding <cite>?v</cite> at the end of some of these (the delimited line output ones anyway) adds headers to each column.</p>
 </div>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">Space delimited line is a bit of a lie. There are multiple spaces. It&#8217;s a nightmare.</p>
+</div>
+<div class="section" id="cluster-allocation">
+<h2>Cluster allocation<a class="headerlink" href="#cluster-allocation" title="Permalink to this headline">¶</a></h2>
+<p><strong>Output:</strong> space delimited line</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">curl &#39;http://USER:PASSWORD4321@elastic.example.com:9200/_cat/allocation?v&#39;</span>
+</pre></div>
+</div>
+</div>
 <div class="section" id="get-a-list-of-indexes">
 <h2>Get a list of indexes<a class="headerlink" href="#get-a-list-of-indexes" title="Permalink to this headline">¶</a></h2>
 <p><strong>Output:</strong> space delimited line</p>
@@ -72,8 +83,10 @@ The field will not exist unless specifically set.</p>
 <p>Use <cite>jq</cite> to see do the thing.
 Will return <cite>null</cite> if the field does not exist.</p>
 <p><strong>Output:</strong> <cite>&#8220;true&#8221;|&#8221;false&#8221;</cite></p>
-<blockquote>
-<div>curl -sk -XGET &#8216;<a class="reference external" href="https://USER:PASSWORD1234&#64;elastic.example.com:9200/fluttershy-2019.08.*/_settings/index.blocks.read_only_allow_delete">https://USER:PASSWORD1234&#64;elastic.example.com:9200/fluttershy-2019.08.*/_settings/index.blocks.read_only_allow_delete</a>&#8216; | jq &#8216;.[&#8220;fluttershy-2019.08.02&#8221;].settings.index.blocks.read_only_allow_delete&#8217;</div></blockquote>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">curl -sk -XGET &#39;https://USER:PASSWORD1234@elastic.example.com:9200/fluttershy-2019.08.*/_settings/index.blocks.read_only_allow_delete&#39; \</span>
+<span class="go">| jq &#39;.[&quot;fluttershy-2019.08.02&quot;].settings.index.blocks.read_only_allow_delete&#39;</span>
+</pre></div>
+</div>
 </div>
 <div class="section" id="red-yellow-green">
 <h2>red|yellow|green<a class="headerlink" href="#red-yellow-green" title="Permalink to this headline">¶</a></h2>
