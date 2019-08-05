@@ -26,6 +26,8 @@
     <script type="text/javascript" src="../../_static/doctools.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="OpenSSH" href="../../openssh/index.html" />
+    <link rel="prev" title="monitoring" href="index.html" />
    
   <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
   
@@ -45,6 +47,19 @@
             
   <div class="section" id="monitoring">
 <h1>Monitoring<a class="headerlink" href="#monitoring" title="Permalink to this headline">¶</a></h1>
+<p>There are a number of things that need to be monitored in the elk stack.</p>
+<p>Checking the status of a cluster or an index seems simple, but my brain is having trouble with it.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Adding <cite>?v</cite> at the end of some of these (the delimited line output ones anyway) adds headers to each column.</p>
+</div>
+<div class="section" id="get-a-list-of-indexes">
+<h2>Get a list of indexes<a class="headerlink" href="#get-a-list-of-indexes" title="Permalink to this headline">¶</a></h2>
+<p><strong>Output:</strong> space delimited line</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">curl -sk -XGET &#39;https://USER:PASSWORD1234@elastic.example.com:9200/_cat/indices</span>
+</pre></div>
+</div>
+</div>
 <div class="section" id="check-read-only-status">
 <h2>Check read-only status<a class="headerlink" href="#check-read-only-status" title="Permalink to this headline">¶</a></h2>
 <p>Get the json for the <cite>read_only_allow_delete</cite> field.
@@ -62,7 +77,7 @@ Will return <cite>null</cite> if the field does not exist.</p>
 </div>
 <div class="section" id="red-yellow-green">
 <h2>red|yellow|green<a class="headerlink" href="#red-yellow-green" title="Permalink to this headline">¶</a></h2>
-<p><strong>Output:</strong> space delimited line.</p>
+<p><strong>Output:</strong> space delimited line</p>
 <div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">curl -sk -XGET &#39;https://USER:PASSWORD@elastic.example.com:9200/_cat/health?v&#39;</span>
 </pre></div>
 </div>
@@ -86,11 +101,17 @@ Will return <cite>null</cite> if the field does not exist.</p>
 
 
 <h3>Navigation</h3>
-<ul>
+<ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../arm/index.html">arm</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../db/index.html">databases</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../dns/index.html">DNS stuff</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../index.html">elk stack</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">elk stack</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../beats/index.html">Beats</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../elastic/index.html">elastic</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../logstash/index.html">logstash</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">monitoring</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="../../openssh/index.html">OpenSSH</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../operating_systems/index.html">Operating Systems</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../ossec/index.html">OSSEC</a></li>
@@ -107,6 +128,12 @@ Will return <cite>null</cite> if the field does not exist.</p>
 <h3>Related Topics</h3>
 <ul>
   <li><a href="../../index.html">Documentation overview</a><ul>
+  <li><a href="../index.html">elk stack</a><ul>
+  <li><a href="index.html">monitoring</a><ul>
+      <li>Previous: <a href="index.html" title="previous chapter">monitoring</a></li>
+      <li>Next: <a href="../../openssh/index.html" title="next chapter">OpenSSH</a></li>
+  </ul></li>
+  </ul></li>
   </ul></li>
 </ul>
 </div>

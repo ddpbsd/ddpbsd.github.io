@@ -11,6 +11,7 @@ Contents:
    beats/index
    elastic/index
    logstash/index
+   monitoring/index
     
       
 

@@ -2,6 +2,24 @@
 Monitoring
 ==========
 
+There are a number of things that need to be monitored in the elk stack.
+
+
+Checking the status of a cluster or an index seems simple, but my brain is having trouble with it.
+
+.. note::
+
+   Adding `?v` at the end of some of these (the delimited line output ones anyway) adds headers to each column.
+
+Get a list of indexes
+^^^^^^^^^^^^^^^^^^^^^
+
+**Output:** space delimited line
+
+.. code-block:: console
+
+   curl -sk -XGET 'https://USER:PASSWORD1234@elastic.example.com:9200/_cat/indices
+
 Check read-only status
 ^^^^^^^^^^^^^^^^^^^^^^
 
@@ -26,7 +44,7 @@ Will return `null` if the field does not exist.
 red|yellow|green
 ^^^^^^^^^^^^^^^^
 
-**Output:** space delimited line.
+**Output:** space delimited line
 
 .. code-block:: console
 
