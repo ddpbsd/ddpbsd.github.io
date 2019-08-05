@@ -59,25 +59,34 @@
 There are multiple spaces.
 It&#8217;s a nightmare, built for looks instead of functionality.</p>
 </div>
-<div class="section" id="stuff">
-<h2>Stuff<a class="headerlink" href="#stuff" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="sysadmin-type-stuff">
+<h2>Sysadmin type stuff<a class="headerlink" href="#sysadmin-type-stuff" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="cluster-allocation">
+<h3>Cluster allocation<a class="headerlink" href="#cluster-allocation" title="Permalink to this headline">¶</a></h3>
 <blockquote>
-<div><strong>Output:</strong> space delimited line</div></blockquote>
+<div><p><strong>Output:</strong> space delimited line</p>
 <div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">curl &#39;http://USER:PASSWORD4321@elastic.example.com:9200/_cat/allocation?v&#39;</span>
 </pre></div>
+</div>
+</div></blockquote>
 </div>
 <div class="section" id="get-a-list-of-indexes">
 <h3>Get a list of indexes<a class="headerlink" href="#get-a-list-of-indexes" title="Permalink to this headline">¶</a></h3>
 <blockquote>
 <div><p><strong>Output:</strong> space delimited line</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">curl -sk -XGET &#39;https://USER:PASSWORD1234@elastic.example.com:9200/_cat/indices</span>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">curl -sk -XGET &#39;https://USER:PASSWORD1234@elastic.example.com:9200/_cat/indices&#39;</span>
+</pre></div>
+</div>
+<p>Restrict the list to only the index names:</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">curl -sk -XGET &#39;https://USER:PASSWORD0987@elastic.example.com:9200/_cat/indices?h=index&#39;</span>
 </pre></div>
 </div>
 </div></blockquote>
 </div>
 <div class="section" id="check-read-only-status">
 <h3>Check read-only status<a class="headerlink" href="#check-read-only-status" title="Permalink to this headline">¶</a></h3>
-<p>Get the json for the <cite>read_only_allow_delete</cite> field.
+<blockquote>
+<div><p>Get the json for the <cite>read_only_allow_delete</cite> field.
 Empty <cite>{}</cite> if the field does not exist.
 The field will not exist unless specifically set.</p>
 <p><strong>Output:</strong> json</p>
@@ -91,13 +100,16 @@ Will return <cite>null</cite> if the field does not exist.</p>
 <span class="go">| jq &#39;.[&quot;fluttershy-2019.08.02&quot;].settings.index.blocks.read_only_allow_delete&#39;</span>
 </pre></div>
 </div>
+</div></blockquote>
 </div>
 <div class="section" id="red-yellow-green">
 <h3>red|yellow|green<a class="headerlink" href="#red-yellow-green" title="Permalink to this headline">¶</a></h3>
-<p><strong>Output:</strong> space delimited line</p>
+<blockquote>
+<div><p><strong>Output:</strong> space delimited line</p>
 <div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">curl -sk -XGET &#39;https://USER:PASSWORD@elastic.example.com:9200/_cat/health?v&#39;</span>
 </pre></div>
 </div>
+</div></blockquote>
 </div>
 </div>
 </div>

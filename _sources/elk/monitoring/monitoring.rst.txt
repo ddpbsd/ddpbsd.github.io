@@ -17,17 +17,17 @@ Checking the status of a cluster or an index seems simple, but my brain is havin
    There are multiple spaces.
    It's a nightmare, built for looks instead of functionality.
 
-Stuff
-=====
+Sysadmin type stuff
+===================
 
-   Cluster allocation
-   ^^^^^^^^^^^^^^^^^^
+Cluster allocation
+^^^^^^^^^^^^^^^^^^
 
    **Output:** space delimited line
 
-.. code-block:: console
+   .. code-block:: console
 
-   curl 'http://USER:PASSWORD4321@elastic.example.com:9200/_cat/allocation?v'
+      curl 'http://USER:PASSWORD4321@elastic.example.com:9200/_cat/allocation?v'
 
 Get a list of indexes
 ^^^^^^^^^^^^^^^^^^^^^
@@ -36,37 +36,43 @@ Get a list of indexes
 
    .. code-block:: console
 
-      curl -sk -XGET 'https://USER:PASSWORD1234@elastic.example.com:9200/_cat/indices
+      curl -sk -XGET 'https://USER:PASSWORD1234@elastic.example.com:9200/_cat/indices'
+
+   Restrict the list to only the index names:
+
+   .. code-block:: console
+
+      curl -sk -XGET 'https://USER:PASSWORD0987@elastic.example.com:9200/_cat/indices?h=index'
 
 Check read-only status
 ^^^^^^^^^^^^^^^^^^^^^^
 
-Get the json for the `read_only_allow_delete` field.
-Empty `{}` if the field does not exist.
-The field will not exist unless specifically set.
+   Get the json for the `read_only_allow_delete` field.
+   Empty `{}` if the field does not exist.
+   The field will not exist unless specifically set.
 
-**Output:** json
+   **Output:** json
 
-.. code-block:: console
+   .. code-block:: console
 
-   curl -sk -XGET 'https://USER:PASSWORD1234@elastic.example.com:9200/fluttershy-2019.08.*/_settings/index.blocks.read_only_allow_delete'
+      curl -sk -XGET 'https://USER:PASSWORD1234@elastic.example.com:9200/fluttershy-2019.08.*/_settings/index.blocks.read_only_allow_delete'
 
-Use `jq` to see do the thing.
-Will return `null` if the field does not exist.
+   Use `jq` to see do the thing.
+   Will return `null` if the field does not exist.
 
-**Output:** `"true"|"false"`
+   **Output:** `"true"|"false"`
 
-.. code-block:: console
+   .. code-block:: console
 
-   curl -sk -XGET 'https://USER:PASSWORD1234@elastic.example.com:9200/fluttershy-2019.08.*/_settings/index.blocks.read_only_allow_delete' \
-   | jq '.["fluttershy-2019.08.02"].settings.index.blocks.read_only_allow_delete'
+      curl -sk -XGET 'https://USER:PASSWORD1234@elastic.example.com:9200/fluttershy-2019.08.*/_settings/index.blocks.read_only_allow_delete' \
+      | jq '.["fluttershy-2019.08.02"].settings.index.blocks.read_only_allow_delete'
 
 red|yellow|green
 ^^^^^^^^^^^^^^^^
 
-**Output:** space delimited line
+   **Output:** space delimited line
 
-.. code-block:: console
+   .. code-block:: console
 
-   curl -sk -XGET 'https://USER:PASSWORD@elastic.example.com:9200/_cat/health?v'
+      curl -sk -XGET 'https://USER:PASSWORD@elastic.example.com:9200/_cat/health?v'
 
