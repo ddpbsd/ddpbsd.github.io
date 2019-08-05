@@ -57,6 +57,11 @@
 <div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">cat ct_log.json | jq &#39;.[&quot;Records&quot;][].userIdentity[&quot;sessionContext&quot;].attributes.mfaAuthenticated&#39;</span>
 </pre></div>
 </div>
+<p>Check <cite>read_only_allow_delete</cite> in elasticsearch for index <cite>fluttershy</cite>:</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">curl -sk -XGET &#39;https://USER:PASSWORD1234@elastic.example.com:9200/fluttershy-2019.08.*/_settings/index.blocks.read_only_allow_delete&#39; \</span>
+<span class="go">| jq &#39;.[&quot;fluttershy-2019.08.02&quot;].settings.index.blocks.read_only_allow_delete&#39;</span>
+</pre></div>
+</div>
 </div>
 </div>
 
