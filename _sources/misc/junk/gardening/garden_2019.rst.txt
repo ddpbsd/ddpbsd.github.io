@@ -1,11 +1,11 @@
 .. _misc_junk_gardening_garden_2019:
 
-
+===========
 Garden 2019
 ===========
 
-Inventory:
-^^^^^^^^^^
+Inventory
+^^^^^^^^^
 +----------------------------+----------+-----+
 | Name                       | Type     | No. |
 +============================+==========+=====+
@@ -41,8 +41,8 @@ Inventory:
 +----------------------------+----------+-----+
 
 
-Planting:
-^^^^^^^^^
+Planting
+^^^^^^^^
 
 We bought a large planter (with legs!) for the herbs.
 It holds the water underneath everything with a little water guage to know when to water the plants.
@@ -55,8 +55,8 @@ We bought more beefsteak tomato plants than we thought, so I need more large pla
    Might have to learn how to can tomatoes.
 
 
-Notes:
-^^^^^^
+Notes
+^^^^^
 
 Never tried most of these, so it will be interesting.
 I did manage to find the Lunchbox Red Peppers and Chocolate Sprinkle Tomatoes, which I really wanted.

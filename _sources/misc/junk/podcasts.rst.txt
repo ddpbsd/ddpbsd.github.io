@@ -1,10 +1,11 @@
+========
 podcasts
 ========
 
 Podcasts I listen to, in no particular order. Not all of these are family friendly.
 
-Host Stuff Works network:
-^^^^^^^^^^^^^^^^^^^^^^^^^
+Host Stuff Works network
+^^^^^^^^^^^^^^^^^^^^^^^^
 
 `Stuff They Don't Want You to Know <https://www.stufftheydontwantyoutoknow.com/>`_ - Conspiracy realism.
 
@@ -19,8 +20,8 @@ Host Stuff Works network:
 `Aaron Mahnke's Cabinet of Curiosities <https://www.curiositiespodcast.com/>`_ - Strange little tales from Aaron Mahnke.
 
 
-Parcast network:
-^^^^^^^^^^^^^^^^
+Parcast network
+^^^^^^^^^^^^^^^
 
 `Mythology <https://www.parcast.com/mythology>`_ - Mythological figures. Information and stories.
 
@@ -31,8 +32,8 @@ Parcast network:
 `Conspiracy Theories <https://www.parcast.com/conspiracy>`_ - What it says on the tin.
 
 
-Unaffiliated:
-^^^^^^^^^^^^^
+Unaffiliated
+^^^^^^^^^^^^
 
 `Unobscured with Aaron Mahnke <https://historyunobscured.com/>`_
 

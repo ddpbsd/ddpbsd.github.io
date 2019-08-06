@@ -1,10 +1,11 @@
+========
 Projects
 ========
 
 Personal technology projects I try to spend time on.
 
-OSSEC:
-^^^^^^
+OSSEC
+^^^^^
 
 `OSSEC <https://ossec.github.io>`_ is an open source 
 Host Intrusion Detection systems. It does file integrity
@@ -36,23 +37,23 @@ Current tasks:
   * `openscap`
 
 
-OSSEC Documentation:
-^^^^^^^^^^^^^^^^^^^^
+OSSEC Documentation
+^^^^^^^^^^^^^^^^^^^
 
 People who write documentation regularly are saints and deserve all
 of the praise. *I need to get back into this.*
 
 
-ESP8266:
-^^^^^^^^
+ESP8266
+^^^^^^^
 
 Ties into sensornet above. The goal is to make small and
 inexpensive devices I can sprinkle throughout an area to 
 collect environmental information. Temperature and humidity
 are the first I want to monitor. Others may follow.
 
-ARM:
-^^^^
+ARM
+^^^
 
 I have a small, but growing, group of ARM based systems.
 
@@ -67,6 +68,4 @@ network, I put it off to the side.
 
 `beaglebone black` Not currently in use, but I was thinking of putting it
 to use with the esp8266 sensornet as the aggregator.
-
-
 

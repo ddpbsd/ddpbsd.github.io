@@ -1,4 +1,4 @@
-
+===========
 Mission BBQ
 ===========
 
@@ -7,8 +7,8 @@ Mission BBQ
    The sauces are always in the wrong locations.
    Pay attention to the labels on the bottles.
 
-Sauces:
-^^^^^^^
+Sauces
+^^^^^^
 
 * Tupelo honey heat is great.
 
@@ -18,15 +18,15 @@ Sauces:
 
 * Don't forget the Baja Bold sauce.
 
-Meat:
-^^^^^
+Meat
+^^^^
 
 * Get the pulled pork.
 
 * NC style sandwiches have cold slaw on them (the best way to use the cold slaw).
 
-Sides:
-^^^^^^
+Sides
+^^^^^
 
 * Cold Slaw is meh.
 
@@ -35,8 +35,8 @@ Sides:
 * Cornbread is necessary (although it may be a little dry).
 
 
-Desserts:
-^^^^^^^^^
+Desserts
+^^^^^^^^
 
 * Always get a brownie. 
 

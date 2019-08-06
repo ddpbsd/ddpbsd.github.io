@@ -1,7 +1,7 @@
 
 
-Get setup output:
-^^^^^^^^^^^^^^^^^
+Get setup output
+^^^^^^^^^^^^^^^^
 
 .. code-block:: console
 
@@ -9,8 +9,8 @@ Get setup output:
    ansible -m setup --tree out/ all
 
 
-Get the overview page:
-^^^^^^^^^^^^^^^^^^^^^^
+Get the overview page
+^^^^^^^^^^^^^^^^^^^^^
 
 .. code-block:: console
 

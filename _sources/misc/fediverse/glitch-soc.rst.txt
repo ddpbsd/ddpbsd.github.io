@@ -1,5 +1,5 @@
 
-
+==========
 glitch-soc
 ==========
 
@@ -7,8 +7,8 @@ It's a mastodon fork.
 I forget where stuff is all the time.
 I don't want to have to remember it.
 
-Bookmarks:
-^^^^^^^^^^
+Bookmarks
+^^^^^^^^^
 
 Find the link on the Getting Started page.
 

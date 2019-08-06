@@ -1,6 +1,6 @@
 
 ====
-MISC
+misc
 ====
 
 Stuff that will probably be much much less in depth
