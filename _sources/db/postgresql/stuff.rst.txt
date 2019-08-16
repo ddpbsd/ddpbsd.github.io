@@ -1,0 +1,27 @@
+
+
+
+
+List databases:
+^^^^^^^^^^^^^^^
+
+.. code-block:: console
+
+   \l
+
+List tables:
+^^^^^^^^^^^^
+
+.. code-block:: console
+
+   \dt
+
+
+Connect to db:
+^^^^^^^^^^^^^^
+
+.. code-block:: console
+
+
+   \c DB_NAME
+

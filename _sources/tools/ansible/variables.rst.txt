@@ -1,0 +1,34 @@
+
+Variables
+^^^^^^^^^
+
+In the playbook add `vars:` followed by the variables to be defined.
+These can be `ansible-vault` encrypted strings.
+
+.. warning:
+
+   When creating the string, don't include the variable name.
+   Just put the value.
+
+.. code-block:: console
+
+   ---
+   - name: a sample playbook
+     hosts: localhost
+     become: yes
+     remote_user: stevc
+
+     vars:
+       sample_variable: !vault |
+              $ANSIBLE_VAULT;1.1;AES256
+              STUFF STUFF STUFF
+
+     tasks:
+       - do stuff
+
+
+Other than using `group_vars`, I haven't figured out how to do playbook specific
+vaults.
+It's really annoying actually.
+
+
