@@ -12,7 +12,7 @@ Contents:
    images
    limits
    list
-   network
+   networking
    profiles
    start
 
