@@ -1,4 +1,4 @@
-
+.. _opensmtpd_configuration:
 
 Default
 ^^^^^^^
