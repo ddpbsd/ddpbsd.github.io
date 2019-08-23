@@ -27,3 +27,12 @@ In ``vim``:
    :set expandtab
    
 
+Move to character position
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Move to column 80
+
+.. code-block:: console
+
+   80|
+

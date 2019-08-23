@@ -10,5 +10,6 @@ Contents:
 
    create_index
    status
+   security/logstash_user.rst
    
 

@@ -1,0 +1,21 @@
+
+Logstash user
+^^^^^^^^^^^^^
+
+Create a user for logstash to use to write with.
+
+.. code-block:: console
+
+   POST /_security/role/logstash_writer
+   {
+     "cluster": ["manage_index_templates", "monitor", "manage_ilm"], 
+     "indices": [
+       {
+         "names": [ "logstash-*" ], 
+         "privileges": ["write","delete","create_index","manage","manage_ilm"]  
+       }
+     ]
+   }
+
+
+

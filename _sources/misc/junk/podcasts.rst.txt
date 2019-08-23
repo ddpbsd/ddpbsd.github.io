@@ -44,5 +44,7 @@ Unaffiliated
 Public Radio Alliance
 ^^^^^^^^^^^^^^^^^^^^^
 
-`The Last Movie <http://www.publicradioalliance.com/the-last-movie>`_ - Fiction podcast about the search for a mythical movie.
+`TANIS <http://tanispodcast.com/>`_ - Radio drama style fiction podcast about the search for TANIS.
+
+`The Last Movie <http://www.publicradioalliance.com/the-last-movie>`_ - Radio drama style fiction podcast about the search for a mythical movie. Successor to TANIS.
 

@@ -1,0 +1,66 @@
+===========
+Nested json
+===========
+
+
+How to deal with this pain in the tushy
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Original message from kafka:
+
+.. code-block:: json
+
+   {"@version":"1","tags":["unparsed","kafka","_grokparsefailure"],"@timestamp":"2019-08-23T13:44:16.793Z","message":"{\"@timestamp\":\"2019-08-23T13:44:15.543Z\",\"@metadata\":{\"beat\":\"filebeat\",\"type\":\"_doc\",\"version\":\"7.3.0\",\"topic\":\"host1-beats\"},\"input\":{\"type\":\"log\"},\"agent\":{\"id\":\"b80d5eaf-ebb8-4b3a-807e-4df13438c7ca\",\"version\":\"7.3.0\",\"type\":\"filebeat\",\"ephemeral_id\":\"7adc46aa-6ab1-411a-8fed-fce9bc1d48b6\",\"hostname\":\"host1.example.com\"},\"ecs\":{\"version\":\"1.0.1\"},\"host\":{\"name\":\"host1.example.com\",\"hostname\":\"host1.example.com\",\"architecture\":\"x86_64\",\"os\":{\"version\":\"7 (Core)\",\"family\":\"redhat\",\"name\":\"CentOS Linux\",\"kernel\":\"3.10.0-957.1.3.el7.x86_64\",\"codename\":\"Core\",\"platform\":\"centos\"},\"id\":\"d4ae00fc7eb34bd8b5ea9012fa002b37\",\"containerized\":false},\"log\":{\"offset\":2680,\"file\":{\"path\":\"/var/log/secure\"}},\"message\":\"Aug 23 09:44:06 host1 sshd[9487]: Accepted password for test-user from 10.10.10.2 port 62308 ssh2\"}"}
+
+
+As parsed by jq:
+
+.. code-block:: json
+
+   {
+     "@version": "1",
+     "tags": [
+       "unparsed",
+       "kafka",
+       "_grokparsefailure"
+     ],
+     "@timestamp": "2019-08-23T13:44:16.793Z",
+     "message": "{\"@timestamp\":\"2019-08-23T13:44:15.543Z\",\"@metadata\":{\"beat\":\"filebeat\",\"type\":\"_doc\",\"version\":\"7.3.0\",\"topic\":\"host1-beats\"},\"input\":{\"type\":\"log\"},\"agent\":{\"id\":\"b80d5eaf-ebb8-4b3a-807e-4df13438c7ca\",\"version\":\"7.3.0\",\"type\":\"filebeat\",\"ephemeral_id\":\"7adc46aa-6ab1-411a-8fed-fce9bc1d48b6\",\"hostname\":\"host1.example.com\"},\"ecs\":{\"version\":\"1.0.1\"},\"host\":{\"name\":\"host1.example.com\",\"hostname\":\"host1.example.com\",\"architecture\":\"x86_64\",\"os\":{\"version\":\"7 (Core)\",\"family\":\"redhat\",\"name\":\"CentOS Linux\",\"kernel\":\"3.10.0-957.1.3.el7.x86_64\",\"codename\":\"Core\",\"platform\":\"centos\"},\"id\":\"d4ae00fc7eb34bd8b5ea9012fa002b37\",\"containerized\":false},\"log\":{\"offset\":2680,\"file\":{\"path\":\"/var/log/secure\"}},\"message\":\"Aug 23 09:44:06 host1 sshd[9487]: Accepted password for test-user from 10.10.10.2 port 62308 ssh2\"}"
+   }
+
+
+`message.message` is another json field. So parse that out with the `json{}` parser, and put it into `message2`.
+
+.. code-block:: console
+
+   filter {
+     json {
+       source => "message"
+       target => "message2"
+     }
+   }
+
+Then renaming the original `message` to something else should help prevent the need to re-write a bunch of stuff.
+
+.. code-block:: console
+
+   mutate {
+     rename => ["message", "orig_msg"]
+   }
+
+Next we can move `message2.message` to `message`, but that's not how we reference `message2.message`.
+We have to use `[message2][message]` instead:
+
+.. code-block:: console
+
+   if [message2][message] {
+     mutate {
+       rename => ["[message2][message]", "message]
+     }
+   }
+
+
+Now parsers can continue to work on the message field as they had previously.
+Yay!
+
+
