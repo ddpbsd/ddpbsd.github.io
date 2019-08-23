@@ -26,6 +26,8 @@
     <script type="text/javascript" src="../../_static/doctools.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="SSL with logstash and elasticsearch" href="ssl.html" />
+    <link rel="prev" title="kv parser" href="kv.html" />
    
   <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
   
@@ -45,6 +47,13 @@
             
   <div class="section" id="nested-json">
 <h1>Nested json<a class="headerlink" href="#nested-json" title="Permalink to this headline">¶</a></h1>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">I don&#8217;t know the difference between referencing <cite>message2.message</cite> and
+<cite>[message2][message]</cite>.
+This seems like a key piece of information, but I haven&#8217;t come across an
+explanation yet.</p>
+</div>
 <div class="section" id="how-to-deal-with-this-pain-in-the-tushy">
 <h2>How to deal with this pain in the tushy<a class="headerlink" href="#how-to-deal-with-this-pain-in-the-tushy" title="Permalink to this headline">¶</a></h2>
 <p>Original message from kafka:</p>
@@ -110,11 +119,17 @@ Yay!</p>
 
 
 <h3>Navigation</h3>
-<ul>
+<ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../arm/index.html">arm</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../db/index.html">databases</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../dns/index.html">DNS stuff</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../index.html">elk stack</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">elk stack</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../beats/index.html">Beats</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../elastic/index.html">elastic</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">logstash</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../monitoring/index.html">monitoring</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="../../openssh/index.html">OpenSSH</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../operating_systems/index.html">Operating Systems</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../ossec/index.html">OSSEC</a></li>
@@ -131,6 +146,12 @@ Yay!</p>
 <h3>Related Topics</h3>
 <ul>
   <li><a href="../../index.html">Documentation overview</a><ul>
+  <li><a href="../index.html">elk stack</a><ul>
+  <li><a href="index.html">logstash</a><ul>
+      <li>Previous: <a href="kv.html" title="previous chapter">kv parser</a></li>
+      <li>Next: <a href="ssl.html" title="next chapter">SSL with logstash and elasticsearch</a></li>
+  </ul></li>
+  </ul></li>
   </ul></li>
 </ul>
 </div>

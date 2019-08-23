@@ -2,6 +2,12 @@
 Nested json
 ===========
 
+.. note::
+
+   I don't know the difference between referencing `message2.message` and
+   `[message2][message]`.
+   This seems like a key piece of information, but I haven't come across an
+   explanation yet.
 
 How to deal with this pain in the tushy
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
