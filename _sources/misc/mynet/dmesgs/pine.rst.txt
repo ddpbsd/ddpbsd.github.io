@@ -1,5 +1,3 @@
-.. _misc_mynet_dmesgs_pine:
-
 dmesg for pine:
 ^^^^^^^^^^^^^^^
 

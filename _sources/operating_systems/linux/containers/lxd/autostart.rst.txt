@@ -1,8 +1,8 @@
 .. _lxd_autostart:
 
 
-How to set a container to auto start:
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+How to set a container to auto start
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code-block:: console
 

@@ -48,19 +48,19 @@
   <div class="section" id="dpkg">
 <h1>dpkg<a class="headerlink" href="#dpkg" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="lock-a-version-of-a-package">
-<h2>Lock a version of a package:<a class="headerlink" href="#lock-a-version-of-a-package" title="Permalink to this headline">¶</a></h2>
+<h2>Lock a version of a package<a class="headerlink" href="#lock-a-version-of-a-package" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">echo &quot;PKG_NAME hold&quot; | dpkg --set-selections</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="release-the-lock">
-<h2>Release the lock:<a class="headerlink" href="#release-the-lock" title="Permalink to this headline">¶</a></h2>
+<h2>Release the lock<a class="headerlink" href="#release-the-lock" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">echo &quot;&lt;package-name&gt; install&quot; | sudo dpkg --set-selections</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="see-the-current-selections">
-<h2>See the current selections:<a class="headerlink" href="#see-the-current-selections" title="Permalink to this headline">¶</a></h2>
+<h2>See the current selections<a class="headerlink" href="#see-the-current-selections" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">dpkg --get-selections</span>
 </pre></div>
 </div>
@@ -69,20 +69,26 @@
 <div class="section" id="apt">
 <h1>apt<a class="headerlink" href="#apt" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="lock-a-version">
-<h2>Lock a version:<a class="headerlink" href="#lock-a-version" title="Permalink to this headline">¶</a></h2>
+<h2>Lock a version<a class="headerlink" href="#lock-a-version" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">sudo apt-mark hold &lt;package-name&gt;</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="remove-the-hold">
-<h2>Remove the hold:<a class="headerlink" href="#remove-the-hold" title="Permalink to this headline">¶</a></h2>
+<h2>Remove the hold<a class="headerlink" href="#remove-the-hold" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">sudo apt-mark unhold &lt;package-name&gt;</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="look-at-info-for-a-package">
-<h2>Look at info for a package:<a class="headerlink" href="#look-at-info-for-a-package" title="Permalink to this headline">¶</a></h2>
+<h2>Look at info for a package<a class="headerlink" href="#look-at-info-for-a-package" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">apt show &lt;package-name&gt;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="find-the-files-provided-by-a-package">
+<h2>Find the files provided by a package<a class="headerlink" href="#find-the-files-provided-by-a-package" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">dpkg -L PACKAGE</span>
 </pre></div>
 </div>
 </div>

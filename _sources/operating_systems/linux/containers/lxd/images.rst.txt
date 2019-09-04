@@ -1,15 +1,15 @@
 .. _lxd_images:
 
-Add a remote image server:
-^^^^^^^^^^^^^^^^^^^^^^^^^^
+Add a remote image server
+^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code-block:: console
 
    ddplxc@earth:~$ lxc remote add lxc images.linuxcontainers.org
 
 
-List images on image server:
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+List images on image server
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 `images:` is the name of the remote image server.
 
@@ -17,8 +17,8 @@ List images on image server:
 
    ddplxc@earth:~$ lxc images list images:
 
-Launch a container from a "new" image:
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Launch a container from a "new" image
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code-block:: console
 
@@ -29,8 +29,8 @@ Launch a container from a "new" image:
 
    execing bash and running an update is highly encouraged
 
-Stop a running container:
-^^^^^^^^^^^^^^^^^^^^^^^^^
+Stop a running container
+^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code-block:: console
 

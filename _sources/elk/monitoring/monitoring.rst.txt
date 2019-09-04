@@ -76,3 +76,18 @@ red|yellow|green
 
       curl -sk -XGET 'https://USER:PASSWORD@elastic.example.com:9200/_cat/health?v'
 
+Get disk usage
+^^^^^^^^^^^^^^
+
+   List a bunch of the stuff
+
+   .. code-block:: console
+
+      GET /_cat/allocation?v&pretty
+
+
+   List the node and disk avail
+
+   .. code-block:: console
+
+      GET /_cat/nodes?h=h,name,diskAvail&v

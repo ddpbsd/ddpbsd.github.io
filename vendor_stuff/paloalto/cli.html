@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Save config to a file: &#8212; notes 0.1 documentation</title>
+    <title>Save config to a file &#8212; notes 0.1 documentation</title>
     
     <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
@@ -46,11 +46,23 @@
           <div class="body" role="main">
             
   <div class="section" id="save-config-to-a-file">
-<h1>Save config to a file:<a class="headerlink" href="#save-config-to-a-file" title="Permalink to this headline">¶</a></h1>
+<h1>Save config to a file<a class="headerlink" href="#save-config-to-a-file" title="Permalink to this headline">¶</a></h1>
 <div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">admin@device&gt; configure</span>
 <span class="gp">admin@device#</span> save config to 20180206_palo_config
 <span class="gp">admin@device#</span> <span class="nb">exit</span>
 <span class="go">admin@device&gt; scp export configuration remote-port 22 from 20180206_palo_config to USER@other-host:/tmp/config</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="show-arp-table">
+<h1>Show arp table<a class="headerlink" href="#show-arp-table" title="Permalink to this headline">¶</a></h1>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">&gt;</span> show arp ethernet1/1
+</pre></div>
+</div>
+</div>
+<div class="section" id="ping-a-host">
+<h1>ping a host<a class="headerlink" href="#ping-a-host" title="Permalink to this headline">¶</a></h1>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">&gt;</span> ping host <span class="m">10</span>.10.10.10
 </pre></div>
 </div>
 </div>

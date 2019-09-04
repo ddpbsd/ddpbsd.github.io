@@ -2,22 +2,22 @@
 dpkg
 ====
 
-Lock a version of a package:
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Lock a version of a package
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code-block:: console
 
    echo "PKG_NAME hold" | dpkg --set-selections
 
-Release the lock:
-^^^^^^^^^^^^^^^^^
+Release the lock
+^^^^^^^^^^^^^^^^
 
 .. code-block:: console
 
    echo "<package-name> install" | sudo dpkg --set-selections
 
-See the current selections:
-^^^^^^^^^^^^^^^^^^^^^^^^^^^
+See the current selections
+^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code-block:: console
 
@@ -27,24 +27,31 @@ See the current selections:
 apt
 ===
 
-Lock a version:
-^^^^^^^^^^^^^^^
+Lock a version
+^^^^^^^^^^^^^^
 
 .. code-block:: console
 
    sudo apt-mark hold <package-name>
 
-Remove the hold:
-^^^^^^^^^^^^^^^^
+Remove the hold
+^^^^^^^^^^^^^^^
 
 .. code-block:: console
 
    sudo apt-mark unhold <package-name>
 
-Look at info for a package:
-^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Look at info for a package
+^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code-block:: console
 
    apt show <package-name>
+
+Find the files provided by a package
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: console
+
+   dpkg -L PACKAGE
 

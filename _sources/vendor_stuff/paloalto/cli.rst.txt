@@ -1,7 +1,7 @@
 
 
-Save config to a file:
-^^^^^^^^^^^^^^^^^^^^^^
+Save config to a file
+^^^^^^^^^^^^^^^^^^^^^
 
 .. code-block:: console
 
@@ -9,4 +9,20 @@ Save config to a file:
    admin@device# save config to 20180206_palo_config
    admin@device# exit
    admin@device> scp export configuration remote-port 22 from 20180206_palo_config to USER@other-host:/tmp/config
+
+
+Show arp table
+^^^^^^^^^^^^^^
+
+.. code-block:: console
+
+   > show arp ethernet1/1
+
+
+ping a host
+^^^^^^^^^^^
+
+.. code-block:: console
+
+   > ping host 10.10.10.10
 

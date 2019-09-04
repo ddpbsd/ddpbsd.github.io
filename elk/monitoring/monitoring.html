@@ -26,7 +26,7 @@
     <script type="text/javascript" src="../../_static/doctools.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="OpenSSH" href="../../openssh/index.html" />
+    <link rel="next" title="Monitoring elasticsearch in grafana" href="grafana.html" />
     <link rel="prev" title="monitoring" href="index.html" />
    
   <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
@@ -111,6 +111,19 @@ Will return <cite>null</cite> if the field does not exist.</p>
 </div>
 </div></blockquote>
 </div>
+<div class="section" id="get-disk-usage">
+<h3>Get disk usage<a class="headerlink" href="#get-disk-usage" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><p>List a bunch of the stuff</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">GET /_cat/allocation?v&amp;pretty</span>
+</pre></div>
+</div>
+<p>List the node and disk avail</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">GET /_cat/nodes?h=h,name,diskAvail&amp;v</span>
+</pre></div>
+</div>
+</div></blockquote>
+</div>
 </div>
 </div>
 
@@ -161,7 +174,7 @@ Will return <cite>null</cite> if the field does not exist.</p>
   <li><a href="../index.html">elk stack</a><ul>
   <li><a href="index.html">monitoring</a><ul>
       <li>Previous: <a href="index.html" title="previous chapter">monitoring</a></li>
-      <li>Next: <a href="../../openssh/index.html" title="next chapter">OpenSSH</a></li>
+      <li>Next: <a href="grafana.html" title="next chapter">Monitoring elasticsearch in grafana</a></li>
   </ul></li>
   </ul></li>
   </ul></li>

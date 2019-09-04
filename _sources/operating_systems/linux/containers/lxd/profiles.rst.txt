@@ -22,8 +22,8 @@ Unset the http_proxy
 
    lxc profile unset default environment.http_proxy
 
-Edit the default profile:
-^^^^^^^^^^^^^^^^^^^^^^^^^
+Edit the default profile
+^^^^^^^^^^^^^^^^^^^^^^^^
 
 I had to do this when my network interface changed from ens3 to ens18.
 .. code-block:: console
