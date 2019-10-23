@@ -12,6 +12,6 @@ Contents:
    elastic/index
    logstash/index
    monitoring/index
-    
+   setup    
       
 

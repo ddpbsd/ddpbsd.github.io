@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Variables &#8212; notes 0.1 documentation</title>
+    <title>Vault Variables &#8212; notes 0.1 documentation</title>
     
     <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
@@ -45,8 +45,8 @@
 
           <div class="body" role="main">
             
-  <div class="section" id="variables">
-<h1>Variables<a class="headerlink" href="#variables" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="vault-variables">
+<h1>Vault Variables<a class="headerlink" href="#vault-variables" title="Permalink to this headline">¶</a></h1>
 <p>In the playbook add <cite>vars:</cite> followed by the variables to be defined.
 These can be <cite>ansible-vault</cite> encrypted strings.</p>
 <div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">---</span>
@@ -64,9 +64,21 @@ These can be <cite>ansible-vault</cite> encrypted strings.</p>
 <span class="go">    - do stuff</span>
 </pre></div>
 </div>
-<p>Other than using <cite>group_vars</cite>, I haven&#8217;t figured out how to do playbook specific
-vaults.
-It&#8217;s really annoying actually.</p>
+</div>
+<div class="section" id="playbook-specific-vaults">
+<h1>Playbook specific vaults<a class="headerlink" href="#playbook-specific-vaults" title="Permalink to this headline">¶</a></h1>
+<p>Use <cite>vars_files</cite> to specify a vault for sensitive variables.</p>
+<div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="nn">---</span>
+<span class="p p-Indicator">-</span> <span class="nt">hosts</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">localhost</span>
+  <span class="nt">user</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">ansible</span>
+
+  <span class="nt">vars_files</span><span class="p">:</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">vars/vault.yml</span>
+
+  <span class="nt">vars</span><span class="p">:</span>
+    <span class="nt">variable1</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">test</span>
+</pre></div>
+</div>
 </div>
 
 
@@ -101,6 +113,7 @@ It&#8217;s really annoying actually.</p>
 <li class="toctree-l1 current"><a class="reference internal" href="../index.html">Tools</a><ul class="current">
 <li class="toctree-l2 current"><a class="reference internal" href="index.html">ansible</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../certstrap/index.html">certstrap</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../curl/http_codes.html">Output http code</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../dns/index.html">dns</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../freeradius/index.html">FreeRadius</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../git/index.html">git</a></li>

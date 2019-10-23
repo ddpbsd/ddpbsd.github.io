@@ -1,5 +1,5 @@
-dmesg:
-^^^^^^
+dmesg
+^^^^^
 
 .. code-block:: console
 

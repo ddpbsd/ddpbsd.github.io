@@ -1,0 +1,15 @@
+
+Get list of shards
+^^^^^^^^^^^^^^^^^^
+
+.. code-block:: console
+
+   GET /_cat/shards?v
+
+Sort by node and then size (desc)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: console
+
+   GET /_cat/shards?v&s=node,store
+

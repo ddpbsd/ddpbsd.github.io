@@ -11,6 +11,7 @@ Contents:
 
    ansible/index
    certstrap/index
+   curl/index
    dns/index
    freeradius/index
    git/index

@@ -1,0 +1,162 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Use unbound to fix firefox so DoH doesn’t work &#8212; notes 0.1 documentation</title>
+    
+    <link rel="stylesheet" href="../../../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="FreeRadius" href="../../freeradius/index.html" />
+    <link rel="prev" title="unbound" href="index.html" />
+   
+  <link rel="stylesheet" href="../../../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body role="document">
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="use-unbound-to-fix-firefox-so-doh-doesn-t-work">
+<h1>Use unbound to fix firefox so DoH doesn&#8217;t work<a class="headerlink" href="#use-unbound-to-fix-firefox-so-doh-doesn-t-work" title="Permalink to this headline">¶</a></h1>
+<p>DoH takes away my ability as an administrator to admin my machines.
+It should not bypass what I have configured for my operating system.
+Someone may need this (VERY debatable), but it isn&#8217;t me.</p>
+<p>Setting up firefox to not use DoH might be possible, but I want other
+assurances as well. Here&#8217;s how to do it in unbound.</p>
+<p>Use a local-zone and always return nxdomain.</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">local-zone: &quot;use-application-dns.net.&quot; always_nxdomain</span>
+</pre></div>
+</div>
+<p>Use a local-zone and set it to static.</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">local-zone use-application-dns.net static</span>
+</pre></div>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../../../index.html">notes</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../arm/index.html">arm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../db/index.html">databases</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../dns/index.html">DNS stuff</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../elk/index.html">elk stack</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../openssh/index.html">OpenSSH</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../operating_systems/index.html">Operating Systems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../ossec/index.html">OSSEC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../rsyslogd/index.html">rsyslogd</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../securityonion/index.html">SecurityOnion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../ssl/index.html">ssl</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../stupid_unix_tricks/index.html">Stupid Unix Tricks</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../index.html">Tools</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../ansible/index.html">ansible</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../certstrap/index.html">certstrap</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../curl/http_codes.html">Output http code</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html">dns</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../freeradius/index.html">FreeRadius</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../git/index.html">git</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../gpg/index.html">gpg</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../grafana/index.html">grafana</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../java/index.html">Java</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../jq.html">jq</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ldap/index.html">ldap</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../messaging/index.html">Messaging</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../monitoring/index.html">Monitoring Tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../opensmtpd/index.html">opensmtpd</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../osquery/index.html">osquery</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../perl/index.html">Perl</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../python/index.html">Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../su.html">su</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../tcpdump/index.html">tcpdump</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../tmux/index.html">tmux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../vim/index.html">vim</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../virtualization/index.html">Virtualization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../x11/index.html">x11</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../retired/index.html">Retired</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../vendor_stuff/index.html">Vendor Stuff</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../misc/index.html">misc</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../../index.html">Documentation overview</a><ul>
+  <li><a href="../../index.html">Tools</a><ul>
+  <li><a href="../index.html">dns</a><ul>
+  <li><a href="index.html">unbound</a><ul>
+      <li>Previous: <a href="index.html" title="previous chapter">unbound</a></li>
+      <li>Next: <a href="../../freeradius/index.html" title="next chapter">FreeRadius</a></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+        <!-- your html code here -->
+	<div class="footer">
+		<em>This information has a good chance of being wrong, inconsistent, out of date, or just bad. Use at your own risk.
+		Feel free to notify me of any issues though.</em>
+	</div>
+
+
+  </body>
+</html>
