@@ -1,0 +1,27 @@
+
+Roles for Telegraf
+^^^^^^^^^^^^^^^^^^
+
+.. code-block:: console
+
+   remote_monitoring_agent, grafana, icinga-log-check
+
+
+grafana role
+^^^^^^^^^^^^
+
+Index privileges necessary
+
+.. code-block:: console
+
+   index read view_index_metadata
+
+icinga-log-check role
+^^^^^^^^^^^^^^^^^^^^^
+
+Index privileges necessary
+
+.. code-block:: console
+
+   read view_index_metadata
+

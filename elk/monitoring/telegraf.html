@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>monitoring &#8212; notes 0.1 documentation</title>
+    <title>Roles for Telegraf &#8212; notes 0.1 documentation</title>
     
     <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
@@ -26,8 +26,8 @@
     <script type="text/javascript" src="../../_static/doctools.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Monitoring" href="monitoring.html" />
-    <link rel="prev" title="Fix the kafka plugin:" href="../logstash/plugins.html" />
+    <link rel="next" title="Setting up the whole thing" href="../setup.html" />
+    <link rel="prev" title="Monitoring elasticsearch in grafana" href="grafana.html" />
    
   <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
   
@@ -45,23 +45,24 @@
 
           <div class="body" role="main">
             
-  <div class="section" id="monitoring">
-<h1>monitoring<a class="headerlink" href="#monitoring" title="Permalink to this headline">¶</a></h1>
-<p>Contents:</p>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="monitoring.html">Monitoring</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="monitoring.html#sysadmin-type-stuff">Sysadmin type stuff</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="grafana.html">Monitoring elasticsearch in grafana</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="grafana.html#free-disk-space">Free disk space</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="telegraf.html">Roles for Telegraf</a></li>
-<li class="toctree-l1"><a class="reference internal" href="telegraf.html#grafana-role">grafana role</a></li>
-<li class="toctree-l1"><a class="reference internal" href="telegraf.html#icinga-log-check-role">icinga-log-check role</a></li>
-</ul>
+  <div class="section" id="roles-for-telegraf">
+<h1>Roles for Telegraf<a class="headerlink" href="#roles-for-telegraf" title="Permalink to this headline">¶</a></h1>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">remote_monitoring_agent, grafana, icinga-log-check</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="grafana-role">
+<h1>grafana role<a class="headerlink" href="#grafana-role" title="Permalink to this headline">¶</a></h1>
+<p>Index privileges necessary</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">index read view_index_metadata</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="icinga-log-check-role">
+<h1>icinga-log-check role<a class="headerlink" href="#icinga-log-check-role" title="Permalink to this headline">¶</a></h1>
+<p>Index privileges necessary</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">read view_index_metadata</span>
+</pre></div>
 </div>
 </div>
 
@@ -90,7 +91,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../beats/index.html">Beats</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../elastic/index.html">elasticsearch</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../logstash/index.html">logstash</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">monitoring</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">monitoring</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../setup.html">Setting up the whole thing</a></li>
 </ul>
 </li>
@@ -111,8 +112,10 @@
 <ul>
   <li><a href="../../index.html">Documentation overview</a><ul>
   <li><a href="../index.html">elk stack</a><ul>
-      <li>Previous: <a href="../logstash/plugins.html" title="previous chapter">Fix the kafka plugin:</a></li>
-      <li>Next: <a href="monitoring.html" title="next chapter">Monitoring</a></li>
+  <li><a href="index.html">monitoring</a><ul>
+      <li>Previous: <a href="grafana.html" title="previous chapter">Monitoring elasticsearch in grafana</a></li>
+      <li>Next: <a href="../setup.html" title="next chapter">Setting up the whole thing</a></li>
+  </ul></li>
   </ul></li>
   </ul></li>
 </ul>

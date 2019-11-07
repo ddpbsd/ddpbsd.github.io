@@ -10,5 +10,6 @@ Contents:
 
    monitoring
    grafana
+   telegraf
       
 
