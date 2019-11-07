@@ -2,12 +2,13 @@
 Monitoring elasticsearch in grafana
 ===================================
 
-Using influxdb and telegraf.
+`grafana <https://grafana.com/>`_ is handy for graphing things.
+These examples use influxdb and telegraf.
 
 Free disk space
 ^^^^^^^^^^^^^^^
 
-See the percentage of free space.
+See the percentage of free space for each node.
 
 .. code-block:: console
 

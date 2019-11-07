@@ -26,7 +26,7 @@
     <script type="text/javascript" src="../../_static/doctools.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Setting up the whole thing" href="../setup.html" />
+    <link rel="next" title="telegraf" href="telegraf.html" />
     <link rel="prev" title="Monitoring" href="monitoring.html" />
    
   <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
@@ -47,10 +47,11 @@
             
   <div class="section" id="monitoring-elasticsearch-in-grafana">
 <h1>Monitoring elasticsearch in grafana<a class="headerlink" href="#monitoring-elasticsearch-in-grafana" title="Permalink to this headline">¶</a></h1>
-<p>Using influxdb and telegraf.</p>
+<p><a class="reference external" href="https://grafana.com/">grafana</a> is handy for graphing things.
+These examples use influxdb and telegraf.</p>
 <div class="section" id="free-disk-space">
 <h2>Free disk space<a class="headerlink" href="#free-disk-space" title="Permalink to this headline">¶</a></h2>
-<p>See the percentage of free space.</p>
+<p>See the percentage of free space for each node.</p>
 <div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">SELECT (last(&quot;total_available_in_bytes&quot;) / last(&quot;total_total_in_bytes&quot;) * 100) FROM &quot;elasticsearch_fs&quot; WHERE (&quot;cluster_name&quot; = &#39;wafflelab&#39;) AND $timeFilter GROUP BY time($__interval) fill(null)</span>
 </pre></div>
 </div>
@@ -80,7 +81,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../dns/index.html">DNS stuff</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../index.html">elk stack</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../beats/index.html">Beats</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../elastic/index.html">elastic</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../elastic/index.html">elasticsearch</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../logstash/index.html">logstash</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="index.html">monitoring</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../setup.html">Setting up the whole thing</a></li>
@@ -105,7 +106,7 @@
   <li><a href="../index.html">elk stack</a><ul>
   <li><a href="index.html">monitoring</a><ul>
       <li>Previous: <a href="monitoring.html" title="previous chapter">Monitoring</a></li>
-      <li>Next: <a href="../setup.html" title="next chapter">Setting up the whole thing</a></li>
+      <li>Next: <a href="telegraf.html" title="next chapter">telegraf</a></li>
   </ul></li>
   </ul></li>
   </ul></li>
