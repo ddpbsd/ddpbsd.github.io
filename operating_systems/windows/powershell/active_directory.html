@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Get Domain Admins: &#8212; notes 0.1 documentation</title>
+    <title>Active Directory &#8212; notes 0.1 documentation</title>
     
     <link rel="stylesheet" href="../../../_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
@@ -27,7 +27,7 @@
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
     <link rel="next" title="SID Stuff" href="../sid_stuff.html" />
-    <link rel="prev" title="Get the version of powershell:" href="powershell.html" />
+    <link rel="prev" title="Powershell Basics" href="powershell.html" />
    
   <link rel="stylesheet" href="../../../_static/custom.css" type="text/css" />
   
@@ -45,34 +45,58 @@
 
           <div class="body" role="main">
             
-  <div class="section" id="get-domain-admins">
-<h1>Get Domain Admins:<a class="headerlink" href="#get-domain-admins" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="active-directory">
+<h1>Active Directory<a class="headerlink" href="#active-directory" title="Permalink to this headline">¶</a></h1>
+<p>Interact with AD through powershell.
+It&#8217;s fun!</p>
+<div class="section" id="get-domain-admins">
+<h2>Get Domain Admins<a class="headerlink" href="#get-domain-admins" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">Get-ADGroupMember &quot;Domain Admins&quot; | select name,distinguishedName</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="list-disabled-accounts">
-<h1>List disabled accounts:<a class="headerlink" href="#list-disabled-accounts" title="Permalink to this headline">¶</a></h1>
+<h2>List disabled accounts<a class="headerlink" href="#list-disabled-accounts" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">Search-ADAccount -AccountDisabled</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="sorted-by-last-logon-date">
-<h1>Sorted by last logon date:<a class="headerlink" href="#sorted-by-last-logon-date" title="Permalink to this headline">¶</a></h1>
+<h2>Sorted by last logon date<a class="headerlink" href="#sorted-by-last-logon-date" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">Search-ADAccount -AccountDisabled -UsersOnly | Sort-Object lastlogondate</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="disabled-users">
-<h1>Disabled users:<a class="headerlink" href="#disabled-users" title="Permalink to this headline">¶</a></h1>
+<h2>Disabled users<a class="headerlink" href="#disabled-users" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">Get-ADUser -Filter {enabled -eq &quot;false&quot; -and objectclass -eq &quot;user&quot;} -properties modified | sort-object modified</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="another-list-of-domain-admins">
-<h1>Another list of domain admins:<a class="headerlink" href="#another-list-of-domain-admins" title="Permalink to this headline">¶</a></h1>
+<h2>Another list of domain admins<a class="headerlink" href="#another-list-of-domain-admins" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">Get-ADGroup -Identity S-1-5-21-DOMAIN-512 | Get-ADGroupMember | Get-ADUser -Filter {enabled -eq &quot;false&quot;} -Properties *</span>
 </pre></div>
+</div>
+</div>
+<div class="section" id="list-users-who-haven-t-logged-in-in-over-90-days">
+<h2>List users who haven&#8217;t logged in in over 90 days<a class="headerlink" href="#list-users-who-haven-t-logged-in-in-over-90-days" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span><span class="nv">Date</span> <span class="o">=</span> <span class="o">(</span>Get-Date<span class="o">)</span>.AddDays<span class="o">(</span>-90<span class="o">)</span>
+
+<span class="gp">#</span> Only list enabled users
+<span class="go">Get-ADUser -Filter {((Enabled -eq $true) -and (LastLogonDate -lt $Date))} -Properties LastLogonDate | select samaccountname, Name, LastLogonDate | Sort-Object LastLogonDate</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="list-domain-admins-sorted-by-last-logon-date">
+<h2>List Domain Admins sorted by last logon date<a class="headerlink" href="#list-domain-admins-sorted-by-last-logon-date" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">Get-ADGroup &quot;Domain Admins&quot; | Get-ADGroupMember | Get-ADUser -Properties LastLogonDate | Select Name,SamAccountName,LastLogonDate,Enabled | Sort LastLogonDate</span>
+</pre></div>
+</div>
+<p>This one does <cite>-recurse</cite>, which I don&#8217;t know if it&#8217;s necessary.</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">Get-ADGroupMember -Identity &quot;Domain Admins&quot; | foreach {Get-ADUser -Identity $_.distinguishedname -Properties displayname, samaccountname, lastlogondate | select displayname, samaccountname, lastlogondate, Enabled} | sort LastLogonDate</span>
+</pre></div>
+</div>
 </div>
 </div>
 
@@ -122,7 +146,7 @@
   <li><a href="../../index.html">Operating Systems</a><ul>
   <li><a href="../index.html">Windows</a><ul>
   <li><a href="index.html">Powershell</a><ul>
-      <li>Previous: <a href="powershell.html" title="previous chapter">Get the version of powershell:</a></li>
+      <li>Previous: <a href="powershell.html" title="previous chapter">Powershell Basics</a></li>
       <li>Next: <a href="../sid_stuff.html" title="next chapter">SID Stuff</a></li>
   </ul></li>
   </ul></li>

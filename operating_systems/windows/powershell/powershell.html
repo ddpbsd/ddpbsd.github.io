@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Get the version of powershell: &#8212; notes 0.1 documentation</title>
+    <title>Powershell Basics &#8212; notes 0.1 documentation</title>
     
     <link rel="stylesheet" href="../../../_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
@@ -26,7 +26,7 @@
     <script type="text/javascript" src="../../../_static/doctools.js"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="Get Domain Admins:" href="active_directory.html" />
+    <link rel="next" title="Active Directory" href="active_directory.html" />
     <link rel="prev" title="Powershell" href="index.html" />
    
   <link rel="stylesheet" href="../../../_static/custom.css" type="text/css" />
@@ -45,8 +45,11 @@
 
           <div class="body" role="main">
             
-  <div class="section" id="get-the-version-of-powershell">
-<span id="operating-systems-windows-powershell"></span><h1>Get the version of powershell:<a class="headerlink" href="#get-the-version-of-powershell" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="powershell-basics">
+<span id="operating-systems-windows-powershell"></span><h1>Powershell Basics<a class="headerlink" href="#powershell-basics" title="Permalink to this headline">¶</a></h1>
+<p>Some powershell basics.</p>
+<div class="section" id="get-the-version-of-powershell">
+<h2>Get the version of powershell:<a class="headerlink" href="#get-the-version-of-powershell" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">PS C:\&gt; $PSVersionTable.PSVersion</span>
 
 <span class="go">Major  Minor  Build  Revision</span>
@@ -56,7 +59,7 @@
 </div>
 </div>
 <div class="section" id="delete-files-from-a-remote-pc">
-<h1>Delete files from a remote PC:<a class="headerlink" href="#delete-files-from-a-remote-pc" title="Permalink to this headline">¶</a></h1>
+<h2>Delete files from a remote PC:<a class="headerlink" href="#delete-files-from-a-remote-pc" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">Remove-Item &quot;\\$computer\path\to\file.ext&quot;</span>
 </pre></div>
 </div>
@@ -66,28 +69,29 @@
 </div>
 </div>
 <div class="section" id="stop-a-service-on-a-remote-pc">
-<h1>Stop a service on a remote PC:<a class="headerlink" href="#stop-a-service-on-a-remote-pc" title="Permalink to this headline">¶</a></h1>
+<h2>Stop a service on a remote PC:<a class="headerlink" href="#stop-a-service-on-a-remote-pc" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">(get-service -ComputerName $computer -Name service_name).Stop()</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="start-a-service-on-a-remote-pc">
-<h1>Start a service on a remote PC:<a class="headerlink" href="#start-a-service-on-a-remote-pc" title="Permalink to this headline">¶</a></h1>
+<h2>Start a service on a remote PC:<a class="headerlink" href="#start-a-service-on-a-remote-pc" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">(get-service -ComputerName $computer -Name service_name).Start()</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="sleep-for-10-seconds">
-<h1>Sleep for 10 seconds:<a class="headerlink" href="#sleep-for-10-seconds" title="Permalink to this headline">¶</a></h1>
+<h2>Sleep for 10 seconds:<a class="headerlink" href="#sleep-for-10-seconds" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">Start-Sleep -s 10</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="get-creds-in-a-pscredential-object">
-<h1>Get creds in a PSCredential object:<a class="headerlink" href="#get-creds-in-a-pscredential-object" title="Permalink to this headline">¶</a></h1>
+<h2>Get creds in a PSCredential object:<a class="headerlink" href="#get-creds-in-a-pscredential-object" title="Permalink to this headline">¶</a></h2>
 <p>Useful for <cite>-PSCredential</cite></p>
 <div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span><span class="nv">mycreds</span> <span class="o">=</span> Get-Credential
 </pre></div>
+</div>
 </div>
 </div>
 
@@ -138,7 +142,7 @@
   <li><a href="../index.html">Windows</a><ul>
   <li><a href="index.html">Powershell</a><ul>
       <li>Previous: <a href="index.html" title="previous chapter">Powershell</a></li>
-      <li>Next: <a href="active_directory.html" title="next chapter">Get Domain Admins:</a></li>
+      <li>Next: <a href="active_directory.html" title="next chapter">Active Directory</a></li>
   </ul></li>
   </ul></li>
   </ul></li>
