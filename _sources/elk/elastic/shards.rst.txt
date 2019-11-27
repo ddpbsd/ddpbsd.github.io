@@ -1,0 +1,21 @@
+
+======
+shards
+======
+
+Get a list of UNASSIGNED shards
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: console
+
+   curl -XGET 'http://elastic.example.com:9200/_cat/shards?h=index,shard,prirep,state,unassigned.reason' | grep UNASSIGNED
+
+Re-route failed shards
+^^^^^^^^^^^^^^^^^^^^^^
+
+If a shard is `UNASSIGNED ALLOCATION_FAILED` run the following to retry the reroute:
+
+.. code-block:: console
+
+   curl -XPOST 'http://elastic.example.com:9200/_cluster/reroute?retry_failed=true'
+
