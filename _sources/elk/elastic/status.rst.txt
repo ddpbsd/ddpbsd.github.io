@@ -29,3 +29,10 @@ Filesystem stats
 
    GET https://localhost:9200/_nodes/stats/fs
 
+Get a list of shards
+^^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: console
+
+   curl -XGET http://localhost:9200/_cat/shards?v
+

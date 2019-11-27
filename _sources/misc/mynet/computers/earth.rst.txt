@@ -5,13 +5,13 @@ earth
 
 Proxmox virtualization server.
 
-Currently running:
-^^^^^^^^^^^^^^^^^^
+Currently running
+^^^^^^^^^^^^^^^^^
 
 * A bunch of VMs and containers
 
-Hardware:
-^^^^^^^^^
+Hardware
+^^^^^^^^
 
 Dell Poweredge T310
 

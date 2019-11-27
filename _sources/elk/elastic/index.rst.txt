@@ -13,5 +13,5 @@ Contents:
    status
    security/logstash_user.rst
    templates
-   
+   shards   
 

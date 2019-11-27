@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>buzzell: &#8212; notes 0.1 documentation</title>
+    <title>buzzell &#8212; notes 0.1 documentation</title>
     
     <link rel="stylesheet" href="../../../_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
@@ -46,11 +46,11 @@
           <div class="body" role="main">
             
   <div class="section" id="buzzell">
-<span id="misc-mynet-computers-buzzell"></span><h1>buzzell:<a class="headerlink" href="#buzzell" title="Permalink to this headline">¶</a></h1>
+<span id="misc-mynet-computers-buzzell"></span><h1>buzzell<a class="headerlink" href="#buzzell" title="Permalink to this headline">¶</a></h1>
 <p>Switched from Ubuntu to HardenedBSD. Docker stuff is useless right now.</p>
 </div>
 <div class="section" id="run-the-gogs-docker-container">
-<h1>Run the gogs docker container:<a class="headerlink" href="#run-the-gogs-docker-container" title="Permalink to this headline">¶</a></h1>
+<h1>Run the gogs docker container<a class="headerlink" href="#run-the-gogs-docker-container" title="Permalink to this headline">¶</a></h1>
 <p>After an update of the image, the container should be run again from scratch.</p>
 <div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">docker run --name=gogs -p 10022:22 -p 10080:3000 -v /var/gogs:/data gogs/gogs</span>
 </pre></div>
@@ -61,20 +61,20 @@
 </div>
 </div>
 <div class="section" id="build-the-nmap-image">
-<h1>Build the nmap image:<a class="headerlink" href="#build-the-nmap-image" title="Permalink to this headline">¶</a></h1>
+<h1>Build the nmap image<a class="headerlink" href="#build-the-nmap-image" title="Permalink to this headline">¶</a></h1>
 <p>Replace the X with the version number.</p>
 <div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">docker build -t nmap:X .</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="run-the-nmap-container">
-<h1>Run the nmap container:<a class="headerlink" href="#run-the-nmap-container" title="Permalink to this headline">¶</a></h1>
+<h1>Run the nmap container<a class="headerlink" href="#run-the-nmap-container" title="Permalink to this headline">¶</a></h1>
 <div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">docker run --mount source=nmap,target=/nmap --rm nmap:3 -sS -A -oG /nmap/2nmap_$(date +%Y%m%d) --append-output HOST</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="run-the-influxdb-container">
-<h1>Run the influxdb container:<a class="headerlink" href="#run-the-influxdb-container" title="Permalink to this headline">¶</a></h1>
+<h1>Run the influxdb container<a class="headerlink" href="#run-the-influxdb-container" title="Permalink to this headline">¶</a></h1>
 <div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">docker run -p 8086:8086 -p 8088:8088 -p 8089:8089/udp -v /home/ddp/influx/influxdb.conf:/etc/influxdb/influxdb.conf:ro -v influxdb:/var/lib/influxdb influxdb  -config /etc/influxdb/influxdb.conf</span>
 </pre></div>
 </div>
