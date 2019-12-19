@@ -68,3 +68,10 @@ This one does `-recurse`, which I don't know if it's necessary.
 
    Get-ADGroupMember -Identity "Domain Admins" | foreach {Get-ADUser -Identity $_.distinguishedname -Properties displayname, samaccountname, lastlogondate | select displayname, samaccountname, lastlogondate, Enabled} | sort LastLogonDate
 
+List users who have not logged in within 30 days and disable accounts
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: console
+
+   Search-ADAccount -AccountInactive -TimeSpan ([timespan]30d) -UsersOnly | Set-ADUser -Enabled $false -WhatIf
+

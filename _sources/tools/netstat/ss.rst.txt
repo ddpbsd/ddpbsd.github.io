@@ -1,0 +1,14 @@
+==
+ss
+==
+
+
+Replacement for netstat on some systems.
+
+
+See listening tcp ports with the processes
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: console
+
+    ss -tlnp

@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>dpkg &#8212; notes 0.1 documentation</title>
+    <title>journalctl &#8212; notes 0.1 documentation</title>
     
     <link rel="stylesheet" href="../../../_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
@@ -26,8 +26,8 @@
     <script type="text/javascript" src="../../../_static/doctools.js"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="Necessary packages:" href="unfuck.html" />
-    <link rel="prev" title="Only upgrade security related packages:" href="ubuntu.html" />
+    <link rel="next" title="systemctl enable SOMETHING.something: “Failed to execute operation: No such file or directory”" href="systemctl.html" />
+    <link rel="prev" title="systemd" href="index.html" />
    
   <link rel="stylesheet" href="../../../_static/custom.css" type="text/css" />
   
@@ -45,56 +45,18 @@
 
           <div class="body" role="main">
             
-  <div class="section" id="dpkg">
-<h1>dpkg<a class="headerlink" href="#dpkg" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="lock-a-version-of-a-package">
-<h2>Lock a version of a package<a class="headerlink" href="#lock-a-version-of-a-package" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">echo &quot;PKG_NAME hold&quot; | dpkg --set-selections</span>
+  <div class="section" id="journalctl">
+<h1>journalctl<a class="headerlink" href="#journalctl" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="don-t-truncate">
+<h2>Don&#8217;t truncate<a class="headerlink" href="#don-t-truncate" title="Permalink to this headline">¶</a></h2>
+<p>Fuck this default.</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">journalctl --no-pager</span>
 </pre></div>
 </div>
 </div>
-<div class="section" id="release-the-lock">
-<h2>Release the lock<a class="headerlink" href="#release-the-lock" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">echo &quot;&lt;package-name&gt; install&quot; | sudo dpkg --set-selections</span>
-</pre></div>
-</div>
-</div>
-<div class="section" id="see-the-current-selections">
-<h2>See the current selections<a class="headerlink" href="#see-the-current-selections" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">dpkg --get-selections</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="section" id="apt">
-<h1>apt<a class="headerlink" href="#apt" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="lock-a-version">
-<h2>Lock a version<a class="headerlink" href="#lock-a-version" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">sudo apt-mark hold &lt;package-name&gt;</span>
-</pre></div>
-</div>
-</div>
-<div class="section" id="remove-the-hold">
-<h2>Remove the hold<a class="headerlink" href="#remove-the-hold" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">sudo apt-mark unhold &lt;package-name&gt;</span>
-</pre></div>
-</div>
-</div>
-<div class="section" id="look-at-info-for-a-package">
-<h2>Look at info for a package<a class="headerlink" href="#look-at-info-for-a-package" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">apt show &lt;package-name&gt;</span>
-</pre></div>
-</div>
-</div>
-<div class="section" id="find-the-files-provided-by-a-package">
-<h2>Find the files provided by a package<a class="headerlink" href="#find-the-files-provided-by-a-package" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">dpkg -L PACKAGE</span>
-</pre></div>
-</div>
-</div>
-<div class="section" id="upgrade-one-package">
-<h2>Upgrade one package<a class="headerlink" href="#upgrade-one-package" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">apt-get install --only-upgrade &lt;packagename&gt;</span>
+<div class="section" id="view-the-last-100-lines">
+<h2>View the last 100 lines<a class="headerlink" href="#view-the-last-100-lines" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">journalctl --no-pager -n 100 --unit=my.service</span>
 </pre></div>
 </div>
 </div>
@@ -145,9 +107,9 @@
   <li><a href="../../../index.html">Documentation overview</a><ul>
   <li><a href="../../index.html">Operating Systems</a><ul>
   <li><a href="../index.html">Linux</a><ul>
-  <li><a href="index.html">Ubuntu</a><ul>
-      <li>Previous: <a href="ubuntu.html" title="previous chapter">Only upgrade security related packages:</a></li>
-      <li>Next: <a href="unfuck.html" title="next chapter">Necessary packages:</a></li>
+  <li><a href="index.html">systemd</a><ul>
+      <li>Previous: <a href="index.html" title="previous chapter">systemd</a></li>
+      <li>Next: <a href="systemctl.html" title="next chapter">systemctl enable SOMETHING.something: &#8220;Failed to execute operation: No such file or directory&#8221;</a></li>
   </ul></li>
   </ul></li>
   </ul></li>

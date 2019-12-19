@@ -22,6 +22,7 @@ Contents:
    ldap/index
    messaging/index
    monitoring/index
+   netstat/netstat
    opensmtpd/index
    osquery/index
    perl/index

@@ -98,6 +98,12 @@ It&#8217;s fun!</p>
 </pre></div>
 </div>
 </div>
+<div class="section" id="list-users-who-have-not-logged-in-within-30-days-and-disable-accounts">
+<h2>List users who have not logged in within 30 days and disable accounts<a class="headerlink" href="#list-users-who-have-not-logged-in-within-30-days-and-disable-accounts" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">Search-ADAccount -AccountInactive -TimeSpan ([timespan]30d) -UsersOnly | Set-ADUser -Enabled $false -WhatIf</span>
+</pre></div>
+</div>
+</div>
 </div>
 
 

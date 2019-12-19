@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>systemd &#8212; notes 0.1 documentation</title>
+    <title>beats_writer role &#8212; notes 0.1 documentation</title>
     
     <link rel="stylesheet" href="../../../_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
@@ -26,8 +26,8 @@
     <script type="text/javascript" src="../../../_static/doctools.js"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="journalctl" href="journalctl.html" />
-    <link rel="prev" title="Allow php to connecto to a remote mysql database:" href="../selinux/php.html" />
+    <link rel="next" title="Templates" href="../templates.html" />
+    <link rel="prev" title="Logstash role" href="logstash_user.html" />
    
   <link rel="stylesheet" href="../../../_static/custom.css" type="text/css" />
   
@@ -45,18 +45,16 @@
 
           <div class="body" role="main">
             
-  <div class="section" id="systemd">
-<h1>systemd<a class="headerlink" href="#systemd" title="Permalink to this headline">¶</a></h1>
-<p>Contents:</p>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="journalctl.html">journalctl</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="journalctl.html#don-t-truncate">Don&#8217;t truncate</a></li>
-<li class="toctree-l2"><a class="reference internal" href="journalctl.html#view-the-last-100-lines">View the last 100 lines</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="systemctl.html">systemctl enable SOMETHING.something: &#8220;Failed to execute operation: No such file or directory&#8221;</a></li>
-</ul>
+  <div class="section" id="beats-writer-role">
+<h1>beats_writer role<a class="headerlink" href="#beats-writer-role" title="Permalink to this headline">¶</a></h1>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">manage_index_templates</span>
+<span class="go">monitor</span>
+<span class="go">manage_ilm</span>
+</pre></div>
+</div>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">indices: `*beat*`</span>
+<span class="go">priviledges: write create delete create_index manage manage_ilm</span>
+</pre></div>
 </div>
 </div>
 
@@ -81,14 +79,16 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../arm/index.html">arm</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../db/index.html">databases</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../dns/index.html">DNS stuff</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../elk/index.html">elk stack</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../openssh/index.html">OpenSSH</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="../../index.html">Operating Systems</a><ul class="current">
-<li class="toctree-l2 current"><a class="reference internal" href="../index.html">Linux</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../openbsd/index.html">OpenBSD</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../windows/index.html">Windows</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../index.html">elk stack</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../beats/index.html">Beats</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html">elasticsearch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../logstash/index.html">logstash</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../monitoring/index.html">monitoring</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../setup.html">Setting up the whole thing</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="../../../openssh/index.html">OpenSSH</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../operating_systems/index.html">Operating Systems</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../ossec/index.html">OSSEC</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../rsyslogd/index.html">rsyslogd</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../securityonion/index.html">SecurityOnion</a></li>
@@ -103,10 +103,10 @@
 <h3>Related Topics</h3>
 <ul>
   <li><a href="../../../index.html">Documentation overview</a><ul>
-  <li><a href="../../index.html">Operating Systems</a><ul>
-  <li><a href="../index.html">Linux</a><ul>
-      <li>Previous: <a href="../selinux/php.html" title="previous chapter">Allow php to connecto to a remote mysql database:</a></li>
-      <li>Next: <a href="journalctl.html" title="next chapter">journalctl</a></li>
+  <li><a href="../../index.html">elk stack</a><ul>
+  <li><a href="../index.html">elasticsearch</a><ul>
+      <li>Previous: <a href="logstash_user.html" title="previous chapter">Logstash role</a></li>
+      <li>Next: <a href="../templates.html" title="next chapter">Templates</a></li>
   </ul></li>
   </ul></li>
   </ul></li>

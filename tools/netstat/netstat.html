@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>elasticsearch &#8212; notes 0.1 documentation</title>
+    <title>netstat &#8212; notes 0.1 documentation</title>
     
     <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
@@ -26,8 +26,8 @@
     <script type="text/javascript" src="../../_static/doctools.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Create an index on ES" href="create_index.html" />
-    <link rel="prev" title="Filebeat" href="../beats/filebeat/notes.html" />
+    <link rel="next" title="opensmtpd" href="../opensmtpd/index.html" />
+    <link rel="prev" title="meraki" href="../monitoring/telegraf/snmp/meraki.html" />
    
   <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
   
@@ -45,35 +45,18 @@
 
           <div class="body" role="main">
             
-  <div class="section" id="elasticsearch">
-<h1>elasticsearch<a class="headerlink" href="#elasticsearch" title="Permalink to this headline">¶</a></h1>
-<p>Contents:</p>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="create_index.html">Create an index on ES</a></li>
-<li class="toctree-l1"><a class="reference internal" href="create_index.html#old-and-broken">Old and broken:</a></li>
-<li class="toctree-l1"><a class="reference internal" href="dev.html">Get list of shards</a></li>
-<li class="toctree-l1"><a class="reference internal" href="dev.html#sort-by-node-and-then-size-desc">Sort by node and then size (desc)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="status.html">Get the status of ES</a></li>
-<li class="toctree-l1"><a class="reference internal" href="status.html#get-a-list-of-indexes">Get a list of indexes</a></li>
-<li class="toctree-l1"><a class="reference internal" href="status.html#look-for-read-only-indexes">Look for read only indexes</a></li>
-<li class="toctree-l1"><a class="reference internal" href="status.html#filesystem-stats">Filesystem stats</a></li>
-<li class="toctree-l1"><a class="reference internal" href="status.html#get-a-list-of-shards">Get a list of shards</a></li>
-<li class="toctree-l1"><a class="reference internal" href="security/logstash_user.html">Logstash role</a></li>
-<li class="toctree-l1"><a class="reference internal" href="security/logstash_user.html#logstash-user">Logstash user</a></li>
-<li class="toctree-l1"><a class="reference internal" href="security/beats_user.html">beats_writer role</a></li>
-<li class="toctree-l1"><a class="reference internal" href="templates.html">Templates</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="templates.html#list-templates">List templates</a></li>
-<li class="toctree-l2"><a class="reference internal" href="templates.html#view-a-template">View a template</a></li>
-<li class="toctree-l2"><a class="reference internal" href="templates.html#upload-a-template">Upload a template</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="shards.html">shards</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="shards.html#get-a-list-of-unassigned-shards">Get a list of UNASSIGNED shards</a></li>
-<li class="toctree-l2"><a class="reference internal" href="shards.html#re-route-failed-shards">Re-route failed shards</a></li>
-</ul>
-</li>
-</ul>
+  <div class="section" id="netstat">
+<h1>netstat<a class="headerlink" href="#netstat" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="check-protocol-statistics">
+<h2>Check protocol statistics<a class="headerlink" href="#check-protocol-statistics" title="Permalink to this headline">¶</a></h2>
+<p>udp:</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">netstat -s -p udp</span>
+</pre></div>
+</div>
+<p>tcp:</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">netstat -s -p tcp</span>
+</pre></div>
+</div>
 </div>
 </div>
 
@@ -98,14 +81,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../arm/index.html">arm</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../db/index.html">databases</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../dns/index.html">DNS stuff</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="../index.html">elk stack</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="../beats/index.html">Beats</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">elasticsearch</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../logstash/index.html">logstash</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../monitoring/index.html">monitoring</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../setup.html">Setting up the whole thing</a></li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="../../elk/index.html">elk stack</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../openssh/index.html">OpenSSH</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../operating_systems/index.html">Operating Systems</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../ossec/index.html">OSSEC</a></li>
@@ -113,7 +89,34 @@
 <li class="toctree-l1"><a class="reference internal" href="../../securityonion/index.html">SecurityOnion</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../ssl/index.html">ssl</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../stupid_unix_tricks/index.html">Stupid Unix Tricks</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../tools/index.html">Tools</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Tools</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../ansible/index.html">ansible</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../certstrap/index.html">certstrap</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../curl/http_codes.html">Output http code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dns/index.html">dns</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../freeradius/index.html">FreeRadius</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../git/index.html">git</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gpg/index.html">gpg</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grafana/index.html">grafana</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../java/index.html">Java</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../jq.html">jq</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ldap/index.html">ldap</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../messaging/index.html">Messaging</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../monitoring/index.html">Monitoring Tools</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">netstat</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../opensmtpd/index.html">opensmtpd</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../osquery/index.html">osquery</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../perl/index.html">Perl</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../python/index.html">Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../su.html">su</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tcpdump/index.html">tcpdump</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tmux/index.html">tmux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vim/index.html">vim</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../virtualization/index.html">Virtualization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x11/index.html">x11</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../retired/index.html">Retired</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="../../vendor_stuff/index.html">Vendor Stuff</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../misc/index.html">misc</a></li>
 </ul>
@@ -122,9 +125,9 @@
 <h3>Related Topics</h3>
 <ul>
   <li><a href="../../index.html">Documentation overview</a><ul>
-  <li><a href="../index.html">elk stack</a><ul>
-      <li>Previous: <a href="../beats/filebeat/notes.html" title="previous chapter">Filebeat</a></li>
-      <li>Next: <a href="create_index.html" title="next chapter">Create an index on ES</a></li>
+  <li><a href="../index.html">Tools</a><ul>
+      <li>Previous: <a href="../monitoring/telegraf/snmp/meraki.html" title="previous chapter">meraki</a></li>
+      <li>Next: <a href="../opensmtpd/index.html" title="next chapter">opensmtpd</a></li>
   </ul></li>
   </ul></li>
 </ul>
