@@ -48,6 +48,15 @@
   <div class="section" id="laps">
 <h1>LAPS<a class="headerlink" href="#laps" title="Permalink to this headline">¶</a></h1>
 <p><a class="reference external" href="https://technet.microsoft.com/en-us/mt227395.aspx">https://technet.microsoft.com/en-us/mt227395.aspx</a></p>
+<div class="section" id="delegate-read-to-a-user">
+<h2>Delegate read to a user<a class="headerlink" href="#delegate-read-to-a-user" title="Permalink to this headline">¶</a></h2>
+<p>To allow a user to read the local admin paasswords for a group of computers,
+run:</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">Set-AdmPwdReadPasswordPermission -Identity &quot;COMPUTER.GROUP&quot; -AllowedPrincipals &quot;USER.NAME&quot;</span>
+</pre></div>
+</div>
+<p><cite>COMPUTER.GROUP</cite> is the grouping for the computers in Active Directory Users and Computers.</p>
+</div>
 </div>
 
 

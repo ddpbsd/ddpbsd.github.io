@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>CentOS 7 firewall-cmd &#8212; notes 0.1 documentation</title>
+    <title>Find IP address of container &#8212; notes 0.1 documentation</title>
     
     <link rel="stylesheet" href="../../../../_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
@@ -26,8 +26,8 @@
     <script type="text/javascript" src="../../../../_static/doctools.js"></script>
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
-    <link rel="next" title="iptables" href="../iptables/index.html" />
-    <link rel="prev" title="Firewalld" href="index.html" />
+    <link rel="next" title="Docker options on startup:" href="ubuntu.html" />
+    <link rel="prev" title="Change the log driver:" href="logging.html" />
    
   <link rel="stylesheet" href="../../../../_static/custom.css" type="text/css" />
   
@@ -45,53 +45,10 @@
 
           <div class="body" role="main">
             
-  <div class="section" id="centos-7-firewall-cmd">
-<span id="operating-systems-linux-firewalls-firewalld"></span><h1>CentOS 7 firewall-cmd<a class="headerlink" href="#centos-7-firewall-cmd" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="list-active-ports">
-<h2>List active ports<a class="headerlink" href="#list-active-ports" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">firewall-cmd --list-ports</span>
+  <div class="section" id="find-ip-address-of-container">
+<h1>Find IP address of container<a class="headerlink" href="#find-ip-address-of-container" title="Permalink to this headline">¶</a></h1>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">docker inspect -f &#39;{{range .NetworkSettings.Networks}} {{.IPAddress}}{{end}}&#39; CONTAINER_ID</span>
 </pre></div>
-</div>
-</div>
-<div class="section" id="get-active-zones">
-<h2>Get active zones<a class="headerlink" href="#get-active-zones" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">firewall-cmd --get-active-zones</span>
-</pre></div>
-</div>
-</div>
-<div class="section" id="open-a-port">
-<h2>Open a port<a class="headerlink" href="#open-a-port" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">firewall-cmd --permanent --zone=public --add-port=80/tcp</span>
-</pre></div>
-</div>
-</div>
-<div class="section" id="close-a-port">
-<h2>Close a port<a class="headerlink" href="#close-a-port" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">firewall-cmd --remove-port=</span>
-</pre></div>
-</div>
-</div>
-<div class="section" id="enable-the-change">
-<h2>Enable the change<a class="headerlink" href="#enable-the-change" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">firewall-cmd --reload</span>
-</pre></div>
-</div>
-</div>
-<div class="section" id="make-sure-the-change-is-in-effect">
-<h2>Make sure the change is in effect<a class="headerlink" href="#make-sure-the-change-is-in-effect" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">firewall-cmd --zone=public --query-port=80/tcp</span>
-</pre></div>
-</div>
-</div>
-<div class="section" id="reject-connections-to-a-port">
-<h2>Reject connections to a port<a class="headerlink" href="#reject-connections-to-a-port" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">#</span> Simply reject all traffic to <span class="m">443</span>
-<span class="go">firewall-cmd --permanent --zone=public --add-rich-rule=&#39;rule family=&quot;ipv4&quot; port protocol=&quot;tcp&quot; port=&quot;443&quot; reject&#39;</span>
-
-<span class="gp">#</span> add a src ip into the mix
-<span class="go">firewall-cmd --permanent --zone=public --add-rich-rule=&#39;rule family=&quot;ipv4&quot; source address=&quot;10.0.0.2&quot; port protocol=&quot;tcp&quot; port=&quot;443&quot; reject&#39;</span>
-</pre></div>
-</div>
 </div>
 </div>
 
@@ -140,10 +97,10 @@
   <li><a href="../../../../index.html">Documentation overview</a><ul>
   <li><a href="../../../index.html">Operating Systems</a><ul>
   <li><a href="../../index.html">Linux</a><ul>
-  <li><a href="../index.html">Firewalls</a><ul>
-  <li><a href="index.html">Firewalld</a><ul>
-      <li>Previous: <a href="index.html" title="previous chapter">Firewalld</a></li>
-      <li>Next: <a href="../iptables/index.html" title="next chapter">iptables</a></li>
+  <li><a href="../index.html">containers</a><ul>
+  <li><a href="index.html">docker</a><ul>
+      <li>Previous: <a href="logging.html" title="previous chapter">Change the log driver:</a></li>
+      <li>Next: <a href="ubuntu.html" title="next chapter">Docker options on startup:</a></li>
   </ul></li>
   </ul></li>
   </ul></li>

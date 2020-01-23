@@ -91,3 +91,13 @@ Get disk usage
    .. code-block:: console
 
       GET /_cat/nodes?h=h,name,diskAvail&v
+
+Lots of stats
+^^^^^^^^^^^^^
+
+.. code-block:: console
+
+   GET /_stats
+
+
+

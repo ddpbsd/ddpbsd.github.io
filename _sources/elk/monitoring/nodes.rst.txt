@@ -1,0 +1,6 @@
+
+elastic guide for monitoring nodes
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+https://www.elastic.co/guide/en/elasticsearch/guide/current/_monitoring_individual_nodes.html#_jvm_section
+
