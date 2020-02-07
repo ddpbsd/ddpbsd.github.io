@@ -2,5 +2,12 @@
 elastic guide for monitoring nodes
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-https://www.elastic.co/guide/en/elasticsearch/guide/current/_monitoring_individual_nodes.html#_jvm_section
+https://www.elastic.co/guide/en/elasticsearch/guide/current/_monitoring_individual_nodes.html
+
+head_used_percent
+^^^^^^^^^^^^^^^^^
+
+.. code-block:: console
+
+   $ curl -s http://127.0.0.1:9200/_nodes/stats | jq '.nodes[].jvm.mem.heap_used_percent'
 

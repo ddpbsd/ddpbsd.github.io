@@ -11,6 +11,8 @@ Get the status of ES
 Get a list of indexes
 ^^^^^^^^^^^^^^^^^^^^^
 
+To sort, add `&s=COLUMN_NAME` to the url.
+
 .. code-block:: console
 
    curl -XGET http://localhost:9200/_cat/indices?v

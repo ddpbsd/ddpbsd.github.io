@@ -57,6 +57,17 @@
 </pre></div>
 </div>
 </div>
+<div class="section" id="change-the-breaker-limit">
+<h1>Change the breaker limit<a class="headerlink" href="#change-the-breaker-limit" title="Permalink to this headline">¶</a></h1>
+<p>This is a temporary change, and probably a dumb one.</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">curl -XPUT localhost:9200/_cluster/settings -d &#39;{</span>
+<span class="go">  &quot;transient&quot; : {</span>
+<span class="go">    &quot;indices.breaker.request.limit&quot; : &quot;41%&quot;</span>
+<span class="go">  }</span>
+<span class="go">}&#39;</span>
+</pre></div>
+</div>
+</div>
 
 
           </div>

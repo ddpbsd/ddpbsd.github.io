@@ -19,3 +19,17 @@ If a shard is `UNASSIGNED ALLOCATION_FAILED` run the following to retry the rero
 
    curl -XPOST 'http://elastic.example.com:9200/_cluster/reroute?retry_failed=true'
 
+Enable shard allocation
+^^^^^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: console
+
+   curl -X PUT "localhost:9200/_cluster/settings?pretty" -H 'Content-Type: application/json' -d'
+   {
+     "transient" : {
+       "cluster.routing.allocation.enable" : "all"
+     }
+   }
+   '
+
+

@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>rsyslogd &#8212; notes 0.1 documentation</title>
+    <title>Monitor sysmon logs &#8212; notes 0.1 documentation</title>
     
     <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -26,8 +26,8 @@
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="SecurityOnion" href="../securityonion/index.html" />
-    <link rel="prev" title="Monitor sysmon logs" href="../ossec/sysmon.html" />
+    <link rel="next" title="rsyslogd" href="../rsyslogd/index.html" />
+    <link rel="prev" title="Required packages:" href="win-build.html" />
    
   <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
   
@@ -45,22 +45,13 @@
 
           <div class="body" role="main">
             
-  <div class="section" id="rsyslogd">
-<h1>rsyslogd<a class="headerlink" href="#rsyslogd" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="log-to-var-log-hostname-messages-instead-of-var-log-messages">
-<h2>Log to /var/log/hostname/messages instead of /var/log/messages:<a class="headerlink" href="#log-to-var-log-hostname-messages-instead-of-var-log-messages" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">-host</span>
-<span class="go">*.info                  /var/log/messages</span>
-<span class="go">+host</span>
-<span class="go">*.info                  /var/log/host/messages</span>
+  <div class="section" id="monitor-sysmon-logs">
+<h1>Monitor sysmon logs<a class="headerlink" href="#monitor-sysmon-logs" title="Permalink to this headline">¶</a></h1>
+<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;localfile&gt;</span>
+  <span class="nt">&lt;location&gt;</span>Microsoft-Windows-Sysmon/Operational<span class="nt">&lt;/location&gt;</span>
+  <span class="nt">&lt;log_format&gt;</span>eventchannel<span class="nt">&lt;/log_format&gt;</span>
+<span class="nt">&lt;/localfile&gt;</span>
 </pre></div>
-</div>
-</div>
-<div class="section" id="listen-on-a-unix-socket">
-<h2>Listen on a unix socket:<a class="headerlink" href="#listen-on-a-unix-socket" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span>AddUnixListenSocket /var/log/socket
-</pre></div>
-</div>
 </div>
 </div>
 
@@ -88,12 +79,14 @@
 <li class="toctree-l1"><a class="reference internal" href="../elk/index.html">elk stack</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../openssh/index.html">OpenSSH</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../operating_systems/index.html">Operating Systems</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../ossec/index.html">OSSEC</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">rsyslogd</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#log-to-var-log-hostname-messages-instead-of-var-log-messages">Log to /var/log/hostname/messages instead of /var/log/messages:</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#listen-on-a-unix-socket">Listen on a unix socket:</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">OSSEC</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="elastic.html">OSSEC and Elasticstack</a></li>
+<li class="toctree-l2"><a class="reference internal" href="src/index.html">OSSEC src</a></li>
+<li class="toctree-l2"><a class="reference internal" href="win-build.html">Required packages:</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Monitor sysmon logs</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="../rsyslogd/index.html">rsyslogd</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../securityonion/index.html">SecurityOnion</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../ssl/index.html">ssl</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../stupid_unix_tricks/index.html">Stupid Unix Tricks</a></li>
@@ -106,8 +99,10 @@
 <h3>Related Topics</h3>
 <ul>
   <li><a href="../index.html">Documentation overview</a><ul>
-      <li>Previous: <a href="../ossec/sysmon.html" title="previous chapter">Monitor sysmon logs</a></li>
-      <li>Next: <a href="../securityonion/index.html" title="next chapter">SecurityOnion</a></li>
+  <li><a href="index.html">OSSEC</a><ul>
+      <li>Previous: <a href="win-build.html" title="previous chapter">Required packages:</a></li>
+      <li>Next: <a href="../rsyslogd/index.html" title="next chapter">rsyslogd</a></li>
+  </ul></li>
   </ul></li>
 </ul>
 </div>

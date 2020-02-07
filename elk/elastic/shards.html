@@ -60,6 +60,18 @@
 </pre></div>
 </div>
 </div>
+<div class="section" id="enable-shard-allocation">
+<h2>Enable shard allocation<a class="headerlink" href="#enable-shard-allocation" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">curl -X PUT &quot;localhost:9200/_cluster/settings?pretty&quot; -H &#39;Content-Type: application/json&#39; -d&#39;</span>
+<span class="go">{</span>
+<span class="go">  &quot;transient&quot; : {</span>
+<span class="go">    &quot;cluster.routing.allocation.enable&quot; : &quot;all&quot;</span>
+<span class="go">  }</span>
+<span class="go">}</span>
+<span class="go">&#39;</span>
+</pre></div>
+</div>
+</div>
 </div>
 
 

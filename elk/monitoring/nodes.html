@@ -47,7 +47,13 @@
             
   <div class="section" id="elastic-guide-for-monitoring-nodes">
 <h1>elastic guide for monitoring nodes<a class="headerlink" href="#elastic-guide-for-monitoring-nodes" title="Permalink to this headline">¶</a></h1>
-<p><a class="reference external" href="https://www.elastic.co/guide/en/elasticsearch/guide/current/_monitoring_individual_nodes.html#_jvm_section">https://www.elastic.co/guide/en/elasticsearch/guide/current/_monitoring_individual_nodes.html#_jvm_section</a></p>
+<p><a class="reference external" href="https://www.elastic.co/guide/en/elasticsearch/guide/current/_monitoring_individual_nodes.html">https://www.elastic.co/guide/en/elasticsearch/guide/current/_monitoring_individual_nodes.html</a></p>
+</div>
+<div class="section" id="head-used-percent">
+<h1>head_used_percent<a class="headerlink" href="#head-used-percent" title="Permalink to this headline">¶</a></h1>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> curl -s http://127.0.0.1:9200/_nodes/stats <span class="p">|</span> jq <span class="s1">&#39;.nodes[].jvm.mem.heap_used_percent&#39;</span>
+</pre></div>
+</div>
 </div>
 
 
