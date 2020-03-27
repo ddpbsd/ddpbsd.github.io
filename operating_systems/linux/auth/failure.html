@@ -1,0 +1,151 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>User can login locally but not via ssh &#8212; notes 0.1 documentation</title>
+    
+    <link rel="stylesheet" href="../../../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Random commands" href="../commands.html" />
+    <link rel="prev" title="Find out which repository a package comes from:" href="../apt.html" />
+   
+  <link rel="stylesheet" href="../../../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body role="document">
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="user-can-login-locally-but-not-via-ssh">
+<h1>User can login locally but not via ssh<a class="headerlink" href="#user-can-login-locally-but-not-via-ssh" title="Permalink to this headline">¶</a></h1>
+<p>Add debug to <cite>/etc/pam.d/sshd</cite> (probably to more lines than this):</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">auth       required     pam_sepermit.so debug</span>
+</pre></div>
+</div>
+<p>Look for <cite>pam_sepermit</cite> log messages:</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">Mar 16 09:36:42 SERVER sshd[20620]: pam_sepermit(sshd:auth): Parsing config file: /etc/security/sepermit.conf</span>
+<span class="go">Mar 16 09:36:42 SERVER sshd[20620]: pam_sepermit(sshd:auth): Access will not be allowed on match</span>
+<span class="go">Mar 16 09:36:42 SERVER sshd[20620]: pam_sepermit(sshd:auth): Matching user USERNAME against user USERNAME</span>
+<span class="go">Mar 16 09:36:42 SERVER sshd[20620]: pam_sepermit(sshd:auth): sepermit_match returned: 0</span>
+<span class="go">Mar 16 09:37:07 SERVER sshd[20620]: pam_sepermit(sshd:auth): Parsing config file: /etc/security/sepermit.conf</span>
+<span class="go">Mar 16 09:37:07 SERVER sshd[20620]: pam_sepermit(sshd:auth): Access will not be allowed on match</span>
+<span class="go">Mar 16 09:37:07 SERVER sshd[20620]: pam_sepermit(sshd:auth): sepermit_match returned: -1</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="unlock-accounts">
+<h1>Unlock accounts<a class="headerlink" href="#unlock-accounts" title="Permalink to this headline">¶</a></h1>
+<p>Use <cite>passwd</cite>:</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">#</span> passwd -u USERNAME
+</pre></div>
+</div>
+<p>Or <cite>usermod</cite>:</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">#</span> usermode -U USERNAME
+</pre></div>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../../../index.html">notes</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../arm/index.html">arm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../db/index.html">databases</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../dns/index.html">DNS stuff</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../elk/index.html">elk stack</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../openssh/index.html">OpenSSH</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../index.html">Operating Systems</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html">Linux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../openbsd/index.html">OpenBSD</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../windows/index.html">Windows</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../ossec/index.html">OSSEC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../rsyslogd/index.html">rsyslogd</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../securityonion/index.html">SecurityOnion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../ssl/index.html">ssl</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../stupid_unix_tricks/index.html">Stupid Unix Tricks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../tools/index.html">Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../vendor_stuff/index.html">Vendor Stuff</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../misc/index.html">misc</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../../index.html">Documentation overview</a><ul>
+  <li><a href="../../index.html">Operating Systems</a><ul>
+  <li><a href="../index.html">Linux</a><ul>
+      <li>Previous: <a href="../apt.html" title="previous chapter">Find out which repository a package comes from:</a></li>
+      <li>Next: <a href="../commands.html" title="next chapter">Random commands</a></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+        <!-- your html code here -->
+	<div class="footer">
+		<em>This information has a good chance of being wrong, inconsistent, out of date, or just bad. Use at your own risk.
+		Feel free to notify me of any issues though.</em>
+	</div>
+
+
+  </body>
+</html>

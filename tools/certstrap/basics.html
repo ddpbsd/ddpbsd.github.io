@@ -47,7 +47,9 @@
             
   <div class="section" id="init-ca">
 <h1>Init CA:<a class="headerlink" href="#init-ca" title="Permalink to this headline">¶</a></h1>
-<p><cite>todo</cite></p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">certstrap init</span>
+</pre></div>
+</div>
 </div>
 <div class="section" id="ca-certificate-to-load-on-clients">
 <h1>CA certificate to load on clients:<a class="headerlink" href="#ca-certificate-to-load-on-clients" title="Permalink to this headline">¶</a></h1>
@@ -55,13 +57,13 @@
 </div>
 <div class="section" id="create-a-request">
 <h1>Create a request:<a class="headerlink" href="#create-a-request" title="Permalink to this headline">¶</a></h1>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">certstrap request-cert --common-name host.example.com</span>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">certstrap request-cert --cn host.example.com --ip 10.10.10.60 --domain host.example.com</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="sign-a-request">
 <h1>Sign a request:<a class="headerlink" href="#sign-a-request" title="Permalink to this headline">¶</a></h1>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">certstrap sign host --CA example.com</span>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">certstrap sign host --CA example.com host.example.com</span>
 </pre></div>
 </div>
 </div>
@@ -112,6 +114,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../netstat/netstat.html">netstat</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../opensmtpd/index.html">opensmtpd</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../osquery/index.html">osquery</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../packer/index.html">HashiCorp packer</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../perl/index.html">Perl</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../python/index.html">Python</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../su.html">su</a></li>

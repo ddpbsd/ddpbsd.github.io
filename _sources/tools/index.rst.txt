@@ -25,6 +25,7 @@ Contents:
    netstat/netstat
    opensmtpd/index
    osquery/index
+   packer/index
    perl/index
    python/index
    su

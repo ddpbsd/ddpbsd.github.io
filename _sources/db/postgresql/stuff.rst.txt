@@ -1,24 +1,21 @@
 
-
-
-
-List databases:
-^^^^^^^^^^^^^^^
+List databases
+^^^^^^^^^^^^^^
 
 .. code-block:: console
 
    \l
 
-List tables:
-^^^^^^^^^^^^
+List tables
+^^^^^^^^^^^
 
 .. code-block:: console
 
    \dt
 
 
-Connect to db:
-^^^^^^^^^^^^^^
+Connect to db
+^^^^^^^^^^^^^
 
 .. code-block:: console
 

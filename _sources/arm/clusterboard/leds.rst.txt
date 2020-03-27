@@ -1,6 +1,6 @@
 
-Possibly turn off the heartbeat led:
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Possibly turn off the heartbeat led
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code-block:: console
 

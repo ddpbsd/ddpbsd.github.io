@@ -51,21 +51,21 @@
 <h2>Use macvlan for bridged network<a class="headerlink" href="#use-macvlan-for-bridged-network" title="Permalink to this headline">¶</a></h2>
 <p>On the host, setup <cite>br0</cite> as the bridge interface,
 then bond the actual physical interface to it.</p>
-<div class="highlight-cosnole"><div class="highlight"><pre><span></span>auto br0
-iface br0 inet static
-     bridge-ifaces eno1
-     bridge-ports eno1
-     up ip link set eno1 up
-     address 192.168.1.3
-     netmask 255.255.255.0
-     network 192.168.1.0
-     broadcast 192.168.1.255
-     gateway 192.168.1.1
-     dns-nameservers 192.168.1.53
-     dns-search example.com
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">auto br0</span>
+<span class="go">iface br0 inet static</span>
+<span class="go">     bridge-ifaces eno1</span>
+<span class="go">     bridge-ports eno1</span>
+<span class="go">     up ip link set eno1 up</span>
+<span class="go">     address 192.168.1.3</span>
+<span class="go">     netmask 255.255.255.0</span>
+<span class="go">     network 192.168.1.0</span>
+<span class="go">     broadcast 192.168.1.255</span>
+<span class="go">     gateway 192.168.1.1</span>
+<span class="go">     dns-nameservers 192.168.1.53</span>
+<span class="go">     dns-search example.com</span>
 
-auto eno1
-iface eno1 inet manual
+<span class="go">auto eno1</span>
+<span class="go">iface eno1 inet manual</span>
 </pre></div>
 </div>
 <p>After this, the clients have to be configured to use the <cite>br0</cite> bridge.</p>

@@ -46,9 +46,8 @@
   <div class="section" id="powerdns-and-doh">
 <h1>PowerDNS and DoH<a class="headerlink" href="#powerdns-and-doh" title="Permalink to this headline">¶</a></h1>
 <p><a class="reference external" href="https://lists.dns-oarc.net/pipermail/dns-operations/2019-September/019184.html">Source</a></p>
-<blockquote>
-<div>For the PowerDNS Recursor, using RPZ is an option. The other solution is</div></blockquote>
-<p>creating a Lua script similar to the following. And load it using the lua-dns-script[1] configuration option.</p>
+<p>For the PowerDNS Recursor, using RPZ is an option. The other solution is
+creating a Lua script similar to the following. And load it using the lua-dns-script[1] configuration option.</p>
 <div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">local uadns = newDN(&#39;use-application-dns.net&#39;)</span>
 <span class="go">function preresolve(dq)</span>
 <span class="go">  if uadns == dq.qname then</span>

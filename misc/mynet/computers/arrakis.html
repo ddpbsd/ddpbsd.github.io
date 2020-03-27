@@ -50,8 +50,24 @@
 <p>Thinkpad X1 Carbon 4th Gen.
 Runs an OpenBSD snapshot, usually not the latest one.</p>
 <div class="section" id="update-the-bios">
-<h2>Update the BIOS:<a class="headerlink" href="#update-the-bios" title="Permalink to this headline">¶</a></h2>
+<h2>Update the BIOS<a class="headerlink" href="#update-the-bios" title="Permalink to this headline">¶</a></h2>
 <p>Use the geteltorito package.</p>
+<ol class="arabic">
+<li><p class="first">Download the BIOS ISO from lenovo support</p>
+</li>
+<li><p class="first">Run geteltorito on it</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> geteltorito -o bios_update.img bios.iso
+</pre></div>
+</div>
+</li>
+<li><p class="first">dd the img to USB</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">#</span> dd <span class="k">if</span><span class="o">=</span>./bios_udpate.imsg <span class="nv">of</span><span class="o">=</span>/dev/rsd2c
+</pre></div>
+</div>
+</li>
+<li><p class="first">Boot from usb and rejoice.</p>
+</li>
+</ol>
 </div>
 </div>
 

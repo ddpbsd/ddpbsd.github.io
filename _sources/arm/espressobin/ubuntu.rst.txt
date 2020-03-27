@@ -3,8 +3,8 @@
 Ubuntu notes
 ============
 
-Helpful links:
-^^^^^^^^^^^^^^
+Helpful links
+^^^^^^^^^^^^^
 
 http://espressobin.net/forums/topic/can-someone-make-a-better-guide-for-ubuntu/
 
@@ -12,8 +12,8 @@ http://wiki.espressobin.net/tiki-index.php?page=Boot+from+removable+storage+-+Ub
 
 
 
-Armbian:
-^^^^^^^^
+Armbian
+^^^^^^^
 
 Unrelated, but link was useful
 
