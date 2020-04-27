@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Example ldapsearch: &#8212; notes 0.1 documentation</title>
+    <title>Example ldapsearch &#8212; notes 0.1 documentation</title>
     
     <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
@@ -46,13 +46,25 @@
           <div class="body" role="main">
             
   <div class="section" id="example-ldapsearch">
-<span id="tools-ldap-ldapsearch"></span><h1>Example ldapsearch:<a class="headerlink" href="#example-ldapsearch" title="Permalink to this headline">¶</a></h1>
+<h1>Example ldapsearch<a class="headerlink" href="#example-ldapsearch" title="Permalink to this headline">¶</a></h1>
 <div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">ldapsearch -P 3 -H &quot;ldap://ldap_server:389&quot; -D &quot;cn=exampleuser,CN=Users,DC=example,DC=com&quot; -W -b &quot;CN=Users,DC=example,DC=com&quot; -s &quot;sub&quot; -z 0 -l 0 -a &quot;never&quot; &quot;(&amp;(objectClass=user)(sAMAccountName=exampleuser@example.com))&quot;</span>
 </pre></div>
 </div>
 <div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">-D &quot;cn=exampleuser,CN=Users,DC=example,DC=com&quot; -- Binding user</span>
 <span class="go">&quot;(&amp;(objectClass=user)(sAMAccountName=exampleuser@example.com))&quot; -- user to lookup</span>
 <span class="go">-b &quot;CN=Users,DC=example,DC=com&quot; -- base dn</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="search-ad">
+<h1>Search AD<a class="headerlink" href="#search-ad" title="Permalink to this headline">¶</a></h1>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">ldapsearch -H ldaps://win2k19.ad.lab.wafflelab.online -x -W -D dan_su@ad.lab.wafflelab.online -b DC=ad,DC=lab,DC=wafflelab,DC=online  &quot;(sAMAccountName=USERNAME)&quot;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="dn-for-a-regular-user-in-ad">
+<h1>dn for a regular user in AD<a class="headerlink" href="#dn-for-a-regular-user-in-ad" title="Permalink to this headline">¶</a></h1>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">dn: CN=test mcmuffin,CN=Users,DC=ad,DC=lab,DC=wafflelab,DC=online</span>
 </pre></div>
 </div>
 </div>

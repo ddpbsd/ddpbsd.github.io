@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Init CA: &#8212; notes 0.1 documentation</title>
+    <title>Init CA &#8212; notes 0.1 documentation</title>
     
     <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
@@ -46,24 +46,24 @@
           <div class="body" role="main">
             
   <div class="section" id="init-ca">
-<h1>Init CA:<a class="headerlink" href="#init-ca" title="Permalink to this headline">¶</a></h1>
+<h1>Init CA<a class="headerlink" href="#init-ca" title="Permalink to this headline">¶</a></h1>
 <div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">certstrap init</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="ca-certificate-to-load-on-clients">
-<h1>CA certificate to load on clients:<a class="headerlink" href="#ca-certificate-to-load-on-clients" title="Permalink to this headline">¶</a></h1>
+<h1>CA certificate to load on clients<a class="headerlink" href="#ca-certificate-to-load-on-clients" title="Permalink to this headline">¶</a></h1>
 <p><cite>todo</cite></p>
 </div>
 <div class="section" id="create-a-request">
-<h1>Create a request:<a class="headerlink" href="#create-a-request" title="Permalink to this headline">¶</a></h1>
+<h1>Create a request<a class="headerlink" href="#create-a-request" title="Permalink to this headline">¶</a></h1>
 <div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">certstrap request-cert --cn host.example.com --ip 10.10.10.60 --domain host.example.com</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="sign-a-request">
-<h1>Sign a request:<a class="headerlink" href="#sign-a-request" title="Permalink to this headline">¶</a></h1>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">certstrap sign host --CA example.com host.example.com</span>
+<h1>Sign a request<a class="headerlink" href="#sign-a-request" title="Permalink to this headline">¶</a></h1>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">certstrap sign --CA example.com host.example.com</span>
 </pre></div>
 </div>
 </div>

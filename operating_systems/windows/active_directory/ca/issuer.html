@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>GPO Client Commands &#8212; notes 0.1 documentation</title>
+    <title>Get the issuer certificate &#8212; notes 0.1 documentation</title>
     
     <link rel="stylesheet" href="../../../../_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
@@ -26,8 +26,6 @@
     <script type="text/javascript" src="../../../../_static/doctools.js"></script>
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
-    <link rel="next" title="Cheet Sheets" href="../../cheatsheets.html" />
-    <link rel="prev" title="Distribute certificates to computers" href="certificates.html" />
    
   <link rel="stylesheet" href="../../../../_static/custom.css" type="text/css" />
   
@@ -45,22 +43,16 @@
 
           <div class="body" role="main">
             
-  <div class="section" id="gpo-client-commands">
-<h1>GPO Client Commands<a class="headerlink" href="#gpo-client-commands" title="Permalink to this headline">¶</a></h1>
-<p>Just some commands to run on clients for various things.</p>
-<div class="section" id="force-update-of-gpo">
-<h2>Force Update of GPO<a class="headerlink" href="#force-update-of-gpo" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">C:\&gt; gpupdate /force</span>
-</pre></div>
-</div>
-</div>
-<div class="section" id="view-the-gpo-settings-applied-on-a-system">
-<h2>View the GPO settings applied on a system<a class="headerlink" href="#view-the-gpo-settings-applied-on-a-system" title="Permalink to this headline">¶</a></h2>
-<p>Saves the output to <cite>C:gpresult.htm</cite></p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">C:\&gt;GPResult.exe /h C:\gpresult.htm</span>
-</pre></div>
-</div>
-</div>
+  <div class="section" id="get-the-issuer-certificate">
+<h1>Get the issuer certificate<a class="headerlink" href="#get-the-issuer-certificate" title="Permalink to this headline">¶</a></h1>
+<p>Run cmd as an administator.
+Run mmc
+File-&gt;Add/Remove Snap-in
+Select Certificates</p>
+<p>On the left, select Certificates (Local Computer)-&gt;Trusted Root Certification Authorities-&gt;Certificates.</p>
+<p>From there, find the issuer certificate.</p>
+<p>Right click the certificate-&gt;Open-&gt;Details</p>
+<p>Copy To File-&gt;Next-&gt;Base-64 encoded X.509</p>
 </div>
 
 
@@ -80,18 +72,13 @@
 
 
 <h3>Navigation</h3>
-<ul class="current">
+<ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../../arm/index.html">arm</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../db/index.html">databases</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../dns/index.html">DNS stuff</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../elk/index.html">elk stack</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../openssh/index.html">OpenSSH</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="../../../index.html">Operating Systems</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="../../../linux/index.html">Linux</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../openbsd/index.html">OpenBSD</a></li>
-<li class="toctree-l2 current"><a class="reference internal" href="../../index.html">Windows</a></li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../index.html">Operating Systems</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../ossec/index.html">OSSEC</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../rsyslogd/index.html">rsyslogd</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../securityonion/index.html">SecurityOnion</a></li>
@@ -106,16 +93,6 @@
 <h3>Related Topics</h3>
 <ul>
   <li><a href="../../../../index.html">Documentation overview</a><ul>
-  <li><a href="../../../index.html">Operating Systems</a><ul>
-  <li><a href="../../index.html">Windows</a><ul>
-  <li><a href="../index.html">Active Directory</a><ul>
-  <li><a href="index.html">Group Policy Objects</a><ul>
-      <li>Previous: <a href="certificates.html" title="previous chapter">Distribute certificates to computers</a></li>
-      <li>Next: <a href="../../cheatsheets.html" title="next chapter">Cheet Sheets</a></li>
-  </ul></li>
-  </ul></li>
-  </ul></li>
-  </ul></li>
   </ul></li>
 </ul>
 </div>

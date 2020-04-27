@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Active Directory &#8212; notes 0.1 documentation</title>
+    <title>Ports/Interfaces &#8212; notes 0.1 documentation</title>
     
     <link rel="stylesheet" href="../../../_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
@@ -26,8 +26,6 @@
     <script type="text/javascript" src="../../../_static/doctools.js"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="Test connectivity between 2 AD controllers:" href="dcdiag.html" />
-    <link rel="prev" title="Windows" href="../index.html" />
    
   <link rel="stylesheet" href="../../../_static/custom.css" type="text/css" />
   
@@ -45,31 +43,17 @@
 
           <div class="body" role="main">
             
-  <div class="section" id="active-directory">
-<h1>Active Directory<a class="headerlink" href="#active-directory" title="Permalink to this headline">¶</a></h1>
-<p>Contents:</p>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="dcdiag.html">Test connectivity between 2 AD controllers:</a></li>
-<li class="toctree-l1"><a class="reference internal" href="fsmo.html">Find the FSMO roles of a server:</a></li>
-<li class="toctree-l1"><a class="reference internal" href="laps.html">LAPS</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="laps.html#installation">Installation:</a></li>
-<li class="toctree-l2"><a class="reference internal" href="laps.html#server">Server:</a></li>
-<li class="toctree-l2"><a class="reference internal" href="laps.html#clients">Clients:</a></li>
-<li class="toctree-l2"><a class="reference internal" href="laps.html#errors">Errors:</a></li>
-<li class="toctree-l2"><a class="reference internal" href="laps.html#link">Link:</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="replication.html">Show replication status:</a></li>
-<li class="toctree-l1"><a class="reference internal" href="replication.html#check-the-replication-queue">Check the replication queue:</a></li>
-<li class="toctree-l1"><a class="reference internal" href="replication.html#check-the-replication-summary">Check the replication summary:</a></li>
-<li class="toctree-l1"><a class="reference internal" href="sids.html">Common SIDS:</a></li>
-<li class="toctree-l1"><a class="reference internal" href="gpo/index.html">Group Policy Objects</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="gpo/certificates.html">Distribute certificates to computers</a></li>
-<li class="toctree-l2"><a class="reference internal" href="gpo/gpo_cmd.html">GPO Client Commands</a></li>
-</ul>
-</li>
-</ul>
+  <div class="section" id="ports-interfaces">
+<h1>Ports/Interfaces<a class="headerlink" href="#ports-interfaces" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="static-ip-for-instance">
+<h2>static ip for instance<a class="headerlink" href="#static-ip-for-instance" title="Permalink to this headline">¶</a></h2>
+<p>To set a static IP (or fixed IP) for an instance,
+create a port with the associated IP address.</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> openstack port create --network NETWORK_NAME --fixed-ip <span class="nv">subnet</span><span class="o">=</span>SUBNET_NAME,ip-address<span class="o">=</span><span class="m">192</span>.168.1.123 test-static-ip-1
+</pre></div>
+</div>
+<p>Changing the security group might also be necessary.
+If so, add the <cite>&#8211;security-group &lt;security-group&gt;</cite> option.</p>
 </div>
 </div>
 
@@ -90,24 +74,19 @@
 
 
 <h3>Navigation</h3>
-<ul class="current">
+<ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../arm/index.html">arm</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../db/index.html">databases</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../dns/index.html">DNS stuff</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../elk/index.html">elk stack</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../openssh/index.html">OpenSSH</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="../../index.html">Operating Systems</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="../../linux/index.html">Linux</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../openbsd/index.html">OpenBSD</a></li>
-<li class="toctree-l2 current"><a class="reference internal" href="../index.html">Windows</a></li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../operating_systems/index.html">Operating Systems</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../ossec/index.html">OSSEC</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../rsyslogd/index.html">rsyslogd</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../securityonion/index.html">SecurityOnion</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../ssl/index.html">ssl</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../stupid_unix_tricks/index.html">Stupid Unix Tricks</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../tools/index.html">Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../index.html">Tools</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../vendor_stuff/index.html">Vendor Stuff</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../misc/index.html">misc</a></li>
 </ul>
@@ -116,12 +95,6 @@
 <h3>Related Topics</h3>
 <ul>
   <li><a href="../../../index.html">Documentation overview</a><ul>
-  <li><a href="../../index.html">Operating Systems</a><ul>
-  <li><a href="../index.html">Windows</a><ul>
-      <li>Previous: <a href="../index.html" title="previous chapter">Windows</a></li>
-      <li>Next: <a href="dcdiag.html" title="next chapter">Test connectivity between 2 AD controllers:</a></li>
-  </ul></li>
-  </ul></li>
   </ul></li>
 </ul>
 </div>

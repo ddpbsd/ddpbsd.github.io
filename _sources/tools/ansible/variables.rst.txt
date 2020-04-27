@@ -44,6 +44,11 @@ Use `vars_files` to specify a vault for sensitive variables.
      vars:
        variable1: test
 
+Special variables
+^^^^^^^^^^^^^^^^^
 
+`ansible special variables <https://docs.ansible.com/ansible/latest/reference_appendices/special_variables.html>`
+
+Special nod to `inventory_hostname` and `inventory_hostname_short`
 
 
