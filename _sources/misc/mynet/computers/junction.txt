@@ -1,21 +1,49 @@
-.. _misc_mynet_systems_junction:
-
 junction
 ========
 
 Firewall
 
-Currently running:
-^^^^^^^^^^^^^^^^^^
+Currently running
+^^^^^^^^^^^^^^^^^
 
 * bro-ids
 
 * unbound
 
-Hardware:
-^^^^^^^^^
+Hardware
+^^^^^^^^
 
 pcengines apu2c4
 
 .. include:: ../dmesgs/junction.rst
+
+Upgrade BIOS
+^^^^^^^^^^^^
+
+From Stuart Henderson on `misc@ <https://marc.info/?l=openbsd-misc&m=156037126231372&w=2>`_:
+
+.. code-block:: console
+
+   If you're on an old BIOS revision for the APU (more than a couple of
+   months old), try updating, they have enabled "core performance boost"
+   which increases speed of a single core if the others are not under
+   heavy load.
+
+   I haven't done network benchmarks but there is a noticable improvement
+   in some other things (md5 -tt goes from 12 -> 9 seconds).
+
+   To update BIOS from OpenBSD, pkg_add flashrom and download the BIOS
+   version for your board (https://pcengines.github.io/). Go to serial
+   console and reboot in single-user mode (boot -s), mount -a, and run
+   "flashrom --programmer internal -w apuX_vXXX.rom". Then reboot back
+   as normal.
+
+   If you'd like to compare benchmarks, the feature can be toggled
+   from the setup menu in BIOS.
+
+   https://blog.3mdeb.com/2019/2019-02-14-enabling-cpb-on-pcengines-apu2/
+
+   Apologies I should have said: it should be power cycled at this point,
+   not just a standard reboot.
+
 

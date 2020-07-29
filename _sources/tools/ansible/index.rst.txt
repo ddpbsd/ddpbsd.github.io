@@ -12,5 +12,5 @@ Contents:
    ansible-vault
    ansible-cmdb
    variables
-   awx/index      
+      
 

@@ -17,8 +17,7 @@
         VERSION:     '0.1',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: '.txt'
+        HAS_SOURCE:  true
       };
     </script>
     <script type="text/javascript" src="../../_static/jquery.js"></script>
@@ -26,6 +25,8 @@
     <script type="text/javascript" src="../../_static/doctools.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
+    <link rel="top" title="notes 0.1 documentation" href="../../index.html" />
+    <link rel="up" title="monitoring" href="index.html" />
     <link rel="next" title="elastic guide for monitoring nodes" href="nodes.html" />
     <link rel="prev" title="monitoring" href="index.html" />
    
@@ -41,8 +42,6 @@
     <div class="document">
       <div class="documentwrapper">
         <div class="bodywrapper">
-          
-
           <div class="body" role="main">
             
   <div class="section" id="monitoring">
@@ -115,13 +114,19 @@ Will return <cite>null</cite> if the field does not exist.</p>
 <h3>Get disk usage<a class="headerlink" href="#get-disk-usage" title="Permalink to this headline">¶</a></h3>
 <blockquote>
 <div><p>List a bunch of the stuff</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">GET /_cat/allocation?v&amp;pretty</span>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">GET /_cat/allocation?v</span>
 </pre></div>
 </div>
 <p>List the node and disk avail</p>
 <div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">GET /_cat/nodes?h=h,name,diskAvail&amp;v</span>
 </pre></div>
 </div>
+<p>Get the fs usage of each node in a cluster as percent used (along with the roles of the node)</p>
+<blockquote>
+<div><div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">GET /_nodes/stats | jq &#39;.nodes[] | &quot;\(.name) \(.roles) \((.fs.total.free_in_bytes / .fs.total.total_in_bytes) * 100)&quot;&#39;</span>
+</pre></div>
+</div>
+</div></blockquote>
 </div></blockquote>
 </div>
 <div class="section" id="lots-of-stats">
@@ -135,7 +140,6 @@ Will return <cite>null</cite> if the field does not exist.</p>
 
 
           </div>
-          
         </div>
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">

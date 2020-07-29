@@ -1,8 +1,5 @@
-.. _misc_mynet_dmesgs_junction:
-
-
-dmesg for junction:
-^^^^^^^^^^^^^^^^^^^
+dmesg for junction
+^^^^^^^^^^^^^^^^^^
 
 .. code-block:: console
 

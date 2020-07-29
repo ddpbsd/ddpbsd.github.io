@@ -1,5 +1,5 @@
-Temperature:
-^^^^^^^^^^^^
+Temperature
+^^^^^^^^^^^
 
 Don't trust lm-sensors.
 

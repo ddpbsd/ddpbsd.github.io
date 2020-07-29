@@ -8,7 +8,7 @@ Use macvlan for bridged network
 On the host, setup `br0` as the bridge interface,
 then bond the actual physical interface to it.
 
-.. code-block:: console
+.. code-block:: cosnole
 
    auto br0
    iface br0 inet static

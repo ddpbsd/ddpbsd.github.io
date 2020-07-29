@@ -1,8 +1,8 @@
 .. _db_mysql_duplicates:
 
 
-Find duplicates
-^^^^^^^^^^^^^^^
+Find duplicates:
+^^^^^^^^^^^^^^^^
 
 .. code-block:: console
 

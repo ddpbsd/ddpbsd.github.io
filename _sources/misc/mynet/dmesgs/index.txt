@@ -1,3 +1,5 @@
+
+======
 dmesgs
 ======
 
@@ -8,9 +10,12 @@ Contents:
 .. toctree::
    :maxdepth: 2
 
+   arrakis
    buzzell
    ix
    ipyr
    junction   
+   jupiter
    pine
+   tiny
 

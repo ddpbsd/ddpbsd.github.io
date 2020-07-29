@@ -7,7 +7,7 @@ jupiter
 Currently running:
 ^^^^^^^^^^^^^^^^^^
 
-Ubuntu
+OpenBSD
 
 Hardware:
 ^^^^^^^^^

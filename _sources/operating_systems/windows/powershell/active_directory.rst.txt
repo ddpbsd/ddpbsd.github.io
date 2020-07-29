@@ -1,77 +1,40 @@
 
-================
-Active Directory
-================
-
-Interact with AD through powershell.
-It's fun!
-
-Get Domain Admins
-^^^^^^^^^^^^^^^^^
+Get Domain Admins:
+^^^^^^^^^^^^^^^^^^
 
 .. code-block:: console
 
    Get-ADGroupMember "Domain Admins" | select name,distinguishedName
 
 
-List disabled accounts
-^^^^^^^^^^^^^^^^^^^^^^
+List disabled accounts:
+^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code-block:: console
 
    Search-ADAccount -AccountDisabled
 
-Sorted by last logon date
-^^^^^^^^^^^^^^^^^^^^^^^^^
+Sorted by last logon date:
+^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code-block:: console
 
    Search-ADAccount -AccountDisabled -UsersOnly | Sort-Object lastlogondate
 
-Disabled users
-^^^^^^^^^^^^^^
+Disabled users:
+^^^^^^^^^^^^^^^
 
 .. code-block:: console
 
    Get-ADUser -Filter {enabled -eq "false" -and objectclass -eq "user"} -properties modified | sort-object modified
 
 
-Another list of domain admins
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Another list of domain admins:
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code-block:: console
 
    Get-ADGroup -Identity S-1-5-21-DOMAIN-512 | Get-ADGroupMember | Get-ADUser -Filter {enabled -eq "false"} -Properties *
 
 
-List users who haven't logged in in over 90 days
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-.. code-block:: console
-
-   $Date = (Get-Date).AddDays(-90)
-
-   # Only list enabled users
-   Get-ADUser -Filter {((Enabled -eq $true) -and (LastLogonDate -lt $Date))} -Properties LastLogonDate | select samaccountname, Name, LastLogonDate | Sort-Object LastLogonDate
-
-
-List Domain Admins sorted by last logon date
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-.. code-block:: console
-
-   Get-ADGroup "Domain Admins" | Get-ADGroupMember | Get-ADUser -Properties LastLogonDate | Select Name,SamAccountName,LastLogonDate,Enabled | Sort LastLogonDate
-
-This one does `-recurse`, which I don't know if it's necessary.
-
-.. code-block:: console
-
-   Get-ADGroupMember -Identity "Domain Admins" | foreach {Get-ADUser -Identity $_.distinguishedname -Properties displayname, samaccountname, lastlogondate | select displayname, samaccountname, lastlogondate, Enabled} | sort LastLogonDate
-
-List users who have not logged in within 30 days and disable accounts
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-.. code-block:: console
-
-   Search-ADAccount -AccountInactive -TimeSpan ([timespan]30d) -UsersOnly | Set-ADUser -Enabled $false -WhatIf
 

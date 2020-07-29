@@ -1,20 +1,20 @@
 
-Espressobin network
-^^^^^^^^^^^^^^^^^^^
+Espressobin network:
+^^^^^^^^^^^^^^^^^^^^
 
 It's a tangled mess. It sometimes works. I guess.
 It doesn't work right now though.
 
-Network status
-^^^^^^^^^^^^^^
+Network status:
+^^^^^^^^^^^^^^^
 
 `wan` interface will come up if `eth0` is up, but `ifup` is totally fubar.
 It then works if manually brought up. Not sure why it won't work the same way Ubuntu's worked for years.
 Maybe netplan.io will help?
 
 
-Configurations
-^^^^^^^^^^^^^^
+Configurations:
+^^^^^^^^^^^^^^^
 
 Armbian uses sytemd-networkd to configure the network.
 The configuration lives in `/etc/systemd/network`.
@@ -25,8 +25,8 @@ The configuration lives in `/etc/systemd/network`.
    10-br0.netdev   10-eth0.network  10-lan1.network
    10-br0.network  10-lan0.network  10-wan.network
 
-10-br0.netdev
-^^^^^^^^^^^^^
+10-br0.netdev:
+^^^^^^^^^^^^^^
 
 .. code-block:: console
 
@@ -34,8 +34,8 @@ The configuration lives in `/etc/systemd/network`.
    Name=br0
    Kind=bridge
 
-10-br0.network
-^^^^^^^^^^^^^^
+10-br0.network:
+^^^^^^^^^^^^^^^
 
 .. code-block:: console
 
@@ -47,8 +47,8 @@ The configuration lives in `/etc/systemd/network`.
    #Gateway=192.168.28.1
    #DNS=192.168.17.17
 
-10-eth0.network
-^^^^^^^^^^^^^^^
+10-eth0.network:
+^^^^^^^^^^^^^^^^
 
 .. code-block:: console
 
@@ -59,8 +59,8 @@ The configuration lives in `/etc/systemd/network`.
    #DHCP=ipv4
    #Bridge=br0
 
-10-lan0.network
-^^^^^^^^^^^^^^^
+10-lan0.network:
+^^^^^^^^^^^^^^^^
 
 .. code-block:: console
 
@@ -70,8 +70,8 @@ The configuration lives in `/etc/systemd/network`.
    [Network]
    Bridge=br0
 
-10-lan1.network
-^^^^^^^^^^^^^^^
+10-lan1.network:
+^^^^^^^^^^^^^^^^
 
 .. code-block:: console
 
@@ -81,8 +81,8 @@ The configuration lives in `/etc/systemd/network`.
    [Network]
    Bridge=br0
 
-10-wan.network
-^^^^^^^^^^^^^^
+10-wan.network:
+^^^^^^^^^^^^^^^
 
 .. code-block:: console
 

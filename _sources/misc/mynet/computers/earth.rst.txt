@@ -3,16 +3,15 @@
 earth
 =====
 
-Going to use it as a KVM/lxd host.
-Just set it up though, so nothing running on it at the moment.
+Proxmox virtualization server.
 
-Currently running
-^^^^^^^^^^^^^^^^^
+Currently running:
+^^^^^^^^^^^^^^^^^^
 
-* Nothing
+* A bunch of VMs and containers
 
-Hardware
-^^^^^^^^
+Hardware:
+^^^^^^^^^
 
 Dell Poweredge T310
 

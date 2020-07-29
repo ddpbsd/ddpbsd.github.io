@@ -3,8 +3,8 @@
 Basics to get it booted (more details to follow).
 
 
-Important commands:
-^^^^^^^^^^^^^^^^^^^
+Important commands
+^^^^^^^^^^^^^^^^^^
 
 .. code-block:: console
 

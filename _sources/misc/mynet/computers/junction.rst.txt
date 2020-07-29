@@ -3,22 +3,22 @@ junction
 
 Firewall
 
-Currently running
-^^^^^^^^^^^^^^^^^
+Currently running:
+^^^^^^^^^^^^^^^^^^
 
 * bro-ids
 
 * unbound
 
-Hardware
-^^^^^^^^
+Hardware:
+^^^^^^^^^
 
 pcengines apu2c4
 
 .. include:: ../dmesgs/junction.rst
 
-Upgrade BIOS
-^^^^^^^^^^^^
+Upgrade BIOS:
+^^^^^^^^^^^^^
 
 From Stuart Henderson on `misc@ <https://marc.info/?l=openbsd-misc&m=156037126231372&w=2>`_:
 

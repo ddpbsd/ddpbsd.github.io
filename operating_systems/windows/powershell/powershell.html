@@ -17,8 +17,7 @@
         VERSION:     '0.1',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: '.txt'
+        HAS_SOURCE:  true
       };
     </script>
     <script type="text/javascript" src="../../../_static/jquery.js"></script>
@@ -26,6 +25,8 @@
     <script type="text/javascript" src="../../../_static/doctools.js"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="top" title="notes 0.1 documentation" href="../../../index.html" />
+    <link rel="up" title="Powershell" href="index.html" />
     <link rel="next" title="Active Directory" href="active_directory.html" />
     <link rel="prev" title="Powershell" href="index.html" />
    
@@ -41,8 +42,6 @@
     <div class="document">
       <div class="documentwrapper">
         <div class="bodywrapper">
-          
-
           <div class="body" role="main">
             
   <div class="section" id="powershell-basics">
@@ -70,13 +69,13 @@
 </div>
 <div class="section" id="stop-a-service-on-a-remote-pc">
 <h2>Stop a service on a remote PC:<a class="headerlink" href="#stop-a-service-on-a-remote-pc" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">(get-service -ComputerName $computer -Name service_name).Stop()</span>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp gp-VirtualEnv">(get-service -ComputerName $computer -Name service_name)</span><span class="go">.Stop()</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="start-a-service-on-a-remote-pc">
 <h2>Start a service on a remote PC:<a class="headerlink" href="#start-a-service-on-a-remote-pc" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">(get-service -ComputerName $computer -Name service_name).Start()</span>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp gp-VirtualEnv">(get-service -ComputerName $computer -Name service_name)</span><span class="go">.Start()</span>
 </pre></div>
 </div>
 </div>
@@ -97,7 +96,6 @@
 
 
           </div>
-          
         </div>
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">

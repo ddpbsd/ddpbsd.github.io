@@ -11,6 +11,4 @@ Contents:
 .. toctree::
    :maxdepth: 2
 
-   cli
    sg300
-

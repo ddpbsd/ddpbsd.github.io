@@ -1,6 +1,7 @@
+.. _misc_mynet_dmesgs_arrakis:
 
-dmesg for arrakis
-^^^^^^^^^^^^^^^^^
+dmesg for arrakis:
+^^^^^^^^^^^^^^^^^^
 
 .. code-block:: console
 

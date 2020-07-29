@@ -29,10 +29,3 @@ Fix (rebuild the rpm db):
    $ rpm --rebuilddb
    $ yum clean all
 
-Show version of package with yum
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-.. code-block:: console
-
-   yum info PACKAGE
-

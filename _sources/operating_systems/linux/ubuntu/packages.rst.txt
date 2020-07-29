@@ -55,9 +55,3 @@ Find the files provided by a package
 
    dpkg -L PACKAGE
 
-Upgrade one package
-^^^^^^^^^^^^^^^^^^^
-
-.. code-block:: console
-
-   apt-get install --only-upgrade <packagename>

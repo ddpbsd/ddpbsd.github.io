@@ -11,8 +11,8 @@ C4Labs
 It's very nice, but not perfect.
 The instructions were decent, but use your brain. The pictures don't always match reality.
 
-Issues
-^^^^^^
+Issues:
+^^^^^^^
 
 * The screw pictures aren't correct.
 
@@ -21,8 +21,8 @@ Issues
 * The holes above the USB ports are too small for the thumb drives I was using with the modules.
 
 
-Awesome stuff
-^^^^^^^^^^^^^
+Awesome stuff:
+^^^^^^^^^^^^^^
 
 * The fans are a nice touch. Very quiet.
 

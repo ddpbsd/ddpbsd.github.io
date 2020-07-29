@@ -1,3 +1,5 @@
+
+=======
 Windows
 =======
 
@@ -8,6 +10,7 @@ Contents:
 
    active_directory/index.rst
    cheatsheets
+   laps
    powershell/index
    sid_stuff
    smb

@@ -1,3 +1,5 @@
+
+===================
 Pine64 Clusterboard
 ===================
 
@@ -8,6 +10,7 @@ Contents:
 .. toctree::
    :maxdepth: 2
 
+   case
    leds
    openbsd
    pins

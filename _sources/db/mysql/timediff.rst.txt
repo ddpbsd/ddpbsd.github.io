@@ -1,6 +1,6 @@
 
-Do a timediff
-^^^^^^^^^^^^^
+Do a timediff:
+^^^^^^^^^^^^^^
 
 .. code-block:: console
 

@@ -1,5 +1,7 @@
-elastic
-=======
+
+=============
+elasticsearch
+=============
 
 Contents:
 
@@ -7,6 +9,11 @@ Contents:
    :maxdepth: 2
 
    create_index
+   dev
+   ilm
    status
-   
+   security/logstash_user.rst
+   security/beats_user.rst
+   templates
+   shards   
 

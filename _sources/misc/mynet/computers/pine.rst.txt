@@ -3,15 +3,15 @@ pine
 
 Currently a DNS server using `nsd` and `unbound`.
 
-Currently running
-^^^^^^^^^^^^^^^^^
+Currently running:
+^^^^^^^^^^^^^^^^^^
 
 * nsd
 
 * unbound
 
-Hardware
-^^^^^^^^
+Hardware:
+^^^^^^^^^
 
 Pine64 A64+
 

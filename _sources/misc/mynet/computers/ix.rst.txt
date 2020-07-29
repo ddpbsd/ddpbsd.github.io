@@ -1,15 +1,15 @@
-ix
-==
+ix:
+===
 
 General purpose server.
 
-Currently running
-^^^^^^^^^^^^^^^^^
+Currently running:
+^^^^^^^^^^^^^^^^^^
 
 * whatever I want
 
-Hardware
-^^^^^^^^
+Hardware:
+^^^^^^^^^
 
 Dell Poweredge T110 (I think)
 

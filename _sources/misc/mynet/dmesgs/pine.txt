@@ -1,7 +1,5 @@
-.. _misc_mynet_dmesgs_pine:
-
-dmesg for pine:
-^^^^^^^^^^^^^^^
+dmesg for pine
+^^^^^^^^^^^^^^
 
 .. code-block:: console
 

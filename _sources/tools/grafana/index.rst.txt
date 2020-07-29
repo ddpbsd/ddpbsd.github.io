@@ -10,4 +10,3 @@ Contents:
    :maxdepth: 2
 
    ldap
-   elasticsearch/free_space

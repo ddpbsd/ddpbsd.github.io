@@ -1,3 +1,5 @@
+
+===
 ssl
 ===
 
@@ -7,6 +9,7 @@ Contents:
    :maxdepth: 2
 
    download_cert
+   certstore
    create_self_signed_cert
    test_for_ssl3
    create_ca

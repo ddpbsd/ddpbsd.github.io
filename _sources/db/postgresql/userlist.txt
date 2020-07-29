@@ -1,5 +1,5 @@
-Create a list of database users:
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Create a list of database users
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code-block:: console
 

@@ -1,6 +1,7 @@
+.. _misc_mynet_dmesgs_buzzell:
 
-dmesg for buzzell
-^^^^^^^^^^^^^^^^^
+dmesg for buzzell:
+^^^^^^^^^^^^^^^^^^
 
 .. code-block:: console
 

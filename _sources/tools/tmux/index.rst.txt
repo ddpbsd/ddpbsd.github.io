@@ -5,8 +5,8 @@ tmux
 
 I use ``o`` as my prefix key. The default is ``b``. 
 
-Set the prefix key to ``o``
-^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Set the prefix key to ``o``:
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code-block:: console
 
@@ -15,8 +15,8 @@ Set the prefix key to ``o``
    bind-key C-c send-prefix
 
 
-Resize a pane
-^^^^^^^^^^^^^
+Resize a pane:
+^^^^^^^^^^^^^^
 
 Increase size down:
 
@@ -24,15 +24,15 @@ Increase size down:
 
    ^o :resize-pane -D 10
 
-Zoom in/out in a pane
-^^^^^^^^^^^^^^^^^^^^^
+Zoom in/out in a pane:
+^^^^^^^^^^^^^^^^^^^^^^
 
 .. code-block:: console
 
    ^o z
 
-Misc
-^^^^
+Misc:
+^^^^^
 
 .. code-block:: console
 
@@ -45,16 +45,16 @@ Misc
    x - kill pane
    d - detach
 
-Run a program in a new session
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Run a program in a new session:
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code-block:: console
 
    tmux new-session -d -s "top" /usr/bin/top
 
 
-Scrollback
-^^^^^^^^^^
+Scrollback:
+^^^^^^^^^^^
 
 Enter copy mode.
 
@@ -71,15 +71,15 @@ Exit copy mode.
    q
 
 
-Name a session
-^^^^^^^^^^^^^^
+Name a session:
+^^^^^^^^^^^^^^^
 
 .. code-block:: console
 
    tmux new-session -s "NAME"
 
-Start a detatched session
-^^^^^^^^^^^^^^^^^^^^^^^^^
+Start a detatched session:
+^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Start a new session, run a program, and detatch it.
 
@@ -87,8 +87,8 @@ Start a new session, run a program, and detatch it.
 
    tmux new-session -d -s "NAME" /path/to/program/to/run
 
-Rename a session
-^^^^^^^^^^^^^^^^
+Rename a session:
+^^^^^^^^^^^^^^^^^
 
 control + b $
 
@@ -96,8 +96,8 @@ control + b $
 
    ^b $
 
-Rename a pane
-^^^^^^^^^^^^^
+Rename a pane:
+^^^^^^^^^^^^^^
 
 control + b , (comma)
 
@@ -105,11 +105,3 @@ control + b , (comma)
 
    ^b ,
 
-Share a session
-^^^^^^^^^^^^^^^
-
-After session `shared` is created, run this to watch it:
-
-.. code-block:: console
-
-   tmux attach-session -t shared

@@ -1,3 +1,5 @@
+
+====
 Junk
 ====
 
@@ -13,6 +15,7 @@ Contents:
    breweries
    chicken
    creepypastas
+   gardening/index
    podcasts
    restaurants/index
 

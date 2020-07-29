@@ -1,52 +1,41 @@
 .. _operating_systems_linux_firewalls_firewalld:
 
+firewall-cmd
+============
+
 CentOS 7 firewall-cmd
 ---------------------
 
-List active ports
+Get active zones:
 ^^^^^^^^^^^^^^^^^
-
-.. code-block:: console
-
-   firewall-cmd --list-ports
-
-Get active zones
-^^^^^^^^^^^^^^^^
 
 .. code-block:: console
 
    firewall-cmd --get-active-zones
 
-Open a port
-^^^^^^^^^^^
+Open a port:
+^^^^^^^^^^^^
 
 .. code-block:: console
 
    firewall-cmd --permanent --zone=public --add-port=80/tcp
 
-Close a port
-^^^^^^^^^^^^
-
-.. code-block:: console
-
-   firewall-cmd --remove-port=
-
-Enable the change
-^^^^^^^^^^^^^^^^^
+Enable the change:
+^^^^^^^^^^^^^^^^^^
 
 .. code-block:: console
 
    firewall-cmd --reload
 
-Make sure the change is in effect
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Make sure the change is in effect:
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code-block:: console
 
    firewall-cmd --zone=public --query-port=80/tcp
 
-Reject connections to a port
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Reject connections to a port:
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code-block:: console
 
@@ -55,4 +44,3 @@ Reject connections to a port
 
    # add a src ip into the mix
    firewall-cmd --permanent --zone=public --add-rich-rule='rule family="ipv4" source address="10.0.0.2" port protocol="tcp" port="443" reject'
-

@@ -1,6 +1,6 @@
 
-For a serial connection
-^^^^^^^^^^^^^^^^^^^^^^^
+For a serial connection:
+^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code-block:: console
 

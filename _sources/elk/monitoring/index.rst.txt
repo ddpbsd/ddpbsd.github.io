@@ -3,19 +3,12 @@
 monitoring
 ==========
 
-There are a lot of things to monitor in elasticsearch to make sure it's actually working.
-Here are a few things I've figured out.
-It's not much, but it's mine.
-But you can use it too.
-
 Contents:
 
 .. toctree::
    :maxdepth: 2
 
    monitoring
-   nodes
    grafana
-   telegraf
       
 

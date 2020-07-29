@@ -1,10 +1,5 @@
 .. _operating_systems_windows_powershell:
 
-=================
-Powershell Basics
-=================
-
-Some powershell basics.
 
 Get the version of powershell:
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^

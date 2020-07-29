@@ -9,7 +9,6 @@ Contents:
    :maxdepth: 2
 
    apt
-   auth/failure
    commands
    auditd/index
    centos/index

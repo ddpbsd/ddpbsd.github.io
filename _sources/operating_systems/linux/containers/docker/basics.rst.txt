@@ -1,11 +1,5 @@
 .. _operating_systems_linux_containers_docker:
 
-Docker config info
-^^^^^^^^^^^^^^^^^^
-
-.. code-block:: console
-
-   docker system info
 
 List of images:
 ^^^^^^^^^^^^^^^

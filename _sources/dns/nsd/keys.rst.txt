@@ -1,15 +1,15 @@
 
 
 
-Create key
-^^^^^^^^^^
+Create key:
+^^^^^^^^^^^
 
 .. code-block:: console
 
    dd if=/dev/random of=/dev/stdout count=1 bs=32 | base64
 
-Configuration example
-^^^^^^^^^^^^^^^^^^^^^
+Configuration example:
+^^^^^^^^^^^^^^^^^^^^^^
 
 .. code-block:: console
 

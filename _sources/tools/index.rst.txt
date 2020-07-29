@@ -11,7 +11,6 @@ Contents:
 
    ansible/index
    certstrap/index
-   curl/index
    dns/index
    freeradius/index
    git/index
@@ -22,10 +21,8 @@ Contents:
    ldap/index
    messaging/index
    monitoring/index
-   netstat/netstat
    opensmtpd/index
    osquery/index
-   packer/index
    perl/index
    python/index
    su
