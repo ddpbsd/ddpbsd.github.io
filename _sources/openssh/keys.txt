@@ -1,0 +1,16 @@
+.. _openssh_keys:
+
+SSH keys
+========
+
+
+Determine the fingerprint of a key:
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+`ssh-keygen` can provide this information.
+It defaults to `sha256`, but `-E md5` is also available.
+
+.. code-block:: console
+
+   ssh-keygen -lf KEY
+

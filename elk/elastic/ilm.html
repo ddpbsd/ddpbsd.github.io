@@ -1,0 +1,160 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Index Lifecycle Management &#8212; notes 0.1 documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="top" title="notes 0.1 documentation" href="../../index.html" />
+    <link rel="up" title="elasticsearch" href="index.html" />
+    <link rel="next" title="Get the status of ES" href="status.html" />
+    <link rel="prev" title="Get list of shards" href="dev.html" />
+   
+  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body role="document">
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="index-lifecycle-management">
+<h1>Index Lifecycle Management<a class="headerlink" href="#index-lifecycle-management" title="Permalink to this headline">¶</a></h1>
+<p>I have some mental block with ILM.
+So trying to get a grasp on it has been difficult.</p>
+<div class="section" id="basic-steps">
+<h2>Basic steps<a class="headerlink" href="#basic-steps" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>Create index template</li>
+<li>Create the Lifecycle policy</li>
+<li>Add the lifecycle policy to the template</li>
+<li>Bootstrap the index</li>
+<li>Rejoice?</li>
+</ol>
+</div>
+<div class="section" id="index-creation">
+<h2>Index creation<a class="headerlink" href="#index-creation" title="Permalink to this headline">¶</a></h2>
+<p>Boostrap the index with the following settings:</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">{</span>
+<span class="go">  &quot;aliases&quot;: {</span>
+<span class="go">    &quot;INDEX_ALIAS&quot;: {</span>
+<span class="go">      &quot;is_write_index&quot;: true</span>
+<span class="go">    }</span>
+<span class="go">  },</span>
+<span class="go">  &quot;settings&quot;: {</span>
+<span class="go">    &quot;index&quot;: {</span>
+<span class="go">      &quot;lifecycle&quot;: {</span>
+<span class="go">        &quot;origination_date&quot;: TODAYS_DATE_IN_UNIX_EPOC</span>
+<span class="go">      }</span>
+<span class="go">    }</span>
+
+<span class="go">  }</span>
+<span class="go">}</span>
+</pre></div>
+</div>
+<p>I&#8217;m not entirely sure about the unix epoc thing, but it seems to work.</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../../index.html">notes</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../arm/index.html">arm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../db/index.html">databases</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dns/index.html">DNS stuff</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">elk stack</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../beats/index.html">Beats</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">elasticsearch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../logstash/index.html">logstash</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../monitoring/index.html">monitoring</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../setup.html">Setting up the whole thing</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../openssh/index.html">OpenSSH</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../operating_systems/index.html">Operating Systems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ossec/index.html">OSSEC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../rsyslogd/index.html">rsyslogd</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../securityonion/index.html">SecurityOnion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ssl/index.html">ssl</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../stupid_unix_tricks/index.html">Stupid Unix Tricks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tools/index.html">Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../vendor_stuff/index.html">Vendor Stuff</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../misc/index.html">misc</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../index.html">Documentation overview</a><ul>
+  <li><a href="../index.html">elk stack</a><ul>
+  <li><a href="index.html">elasticsearch</a><ul>
+      <li>Previous: <a href="dev.html" title="previous chapter">Get list of shards</a></li>
+      <li>Next: <a href="status.html" title="next chapter">Get the status of ES</a></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../../search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+        <!-- your html code here -->
+	<div class="footer">
+		<em>This information has a good chance of being wrong, inconsistent, out of date, or just bad. Use at your own risk.
+		Feel free to notify me of any issues though.</em>
+	</div>
+
+
+  </body>
+</html>

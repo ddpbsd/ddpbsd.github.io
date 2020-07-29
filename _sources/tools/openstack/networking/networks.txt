@@ -1,0 +1,9 @@
+
+
+list networks
+^^^^^^^^^^^^^
+
+.. code-block:: console
+
+   openstack network list
+

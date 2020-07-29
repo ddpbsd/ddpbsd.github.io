@@ -1,0 +1,40 @@
+
+User can login locally but not via ssh
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Add debug to `/etc/pam.d/sshd` (probably to more lines than this):
+
+.. code-block:: console
+
+   auth       required     pam_sepermit.so debug
+
+
+
+Look for `pam_sepermit` log messages:
+
+.. code-block:: console
+
+   Mar 16 09:36:42 SERVER sshd[20620]: pam_sepermit(sshd:auth): Parsing config file: /etc/security/sepermit.conf
+   Mar 16 09:36:42 SERVER sshd[20620]: pam_sepermit(sshd:auth): Access will not be allowed on match
+   Mar 16 09:36:42 SERVER sshd[20620]: pam_sepermit(sshd:auth): Matching user USERNAME against user USERNAME
+   Mar 16 09:36:42 SERVER sshd[20620]: pam_sepermit(sshd:auth): sepermit_match returned: 0
+   Mar 16 09:37:07 SERVER sshd[20620]: pam_sepermit(sshd:auth): Parsing config file: /etc/security/sepermit.conf
+   Mar 16 09:37:07 SERVER sshd[20620]: pam_sepermit(sshd:auth): Access will not be allowed on match
+   Mar 16 09:37:07 SERVER sshd[20620]: pam_sepermit(sshd:auth): sepermit_match returned: -1
+
+
+Unlock accounts
+^^^^^^^^^^^^^^^
+
+Use `passwd`:
+
+.. code-block:: console
+
+   # passwd -u USERNAME
+
+Or `usermod`:
+
+.. code-block:: console
+
+   # usermode -U USERNAME
+

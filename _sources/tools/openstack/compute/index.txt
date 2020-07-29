@@ -1,0 +1,11 @@
+====================
+OpenStack Compute
+====================
+
+Contents:
+
+.. toctree::
+   :maxdepth: 2
+
+   add_node
+

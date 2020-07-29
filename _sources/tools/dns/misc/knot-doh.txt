@@ -1,0 +1,10 @@
+
+
+Knot and DoH
+^^^^^^^^^^^^
+`Source <https://lists.dns-oarc.net/pipermail/dns-operations/2019-September/019183.html>`_
+
+.. code-block:: console
+
+   policy.add(policy.suffix(policy.DENY, {todname('use-application-dns.net.')}))
+

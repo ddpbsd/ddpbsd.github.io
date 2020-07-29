@@ -1,0 +1,23 @@
+=======
+mariadb
+=======
+
+Preparing the mariadb database
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: sql
+
+   CREATE USER 'ossecuser'@'OSSEC-IP' IDENTIFIED BY 'PASSWORD';
+
+   GRANT INSERT,SELECT,UPDATE,CREATE,DELETE,EXECUTE on ossec.* to ossecuser@'OSSEC-IP';
+
+   flush priviledges;
+
+
+Loading the ossec schema
+^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: console
+
+   $ mysql -u ossecuser -p ossec < mysql.schema
+

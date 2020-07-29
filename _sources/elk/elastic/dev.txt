@@ -1,0 +1,28 @@
+
+Get list of shards
+^^^^^^^^^^^^^^^^^^
+
+.. code-block:: console
+
+   GET /_cat/shards?v
+
+Sort by node and then size (desc)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: console
+
+   GET /_cat/shards?v&s=node,store
+
+
+Change the breaker limit
+^^^^^^^^^^^^^^^^^^^^^^^^
+
+This is a temporary change, and probably a dumb one.
+
+.. code-block:: console
+
+   curl -XPUT localhost:9200/_cluster/settings -d '{
+     "transient" : {
+       "indices.breaker.request.limit" : "41%" 
+     }
+   }'

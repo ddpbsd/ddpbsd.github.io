@@ -1,0 +1,15 @@
+
+Don't fill the disk
+^^^^^^^^^^^^^^^^^^^
+
+ESXi needs space for swap, so don't fill it too much.
+Not sure how much is the sweet spot though.
+
+Snapshots are horrible
+^^^^^^^^^^^^^^^^^^^^^^
+
+Snapshots take space.
+Each iteration is a diff of the previous snapshot or base image I don't know.
+So each one will take more and more space.
+Snapshot, do stuff, verify it works, delete old snapshot.
+

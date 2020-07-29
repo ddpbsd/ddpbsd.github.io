@@ -1,0 +1,11 @@
+=================
+Postfix databases
+=================
+
+database is older than source file
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: console
+
+   postmap /etc/postfix/source_file
+

@@ -1,0 +1,29 @@
+=======
+Backups
+=======
+
+I need to do these better.
+
+
+What to backup
+^^^^^^^^^^^^^^
+
+* pictures
+
+* tarsnap keys
+
+* let's encrypt keys?
+
+* ssh keys
+
+Systems
+^^^^^^^
+
+ix
+
+public
+
+arrakis
+
+junction
+

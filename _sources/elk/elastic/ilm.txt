@@ -1,0 +1,46 @@
+Index Lifecycle Management
+==========================
+
+I have some mental block with ILM.
+So trying to get a grasp on it has been difficult.
+
+Basic steps
+^^^^^^^^^^^
+
+#. Create index template
+
+#. Create the Lifecycle policy
+
+#. Add the lifecycle policy to the template
+
+#. Bootstrap the index
+
+#. Rejoice?
+
+
+Index creation
+^^^^^^^^^^^^^^
+
+Boostrap the index with the following settings:
+
+.. code-block:: console
+
+   {
+     "aliases": {
+       "INDEX_ALIAS": {
+         "is_write_index": true
+       }
+     },
+     "settings": {
+       "index": {
+         "lifecycle": {
+           "origination_date": TODAYS_DATE_IN_UNIX_EPOC
+         }
+       }
+
+     }
+   }
+
+I'm not entirely sure about the unix epoc thing, but it seems to work.
+
+

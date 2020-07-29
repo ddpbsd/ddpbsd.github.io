@@ -1,0 +1,8 @@
+
+Find spice ports
+^^^^^^^^^^^^^^^^
+
+.. code-block:: console
+
+   virsh domdisplay VM
+
