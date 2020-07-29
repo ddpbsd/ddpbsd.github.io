@@ -58,6 +58,7 @@ So trying to get a grasp on it has been difficult.</p>
 <li>Bootstrap the index</li>
 <li>Rejoice?</li>
 </ol>
+<p>There are probably a few steps missing, including a lot of cursing.</p>
 </div>
 <div class="section" id="index-template">
 <h2>Index Template<a class="headerlink" href="#index-template" title="Permalink to this headline">¶</a></h2>
@@ -89,7 +90,7 @@ This adds it to the lifecycle policy (can also be done in Kibana).</li>
 <span class="go">  &quot;settings&quot;: {</span>
 <span class="go">    &quot;index&quot;: {</span>
 <span class="go">      &quot;lifecycle&quot;: {</span>
-<span class="go">        &quot;origination_date&quot;: TODAYS_DATE_IN_UNIX_EPOC</span>
+<span class="go">        &quot;origination_date&quot;: TODAYS_DATE_IN_UNIX_EPOCH</span>
 <span class="go">      }</span>
 <span class="go">    }</span>
 
@@ -97,7 +98,7 @@ This adds it to the lifecycle policy (can also be done in Kibana).</li>
 <span class="go">}</span>
 </pre></div>
 </div>
-<p>I&#8217;m not entirely sure about the unix epoc thing, but it seems to work.</p>
+<p>The origination_date might not be necessary, but so far it is working.</p>
 </div>
 </div>
 

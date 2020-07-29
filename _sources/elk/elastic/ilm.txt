@@ -19,7 +19,7 @@ Basic steps
 
 #. Rejoice?
 
-
+There are probably a few steps missing, including a lot of cursing.
 
 Index Template
 ^^^^^^^^^^^^^^
@@ -57,13 +57,14 @@ Boostrap the index with the following settings:
      "settings": {
        "index": {
          "lifecycle": {
-           "origination_date": TODAYS_DATE_IN_UNIX_EPOC
+           "origination_date": TODAYS_DATE_IN_UNIX_EPOCH
          }
        }
 
      }
    }
 
-I'm not entirely sure about the unix epoc thing, but it seems to work.
+The origination_date might not be necessary, but so far it is working.
+
 
 
