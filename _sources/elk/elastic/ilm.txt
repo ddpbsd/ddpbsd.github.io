@@ -4,12 +4,14 @@ Index Lifecycle Management
 I have some mental block with ILM.
 So trying to get a grasp on it has been difficult.
 
+This could all be wrong, and is definitely incomplete.
+
 Basic steps
 ^^^^^^^^^^^
 
-#. Create index template
-
 #. Create the Lifecycle policy
+
+#. Create index template
 
 #. Add the lifecycle policy to the template
 
@@ -18,8 +20,29 @@ Basic steps
 #. Rejoice?
 
 
-Index creation
+
+Index Template
 ^^^^^^^^^^^^^^
+
+* Do not include `aliases` information in the template.
+  If the aliases section is populated it will cause errors about
+  the alias pointing to multiple indexes.
+
+* Include this information in the index template.
+  This adds it to the lifecycle policy (can also be done in Kibana).
+
+.. code-block:: json
+
+   {
+     "settings": {
+       "index": {
+         "lifecycle": {
+           "name": "ILM_POLICY_NAME",
+           "rollover_alias": "INDEX_ALIAS",
+
+
+Index Bootstrap
+^^^^^^^^^^^^^^^
 
 Boostrap the index with the following settings:
 
