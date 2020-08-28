@@ -1,0 +1,59 @@
+
+
+Holy moly this thing is a mess.
+
+
+
+Network
+^^^^^^^
+
+Remove the default default network.
+Create a new default network.
+Start it and set it to autostart.
+
+.. code-block:: cosnole
+
+   virsh net-destroy default
+   virsh net-define --file default-network.xml
+   virsh net-start default
+   virsh net-autostart default
+
+
+
+Storage
+^^^^^^^
+
+
+.. code-block:: console
+
+   virsh pool-define-as --name virt-zfs --source-name data/virtualmachines --type zfs
+   virsh pool-autostart virt-zfs
+   virsh pool-start virt-zfs
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+default-network.xml
+^^^^^^^^^^^^^^^^^^^
+
+If I knew this file I could probably save a bunch of work.
+
+.. code-block:: console
+
+   <network>
+     <name>default</name>
+     <bridge name="br0" />
+     <forward mode="bridge" />
+   </network>
+

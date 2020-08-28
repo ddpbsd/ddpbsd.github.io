@@ -22,3 +22,16 @@ Connect to db
 
    \c DB_NAME
 
+
+date minus a couple of days
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Using date and interval is weird.
+`interval '2 days'` actually means yesterday.
+Today is the first day, yesterday is the second.
+
+
+.. code-block:: console
+
+   date > now() - interval '2 days'
+

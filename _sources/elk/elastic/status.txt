@@ -31,3 +31,10 @@ Filesystem stats
 
    GET https://localhost:9200/_nodes/stats/fs
 
+Get version and other info
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: console
+
+   GET https://localhost:9200/
+

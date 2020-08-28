@@ -1,0 +1,259 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Hardware Tokens &#8212; notes 0.1 documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="top" title="notes 0.1 documentation" href="../../index.html" />
+    <link rel="up" title="misc" href="../index.html" />
+    <link rel="next" title="Imagemagick" href="../imagemagick/index.html" />
+    <link rel="prev" title="misc" href="../index.html" />
+   
+  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body role="document">
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="hardware-tokens">
+<h1>Hardware Tokens<a class="headerlink" href="#hardware-tokens" title="Permalink to this headline">¶</a></h1>
+<p>My desk currently looks like a Yubikey graveyard.
+I need to figure out which ones do what, and which ones
+are worth keeping.
+Some of them are way too old to be useful.</p>
+<div class="section" id="using-a-hardware-token-with-openssh-8-2">
+<h2>Using a hardware token with OpenSSH 8.2+<a class="headerlink" href="#using-a-hardware-token-with-openssh-8-2" title="Permalink to this headline">¶</a></h2>
+<p>The documentation isn&#8217;t simple enough for me.
+It&#8217;s written as it should be (product agnostic), but I need something simpler.
+So, writing these directions for me.</p>
+</div>
+<div class="section" id="yubikey-features">
+<h2>Yubikey features<a class="headerlink" href="#yubikey-features" title="Permalink to this headline">¶</a></h2>
+<p>These are the features of the yubikeys on my desk.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="24%" />
+<col width="22%" />
+<col width="11%" />
+<col width="15%" />
+<col width="11%" />
+<col width="17%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">version</th>
+<th class="head">firmware</th>
+<th class="head">OTP</th>
+<th class="head">FIDO2</th>
+<th class="head">PIV</th>
+<th class="head">notes</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>nano</td>
+<td>2.3.0</td>
+<td>yes</td>
+<td>no</td>
+<td>no</td>
+<td>:(</td>
+</tr>
+<tr class="row-odd"><td>v5 nfc</td>
+<td>5.2.4</td>
+<td>yes</td>
+<td>yes</td>
+<td>yes</td>
+<td>have 2</td>
+</tr>
+<tr class="row-even"><td>wired mag</td>
+<td>4.3.7</td>
+<td>yes</td>
+<td>no</td>
+<td>yes</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td>unknown</td>
+<td>2.3.1</td>
+<td>yes</td>
+<td>no</td>
+<td>no</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><td>unknown</td>
+<td>2.1.1</td>
+<td>yes</td>
+<td>no</td>
+<td>no</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td>unknown</td>
+<td>2.0.2</td>
+<td>yes</td>
+<td>no</td>
+<td>no</td>
+<td>&nbsp;</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="yubikey-5-nfc">
+<h2>Yubikey 5 NFC<a class="headerlink" href="#yubikey-5-nfc" title="Permalink to this headline">¶</a></h2>
+<p>I used the <a class="reference external" href="https://www.yubico.com/products/services-software/download/yubikey-manager">Yubikey Manager</a>
+to change the FIDO2 pin.
+I ran it in Windows 10 with administrator privs (won&#8217;t be able to access fido without them).</p>
+<p>Once the pin was set I was able to use ssh-keygen to create an <cite>ed25519-sk</cite> key with the resident option.</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> ssh-keygen -t ed25519-sk -O resident
+</pre></div>
+</div>
+<p>It should prompt for the pin, and then the Y will flash for confirmation of presense.
+It may prompt to be touched, it may not.
+The flashing Y is a sign to touch it.</p>
+<p>As usual the public key should be added to the user&#8217;s <cite>~/.ssh/authorized_keys</cite>.</p>
+<p>To use the resident key, use <cite>ssh-add</cite> to add it to <cite>ssh-agent</cite>.
+It will prompt for the pin.</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> ssh-add -K
+</pre></div>
+</div>
+<p>Using that key to connect to a system will require a touch (look for the flashing Y).</p>
+</div>
+<div class="section" id="solo-key">
+<h2>Solo Key<a class="headerlink" href="#solo-key" title="Permalink to this headline">¶</a></h2>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">I really need to play with this more.
+I&#8217;m sure I just haven&#8217;t figured out the secret sauce.</p>
+</div>
+<p><a class="reference external" href="https://solokeys.com/">Solo Key</a> works with FIDO2, but only with ecdsa-sk keys.
+RIP <cite>ed25519</cite>.</p>
+<p>Used Windows <cite>Sign-In Options</cite> to change the pin since the python program doesn&#8217;t work
+on OpenBSD.</p>
+<p>Creating resident keys <cite>ssh-keygen -t ecdsa-sk -O resident</cite> currently fails for me with:
+<cite>Key enrollment failed: requested feature not supported</cite></p>
+<p>Latest attempt:</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> ssh-keygen -t ecdsa-sk -O resident -v
+<span class="go">Generating public/private ecdsa-sk key pair.</span>
+<span class="go">You may need to touch your authenticator to authorize key generation.</span>
+<span class="go">Enter PIN for authenticator:</span>
+<span class="go">debug1: start_helper: starting /usr/libexec/ssh-sk-helper</span>
+<span class="go">debug1: sshsk_enroll: provider &quot;internal&quot;, device &quot;(null)&quot;, application &quot;ssh:&quot;, userid &quot;(null)&quot;, flags 0x21, challenge len 0 with-pin</span>
+<span class="go">debug1: sshsk_enroll: using random challenge</span>
+<span class="go">debug1: sk_probe: 1 device(s) detected</span>
+<span class="go">debug1: sk_probe: selecting sk by touch</span>
+<span class="go">debug1: ssh_sk_enroll: using device /dev/fido/0</span>
+<span class="go">debug1: ssh_sk_enroll: /dev/fido/0 does not support credprot, refusing to create unprotected resident/verify-required key</span>
+<span class="go">debug1: sshsk_enroll: provider &quot;internal&quot; returned failure -2</span>
+<span class="go">debug1: ssh-sk-helper: Enrollment failed: requested feature not supported</span>
+<span class="go">debug1: ssh-sk-helper: reply len 8</span>
+<span class="go">debug1: client_converse: helper returned error -59</span>
+<span class="go">Key enrollment failed: requested feature not supported</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../../index.html">notes</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../arm/index.html">arm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../db/index.html">databases</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dns/index.html">DNS stuff</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../elk/index.html">elk stack</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../openssh/index.html">OpenSSH</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../operating_systems/index.html">Operating Systems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ossec/index.html">OSSEC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../rsyslogd/index.html">rsyslogd</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../securityonion/index.html">SecurityOnion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ssl/index.html">ssl</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../stupid_unix_tricks/index.html">Stupid Unix Tricks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tools/index.html">Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../vendor_stuff/index.html">Vendor Stuff</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">misc</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Hardware Tokens</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../imagemagick/index.html">Imagemagick</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../kernel_build/index.html">Building a custom kernel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ksh/index.html">ksh</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../links/index.html">Links</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mynet/index.html">mynet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../projects/index.html">projects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../random.html">Stupid random stuff</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../junk/index.html">Junk</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../fediverse/glitch-soc.html">glitch-soc</a></li>
+</ul>
+</li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../index.html">Documentation overview</a><ul>
+  <li><a href="../index.html">misc</a><ul>
+      <li>Previous: <a href="../index.html" title="previous chapter">misc</a></li>
+      <li>Next: <a href="../imagemagick/index.html" title="next chapter">Imagemagick</a></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../../search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+        <!-- your html code here -->
+	<div class="footer">
+		<em>This information has a good chance of being wrong, inconsistent, out of date, or just bad. Use at your own risk.
+		Feel free to notify me of any issues though.</em>
+	</div>
+
+
+  </body>
+</html>
