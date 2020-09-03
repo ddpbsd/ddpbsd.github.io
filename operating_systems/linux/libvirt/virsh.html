@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Ubuntu &#8212; notes 0.1 documentation</title>
+    <title>Add a disk &#8212; notes 0.1 documentation</title>
     
     <link rel="stylesheet" href="../../../_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
@@ -26,9 +26,6 @@
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
     <link rel="top" title="notes 0.1 documentation" href="../../../index.html" />
-    <link rel="up" title="Linux" href="../index.html" />
-    <link rel="next" title="Only upgrade security related packages:" href="ubuntu.html" />
-    <link rel="prev" title="systemctl enable SOMETHING.something: “Failed to execute operation: No such file or directory”" href="../systemd/systemctl.html" />
    
   <link rel="stylesheet" href="../../../_static/custom.css" type="text/css" />
   
@@ -44,33 +41,11 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="ubuntu">
-<h1>Ubuntu<a class="headerlink" href="#ubuntu" title="Permalink to this headline">¶</a></h1>
-<p>Contents:</p>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="ubuntu.html">Only upgrade security related packages:</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ubuntu.html#enable-a-service">Enable a service:</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ubuntu.html#import-a-gpg-key-into-apt">Import a gpg key into apt:</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ubuntu.html#find-the-ubuntu-version">Find the Ubuntu version:</a></li>
-<li class="toctree-l1"><a class="reference internal" href="packages.html">dpkg</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="packages.html#lock-a-version-of-a-package">Lock a version of a package</a></li>
-<li class="toctree-l2"><a class="reference internal" href="packages.html#release-the-lock">Release the lock</a></li>
-<li class="toctree-l2"><a class="reference internal" href="packages.html#see-the-current-selections">See the current selections</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="packages.html#apt">apt</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="packages.html#lock-a-version">Lock a version</a></li>
-<li class="toctree-l2"><a class="reference internal" href="packages.html#remove-the-hold">Remove the hold</a></li>
-<li class="toctree-l2"><a class="reference internal" href="packages.html#look-at-info-for-a-package">Look at info for a package</a></li>
-<li class="toctree-l2"><a class="reference internal" href="packages.html#find-the-files-provided-by-a-package">Find the files provided by a package</a></li>
-<li class="toctree-l2"><a class="reference internal" href="packages.html#upgrade-one-package">Upgrade one package</a></li>
-<li class="toctree-l2"><a class="reference internal" href="packages.html#find-available-versions">Find available versions</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="unfuck.html">Necessary packages:</a></li>
-<li class="toctree-l1"><a class="reference internal" href="unfuck.html#on-the-arm-boards">On the arm boards:</a></li>
-</ul>
+  <div class="section" id="add-a-disk">
+<h1>Add a disk<a class="headerlink" href="#add-a-disk" title="Permalink to this headline">¶</a></h1>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> qemu-img create -f qcow2 DISK_NAME.qcow2 50G
+<span class="gp">$</span> virsh attach-disk vm-name --source /data/vm/DISK_NAME.qcow2 --target vdb --persistent --subdriver qcow2
+</pre></div>
 </div>
 </div>
 
@@ -90,18 +65,13 @@
 
 
 <h3>Navigation</h3>
-<ul class="current">
+<ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../arm/index.html">arm</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../db/index.html">databases</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../dns/index.html">DNS stuff</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../elk/index.html">elk stack</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../openssh/index.html">OpenSSH</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="../../index.html">Operating Systems</a><ul class="current">
-<li class="toctree-l2 current"><a class="reference internal" href="../index.html">Linux</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../openbsd/index.html">OpenBSD</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../windows/index.html">Windows</a></li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="../../index.html">Operating Systems</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../ossec/index.html">OSSEC</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../rsyslogd/index.html">rsyslogd</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../securityonion/index.html">SecurityOnion</a></li>
@@ -116,12 +86,6 @@
 <h3>Related Topics</h3>
 <ul>
   <li><a href="../../../index.html">Documentation overview</a><ul>
-  <li><a href="../../index.html">Operating Systems</a><ul>
-  <li><a href="../index.html">Linux</a><ul>
-      <li>Previous: <a href="../systemd/systemctl.html" title="previous chapter">systemctl enable SOMETHING.something: &#8220;Failed to execute operation: No such file or directory&#8221;</a></li>
-      <li>Next: <a href="ubuntu.html" title="next chapter">Only upgrade security related packages:</a></li>
-  </ul></li>
-  </ul></li>
   </ul></li>
 </ul>
 </div>

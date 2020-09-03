@@ -47,10 +47,19 @@
   <div class="section" id="ssh-keys">
 <span id="openssh-keys"></span><h1>SSH keys<a class="headerlink" href="#ssh-keys" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="determine-the-fingerprint-of-a-key">
-<h2>Determine the fingerprint of a key:<a class="headerlink" href="#determine-the-fingerprint-of-a-key" title="Permalink to this headline">¶</a></h2>
+<h2>Determine the fingerprint of a key<a class="headerlink" href="#determine-the-fingerprint-of-a-key" title="Permalink to this headline">¶</a></h2>
 <p><cite>ssh-keygen</cite> can provide this information.
 It defaults to <cite>sha256</cite>, but <cite>-E md5</cite> is also available.</p>
 <div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">ssh-keygen -lf KEY</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="hardware-keys">
+<h1>Hardware Keys<a class="headerlink" href="#hardware-keys" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="put-libfido2-into-debug-mode">
+<h2>Put libfido2 into debug mode<a class="headerlink" href="#put-libfido2-into-debug-mode" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">env FIDO_DEBUG=1 ssh -vvv ...</span>
 </pre></div>
 </div>
 </div>
@@ -81,6 +90,7 @@ It defaults to <cite>sha256</cite>, but <cite>-E md5</cite> is also available.</
 <li class="toctree-l2"><a class="reference internal" href="commands.html">Command note</a></li>
 <li class="toctree-l2"><a class="reference internal" href="config.html">Automatically add ssh keys to ssh-agent:</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">SSH keys</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#hardware-keys">Hardware Keys</a></li>
 <li class="toctree-l2"><a class="reference internal" href="misc.html">Disconnect from an SSH session:</a></li>
 <li class="toctree-l2"><a class="reference internal" href="misc.html#disconnect-from-a-nested-ssh-session">Disconnect from a nested SSH session:</a></li>
 <li class="toctree-l2"><a class="reference internal" href="sftp.html">message too long:</a></li>

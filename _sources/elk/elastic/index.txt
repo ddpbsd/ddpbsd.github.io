@@ -15,5 +15,6 @@ Contents:
    security/logstash_user.rst
    security/beats_user.rst
    templates
-   shards   
+   shards 
+   tasks
 
