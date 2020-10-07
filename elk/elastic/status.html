@@ -63,6 +63,16 @@
 </pre></div>
 </div>
 </div>
+<div class="section" id="remove-the-read-only-from-an-index">
+<h1>Remove the read only from an index<a class="headerlink" href="#remove-the-read-only-from-an-index" title="Permalink to this headline">¶</a></h1>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">PUT INDEX_NAME/_settings -U &#39;Content-Type: application/json&#39; -d &#39;</span>
+<span class="go">{</span>
+<span class="go">  &quot;index.blocks.read_only_allow_delete&quot;: false,</span>
+<span class="go">  &quot;index.blocks.write&quot;: false</span>
+<span class="go">}</span>
+</pre></div>
+</div>
+</div>
 <div class="section" id="filesystem-stats">
 <h1>Filesystem stats<a class="headerlink" href="#filesystem-stats" title="Permalink to this headline">¶</a></h1>
 <div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">GET https://localhost:9200/_nodes/stats/fs</span>

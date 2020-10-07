@@ -3,7 +3,6 @@
 SSH keys
 ========
 
-
 Determine the fingerprint of a key
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -16,6 +15,13 @@ It defaults to `sha256`, but `-E md5` is also available.
 
 Hardware Keys
 =============
+
+Add they key to ssh-agent
+^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: console
+
+   $ ssh-add -K
 
 Put libfido2 into debug mode
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^

@@ -18,4 +18,5 @@ Contents:
    gardening/index
    podcasts
    restaurants/index
+   minecraft/playtime2.rst
 

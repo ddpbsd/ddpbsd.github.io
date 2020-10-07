@@ -57,6 +57,12 @@ It defaults to <cite>sha256</cite>, but <cite>-E md5</cite> is also available.</
 </div>
 <div class="section" id="hardware-keys">
 <h1>Hardware Keys<a class="headerlink" href="#hardware-keys" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="add-they-key-to-ssh-agent">
+<h2>Add they key to ssh-agent<a class="headerlink" href="#add-they-key-to-ssh-agent" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> ssh-add -K
+</pre></div>
+</div>
+</div>
 <div class="section" id="put-libfido2-into-debug-mode">
 <h2>Put libfido2 into debug mode<a class="headerlink" href="#put-libfido2-into-debug-mode" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">env FIDO_DEBUG=1 ssh -vvv ...</span>
