@@ -1,0 +1,16 @@
+
+======
+filter
+======
+
+Some filter things I don't want to lookup on the elastic site again.
+
+Contents:
+
+.. toctree::
+   :maxdepth: 1
+
+   grok
+   kv
+   nested_json
+
