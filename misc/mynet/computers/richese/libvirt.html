@@ -47,10 +47,10 @@
 <p>Remove the default default network.
 Create a new default network.
 Start it and set it to autostart.</p>
-<div class="highlight-cosnole"><div class="highlight"><pre><span></span>virsh net-destroy default
-virsh net-define --file default-network.xml
-virsh net-start default
-virsh net-autostart default
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">virsh net-destroy default</span>
+<span class="go">virsh net-define --file default-network.xml</span>
+<span class="go">virsh net-start default</span>
+<span class="go">virsh net-autostart default</span>
 </pre></div>
 </div>
 </div>

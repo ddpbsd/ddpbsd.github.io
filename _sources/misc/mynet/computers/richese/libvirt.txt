@@ -11,7 +11,7 @@ Remove the default default network.
 Create a new default network.
 Start it and set it to autostart.
 
-.. code-block:: cosnole
+.. code-block:: console
 
    virsh net-destroy default
    virsh net-define --file default-network.xml
@@ -29,18 +29,6 @@ Storage
    virsh pool-define-as --name virt-zfs --source-name data/virtualmachines --type zfs
    virsh pool-autostart virt-zfs
    virsh pool-start virt-zfs
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
