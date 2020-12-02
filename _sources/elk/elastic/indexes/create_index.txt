@@ -1,5 +1,3 @@
-.. _elastic_create_index:
-
 
 Create an index on ES
 ^^^^^^^^^^^^^^^^^^^^^

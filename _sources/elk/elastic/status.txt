@@ -8,33 +8,6 @@ Get the status of ES
 
    curl -XGET http://localhost:9200/_cluster/health?pretty=true
 
-Get a list of indexes
-^^^^^^^^^^^^^^^^^^^^^
-
-To sort, add `&s=COLUMN_NAME` to the url.
-
-.. code-block:: console
-
-   curl -XGET http://localhost:9200/_cat/indices?v
-
-Look for read only indexes
-^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-.. code-block:: console
-
-   GET INDEX_NAME/_settings/read_only_allow_delete
-
-Remove the read only from an index
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-.. code-block:: console
-
-   PUT INDEX_NAME/_settings -U 'Content-Type: application/json' -d '
-   {
-     "index.blocks.read_only_allow_delete": false,
-     "index.blocks.write": false
-   }
-
 Filesystem stats
 ^^^^^^^^^^^^^^^^
 
