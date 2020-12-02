@@ -145,36 +145,12 @@ It will prompt for the pin.</p>
 </div>
 <div class="section" id="solo-key">
 <h2>Solo Key<a class="headerlink" href="#solo-key" title="Permalink to this headline">¶</a></h2>
-<div class="admonition warning">
-<p class="first admonition-title">Warning</p>
-<p class="last">I really need to play with this more.
-I&#8217;m sure I just haven&#8217;t figured out the secret sauce.</p>
-</div>
+<p>Using firmware 4.0.0 the solokey just worked.
+Not sure what version I had triedpreviously</p>
 <p><a class="reference external" href="https://solokeys.com/">Solo Key</a> works with FIDO2, but only with ecdsa-sk keys.
 RIP <cite>ed25519</cite>.</p>
 <p>Used Windows <cite>Sign-In Options</cite> to change the pin since the python program doesn&#8217;t work
 on OpenBSD.</p>
-<p>Creating resident keys <cite>ssh-keygen -t ecdsa-sk -O resident</cite> currently fails for me with:
-<cite>Key enrollment failed: requested feature not supported</cite></p>
-<p>Latest attempt:</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> ssh-keygen -t ecdsa-sk -O resident -v
-<span class="go">Generating public/private ecdsa-sk key pair.</span>
-<span class="go">You may need to touch your authenticator to authorize key generation.</span>
-<span class="go">Enter PIN for authenticator:</span>
-<span class="go">debug1: start_helper: starting /usr/libexec/ssh-sk-helper</span>
-<span class="go">debug1: sshsk_enroll: provider &quot;internal&quot;, device &quot;(null)&quot;, application &quot;ssh:&quot;, userid &quot;(null)&quot;, flags 0x21, challenge len 0 with-pin</span>
-<span class="go">debug1: sshsk_enroll: using random challenge</span>
-<span class="go">debug1: sk_probe: 1 device(s) detected</span>
-<span class="go">debug1: sk_probe: selecting sk by touch</span>
-<span class="go">debug1: ssh_sk_enroll: using device /dev/fido/0</span>
-<span class="go">debug1: ssh_sk_enroll: /dev/fido/0 does not support credprot, refusing to create unprotected resident/verify-required key</span>
-<span class="go">debug1: sshsk_enroll: provider &quot;internal&quot; returned failure -2</span>
-<span class="go">debug1: ssh-sk-helper: Enrollment failed: requested feature not supported</span>
-<span class="go">debug1: ssh-sk-helper: reply len 8</span>
-<span class="go">debug1: client_converse: helper returned error -59</span>
-<span class="go">Key enrollment failed: requested feature not supported</span>
-</pre></div>
-</div>
 </div>
 </div>
 

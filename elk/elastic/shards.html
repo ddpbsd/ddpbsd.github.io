@@ -27,7 +27,7 @@
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="top" title="notes 0.1 documentation" href="../../index.html" />
     <link rel="up" title="elasticsearch" href="index.html" />
-    <link rel="next" title="logstash" href="../logstash/index.html" />
+    <link rel="next" title="Tasks" href="tasks.html" />
     <link rel="prev" title="Templates" href="templates.html" />
    
   <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
@@ -46,9 +46,21 @@
             
   <div class="section" id="shards">
 <h1>shards<a class="headerlink" href="#shards" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="get-list-of-shards">
+<h2>Get list of shards<a class="headerlink" href="#get-list-of-shards" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">GET /_cat/shards?v</span>
+</pre></div>
+</div>
+</div>
 <div class="section" id="get-a-list-of-unassigned-shards">
 <h2>Get a list of UNASSIGNED shards<a class="headerlink" href="#get-a-list-of-unassigned-shards" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">curl -XGET &#39;http://elastic.example.com:9200/_cat/shards?h=index,shard,prirep,state,unassigned.reason&#39; | grep UNASSIGNED</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="sort-by-node-and-then-size-desc">
+<h2>Sort by node and then size (desc)<a class="headerlink" href="#sort-by-node-and-then-size-desc" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">GET /_cat/shards?v&amp;s=node,store</span>
 </pre></div>
 </div>
 </div>
@@ -120,7 +132,7 @@
   <li><a href="../index.html">elk stack</a><ul>
   <li><a href="index.html">elasticsearch</a><ul>
       <li>Previous: <a href="templates.html" title="previous chapter">Templates</a></li>
-      <li>Next: <a href="../logstash/index.html" title="next chapter">logstash</a></li>
+      <li>Next: <a href="tasks.html" title="next chapter">Tasks</a></li>
   </ul></li>
   </ul></li>
   </ul></li>

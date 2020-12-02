@@ -1,0 +1,10 @@
+snmp_exporter
+=============
+
+
+
+Access the metrics with curl
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+`curl -s 'http://127.0.0.1:9116/snmp?target=127.0.0.1&module=openbsd_pf'`
+

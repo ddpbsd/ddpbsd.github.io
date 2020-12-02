@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Get list of shards &#8212; notes 0.1 documentation</title>
+    <title>Change the breaker limit &#8212; notes 0.1 documentation</title>
     
     <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
@@ -27,8 +27,8 @@
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="top" title="notes 0.1 documentation" href="../../index.html" />
     <link rel="up" title="elasticsearch" href="index.html" />
-    <link rel="next" title="Index Lifecycle Management" href="ilm.html" />
-    <link rel="prev" title="Create an index on ES" href="create_index.html" />
+    <link rel="next" title="Get the status of ES" href="status.html" />
+    <link rel="prev" title="elasticsearch" href="index.html" />
    
   <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
   
@@ -44,19 +44,7 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="get-list-of-shards">
-<h1>Get list of shards<a class="headerlink" href="#get-list-of-shards" title="Permalink to this headline">¶</a></h1>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">GET /_cat/shards?v</span>
-</pre></div>
-</div>
-</div>
-<div class="section" id="sort-by-node-and-then-size-desc">
-<h1>Sort by node and then size (desc)<a class="headerlink" href="#sort-by-node-and-then-size-desc" title="Permalink to this headline">¶</a></h1>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">GET /_cat/shards?v&amp;s=node,store</span>
-</pre></div>
-</div>
-</div>
-<div class="section" id="change-the-breaker-limit">
+  <div class="section" id="change-the-breaker-limit">
 <h1>Change the breaker limit<a class="headerlink" href="#change-the-breaker-limit" title="Permalink to this headline">¶</a></h1>
 <p>This is a temporary change, and probably a dumb one.</p>
 <div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">curl -XPUT localhost:9200/_cluster/settings -d &#39;{</span>
@@ -114,8 +102,8 @@
   <li><a href="../../index.html">Documentation overview</a><ul>
   <li><a href="../index.html">elk stack</a><ul>
   <li><a href="index.html">elasticsearch</a><ul>
-      <li>Previous: <a href="create_index.html" title="previous chapter">Create an index on ES</a></li>
-      <li>Next: <a href="ilm.html" title="next chapter">Index Lifecycle Management</a></li>
+      <li>Previous: <a href="index.html" title="previous chapter">elasticsearch</a></li>
+      <li>Next: <a href="status.html" title="next chapter">Get the status of ES</a></li>
   </ul></li>
   </ul></li>
   </ul></li>

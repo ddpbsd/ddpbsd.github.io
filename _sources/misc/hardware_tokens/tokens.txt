@@ -67,39 +67,12 @@ Using that key to connect to a system will require a touch (look for the flashin
 Solo Key
 ^^^^^^^^
 
-.. warning::
-
-   I really need to play with this more.
-   I'm sure I just haven't figured out the secret sauce.
+Using firmware 4.0.0 the solokey just worked. 
+Not sure what version I had triedpreviously
 
 `Solo Key <https://solokeys.com/>`_ works with FIDO2, but only with ecdsa-sk keys.
 RIP `ed25519`.
 
 Used Windows `Sign-In Options` to change the pin since the python program doesn't work
 on OpenBSD.
-
-Creating resident keys `ssh-keygen -t ecdsa-sk -O resident` currently fails for me with:
-`Key enrollment failed: requested feature not supported`
-
-
-Latest attempt:
-
-.. code-block:: console
-
-   $ ssh-keygen -t ecdsa-sk -O resident -v
-   Generating public/private ecdsa-sk key pair.
-   You may need to touch your authenticator to authorize key generation.
-   Enter PIN for authenticator:
-   debug1: start_helper: starting /usr/libexec/ssh-sk-helper
-   debug1: sshsk_enroll: provider "internal", device "(null)", application "ssh:", userid "(null)", flags 0x21, challenge len 0 with-pin
-   debug1: sshsk_enroll: using random challenge
-   debug1: sk_probe: 1 device(s) detected
-   debug1: sk_probe: selecting sk by touch
-   debug1: ssh_sk_enroll: using device /dev/fido/0
-   debug1: ssh_sk_enroll: /dev/fido/0 does not support credprot, refusing to create unprotected resident/verify-required key
-   debug1: sshsk_enroll: provider "internal" returned failure -2
-   debug1: ssh-sk-helper: Enrollment failed: requested feature not supported
-   debug1: ssh-sk-helper: reply len 8
-   debug1: client_converse: helper returned error -59
-   Key enrollment failed: requested feature not supported
 

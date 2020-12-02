@@ -27,7 +27,7 @@
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="top" title="notes 0.1 documentation" href="../../index.html" />
     <link rel="up" title="elk stack" href="../index.html" />
-    <link rel="next" title="Create an index on ES" href="create_index.html" />
+    <link rel="next" title="Change the breaker limit" href="dev.html" />
     <link rel="prev" title="Filebeat" href="../beats/filebeat/notes.html" />
    
   <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
@@ -49,26 +49,13 @@
 <p>Contents:</p>
 <div class="toctree-wrapper compound">
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="create_index.html">Create an index on ES</a></li>
-<li class="toctree-l1"><a class="reference internal" href="create_index.html#old-and-broken">Old and broken</a></li>
-<li class="toctree-l1"><a class="reference internal" href="dev.html">Get list of shards</a></li>
-<li class="toctree-l1"><a class="reference internal" href="dev.html#sort-by-node-and-then-size-desc">Sort by node and then size (desc)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="dev.html#change-the-breaker-limit">Change the breaker limit</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ilm.html">Index Lifecycle Management</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="ilm.html#basic-steps">Basic steps</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ilm.html#index-template">Index Template</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ilm.html#index-bootstrap">Index Bootstrap</a></li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="dev.html">Change the breaker limit</a></li>
 <li class="toctree-l1"><a class="reference internal" href="status.html">Get the status of ES</a></li>
 <li class="toctree-l1"><a class="reference internal" href="status.html#get-a-list-of-indexes">Get a list of indexes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="status.html#look-for-read-only-indexes">Look for read only indexes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="status.html#remove-the-read-only-from-an-index">Remove the read only from an index</a></li>
 <li class="toctree-l1"><a class="reference internal" href="status.html#filesystem-stats">Filesystem stats</a></li>
 <li class="toctree-l1"><a class="reference internal" href="status.html#get-version-and-other-info">Get version and other info</a></li>
-<li class="toctree-l1"><a class="reference internal" href="security/logstash_user.html">Logstash role</a></li>
-<li class="toctree-l1"><a class="reference internal" href="security/logstash_user.html#logstash-user">Logstash user</a></li>
-<li class="toctree-l1"><a class="reference internal" href="security/beats_user.html">beats_writer role</a></li>
 <li class="toctree-l1"><a class="reference internal" href="templates.html">Templates</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="templates.html#list-templates">List templates</a></li>
 <li class="toctree-l2"><a class="reference internal" href="templates.html#view-a-template">View a template</a></li>
@@ -76,7 +63,9 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="shards.html">shards</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="shards.html#get-list-of-shards">Get list of shards</a></li>
 <li class="toctree-l2"><a class="reference internal" href="shards.html#get-a-list-of-unassigned-shards">Get a list of UNASSIGNED shards</a></li>
+<li class="toctree-l2"><a class="reference internal" href="shards.html#sort-by-node-and-then-size-desc">Sort by node and then size (desc)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="shards.html#re-route-failed-shards">Re-route failed shards</a></li>
 <li class="toctree-l2"><a class="reference internal" href="shards.html#enable-shard-allocation">Enable shard allocation</a></li>
 </ul>
@@ -137,7 +126,7 @@
   <li><a href="../../index.html">Documentation overview</a><ul>
   <li><a href="../index.html">elk stack</a><ul>
       <li>Previous: <a href="../beats/filebeat/notes.html" title="previous chapter">Filebeat</a></li>
-      <li>Next: <a href="create_index.html" title="next chapter">Create an index on ES</a></li>
+      <li>Next: <a href="dev.html" title="next chapter">Change the breaker limit</a></li>
   </ul></li>
   </ul></li>
 </ul>

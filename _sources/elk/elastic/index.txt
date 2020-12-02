@@ -8,9 +8,8 @@ Contents:
 .. toctree::
    :maxdepth: 2
 
-   create_index
+   indexes/index
    dev
-   ilm
    status
    security/logstash_user.rst
    security/beats_user.rst
