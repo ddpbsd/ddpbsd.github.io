@@ -535,7 +535,10 @@
 </div>
 <div class="section" id="access-the-metrics-with-curl">
 <h2>Access the metrics with curl<a class="headerlink" href="#access-the-metrics-with-curl" title="Permalink to this headline">¶</a></h2>
-<p><cite>curl -s &#8216;http://127.0.0.1:9116/snmp?target=127.0.0.1&amp;module=openbsd_pf&#8217;</cite></p>
+<p>The specific module (like <cite>openbsd_pf</cite> and <cite>openbsd_sensor</cite> above) can be specified in the command</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">curl -s &#39;http://127.0.0.1:9116/snmp?target=127.0.0.1&amp;module=openbsd_pf&#39;</span>
+</pre></div>
+</div>
 </div>
 </div>
 
