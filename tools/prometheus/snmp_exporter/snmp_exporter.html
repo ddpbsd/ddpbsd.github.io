@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>snmp_exporter &#8212; notes 0.1 documentation</title>
+    <title>snmp_exporter configs &#8212; notes 0.1 documentation</title>
     
     <link rel="stylesheet" href="../../../_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
@@ -44,8 +44,8 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="snmp-exporter">
-<h1>snmp_exporter<a class="headerlink" href="#snmp-exporter" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="snmp-exporter-configs">
+<h1>snmp_exporter configs<a class="headerlink" href="#snmp-exporter-configs" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="openbsd-pf-generator-yml-input">
 <h2>OpenBSD pf generator.yml input<a class="headerlink" href="#openbsd-pf-generator-yml-input" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">openbsd_pf:</span>
@@ -373,6 +373,27 @@
 </div>
 <div class="section" id="openbsd-sensor-generator-yml-input">
 <h2>OpenBSD sensor generator.yml input<a class="headerlink" href="#openbsd-sensor-generator-yml-input" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">openbsd_sensor:</span>
+<span class="go">  walk:</span>
+<span class="go">    - sensorNumber</span>
+<span class="go">    - sensorTable</span>
+<span class="go">    - sensorEntry</span>
+<span class="go">    - sensorIndex</span>
+<span class="go">    - sensorDescr</span>
+<span class="go">    - sensorType</span>
+<span class="go">    - sensorDevice</span>
+<span class="go">    - sensorValue</span>
+<span class="go">    - sensorUnits</span>
+<span class="go">    - sensorStatus</span>
+<span class="go">  version: 2</span>
+<span class="go">  lookups:</span>
+<span class="go">  - source_indexes: [sensorIndex]</span>
+<span class="go">    lookup: sensorDescr</span>
+<span class="go">    drop_source_indexes: false</span>
+<span class="go">  auth:</span>
+<span class="go">    community: testtesttest</span>
+</pre></div>
+</div>
 </div>
 <div class="section" id="openbsd-sensor-snmp-yml-output">
 <h2>OpenBSD sensor snmp.yml output<a class="headerlink" href="#openbsd-sensor-snmp-yml-output" title="Permalink to this headline">¶</a></h2>
