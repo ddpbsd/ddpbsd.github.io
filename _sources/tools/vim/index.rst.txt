@@ -36,3 +36,10 @@ Move to column 80
 
    80|
 
+Format json using python
+^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: console
+
+   :%!python -m json.tool
+

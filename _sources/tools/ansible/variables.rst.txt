@@ -1,6 +1,6 @@
 
-Variables
-^^^^^^^^^
+Vault Variables
+^^^^^^^^^^^^^^^
 
 In the playbook add `vars:` followed by the variables to be defined.
 These can be `ansible-vault` encrypted strings.
@@ -27,8 +27,28 @@ These can be `ansible-vault` encrypted strings.
        - do stuff
 
 
-Other than using `group_vars`, I haven't figured out how to do playbook specific
-vaults.
-It's really annoying actually.
+Playbook specific vaults
+^^^^^^^^^^^^^^^^^^^^^^^^
+
+Use `vars_files` to specify a vault for sensitive variables.
+
+.. code-block:: yaml
+
+   ---
+   - hosts: localhost
+     user: ansible
+
+     vars_files:
+     - vars/vault.yml
+
+     vars:
+       variable1: test
+
+Special variables
+^^^^^^^^^^^^^^^^^
+
+`ansible special variables <https://docs.ansible.com/ansible/latest/reference_appendices/special_variables.html>`
+
+Special nod to `inventory_hostname` and `inventory_hostname_short`
 
 

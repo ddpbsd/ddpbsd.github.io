@@ -1,14 +1,14 @@
 .. _misc_mynet_computers_buzzell:
 
 
-buzzell:
-^^^^^^^^
+buzzell
+^^^^^^^
 
 Switched from Ubuntu to HardenedBSD. Docker stuff is useless right now.
 
 
-Run the gogs docker container:
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Run the gogs docker container
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 After an update of the image, the container should be run again from scratch.
 
@@ -22,8 +22,8 @@ After this initial run (if it was stopped), it can be run with:
 
    docker start gogs
 
-Build the nmap image:
-^^^^^^^^^^^^^^^^^^^^^
+Build the nmap image
+^^^^^^^^^^^^^^^^^^^^
 
 Replace the X with the version number.
 
@@ -31,15 +31,15 @@ Replace the X with the version number.
 
    docker build -t nmap:X .
 
-Run the nmap container:
-^^^^^^^^^^^^^^^^^^^^^^^
+Run the nmap container
+^^^^^^^^^^^^^^^^^^^^^^
 
 .. code-block:: console
 
    docker run --mount source=nmap,target=/nmap --rm nmap:3 -sS -A -oG /nmap/2nmap_$(date +%Y%m%d) --append-output HOST
 
-Run the influxdb container:
-^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Run the influxdb container
+^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code-block:: console
 

@@ -3,12 +3,26 @@
 shards
 ======
 
+Get list of shards
+^^^^^^^^^^^^^^^^^^
+
+.. code-block:: console
+
+   GET /_cat/shards?v
+
 Get a list of UNASSIGNED shards
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code-block:: console
 
    curl -XGET 'http://elastic.example.com:9200/_cat/shards?h=index,shard,prirep,state,unassigned.reason' | grep UNASSIGNED
+
+Sort by node and then size (desc)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: console
+
+   GET /_cat/shards?v&s=node,store
 
 Re-route failed shards
 ^^^^^^^^^^^^^^^^^^^^^^

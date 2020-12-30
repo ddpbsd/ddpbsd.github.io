@@ -17,7 +17,8 @@
         VERSION:     '0.1',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
       };
     </script>
     <script type="text/javascript" src="../../_static/jquery.js"></script>
@@ -25,8 +26,6 @@
     <script type="text/javascript" src="../../_static/doctools.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="top" title="notes 0.1 documentation" href="../../index.html" />
-    <link rel="up" title="monitoring" href="index.html" />
     <link rel="next" title="elastic guide for monitoring nodes" href="nodes.html" />
     <link rel="prev" title="monitoring" href="index.html" />
    
@@ -100,6 +99,12 @@ Will return <cite>null</cite> if the field does not exist.</p>
 </pre></div>
 </div>
 </div></blockquote>
+</div>
+<div class="section" id="reset-read-only-status">
+<h3>Reset read-only status<a class="headerlink" href="#reset-read-only-status" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">for i in $(curl -s &#39;http://127.0.0.1:9200/_cat/indices?h=index&#39;); do curl -s -XPUT -H &#39;Content-Type: application/json&#39; &quot;http://127.0.0.1:9200/${i}/_settings&quot; -d &#39;{  &quot;index&quot;: {  &quot;blocks&quot;: {  &quot;read_only_allow_delete&quot;: &quot;false&quot;  }}}&#39; ; echo &quot;&quot;;  done</span>
+</pre></div>
+</div>
 </div>
 <div class="section" id="red-yellow-green">
 <h3>red|yellow|green<a class="headerlink" href="#red-yellow-green" title="Permalink to this headline">¶</a></h3>

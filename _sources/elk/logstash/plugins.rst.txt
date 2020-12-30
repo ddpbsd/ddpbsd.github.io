@@ -2,8 +2,8 @@
 
 
 
-Fix the kafka plugin:
-^^^^^^^^^^^^^^^^^^^^^
+Fix the kafka plugin
+^^^^^^^^^^^^^^^^^^^^
 
 Error in logstash 6.4:
 

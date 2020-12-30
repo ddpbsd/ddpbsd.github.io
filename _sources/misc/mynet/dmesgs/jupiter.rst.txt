@@ -1,7 +1,10 @@
-.. _misc_mynet_dmesgs_jupiter:
+Archived
+^^^^^^^^
 
-dmesg for jupiter:
-^^^^^^^^^^^^^^^^^^
+Jupiter has changed to Ubuntu for now, so this is just archive data.
+
+dmesg for jupiter
+^^^^^^^^^^^^^^^^^
 
 .. code-block:: console
 

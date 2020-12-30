@@ -1,7 +1,7 @@
 
 
-Pinouts:
-^^^^^^^^
+Pinouts
+^^^^^^^
 
 From the pine64 clusterboard forum.
 

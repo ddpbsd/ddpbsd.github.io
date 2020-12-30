@@ -9,9 +9,7 @@ Contents:
    :maxdepth: 2
 
    config
-   grok
-   kv
-   nested_json
+   filter/index
    ssl
    testing
    usage

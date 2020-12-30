@@ -4,13 +4,13 @@ ThinkStick
 
 Model: 300?
 
-Current status:
-^^^^^^^^^^^^^^^
+Current status
+^^^^^^^^^^^^^^
 
 Refuses to power on.
 
-Enter BIOS on boot:
-^^^^^^^^^^^^^^^^^^^
+Enter BIOS on boot
+^^^^^^^^^^^^^^^^^^
 
 .. code-block:: console
 

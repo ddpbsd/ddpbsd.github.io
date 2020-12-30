@@ -1,5 +1,5 @@
-dmesg for junction:
-^^^^^^^^^^^^^^^^^^^
+dmesg for junction
+^^^^^^^^^^^^^^^^^^
 
 .. code-block:: console
 

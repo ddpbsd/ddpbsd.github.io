@@ -8,24 +8,17 @@ Get the status of ES
 
    curl -XGET http://localhost:9200/_cluster/health?pretty=true
 
-Get a list of indexes
-^^^^^^^^^^^^^^^^^^^^^
-
-.. code-block:: console
-
-   curl -XGET http://localhost:9200/_cat/indices?v
-
-Look for read only indexes
-^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-.. code-block:: console
-
-   GET INDEX_NAME/_settings/read_only_allow_delete
-
 Filesystem stats
 ^^^^^^^^^^^^^^^^
 
 .. code-block:: console
 
    GET https://localhost:9200/_nodes/stats/fs
+
+Get version and other info
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: console
+
+   GET https://localhost:9200/
 
