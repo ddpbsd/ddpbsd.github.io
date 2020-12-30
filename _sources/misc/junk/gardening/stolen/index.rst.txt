@@ -1,0 +1,12 @@
+
+=============
+stolen wisdom
+=============
+
+Contents:
+
+.. toctree::
+   :maxdepth: 1
+
+   upside_down
+

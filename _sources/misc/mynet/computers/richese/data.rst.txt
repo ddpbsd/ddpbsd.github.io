@@ -1,0 +1,8 @@
+
+
+
+
+.. code-block:: console
+
+   zpool create data raidz1 /dev/sdb /dev/sdc /dev/sde
+   

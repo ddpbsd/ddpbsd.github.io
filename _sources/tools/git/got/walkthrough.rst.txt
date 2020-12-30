@@ -1,0 +1,7 @@
+
+
+.. code-block:: console
+
+   got clone ssh://git@github.com/ddpbsd/REPO.git
+   got checkout -b main ./REPO.git test1
+
