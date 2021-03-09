@@ -1,41 +1,26 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
+<!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
   <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
-    <title>tags: &#8212; notes 0.1 documentation</title>
-    
-    <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>tags &#8212; notes 0.1 documentation</title>
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-    
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    '../../',
-        VERSION:     '0.1',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: '.txt'
-      };
-    </script>
-    <script type="text/javascript" src="../../_static/jquery.js"></script>
-    <script type="text/javascript" src="../../_static/underscore.js"></script>
-    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="grok documentation" href="grok.html" />
-    <link rel="prev" title="logstash" href="index.html" />
    
   <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
   
   
   <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
 
-  </head>
-  <body role="document">
+  </head><body>
   
 
     <div class="document">
@@ -45,14 +30,14 @@
 
           <div class="body" role="main">
             
-  <p id="elk-logstash-indexes">There&#8217;s probably a better way to do everything I&#8217;m doing here.</p>
+  <p>There’s probably a better way to do everything I’m doing here.</p>
 <div class="section" id="tags">
-<h1>tags:<a class="headerlink" href="#tags" title="Permalink to this headline">¶</a></h1>
+<h1>tags<a class="headerlink" href="#tags" title="Permalink to this headline">¶</a></h1>
 <p>Tags seem to be important inside the logstash configuration file.
-Something I&#8217;ve started doing is tagging events that come in with <cite>parse</cite>.
+Something I’ve started doing is tagging events that come in with <cite>parse</cite>.
 Then in the filter I remove the tag.</p>
 <p>Example:</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">input {</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">input {</span>
 <span class="go">   file {</span>
 <span class="go">      path =&gt; &quot;/var/log/logfile&quot;</span>
 <span class="go">      tags =&gt; &quot;parse&quot;</span>
@@ -76,7 +61,7 @@ going through each one for each message.</p>
 </div>
 <div class="section" id="example-config">
 <h1>Example config<a class="headerlink" href="#example-config" title="Permalink to this headline">¶</a></h1>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">   input {</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">   input {</span>
 <span class="go">    syslog {</span>
 <span class="go">        port =&gt; &quot;2514&quot;</span>
 <span class="go">        type =&gt; &quot;generic&quot;</span>
@@ -138,18 +123,10 @@ going through each one for each message.</p>
 
 
 <h3>Navigation</h3>
-<ul class="current">
+<ul>
 <li class="toctree-l1"><a class="reference internal" href="../../arm/index.html">arm</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../db/index.html">databases</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../dns/index.html">DNS stuff</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="../index.html">elk stack</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="../beats/index.html">Beats</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../elastic/index.html">elasticsearch</a></li>
-<li class="toctree-l2 current"><a class="reference internal" href="index.html">logstash</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../monitoring/index.html">monitoring</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../setup.html">Setting up the whole thing</a></li>
-</ul>
-</li>
 <li class="toctree-l1"><a class="reference internal" href="../../openssh/index.html">OpenSSH</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../operating_systems/index.html">Operating Systems</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../ossec/index.html">OSSEC</a></li>
@@ -166,25 +143,19 @@ going through each one for each message.</p>
 <h3>Related Topics</h3>
 <ul>
   <li><a href="../../index.html">Documentation overview</a><ul>
-  <li><a href="../index.html">elk stack</a><ul>
-  <li><a href="index.html">logstash</a><ul>
-      <li>Previous: <a href="index.html" title="previous chapter">logstash</a></li>
-      <li>Next: <a href="grok.html" title="next chapter">grok documentation</a></li>
-  </ul></li>
-  </ul></li>
   </ul></li>
 </ul>
 </div>
 <div id="searchbox" style="display: none" role="search">
-  <h3>Quick search</h3>
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
     <form class="search" action="../../search.html" method="get">
-      <div><input type="text" name="q" /></div>
-      <div><input type="submit" value="Go" /></div>
-      <input type="hidden" name="check_keywords" value="yes" />
-      <input type="hidden" name="area" value="default" />
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
     </form>
+    </div>
 </div>
-<script type="text/javascript">$('#searchbox').show(0);</script>
+<script>$('#searchbox').show(0);</script>
         </div>
       </div>
       <div class="clearer"></div>

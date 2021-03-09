@@ -1,29 +1,18 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
+<!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
   <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Logstash role &#8212; notes 0.1 documentation</title>
-    
     <link rel="stylesheet" href="../../../_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
-    
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    '../../../',
-        VERSION:     '0.1',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: '.txt'
-      };
-    </script>
-    <script type="text/javascript" src="../../../_static/jquery.js"></script>
-    <script type="text/javascript" src="../../../_static/underscore.js"></script>
-    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/language_data.js"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
     <link rel="next" title="beats_writer role" href="beats_user.html" />
@@ -34,8 +23,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
 
-  </head>
-  <body role="document">
+  </head><body>
   
 
     <div class="document">
@@ -49,7 +37,7 @@
 <h1>Logstash role<a class="headerlink" href="#logstash-role" title="Permalink to this headline">¶</a></h1>
 <p>Create a role for a user that will allow logstash to write to the <cite>logstash-*</cite>
 indexes.</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">POST /_security/role/logstash_writer</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">POST /_security/role/logstash_writer</span>
 <span class="go">{</span>
 <span class="go">  &quot;cluster&quot;: [&quot;manage_index_templates&quot;, &quot;monitor&quot;, &quot;manage_ilm&quot;],</span>
 <span class="go">  &quot;indices&quot;: [</span>
@@ -65,7 +53,7 @@ indexes.</p>
 <div class="section" id="logstash-user">
 <h1>Logstash user<a class="headerlink" href="#logstash-user" title="Permalink to this headline">¶</a></h1>
 <p>Create a user with the <cite>logstash_writer</cite> role for logstash.</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">POST /_security/user/logstash_internal</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">POST /_security/user/logstash_internal</span>
 <span class="go">{</span>
 <span class="go">  &quot;password&quot; : &quot;x-pack-test-password&quot;,</span>
 <span class="go">  &quot;roles&quot; : [ &quot;logstash_writer&quot;],</span>
@@ -130,15 +118,15 @@ indexes.</p>
 </ul>
 </div>
 <div id="searchbox" style="display: none" role="search">
-  <h3>Quick search</h3>
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
     <form class="search" action="../../../search.html" method="get">
-      <div><input type="text" name="q" /></div>
-      <div><input type="submit" value="Go" /></div>
-      <input type="hidden" name="check_keywords" value="yes" />
-      <input type="hidden" name="area" value="default" />
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
     </form>
+    </div>
 </div>
-<script type="text/javascript">$('#searchbox').show(0);</script>
+<script>$('#searchbox').show(0);</script>
         </div>
       </div>
       <div class="clearer"></div>

@@ -1,29 +1,17 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
+<!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
   <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>My adventures with securityonion and cef &#8212; notes 0.1 documentation</title>
-    
-    <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    '../',
-        VERSION:     '0.1',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: '.txt'
-      };
-    </script>
-    <script type="text/javascript" src="../_static/jquery.js"></script>
-    <script type="text/javascript" src="../_static/underscore.js"></script>
-    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="sostat" href="commands.html" />
@@ -34,8 +22,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
 
-  </head>
-  <body role="document">
+  </head><body>
   
 
     <div class="document">
@@ -48,7 +35,7 @@
   <div class="section" id="my-adventures-with-securityonion-and-cef">
 <h1>My adventures with securityonion and cef<a class="headerlink" href="#my-adventures-with-securityonion-and-cef" title="Permalink to this headline">¶</a></h1>
 <p>There should be an xkcd tag to insert an appropriate xkcd.</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">.. xkcd: standards</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">.. xkcd: standards</span>
 </pre></div>
 </div>
 <div class="section" id="barnyard2">
@@ -60,7 +47,7 @@ integrate this patch.</p>
 <div class="section" id="barnyard2-configuration">
 <h2>Barnyard2 configuration:<a class="headerlink" href="#barnyard2-configuration" title="Permalink to this headline">¶</a></h2>
 <p>Eh, not as hard as I made it out to be originally.</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">config alert_with_interface_name</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">config alert_with_interface_name</span>
 <span class="go">config logdir: /nsm/sensor_data/va-is-securityonion0-ens192</span>
 <span class="go">config classification_file: /etc/nsm/va-is-securityonion0-ens192/classification.config</span>
 <span class="go">config reference_file:      /etc/nsm/va-is-securityonion0-ens192/reference.config</span>
@@ -75,14 +62,14 @@ integrate this patch.</p>
 </div>
 <div class="section" id="syslog-ng">
 <h2>syslog-ng:<a class="headerlink" href="#syslog-ng" title="Permalink to this headline">¶</a></h2>
-<p>I believe it&#8217;s written by sadists.</p>
+<p>I believe it’s written by sadists.</p>
 <p>We need to define a source, filter, and destination. Then put them together.</p>
 </div>
 <div class="section" id="syslog-ng-conf">
 <h2>syslog-ng conf:<a class="headerlink" href="#syslog-ng-conf" title="Permalink to this headline">¶</a></h2>
-<p>I&#8217;m logging everything to a file as well as the syslog-collector host.
-This isn&#8217;t necessary, and I&#8217;ll probably stop it soon.</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">destination d_arcsight { tcp(&quot;syslog-collector&quot; port(514)); };</span>
+<p>I’m logging everything to a file as well as the syslog-collector host.
+This isn’t necessary, and I’ll probably stop it soon.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">destination d_arcsight { tcp(&quot;syslog-collector&quot; port(514)); };</span>
 <span class="go">destination d_cef_log { file(&quot;/var/log/test.log&quot;); };</span>
 
 <span class="go">filter test_filter { facility(local7); };</span>
@@ -119,7 +106,6 @@ This isn&#8217;t necessary, and I&#8217;ll probably stop it soon.</p>
 <li class="toctree-l1"><a class="reference internal" href="../arm/index.html">arm</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../db/index.html">databases</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../dns/index.html">DNS stuff</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../elk/index.html">elk stack</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../openssh/index.html">OpenSSH</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../operating_systems/index.html">Operating Systems</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../ossec/index.html">OSSEC</a></li>
@@ -156,15 +142,15 @@ This isn&#8217;t necessary, and I&#8217;ll probably stop it soon.</p>
 </ul>
 </div>
 <div id="searchbox" style="display: none" role="search">
-  <h3>Quick search</h3>
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
     <form class="search" action="../search.html" method="get">
-      <div><input type="text" name="q" /></div>
-      <div><input type="submit" value="Go" /></div>
-      <input type="hidden" name="check_keywords" value="yes" />
-      <input type="hidden" name="area" value="default" />
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
     </form>
+    </div>
 </div>
-<script type="text/javascript">$('#searchbox').show(0);</script>
+<script>$('#searchbox').show(0);</script>
         </div>
       </div>
       <div class="clearer"></div>

@@ -15,5 +15,6 @@ Contents:
    commit_confirm
    nat
    route
+   switch
 
 

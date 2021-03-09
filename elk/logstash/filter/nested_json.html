@@ -1,0 +1,152 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nested json &#8212; notes 0.1 documentation</title>
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/alabaster.css" type="text/css" />
+    <script id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+   
+  <link rel="stylesheet" href="../../../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="nested-json">
+<h1>Nested json<a class="headerlink" href="#nested-json" title="Permalink to this headline">¶</a></h1>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>I don’t know the difference between referencing <cite>message2.message</cite> and
+<cite>[message2][message]</cite>.
+This seems like a key piece of information, but I haven’t come across an
+explanation yet.</p>
+</div>
+<div class="section" id="how-to-deal-with-this-pain-in-the-tushy">
+<h2>How to deal with this pain in the tushy<a class="headerlink" href="#how-to-deal-with-this-pain-in-the-tushy" title="Permalink to this headline">¶</a></h2>
+<p>Original message from kafka:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="nt">&quot;@version&quot;</span><span class="p">:</span><span class="s2">&quot;1&quot;</span><span class="p">,</span><span class="nt">&quot;tags&quot;</span><span class="p">:[</span><span class="s2">&quot;unparsed&quot;</span><span class="p">,</span><span class="s2">&quot;kafka&quot;</span><span class="p">,</span><span class="s2">&quot;_grokparsefailure&quot;</span><span class="p">],</span><span class="nt">&quot;@timestamp&quot;</span><span class="p">:</span><span class="s2">&quot;2019-08-23T13:44:16.793Z&quot;</span><span class="p">,</span><span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="s2">&quot;{\&quot;@timestamp\&quot;:\&quot;2019-08-23T13:44:15.543Z\&quot;,\&quot;@metadata\&quot;:{\&quot;beat\&quot;:\&quot;filebeat\&quot;,\&quot;type\&quot;:\&quot;_doc\&quot;,\&quot;version\&quot;:\&quot;7.3.0\&quot;,\&quot;topic\&quot;:\&quot;host1-beats\&quot;},\&quot;input\&quot;:{\&quot;type\&quot;:\&quot;log\&quot;},\&quot;agent\&quot;:{\&quot;id\&quot;:\&quot;b80d5eaf-ebb8-4b3a-807e-4df13438c7ca\&quot;,\&quot;version\&quot;:\&quot;7.3.0\&quot;,\&quot;type\&quot;:\&quot;filebeat\&quot;,\&quot;ephemeral_id\&quot;:\&quot;7adc46aa-6ab1-411a-8fed-fce9bc1d48b6\&quot;,\&quot;hostname\&quot;:\&quot;host1.example.com\&quot;},\&quot;ecs\&quot;:{\&quot;version\&quot;:\&quot;1.0.1\&quot;},\&quot;host\&quot;:{\&quot;name\&quot;:\&quot;host1.example.com\&quot;,\&quot;hostname\&quot;:\&quot;host1.example.com\&quot;,\&quot;architecture\&quot;:\&quot;x86_64\&quot;,\&quot;os\&quot;:{\&quot;version\&quot;:\&quot;7 (Core)\&quot;,\&quot;family\&quot;:\&quot;redhat\&quot;,\&quot;name\&quot;:\&quot;CentOS Linux\&quot;,\&quot;kernel\&quot;:\&quot;3.10.0-957.1.3.el7.x86_64\&quot;,\&quot;codename\&quot;:\&quot;Core\&quot;,\&quot;platform\&quot;:\&quot;centos\&quot;},\&quot;id\&quot;:\&quot;d4ae00fc7eb34bd8b5ea9012fa002b37\&quot;,\&quot;containerized\&quot;:false},\&quot;log\&quot;:{\&quot;offset\&quot;:2680,\&quot;file\&quot;:{\&quot;path\&quot;:\&quot;/var/log/secure\&quot;}},\&quot;message\&quot;:\&quot;Aug 23 09:44:06 host1 sshd[9487]: Accepted password for test-user from 10.10.10.2 port 62308 ssh2\&quot;}&quot;</span><span class="p">}</span>
+</pre></div>
+</div>
+<p>As parsed by jq:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="nt">&quot;@version&quot;</span><span class="p">:</span> <span class="s2">&quot;1&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;tags&quot;</span><span class="p">:</span> <span class="p">[</span>
+    <span class="s2">&quot;unparsed&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;kafka&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;_grokparsefailure&quot;</span>
+  <span class="p">],</span>
+  <span class="nt">&quot;@timestamp&quot;</span><span class="p">:</span> <span class="s2">&quot;2019-08-23T13:44:16.793Z&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;message&quot;</span><span class="p">:</span> <span class="s2">&quot;{\&quot;@timestamp\&quot;:\&quot;2019-08-23T13:44:15.543Z\&quot;,\&quot;@metadata\&quot;:{\&quot;beat\&quot;:\&quot;filebeat\&quot;,\&quot;type\&quot;:\&quot;_doc\&quot;,\&quot;version\&quot;:\&quot;7.3.0\&quot;,\&quot;topic\&quot;:\&quot;host1-beats\&quot;},\&quot;input\&quot;:{\&quot;type\&quot;:\&quot;log\&quot;},\&quot;agent\&quot;:{\&quot;id\&quot;:\&quot;b80d5eaf-ebb8-4b3a-807e-4df13438c7ca\&quot;,\&quot;version\&quot;:\&quot;7.3.0\&quot;,\&quot;type\&quot;:\&quot;filebeat\&quot;,\&quot;ephemeral_id\&quot;:\&quot;7adc46aa-6ab1-411a-8fed-fce9bc1d48b6\&quot;,\&quot;hostname\&quot;:\&quot;host1.example.com\&quot;},\&quot;ecs\&quot;:{\&quot;version\&quot;:\&quot;1.0.1\&quot;},\&quot;host\&quot;:{\&quot;name\&quot;:\&quot;host1.example.com\&quot;,\&quot;hostname\&quot;:\&quot;host1.example.com\&quot;,\&quot;architecture\&quot;:\&quot;x86_64\&quot;,\&quot;os\&quot;:{\&quot;version\&quot;:\&quot;7 (Core)\&quot;,\&quot;family\&quot;:\&quot;redhat\&quot;,\&quot;name\&quot;:\&quot;CentOS Linux\&quot;,\&quot;kernel\&quot;:\&quot;3.10.0-957.1.3.el7.x86_64\&quot;,\&quot;codename\&quot;:\&quot;Core\&quot;,\&quot;platform\&quot;:\&quot;centos\&quot;},\&quot;id\&quot;:\&quot;d4ae00fc7eb34bd8b5ea9012fa002b37\&quot;,\&quot;containerized\&quot;:false},\&quot;log\&quot;:{\&quot;offset\&quot;:2680,\&quot;file\&quot;:{\&quot;path\&quot;:\&quot;/var/log/secure\&quot;}},\&quot;message\&quot;:\&quot;Aug 23 09:44:06 host1 sshd[9487]: Accepted password for test-user from 10.10.10.2 port 62308 ssh2\&quot;}&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><cite>message.message</cite> is another json field. So parse that out with the <cite>json{}</cite> parser, and put it into <cite>message2</cite>.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">filter {</span>
+<span class="go">  json {</span>
+<span class="go">    source =&gt; &quot;message&quot;</span>
+<span class="go">    target =&gt; &quot;message2&quot;</span>
+<span class="go">  }</span>
+<span class="go">}</span>
+</pre></div>
+</div>
+<p>Then renaming the original <cite>message</cite> to something else should help prevent the need to re-write a bunch of stuff.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">mutate {</span>
+<span class="go">  rename =&gt; [&quot;message&quot;, &quot;orig_msg&quot;]</span>
+<span class="go">}</span>
+</pre></div>
+</div>
+<p>Next we can move <cite>message2.message</cite> to <cite>message</cite>, but that’s not how we reference <cite>message2.message</cite>.
+We have to use <cite>[message2][message]</cite> instead:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">if [message2][message] {</span>
+<span class="go">  mutate {</span>
+<span class="go">    rename =&gt; [&quot;[message2][message]&quot;, &quot;message]</span>
+<span class="go">  }</span>
+<span class="go">}</span>
+</pre></div>
+</div>
+<p>Now parsers can continue to work on the message field as they had previously.
+Yay!</p>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../../../index.html">notes</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../arm/index.html">arm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../db/index.html">databases</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../dns/index.html">DNS stuff</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../openssh/index.html">OpenSSH</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../operating_systems/index.html">Operating Systems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../ossec/index.html">OSSEC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../rsyslogd/index.html">rsyslogd</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../securityonion/index.html">SecurityOnion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../ssl/index.html">ssl</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../stupid_unix_tricks/index.html">Stupid Unix Tricks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../tools/index.html">Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../vendor_stuff/index.html">Vendor Stuff</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../misc/index.html">misc</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../../index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+        <!-- your html code here -->
+	<div class="footer">
+		<em>This information has a good chance of being wrong, inconsistent, out of date, or just bad. Use at your own risk.
+		Feel free to notify me of any issues though.</em>
+	</div>
+
+
+  </body>
+</html>

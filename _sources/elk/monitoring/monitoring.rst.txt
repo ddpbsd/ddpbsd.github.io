@@ -67,6 +67,13 @@ Check read-only status
       curl -sk -XGET 'https://USER:PASSWORD1234@elastic.example.com:9200/fluttershy-2019.08.*/_settings/index.blocks.read_only_allow_delete' \
       | jq '.["fluttershy-2019.08.02"].settings.index.blocks.read_only_allow_delete'
 
+Reset read-only status
+^^^^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: console
+
+   for i in $(curl -s 'http://127.0.0.1:9200/_cat/indices?h=index'); do curl -s -XPUT -H 'Content-Type: application/json' "http://127.0.0.1:9200/${i}/_settings" -d '{  "index": {  "blocks": {  "read_only_allow_delete": "false"  }}}' ; echo "";  done
+
 red|yellow|green
 ^^^^^^^^^^^^^^^^
 
@@ -83,7 +90,7 @@ Get disk usage
 
    .. code-block:: console
 
-      GET /_cat/allocation?v&pretty
+      GET /_cat/allocation?v
 
 
    List the node and disk avail
@@ -91,6 +98,12 @@ Get disk usage
    .. code-block:: console
 
       GET /_cat/nodes?h=h,name,diskAvail&v
+
+   Get the fs usage of each node in a cluster as percent used (along with the roles of the node)
+
+    .. code-block:: console
+
+       GET /_nodes/stats | jq '.nodes[] | "\(.name) \(.roles) \((.fs.total.free_in_bytes / .fs.total.total_in_bytes) * 100)"'
 
 Lots of stats
 ^^^^^^^^^^^^^

@@ -8,11 +8,12 @@ Contents:
 .. toctree::
    :maxdepth: 2
 
-   create_index
+   indexes/index
    dev
    status
    security/logstash_user.rst
    security/beats_user.rst
    templates
-   shards   
+   shards 
+   tasks
 

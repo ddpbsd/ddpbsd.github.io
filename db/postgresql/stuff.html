@@ -1,29 +1,17 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
+<!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
   <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>List databases &#8212; notes 0.1 documentation</title>
-    
-    <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-    
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    '../../',
-        VERSION:     '0.1',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: '.txt'
-      };
-    </script>
-    <script type="text/javascript" src="../../_static/jquery.js"></script>
-    <script type="text/javascript" src="../../_static/underscore.js"></script>
-    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
    
@@ -32,8 +20,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
 
-  </head>
-  <body role="document">
+  </head><body>
   
 
     <div class="document">
@@ -45,19 +32,34 @@
             
   <div class="section" id="list-databases">
 <h1>List databases<a class="headerlink" href="#list-databases" title="Permalink to this headline">¶</a></h1>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">\l</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">\l</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="list-tables">
 <h1>List tables<a class="headerlink" href="#list-tables" title="Permalink to this headline">¶</a></h1>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">\dt</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">\dt</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="connect-to-db">
 <h1>Connect to db<a class="headerlink" href="#connect-to-db" title="Permalink to this headline">¶</a></h1>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">\c DB_NAME</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">\c DB_NAME</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="date-minus-a-couple-of-days">
+<h1>date minus a couple of days<a class="headerlink" href="#date-minus-a-couple-of-days" title="Permalink to this headline">¶</a></h1>
+<p>Using date and interval is weird.
+<cite>interval ‘2 days’</cite> actually means yesterday.
+Today is the first day, yesterday is the second.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">date &gt; now() - interval &#39;2 days&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="convert-epoch-to-timestamp">
+<h1>Convert epoch to timestamp<a class="headerlink" href="#convert-epoch-to-timestamp" title="Permalink to this headline">¶</a></h1>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">select timestamp &#39;epoch&#39; + (hosts.firstseen) * interval &#39;1 second&#39; as first  from hosts;</span>
 </pre></div>
 </div>
 </div>
@@ -83,7 +85,6 @@
 <li class="toctree-l1"><a class="reference internal" href="../../arm/index.html">arm</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../index.html">databases</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../dns/index.html">DNS stuff</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../elk/index.html">elk stack</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../openssh/index.html">OpenSSH</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../operating_systems/index.html">Operating Systems</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../ossec/index.html">OSSEC</a></li>
@@ -104,15 +105,15 @@
 </ul>
 </div>
 <div id="searchbox" style="display: none" role="search">
-  <h3>Quick search</h3>
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
     <form class="search" action="../../search.html" method="get">
-      <div><input type="text" name="q" /></div>
-      <div><input type="submit" value="Go" /></div>
-      <input type="hidden" name="check_keywords" value="yes" />
-      <input type="hidden" name="area" value="default" />
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
     </form>
+    </div>
 </div>
-<script type="text/javascript">$('#searchbox').show(0);</script>
+<script>$('#searchbox').show(0);</script>
         </div>
       </div>
       <div class="clearer"></div>

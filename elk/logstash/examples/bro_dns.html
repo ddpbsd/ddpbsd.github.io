@@ -1,41 +1,26 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
+<!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
   <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Bro DNS log: &#8212; notes 0.1 documentation</title>
-    
-    <link rel="stylesheet" href="../../../_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
-    
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    '../../../',
-        VERSION:     '0.1',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: '.txt'
-      };
-    </script>
-    <script type="text/javascript" src="../../../_static/jquery.js"></script>
-    <script type="text/javascript" src="../../../_static/underscore.js"></script>
-    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <link rel="stylesheet" href="../../../_static/alabaster.css" type="text/css" />
+    <script id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/doctools.js"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="Errors" href="../errors/index.html" />
-    <link rel="prev" title="Examples" href="index.html" />
    
   <link rel="stylesheet" href="../../../_static/custom.css" type="text/css" />
   
   
   <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
 
-  </head>
-  <body role="document">
+  </head><body>
   
 
     <div class="document">
@@ -48,11 +33,11 @@
   <div class="section" id="bro-dns-log">
 <h1>Bro DNS log:<a class="headerlink" href="#bro-dns-log" title="Permalink to this headline">¶</a></h1>
 <p>I think this will work for most bro logs,
-but dns is the only one I&#8217;ve tried.
+but dns is the only one I’ve tried.
 Obviously the <cite>columns</cite> would have to change
 for each log type.</p>
 <p>Now that the basics are working, I can try the mutate stuff again.</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">filter {</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">filter {</span>
 <span class="go">  if([fields][log_type] == &quot;brodns&quot;) {</span>
 <span class="go">    if([message] =~ /^#/) {</span>
 <span class="go">      drop { }</span>
@@ -64,12 +49,12 @@ for each log type.</p>
 <span class="go">    date {</span>
 <span class="go">      match =&gt; [&quot;ts&quot;, &quot;UNIX&quot;]</span>
 <span class="go">    }</span>
-<span class="gp">#</span>    mutate <span class="o">{</span>
-<span class="gp">#</span>      <span class="nv">rename</span> <span class="o">=</span>&gt;  <span class="o">[</span> <span class="s2">&quot;id.orig_h&quot;</span>, <span class="s2">&quot;id_orig_host&quot;</span> <span class="o">]</span>
-<span class="gp">#</span>      <span class="nv">rename</span> <span class="o">=</span>&gt;  <span class="o">[</span> <span class="s2">&quot;id.orig_p&quot;</span>, <span class="s2">&quot;id_orig_port&quot;</span> <span class="o">]</span>
-<span class="gp">#</span>      <span class="nv">rename</span> <span class="o">=</span>&gt;  <span class="o">[</span> <span class="s2">&quot;id.resp_h&quot;</span>, <span class="s2">&quot;id_resp_host&quot;</span> <span class="o">]</span>
-<span class="gp">#</span>      <span class="nv">rename</span> <span class="o">=</span>&gt;  <span class="o">[</span> <span class="s2">&quot;id.resp_p&quot;</span>, <span class="s2">&quot;id_resp_port&quot;</span> <span class="o">]</span>
-<span class="gp">#</span>    <span class="o">}</span>
+<span class="gp">#    </span>mutate <span class="o">{</span>
+<span class="gp">#      </span><span class="nv">rename</span> <span class="o">=</span>&gt;  <span class="o">[</span> <span class="s2">&quot;id.orig_h&quot;</span>, <span class="s2">&quot;id_orig_host&quot;</span> <span class="o">]</span>
+<span class="gp">#      </span><span class="nv">rename</span> <span class="o">=</span>&gt;  <span class="o">[</span> <span class="s2">&quot;id.orig_p&quot;</span>, <span class="s2">&quot;id_orig_port&quot;</span> <span class="o">]</span>
+<span class="gp">#      </span><span class="nv">rename</span> <span class="o">=</span>&gt;  <span class="o">[</span> <span class="s2">&quot;id.resp_h&quot;</span>, <span class="s2">&quot;id_resp_host&quot;</span> <span class="o">]</span>
+<span class="gp">#      </span><span class="nv">rename</span> <span class="o">=</span>&gt;  <span class="o">[</span> <span class="s2">&quot;id.resp_p&quot;</span>, <span class="s2">&quot;id_resp_port&quot;</span> <span class="o">]</span>
+<span class="gp">#    </span><span class="o">}</span>
 <span class="go">  }</span>
 <span class="go">}</span>
 </pre></div>
@@ -93,18 +78,10 @@ for each log type.</p>
 
 
 <h3>Navigation</h3>
-<ul class="current">
+<ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../arm/index.html">arm</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../db/index.html">databases</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../dns/index.html">DNS stuff</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="../../index.html">elk stack</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="../../beats/index.html">Beats</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../elastic/index.html">elasticsearch</a></li>
-<li class="toctree-l2 current"><a class="reference internal" href="../index.html">logstash</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../monitoring/index.html">monitoring</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../setup.html">Setting up the whole thing</a></li>
-</ul>
-</li>
 <li class="toctree-l1"><a class="reference internal" href="../../../openssh/index.html">OpenSSH</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../operating_systems/index.html">Operating Systems</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../ossec/index.html">OSSEC</a></li>
@@ -121,27 +98,19 @@ for each log type.</p>
 <h3>Related Topics</h3>
 <ul>
   <li><a href="../../../index.html">Documentation overview</a><ul>
-  <li><a href="../../index.html">elk stack</a><ul>
-  <li><a href="../index.html">logstash</a><ul>
-  <li><a href="index.html">Examples</a><ul>
-      <li>Previous: <a href="index.html" title="previous chapter">Examples</a></li>
-      <li>Next: <a href="../errors/index.html" title="next chapter">Errors</a></li>
-  </ul></li>
-  </ul></li>
-  </ul></li>
   </ul></li>
 </ul>
 </div>
 <div id="searchbox" style="display: none" role="search">
-  <h3>Quick search</h3>
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
     <form class="search" action="../../../search.html" method="get">
-      <div><input type="text" name="q" /></div>
-      <div><input type="submit" value="Go" /></div>
-      <input type="hidden" name="check_keywords" value="yes" />
-      <input type="hidden" name="area" value="default" />
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
     </form>
+    </div>
 </div>
-<script type="text/javascript">$('#searchbox').show(0);</script>
+<script>$('#searchbox').show(0);</script>
         </div>
       </div>
       <div class="clearer"></div>

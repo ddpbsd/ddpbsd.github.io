@@ -1,29 +1,17 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
+<!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
   <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Working ldap.toml: &#8212; notes 0.1 documentation</title>
-    
-    <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-    
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    '../../',
-        VERSION:     '0.1',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: '.txt'
-      };
-    </script>
-    <script type="text/javascript" src="../../_static/jquery.js"></script>
-    <script type="text/javascript" src="../../_static/underscore.js"></script>
-    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="calculate free space" href="elasticsearch/free_space.html" />
@@ -34,8 +22,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
 
-  </head>
-  <body role="document">
+  </head><body>
   
 
     <div class="document">
@@ -47,69 +34,69 @@
             
   <div class="section" id="working-ldap-toml">
 <h1>Working ldap.toml:<a class="headerlink" href="#working-ldap-toml" title="Permalink to this headline">¶</a></h1>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">#</span> To troubleshoot and get more log info <span class="nb">enable</span> ldap debug logging in grafana.ini
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp"># </span>To troubleshoot and get more log info <span class="nb">enable</span> ldap debug logging <span class="k">in</span> grafana.ini
 <span class="gp">#</span><span class="o">[</span>log<span class="o">]</span>
 <span class="gp">#</span><span class="nv">filters</span> <span class="o">=</span> ldap:debug
 
 <span class="go">[[servers]]</span>
-<span class="gp">#</span> Ldap server host <span class="o">(</span>specify multiple hosts space separated<span class="o">)</span>
+<span class="gp"># </span>Ldap server host <span class="o">(</span>specify multiple hosts space separated<span class="o">)</span>
 <span class="go">host = &quot;VA-IS-AD03.DOMAIN.com&quot;</span>
-<span class="gp">#</span> Default port is <span class="m">389</span> or <span class="m">636</span> <span class="k">if</span> <span class="nv">use_ssl</span> <span class="o">=</span> <span class="nb">true</span>
+<span class="gp"># </span>Default port is <span class="m">389</span> or <span class="m">636</span> <span class="k">if</span> <span class="nv">use_ssl</span> <span class="o">=</span> <span class="nb">true</span>
 <span class="go">port = 389</span>
-<span class="gp">#</span> Set to <span class="nb">true</span> <span class="k">if</span> ldap server supports TLS
+<span class="gp"># </span>Set to <span class="nb">true</span> <span class="k">if</span> ldap server supports TLS
 <span class="go">use_ssl = false</span>
-<span class="gp">#</span> Set to <span class="nb">true</span> <span class="k">if</span> connect ldap server with STARTTLS pattern <span class="o">(</span>create connection in insecure, <span class="k">then</span> upgrade to secure connection with TLS<span class="o">)</span>
+<span class="gp"># </span>Set to <span class="nb">true</span> <span class="k">if</span> connect ldap server with STARTTLS pattern <span class="o">(</span>create connection <span class="k">in</span> insecure, <span class="k">then</span> upgrade to secure connection with TLS<span class="o">)</span>
 <span class="go">start_tls = false</span>
-<span class="gp">#</span> <span class="nb">set</span> to <span class="nb">true</span> <span class="k">if</span> you want to skip ssl cert validation
+<span class="gp"># </span><span class="nb">set</span> to <span class="nb">true</span> <span class="k">if</span> you want to skip ssl cert validation
 <span class="go">ssl_skip_verify = false</span>
-<span class="gp">#</span> <span class="nb">set</span> to the path to your root CA certificate or leave <span class="nb">unset</span> to use system defaults
-<span class="gp">#</span> <span class="nv">root_ca_cert</span> <span class="o">=</span> <span class="s2">&quot;/path/to/certificate.crt&quot;</span>
+<span class="gp"># </span><span class="nb">set</span> to the path to your root CA certificate or leave <span class="nb">unset</span> to use system defaults
+<span class="gp"># </span><span class="nv">root_ca_cert</span> <span class="o">=</span> <span class="s2">&quot;/path/to/certificate.crt&quot;</span>
 
-<span class="gp">#</span> Search user <span class="nb">bind</span> dn
+<span class="gp"># </span>Search user <span class="nb">bind</span> dn
 <span class="go">bind_dn = &quot;CN=USERNAME,CN=Users,DC=DOMAIN,DC=com&quot;</span>
-<span class="gp">#</span> Search user <span class="nb">bind</span> password
-<span class="gp">#</span> If the password contains <span class="c1"># or ; you have to wrap it with trippel quotes. Ex &quot;&quot;&quot;#password;&quot;&quot;&quot;</span>
+<span class="gp"># </span>Search user <span class="nb">bind</span> password
+<span class="gp"># </span>If the password contains <span class="c1"># or ; you have to wrap it with trippel quotes. Ex &quot;&quot;&quot;#password;&quot;&quot;&quot;</span>
 <span class="go">bind_password = &#39;PASSWORD&#39;</span>
 
-<span class="gp">#</span> User search filter, <span class="k">for</span> example <span class="s2">&quot;(CN=%s)&quot;</span> or <span class="s2">&quot;(sAMAccountName=%s)&quot;</span> or <span class="s2">&quot;(uid=%s)&quot;</span>
+<span class="gp"># </span>User search filter, <span class="k">for</span> example <span class="s2">&quot;(CN=%s)&quot;</span> or <span class="s2">&quot;(sAMAccountName=%s)&quot;</span> or <span class="s2">&quot;(uid=%s)&quot;</span>
 <span class="go">search_filter = &quot;(sAMAccountName=%s)&quot;</span>
 
-<span class="gp">#</span> An array of base dns to search through
+<span class="gp"># </span>An array of base dns to search through
 <span class="go">search_base_dns = [&quot;CN=Users,DC=DOMAIN,DC=com&quot;]</span>
 
-<span class="gp">#</span> In POSIX LDAP schemas, without memberOf attribute a secondary query must be made <span class="k">for</span> groups.
-<span class="gp">#</span> This is <span class="k">done</span> by enabling group_search_filter below. You must also <span class="nb">set</span> <span class="nv">member_of</span><span class="o">=</span> <span class="s2">&quot;cn&quot;</span>
-<span class="gp">#</span> in <span class="o">[</span>servers.attributes<span class="o">]</span> below.
+<span class="gp"># </span>In POSIX LDAP schemas, without memberOf attribute a secondary query must be made <span class="k">for</span> groups.
+<span class="gp"># </span>This is <span class="k">done</span> by enabling group_search_filter below. You must also <span class="nb">set</span> <span class="nv">member_of</span><span class="o">=</span> <span class="s2">&quot;cn&quot;</span>
+<span class="gp"># </span><span class="k">in</span> <span class="o">[</span>servers.attributes<span class="o">]</span> below.
 
-<span class="gp">#</span> Users with nested/recursive group membership and an LDAP server that supports LDAP_MATCHING_RULE_IN_CHAIN
-<span class="gp">#</span> can <span class="nb">set</span> group_search_filter, group_search_filter_user_attribute, group_search_base_dns and member_of
-<span class="gp">#</span> below in such a way that the user<span class="s1">&#39;s recursive group membership is considered.</span>
-<span class="gp">#</span><span class="s1"></span>
-<span class="gp">#</span><span class="s1"> Nested Groups + Active Directory (AD) Example:</span>
-<span class="gp">#</span><span class="s1"></span>
-<span class="gp">#</span><span class="s1">   AD groups store the Distinguished Names (DNs) of members, so your filter must</span>
-<span class="gp">#</span><span class="s1">   recursively search your groups for the authenticating user&#39;</span>s DN. For example:
+<span class="gp"># </span>Users with nested/recursive group membership and an LDAP server that supports LDAP_MATCHING_RULE_IN_CHAIN
+<span class="gp"># </span>can <span class="nb">set</span> group_search_filter, group_search_filter_user_attribute, group_search_base_dns and member_of
+<span class="gp"># </span>below <span class="k">in</span> such a way that the user<span class="s1">&#39;s recursive group membership is considered.</span>
 <span class="gp">#</span>
-<span class="gp">#</span>     <span class="nv">group_search_filter</span> <span class="o">=</span> <span class="s2">&quot;(member:1.2.840.113556.1.4.1941:=%s)&quot;</span>
-<span class="gp">#</span>     <span class="nv">group_search_filter_user_attribute</span> <span class="o">=</span> <span class="s2">&quot;distinguishedName&quot;</span>
-<span class="gp">#</span>     <span class="nv">group_search_base_dns</span> <span class="o">=</span> <span class="o">[</span><span class="s2">&quot;ou=groups,DC=grafana,DC=org&quot;</span><span class="o">]</span>
+<span class="gp"># </span><span class="s1">Nested Groups + Active Directory (AD) Example:</span>
 <span class="gp">#</span>
-<span class="gp">#</span>     <span class="o">[</span>servers.attributes<span class="o">]</span>
-<span class="gp">#</span>     ...
-<span class="gp">#</span>     <span class="nv">member_of</span> <span class="o">=</span> <span class="s2">&quot;distinguishedName&quot;</span>
+<span class="gp">#   </span><span class="s1">AD groups store the Distinguished Names (DNs) of members, so your filter must</span>
+<span class="gp">#   </span><span class="s1">recursively search your groups for the authenticating user&#39;</span>s DN. For example:
+<span class="gp">#</span>
+<span class="gp">#     </span><span class="nv">group_search_filter</span> <span class="o">=</span> <span class="s2">&quot;(member:1.2.840.113556.1.4.1941:=%s)&quot;</span>
+<span class="gp">#     </span><span class="nv">group_search_filter_user_attribute</span> <span class="o">=</span> <span class="s2">&quot;distinguishedName&quot;</span>
+<span class="gp">#     </span><span class="nv">group_search_base_dns</span> <span class="o">=</span> <span class="o">[</span><span class="s2">&quot;ou=groups,DC=grafana,DC=org&quot;</span><span class="o">]</span>
+<span class="gp">#</span>
+<span class="gp">#     </span><span class="o">[</span>servers.attributes<span class="o">]</span>
+<span class="gp">#     </span>...
+<span class="gp">#     </span><span class="nv">member_of</span> <span class="o">=</span> <span class="s2">&quot;distinguishedName&quot;</span>
 
 <span class="gp">#</span><span class="c1"># Group search filter, to retrieve the groups of which the user is a member (only set if memberOf attribute is not available)</span>
-<span class="gp">#</span> <span class="nv">group_search_filter</span> <span class="o">=</span> <span class="s2">&quot;(&amp;(objectClass=posixGroup)(memberUid=%s))&quot;</span>
+<span class="gp"># </span><span class="nv">group_search_filter</span> <span class="o">=</span> <span class="s2">&quot;(&amp;(objectClass=posixGroup)(memberUid=%s))&quot;</span>
 <span class="gp">#</span><span class="c1"># Group search filter user attribute defines what user attribute gets substituted for %s in group_search_filter.</span>
 <span class="gp">#</span><span class="c1"># Defaults to the value of username in [server.attributes]</span>
 <span class="gp">#</span><span class="c1"># Valid options are any of your values in [servers.attributes]</span>
 <span class="gp">#</span><span class="c1"># If you are using nested groups you probably want to set this and member_of in</span>
 <span class="gp">#</span><span class="c1"># [servers.attributes] to &quot;distinguishedName&quot;</span>
-<span class="gp">#</span> <span class="nv">group_search_filter_user_attribute</span> <span class="o">=</span> <span class="s2">&quot;distinguishedName&quot;</span>
+<span class="gp"># </span><span class="nv">group_search_filter_user_attribute</span> <span class="o">=</span> <span class="s2">&quot;distinguishedName&quot;</span>
 <span class="gp">#</span><span class="c1"># An array of the base DNs to search through for groups. Typically uses ou=groups</span>
-<span class="gp">#</span> <span class="nv">group_search_base_dns</span> <span class="o">=</span> <span class="o">[</span><span class="s2">&quot;ou=groups,DC=grafana,DC=org&quot;</span><span class="o">]</span>
+<span class="gp"># </span><span class="nv">group_search_base_dns</span> <span class="o">=</span> <span class="o">[</span><span class="s2">&quot;ou=groups,DC=grafana,DC=org&quot;</span><span class="o">]</span>
 
-<span class="gp">#</span> Specify names of the ldap attributes your ldap uses
+<span class="gp"># </span>Specify names of the ldap attributes your ldap uses
 <span class="go">[servers.attributes]</span>
 <span class="go">name = &quot;givenName&quot;</span>
 <span class="go">surname = &quot;sn&quot;</span>
@@ -117,19 +104,19 @@
 <span class="go">member_of = &quot;memberOf&quot;</span>
 <span class="go">email =  &quot;mail&quot;</span>
 
-<span class="gp">#</span> Map ldap groups to grafana org roles
+<span class="gp"># </span>Map ldap groups to grafana org roles
 <span class="go">[[servers.group_mappings]]</span>
 <span class="go">group_dn = &quot;CN=Domain Admins,OU=Security Groups,DC=DOMAIN,DC=com&quot;</span>
 <span class="go">org_role = &quot;Admin&quot;</span>
-<span class="gp">#</span> The Grafana organization database id, optional, <span class="k">if</span> left out the default org <span class="o">(</span>id <span class="m">1</span><span class="o">)</span> will be used
-<span class="gp">#</span> <span class="nv">org_id</span> <span class="o">=</span> <span class="m">1</span>
+<span class="gp"># </span>The Grafana organization database id, optional, <span class="k">if</span> left out the default org <span class="o">(</span>id <span class="m">1</span><span class="o">)</span> will be used
+<span class="gp"># </span><span class="nv">org_id</span> <span class="o">=</span> <span class="m">1</span>
 
 <span class="go">[[servers.group_mappings]]</span>
 <span class="go">group_dn = &quot;CN=Users,DC=DOMAIN,DC=com&quot;</span>
 <span class="go">org_role = &quot;Editor&quot;</span>
 
 <span class="go">[[servers.group_mappings]]</span>
-<span class="gp">#</span> If you want to match all <span class="o">(</span>or no ldap groups<span class="o">)</span> <span class="k">then</span> you can use wildcard
+<span class="gp"># </span>If you want to match all <span class="o">(</span>or no ldap groups<span class="o">)</span> <span class="k">then</span> you can use wildcard
 <span class="go">group_dn = &quot;*&quot;</span>
 <span class="go">org_role = &quot;Viewer&quot;</span>
 </pre></div>
@@ -157,7 +144,6 @@
 <li class="toctree-l1"><a class="reference internal" href="../../arm/index.html">arm</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../db/index.html">databases</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../dns/index.html">DNS stuff</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../elk/index.html">elk stack</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../openssh/index.html">OpenSSH</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../operating_systems/index.html">Operating Systems</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../ossec/index.html">OSSEC</a></li>
@@ -184,6 +170,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../osquery/index.html">osquery</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../packer/index.html">HashiCorp packer</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../perl/index.html">Perl</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../prometheus/index.html">prometheus</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../python/index.html">Python</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../su.html">su</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../tcpdump/index.html">tcpdump</a></li>
@@ -212,15 +199,15 @@
 </ul>
 </div>
 <div id="searchbox" style="display: none" role="search">
-  <h3>Quick search</h3>
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
     <form class="search" action="../../search.html" method="get">
-      <div><input type="text" name="q" /></div>
-      <div><input type="submit" value="Go" /></div>
-      <input type="hidden" name="check_keywords" value="yes" />
-      <input type="hidden" name="area" value="default" />
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
     </form>
+    </div>
 </div>
-<script type="text/javascript">$('#searchbox').show(0);</script>
+<script>$('#searchbox').show(0);</script>
         </div>
       </div>
       <div class="clearer"></div>

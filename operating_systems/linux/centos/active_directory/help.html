@@ -1,29 +1,17 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
+<!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
   <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Active Directory Auth &#8212; notes 0.1 documentation</title>
-    
-    <link rel="stylesheet" href="../../../../_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
-    
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    '../../../../',
-        VERSION:     '0.1',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: '.txt'
-      };
-    </script>
-    <script type="text/javascript" src="../../../../_static/jquery.js"></script>
-    <script type="text/javascript" src="../../../../_static/underscore.js"></script>
-    <script type="text/javascript" src="../../../../_static/doctools.js"></script>
+    <link rel="stylesheet" href="../../../../_static/alabaster.css" type="text/css" />
+    <script id="documentation_options" data-url_root="../../../../" src="../../../../_static/documentation_options.js"></script>
+    <script src="../../../../_static/jquery.js"></script>
+    <script src="../../../../_static/underscore.js"></script>
+    <script src="../../../../_static/doctools.js"></script>
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
     <link rel="next" title="Automatic updates:" href="../automatic_updates.html" />
@@ -34,8 +22,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
 
-  </head>
-  <body role="document">
+  </head><body>
   
 
     <div class="document">
@@ -49,14 +36,14 @@
 <h1>Active Directory Auth<a class="headerlink" href="#active-directory-auth" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="install-prerequisites">
 <h2>Install Prerequisites:<a class="headerlink" href="#install-prerequisites" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">yum install -y samba pam_krb5 krb5-workstation samba</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">yum install -y samba pam_krb5 krb5-workstation samba</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="configure-kerberos">
 <h2>Configure kerberos:<a class="headerlink" href="#configure-kerberos" title="Permalink to this headline">¶</a></h2>
 <p>Edit <cite>/etc/krb5.conf</cite></p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">#</span> Configuration snippets may be placed in this directory as well
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp"># </span>Configuration snippets may be placed <span class="k">in</span> this directory as well
 <span class="go">includedir /etc/krb5.conf.d/</span>
 
 <span class="go">[logging]</span>
@@ -72,7 +59,7 @@
 <span class="go"> forwardable = true</span>
 <span class="go"> proxiable = true</span>
 <span class="go"> rdns = false</span>
-<span class="gp">#</span> <span class="nv">default_realm</span> <span class="o">=</span> EXAMPLE.COM
+<span class="gp"># </span><span class="nv">default_realm</span> <span class="o">=</span> EXAMPLE.COM
 <span class="go"> default_realm = MYDOMAIN.COM</span>
 <span class="go"> default_ccache_name = KEYRING:persistent:%{uid}</span>
 
@@ -101,20 +88,20 @@
 <span class="go"> }</span>
 
 <span class="go">[realms]</span>
-<span class="gp">#</span> EXAMPLE.COM <span class="o">=</span> <span class="o">{</span>
-<span class="gp">#</span>  <span class="nv">kdc</span> <span class="o">=</span> kerberos.example.com
-<span class="gp">#</span>  <span class="nv">admin_server</span> <span class="o">=</span> kerberos.example.com
-<span class="gp">#</span> <span class="o">}</span>
+<span class="gp"># </span>EXAMPLE.COM <span class="o">=</span> <span class="o">{</span>
+<span class="gp">#  </span><span class="nv">kdc</span> <span class="o">=</span> kerberos.example.com
+<span class="gp">#  </span><span class="nv">admin_server</span> <span class="o">=</span> kerberos.example.com
+<span class="gp"># </span><span class="o">}</span>
 
 <span class="go">[domain_realm]</span>
-<span class="gp">#</span> .example.com <span class="o">=</span> EXAMPLE.COM
-<span class="gp">#</span> example.com <span class="o">=</span> EXAMPLE.COM
+<span class="gp"># </span>.example.com <span class="o">=</span> EXAMPLE.COM
+<span class="gp"># </span>example.com <span class="o">=</span> EXAMPLE.COM
 </pre></div>
 </div>
 </div>
 <div class="section" id="test-it-out">
 <h2>Test it out:<a class="headerlink" href="#test-it-out" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">kinit user@MYDOMAIN.COM</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">kinit user@MYDOMAIN.COM</span>
 </pre></div>
 </div>
 </div>
@@ -141,7 +128,6 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../../arm/index.html">arm</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../db/index.html">databases</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../dns/index.html">DNS stuff</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../elk/index.html">elk stack</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../openssh/index.html">OpenSSH</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../../../index.html">Operating Systems</a><ul class="current">
 <li class="toctree-l2 current"><a class="reference internal" href="../../index.html">Linux</a></li>
@@ -177,15 +163,15 @@
 </ul>
 </div>
 <div id="searchbox" style="display: none" role="search">
-  <h3>Quick search</h3>
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
     <form class="search" action="../../../../search.html" method="get">
-      <div><input type="text" name="q" /></div>
-      <div><input type="submit" value="Go" /></div>
-      <input type="hidden" name="check_keywords" value="yes" />
-      <input type="hidden" name="area" value="default" />
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
     </form>
+    </div>
 </div>
-<script type="text/javascript">$('#searchbox').show(0);</script>
+<script>$('#searchbox').show(0);</script>
         </div>
       </div>
       <div class="clearer"></div>

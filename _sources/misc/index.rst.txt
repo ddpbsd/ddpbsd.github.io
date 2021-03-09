@@ -13,6 +13,7 @@ Contents:
    :maxdepth: 2
 
 
+   hardware_tokens/tokens
    imagemagick/index 
    kernel_build/index
    ksh/index

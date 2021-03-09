@@ -1,29 +1,17 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
+<!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
   <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Location of some useful logs (auth and stuff): &#8212; notes 0.1 documentation</title>
-    
-    <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-    
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    '../../',
-        VERSION:     '0.1',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: '.txt'
-      };
-    </script>
-    <script type="text/javascript" src="../../_static/jquery.js"></script>
-    <script type="text/javascript" src="../../_static/underscore.js"></script>
-    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
    
@@ -32,8 +20,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
 
-  </head>
-  <body role="document">
+  </head><body>
   
 
     <div class="document">
@@ -45,37 +32,37 @@
             
   <div class="section" id="location-of-some-useful-logs-auth-and-stuff">
 <span id="vendor-stuff-arcsight-rest-api"></span><h1>Location of some useful logs (auth and stuff):<a class="headerlink" href="#location-of-some-useful-logs-auth-and-stuff" title="Permalink to this headline">¶</a></h1>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">/opt/arcsight/manager/logs/default/server.log</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">/opt/arcsight/manager/logs/default/server.log</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="banned-password-characters">
 <h1>Banned password characters:<a class="headerlink" href="#banned-password-characters" title="Permalink to this headline">¶</a></h1>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">^</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">^</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="example-login">
 <h1>Example login:<a class="headerlink" href="#example-login" title="Permalink to this headline">¶</a></h1>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">curl -D- -k -H &quot;Content-Type: application/x-www-form-urlencoded&quot; -XPOST  &#39;https://ESM_HOST:8443/www/core-service/rest/LoginService/login?login=USERNAME&amp;password=PASSWORD&amp;alt=json&#39;</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">curl -D- -k -H &quot;Content-Type: application/x-www-form-urlencoded&quot; -XPOST  &#39;https://ESM_HOST:8443/www/core-service/rest/LoginService/login?login=USERNAME&amp;password=PASSWORD&amp;alt=json&#39;</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="example-logout">
 <h1>Example logout:<a class="headerlink" href="#example-logout" title="Permalink to this headline">¶</a></h1>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">curl -D- -k -H &quot;Content-Type: application/x-www-form-urlencoded&quot; -XPOST  &#39;https://ESM_HOST:8443/www/core-service/rest/LoginService/logout?authToken=HBfedZ5AefEosvFXSbgIfy5wzj9v426giAp7OihCabg.&#39;</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">curl -D- -k -H &quot;Content-Type: application/x-www-form-urlencoded&quot; -XPOST  &#39;https://ESM_HOST:8443/www/core-service/rest/LoginService/logout?authToken=HBfedZ5AefEosvFXSbgIfy5wzj9v426giAp7OihCabg.&#39;</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="view-all-entries-in-an-active-list">
 <h1>View all entries in an active list:<a class="headerlink" href="#view-all-entries-in-an-active-list" title="Permalink to this headline">¶</a></h1>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">URL: https://&lt;ESM manager host&gt;:8443/www/manager-service/rest/ActiveListService/getEntries?authToken=xxxxxxxxxxxxxxx.&amp;resourceId=xxxxxxxxxxxxxxxxxxx</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">URL: https://&lt;ESM manager host&gt;:8443/www/manager-service/rest/ActiveListService/getEntries?authToken=xxxxxxxxxxxxxxx.&amp;resourceId=xxxxxxxxxxxxxxxxxxx</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="some-stuff">
 <h1>Some stuff:<a class="headerlink" href="#some-stuff" title="Permalink to this headline">¶</a></h1>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">https://community.softwaregrp.com/t5/Archive-Discussion-Board/Full-REST-API-Documentation-For-ESM/td-p/1538807</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">https://community.softwaregrp.com/t5/Archive-Discussion-Board/Full-REST-API-Documentation-For-ESM/td-p/1538807</span>
 </pre></div>
 </div>
 </div>
@@ -101,7 +88,6 @@
 <li class="toctree-l1"><a class="reference internal" href="../../arm/index.html">arm</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../db/index.html">databases</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../dns/index.html">DNS stuff</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../elk/index.html">elk stack</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../openssh/index.html">OpenSSH</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../operating_systems/index.html">Operating Systems</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../ossec/index.html">OSSEC</a></li>
@@ -122,15 +108,15 @@
 </ul>
 </div>
 <div id="searchbox" style="display: none" role="search">
-  <h3>Quick search</h3>
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
     <form class="search" action="../../search.html" method="get">
-      <div><input type="text" name="q" /></div>
-      <div><input type="submit" value="Go" /></div>
-      <input type="hidden" name="check_keywords" value="yes" />
-      <input type="hidden" name="area" value="default" />
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
     </form>
+    </div>
 </div>
-<script type="text/javascript">$('#searchbox').show(0);</script>
+<script>$('#searchbox').show(0);</script>
         </div>
       </div>
       <div class="clearer"></div>

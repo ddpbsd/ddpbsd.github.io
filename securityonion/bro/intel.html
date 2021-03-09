@@ -1,29 +1,17 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
+<!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
   <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Bro Intel Framwork &#8212; notes 0.1 documentation</title>
-    
-    <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-    
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    '../../',
-        VERSION:     '0.1',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: '.txt'
-      };
-    </script>
-    <script type="text/javascript" src="../../_static/jquery.js"></script>
-    <script type="text/javascript" src="../../_static/underscore.js"></script>
-    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Restart bro" href="process_control.html" />
@@ -34,8 +22,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
 
-  </head>
-  <body role="document">
+  </head><body>
   
 
     <div class="document">
@@ -48,18 +35,18 @@
   <div class="section" id="bro-intel-framwork">
 <span id="securityonion-bro-intel"></span><h1>Bro Intel Framwork<a class="headerlink" href="#bro-intel-framwork" title="Permalink to this headline">¶</a></h1>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">Some information can be referenced <a class="reference external" href="../../alienvault/otx/index.html">here</a>.</p>
+<p class="admonition-title">Note</p>
+<p>Some information can be referenced <a class="reference external" href="../../alienvault/otx/index.html">here</a>.</p>
 </div>
 <p>Add the following to <cite>/opt/bro/share/bro/site/local.bro</cite>:</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">@load intel</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">@load intel</span>
 <span class="go">@load policy/frameworks/intel/seen</span>
 <span class="go">@load policy/frameworks/intel/do_notice</span>
 </pre></div>
 </div>
 <div class="section" id="available-categories">
 <h2>Available categories:<a class="headerlink" href="#available-categories" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">Intel::ADDR</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">Intel::ADDR</span>
 <span class="go">Intel::URL</span>
 <span class="go">Intel::SOFTWARE</span>
 <span class="go">Intel::EMAIL</span>
@@ -73,19 +60,19 @@
 </div>
 <div class="section" id="push-updates-to-sensors">
 <h2>Push updates to sensors:<a class="headerlink" href="#push-updates-to-sensors" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">Run sudo salt &#39;*&#39; state.highstate</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">Run sudo salt &#39;*&#39; state.highstate</span>
 <span class="go">Run sudo salt &#39;*&#39; cmd.run &#39;nsm_sensor_ps-restart --only-bro&#39;</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="check-bro-status">
 <h2>Check bro status:<a class="headerlink" href="#check-bro-status" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">salt &#39;*&#39; cmd.run &#39;nsm_sensor_ps-status --only-bro&#39;</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">salt &#39;*&#39; cmd.run &#39;nsm_sensor_ps-status --only-bro&#39;</span>
 </pre></div>
 </div>
 <div class="admonition warning">
-<p class="first admonition-title">Warning</p>
-<p class="last">Do not add blank lines to the file, and always use tabs as the delimeters!</p>
+<p class="admonition-title">Warning</p>
+<p>Do not add blank lines to the file, and always use tabs as the delimeters!</p>
 </div>
 </div>
 </div>
@@ -111,7 +98,6 @@
 <li class="toctree-l1"><a class="reference internal" href="../../arm/index.html">arm</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../db/index.html">databases</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../dns/index.html">DNS stuff</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../elk/index.html">elk stack</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../openssh/index.html">OpenSSH</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../operating_systems/index.html">Operating Systems</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../ossec/index.html">OSSEC</a></li>
@@ -150,15 +136,15 @@
 </ul>
 </div>
 <div id="searchbox" style="display: none" role="search">
-  <h3>Quick search</h3>
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
     <form class="search" action="../../search.html" method="get">
-      <div><input type="text" name="q" /></div>
-      <div><input type="submit" value="Go" /></div>
-      <input type="hidden" name="check_keywords" value="yes" />
-      <input type="hidden" name="area" value="default" />
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
     </form>
+    </div>
 </div>
-<script type="text/javascript">$('#searchbox').show(0);</script>
+<script>$('#searchbox').show(0);</script>
         </div>
       </div>
       <div class="clearer"></div>

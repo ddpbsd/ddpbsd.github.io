@@ -1,0 +1,17 @@
+snmp_exporter configs
+=====================
+
+.. include:: openbsd_pf.trst
+
+.. include:: openbsd_sensor.trst
+
+
+Access the metrics with curl
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+The specific module (like `openbsd_pf` and `openbsd_sensor` above) can be specified in the command
+
+.. code-block:: console
+
+   curl -s 'http://127.0.0.1:9116/snmp?target=127.0.0.1&module=openbsd_pf'
+

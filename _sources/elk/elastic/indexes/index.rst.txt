@@ -1,0 +1,14 @@
+
+=======
+indexes
+=======
+
+indices?
+
+Contents:
+
+.. toctree::
+   :maxdepth: 1
+
+   create_index
+   ilm

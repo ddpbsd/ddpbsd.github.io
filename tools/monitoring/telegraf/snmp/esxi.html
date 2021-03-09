@@ -1,29 +1,17 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
+<!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
   <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>esxi &#8212; notes 0.1 documentation</title>
-    
-    <link rel="stylesheet" href="../../../../_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
-    
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    '../../../../',
-        VERSION:     '0.1',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: '.txt'
-      };
-    </script>
-    <script type="text/javascript" src="../../../../_static/jquery.js"></script>
-    <script type="text/javascript" src="../../../../_static/underscore.js"></script>
-    <script type="text/javascript" src="../../../../_static/doctools.js"></script>
+    <link rel="stylesheet" href="../../../../_static/alabaster.css" type="text/css" />
+    <script id="documentation_options" data-url_root="../../../../" src="../../../../_static/documentation_options.js"></script>
+    <script src="../../../../_static/jquery.js"></script>
+    <script src="../../../../_static/underscore.js"></script>
+    <script src="../../../../_static/doctools.js"></script>
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
     <link rel="next" title="meraki" href="meraki.html" />
@@ -34,8 +22,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
 
-  </head>
-  <body role="document">
+  </head><body>
   
 
     <div class="document">
@@ -48,25 +35,25 @@
   <div class="section" id="esxi">
 <h1>esxi<a class="headerlink" href="#esxi" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="enabling-snmp-on-esxi-5-5">
-<h2>Enabling snmp on esxi 5.5:<a class="headerlink" href="#enabling-snmp-on-esxi-5-5" title="Permalink to this headline">¶</a></h2>
+<h2>Enabling snmp on esxi 5.5<a class="headerlink" href="#enabling-snmp-on-esxi-5-5" title="Permalink to this headline">¶</a></h2>
 <p>This is for version 2c.</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">esxcli system snmp set --communities STRING</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">esxcli system snmp set --communities STRING</span>
 <span class="go">esxcli system snmp set --port 161</span>
 <span class="go">esxcli system snmp set -e true</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="esxi-firewalling">
-<h2>esxi firewalling:<a class="headerlink" href="#esxi-firewalling" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">esxcli network firewall ruleset set --ruleset-id snmp --allowed-all false</span>
+<h2>esxi firewalling<a class="headerlink" href="#esxi-firewalling" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">esxcli network firewall ruleset set --ruleset-id snmp --allowed-all false</span>
 <span class="go">esxcli network firewall ruleset allowedip add --ruleset-id snmp --ip-address IP_ADDRESS/MASK</span>
 <span class="go">esxcli network firewall ruleset set --ruleset-id snmp --enabled true</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="telegraf-configuration">
-<h2>telegraf configuration:<a class="headerlink" href="#telegraf-configuration" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">[[inputs.snmp]]</span>
+<h2>telegraf configuration<a class="headerlink" href="#telegraf-configuration" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">[[inputs.snmp]]</span>
 <span class="go">   agents = [ &quot;10.20.20.20:161&quot; ]</span>
 <span class="go">   timeout = &quot;5s&quot;</span>
 <span class="go">   retries = 3</span>
@@ -177,10 +164,112 @@
 </div>
 </div>
 <div class="section" id="troubleshooting">
-<h2>Troubleshooting:<a class="headerlink" href="#troubleshooting" title="Permalink to this headline">¶</a></h2>
+<h2>Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permalink to this headline">¶</a></h2>
 <p><a class="reference external" href="https://kb.vmware.com/s/article/2042772?lang=en_US">This</a> knowledge base
 article helped with a few mischevious systems.</p>
 <p>A lot of information came from <a class="reference external" href="https://viclab.se/combining-influxdb-telegraf-and-grafana-for-esxi-monitoring-2/">here</a></p>
+</div>
+<div class="section" id="snmp-stuff">
+<h2>snmp stuff<a class="headerlink" href="#snmp-stuff" title="Permalink to this headline">¶</a></h2>
+<p>Dumping some stuff here until I figure out a better place for it.</p>
+</div>
+<div class="section" id="esxi-6-7-mib-files">
+<h2>ESXi (6.7) mib files<a class="headerlink" href="#esxi-6-7-mib-files" title="Permalink to this headline">¶</a></h2>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 34%" />
+<col style="width: 59%" />
+<col style="width: 6%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>File</p></th>
+<th class="head"><p>Description</p></th>
+<th class="head"><p>Notes</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>VMWARE-CIMOM-MIB.mib</p></td>
+<td><p>Instrumentation of a CIM object manager</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>VMWARE-ENV-MIB.mib</p></td>
+<td><p>Identifies hardware components of a machine as provided by IPMI</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>VMWARE-ESX-AGENTCAP-MIB.mib</p></td>
+<td><p>Agent capabilities for deployed ESX agents by release</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>VMWARE-HEARTBEAT-MIB.mib</p></td>
+<td><p>Reverse poll for systems that do not yet support polling</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>VMWARE-NSX-MANAGER-AGENTCAP-MIB.mib</p></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>VMWARE-NSX-MANAGER-MIB.mib</p></td>
+<td><p>Information that the receiving party needs</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>VMWARE-OBSOLETE-MIB.mib</p></td>
+<td><p>All previously published managed objects</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>VMWARE-PRODUCTS-MIB.mib</p></td>
+<td><p>OID identifiers</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>VMWARE-RESOURCES-MIB.mib</p></td>
+<td><p>Instrumentation of ESX Hypervisor resources</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>VMWARE-ROOT-MIB.mib</p></td>
+<td><p>VMWare managed object root assignments</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>VMWARE-SRM-EVENT-MIB.mib</p></td>
+<td><p>Site Recovery Manager notifications</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>VMWARE-SYSTEM-MIB.mib</p></td>
+<td><p>System Software Identification</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>VMWARE-TC-MIB.mib</p></td>
+<td><p>Common datatyes for use in VMWare</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>VMWARE-VA-AGENTCAP-MIB.mib</p></td>
+<td><p>Agent capabilities for deployed VMWare virtual applicance agents</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>VMWARE-VC-EVENT-MIB.mib</p></td>
+<td><p>Identifies vCenterTrap notifications</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>VMWARE-VCHA-MIB.mib</p></td>
+<td><p>Describes the vCenter High Availability Service</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>VMWARE-VCOPS-EVENT-MIB.mib</p></td>
+<td><p>Information for receiving party for snmp traps from vRealize</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>VMWARE-VMINFO-MIB.mib</p></td>
+<td><p>Monitoring of inventory and state via polling</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>VMWARE-VRNI-AGENTCAP-MIB.mib</p></td>
+<td><p>Capabilities for deployed VRNI agents</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>VMWARE-VRNI-MIB.mib</p></td>
+<td><p>VMWare vRealize Network Insight</p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
 
@@ -205,7 +294,6 @@ article helped with a few mischevious systems.</p>
 <li class="toctree-l1"><a class="reference internal" href="../../../../arm/index.html">arm</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../db/index.html">databases</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../dns/index.html">DNS stuff</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../elk/index.html">elk stack</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../openssh/index.html">OpenSSH</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../operating_systems/index.html">Operating Systems</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../ossec/index.html">OSSEC</a></li>
@@ -232,6 +320,7 @@ article helped with a few mischevious systems.</p>
 <li class="toctree-l2"><a class="reference internal" href="../../../osquery/index.html">osquery</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../packer/index.html">HashiCorp packer</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../perl/index.html">Perl</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../prometheus/index.html">prometheus</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../python/index.html">Python</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../su.html">su</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../tcpdump/index.html">tcpdump</a></li>
@@ -264,15 +353,15 @@ article helped with a few mischevious systems.</p>
 </ul>
 </div>
 <div id="searchbox" style="display: none" role="search">
-  <h3>Quick search</h3>
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
     <form class="search" action="../../../../search.html" method="get">
-      <div><input type="text" name="q" /></div>
-      <div><input type="submit" value="Go" /></div>
-      <input type="hidden" name="check_keywords" value="yes" />
-      <input type="hidden" name="area" value="default" />
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
     </form>
+    </div>
 </div>
-<script type="text/javascript">$('#searchbox').show(0);</script>
+<script>$('#searchbox').show(0);</script>
         </div>
       </div>
       <div class="clearer"></div>

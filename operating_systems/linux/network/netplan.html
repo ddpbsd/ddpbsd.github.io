@@ -1,29 +1,17 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
+<!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
   <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Netplan &#8212; notes 0.1 documentation</title>
-    
-    <link rel="stylesheet" href="../../../_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
-    
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    '../../../',
-        VERSION:     '0.1',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: '.txt'
-      };
-    </script>
-    <script type="text/javascript" src="../../../_static/jquery.js"></script>
-    <script type="text/javascript" src="../../../_static/underscore.js"></script>
-    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <link rel="stylesheet" href="../../../_static/alabaster.css" type="text/css" />
+    <script id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/doctools.js"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
     <link rel="next" title="Switch from network manager to plain networking in Fedora:" href="network_manager.html" />
@@ -34,8 +22,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
 
-  </head>
-  <body role="document">
+  </head><body>
   
 
     <div class="document">
@@ -48,15 +35,15 @@
   <div class="section" id="netplan">
 <h1>Netplan<a class="headerlink" href="#netplan" title="Permalink to this headline">¶</a></h1>
 <p>All of the other network configuration systems
-weren&#8217;t good enough, so a new one was created.
-I imagine it&#8217;s not very good either, but it uses
+weren’t good enough, so a new one was created.
+I imagine it’s not very good either, but it uses
 YAML. So yay?</p>
 <div class="section" id="renderers">
 <h2>Renderers:<a class="headerlink" href="#renderers" title="Permalink to this headline">¶</a></h2>
 <p>netplan can configure <cite>systemd-networkd</cite> or <cite>NetworkManager</cite>
 but I have no idea which one to use on my system at the moment.
-I&#8217;m guessing <cite>networkd</cite> (which is the same as <cite>systemd-networkd</cite>?),
-because I don&#8217;t see <cite>NetworkManager</cite> in my <cite>dpkg &#8211;list</cite> output.</p>
+I’m guessing <cite>networkd</cite> (which is the same as <cite>systemd-networkd</cite>?),
+because I don’t see <cite>NetworkManager</cite> in my <cite>dpkg –list</cite> output.</p>
 <p>I kind of miss being able to configure a system
 through simple configuration files. Configuration
 files for programs that write configuration files
@@ -67,26 +54,26 @@ the value in this.</p>
 </div>
 <div class="section" id="netplan-generate">
 <h2>netplan generate:<a class="headerlink" href="#netplan-generate" title="Permalink to this headline">¶</a></h2>
-<p>It doesn&#8217;t really do anything until you have
-netplan setup. Why&#8217;s it on the front page before
-the explanation of how to make the yaml files I&#8217;ll
+<p>It doesn’t really do anything until you have
+netplan setup. Why’s it on the front page before
+the explanation of how to make the yaml files I’ll
 never know.</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">netplan generate</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">netplan generate</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="netplan-apply">
 <h2>netplan apply:<a class="headerlink" href="#netplan-apply" title="Permalink to this headline">¶</a></h2>
 <p>This segfaults. But it did delete my interface somehow?
-I&#8217;ll reboot and see if it helps.</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">netplan apply</span>
+I’ll reboot and see if it helps.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">netplan apply</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="basic-example">
 <h2>Basic example:<a class="headerlink" href="#basic-example" title="Permalink to this headline">¶</a></h2>
-<p>I&#8217;m praying this works, but I&#8217;m not holding my breath.</p>
-<div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="nt">network</span><span class="p">:</span>
+<p>I’m praying this works, but I’m not holding my breath.</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">network</span><span class="p">:</span>
   <span class="nt">version</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">2</span>
   <span class="nt">renderer</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">networkd</span>
   <span class="nt">ethernets</span><span class="p">:</span>
@@ -123,7 +110,6 @@ I&#8217;ll reboot and see if it helps.</p>
 <li class="toctree-l1"><a class="reference internal" href="../../../arm/index.html">arm</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../db/index.html">databases</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../dns/index.html">DNS stuff</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../elk/index.html">elk stack</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../openssh/index.html">OpenSSH</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../../index.html">Operating Systems</a><ul class="current">
 <li class="toctree-l2 current"><a class="reference internal" href="../index.html">Linux</a></li>
@@ -157,15 +143,15 @@ I&#8217;ll reboot and see if it helps.</p>
 </ul>
 </div>
 <div id="searchbox" style="display: none" role="search">
-  <h3>Quick search</h3>
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
     <form class="search" action="../../../search.html" method="get">
-      <div><input type="text" name="q" /></div>
-      <div><input type="submit" value="Go" /></div>
-      <input type="hidden" name="check_keywords" value="yes" />
-      <input type="hidden" name="area" value="default" />
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
     </form>
+    </div>
 </div>
-<script type="text/javascript">$('#searchbox').show(0);</script>
+<script>$('#searchbox').show(0);</script>
         </div>
       </div>
       <div class="clearer"></div>

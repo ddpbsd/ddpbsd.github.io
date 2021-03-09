@@ -1,9 +1,17 @@
 
 
-Enable the HDMI monitor above my laptop:
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Enable the HDMI monitor above my laptop
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code-block:: console
 
    xrandr --output HDMI-2 --auto --rotate normal --above eDP-1
 
+Switch the screens
+^^^^^^^^^^^^^^^^^^
+
+Move HDMI-2 to the left of eDP-1
+
+.. code-block:: console
+
+   xrandr --output HDMI-2 --left-of eDP-1

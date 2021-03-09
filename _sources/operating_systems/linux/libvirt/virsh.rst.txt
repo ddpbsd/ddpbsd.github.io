@@ -1,0 +1,10 @@
+
+
+Add a disk
+^^^^^^^^^^
+
+.. code-block:: console
+
+   $ qemu-img create -f qcow2 DISK_NAME.qcow2 50G
+   $ virsh attach-disk vm-name --source /data/vm/DISK_NAME.qcow2 --target vdb --persistent --subdriver qcow2
+

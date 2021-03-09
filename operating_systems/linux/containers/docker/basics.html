@@ -1,29 +1,17 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
+<!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
   <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Docker config info &#8212; notes 0.1 documentation</title>
-    
-    <link rel="stylesheet" href="../../../../_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
-    
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    '../../../../',
-        VERSION:     '0.1',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: '.txt'
-      };
-    </script>
-    <script type="text/javascript" src="../../../../_static/jquery.js"></script>
-    <script type="text/javascript" src="../../../../_static/underscore.js"></script>
-    <script type="text/javascript" src="../../../../_static/doctools.js"></script>
+    <link rel="stylesheet" href="../../../../_static/alabaster.css" type="text/css" />
+    <script id="documentation_options" data-url_root="../../../../" src="../../../../_static/documentation_options.js"></script>
+    <script src="../../../../_static/jquery.js"></script>
+    <script src="../../../../_static/underscore.js"></script>
+    <script src="../../../../_static/doctools.js"></script>
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
     <link rel="next" title="docker build:" href="build.html" />
@@ -34,8 +22,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
 
-  </head>
-  <body role="document">
+  </head><body>
   
 
     <div class="document">
@@ -47,33 +34,33 @@
             
   <div class="section" id="docker-config-info">
 <span id="operating-systems-linux-containers-docker"></span><h1>Docker config info<a class="headerlink" href="#docker-config-info" title="Permalink to this headline">¶</a></h1>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">docker system info</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">docker system info</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="list-of-images">
 <h1>List of images:<a class="headerlink" href="#list-of-images" title="Permalink to this headline">¶</a></h1>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">docker images</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">docker images</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="delete-an-image">
 <h1>Delete an image:<a class="headerlink" href="#delete-an-image" title="Permalink to this headline">¶</a></h1>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">docker rmi IMAGE</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">docker rmi IMAGE</span>
 <span class="go">docker image rm IMAGE</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="delete-a-container">
 <h1>Delete a container:<a class="headerlink" href="#delete-a-container" title="Permalink to this headline">¶</a></h1>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">docker rm CONTAINER</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">docker rm CONTAINER</span>
 <span class="go">docker container rm CONTAINER</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="container-run-example">
 <h1>Container run example:<a class="headerlink" href="#container-run-example" title="Permalink to this headline">¶</a></h1>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">docker run --name=gogs -p 10022:22 -p 10080:3000 -v /var/gogs:/data gogs/gogs</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">docker run --name=gogs -p 10022:22 -p 10080:3000 -v /var/gogs:/data gogs/gogs</span>
 </pre></div>
 </div>
 <p>This runs a container named gogs. You can connect to it on port 10022 and port 10080 of the host.
@@ -101,7 +88,6 @@ It stores stuff in <cite>/var/gogs</cite> on the host, which translates to <cite
 <li class="toctree-l1"><a class="reference internal" href="../../../../arm/index.html">arm</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../db/index.html">databases</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../dns/index.html">DNS stuff</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../elk/index.html">elk stack</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../openssh/index.html">OpenSSH</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../../../index.html">Operating Systems</a><ul class="current">
 <li class="toctree-l2 current"><a class="reference internal" href="../../index.html">Linux</a></li>
@@ -137,15 +123,15 @@ It stores stuff in <cite>/var/gogs</cite> on the host, which translates to <cite
 </ul>
 </div>
 <div id="searchbox" style="display: none" role="search">
-  <h3>Quick search</h3>
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
     <form class="search" action="../../../../search.html" method="get">
-      <div><input type="text" name="q" /></div>
-      <div><input type="submit" value="Go" /></div>
-      <input type="hidden" name="check_keywords" value="yes" />
-      <input type="hidden" name="area" value="default" />
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
     </form>
+    </div>
 </div>
-<script type="text/javascript">$('#searchbox').show(0);</script>
+<script>$('#searchbox').show(0);</script>
         </div>
       </div>
       <div class="clearer"></div>

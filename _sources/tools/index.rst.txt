@@ -27,6 +27,7 @@ Contents:
    osquery/index
    packer/index
    perl/index
+   prometheus/index
    python/index
    su
    tcpdump/index

@@ -1,29 +1,17 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
+<!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
   <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Active Directory &#8212; notes 0.1 documentation</title>
-    
-    <link rel="stylesheet" href="../../../_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
-    
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    '../../../',
-        VERSION:     '0.1',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: '.txt'
-      };
-    </script>
-    <script type="text/javascript" src="../../../_static/jquery.js"></script>
-    <script type="text/javascript" src="../../../_static/underscore.js"></script>
-    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <link rel="stylesheet" href="../../../_static/alabaster.css" type="text/css" />
+    <script id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/doctools.js"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
     <link rel="next" title="SID Stuff" href="../sid_stuff.html" />
@@ -34,8 +22,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
 
-  </head>
-  <body role="document">
+  </head><body>
   
 
     <div class="document">
@@ -48,59 +35,59 @@
   <div class="section" id="active-directory">
 <h1>Active Directory<a class="headerlink" href="#active-directory" title="Permalink to this headline">¶</a></h1>
 <p>Interact with AD through powershell.
-It&#8217;s fun!</p>
+It’s fun!</p>
 <div class="section" id="get-domain-admins">
 <h2>Get Domain Admins<a class="headerlink" href="#get-domain-admins" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">Get-ADGroupMember &quot;Domain Admins&quot; | select name,distinguishedName</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">Get-ADGroupMember &quot;Domain Admins&quot; | select name,distinguishedName</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="list-disabled-accounts">
 <h2>List disabled accounts<a class="headerlink" href="#list-disabled-accounts" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">Search-ADAccount -AccountDisabled</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">Search-ADAccount -AccountDisabled</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="sorted-by-last-logon-date">
 <h2>Sorted by last logon date<a class="headerlink" href="#sorted-by-last-logon-date" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">Search-ADAccount -AccountDisabled -UsersOnly | Sort-Object lastlogondate</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">Search-ADAccount -AccountDisabled -UsersOnly | Sort-Object lastlogondate</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="disabled-users">
 <h2>Disabled users<a class="headerlink" href="#disabled-users" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">Get-ADUser -Filter {enabled -eq &quot;false&quot; -and objectclass -eq &quot;user&quot;} -properties modified | sort-object modified</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">Get-ADUser -Filter {enabled -eq &quot;false&quot; -and objectclass -eq &quot;user&quot;} -properties modified | sort-object modified</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="another-list-of-domain-admins">
 <h2>Another list of domain admins<a class="headerlink" href="#another-list-of-domain-admins" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">Get-ADGroup -Identity S-1-5-21-DOMAIN-512 | Get-ADGroupMember | Get-ADUser -Filter {enabled -eq &quot;false&quot;} -Properties *</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">Get-ADGroup -Identity S-1-5-21-DOMAIN-512 | Get-ADGroupMember | Get-ADUser -Filter {enabled -eq &quot;false&quot;} -Properties *</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="list-users-who-haven-t-logged-in-in-over-90-days">
-<h2>List users who haven&#8217;t logged in in over 90 days<a class="headerlink" href="#list-users-who-haven-t-logged-in-in-over-90-days" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span><span class="nv">Date</span> <span class="o">=</span> <span class="o">(</span>Get-Date<span class="o">)</span>.AddDays<span class="o">(</span>-90<span class="o">)</span>
+<h2>List users who haven’t logged in in over 90 days<a class="headerlink" href="#list-users-who-haven-t-logged-in-in-over-90-days" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span><span class="nv">Date</span> <span class="o">=</span> <span class="o">(</span>Get-Date<span class="o">)</span>.AddDays<span class="o">(</span>-90<span class="o">)</span>
 
-<span class="gp">#</span> Only list enabled users
+<span class="gp"># </span>Only list enabled users
 <span class="go">Get-ADUser -Filter {((Enabled -eq $true) -and (LastLogonDate -lt $Date))} -Properties LastLogonDate | select samaccountname, Name, LastLogonDate | Sort-Object LastLogonDate</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="list-domain-admins-sorted-by-last-logon-date">
 <h2>List Domain Admins sorted by last logon date<a class="headerlink" href="#list-domain-admins-sorted-by-last-logon-date" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">Get-ADGroup &quot;Domain Admins&quot; | Get-ADGroupMember | Get-ADUser -Properties LastLogonDate | Select Name,SamAccountName,LastLogonDate,Enabled | Sort LastLogonDate</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">Get-ADGroup &quot;Domain Admins&quot; | Get-ADGroupMember | Get-ADUser -Properties LastLogonDate | Select Name,SamAccountName,LastLogonDate,Enabled | Sort LastLogonDate</span>
 </pre></div>
 </div>
-<p>This one does <cite>-recurse</cite>, which I don&#8217;t know if it&#8217;s necessary.</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">Get-ADGroupMember -Identity &quot;Domain Admins&quot; | foreach {Get-ADUser -Identity $_.distinguishedname -Properties displayname, samaccountname, lastlogondate | select displayname, samaccountname, lastlogondate, Enabled} | sort LastLogonDate</span>
+<p>This one does <cite>-recurse</cite>, which I don’t know if it’s necessary.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">Get-ADGroupMember -Identity &quot;Domain Admins&quot; | foreach {Get-ADUser -Identity $_.distinguishedname -Properties displayname, samaccountname, lastlogondate | select displayname, samaccountname, lastlogondate, Enabled} | sort LastLogonDate</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="list-users-who-have-not-logged-in-within-30-days-and-disable-accounts">
 <h2>List users who have not logged in within 30 days and disable accounts<a class="headerlink" href="#list-users-who-have-not-logged-in-within-30-days-and-disable-accounts" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">Search-ADAccount -AccountInactive -TimeSpan ([timespan]30d) -UsersOnly | Set-ADUser -Enabled $false -WhatIf</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">Search-ADAccount -AccountInactive -TimeSpan ([timespan]30d) -UsersOnly | Set-ADUser -Enabled $false -WhatIf</span>
 </pre></div>
 </div>
 </div>
@@ -127,7 +114,6 @@ It&#8217;s fun!</p>
 <li class="toctree-l1"><a class="reference internal" href="../../../arm/index.html">arm</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../db/index.html">databases</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../dns/index.html">DNS stuff</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../elk/index.html">elk stack</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../openssh/index.html">OpenSSH</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../../index.html">Operating Systems</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../../linux/index.html">Linux</a></li>
@@ -161,15 +147,15 @@ It&#8217;s fun!</p>
 </ul>
 </div>
 <div id="searchbox" style="display: none" role="search">
-  <h3>Quick search</h3>
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
     <form class="search" action="../../../search.html" method="get">
-      <div><input type="text" name="q" /></div>
-      <div><input type="submit" value="Go" /></div>
-      <input type="hidden" name="check_keywords" value="yes" />
-      <input type="hidden" name="area" value="default" />
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
     </form>
+    </div>
 </div>
-<script type="text/javascript">$('#searchbox').show(0);</script>
+<script>$('#searchbox').show(0);</script>
         </div>
       </div>
       <div class="clearer"></div>

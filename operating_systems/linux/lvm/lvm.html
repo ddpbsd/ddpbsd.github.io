@@ -1,29 +1,17 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
+<!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
   <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>View current lvm info &#8212; notes 0.1 documentation</title>
-    
-    <link rel="stylesheet" href="../../../_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
-    
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    '../../../',
-        VERSION:     '0.1',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: '.txt'
-      };
-    </script>
-    <script type="text/javascript" src="../../../_static/jquery.js"></script>
-    <script type="text/javascript" src="../../../_static/underscore.js"></script>
-    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <link rel="stylesheet" href="../../../_static/alabaster.css" type="text/css" />
+    <script id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/doctools.js"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
     <link rel="next" title="networking" href="../network/index.html" />
@@ -34,8 +22,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
 
-  </head>
-  <body role="document">
+  </head><body>
   
 
     <div class="document">
@@ -45,19 +32,19 @@
 
           <div class="body" role="main">
             
-  <p id="linux-lvm">Linux LVM is complicated alchemy. It&#8217;s entirely possible this is very wrong.</p>
+  <p id="linux-lvm">Linux LVM is complicated alchemy. It’s entirely possible this is very wrong.</p>
 <p><cite>Physical Volumes</cite> (PV) consist of a group of physical disks (disks, partitions, or LUNs).
 A <cite>Volume Group</cite> (VG) consists of some number of PVs.
 <cite>Logical Volumes</cite> are virtual disk partitions on top of the VG.</p>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">Some of this was taken from
+<p class="admonition-title">Note</p>
+<p>Some of this was taken from
 <a class="reference external" href="http://www.howtogeek.com/howto/40702/how-to-manage-and-use-lvm-logical-volume-management-in-ubuntu/">howtogeek</a>
 The instructions there give a lot more detail.</p>
 </div>
 <div class="section" id="view-current-lvm-info">
 <h1>View current lvm info<a class="headerlink" href="#view-current-lvm-info" title="Permalink to this headline">¶</a></h1>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">root@buzzell:/var/VM#</span> pvdisplay
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">root@buzzell:/var/VM# </span>pvdisplay
 <span class="go">  --- Physical volume ---</span>
 <span class="go">  PV Name               /dev/sda3</span>
 <span class="go">  VG Name               buzzell-vg</span>
@@ -85,39 +72,39 @@ The instructions there give a lot more detail.</p>
 <div class="section" id="create-a-partition">
 <h1>Create a partition:<a class="headerlink" href="#create-a-partition" title="Permalink to this headline">¶</a></h1>
 <p>Apparently not always necessary or something.</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">#</span> fdisk /dev/sdb
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp"># </span>fdisk /dev/sdb
 </pre></div>
 </div>
 </div>
 <div class="section" id="create-a-physical-volume">
 <h1>Create a physical volume:<a class="headerlink" href="#create-a-physical-volume" title="Permalink to this headline">¶</a></h1>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">#</span> pvcreate /dev/sdb1
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp"># </span>pvcreate /dev/sdb1
 </pre></div>
 </div>
 </div>
 <div class="section" id="add-to-the-volume-group">
 <h1>Add to the volume group:<a class="headerlink" href="#add-to-the-volume-group" title="Permalink to this headline">¶</a></h1>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">#</span> lvs
-<span class="gp">#</span> vgextend buzzell-vg /dev/sdb1
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp"># </span>lvs
+<span class="gp"># </span>vgextend buzzell-vg /dev/sdb1
 </pre></div>
 </div>
 </div>
 <div class="section" id="create-a-logical-volume">
 <h1>Create a logical volume:<a class="headerlink" href="#create-a-logical-volume" title="Permalink to this headline">¶</a></h1>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">#</span> lvcreate -L 50G -n var buzzell-vg
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp"># </span>lvcreate -L 50G -n var buzzell-vg
 </pre></div>
 </div>
 </div>
 <div class="section" id="format-and-mount">
 <h1>Format and Mount:<a class="headerlink" href="#format-and-mount" title="Permalink to this headline">¶</a></h1>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">#</span> mkfs -t ext4 /dev/mapper/buzzell--vg-var
-<span class="gp">#</span> mount /dev/mapper/buzzell--vg-var /mnt
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp"># </span>mkfs -t ext4 /dev/mapper/buzzell--vg-var
+<span class="gp"># </span>mount /dev/mapper/buzzell--vg-var /mnt
 </pre></div>
 </div>
 </div>
 <div class="section" id="display-information-about-a-volume-group">
 <h1>Display information about a volume group:<a class="headerlink" href="#display-information-about-a-volume-group" title="Permalink to this headline">¶</a></h1>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">root@buzzell:/var/VM#</span> vgdisplay
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">root@buzzell:/var/VM# </span>vgdisplay
 <span class="go">  --- Volume group ---</span>
 <span class="go">  VG Name               buzzell-vg</span>
 <span class="go">  System ID</span>
@@ -147,7 +134,7 @@ The instructions there give a lot more detail.</p>
 </div>
 <div class="section" id="display-logical-volumes">
 <h1>Display logical volumes:<a class="headerlink" href="#display-logical-volumes" title="Permalink to this headline">¶</a></h1>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">root@buzzell:/var/VM#</span> lvdisplay
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">root@buzzell:/var/VM# </span>lvdisplay
 <span class="go">  --- Logical volume ---</span>
 <span class="go">  LV Path                /dev/buzzell-vg/root</span>
 <span class="go">  LV Name                root</span>
@@ -156,7 +143,7 @@ The instructions there give a lot more detail.</p>
 <span class="go">  LV Write Access        read/write</span>
 <span class="go">  LV Creation host, time buzzell, 2016-09-05 19:22:25 -0400</span>
 <span class="go">  LV Status              available</span>
-<span class="gp">  #</span> open                 <span class="m">1</span>
+<span class="gp">  # </span>open                 <span class="m">1</span>
 <span class="go">  LV Size                20.93 GiB</span>
 <span class="go">  Current LE             5359</span>
 <span class="go">  Segments               1</span>
@@ -173,7 +160,7 @@ The instructions there give a lot more detail.</p>
 <span class="go">  LV Write Access        read/write</span>
 <span class="go">  LV Creation host, time buzzell, 2016-09-05 19:22:25 -0400</span>
 <span class="go">  LV Status              available</span>
-<span class="gp">  #</span> open                 <span class="m">2</span>
+<span class="gp">  # </span>open                 <span class="m">2</span>
 <span class="go">  LV Size                7.90 GiB</span>
 <span class="go">  Current LE             2023</span>
 <span class="go">  Segments               1</span>
@@ -190,7 +177,7 @@ The instructions there give a lot more detail.</p>
 <span class="go">  LV Write Access        read/write</span>
 <span class="go">  LV Creation host, time buzzell, 2016-09-22 10:52:46 -0400</span>
 <span class="go">  LV Status              available</span>
-<span class="gp">  #</span> open                 <span class="m">1</span>
+<span class="gp">  # </span>open                 <span class="m">1</span>
 <span class="go">  LV Size                50.00 GiB</span>
 <span class="go">  Current LE             12800</span>
 <span class="go">  Segments               1</span>
@@ -203,7 +190,7 @@ The instructions there give a lot more detail.</p>
 </div>
 <div class="section" id="more-specific-logical-volume-info">
 <h1>More specific logical volume info:<a class="headerlink" href="#more-specific-logical-volume-info" title="Permalink to this headline">¶</a></h1>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">root@buzzell:/var/VM#</span> lvdisplay -m /dev/buzzell-vg/var
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">root@buzzell:/var/VM# </span>lvdisplay -m /dev/buzzell-vg/var
 <span class="go">  --- Logical volume ---</span>
 <span class="go">  LV Path                /dev/buzzell-vg/var</span>
 <span class="go">  LV Name                var</span>
@@ -212,7 +199,7 @@ The instructions there give a lot more detail.</p>
 <span class="go">  LV Write Access        read/write</span>
 <span class="go">  LV Creation host, time buzzell, 2016-09-22 10:52:46 -0400</span>
 <span class="go">  LV Status              available</span>
-<span class="gp">  #</span> open                 <span class="m">1</span>
+<span class="gp">  # </span>open                 <span class="m">1</span>
 <span class="go">  LV Size                50.00 GiB</span>
 <span class="go">  Current LE             12800</span>
 <span class="go">  Segments               1</span>
@@ -251,7 +238,6 @@ The instructions there give a lot more detail.</p>
 <li class="toctree-l1"><a class="reference internal" href="../../../arm/index.html">arm</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../db/index.html">databases</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../dns/index.html">DNS stuff</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../elk/index.html">elk stack</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../openssh/index.html">OpenSSH</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../../index.html">Operating Systems</a><ul class="current">
 <li class="toctree-l2 current"><a class="reference internal" href="../index.html">Linux</a></li>
@@ -285,15 +271,15 @@ The instructions there give a lot more detail.</p>
 </ul>
 </div>
 <div id="searchbox" style="display: none" role="search">
-  <h3>Quick search</h3>
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
     <form class="search" action="../../../search.html" method="get">
-      <div><input type="text" name="q" /></div>
-      <div><input type="submit" value="Go" /></div>
-      <input type="hidden" name="check_keywords" value="yes" />
-      <input type="hidden" name="area" value="default" />
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
     </form>
+    </div>
 </div>
-<script type="text/javascript">$('#searchbox').show(0);</script>
+<script>$('#searchbox').show(0);</script>
         </div>
       </div>
       <div class="clearer"></div>

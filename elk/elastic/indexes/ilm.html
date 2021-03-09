@@ -1,0 +1,153 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Index Lifecycle Management &#8212; notes 0.1 documentation</title>
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/alabaster.css" type="text/css" />
+    <script id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+   
+  <link rel="stylesheet" href="../../../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="index-lifecycle-management">
+<h1>Index Lifecycle Management<a class="headerlink" href="#index-lifecycle-management" title="Permalink to this headline">¶</a></h1>
+<p>I have some mental block with ILM.
+So trying to get a grasp on it has been difficult.</p>
+<p>This could all be wrong, and is definitely incomplete.</p>
+<div class="section" id="basic-steps">
+<h2>Basic steps<a class="headerlink" href="#basic-steps" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li><p>Create the Lifecycle policy</p></li>
+<li><p>Create index template</p></li>
+<li><p>Add the lifecycle policy to the template</p></li>
+<li><p>Bootstrap the index</p></li>
+<li><p>Rejoice?</p></li>
+</ol>
+<p>There are probably a few steps missing, including a lot of cursing.</p>
+</div>
+<div class="section" id="index-template">
+<h2>Index Template<a class="headerlink" href="#index-template" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Do not include <cite>aliases</cite> information in the template.
+If the aliases section is populated it will cause errors about
+the alias pointing to multiple indexes.</p></li>
+<li><p>Include this information in the index template.
+This adds it to the lifecycle policy (can also be done in Kibana).</p></li>
+</ul>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="nt">&quot;settings&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&quot;index&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="nt">&quot;lifecycle&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;ILM_POLICY_NAME&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;rollover_alias&quot;</span><span class="p">:</span> <span class="s2">&quot;INDEX_ALIAS&quot;</span><span class="p">,</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="index-bootstrap">
+<h2>Index Bootstrap<a class="headerlink" href="#index-bootstrap" title="Permalink to this headline">¶</a></h2>
+<p>Boostrap the index with the following settings:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">{</span>
+<span class="go">  &quot;aliases&quot;: {</span>
+<span class="go">    &quot;INDEX_ALIAS&quot;: {</span>
+<span class="go">      &quot;is_write_index&quot;: true</span>
+<span class="go">    }</span>
+<span class="go">  },</span>
+<span class="go">  &quot;settings&quot;: {</span>
+<span class="go">    &quot;index&quot;: {</span>
+<span class="go">      &quot;lifecycle&quot;: {</span>
+<span class="go">        &quot;origination_date&quot;: TODAYS_DATE_IN_UNIX_EPOCH</span>
+<span class="go">      }</span>
+<span class="go">    }</span>
+
+<span class="go">  }</span>
+<span class="go">}</span>
+</pre></div>
+</div>
+<p>The origination_date might not be necessary, but so far it is working.</p>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../../../index.html">notes</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../arm/index.html">arm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../db/index.html">databases</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../dns/index.html">DNS stuff</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../openssh/index.html">OpenSSH</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../operating_systems/index.html">Operating Systems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../ossec/index.html">OSSEC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../rsyslogd/index.html">rsyslogd</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../securityonion/index.html">SecurityOnion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../ssl/index.html">ssl</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../stupid_unix_tricks/index.html">Stupid Unix Tricks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../tools/index.html">Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../vendor_stuff/index.html">Vendor Stuff</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../misc/index.html">misc</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../../index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+        <!-- your html code here -->
+	<div class="footer">
+		<em>This information has a good chance of being wrong, inconsistent, out of date, or just bad. Use at your own risk.
+		Feel free to notify me of any issues though.</em>
+	</div>
+
+
+  </body>
+</html>

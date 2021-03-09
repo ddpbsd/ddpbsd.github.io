@@ -1,29 +1,17 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
+<!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
   <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Bro-IDS agent &#8212; notes 0.1 documentation</title>
-    
-    <link rel="stylesheet" href="../../../_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
-    
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    '../../../',
-        VERSION:     '0.1',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: '.txt'
-      };
-    </script>
-    <script type="text/javascript" src="../../../_static/jquery.js"></script>
-    <script type="text/javascript" src="../../../_static/underscore.js"></script>
-    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <link rel="stylesheet" href="../../../_static/alabaster.css" type="text/css" />
+    <script id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/doctools.js"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
     <link rel="next" title="Cisco" href="../../cisco/index.html" />
@@ -34,8 +22,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
 
-  </head>
-  <body role="document">
+  </head><body>
   
 
     <div class="document">
@@ -53,42 +40,42 @@
 <h1>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this headline">¶</a></h1>
 <blockquote>
 <div><ul class="simple">
-<li>python (2.7?)</li>
-<li>python simplejson</li>
-<li>Maybe more? It ran on OpenBSD after I added the simple json package, but who knows what I had already installed.</li>
+<li><p>python (2.7?)</p></li>
+<li><p>python simplejson</p></li>
+<li><p>Maybe more? It ran on OpenBSD after I added the simple json package, but who knows what I had already installed.</p></li>
 </ul>
 </div></blockquote>
 </div>
 <div class="section" id="basic-usage">
 <h1>Basic usage<a class="headerlink" href="#basic-usage" title="Permalink to this headline">¶</a></h1>
-<p>First, modify the config.cfg. Add your <code class="docutils literal"><span class="pre">api_key</span></code> from the OTX site, and change the <code class="docutils literal"><span class="pre">base_path</span></code> if necessary.
-Use the following <code class="docutils literal"><span class="pre">base_path</span></code> for securityonion (either of these are probably fine, adjust as necessary below):</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">#</span><span class="nv">base_path</span><span class="o">=</span>/opt/bro/share/bro/site/
+<p>First, modify the config.cfg. Add your <code class="docutils literal notranslate"><span class="pre">api_key</span></code> from the OTX site, and change the <code class="docutils literal notranslate"><span class="pre">base_path</span></code> if necessary.
+Use the following <code class="docutils literal notranslate"><span class="pre">base_path</span></code> for securityonion (either of these are probably fine, adjust as necessary below):</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">#</span><span class="nv">base_path</span><span class="o">=</span>/opt/bro/share/bro/site/
 <span class="go">base_path=/opt/bro/share/bro/intel/</span>
 </pre></div>
 </div>
 <p>Next create the following directory tree under the base_path:</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">mkdir -p base_path/OTX-Apps-Bro_IDS/pulses</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">mkdir -p base_path/OTX-Apps-Bro_IDS/pulses</span>
 </pre></div>
 </div>
-<p>Copy the <code class="docutils literal"><span class="pre">__load__.bro</span> <span class="pre">to</span> <span class="pre">``base_path/OTX-Apps-Bro_IDS</span></code>.</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">cp __load__.bro base_path/OTX-Apps-Bro_IDS</span>
+<p>Copy the <code class="docutils literal notranslate"><span class="pre">__load__.bro</span> <span class="pre">to</span> <span class="pre">``base_path/OTX-Apps-Bro_IDS</span></code>.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">cp __load__.bro base_path/OTX-Apps-Bro_IDS</span>
 </pre></div>
 </div>
-<p>Finally, run the script. Select <code class="docutils literal"><span class="pre">first_run</span></code> or <code class="docutils literal"><span class="pre">check_new</span></code> appropriately.</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">python ./otxv2-bro.py [first_run|check_new]</span>
+<p>Finally, run the script. Select <code class="docutils literal notranslate"><span class="pre">first_run</span></code> or <code class="docutils literal notranslate"><span class="pre">check_new</span></code> appropriately.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">python ./otxv2-bro.py [first_run|check_new]</span>
 </pre></div>
 </div>
 <p>Make sure bro intel is enabled:</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">grep &#39;load intel&#39; /opt/bro/share/bro/site/local.bro</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">grep &#39;load intel&#39; /opt/bro/share/bro/site/local.bro</span>
 </pre></div>
 </div>
 <p>Add the OTX files to bro in <cite>/opt/bro/share/bro/site/local.bro</cite>:</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">@load base_path/OTX-Apps-Bro-IDS</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">@load base_path/OTX-Apps-Bro-IDS</span>
 </pre></div>
 </div>
 <p>Restart bro:</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">sudo nsm_sensor_ps-restart --only-bro</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">sudo nsm_sensor_ps-restart --only-bro</span>
 </pre></div>
 </div>
 </div>
@@ -118,7 +105,6 @@ Use the following <code class="docutils literal"><span class="pre">base_path</sp
 <li class="toctree-l1"><a class="reference internal" href="../../../arm/index.html">arm</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../db/index.html">databases</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../dns/index.html">DNS stuff</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../elk/index.html">elk stack</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../openssh/index.html">OpenSSH</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../operating_systems/index.html">Operating Systems</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../ossec/index.html">OSSEC</a></li>
@@ -155,15 +141,15 @@ Use the following <code class="docutils literal"><span class="pre">base_path</sp
 </ul>
 </div>
 <div id="searchbox" style="display: none" role="search">
-  <h3>Quick search</h3>
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
     <form class="search" action="../../../search.html" method="get">
-      <div><input type="text" name="q" /></div>
-      <div><input type="submit" value="Go" /></div>
-      <input type="hidden" name="check_keywords" value="yes" />
-      <input type="hidden" name="area" value="default" />
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
     </form>
+    </div>
 </div>
-<script type="text/javascript">$('#searchbox').show(0);</script>
+<script>$('#searchbox').show(0);</script>
         </div>
       </div>
       <div class="clearer"></div>

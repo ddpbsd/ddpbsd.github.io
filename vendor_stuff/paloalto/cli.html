@@ -1,29 +1,17 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
+<!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
   <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Save config to a file &#8212; notes 0.1 documentation</title>
-    
-    <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-    
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    '../../',
-        VERSION:     '0.1',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: '.txt'
-      };
-    </script>
-    <script type="text/javascript" src="../../_static/jquery.js"></script>
-    <script type="text/javascript" src="../../_static/underscore.js"></script>
-    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="splunk" href="../splunk/index.html" />
@@ -34,8 +22,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
 
-  </head>
-  <body role="document">
+  </head><body>
   
 
     <div class="document">
@@ -47,9 +34,9 @@
             
   <div class="section" id="save-config-to-a-file">
 <h1>Save config to a file<a class="headerlink" href="#save-config-to-a-file" title="Permalink to this headline">¶</a></h1>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">admin@device&gt; configure</span>
-<span class="gp">admin@device#</span> save config to 20180206_palo_config
-<span class="gp">admin@device#</span> <span class="nb">exit</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">admin@device&gt; configure</span>
+<span class="gp">admin@device# </span>save config to 20180206_palo_config
+<span class="gp">admin@device# </span><span class="nb">exit</span>
 <span class="go">admin@device&gt; scp export configuration remote-port 22 from 20180206_palo_config to USER@other-host:/tmp/config</span>
 </pre></div>
 </div>
@@ -57,44 +44,44 @@
 <div class="section" id="show-system-statistics">
 <h1>Show system statistics<a class="headerlink" href="#show-system-statistics" title="Permalink to this headline">¶</a></h1>
 <p>Show some system statistics.</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">&gt;</span> show system state browser
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">&gt; show system state browser</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="more-statistics">
 <h1>More statistics<a class="headerlink" href="#more-statistics" title="Permalink to this headline">¶</a></h1>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">show system statistics (session|application)                 - shows total bandwidth passing through the PAN</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">show system statistics (session|application)                 - shows total bandwidth passing through the PAN</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="information-about-the-cpu-usage">
 <h1>Information about the CPU usage<a class="headerlink" href="#information-about-the-cpu-usage" title="Permalink to this headline">¶</a></h1>
 <p>More information can be found here: <a class="reference external" href="https://knowledgebase.paloaltonetworks.com/KCSArticleDetail?id=kA10g000000ClXwCAK">https://knowledgebase.paloaltonetworks.com/KCSArticleDetail?id=kA10g000000ClXwCAK</a></p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">show running resource-monitor           - shows data plane CPU usgae at different time intervals</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">show running resource-monitor           - shows data plane CPU usgae at different time intervals</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="basically-a-top-output">
 <h1>Basically a top output<a class="headerlink" href="#basically-a-top-output" title="Permalink to this headline">¶</a></h1>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">show system resources                   - shows management plane CPU usage</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">show system resources                   - shows management plane CPU usage</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="display-global-counters">
 <h1>Display Global counters<a class="headerlink" href="#display-global-counters" title="Permalink to this headline">¶</a></h1>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">show counter global</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">show counter global</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="show-arp-table">
 <h1>Show arp table<a class="headerlink" href="#show-arp-table" title="Permalink to this headline">¶</a></h1>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">&gt;</span> show arp ethernet1/1
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">&gt; show arp ethernet1/1</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="ping-a-host">
 <h1>ping a host<a class="headerlink" href="#ping-a-host" title="Permalink to this headline">¶</a></h1>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">&gt;</span> ping host <span class="m">10</span>.10.10.10
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">&gt; ping host 10.10.10.10</span>
 </pre></div>
 </div>
 </div>
@@ -120,7 +107,6 @@
 <li class="toctree-l1"><a class="reference internal" href="../../arm/index.html">arm</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../db/index.html">databases</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../dns/index.html">DNS stuff</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../elk/index.html">elk stack</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../openssh/index.html">OpenSSH</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../operating_systems/index.html">Operating Systems</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../ossec/index.html">OSSEC</a></li>
@@ -155,15 +141,15 @@
 </ul>
 </div>
 <div id="searchbox" style="display: none" role="search">
-  <h3>Quick search</h3>
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
     <form class="search" action="../../search.html" method="get">
-      <div><input type="text" name="q" /></div>
-      <div><input type="submit" value="Go" /></div>
-      <input type="hidden" name="check_keywords" value="yes" />
-      <input type="hidden" name="area" value="default" />
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
     </form>
+    </div>
 </div>
-<script type="text/javascript">$('#searchbox').show(0);</script>
+<script>$('#searchbox').show(0);</script>
         </div>
       </div>
       <div class="clearer"></div>

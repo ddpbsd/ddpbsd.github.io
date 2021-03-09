@@ -61,3 +61,14 @@ Upgrade one package
 .. code-block:: console
 
    apt-get install --only-upgrade <packagename>
+
+
+Find available versions
+^^^^^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: console
+
+   apt-cache policy PACKAGE_NAME
+
+
+

@@ -1,29 +1,17 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
+<!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
   <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Projects &#8212; notes 0.1 documentation</title>
-    
-    <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-    
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    '../../',
-        VERSION:     '0.1',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: '.txt'
-      };
-    </script>
-    <script type="text/javascript" src="../../_static/jquery.js"></script>
-    <script type="text/javascript" src="../../_static/underscore.js"></script>
-    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="arduino" href="arduino/index.html" />
@@ -34,8 +22,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
 
-  </head>
-  <body role="document">
+  </head><body>
   
 
     <div class="document">
@@ -53,25 +40,26 @@
 <p><a class="reference external" href="https://ossec.github.io">OSSEC</a> is an open source
 Host Intrusion Detection systems. It does file integrity
 monitoring, log decoding, alerting, and active response.</p>
-<dl class="docutils">
-<dt>Current tasks:</dt>
-<dd><ul class="first last simple">
-<li>Add libsodium support to get better file hashes.<ul>
-<li>SHA256 support has been added, but not integrated.</li>
-<li>blake2b would be nice</li>
-<li>Still need to look at possible changes in <cite>analysisd</cite></li>
+<dl class="simple">
+<dt>Current tasks:</dt><dd><ul class="simple">
+<li><p>Add libsodium support to get better file hashes.</p>
+<ul>
+<li><p>SHA256 support has been added, but not integrated.</p></li>
+<li><p>blake2b would be nice</p></li>
+<li><p>Still need to look at possible changes in <cite>analysisd</cite></p></li>
 </ul>
 </li>
-<li>lua support in <cite>rootcheck</cite> would make it much more powerful.</li>
-<li>Some kind of stats for <cite>remoted</cite> (number of msgs).</li>
-<li>Some more stats for <cite>analysisd</cite>, or current stats in json.</li>
-<li>Better <cite>syscheckd</cite> alerts.<ul>
-<li>Different alerts for owner/perm/hash/etc?</li>
+<li><p>lua support in <cite>rootcheck</cite> would make it much more powerful.</p></li>
+<li><p>Some kind of stats for <cite>remoted</cite> (number of msgs).</p></li>
+<li><p>Some more stats for <cite>analysisd</cite>, or current stats in json.</p></li>
+<li><p>Better <cite>syscheckd</cite> alerts.</p>
+<ul>
+<li><p>Different alerts for owner/perm/hash/etc?</p></li>
 </ul>
 </li>
-<li>Pledge?</li>
-<li><cite>yara</cite> in <cite>rootcheck</cite>?</li>
-<li><cite>openscap</cite></li>
+<li><p>Pledge?</p></li>
+<li><p><cite>yara</cite> in <cite>rootcheck</cite>?</p></li>
+<li><p><cite>openscap</cite></p></li>
 </ul>
 </dd>
 </dl>
@@ -91,11 +79,11 @@ are the first I want to monitor. Others may follow.</p>
 <div class="section" id="arm">
 <h2>ARM<a class="headerlink" href="#arm" title="Permalink to this headline">¶</a></h2>
 <p>I have a small, but growing, group of ARM based systems.</p>
-<p><cite>pine</cite> is my DNS server. It&#8217;s a pine64 A64+ running OpenBSD.</p>
+<p><cite>pine</cite> is my DNS server. It’s a pine64 A64+ running OpenBSD.</p>
 <p><a class="reference external" href="../mynet/computers/pine64_clusterboard/index.html">clusterboard</a>
-is a pine64 clusterboard with 7 modules. I&#8217;m playing with k3s on it,
-but haven&#8217;t gotten very far.</p>
-<p><cite>espressobin</cite> I haven&#8217;t gotten this one working yet. After it blew up my
+is a pine64 clusterboard with 7 modules. I’m playing with k3s on it,
+but haven’t gotten very far.</p>
+<p><cite>espressobin</cite> I haven’t gotten this one working yet. After it blew up my
 network, I put it off to the side.</p>
 <p><cite>beaglebone black</cite> Not currently in use, but I was thinking of putting it
 to use with the esp8266 sensornet as the aggregator.</p>
@@ -123,7 +111,6 @@ to use with the esp8266 sensornet as the aggregator.</p>
 <li class="toctree-l1"><a class="reference internal" href="../../arm/index.html">arm</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../db/index.html">databases</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../dns/index.html">DNS stuff</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../elk/index.html">elk stack</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../openssh/index.html">OpenSSH</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../operating_systems/index.html">Operating Systems</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../ossec/index.html">OSSEC</a></li>
@@ -134,6 +121,7 @@ to use with the esp8266 sensornet as the aggregator.</p>
 <li class="toctree-l1"><a class="reference internal" href="../../tools/index.html">Tools</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../vendor_stuff/index.html">Vendor Stuff</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../index.html">misc</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../hardware_tokens/tokens.html">Hardware Tokens</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../imagemagick/index.html">Imagemagick</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../kernel_build/index.html">Building a custom kernel</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../ksh/index.html">ksh</a></li>
@@ -161,15 +149,15 @@ to use with the esp8266 sensornet as the aggregator.</p>
 </ul>
 </div>
 <div id="searchbox" style="display: none" role="search">
-  <h3>Quick search</h3>
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
     <form class="search" action="../../search.html" method="get">
-      <div><input type="text" name="q" /></div>
-      <div><input type="submit" value="Go" /></div>
-      <input type="hidden" name="check_keywords" value="yes" />
-      <input type="hidden" name="area" value="default" />
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
     </form>
+    </div>
 </div>
-<script type="text/javascript">$('#searchbox').show(0);</script>
+<script>$('#searchbox').show(0);</script>
         </div>
       </div>
       <div class="clearer"></div>

@@ -1,41 +1,26 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
+<!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
   <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>SSL with logstash and elasticsearch &#8212; notes 0.1 documentation</title>
-    
-    <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-    
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    '../../',
-        VERSION:     '0.1',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: '.txt'
-      };
-    </script>
-    <script type="text/javascript" src="../../_static/jquery.js"></script>
-    <script type="text/javascript" src="../../_static/underscore.js"></script>
-    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Simple config testing" href="testing.html" />
-    <link rel="prev" title="Nested json" href="nested_json.html" />
    
   <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
   
   
   <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
 
-  </head>
-  <body role="document">
+  </head><body>
   
 
     <div class="document">
@@ -49,19 +34,19 @@
 <h1>SSL with logstash and elasticsearch<a class="headerlink" href="#ssl-with-logstash-and-elasticsearch" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="self-signed-certificates">
 <h2>self-signed certificates:<a class="headerlink" href="#self-signed-certificates" title="Permalink to this headline">¶</a></h2>
-<p>The following setting should make it so self-signed certs aren&#8217;t rejected,
-but it doesn&#8217;t work for me.</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">ssl_certificate_verification =&gt; false</span>
+<p>The following setting should make it so self-signed certs aren’t rejected,
+but it doesn’t work for me.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">ssl_certificate_verification =&gt; false</span>
 </pre></div>
 </div>
 <p>As a work around, until I figure out how I want to do certs, I imported
 the self-signed cert into the java <cite>cacerts</cite>:</p>
 <p>Grab the cert:</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">openssl s_client -connect hostname:port</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">openssl s_client -connect hostname:port</span>
 </pre></div>
 </div>
 <p>Import the cert:</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">keytool -import -trustcacerts -alias &quot;HOSTNAME&quot; -file /tmp/c -keystore /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.181-3.b13.el7_5.x86_64/jre/lib/security/cacerts</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">keytool -import -trustcacerts -alias &quot;HOSTNAME&quot; -file /tmp/c -keystore /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.181-3.b13.el7_5.x86_64/jre/lib/security/cacerts</span>
 </pre></div>
 </div>
 <p>It will prompt if you want to trust it, you do (at least this time).</p>
@@ -85,18 +70,10 @@ the self-signed cert into the java <cite>cacerts</cite>:</p>
 
 
 <h3>Navigation</h3>
-<ul class="current">
+<ul>
 <li class="toctree-l1"><a class="reference internal" href="../../arm/index.html">arm</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../db/index.html">databases</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../dns/index.html">DNS stuff</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="../index.html">elk stack</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="../beats/index.html">Beats</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../elastic/index.html">elasticsearch</a></li>
-<li class="toctree-l2 current"><a class="reference internal" href="index.html">logstash</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../monitoring/index.html">monitoring</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../setup.html">Setting up the whole thing</a></li>
-</ul>
-</li>
 <li class="toctree-l1"><a class="reference internal" href="../../openssh/index.html">OpenSSH</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../operating_systems/index.html">Operating Systems</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../ossec/index.html">OSSEC</a></li>
@@ -113,25 +90,19 @@ the self-signed cert into the java <cite>cacerts</cite>:</p>
 <h3>Related Topics</h3>
 <ul>
   <li><a href="../../index.html">Documentation overview</a><ul>
-  <li><a href="../index.html">elk stack</a><ul>
-  <li><a href="index.html">logstash</a><ul>
-      <li>Previous: <a href="nested_json.html" title="previous chapter">Nested json</a></li>
-      <li>Next: <a href="testing.html" title="next chapter">Simple config testing</a></li>
-  </ul></li>
-  </ul></li>
   </ul></li>
 </ul>
 </div>
 <div id="searchbox" style="display: none" role="search">
-  <h3>Quick search</h3>
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
     <form class="search" action="../../search.html" method="get">
-      <div><input type="text" name="q" /></div>
-      <div><input type="submit" value="Go" /></div>
-      <input type="hidden" name="check_keywords" value="yes" />
-      <input type="hidden" name="area" value="default" />
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
     </form>
+    </div>
 </div>
-<script type="text/javascript">$('#searchbox').show(0);</script>
+<script>$('#searchbox').show(0);</script>
         </div>
       </div>
       <div class="clearer"></div>

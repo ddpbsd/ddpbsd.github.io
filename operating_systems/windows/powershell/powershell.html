@@ -1,29 +1,17 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
+<!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
   <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Powershell Basics &#8212; notes 0.1 documentation</title>
-    
-    <link rel="stylesheet" href="../../../_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
-    
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    '../../../',
-        VERSION:     '0.1',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: '.txt'
-      };
-    </script>
-    <script type="text/javascript" src="../../../_static/jquery.js"></script>
-    <script type="text/javascript" src="../../../_static/underscore.js"></script>
-    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <link rel="stylesheet" href="../../../_static/alabaster.css" type="text/css" />
+    <script id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/doctools.js"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
     <link rel="next" title="Active Directory" href="active_directory.html" />
@@ -34,8 +22,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
 
-  </head>
-  <body role="document">
+  </head><body>
   
 
     <div class="document">
@@ -50,7 +37,7 @@
 <p>Some powershell basics.</p>
 <div class="section" id="get-the-version-of-powershell">
 <h2>Get the version of powershell:<a class="headerlink" href="#get-the-version-of-powershell" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">PS C:\&gt; $PSVersionTable.PSVersion</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">PS C:\&gt; $PSVersionTable.PSVersion</span>
 
 <span class="go">Major  Minor  Build  Revision</span>
 <span class="go">-----  -----  -----  --------</span>
@@ -60,36 +47,36 @@
 </div>
 <div class="section" id="delete-files-from-a-remote-pc">
 <h2>Delete files from a remote PC:<a class="headerlink" href="#delete-files-from-a-remote-pc" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">Remove-Item &quot;\\$computer\path\to\file.ext&quot;</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">Remove-Item &quot;\\$computer\path\to\file.ext&quot;</span>
 </pre></div>
 </div>
 <p>Add <cite>-Recurse</cite> to delete recursively:</p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">Remove-Item &quot;\\$computer\path\to\directory&quot; -Recurse</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">Remove-Item &quot;\\$computer\path\to\directory&quot; -Recurse</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="stop-a-service-on-a-remote-pc">
 <h2>Stop a service on a remote PC:<a class="headerlink" href="#stop-a-service-on-a-remote-pc" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">(get-service -ComputerName $computer -Name service_name).Stop()</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp gp-VirtualEnv">(get-service -ComputerName $computer -Name service_name)</span><span class="go">.Stop()</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="start-a-service-on-a-remote-pc">
 <h2>Start a service on a remote PC:<a class="headerlink" href="#start-a-service-on-a-remote-pc" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">(get-service -ComputerName $computer -Name service_name).Start()</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp gp-VirtualEnv">(get-service -ComputerName $computer -Name service_name)</span><span class="go">.Start()</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="sleep-for-10-seconds">
 <h2>Sleep for 10 seconds:<a class="headerlink" href="#sleep-for-10-seconds" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">Start-Sleep -s 10</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">Start-Sleep -s 10</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="get-creds-in-a-pscredential-object">
 <h2>Get creds in a PSCredential object:<a class="headerlink" href="#get-creds-in-a-pscredential-object" title="Permalink to this headline">¶</a></h2>
 <p>Useful for <cite>-PSCredential</cite></p>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span><span class="nv">mycreds</span> <span class="o">=</span> Get-Credential
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span><span class="nv">mycreds</span> <span class="o">=</span> Get-Credential
 </pre></div>
 </div>
 </div>
@@ -116,7 +103,6 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../arm/index.html">arm</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../db/index.html">databases</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../dns/index.html">DNS stuff</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../elk/index.html">elk stack</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../openssh/index.html">OpenSSH</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../../index.html">Operating Systems</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../../linux/index.html">Linux</a></li>
@@ -150,15 +136,15 @@
 </ul>
 </div>
 <div id="searchbox" style="display: none" role="search">
-  <h3>Quick search</h3>
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
     <form class="search" action="../../../search.html" method="get">
-      <div><input type="text" name="q" /></div>
-      <div><input type="submit" value="Go" /></div>
-      <input type="hidden" name="check_keywords" value="yes" />
-      <input type="hidden" name="area" value="default" />
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
     </form>
+    </div>
 </div>
-<script type="text/javascript">$('#searchbox').show(0);</script>
+<script>$('#searchbox').show(0);</script>
         </div>
       </div>
       <div class="clearer"></div>

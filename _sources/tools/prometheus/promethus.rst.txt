@@ -1,0 +1,55 @@
+targets
+^^^^^^^
+
+Targets can be found at `http://127.0.0.1:9090/targets`.
+The query prometheus uses on the target can be found under Endpoint.
+Clicking the link will present all of the available metrics.
+
+
+Queries
+^^^^^^^
+
+This query will graph the bytes from for the `/` filesystem:
+
+.. code-block:: console
+
+   node_filesystem_free_bytes{device="/dev/sd1a",fstype="ffs",mountpoint="/"}
+
+Regex can be used with a `=~` and an appropriate regex string
+
+.. code-block:: console
+
+   node_filesystem_free_bytes{device=~".*",fstype="ffs",mountpoint="/"}
+
+prometheus configuration
+^^^^^^^^^^^^^^^^^^^^^^^^
+
+`/etc/prometheus/prometheus.yml`
+
+This uses information from 
+`this site <https://performance-monitoring-with-prometheus.readthedocs.io/en/latest/switch.html>`_
+as well as the `snmp_exporter` and `prometheus` docs.
+
+
+snmp config
+^^^^^^^^^^^
+
+Query the snmp_exporter using the `openbsd_pf` config.
+
+.. code-block:: console
+
+   - job_name: 'openbsd_pf'
+       static_configs:
+       - targets: 
+         - 127.0.0.1
+       metrics_path: /snmp
+       params:
+         module: [openbsd_pf]
+       relabel_configs:
+         - source_labels: [__address__]
+           target_label: __param_target
+         - source_labels: [__param_target]
+           target_label: instance
+         - target_label: __address__
+           replacement: 127.0.0.1:9116  # SNMP exporter.
+

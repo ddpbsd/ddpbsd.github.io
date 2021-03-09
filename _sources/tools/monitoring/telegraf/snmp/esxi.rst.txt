@@ -1,8 +1,8 @@
 esxi
 ====
 
-Enabling snmp on esxi 5.5:
-^^^^^^^^^^^^^^^^^^^^^^^^^^
+Enabling snmp on esxi 5.5
+^^^^^^^^^^^^^^^^^^^^^^^^^
 
 This is for version 2c.
 
@@ -12,8 +12,8 @@ This is for version 2c.
    esxcli system snmp set --port 161
    esxcli system snmp set -e true
 
-esxi firewalling:
-^^^^^^^^^^^^^^^^^
+esxi firewalling
+^^^^^^^^^^^^^^^^
 
 .. code-block:: console
 
@@ -21,8 +21,8 @@ esxi firewalling:
    esxcli network firewall ruleset allowedip add --ruleset-id snmp --ip-address IP_ADDRESS/MASK
    esxcli network firewall ruleset set --ruleset-id snmp --enabled true
 
-telegraf configuration:
-^^^^^^^^^^^^^^^^^^^^^^^
+telegraf configuration
+^^^^^^^^^^^^^^^^^^^^^^
 
 .. code-block:: console
 
@@ -135,12 +135,64 @@ telegraf configuration:
         oid = ".1.3.6.1.2.1.25.3.3.1.2.32"
 
 
-Troubleshooting:
-^^^^^^^^^^^^^^^^
+Troubleshooting
+^^^^^^^^^^^^^^^
 
 `This <https://kb.vmware.com/s/article/2042772?lang=en_US>`_ knowledge base 
 article helped with a few mischevious systems.
 
 A lot of information came from `here <https://viclab.se/combining-influxdb-telegraf-and-grafana-for-esxi-monitoring-2/>`_
 
+
+
+snmp stuff
+^^^^^^^^^^
+Dumping some stuff here until I figure out a better place for it.
+
+ESXi (6.7) mib files
+^^^^^^^^^^^^^^^^^^^^
+
++--------------------------------------+------------------------------------------------------------------+-------+
+| File                                 | Description                                                      | Notes |
++======================================+==================================================================+=======+
+| VMWARE-CIMOM-MIB.mib                 | Instrumentation of a CIM object manager                          |       |
++--------------------------------------+------------------------------------------------------------------+-------+
+| VMWARE-ENV-MIB.mib                   | Identifies hardware components of a machine as provided by IPMI  |       |
++--------------------------------------+------------------------------------------------------------------+-------+
+| VMWARE-ESX-AGENTCAP-MIB.mib          | Agent capabilities for deployed ESX agents by release            |       |
++--------------------------------------+------------------------------------------------------------------+-------+
+| VMWARE-HEARTBEAT-MIB.mib             | Reverse poll for systems that do not yet support polling         |       |
++--------------------------------------+------------------------------------------------------------------+-------+
+| VMWARE-NSX-MANAGER-AGENTCAP-MIB.mib  |                                                                  |       |
++--------------------------------------+------------------------------------------------------------------+-------+
+| VMWARE-NSX-MANAGER-MIB.mib           | Information that the receiving party needs                       |       |
++--------------------------------------+------------------------------------------------------------------+-------+
+| VMWARE-OBSOLETE-MIB.mib              | All previously published managed objects                         |       |
++--------------------------------------+------------------------------------------------------------------+-------+
+| VMWARE-PRODUCTS-MIB.mib              | OID identifiers                                                  |       |
++--------------------------------------+------------------------------------------------------------------+-------+
+| VMWARE-RESOURCES-MIB.mib             | Instrumentation of ESX Hypervisor resources                      |       |
++--------------------------------------+------------------------------------------------------------------+-------+
+| VMWARE-ROOT-MIB.mib                  | VMWare managed object root assignments                           |       |
++--------------------------------------+------------------------------------------------------------------+-------+
+| VMWARE-SRM-EVENT-MIB.mib             | Site Recovery Manager notifications                              |       |
++--------------------------------------+------------------------------------------------------------------+-------+
+| VMWARE-SYSTEM-MIB.mib                | System Software Identification                                   |       |
++--------------------------------------+------------------------------------------------------------------+-------+
+| VMWARE-TC-MIB.mib                    | Common datatyes for use in VMWare                                |       |
++--------------------------------------+------------------------------------------------------------------+-------+
+| VMWARE-VA-AGENTCAP-MIB.mib           | Agent capabilities for deployed VMWare virtual applicance agents |       |
++--------------------------------------+------------------------------------------------------------------+-------+
+| VMWARE-VC-EVENT-MIB.mib              | Identifies vCenterTrap notifications                             |       |
++--------------------------------------+------------------------------------------------------------------+-------+
+| VMWARE-VCHA-MIB.mib                  | Describes the vCenter High Availability Service                  |       |
++--------------------------------------+------------------------------------------------------------------+-------+
+| VMWARE-VCOPS-EVENT-MIB.mib           | Information for receiving party for snmp traps from vRealize     |       |
++--------------------------------------+------------------------------------------------------------------+-------+
+| VMWARE-VMINFO-MIB.mib                | Monitoring of inventory and state via polling                    |       |
++--------------------------------------+------------------------------------------------------------------+-------+
+| VMWARE-VRNI-AGENTCAP-MIB.mib         | Capabilities for deployed VRNI agents                            |       |
++--------------------------------------+------------------------------------------------------------------+-------+
+| VMWARE-VRNI-MIB.mib                  | VMWare vRealize Network Insight                                  |       |
++--------------------------------------+------------------------------------------------------------------+-------+
 

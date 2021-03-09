@@ -1,0 +1,8 @@
+
+Checkout from github
+^^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: console
+
+   got clone -b main ssh://git@github.com/ddpbsd/REPOSITORY.git
+
