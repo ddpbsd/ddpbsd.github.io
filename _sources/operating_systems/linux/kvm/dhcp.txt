@@ -1,0 +1,7 @@
+Find dhcp addresses
+^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: console
+
+   virsh net-dhcp-leases default
+

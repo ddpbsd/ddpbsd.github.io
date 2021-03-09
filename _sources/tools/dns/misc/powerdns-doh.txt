@@ -1,0 +1,21 @@
+
+
+PowerDNS and DoH
+^^^^^^^^^^^^^^^^
+
+`Source <https://lists.dns-oarc.net/pipermail/dns-operations/2019-September/019184.html>`_
+
+For the PowerDNS Recursor, using RPZ is an option. The other solution is
+creating a Lua script similar to the following. And load it using the lua-dns-script[1] configuration option.
+
+.. code-block:: console
+
+   local uadns = newDN('use-application-dns.net')
+   function preresolve(dq)
+     if uadns == dq.qname then
+       dq.rcode = pdns.NXDOMAIN
+       return true
+     end
+     return false
+   end
+

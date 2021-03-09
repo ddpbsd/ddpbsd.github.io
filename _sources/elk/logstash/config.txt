@@ -1,9 +1,7 @@
-.. _elk_logstash_indexes:
-
 There's probably a better way to do everything I'm doing here.
 
-tags:
-^^^^^
+tags
+^^^^
 
 Tags seem to be important inside the logstash configuration file.
 Something I've started doing is tagging events that come in with `parse`.

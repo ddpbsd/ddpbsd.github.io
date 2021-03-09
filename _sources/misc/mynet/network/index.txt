@@ -1,0 +1,15 @@
+
+=======
+network
+=======
+
+My network stuff.
+
+Contents:
+
+.. toctree::
+   :maxdepth: 2
+
+   switches
+
+

@@ -1,0 +1,21 @@
+==========
+journalctl
+==========
+
+
+Don't truncate
+^^^^^^^^^^^^^^
+
+Fuck this default.
+
+.. code-block:: console
+
+   journalctl --no-pager
+
+View the last 100 lines
+^^^^^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: console
+
+   journalctl --no-pager -n 100 --unit=my.service
+

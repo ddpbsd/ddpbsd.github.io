@@ -5,8 +5,24 @@ arrakis
 Thinkpad X1 Carbon 4th Gen.
 Runs an OpenBSD snapshot, usually not the latest one.
 
-Update the BIOS:
-^^^^^^^^^^^^^^^^
+Update the BIOS
+^^^^^^^^^^^^^^^
 
 Use the geteltorito package.
+
+1. Download the BIOS ISO from lenovo support
+
+2. Run geteltorito on it
+
+   .. code-block:: console
+
+      $ geteltorito -o bios_update.img bios.iso
+
+3. dd the img to USB
+
+   .. code-block:: console
+
+      # dd if=./bios_udpate.imsg of=/dev/rsd2c
+
+4. Boot from usb and rejoice.
 

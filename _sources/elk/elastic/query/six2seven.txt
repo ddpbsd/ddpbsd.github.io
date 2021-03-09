@@ -1,0 +1,45 @@
+
+
+===========================
+Differences from 6.x to 7.x
+===========================
+
+
+Hit count is presented differently
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Previously the hit count would be:
+
+.. code-block:: json
+
+   {"took":17,"timed_out":false,"_shards":{"total":4,"successful":4,"skipped":0,"failed":0},"hits":{"total":924452,"max_score":0.0,"hits":[]}}
+
+.. code-block:: json
+
+   {"took":269,"timed_out":false,"_shards":{"total":4,"successful":4,"skipped":0,"failed":0},"hits":{"total":{"value":10000,"relation":"gte"},"max_score":null,"hits":[]}}
+
+So now the `total` is under `value` instead of under `total` directly.
+
+Total hits
+^^^^^^^^^^
+
+When trying to count all of the hits in a time range, add the following for 7.
+The `track_total_hits` was not previous necessary, but it's limited to 10k for
+7.x.
+
+.. code-block:: console
+
+   /INDEX/_search?size=0
+   {
+     "track_total_hits": true,
+     "query": {
+       "range": {
+         "@timestamp": {
+           "gte": "now-15m",
+           "lte": "now"
+         }
+       }
+     }
+   }
+
+

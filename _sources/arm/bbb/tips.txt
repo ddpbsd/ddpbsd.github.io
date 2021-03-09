@@ -1,10 +1,11 @@
 .. _bbb_tips:
 
+===========
 Random Tips
 ===========
 
-Disable lightdm and run headless:
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Disable lightdm and run headless
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Add the following to `/boot/uEnv.txt`:
 

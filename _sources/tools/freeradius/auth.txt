@@ -86,7 +86,7 @@ radiusd pam:
 Setup `pam_google_authenticator.so` to `forward_pass` to the next piece.
 Use `pam_sss.so` to auth to active directory.
 
-.. code-block::
+.. code-block:: console
 
    #%PAM-1.0
    #auth       include     password-auth

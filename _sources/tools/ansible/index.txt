@@ -1,3 +1,5 @@
+
+=======
 ansible
 =======
 
@@ -8,6 +10,7 @@ Contents:
 
    ansible
    ansible-vault
-   ansible-cmdb   
-      
+   ansible-cmdb
+   variables
+   awx/index      
 

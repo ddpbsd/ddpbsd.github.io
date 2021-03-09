@@ -1,0 +1,17 @@
+
+
+Error:
+
+.. code-block:: console
+
+   root@earth:/data# virsh pool-autostart virtimages
+   error: failed to mark pool virtimages as autostarted
+   error: internal error: pool has no config file
+
+Fix:
+
+.. code-block:: console
+
+   root@earth:/data# virsh pool-edit virtimages
+   Insert a comment or something
+   root@earth:/data# virsh pool-autostart virtimages

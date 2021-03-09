@@ -1,14 +1,14 @@
 .. _tools_databases_postgresql_simplestuff:
 
-Create user:
-^^^^^^^^^^^^
+Create user
+^^^^^^^^^^^
 
 .. code-block:: sql
 
    CREATE ROLE ansibledb LOGIN;
 
-Create database:
-^^^^^^^^^^^^^^^^
+Create database
+^^^^^^^^^^^^^^^
 
 .. code-block:: sql
 
@@ -21,16 +21,16 @@ timestamps as unix epoch
 
    SELECT extract(epoch FROM timestamp) FROM sensors;
 
-Change a user's password:
-^^^^^^^^^^^^^^^^^^^^^^^^^
+Change a user's password
+^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code-block:: sql
 
    ALTER USER my_user_name with password 'my_secure_password';
 
 
-pg_hba.conf location:
-^^^^^^^^^^^^^^^^^^^^^
+pg_hba.conf location
+^^^^^^^^^^^^^^^^^^^^
 
 On ubuntu:
 

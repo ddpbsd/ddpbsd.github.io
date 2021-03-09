@@ -12,7 +12,7 @@ Docker:
 
 docker images:
 
-+==================+============================+======================+
++------------------+----------------------------+----------------------+
 |    Name          | What do?                   |      Link            |
 +==================+============================+======================+
 | so-curator       | Helps manage elasticsearch | `el-curator`_        |
@@ -64,6 +64,13 @@ json. There's more magic in there, but that should be enough for now. Copy and p
 lines from `sostat` give the appropriate output, so now I have that.
 
 
+Restart logstash:
+^^^^^^^^^^^^^^^^^
 
+If changes are made to the `LOGSTASH_OPTIONS` in the `securityonion.conf`, logstash should be
+restarted with:
 
+.. code-block:: console
+
+   sudo so-logstash-restart
 

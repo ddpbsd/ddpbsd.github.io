@@ -1,0 +1,11 @@
+=========
+OpenStack
+=========
+
+Contents:
+
+.. toctree::
+   :maxdepth: 2
+
+   compute/index
+   networking/index

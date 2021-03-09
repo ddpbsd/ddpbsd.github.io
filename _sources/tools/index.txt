@@ -1,5 +1,6 @@
 .. _tools:
 
+=====
 Tools
 =====
 
@@ -9,22 +10,30 @@ Contents:
    :maxdepth: 2
 
    ansible/index
+   certstrap/index
+   curl/index
    dns/index
    freeradius/index
    git/index
    gpg/index
    grafana/index
    java/index
+   jq
    ldap/index
    messaging/index
-   moloch/index
    monitoring/index
+   netstat/netstat
+   opensmtpd/index
    osquery/index
+   packer/index
    perl/index
+   prometheus/index
+   python/index
    su
-   tableau/tableau
    tcpdump/index
    tmux/index
+   vim/index
    virtualization/index
    x11/index
+   retired/index
 

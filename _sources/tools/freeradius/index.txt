@@ -1,5 +1,6 @@
 .. _tools_freeradius:
 
+==========
 FreeRadius
 ==========
 

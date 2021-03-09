@@ -1,7 +1,6 @@
-.. _misc_mynet_dmesgs_ipyr:
 
-dmesg for ipyr:
-^^^^^^^^^^^^^^^
+dmesg for ipyr
+^^^^^^^^^^^^^^
 
 .. code-block:: console
 

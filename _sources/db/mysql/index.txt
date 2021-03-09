@@ -1,3 +1,5 @@
+
+=====
 MySQL
 =====
 
@@ -6,6 +8,7 @@ Contents:
 .. toctree::
    :maxdepth: 2
 
+   defaults
    duplicates
    timediff
    userlist

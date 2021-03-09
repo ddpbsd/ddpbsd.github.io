@@ -1,3 +1,5 @@
+
+================
 Active Directory
 ================
 
@@ -8,6 +10,8 @@ Contents:
 
    dcdiag
    fsmo
+   laps
    replication
    sids
+   gpo/index
 

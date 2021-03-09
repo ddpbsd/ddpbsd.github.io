@@ -1,5 +1,6 @@
 .. _tools_grafana:
 
+=======
 grafana
 =======
 
@@ -9,3 +10,4 @@ Contents:
    :maxdepth: 2
 
    ldap
+   elasticsearch/free_space

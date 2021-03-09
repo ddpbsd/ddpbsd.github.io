@@ -1,0 +1,13 @@
+.. _tools_opensmtpd:
+
+=========
+opensmtpd
+=========
+
+Contents:
+
+.. toctree::
+   :maxdepth: 2
+
+   configuration
+

@@ -1,7 +1,7 @@
 
 
-Save config to a file:
-^^^^^^^^^^^^^^^^^^^^^^
+Save config to a file
+^^^^^^^^^^^^^^^^^^^^^
 
 .. code-block:: console
 
@@ -9,4 +9,63 @@ Save config to a file:
    admin@device# save config to 20180206_palo_config
    admin@device# exit
    admin@device> scp export configuration remote-port 22 from 20180206_palo_config to USER@other-host:/tmp/config
+
+
+Show system statistics
+^^^^^^^^^^^^^^^^^^^^^^
+
+Show some system statistics.
+
+.. code-block:: console
+
+   > show system state browser
+
+
+More statistics
+^^^^^^^^^^^^^^^
+
+.. code-block:: console
+
+   show system statistics (session|application)                 - shows total bandwidth passing through the PAN
+
+
+Information about the CPU usage
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+More information can be found here: https://knowledgebase.paloaltonetworks.com/KCSArticleDetail?id=kA10g000000ClXwCAK
+
+.. code-block:: console
+
+   show running resource-monitor           - shows data plane CPU usgae at different time intervals
+
+
+Basically a top output
+^^^^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: console
+
+   show system resources                   - shows management plane CPU usage
+
+
+Display Global counters
+^^^^^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: console
+
+   show counter global
+
+Show arp table
+^^^^^^^^^^^^^^
+
+.. code-block:: console
+
+   > show arp ethernet1/1
+
+
+ping a host
+^^^^^^^^^^^
+
+.. code-block:: console
+
+   > ping host 10.10.10.10
 

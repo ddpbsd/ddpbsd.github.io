@@ -5,6 +5,7 @@ Packages to install:
 ^^^^^^^^^^^^^^^^^^^^
 
 .. code-block:: console
+
    yum install -y google-authenticator freeradius freeradius-utils
 
 
@@ -37,6 +38,7 @@ This seems to be working so far.
 ^^^^^^^^^^^^^^^^^^^
 
 Add the first `DEFAULT` line above the second.
+
 .. code-block:: console
 
    DEFAULT Auth-Type := PAM

@@ -1,0 +1,17 @@
+
+=========
+Gardening
+=========
+
+My experiments with balcony gardening.
+
+Contents:
+
+.. toctree::
+   :maxdepth: 2
+
+   herbs
+   tomatoes
+   peppers
+   garden_2019
+

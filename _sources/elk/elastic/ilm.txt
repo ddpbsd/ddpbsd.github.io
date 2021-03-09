@@ -1,0 +1,70 @@
+Index Lifecycle Management
+==========================
+
+I have some mental block with ILM.
+So trying to get a grasp on it has been difficult.
+
+This could all be wrong, and is definitely incomplete.
+
+Basic steps
+^^^^^^^^^^^
+
+#. Create the Lifecycle policy
+
+#. Create index template
+
+#. Add the lifecycle policy to the template
+
+#. Bootstrap the index
+
+#. Rejoice?
+
+There are probably a few steps missing, including a lot of cursing.
+
+Index Template
+^^^^^^^^^^^^^^
+
+* Do not include `aliases` information in the template.
+  If the aliases section is populated it will cause errors about
+  the alias pointing to multiple indexes.
+
+* Include this information in the index template.
+  This adds it to the lifecycle policy (can also be done in Kibana).
+
+.. code-block:: json
+
+   {
+     "settings": {
+       "index": {
+         "lifecycle": {
+           "name": "ILM_POLICY_NAME",
+           "rollover_alias": "INDEX_ALIAS",
+
+
+Index Bootstrap
+^^^^^^^^^^^^^^^
+
+Boostrap the index with the following settings:
+
+.. code-block:: console
+
+   {
+     "aliases": {
+       "INDEX_ALIAS": {
+         "is_write_index": true
+       }
+     },
+     "settings": {
+       "index": {
+         "lifecycle": {
+           "origination_date": TODAYS_DATE_IN_UNIX_EPOCH
+         }
+       }
+
+     }
+   }
+
+The origination_date might not be necessary, but so far it is working.
+
+
+
