@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>ufw &#8212; notes 0.1 documentation</title>
+    <title>list all rules &#8212; notes 0.1 documentation</title>
     <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="../../../../_static/alabaster.css" type="text/css" />
     <script id="documentation_options" data-url_root="../../../../" src="../../../../_static/documentation_options.js"></script>
@@ -14,8 +14,8 @@
     <script src="../../../../_static/doctools.js"></script>
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
-    <link rel="next" title="Basic stuff:" href="notes.html" />
-    <link rel="prev" title="list all rules" href="../nft/rules.html" />
+    <link rel="next" title="ufw" href="../ufw/index.html" />
+    <link rel="prev" title="nft" href="index.html" />
    
   <link rel="stylesheet" href="../../../../_static/custom.css" type="text/css" />
   
@@ -32,15 +32,45 @@
 
           <div class="body" role="main">
             
-  <div class="section" id="ufw">
-<h1>ufw<a class="headerlink" href="#ufw" title="Permalink to this headline">¶</a></h1>
-<p>uncomplicated firewall?</p>
-<p>Contents:</p>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="notes.html">Basic stuff:</a></li>
-<li class="toctree-l1"><a class="reference internal" href="notes.html#note-form-the-man-page">Note form the man page:</a></li>
-</ul>
+  <div class="section" id="list-all-rules">
+<h1>list all rules<a class="headerlink" href="#list-all-rules" title="Permalink to this headline">¶</a></h1>
+<p>I think this lists everything.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">nft list ruleset</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="list-rules-in-a-table">
+<h1>list rules in a table<a class="headerlink" href="#list-rules-in-a-table" title="Permalink to this headline">¶</a></h1>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">nft list table firewalld</span>
+</pre></div>
+</div>
+<p>Unless there is an address family.
+There can be a <cite>firewalld</cite> table for each address family.
+Address families include (but are not limited to) ip (ipv4), ip6 (ipv6), inet (ipv4 and ipv6), etc.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">nft list table inet firewalld</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="list-rules-in-a-chain">
+<h1>list rules in a chain<a class="headerlink" href="#list-rules-in-a-chain" title="Permalink to this headline">¶</a></h1>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">nft --handle list chain inet firewalld filter_FWDO_FedoraServer</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="deleting-rules">
+<h1>deleting rules<a class="headerlink" href="#deleting-rules" title="Permalink to this headline">¶</a></h1>
+<p>Deleting rules requires a handle as well as the table, chain, and possibly address family.
+The handle is a number for the rule, starting from 0.
+This seems to start from the beginning of the ruleset (I think).
+Don’t count though, there’s a command to get the handles.
+I think the <cite>–handle</cite> should just be default.</p>
+<p>Get the handle:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">nft --handle list table inet firewalld</span>
+</pre></div>
+</div>
+<p>Delete the rule:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">nft delete rule inet firewalld filter_IN_FedoraServer_allow handle 65</span>
+</pre></div>
 </div>
 </div>
 
@@ -89,8 +119,10 @@
   <li><a href="../../../index.html">Operating Systems</a><ul>
   <li><a href="../../index.html">Linux</a><ul>
   <li><a href="../index.html">Firewalls</a><ul>
-      <li>Previous: <a href="../nft/rules.html" title="previous chapter">list all rules</a></li>
-      <li>Next: <a href="notes.html" title="next chapter">Basic stuff:</a></li>
+  <li><a href="index.html">nft</a><ul>
+      <li>Previous: <a href="index.html" title="previous chapter">nft</a></li>
+      <li>Next: <a href="../ufw/index.html" title="next chapter">ufw</a></li>
+  </ul></li>
   </ul></li>
   </ul></li>
   </ul></li>

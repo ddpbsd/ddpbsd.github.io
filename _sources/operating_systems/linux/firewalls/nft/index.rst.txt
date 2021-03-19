@@ -1,0 +1,24 @@
+
+===
+nft
+===
+
+oh god it gets worse
+
+In `nft` there are tables, chains, and rules (and probably other stuff, fml).
+Each piece can be operated on.
+
+Links
+^^^^^
+
+Of course the `Arch Wiki <https://wiki.archlinux.org/index.php/nftables>`_ has useful information on `nft`.
+
+The nft wiki `Simple Rule Management <https://wiki.nftables.org/wiki-nftables/index.php/Simple_rule_management>`_ page is anything but simple.
+
+Contente:
+
+.. toctree::
+   :maxdepth: 2
+
+   rules
+

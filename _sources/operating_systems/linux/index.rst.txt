@@ -10,6 +10,7 @@ Contents:
 
    apt
    auth/failure
+   boot
    commands
    auditd/index
    centos/index

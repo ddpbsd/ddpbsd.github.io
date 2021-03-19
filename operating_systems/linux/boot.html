@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Random commands &#8212; notes 0.1 documentation</title>
+    <title>mount: unknown filesystem type ‘vfat’ &#8212; notes 0.1 documentation</title>
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
     <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
@@ -14,8 +14,8 @@
     <script src="../../_static/doctools.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="auditd" href="auditd/index.html" />
-    <link rel="prev" title="mount: unknown filesystem type ‘vfat’" href="boot.html" />
+    <link rel="next" title="Random commands" href="commands.html" />
+    <link rel="prev" title="User can login locally but not via ssh" href="auth/failure.html" />
    
   <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
   
@@ -32,20 +32,14 @@
 
           <div class="body" role="main">
             
-  <div class="section" id="random-commands">
-<h1>Random commands<a class="headerlink" href="#random-commands" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="list-disks">
-<h2>List disks:<a class="headerlink" href="#list-disks" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">lsblk</span>
-</pre></div>
-</div>
-</div>
-<div class="section" id="pgrep-list-child-processes-of-a-parent">
-<h2>pgrep - List child processes of a parent:<a class="headerlink" href="#pgrep-list-child-processes-of-a-parent" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">pgrep -P PID_OF_PARENT</span>
-</pre></div>
-</div>
-</div>
+  <div class="section" id="mount-unknown-filesystem-type-vfat">
+<h1>mount: unknown filesystem type ‘vfat’<a class="headerlink" href="#mount-unknown-filesystem-type-vfat" title="Permalink to this headline">¶</a></h1>
+<p>The vfat kernel module isn’t getting loaded.
+Possibly because of the CIS benchmarks.
+This can be a problem for EFI systems (mounting <cite>/boot/efi</cite> isn’t possible without <cite>vfat</cite>).</p>
+<p>Somewhere in (on RHEL based systems) <cite>/etc/modprobe.d</cite> vfat is getting blocked.
+Look for a line like: <cite>install vfat /bin/true</cite> in one of the files.
+Replace that line with just <cite>vfat</cite> and all should be well.</p>
 </div>
 
 
@@ -92,8 +86,8 @@
   <li><a href="../../index.html">Documentation overview</a><ul>
   <li><a href="../index.html">Operating Systems</a><ul>
   <li><a href="index.html">Linux</a><ul>
-      <li>Previous: <a href="boot.html" title="previous chapter">mount: unknown filesystem type ‘vfat’</a></li>
-      <li>Next: <a href="auditd/index.html" title="next chapter">auditd</a></li>
+      <li>Previous: <a href="auth/failure.html" title="previous chapter">User can login locally but not via ssh</a></li>
+      <li>Next: <a href="commands.html" title="next chapter">Random commands</a></li>
   </ul></li>
   </ul></li>
   </ul></li>

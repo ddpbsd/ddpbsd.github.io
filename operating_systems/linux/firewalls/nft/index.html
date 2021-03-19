@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>ufw &#8212; notes 0.1 documentation</title>
+    <title>nft &#8212; notes 0.1 documentation</title>
     <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="../../../../_static/alabaster.css" type="text/css" />
     <script id="documentation_options" data-url_root="../../../../" src="../../../../_static/documentation_options.js"></script>
@@ -14,8 +14,8 @@
     <script src="../../../../_static/doctools.js"></script>
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
-    <link rel="next" title="Basic stuff:" href="notes.html" />
-    <link rel="prev" title="list all rules" href="../nft/rules.html" />
+    <link rel="next" title="list all rules" href="rules.html" />
+    <link rel="prev" title="Save the current iptables ruleset:" href="../iptables/save_and_restore.html" />
    
   <link rel="stylesheet" href="../../../../_static/custom.css" type="text/css" />
   
@@ -32,15 +32,24 @@
 
           <div class="body" role="main">
             
-  <div class="section" id="ufw">
-<h1>ufw<a class="headerlink" href="#ufw" title="Permalink to this headline">¶</a></h1>
-<p>uncomplicated firewall?</p>
-<p>Contents:</p>
+  <div class="section" id="nft">
+<h1>nft<a class="headerlink" href="#nft" title="Permalink to this headline">¶</a></h1>
+<p>oh god it gets worse</p>
+<p>In <cite>nft</cite> there are tables, chains, and rules (and probably other stuff, fml).
+Each piece can be operated on.</p>
+<div class="section" id="links">
+<h2>Links<a class="headerlink" href="#links" title="Permalink to this headline">¶</a></h2>
+<p>Of course the <a class="reference external" href="https://wiki.archlinux.org/index.php/nftables">Arch Wiki</a> has useful information on <cite>nft</cite>.</p>
+<p>The nft wiki <a class="reference external" href="https://wiki.nftables.org/wiki-nftables/index.php/Simple_rule_management">Simple Rule Management</a> page is anything but simple.</p>
+<p>Contente:</p>
 <div class="toctree-wrapper compound">
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="notes.html">Basic stuff:</a></li>
-<li class="toctree-l1"><a class="reference internal" href="notes.html#note-form-the-man-page">Note form the man page:</a></li>
+<li class="toctree-l1"><a class="reference internal" href="rules.html">list all rules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="rules.html#list-rules-in-a-table">list rules in a table</a></li>
+<li class="toctree-l1"><a class="reference internal" href="rules.html#list-rules-in-a-chain">list rules in a chain</a></li>
+<li class="toctree-l1"><a class="reference internal" href="rules.html#deleting-rules">deleting rules</a></li>
 </ul>
+</div>
 </div>
 </div>
 
@@ -89,8 +98,8 @@
   <li><a href="../../../index.html">Operating Systems</a><ul>
   <li><a href="../../index.html">Linux</a><ul>
   <li><a href="../index.html">Firewalls</a><ul>
-      <li>Previous: <a href="../nft/rules.html" title="previous chapter">list all rules</a></li>
-      <li>Next: <a href="notes.html" title="next chapter">Basic stuff:</a></li>
+      <li>Previous: <a href="../iptables/save_and_restore.html" title="previous chapter">Save the current iptables ruleset:</a></li>
+      <li>Next: <a href="rules.html" title="next chapter">list all rules</a></li>
   </ul></li>
   </ul></li>
   </ul></li>
