@@ -10,5 +10,6 @@ Contents:
 
    cli 
    networking
+   snmp
    update
 

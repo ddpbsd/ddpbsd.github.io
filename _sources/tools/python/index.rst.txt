@@ -7,5 +7,6 @@ Python
 .. toctree::
 
    pip
+   pyinstaller
    venv
 

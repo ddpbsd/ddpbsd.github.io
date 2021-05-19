@@ -1,0 +1,16 @@
+
+
+elaticsearch config
+^^^^^^^^^^^^^^^^^^^
+
+Change the `elasticsearch.yml` here: `/opt/so/saltstack/default/salt/elasticsearch/files`
+
+
+siem
+^^^^
+
+Enable security using config above.
+Need to enable https. Cert is in `/usr/share/elasticsearch/config/` inside the docker container. It's in `/etc/pki` somewhere on the server.
+
+
+

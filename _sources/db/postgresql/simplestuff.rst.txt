@@ -37,3 +37,12 @@ On ubuntu:
 .. code-block:: console
 
    /etc/postgresql/9.5/main/pg_hba.conf
+
+
+epoch to timestamp
+^^^^^^^^^^^^^^^^^^
+
+.. code-block:: console
+
+   select to_timestamp(field) from table;
+

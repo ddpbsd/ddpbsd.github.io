@@ -1,0 +1,19 @@
+track source of failed logins
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Account getting locked out randomly?
+Try this.
+
+In powershell, find the domain controller with the `PDC emulator` role.
+This is the one to check on.
+
+.. code-block:: console
+
+   (get-addomain).pdcemulator
+
+
+Then filter for event id 4740 in Event Viewer on that system in the Security section.
+Filter as necesary, find the user (Find on the right).
+
+Look at events and find the `Caller Computer Name` field in the General tab.
+

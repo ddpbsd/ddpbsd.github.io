@@ -25,4 +25,10 @@ dn for a regular user in AD
 
    dn: CN=test mcmuffin,CN=Users,DC=ad,DC=lab,DC=wafflelab,DC=online
 
+Another search in AD
+^^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: console
+
+   ldapsearch -H ldap://ad.wafflelab.online -x -W -D "user@wafflelab.online" -b "DC=wafflelab,DC=online"
 

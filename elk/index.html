@@ -4,15 +4,14 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>elk stack &#8212; notes 0.1 documentation</title>
-    <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>elastic stuff &#8212; notes 0.1 documentation</title>
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
     <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
-    <script src="../_static/language_data.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Beats" href="beats/index.html" />
@@ -33,8 +32,8 @@
 
           <div class="body" role="main">
             
-  <div class="section" id="elk-stack">
-<h1>elk stack<a class="headerlink" href="#elk-stack" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="elastic-stuff">
+<h1>elastic stuff<a class="headerlink" href="#elastic-stuff" title="Permalink to this headline">¶</a></h1>
 <p>Contents:</p>
 <div class="toctree-wrapper compound">
 <ul>
@@ -43,30 +42,20 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="elastic/index.html">elasticsearch</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="elastic/create_index.html">Create an index on ES</a></li>
-<li class="toctree-l2"><a class="reference internal" href="elastic/create_index.html#old-and-broken">Old and broken</a></li>
-<li class="toctree-l2"><a class="reference internal" href="elastic/dev.html">Get list of shards</a></li>
-<li class="toctree-l2"><a class="reference internal" href="elastic/dev.html#sort-by-node-and-then-size-desc">Sort by node and then size (desc)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="elastic/dev.html#change-the-breaker-limit">Change the breaker limit</a></li>
-<li class="toctree-l2"><a class="reference internal" href="elastic/ilm.html">Index Lifecycle Management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="elastic/indexes/index.html">indexes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="elastic/dev.html">Change the breaker limit</a></li>
 <li class="toctree-l2"><a class="reference internal" href="elastic/status.html">Get the status of ES</a></li>
-<li class="toctree-l2"><a class="reference internal" href="elastic/status.html#get-a-list-of-indexes">Get a list of indexes</a></li>
-<li class="toctree-l2"><a class="reference internal" href="elastic/status.html#look-for-read-only-indexes">Look for read only indexes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="elastic/status.html#filesystem-stats">Filesystem stats</a></li>
-<li class="toctree-l2"><a class="reference internal" href="elastic/security/logstash_user.html">Logstash role</a></li>
-<li class="toctree-l2"><a class="reference internal" href="elastic/security/logstash_user.html#logstash-user">Logstash user</a></li>
-<li class="toctree-l2"><a class="reference internal" href="elastic/security/beats_user.html">beats_writer role</a></li>
+<li class="toctree-l2"><a class="reference internal" href="elastic/status.html#get-version-and-other-info">Get version and other info</a></li>
 <li class="toctree-l2"><a class="reference internal" href="elastic/templates.html">Templates</a></li>
 <li class="toctree-l2"><a class="reference internal" href="elastic/shards.html">shards</a></li>
+<li class="toctree-l2"><a class="reference internal" href="elastic/tasks.html">Tasks</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="logstash/index.html">logstash</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="logstash/config.html">tags:</a></li>
+<li class="toctree-l2"><a class="reference internal" href="logstash/config.html">tags</a></li>
 <li class="toctree-l2"><a class="reference internal" href="logstash/config.html#example-config">Example config</a></li>
-<li class="toctree-l2"><a class="reference internal" href="logstash/grok.html">grok documentation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="logstash/grok.html#optional-fields">optional fields:</a></li>
-<li class="toctree-l2"><a class="reference internal" href="logstash/kv.html">kv parser</a></li>
-<li class="toctree-l2"><a class="reference internal" href="logstash/nested_json.html">Nested json</a></li>
+<li class="toctree-l2"><a class="reference internal" href="logstash/filter/index.html">filter</a></li>
 <li class="toctree-l2"><a class="reference internal" href="logstash/ssl.html">SSL with logstash and elasticsearch</a></li>
 <li class="toctree-l2"><a class="reference internal" href="logstash/testing.html">Simple config testing</a></li>
 <li class="toctree-l2"><a class="reference internal" href="logstash/testing.html#this-is-working-with-6-5">This is working with 6.5</a></li>
@@ -115,7 +104,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../arm/index.html">arm</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../db/index.html">databases</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../dns/index.html">DNS stuff</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">elk stack</a><ul>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">elastic stuff</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="beats/index.html">Beats</a></li>
 <li class="toctree-l2"><a class="reference internal" href="elastic/index.html">elasticsearch</a></li>
 <li class="toctree-l2"><a class="reference internal" href="logstash/index.html">logstash</a></li>

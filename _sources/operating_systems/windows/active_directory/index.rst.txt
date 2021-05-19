@@ -11,6 +11,7 @@ Contents:
    dcdiag
    fsmo
    laps
+   logins
    replication
    sids
    gpo/index

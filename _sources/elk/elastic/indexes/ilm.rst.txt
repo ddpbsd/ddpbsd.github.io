@@ -48,6 +48,7 @@ Boostrap the index with the following settings:
 
 .. code-block:: console
 
+   PUT /INDEX_ALIAS-000001
    {
      "aliases": {
        "INDEX_ALIAS": {

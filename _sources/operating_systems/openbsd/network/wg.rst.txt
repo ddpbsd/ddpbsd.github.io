@@ -1,0 +1,9 @@
+wireguard
+=========
+
+No handshake
+^^^^^^^^^^^^
+
+Unless there is traffic going through wg, there is no indication that it's working.
+So `ping` away, just to make sure.
+

@@ -1,7 +1,6 @@
-
-=========
-elk stack
-=========
+=============
+elastic stuff
+=============
 
 Contents:
 
@@ -12,6 +11,5 @@ Contents:
    elastic/index
    logstash/index
    monitoring/index
-   setup    
-      
+   setup.rst
 

@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>esxi Update process &#8212; notes 0.1 documentation</title>
+    <title>Get the current config &#8212; notes 0.1 documentation</title>
     <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/alabaster.css" type="text/css" />
     <script id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
@@ -14,8 +14,8 @@
     <script src="../../../_static/doctools.js"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="misc" href="../../../misc/index.html" />
-    <link rel="prev" title="Get the current config" href="snmp.html" />
+    <link rel="next" title="esxi Update process" href="update.html" />
+    <link rel="prev" title="Network stuff" href="networking.html" />
    
   <link rel="stylesheet" href="../../../_static/custom.css" type="text/css" />
   
@@ -32,42 +32,31 @@
 
           <div class="body" role="main">
             
-  <div class="section" id="esxi-update-process">
-<span id="vmware-esxi-update"></span><h1>esxi Update process<a class="headerlink" href="#esxi-update-process" title="Permalink to this headline">¶</a></h1>
-</div>
-<div class="section" id="find-the-esxi-version-information">
-<h1>Find the ESXi version information:<a class="headerlink" href="#find-the-esxi-version-information" title="Permalink to this headline">¶</a></h1>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">~ # vmware -l</span>
-<span class="go">VMware ESXi 5.5.0 Update 3</span>
-<span class="go">~ # vmware --version</span>
-<span class="go">VMware ESXi 5.5.0 build-5230635</span>
+  <div class="section" id="get-the-current-config">
+<h1>Get the current config<a class="headerlink" href="#get-the-current-config" title="Permalink to this headline">¶</a></h1>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">esxcli system snmp get</span>
 </pre></div>
 </div>
-<p>Download patches from the <a class="reference external" href="http://www.vmware.com/patchmgr/download.portal">patch portal</a></p>
-<p>Upload the patch to the esxi system’s datastore.</p>
-<p>Suspend, shutdown, or migrate all running VMs.</p>
-<p>Put the host into maintenance mode:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">vim-cmd hostsvc/maintenance_mode_enter</span>
+</div>
+<div class="section" id="enable-v2">
+<h1>enable v2<a class="headerlink" href="#enable-v2" title="Permalink to this headline">¶</a></h1>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">esxcli system snmp set --communities public</span>
 </pre></div>
 </div>
-<p><code class="docutils literal notranslate"><span class="pre">cd</span></code> to the directory containing the patch file</p>
-<p>Install the patch:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">esxcli software vib update --depot=/full/path/to/patch.zip</span>
+</div>
+<div class="section" id="enable-snmpd">
+<h1>Enable snmpd<a class="headerlink" href="#enable-snmpd" title="Permalink to this headline">¶</a></h1>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">esxcli system snmp set --enable true</span>
 </pre></div>
 </div>
-<p>Verity the installation.</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">esxcli software vib list</span>
-</pre></div>
 </div>
-<p>Reboot.</p>
-<p>Exit maintenance mode:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">vim-cmd hostsvc/maintenance_mode_exit</span>
+<div class="section" id="allow-requests-through-the-firewall">
+<h1>allow requests through the firewall<a class="headerlink" href="#allow-requests-through-the-firewall" title="Permalink to this headline">¶</a></h1>
+<p>Only from the local subnet though</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">esxcli network firewall ruleset set --ruleset-id snmp --allowed-all false</span>
+<span class="go">esxcli network firewall ruleset allowedip add --ruleset-id snmp --ip-address 10.35.36.0/24</span>
+<span class="go">esxcli network firewall ruleset set --ruleset-id snmp --enabled true</span>
 </pre></div>
-</div>
-<p>Restore the Vms.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Instructions are from <a class="reference external" href="https://kb.vmware.com/selfservice/microsites/search.do?language=en_US&amp;cmd=displayKC&amp;externalId=2008939">VMWare kb 2008939</a></p>
 </div>
 </div>
 
@@ -120,8 +109,8 @@
   <li><a href="../../index.html">Vendor Stuff</a><ul>
   <li><a href="../index.html">VMWare</a><ul>
   <li><a href="index.html">&lt;no title&gt;</a><ul>
-      <li>Previous: <a href="snmp.html" title="previous chapter">Get the current config</a></li>
-      <li>Next: <a href="../../../misc/index.html" title="next chapter">misc</a></li>
+      <li>Previous: <a href="networking.html" title="previous chapter">Network stuff</a></li>
+      <li>Next: <a href="update.html" title="next chapter">esxi Update process</a></li>
   </ul></li>
   </ul></li>
   </ul></li>

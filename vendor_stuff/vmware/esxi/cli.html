@@ -73,6 +73,30 @@ You probably shouldn’t use these.</p>
 </pre></div>
 </div>
 </div>
+<div class="section" id="installing-updates">
+<h1>installing updates<a class="headerlink" href="#installing-updates" title="Permalink to this headline">¶</a></h1>
+<p><a class="reference external" href="https://kb.vmware.com/s/article/2008939">https://kb.vmware.com/s/article/2008939</a></p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">[root@blah:/file/location] esxcli software vib install -d /full/path/to/vib.zip</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="conflicting-vib-stuff-with-dell-iso">
+<h1>conflicting vib stuff with dell iso<a class="headerlink" href="#conflicting-vib-stuff-with-dell-iso" title="Permalink to this headline">¶</a></h1>
+<p><a class="reference external" href="https://vmadminthoughts.wordpress.com/2020/09/04/conflicting-vibs-on-esxi-6-7u1-with-dell-image-profile/">https://vmadminthoughts.wordpress.com/2020/09/04/conflicting-vibs-on-esxi-6-7u1-with-dell-image-profile/</a></p>
+<p>Remove qlogic vib stuff, then install the big thing.</p>
+</div>
+<div class="section" id="powercli">
+<h1>powercli<a class="headerlink" href="#powercli" title="Permalink to this headline">¶</a></h1>
+<p>Can’t create advanced settings with PowerCLI or something:
+<cite>Current license or ESXi version prohibits execution of the requested operation.</cite></p>
+<p>Use <cite>esxcfg-advcfg</cite></p>
+</div>
+<div class="section" id="esxcfg-advcfg">
+<h1>esxcfg-advcfg<a class="headerlink" href="#esxcfg-advcfg" title="Permalink to this headline">¶</a></h1>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">esxcfg-advcfg --add-option isolation.device.edit.disable --add-type string --add-desc &quot;CIS 8.2.6&quot; --add-default &quot;True&quot;</span>
+</pre></div>
+</div>
+</div>
 
 
           </div>
@@ -95,6 +119,7 @@ You probably shouldn’t use these.</p>
 <li class="toctree-l1"><a class="reference internal" href="../../../arm/index.html">arm</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../db/index.html">databases</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../dns/index.html">DNS stuff</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../elk/index.html">elastic stuff</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../openssh/index.html">OpenSSH</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../operating_systems/index.html">Operating Systems</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../ossec/index.html">OSSEC</a></li>

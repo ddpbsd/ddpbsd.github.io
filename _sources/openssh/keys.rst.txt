@@ -13,6 +13,13 @@ It defaults to `sha256`, but `-E md5` is also available.
 
    ssh-keygen -lf KEY
 
+scp only key
+^^^^^^^^^^^^
+
+.. code-block:: console
+
+   no-port-forwarding,no-pty,command="scp -v -t /destination/path" ssh-rsa ...
+
 Hardware Keys
 =============
 

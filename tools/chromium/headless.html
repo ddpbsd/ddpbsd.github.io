@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>PostgreSQL &#8212; notes 0.1 documentation</title>
+    <title>headless on openbsd &#8212; notes 0.1 documentation</title>
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
     <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
@@ -14,8 +14,6 @@
     <script src="../../_static/doctools.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Create user" href="simplestuff.html" />
-    <link rel="prev" title="Get a list of users" href="../mysql/userlist.html" />
    
   <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
   
@@ -32,18 +30,19 @@
 
           <div class="body" role="main">
             
-  <div class="section" id="postgresql">
-<h1>PostgreSQL<a class="headerlink" href="#postgresql" title="Permalink to this headline">¶</a></h1>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="simplestuff.html">Create user</a></li>
-<li class="toctree-l1"><a class="reference internal" href="simplestuff.html#create-database">Create database</a></li>
-<li class="toctree-l1"><a class="reference internal" href="simplestuff.html#timestamps-as-unix-epoch">timestamps as unix epoch</a></li>
-<li class="toctree-l1"><a class="reference internal" href="simplestuff.html#change-a-user-s-password">Change a user’s password</a></li>
-<li class="toctree-l1"><a class="reference internal" href="simplestuff.html#pg-hba-conf-location">pg_hba.conf location</a></li>
-<li class="toctree-l1"><a class="reference internal" href="simplestuff.html#epoch-to-timestamp">epoch to timestamp</a></li>
-<li class="toctree-l1"><a class="reference internal" href="userlist.html">Create a list of database users</a></li>
-</ul>
+  <div class="section" id="headless-on-openbsd">
+<h1>headless on openbsd<a class="headerlink" href="#headless-on-openbsd" title="Permalink to this headline">¶</a></h1>
+<p>Need to disable gpu</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">chrome --headless --disable-gpu https://www.google.com</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="print-to-pdf">
+<h1>Print to pdf<a class="headerlink" href="#print-to-pdf" title="Permalink to this headline">¶</a></h1>
+<p>I did this from <cite>~/Downloads</cite> to make <cite>unveil</cite> and <cite>pledge</cite> happy.
+Not sure it’s necessary.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">chrome --headless --disable-gpu --print-to-pdf=./x.pdf ./index.html</span>
+</pre></div>
 </div>
 </div>
 
@@ -64,14 +63,9 @@
 
 
 <h3>Navigation</h3>
-<ul class="current">
+<ul>
 <li class="toctree-l1"><a class="reference internal" href="../../arm/index.html">arm</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="../index.html">databases</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="../mysql/index.html">MySQL</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">PostgreSQL</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../sql/index.html">SQL Stuff</a></li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="../../db/index.html">databases</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../dns/index.html">DNS stuff</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../elk/index.html">elastic stuff</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../openssh/index.html">OpenSSH</a></li>
@@ -81,7 +75,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../securityonion/index.html">SecurityOnion</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../ssl/index.html">ssl</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../stupid_unix_tricks/index.html">Stupid Unix Tricks</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../tools/index.html">Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Tools</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../vendor_stuff/index.html">Vendor Stuff</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../misc/index.html">misc</a></li>
 </ul>
@@ -90,10 +84,6 @@
 <h3>Related Topics</h3>
 <ul>
   <li><a href="../../index.html">Documentation overview</a><ul>
-  <li><a href="../index.html">databases</a><ul>
-      <li>Previous: <a href="../mysql/userlist.html" title="previous chapter">Get a list of users</a></li>
-      <li>Next: <a href="simplestuff.html" title="next chapter">Create user</a></li>
-  </ul></li>
   </ul></li>
 </ul>
 </div>

@@ -50,3 +50,38 @@ Get info for a task:
 
    vim-cmd vimsvc/task_info TASK_ID
 
+
+installing updates
+^^^^^^^^^^^^^^^^^^
+
+https://kb.vmware.com/s/article/2008939
+
+.. code-block:: console
+
+   [root@blah:/file/location] esxcli software vib install -d /full/path/to/vib.zip
+
+conflicting vib stuff with dell iso
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+https://vmadminthoughts.wordpress.com/2020/09/04/conflicting-vibs-on-esxi-6-7u1-with-dell-image-profile/
+
+Remove qlogic vib stuff, then install the big thing.
+
+powercli
+^^^^^^^^
+
+Can't create advanced settings with PowerCLI or something:
+`Current license or ESXi version prohibits execution of the requested operation.`
+
+Use `esxcfg-advcfg`
+
+esxcfg-advcfg
+^^^^^^^^^^^^^
+
+.. code-block:: console
+
+   esxcfg-advcfg --add-option isolation.device.edit.disable --add-type string --add-desc "CIS 8.2.6" --add-default "True"
+
+
+
+

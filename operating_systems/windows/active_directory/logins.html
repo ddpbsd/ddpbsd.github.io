@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Active Directory &#8212; notes 0.1 documentation</title>
+    <title>track source of failed logins &#8212; notes 0.1 documentation</title>
     <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/alabaster.css" type="text/css" />
     <script id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
@@ -14,8 +14,8 @@
     <script src="../../../_static/doctools.js"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="Test connectivity between 2 AD controllers:" href="dcdiag.html" />
-    <link rel="prev" title="Windows" href="../index.html" />
+    <link rel="next" title="Show replication status:" href="replication.html" />
+    <link rel="prev" title="LAPS" href="laps.html" />
    
   <link rel="stylesheet" href="../../../_static/custom.css" type="text/css" />
   
@@ -32,33 +32,18 @@
 
           <div class="body" role="main">
             
-  <div class="section" id="active-directory">
-<h1>Active Directory<a class="headerlink" href="#active-directory" title="Permalink to this headline">¶</a></h1>
-<p>Contents:</p>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="dcdiag.html">Test connectivity between 2 AD controllers:</a></li>
-<li class="toctree-l1"><a class="reference internal" href="fsmo.html">Find the FSMO roles of a server:</a></li>
-<li class="toctree-l1"><a class="reference internal" href="laps.html">LAPS</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="laps.html#installation">Installation:</a></li>
-<li class="toctree-l2"><a class="reference internal" href="laps.html#server">Server:</a></li>
-<li class="toctree-l2"><a class="reference internal" href="laps.html#clients">Clients:</a></li>
-<li class="toctree-l2"><a class="reference internal" href="laps.html#errors">Errors:</a></li>
-<li class="toctree-l2"><a class="reference internal" href="laps.html#link">Link:</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="logins.html">track source of failed logins</a></li>
-<li class="toctree-l1"><a class="reference internal" href="replication.html">Show replication status:</a></li>
-<li class="toctree-l1"><a class="reference internal" href="replication.html#check-the-replication-queue">Check the replication queue:</a></li>
-<li class="toctree-l1"><a class="reference internal" href="replication.html#check-the-replication-summary">Check the replication summary:</a></li>
-<li class="toctree-l1"><a class="reference internal" href="sids.html">Common SIDS:</a></li>
-<li class="toctree-l1"><a class="reference internal" href="gpo/index.html">Group Policy Objects</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="gpo/certificates.html">Distribute certificates to computers</a></li>
-<li class="toctree-l2"><a class="reference internal" href="gpo/gpo_cmd.html">GPO Client Commands</a></li>
-</ul>
-</li>
-</ul>
+  <div class="section" id="track-source-of-failed-logins">
+<h1>track source of failed logins<a class="headerlink" href="#track-source-of-failed-logins" title="Permalink to this headline">¶</a></h1>
+<p>Account getting locked out randomly?
+Try this.</p>
+<p>In powershell, find the domain controller with the <cite>PDC emulator</cite> role.
+This is the one to check on.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp gp-VirtualEnv">(get-addomain)</span><span class="go">.pdcemulator</span>
+</pre></div>
 </div>
+<p>Then filter for event id 4740 in Event Viewer on that system in the Security section.
+Filter as necesary, find the user (Find on the right).</p>
+<p>Look at events and find the <cite>Caller Computer Name</cite> field in the General tab.</p>
 </div>
 
 
@@ -106,8 +91,10 @@
   <li><a href="../../../index.html">Documentation overview</a><ul>
   <li><a href="../../index.html">Operating Systems</a><ul>
   <li><a href="../index.html">Windows</a><ul>
-      <li>Previous: <a href="../index.html" title="previous chapter">Windows</a></li>
-      <li>Next: <a href="dcdiag.html" title="next chapter">Test connectivity between 2 AD controllers:</a></li>
+  <li><a href="index.html">Active Directory</a><ul>
+      <li>Previous: <a href="laps.html" title="previous chapter">LAPS</a></li>
+      <li>Next: <a href="replication.html" title="next chapter">Show replication status:</a></li>
+  </ul></li>
   </ul></li>
   </ul></li>
   </ul></li>

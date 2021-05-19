@@ -31,6 +31,10 @@ Put the host into maintenance mode:
 
 Install the patch:
 
+.. note:
+
+   If it complains about some VIBs you might be able to remove them.
+
 .. code-block:: console
 
    esxcli software vib update --depot=/full/path/to/patch.zip
