@@ -22,6 +22,7 @@ Contents:
    db/index
    dns/index
    elk/index
+   k8s/index
    openssh/index
    operating_systems/index
    ossec/index
