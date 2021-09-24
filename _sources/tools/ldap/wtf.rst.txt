@@ -1,0 +1,9 @@
+
+Stuff I don't want to forget but don't really understand
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+base dn isn't the "username" of the user.
+in ad it's some unholy usage of their first and last name, spaces and punctuation and all.
+
+
+

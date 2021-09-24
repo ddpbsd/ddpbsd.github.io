@@ -1,0 +1,7 @@
+discovery-ignore-rst
+^^^^^^^^^^^^^^^^^^^^
+
+Ignore RST replies.
+Some routers/firewalls/whatever spoof RSTs for non-existent hosts,
+this makes nmap ignore those resets and assume the system is down.
+

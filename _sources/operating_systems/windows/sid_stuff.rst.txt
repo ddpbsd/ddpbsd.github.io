@@ -2,15 +2,15 @@ SID Stuff
 =========
 
 
-Find a user based on the SID:
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Find a user based on the SID
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code-block:: console
 
    wmic useraccount get name,sid 
 
-Get a SID from a username:
-^^^^^^^^^^^^^^^^^^^^^^^^^^
+Get a SID from a username
+^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code-block:: console
 

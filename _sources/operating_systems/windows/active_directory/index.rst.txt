@@ -15,4 +15,5 @@ Contents:
    replication
    sids
    gpo/index
+   wef
 

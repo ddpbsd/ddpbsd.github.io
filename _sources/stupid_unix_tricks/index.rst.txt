@@ -9,5 +9,5 @@ Contents:
    :maxdepth: 2
 
    to_lower   
-   
+   misc   
 

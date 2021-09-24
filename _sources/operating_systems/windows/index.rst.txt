@@ -15,5 +15,6 @@ Contents:
    sid_stuff
    smb
    sysmon
+   wef
    windows_credential_mgr.rst
 

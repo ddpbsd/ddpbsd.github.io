@@ -1,0 +1,10 @@
+Find the last day of the month
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: console
+
+    $ set $(cal)
+    $ shift $(($# - 1))
+    $ echo $1
+    30
+

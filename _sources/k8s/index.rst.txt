@@ -1,0 +1,16 @@
+
+==========
+kubernetes
+==========
+
+Stuff about k8s.
+Mostly minikube right now.
+
+Contents:
+
+.. toctree::
+   :maxdepth: 2
+
+   minikube/index
+      
+

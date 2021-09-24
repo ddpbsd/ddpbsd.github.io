@@ -1,6 +1,3 @@
-.. _operating_systems_windows_active_directory_laps:
-
-
 LAPS
 ====
 
@@ -8,26 +5,26 @@ Local Administrator Password Solution provides management of local account passw
 connected systems.
 
 
-Installation:
-^^^^^^^^^^^^^
+Installation
+^^^^^^^^^^^^
 
 Some of it has to be installed on the server, some of it on the clients.
 
 
-Server:
-^^^^^^^
+Server
+^^^^^^
 
 Modify the registry!
 
 
-Clients:
-^^^^^^^^
+Clients
+^^^^^^^
 
 Only need the GPO CSE (which seems to amount to `AdmPwd.dll`).
 
 
-Errors:
-^^^^^^^
+Errors
+^^^^^^
 
 Insufficient rights when running Schema Update PS.
 From `truedigitalsecurity <https://blog.truedigitalsecurity.com/blog/part-2-defending-against-pass-the-hash>`_
@@ -36,8 +33,8 @@ From `truedigitalsecurity <https://blog.truedigitalsecurity.com/blog/part-2-defe
 
 
 
-Link:
-^^^^^
+Link
+^^^^
 
 `Download here <https://www.microsoft.com/en-us/download/details.aspx?id=46899>`_.
 The instructions are pretty good, and I managed to get it running (even without much Windows experience).

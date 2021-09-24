@@ -1,7 +1,5 @@
-
-
-Find the FSMO roles of a server:
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Find the FSMO roles of a server
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code-block:: console
 

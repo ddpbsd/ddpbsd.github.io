@@ -1,7 +1,7 @@
 .. _operating_systems_windows_active_directory_replication:
 
-Show replication status:
-^^^^^^^^^^^^^^^^^^^^^^^^
+Show replication status
+^^^^^^^^^^^^^^^^^^^^^^^
 
 For inbound replication?
 
@@ -9,15 +9,15 @@ For inbound replication?
 
    repadmin /showrepl
 
-Check the replication queue:
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Check the replication queue
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code-block:: console
 
    Repadmin /Queue
 
-Check the replication summary:
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Check the replication summary
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 
 .. code-block:: console
