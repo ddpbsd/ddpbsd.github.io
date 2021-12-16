@@ -1,0 +1,51 @@
+=======
+kubectl
+=======
+
+Namespaces
+^^^^^^^^^^
+
+Lots of stuff runs in its own namespace, or at least a non-default namespace.
+The `-n` flag will allow you to name the namespace you want to query.
+
+
+Get a list of namespaces
+^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: console
+
+   minikube kubectl -- get namespaces
+
+Get deployments
+^^^^^^^^^^^^^^^
+
+.. code-block:: console
+
+   minikube kubectl -- get deployments [-n NAMESPACE]
+
+Get pods
+^^^^^^^^
+
+.. code-block:: console
+
+   minikube kubectl -- get pods [-n NAMESPACE]
+
+proxy
+^^^^^
+
+Starts an api proxy on `127.0.0.1:8001`.
+
+.. code-block:: console
+
+   minikube kubectl proxy
+
+Get a list of services in a namespace
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+After the proxy is started, `kube-system` namespace in the example:
+
+.. code-block:: console
+
+   curl -s 127.0.0.1:8001/api/v1/namespaces/kube-system/services | jq '.items[].metadata.name'
+
+

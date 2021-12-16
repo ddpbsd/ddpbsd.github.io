@@ -38,10 +38,17 @@ Reboot a VM if vmtools is installed
 List current tasks:
 ^^^^^^^^^^^^^^^^^^^
 
+This should get a task for a specific VM.
+
 .. code-block:: console
 
-   vim-cmd vimsvc/get.tasklist 112
+   vim-cmd vmsvc/get.tasklist VM_ID
 
+Not sure exactly what this one does.
+
+.. code-block:: console
+
+   vim-cmd vimsvc/task_list
 
 Get info for a task:
 ^^^^^^^^^^^^^^^^^^^^

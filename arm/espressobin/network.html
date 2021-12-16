@@ -4,7 +4,8 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>Espressobin network &#8212; notes 0.1 documentation</title>
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/alabaster.css" />
@@ -32,18 +33,18 @@
 
           <div class="body" role="main">
             
-  <div class="section" id="espressobin-network">
+  <section id="espressobin-network">
 <h1>Espressobin network<a class="headerlink" href="#espressobin-network" title="Permalink to this headline">¶</a></h1>
 <p>It’s a tangled mess. It sometimes works. I guess.
 It doesn’t work right now though.</p>
-</div>
-<div class="section" id="network-status">
+</section>
+<section id="network-status">
 <h1>Network status<a class="headerlink" href="#network-status" title="Permalink to this headline">¶</a></h1>
 <p><cite>wan</cite> interface will come up if <cite>eth0</cite> is up, but <cite>ifup</cite> is totally fubar.
 It then works if manually brought up. Not sure why it won’t work the same way Ubuntu’s worked for years.
 Maybe netplan.io will help?</p>
-</div>
-<div class="section" id="configurations">
+</section>
+<section id="configurations">
 <h1>Configurations<a class="headerlink" href="#configurations" title="Permalink to this headline">¶</a></h1>
 <p>Armbian uses sytemd-networkd to configure the network.
 The configuration lives in <cite>/etc/systemd/network</cite>.</p>
@@ -52,16 +53,16 @@ The configuration lives in <cite>/etc/systemd/network</cite>.</p>
 <span class="go">10-br0.network  10-lan0.network  10-wan.network</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="br0-netdev">
+</section>
+<section id="br0-netdev">
 <h1>10-br0.netdev<a class="headerlink" href="#br0-netdev" title="Permalink to this headline">¶</a></h1>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">[NetDev]</span>
 <span class="go">Name=br0</span>
 <span class="go">Kind=bridge</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="br0-network">
+</section>
+<section id="br0-network">
 <h1>10-br0.network<a class="headerlink" href="#br0-network" title="Permalink to this headline">¶</a></h1>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">[Match]</span>
 <span class="go">Name=br0</span>
@@ -72,8 +73,8 @@ The configuration lives in <cite>/etc/systemd/network</cite>.</p>
 <span class="gp">#</span><span class="nv">DNS</span><span class="o">=</span><span class="m">192</span>.168.17.17
 </pre></div>
 </div>
-</div>
-<div class="section" id="eth0-network">
+</section>
+<section id="eth0-network">
 <h1>10-eth0.network<a class="headerlink" href="#eth0-network" title="Permalink to this headline">¶</a></h1>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">[Match]</span>
 <span class="go">Name=eth0</span>
@@ -83,8 +84,8 @@ The configuration lives in <cite>/etc/systemd/network</cite>.</p>
 <span class="gp">#</span><span class="nv">Bridge</span><span class="o">=</span>br0
 </pre></div>
 </div>
-</div>
-<div class="section" id="lan0-network">
+</section>
+<section id="lan0-network">
 <h1>10-lan0.network<a class="headerlink" href="#lan0-network" title="Permalink to this headline">¶</a></h1>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">[Match]</span>
 <span class="go">Name=lan0</span>
@@ -93,8 +94,8 @@ The configuration lives in <cite>/etc/systemd/network</cite>.</p>
 <span class="go">Bridge=br0</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="lan1-network">
+</section>
+<section id="lan1-network">
 <h1>10-lan1.network<a class="headerlink" href="#lan1-network" title="Permalink to this headline">¶</a></h1>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">[Match]</span>
 <span class="go">Name=lan1</span>
@@ -103,8 +104,8 @@ The configuration lives in <cite>/etc/systemd/network</cite>.</p>
 <span class="go">Bridge=br0</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="wan-network">
+</section>
+<section id="wan-network">
 <h1>10-wan.network<a class="headerlink" href="#wan-network" title="Permalink to this headline">¶</a></h1>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">[Match]</span>
 <span class="go">Name=wan</span>
@@ -115,7 +116,7 @@ The configuration lives in <cite>/etc/systemd/network</cite>.</p>
 <span class="go">DNS=192.168.17.17</span>
 </pre></div>
 </div>
-</div>
+</section>
 
 
           </div>

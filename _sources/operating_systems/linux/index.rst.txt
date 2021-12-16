@@ -12,6 +12,7 @@ Contents:
    auth/failure
    boot
    commands
+   deprecated
    auditd/index
    centos/index
    containers/index

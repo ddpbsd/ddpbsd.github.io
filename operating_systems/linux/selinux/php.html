@@ -4,7 +4,8 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>Allow php to connecto to a remote mysql database: &#8212; notes 0.1 documentation</title>
     <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/alabaster.css" />
@@ -32,14 +33,14 @@
 
           <div class="body" role="main">
             
-  <div class="section" id="allow-php-to-connecto-to-a-remote-mysql-database">
+  <section id="allow-php-to-connecto-to-a-remote-mysql-database">
 <h1>Allow php to connecto to a remote mysql database:<a class="headerlink" href="#allow-php-to-connecto-to-a-remote-mysql-database" title="Permalink to this headline">¶</a></h1>
 <p>I assume this actually does more than the title suggests, but haven’t looked into it.</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">setsebool -P httpd_can_network_connect 1</span>
 <span class="go">setsebool -P httpd_can_network_connect_db 1</span>
 </pre></div>
 </div>
-</div>
+</section>
 
 
           </div>

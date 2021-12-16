@@ -2,7 +2,7 @@
 logstash user
 ^^^^^^^^^^^^^
 
-reate a user with the `logstash_writer` role for logstash.
+Create a user with the `logstash_writer` role for logstash.
 
 .. code-block:: console
 

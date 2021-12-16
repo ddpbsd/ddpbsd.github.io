@@ -10,4 +10,5 @@ Contents:
 
    roles
    users
+   api_key
 

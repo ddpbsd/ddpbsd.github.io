@@ -4,7 +4,8 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>Monitoring &#8212; notes 0.1 documentation</title>
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/alabaster.css" />
@@ -32,7 +33,7 @@
 
           <div class="body" role="main">
             
-  <div class="section" id="monitoring">
+  <section id="monitoring">
 <h1>Monitoring<a class="headerlink" href="#monitoring" title="Permalink to this headline">¶</a></h1>
 <p>There are a number of things that need to be monitored in the elk stack.</p>
 <p>Checking the status of a cluster or an index seems simple, but my brain is having trouble with it.</p>
@@ -46,9 +47,9 @@
 There are multiple spaces.
 It’s a nightmare, built for looks instead of functionality.</p>
 </div>
-<div class="section" id="sysadmin-type-stuff">
+<section id="sysadmin-type-stuff">
 <h2>Sysadmin type stuff<a class="headerlink" href="#sysadmin-type-stuff" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="cluster-allocation">
+<section id="cluster-allocation">
 <h3>Cluster allocation<a class="headerlink" href="#cluster-allocation" title="Permalink to this headline">¶</a></h3>
 <blockquote>
 <div><p><strong>Output:</strong> space delimited line</p>
@@ -56,8 +57,8 @@ It’s a nightmare, built for looks instead of functionality.</p>
 </pre></div>
 </div>
 </div></blockquote>
-</div>
-<div class="section" id="get-a-list-of-indexes">
+</section>
+<section id="get-a-list-of-indexes">
 <h3>Get a list of indexes<a class="headerlink" href="#get-a-list-of-indexes" title="Permalink to this headline">¶</a></h3>
 <blockquote>
 <div><p><strong>Output:</strong> space delimited line</p>
@@ -69,8 +70,8 @@ It’s a nightmare, built for looks instead of functionality.</p>
 </pre></div>
 </div>
 </div></blockquote>
-</div>
-<div class="section" id="check-read-only-status">
+</section>
+<section id="check-read-only-status">
 <h3>Check read-only status<a class="headerlink" href="#check-read-only-status" title="Permalink to this headline">¶</a></h3>
 <blockquote>
 <div><p>Get the json for the <cite>read_only_allow_delete</cite> field.
@@ -88,14 +89,14 @@ Will return <cite>null</cite> if the field does not exist.</p>
 </pre></div>
 </div>
 </div></blockquote>
-</div>
-<div class="section" id="reset-read-only-status">
+</section>
+<section id="reset-read-only-status">
 <h3>Reset read-only status<a class="headerlink" href="#reset-read-only-status" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">for i in $(curl -s &#39;http://127.0.0.1:9200/_cat/indices?h=index&#39;); do curl -s -XPUT -H &#39;Content-Type: application/json&#39; &quot;http://127.0.0.1:9200/${i}/_settings&quot; -d &#39;{  &quot;index&quot;: {  &quot;blocks&quot;: {  &quot;read_only_allow_delete&quot;: &quot;false&quot;  }}}&#39; ; echo &quot;&quot;;  done</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="red-yellow-green">
+</section>
+<section id="red-yellow-green">
 <h3>red|yellow|green<a class="headerlink" href="#red-yellow-green" title="Permalink to this headline">¶</a></h3>
 <blockquote>
 <div><p><strong>Output:</strong> space delimited line</p>
@@ -103,8 +104,8 @@ Will return <cite>null</cite> if the field does not exist.</p>
 </pre></div>
 </div>
 </div></blockquote>
-</div>
-<div class="section" id="get-disk-usage">
+</section>
+<section id="get-disk-usage">
 <h3>Get disk usage<a class="headerlink" href="#get-disk-usage" title="Permalink to this headline">¶</a></h3>
 <blockquote>
 <div><p>List a bunch of the stuff</p>
@@ -122,15 +123,15 @@ Will return <cite>null</cite> if the field does not exist.</p>
 </div>
 </div></blockquote>
 </div></blockquote>
-</div>
-<div class="section" id="lots-of-stats">
+</section>
+<section id="lots-of-stats">
 <h3>Lots of stats<a class="headerlink" href="#lots-of-stats" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">GET /_stats</span>
 </pre></div>
 </div>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 
 
           </div>

@@ -1,15 +1,11 @@
-.. tools_messaging_kafka:
-
-
-
 =====
 Kafka
 =====
 
+Some quick and dirty kafka notes.
 
+.. toctree::
+   :maxdepth: 2
 
-Questions:
-^^^^^^^^^^
-
-Does a Kafka cluster require a shared virtual IP?
+   commands
 

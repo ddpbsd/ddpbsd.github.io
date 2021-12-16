@@ -4,7 +4,8 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>My adventures with securityonion and cef &#8212; notes 0.1 documentation</title>
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/alabaster.css" />
@@ -32,19 +33,19 @@
 
           <div class="body" role="main">
             
-  <div class="section" id="my-adventures-with-securityonion-and-cef">
+  <section id="my-adventures-with-securityonion-and-cef">
 <h1>My adventures with securityonion and cef<a class="headerlink" href="#my-adventures-with-securityonion-and-cef" title="Permalink to this headline">¶</a></h1>
 <p>There should be an xkcd tag to insert an appropriate xkcd.</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">.. xkcd: standards</span>
 </pre></div>
 </div>
-<div class="section" id="barnyard2">
+<section id="barnyard2">
 <h2>Barnyard2:<a class="headerlink" href="#barnyard2" title="Permalink to this headline">¶</a></h2>
 <p>The CEF support is broken, use <a class="reference external" href="https://github.com/ddpbsd/barnyard2/tree/cef">https://github.com/ddpbsd/barnyard2/tree/cef</a>
 The upstream by2 seems dead. I need to talk to the SO people to see if they can
 integrate this patch.</p>
-</div>
-<div class="section" id="barnyard2-configuration">
+</section>
+<section id="barnyard2-configuration">
 <h2>Barnyard2 configuration:<a class="headerlink" href="#barnyard2-configuration" title="Permalink to this headline">¶</a></h2>
 <p>Eh, not as hard as I made it out to be originally.</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">config alert_with_interface_name</span>
@@ -59,13 +60,13 @@ integrate this patch.</p>
 <span class="go">output alert_cef: LOG_INFO LOG_LOCAL7</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="syslog-ng">
+</section>
+<section id="syslog-ng">
 <h2>syslog-ng:<a class="headerlink" href="#syslog-ng" title="Permalink to this headline">¶</a></h2>
 <p>I believe it’s written by sadists.</p>
 <p>We need to define a source, filter, and destination. Then put them together.</p>
-</div>
-<div class="section" id="syslog-ng-conf">
+</section>
+<section id="syslog-ng-conf">
 <h2>syslog-ng conf:<a class="headerlink" href="#syslog-ng-conf" title="Permalink to this headline">¶</a></h2>
 <p>I’m logging everything to a file as well as the syslog-collector host.
 This isn’t necessary, and I’ll probably stop it soon.</p>
@@ -82,8 +83,8 @@ This isn’t necessary, and I’ll probably stop it soon.</p>
 <span class="go">};</span>
 </pre></div>
 </div>
-</div>
-</div>
+</section>
+</section>
 
 
           </div>

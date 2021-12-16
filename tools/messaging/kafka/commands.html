@@ -1,0 +1,148 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>kafka commands &#8212; notes 0.1 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/alabaster.css" />
+    <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Monitoring Tools" href="../../monitoring/index.html" />
+    <link rel="prev" title="Kafka" href="index.html" />
+   
+  <link rel="stylesheet" href="../../../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="kafka-commands">
+<h1>kafka commands<a class="headerlink" href="#kafka-commands" title="Permalink to this headline">¶</a></h1>
+<section id="list-topics">
+<h2>list topics<a class="headerlink" href="#list-topics" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">bin/kafka-topics.sh --list --bootstrap-server KAFKA_HOST:PORT</span>
+</pre></div>
+</div>
+</section>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../../../index.html">notes</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../arm/index.html">arm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../db/index.html">databases</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../dns/index.html">DNS stuff</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../elk/index.html">elastic stuff</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../k8s/index.html">kubernetes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../openssh/index.html">OpenSSH</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../operating_systems/index.html">Operating Systems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../ossec/index.html">OSSEC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../rsyslogd/index.html">rsyslogd</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../securityonion/index.html">SecurityOnion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../ssl/index.html">ssl</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../stupid_unix_tricks/index.html">Stupid Unix Tricks</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../index.html">Tools</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../ansible/index.html">ansible</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../certstrap/index.html">certstrap</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../curl/http_codes.html">Output http code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../dns/index.html">dns</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../freeradius/index.html">FreeRadius</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../git/index.html">git</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../gpg/index.html">gpg</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../grafana/index.html">grafana</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../java/index.html">Java</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../jq.html">jq</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ldap/index.html">ldap</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html">Messaging</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../monitoring/index.html">Monitoring Tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../netstat/netstat.html">netstat</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../nmap/index.html">discovery-ignore-rst</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../opensmtpd/index.html">opensmtpd</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../osquery/index.html">osquery</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../packer/index.html">HashiCorp packer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../perl/index.html">Perl</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../prometheus/index.html">prometheus</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../python/index.html">Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../su.html">su</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../tcpdump/index.html">tcpdump</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../tmux/index.html">tmux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../vim/index.html">vim</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../virtualization/index.html">Virtualization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../x11/index.html">x11</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../retired/index.html">Retired</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../vendor_stuff/index.html">Vendor Stuff</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../misc/index.html">misc</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../../index.html">Documentation overview</a><ul>
+  <li><a href="../../index.html">Tools</a><ul>
+  <li><a href="../index.html">Messaging</a><ul>
+  <li><a href="index.html">Kafka</a><ul>
+      <li>Previous: <a href="index.html" title="previous chapter">Kafka</a></li>
+      <li>Next: <a href="../../monitoring/index.html" title="next chapter">Monitoring Tools</a></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+        <!-- your html code here -->
+	<div class="footer">
+		<em>This information has a good chance of being wrong, inconsistent, out of date, or just bad. Use at your own risk.
+		Feel free to notify me of any issues though.</em>
+	</div>
+
+
+  </body>
+</html>

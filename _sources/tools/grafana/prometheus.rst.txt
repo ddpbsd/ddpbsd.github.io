@@ -1,0 +1,15 @@
+==========
+prometheus
+==========
+
+
+Legend
+^^^^^^
+
+Can specify attributes in double mustaches to alias a field.
+Name the metric after the instance name:
+
+.. code-block:: console
+
+   {{instance}}
+

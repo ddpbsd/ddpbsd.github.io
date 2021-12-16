@@ -1,0 +1,36 @@
+=====
+query
+=====
+
+
+Limit results to a specific instance
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+I am guessing they never call it a node or a host because it could be anything.
+Even a boat.
+Maybe it is a container?
+Then it isn't really a host I guess.
+
+.. code-block:: console
+
+   node_disk_written_bytes_total{instance="ix.int.wafflelab.online:9100"}
+
+Exclude an item from the results
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Use a negative regex match (`!=` instead of `=` or `=~`).
+
+.. code-block:: console
+
+   node_network_receive_bytes_total > 0 and node_network_receive_bytes_total{instance!="junction.int.wafflelab.online:9100"}
+
+rate
+^^^^
+
+`rate()` wants both a metric and a timeframe (I guess?).
+
+.. code-block:: console
+
+   rate(node_cpu_seconds_total{mode="system"}[5m])
+
+

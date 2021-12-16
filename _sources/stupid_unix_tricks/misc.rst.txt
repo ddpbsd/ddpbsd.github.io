@@ -8,3 +8,20 @@ Find the last day of the month
     $ echo $1
     30
 
+
+Encrypt all files in one dir and save to another dir with ansible vault
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: console
+
+   ls files/source/ | xargs -I@ ansible-vault encrypt --vault-id $(pwd)/files/destination/@
+
+Find the current dpi in X
+^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: console
+
+   $ xdpyinfo | grep -i -V 2 resolution
+
+
+

@@ -11,3 +11,6 @@ Contents:
 
    ldap
    elasticsearch/free_space
+   influxdb
+   prometheus
+

@@ -10,4 +10,7 @@ Contents:
 .. toctree::
    :maxdepth: 2
 
+   prometheus
    snmp_exporter/index
+   query
+

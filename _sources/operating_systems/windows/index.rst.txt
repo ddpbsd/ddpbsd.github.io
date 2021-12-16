@@ -11,6 +11,7 @@ Contents:
    active_directory/index.rst
    cheatsheets
    laps
+   misc
    powershell/index
    sid_stuff
    smb

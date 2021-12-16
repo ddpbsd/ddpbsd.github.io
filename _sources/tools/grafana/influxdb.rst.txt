@@ -1,0 +1,15 @@
+========
+influxdb
+========
+
+
+alias by
+^^^^^^^^
+
+To alias by the `host` field, it needs to be inluded in the `GROUP BY`.
+Then `$tag_host` can be added into the `ALIAS BY` section.
+
+.. code-block:: console
+
+   $tag_host
+

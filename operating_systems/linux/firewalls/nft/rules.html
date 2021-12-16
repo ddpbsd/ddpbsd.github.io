@@ -4,7 +4,8 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>list all rules &#8212; notes 0.1 documentation</title>
     <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/alabaster.css" />
@@ -32,14 +33,14 @@
 
           <div class="body" role="main">
             
-  <div class="section" id="list-all-rules">
+  <section id="list-all-rules">
 <h1>list all rules<a class="headerlink" href="#list-all-rules" title="Permalink to this headline">¶</a></h1>
 <p>I think this lists everything.</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">nft list ruleset</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="list-rules-in-a-table">
+</section>
+<section id="list-rules-in-a-table">
 <h1>list rules in a table<a class="headerlink" href="#list-rules-in-a-table" title="Permalink to this headline">¶</a></h1>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">nft list table firewalld</span>
 </pre></div>
@@ -50,14 +51,14 @@ Address families include (but are not limited to) ip (ipv4), ip6 (ipv6), inet (i
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">nft list table inet firewalld</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="list-rules-in-a-chain">
+</section>
+<section id="list-rules-in-a-chain">
 <h1>list rules in a chain<a class="headerlink" href="#list-rules-in-a-chain" title="Permalink to this headline">¶</a></h1>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">nft --handle list chain inet firewalld filter_FWDO_FedoraServer</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="deleting-rules">
+</section>
+<section id="deleting-rules">
 <h1>deleting rules<a class="headerlink" href="#deleting-rules" title="Permalink to this headline">¶</a></h1>
 <p>Deleting rules requires a handle as well as the table, chain, and possibly address family.
 The handle is a number for the rule, starting from 0.
@@ -72,7 +73,7 @@ I think the <cite>–handle</cite> should just be default.</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">nft delete rule inet firewalld filter_IN_FedoraServer_allow handle 65</span>
 </pre></div>
 </div>
-</div>
+</section>
 
 
           </div>

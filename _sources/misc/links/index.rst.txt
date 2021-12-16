@@ -23,3 +23,6 @@ Cheat Sheets:
 
 `Packet Life <http://packetlife.net/library/cheat-sheets/>`_
 
+
+`json escape <https://freeformatter.com/json-escape.html>`_
+

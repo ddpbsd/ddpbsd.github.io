@@ -4,7 +4,8 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>List all VMs &#8212; notes 0.1 documentation</title>
     <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/alabaster.css" />
@@ -37,66 +38,71 @@
 <p>These are probably way outdated now.
 You probably shouldn’t use these.</p>
 </div>
-<div class="section" id="list-all-vms">
+<section id="list-all-vms">
 <h1>List all VMs<a class="headerlink" href="#list-all-vms" title="Permalink to this headline">¶</a></h1>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">vim-cmd vmsvc/getallvms</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="get-the-power-state-of-a-vm">
+</section>
+<section id="get-the-power-state-of-a-vm">
 <h1>Get the power state of a VM:<a class="headerlink" href="#get-the-power-state-of-a-vm" title="Permalink to this headline">¶</a></h1>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">vim-cmd vmsvc/power.getstate 1</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="power-on-a-device">
+</section>
+<section id="power-on-a-device">
 <h1>Power on a device<a class="headerlink" href="#power-on-a-device" title="Permalink to this headline">¶</a></h1>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">vim-cmd vmsvc/power.on 320</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="reboot-a-vm-if-vmtools-is-installed">
+</section>
+<section id="reboot-a-vm-if-vmtools-is-installed">
 <h1>Reboot a VM if vmtools is installed<a class="headerlink" href="#reboot-a-vm-if-vmtools-is-installed" title="Permalink to this headline">¶</a></h1>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">vim-cmd vmsvc/power.reboot 176</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="list-current-tasks">
+</section>
+<section id="list-current-tasks">
 <h1>List current tasks:<a class="headerlink" href="#list-current-tasks" title="Permalink to this headline">¶</a></h1>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">vim-cmd vimsvc/get.tasklist 112</span>
+<p>This should get a task for a specific VM.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">vim-cmd vmsvc/get.tasklist VM_ID</span>
 </pre></div>
 </div>
+<p>Not sure exactly what this one does.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">vim-cmd vimsvc/task_list</span>
+</pre></div>
 </div>
-<div class="section" id="get-info-for-a-task">
+</section>
+<section id="get-info-for-a-task">
 <h1>Get info for a task:<a class="headerlink" href="#get-info-for-a-task" title="Permalink to this headline">¶</a></h1>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">vim-cmd vimsvc/task_info TASK_ID</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="installing-updates">
+</section>
+<section id="installing-updates">
 <h1>installing updates<a class="headerlink" href="#installing-updates" title="Permalink to this headline">¶</a></h1>
 <p><a class="reference external" href="https://kb.vmware.com/s/article/2008939">https://kb.vmware.com/s/article/2008939</a></p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">[root@blah:/file/location] esxcli software vib install -d /full/path/to/vib.zip</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="conflicting-vib-stuff-with-dell-iso">
+</section>
+<section id="conflicting-vib-stuff-with-dell-iso">
 <h1>conflicting vib stuff with dell iso<a class="headerlink" href="#conflicting-vib-stuff-with-dell-iso" title="Permalink to this headline">¶</a></h1>
 <p><a class="reference external" href="https://vmadminthoughts.wordpress.com/2020/09/04/conflicting-vibs-on-esxi-6-7u1-with-dell-image-profile/">https://vmadminthoughts.wordpress.com/2020/09/04/conflicting-vibs-on-esxi-6-7u1-with-dell-image-profile/</a></p>
 <p>Remove qlogic vib stuff, then install the big thing.</p>
-</div>
-<div class="section" id="powercli">
+</section>
+<section id="powercli">
 <h1>powercli<a class="headerlink" href="#powercli" title="Permalink to this headline">¶</a></h1>
 <p>Can’t create advanced settings with PowerCLI or something:
 <cite>Current license or ESXi version prohibits execution of the requested operation.</cite></p>
 <p>Use <cite>esxcfg-advcfg</cite></p>
-</div>
-<div class="section" id="esxcfg-advcfg">
+</section>
+<section id="esxcfg-advcfg">
 <h1>esxcfg-advcfg<a class="headerlink" href="#esxcfg-advcfg" title="Permalink to this headline">¶</a></h1>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">esxcfg-advcfg --add-option isolation.device.edit.disable --add-type string --add-desc &quot;CIS 8.2.6&quot; --add-default &quot;True&quot;</span>
 </pre></div>
 </div>
-</div>
+</section>
 
 
           </div>

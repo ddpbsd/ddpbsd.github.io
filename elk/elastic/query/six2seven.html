@@ -4,7 +4,8 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>Differences from 6.x to 7.x &#8212; notes 0.1 documentation</title>
     <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/alabaster.css" />
@@ -30,9 +31,9 @@
 
           <div class="body" role="main">
             
-  <div class="section" id="differences-from-6-x-to-7-x">
+  <section id="differences-from-6-x-to-7-x">
 <h1>Differences from 6.x to 7.x<a class="headerlink" href="#differences-from-6-x-to-7-x" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="hit-count-is-presented-differently">
+<section id="hit-count-is-presented-differently">
 <h2>Hit count is presented differently<a class="headerlink" href="#hit-count-is-presented-differently" title="Permalink to this headline">¶</a></h2>
 <p>Previously the hit count would be:</p>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="nt">&quot;took&quot;</span><span class="p">:</span><span class="mi">17</span><span class="p">,</span><span class="nt">&quot;timed_out&quot;</span><span class="p">:</span><span class="kc">false</span><span class="p">,</span><span class="nt">&quot;_shards&quot;</span><span class="p">:{</span><span class="nt">&quot;total&quot;</span><span class="p">:</span><span class="mi">4</span><span class="p">,</span><span class="nt">&quot;successful&quot;</span><span class="p">:</span><span class="mi">4</span><span class="p">,</span><span class="nt">&quot;skipped&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="nt">&quot;failed&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">},</span><span class="nt">&quot;hits&quot;</span><span class="p">:{</span><span class="nt">&quot;total&quot;</span><span class="p">:</span><span class="mi">924452</span><span class="p">,</span><span class="nt">&quot;max_score&quot;</span><span class="p">:</span><span class="mf">0.0</span><span class="p">,</span><span class="nt">&quot;hits&quot;</span><span class="p">:[]}}</span>
@@ -42,8 +43,8 @@
 </pre></div>
 </div>
 <p>So now the <cite>total</cite> is under <cite>value</cite> instead of under <cite>total</cite> directly.</p>
-</div>
-<div class="section" id="total-hits">
+</section>
+<section id="total-hits">
 <h2>Total hits<a class="headerlink" href="#total-hits" title="Permalink to this headline">¶</a></h2>
 <p>When trying to count all of the hits in a time range, add the following for 7.
 The <cite>track_total_hits</cite> was not previous necessary, but it’s limited to 10k for
@@ -62,8 +63,8 @@ The <cite>track_total_hits</cite> was not previous necessary, but it’s limited
 <span class="go">}</span>
 </pre></div>
 </div>
-</div>
-</div>
+</section>
+</section>
 
 
           </div>

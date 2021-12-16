@@ -4,7 +4,8 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>Security Onion 16.04 &#8212; notes 0.1 documentation</title>
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/alabaster.css" />
@@ -32,12 +33,12 @@
 
           <div class="body" role="main">
             
-  <div class="section" id="security-onion-16-04">
+  <section id="security-onion-16-04">
 <h1>Security Onion 16.04<a class="headerlink" href="#security-onion-16-04" title="Permalink to this headline">¶</a></h1>
 <p>14.x wasn’t complicated enough, let’s add docker!</p>
 <p>I assume most of the bro stuff is the same.
 Elsa doesn’t exist anymore (yay!), but we get the elk stack instead.</p>
-<div class="section" id="docker">
+<section id="docker">
 <h2>Docker:<a class="headerlink" href="#docker" title="Permalink to this headline">¶</a></h2>
 <p>docker images:</p>
 <table class="docutils align-default">
@@ -75,17 +76,17 @@ Elsa doesn’t exist anymore (yay!), but we get the elk stack instead.</p>
 </tr>
 </tbody>
 </table>
-</div>
-<div class="section" id="ossec">
+</section>
+<section id="ossec">
 <h2>OSSEC:<a class="headerlink" href="#ossec" title="Permalink to this headline">¶</a></h2>
 <p>Nope! Now it’s <a class="reference external" href="https://wazuh.com/">Wazuh</a>!
 Another complication of simpler times.</p>
-</div>
-<div class="section" id="sostat">
+</section>
+<section id="sostat">
 <h2>sostat:<a class="headerlink" href="#sostat" title="Permalink to this headline">¶</a></h2>
 <p>The output got longer. Bigger is better, amirite?</p>
-</div>
-<div class="section" id="sostat-cross-cluster-search">
+</section>
+<section id="sostat-cross-cluster-search">
 <h2>sostat - Cross Cluster Search:<a class="headerlink" href="#sostat-cross-cluster-search" title="Permalink to this headline">¶</a></h2>
 <p>The meat and potatoes (from an admin perspective, instead of an analyst perspective I guess?) is
 the sensor status portion of the script. It’s at the end. This is good because it doesn’t scroll
@@ -96,16 +97,16 @@ connect to the hosts with <cite>nc</cite> and determines whether it can connect 
 <p><cite>/usr/sbin/so-crossclustercheck</cite> uses <cite>curl</cite> to query elasticsearch. <cite>jq</cite> is used to parse the
 json. There’s more magic in there, but that should be enough for now. Copy and pasting the 14
 lines from <cite>sostat</cite> give the appropriate output, so now I have that.</p>
-</div>
-<div class="section" id="restart-logstash">
+</section>
+<section id="restart-logstash">
 <h2>Restart logstash:<a class="headerlink" href="#restart-logstash" title="Permalink to this headline">¶</a></h2>
 <p>If changes are made to the <cite>LOGSTASH_OPTIONS</cite> in the <cite>securityonion.conf</cite>, logstash should be
 restarted with:</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">sudo so-logstash-restart</span>
 </pre></div>
 </div>
-</div>
-</div>
+</section>
+</section>
 
 
           </div>

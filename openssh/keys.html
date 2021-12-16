@@ -4,7 +4,8 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>SSH keys &#8212; notes 0.1 documentation</title>
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/alabaster.css" />
@@ -32,38 +33,38 @@
 
           <div class="body" role="main">
             
-  <div class="section" id="ssh-keys">
+  <section id="ssh-keys">
 <span id="openssh-keys"></span><h1>SSH keys<a class="headerlink" href="#ssh-keys" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="determine-the-fingerprint-of-a-key">
+<section id="determine-the-fingerprint-of-a-key">
 <h2>Determine the fingerprint of a key<a class="headerlink" href="#determine-the-fingerprint-of-a-key" title="Permalink to this headline">¶</a></h2>
 <p><cite>ssh-keygen</cite> can provide this information.
 It defaults to <cite>sha256</cite>, but <cite>-E md5</cite> is also available.</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">ssh-keygen -lf KEY</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="scp-only-key">
+</section>
+<section id="scp-only-key">
 <h2>scp only key<a class="headerlink" href="#scp-only-key" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">no-port-forwarding,no-pty,command=&quot;scp -v -t /destination/path&quot; ssh-rsa ...</span>
 </pre></div>
 </div>
-</div>
-</div>
-<div class="section" id="hardware-keys">
+</section>
+</section>
+<section id="hardware-keys">
 <h1>Hardware Keys<a class="headerlink" href="#hardware-keys" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="add-they-key-to-ssh-agent">
+<section id="add-they-key-to-ssh-agent">
 <h2>Add they key to ssh-agent<a class="headerlink" href="#add-they-key-to-ssh-agent" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>ssh-add -K
 </pre></div>
 </div>
-</div>
-<div class="section" id="put-libfido2-into-debug-mode">
+</section>
+<section id="put-libfido2-into-debug-mode">
 <h2>Put libfido2 into debug mode<a class="headerlink" href="#put-libfido2-into-debug-mode" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">env FIDO_DEBUG=1 ssh -vvv ...</span>
 </pre></div>
 </div>
-</div>
-</div>
+</section>
+</section>
 
 
           </div>
