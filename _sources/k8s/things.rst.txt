@@ -67,6 +67,9 @@ I really need to look for a glossary or something.
 services
 ^^^^^^^^
 
+logs
+^^^^
 
+At least on my system, some logs are in `/var/log/pods`.
 
 

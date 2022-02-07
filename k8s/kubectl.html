@@ -38,7 +38,7 @@
 <section id="nodes">
 <h2>nodes<a class="headerlink" href="#nodes" title="Permalink to this headline">¶</a></h2>
 <p>Nodes are the systems that run the kubernetes stuff.</p>
-<p><em>get nodes</em></p>
+<p><strong>get nodes</strong></p>
 <p>List the nodes and some basic information about them:</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>kubectl get nodes
 
@@ -49,7 +49,7 @@
 <span class="go">salusa   Ready    &lt;none&gt;                 78s   v1.23.3</span>
 </pre></div>
 </div>
-<p><em>describe nodes</em></p>
+<p><strong>describe nodes</strong></p>
 <p>Get more detailed information about a node.</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>kubectl describe node NODE_NAME
 </pre></div>
@@ -57,9 +57,40 @@
 </section>
 <section id="namespaces">
 <h2>namespaces<a class="headerlink" href="#namespaces" title="Permalink to this headline">¶</a></h2>
+<p>Used for separating the different applications. <em>wat?</em></p>
+<p><strong>get namespaces</strong></p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>kubectl get namespaces
+<span class="go">NAME                   STATUS   AGE</span>
+<span class="go">default                Active   100m</span>
+<span class="go">kube-node-lease        Active   100m</span>
+<span class="go">kube-public            Active   100m</span>
+<span class="go">kube-system            Active   100m</span>
+<span class="go">kubernetes-dashboard   Active   93m</span>
+</pre></div>
+</div>
+<p><strong>use namespace</strong></p>
+<p>The <cite>kubectl</cite> <cite>-n NAMESPACE</cite> flag can be used to specify a namespace.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>kubectl -n kubernetes-dashboard get pods
+</pre></div>
+</div>
 </section>
 <section id="pods">
 <h2>pods<a class="headerlink" href="#pods" title="Permalink to this headline">¶</a></h2>
+<p>Applications get run in pods.</p>
+<p><strong>get pods</strong></p>
+<p>Get a list of the pods in a namespace.
+The <cite>default</cite> namespace is used if not specified.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>kubectl -n kubernetes-dashboard get pods
+<span class="go">NAME                                         READY   STATUS    RESTARTS   AGE</span>
+<span class="go">dashboard-metrics-scraper-799d786dbf-7hqnk   1/1     Running   0          95m</span>
+<span class="go">kubernetes-dashboard-6b6b86c4c5-dph98        1/1     Running   0          95m</span>
+</pre></div>
+</div>
+<p><strong>describe pod</strong></p>
+<p>Get more information about a pod.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>kubectl -n kubernetes-dashboard describe POD_NAME
+</pre></div>
+</div>
 </section>
 </section>
 
