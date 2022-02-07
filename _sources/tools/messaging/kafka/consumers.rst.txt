@@ -1,0 +1,17 @@
+
+list consumer groups
+^^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: console
+
+   ./bin/kafka-consumer-group.sh --list --bootstrap-server localhost:9092
+
+
+list consumers in a group
+^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: console
+
+   ./bin/kafka-consumer-groups.sh --describe --group new-user --members --bootstrap-server localhost:9092
+
+

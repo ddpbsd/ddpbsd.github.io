@@ -46,39 +46,39 @@
 </section>
 <section id="logstash-config">
 <h2>Logstash Config:<a class="headerlink" href="#logstash-config" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">input {</span>
-  <span class="l l-Scalar l-Scalar-Plain">beats {</span>
-    <span class="l l-Scalar l-Scalar-Plain">id =&gt; &quot;beats_test&quot;</span>
-    <span class="l l-Scalar l-Scalar-Plain">port =&gt; 9001</span>
-  <span class="l l-Scalar l-Scalar-Plain">}</span>
-<span class="l l-Scalar l-Scalar-Plain">}</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">input {</span><span class="w"></span>
+<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">beats {</span><span class="w"></span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">id =&gt; &quot;beats_test&quot;</span><span class="w"></span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">port =&gt; 9001</span><span class="w"></span>
+<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">}</span><span class="w"></span>
+<span class="l l-Scalar l-Scalar-Plain">}</span><span class="w"></span>
 
 
-<span class="l l-Scalar l-Scalar-Plain">output {</span>
-  <span class="l l-Scalar l-Scalar-Plain">elasticsearch {</span>
-    <span class="l l-Scalar l-Scalar-Plain">index =&gt; &quot;ossec-%{+YYYY.MM.dd}&quot;</span>
-  <span class="l l-Scalar l-Scalar-Plain">}</span>
+<span class="l l-Scalar l-Scalar-Plain">output {</span><span class="w"></span>
+<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">elasticsearch {</span><span class="w"></span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">index =&gt; &quot;ossec-%{+YYYY.MM.dd}&quot;</span><span class="w"></span>
+<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">}</span><span class="w"></span>
 
-<span class="l l-Scalar l-Scalar-Plain">#  stdout {</span>
-<span class="l l-Scalar l-Scalar-Plain">#  }</span>
+<span class="l l-Scalar l-Scalar-Plain">#  stdout {</span><span class="w"></span>
+<span class="l l-Scalar l-Scalar-Plain">#  }</span><span class="w"></span>
 
-<span class="l l-Scalar l-Scalar-Plain">}</span>
+<span class="l l-Scalar l-Scalar-Plain">}</span><span class="w"></span>
 </pre></div>
 </div>
 <p>Install filebeat.</p>
 </section>
 <section id="filebeat-config">
 <h2>Filebeat Config:<a class="headerlink" href="#filebeat-config" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">filebeat.prospectors</span><span class="p">:</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">filebeat.prospectors</span><span class="p">:</span><span class="w"></span>
 
-<span class="p p-Indicator">-</span> <span class="nt">input_type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">log</span>
-  <span class="nt">paths</span><span class="p">:</span>
-    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">/var/ossec/logs/alerts/alerts.json</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">input_type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">log</span><span class="w"></span>
+<span class="w">  </span><span class="nt">paths</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/var/ossec/logs/alerts/alerts.json</span><span class="w"></span>
 
-  <span class="nt">json.keys_under_root</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">  </span><span class="nt">json.keys_under_root</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w"></span>
 
-<span class="nt">output.logstash</span><span class="p">:</span>
-  <span class="nt">hosts</span><span class="p">:</span> <span class="p p-Indicator">[</span><span class="s">&quot;elastic:9001&quot;</span><span class="p p-Indicator">]</span>
+<span class="nt">output.logstash</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">hosts</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&quot;elastic:9001&quot;</span><span class="p p-Indicator">]</span><span class="w"></span>
 </pre></div>
 </div>
 </section>

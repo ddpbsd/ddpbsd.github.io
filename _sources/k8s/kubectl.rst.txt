@@ -1,0 +1,45 @@
+=======
+kubectl
+=======
+
+nodes
+^^^^^
+
+Nodes are the systems that run the kubernetes stuff.
+
+*get nodes*
+
+List the nodes and some basic information about them:
+
+.. code-block:: console
+
+   $ kubectl get nodes
+
+   NAME     STATUS   ROLES                  AGE   VERSION
+   node0    Ready    control-plane,master   90m   v1.23.3
+   node1    Ready    <none>                 83m   v1.23.3
+   node2    Ready    <none>                 69m   v1.23.3
+   salusa   Ready    <none>                 78s   v1.23.3
+
+*describe nodes*
+
+Get more detailed information about a node.
+
+.. code-block:: console
+
+   $ kubectl describe node NODE_NAME
+
+
+namespaces
+^^^^^^^^^^
+
+
+
+pods
+^^^^
+
+
+
+
+
+

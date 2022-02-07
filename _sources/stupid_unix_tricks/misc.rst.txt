@@ -24,4 +24,31 @@ Find the current dpi in X
    $ xdpyinfo | grep -i -V 2 resolution
 
 
+Go to a specific line number in less
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: console
+
+   less +<LINE_NUM> FILE
+
+Go to a specific byte (offset?) in less
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: console
+
+   less +<BYTE>P FILE
+
+Show a specific line number in less
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: console
+
+   less -N +<LINE_NUM>g FILE
+
+Extract a specific line using sed
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: console
+
+   sed -ne '<LINE_NUM>P' FILE
 

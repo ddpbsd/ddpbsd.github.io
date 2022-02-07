@@ -27,4 +27,18 @@ Check `read_only_allow_delete` in elasticsearch for index `fluttershy`:
    curl -sk -XGET 'https://USER:PASSWORD1234@elastic.example.com:9200/fluttershy-2019.08.*/_settings/index.blocks.read_only_allow_delete' \
    | jq '.["fluttershy-2019.08.02"].settings.index.blocks.read_only_allow_delete'
 
+Output 2 things on the same line:
+
+For getting `name` and `mem` next to each other on the same line
+
+.. code-block:: console
+
+   cat data.json | jq '.systems[] | "\(.name),\(.mem)"'
+
+Again, but using `join`:
+
+.. code-block:: console
+
+   cat data.json | jq '.systems[] | [.name,.mem] | join(" ")'
+
 

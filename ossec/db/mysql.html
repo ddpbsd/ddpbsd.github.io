@@ -35,11 +35,11 @@
 <h1>mariadb<a class="headerlink" href="#mariadb" title="Permalink to this headline">¶</a></h1>
 <section id="preparing-the-mariadb-database">
 <h2>Preparing the mariadb database<a class="headerlink" href="#preparing-the-mariadb-database" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">CREATE</span> <span class="k">USER</span> <span class="s1">&#39;ossecuser&#39;</span><span class="o">@</span><span class="s1">&#39;OSSEC-IP&#39;</span> <span class="n">IDENTIFIED</span> <span class="k">BY</span> <span class="s1">&#39;PASSWORD&#39;</span><span class="p">;</span>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">CREATE</span><span class="w"> </span><span class="k">USER</span><span class="w"> </span><span class="s1">&#39;ossecuser&#39;</span><span class="o">@</span><span class="s1">&#39;OSSEC-IP&#39;</span><span class="w"> </span><span class="n">IDENTIFIED</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="s1">&#39;PASSWORD&#39;</span><span class="p">;</span><span class="w"></span>
 
-<span class="k">GRANT</span> <span class="k">INSERT</span><span class="p">,</span><span class="k">SELECT</span><span class="p">,</span><span class="k">UPDATE</span><span class="p">,</span><span class="k">CREATE</span><span class="p">,</span><span class="k">DELETE</span><span class="p">,</span><span class="k">EXECUTE</span> <span class="k">on</span> <span class="n">ossec</span><span class="p">.</span><span class="o">*</span> <span class="k">to</span> <span class="n">ossecuser</span><span class="o">@</span><span class="s1">&#39;OSSEC-IP&#39;</span><span class="p">;</span>
+<span class="k">GRANT</span><span class="w"> </span><span class="k">INSERT</span><span class="p">,</span><span class="k">SELECT</span><span class="p">,</span><span class="k">UPDATE</span><span class="p">,</span><span class="k">CREATE</span><span class="p">,</span><span class="k">DELETE</span><span class="p">,</span><span class="k">EXECUTE</span><span class="w"> </span><span class="k">on</span><span class="w"> </span><span class="n">ossec</span><span class="p">.</span><span class="o">*</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="n">ossecuser</span><span class="o">@</span><span class="s1">&#39;OSSEC-IP&#39;</span><span class="p">;</span><span class="w"></span>
 
-<span class="n">flush</span> <span class="n">priviledges</span><span class="p">;</span>
+<span class="n">flush</span><span class="w"> </span><span class="n">priviledges</span><span class="p">;</span><span class="w"></span>
 </pre></div>
 </div>
 </section>

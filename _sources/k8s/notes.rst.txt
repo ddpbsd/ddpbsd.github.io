@@ -1,0 +1,9 @@
+
+
+kubectl get namespaces
+
+
+kubectl -n NAMESPACE get pods
+
+kubectl describe pods *pod_name*
+

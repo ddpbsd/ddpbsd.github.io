@@ -56,15 +56,15 @@ These can be <cite>ansible-vault</cite> encrypted strings.</p>
 <section id="playbook-specific-vaults">
 <h1>Playbook specific vaults<a class="headerlink" href="#playbook-specific-vaults" title="Permalink to this headline">¶</a></h1>
 <p>Use <cite>vars_files</cite> to specify a vault for sensitive variables.</p>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nn">---</span>
-<span class="p p-Indicator">-</span> <span class="nt">hosts</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">localhost</span>
-  <span class="nt">user</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">ansible</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nn">---</span><span class="w"></span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">hosts</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">localhost</span><span class="w"></span>
+<span class="w">  </span><span class="nt">user</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ansible</span><span class="w"></span>
 
-  <span class="nt">vars_files</span><span class="p">:</span>
-  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">vars/vault.yml</span>
+<span class="w">  </span><span class="nt">vars_files</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">vars/vault.yml</span><span class="w"></span>
 
-  <span class="nt">vars</span><span class="p">:</span>
-    <span class="nt">variable1</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">test</span>
+<span class="w">  </span><span class="nt">vars</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">variable1</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">test</span><span class="w"></span>
 </pre></div>
 </div>
 </section>

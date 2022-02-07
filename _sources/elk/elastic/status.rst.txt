@@ -22,3 +22,12 @@ Get version and other info
 
    GET https://localhost:9200/
 
+Get the values of all settings in the system
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Includes the default settings.
+
+.. code-block:: console
+
+   GET _cluster/settings?flat_settings&include_defaults
+

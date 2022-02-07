@@ -50,6 +50,15 @@
 <span class="go">| jq &#39;.[&quot;fluttershy-2019.08.02&quot;].settings.index.blocks.read_only_allow_delete&#39;</span>
 </pre></div>
 </div>
+<p>Output 2 things on the same line:</p>
+<p>For getting <cite>name</cite> and <cite>mem</cite> next to each other on the same line</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">cat data.json | jq &#39;.systems[] | &quot;\(.name),\(.mem)&quot;&#39;</span>
+</pre></div>
+</div>
+<p>Again, but using <cite>join</cite>:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">cat data.json | jq &#39;.systems[] | [.name,.mem] | join(&quot; &quot;)&#39;</span>
+</pre></div>
+</div>
 </section>
 </section>
 

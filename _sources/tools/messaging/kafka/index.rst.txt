@@ -8,4 +8,5 @@ Some quick and dirty kafka notes.
    :maxdepth: 2
 
    commands
+   consumers
 
