@@ -76,3 +76,8 @@ RIP `ed25519`.
 Used Windows `Sign-In Options` to change the pin since the python program doesn't work
 on OpenBSD.
 
+Solo2 Key
+^^^^^^^^^
+
+My solo2 key is using ed25519.
+

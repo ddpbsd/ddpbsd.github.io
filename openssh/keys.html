@@ -15,8 +15,8 @@
     <script src="../_static/doctools.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Disconnect from an SSH session:" href="misc.html" />
-    <link rel="prev" title="Automatically add ssh keys to ssh-agent:" href="config.html" />
+    <link rel="next" title="Disconnect from an SSH session" href="misc.html" />
+    <link rel="prev" title="Automatically add ssh keys to ssh-agent" href="config.html" />
    
   <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
   
@@ -52,8 +52,8 @@ It defaults to <cite>sha256</cite>, but <cite>-E md5</cite> is also available.</
 </section>
 <section id="hardware-keys">
 <h1>Hardware Keys<a class="headerlink" href="#hardware-keys" title="Permalink to this headline">¶</a></h1>
-<section id="add-they-key-to-ssh-agent">
-<h2>Add they key to ssh-agent<a class="headerlink" href="#add-they-key-to-ssh-agent" title="Permalink to this headline">¶</a></h2>
+<section id="add-the-key-to-ssh-agent">
+<h2>Add the key to ssh-agent<a class="headerlink" href="#add-the-key-to-ssh-agent" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>ssh-add -K
 </pre></div>
 </div>
@@ -61,6 +61,37 @@ It defaults to <cite>sha256</cite>, but <cite>-E md5</cite> is also available.</
 <section id="put-libfido2-into-debug-mode">
 <h2>Put libfido2 into debug mode<a class="headerlink" href="#put-libfido2-into-debug-mode" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">env FIDO_DEBUG=1 ssh -vvv ...</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="forwarding">
+<h1>Forwarding<a class="headerlink" href="#forwarding" title="Permalink to this headline">¶</a></h1>
+<section id="agent-forwarding">
+<h2>Agent Forwarding<a class="headerlink" href="#agent-forwarding" title="Permalink to this headline">¶</a></h2>
+<p><cite>ssh-agent</cite> must be running on the original client computer.</p>
+<p>Agent forwarding is enabled by default, but to utilize it pass the <cite>-A</cite> flag to <cite>ssh</cite> or enable it in <cite>.ssh/config</cite>.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">Host host_identifier</span>
+<span class="go">     FowardAgent yes</span>
+</pre></div>
+</div>
+<p>The key should be added to the <cite>ssh-agent</cite> on the original destination automagically.
+This can be checked by running <cite>ssh-add -l</cite> on the destination.
+The key should be listed in the output.</p>
+</section>
+<section id="restrictive-agent-forwarding">
+<h2>Restrictive Agent Forwarding<a class="headerlink" href="#restrictive-agent-forwarding" title="Permalink to this headline">¶</a></h2>
+<p>To use the restrictive ForwardAgent, there must be a key in <cite>known_hosts</cite> that matches the hostname of all destinations.
+For instance, if we intend to reach <cite>node2</cite> via <cite>node1</cite>, both <cite>node2</cite> and <cite>node1</cite> require <cite>known_hosts</cite> entries.
+The hostnames in <cite>known_hosts</cite> should match the names provided in the restrictions (ssh-agent does a lookup to see if it “knows”
+the destination).</p>
+<p>Error presented when the entry is not found in <cite>known_hosts</cite>:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">[ddp@ix:.ssh] :; ssh-add -h &quot;pine.example.com&gt;monitor0.example.com&quot; id_rsa</span>
+<span class="go">No host keys found for destination &quot;pine.example.com&quot;</span>
+</pre></div>
+</div>
+<p>First add a constraint for the original destination, then add further constraints for the next hops.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>ssh-add -h <span class="s2">&quot;ix.example.com&quot;</span> -h <span class="s2">&quot;ix.example.com&gt;vmconnect.example.com&quot;</span> .ssh/id_rsa
 </pre></div>
 </div>
 </section>
@@ -91,12 +122,13 @@ It defaults to <cite>sha256</cite>, but <cite>-E md5</cite> is also available.</
 <li class="toctree-l1"><a class="reference internal" href="../k8s/index.html">kubernetes</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">OpenSSH</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="commands.html">Command note</a></li>
-<li class="toctree-l2"><a class="reference internal" href="config.html">Automatically add ssh keys to ssh-agent:</a></li>
+<li class="toctree-l2"><a class="reference internal" href="config.html">Automatically add ssh keys to ssh-agent</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">SSH keys</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#hardware-keys">Hardware Keys</a></li>
-<li class="toctree-l2"><a class="reference internal" href="misc.html">Disconnect from an SSH session:</a></li>
-<li class="toctree-l2"><a class="reference internal" href="misc.html#disconnect-from-a-nested-ssh-session">Disconnect from a nested SSH session:</a></li>
-<li class="toctree-l2"><a class="reference internal" href="sftp.html">message too long:</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#forwarding">Forwarding</a></li>
+<li class="toctree-l2"><a class="reference internal" href="misc.html">Disconnect from an SSH session</a></li>
+<li class="toctree-l2"><a class="reference internal" href="misc.html#disconnect-from-a-nested-ssh-session">Disconnect from a nested SSH session</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sftp.html">message too long</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../operating_systems/index.html">Operating Systems</a></li>
@@ -115,8 +147,8 @@ It defaults to <cite>sha256</cite>, but <cite>-E md5</cite> is also available.</
 <ul>
   <li><a href="../index.html">Documentation overview</a><ul>
   <li><a href="index.html">OpenSSH</a><ul>
-      <li>Previous: <a href="config.html" title="previous chapter">Automatically add ssh keys to ssh-agent:</a></li>
-      <li>Next: <a href="misc.html" title="next chapter">Disconnect from an SSH session:</a></li>
+      <li>Previous: <a href="config.html" title="previous chapter">Automatically add ssh keys to ssh-agent</a></li>
+      <li>Next: <a href="misc.html" title="next chapter">Disconnect from an SSH session</a></li>
   </ul></li>
   </ul></li>
 </ul>

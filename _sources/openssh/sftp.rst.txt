@@ -1,6 +1,6 @@
 
-message too long:
-^^^^^^^^^^^^^^^^^
+message too long
+^^^^^^^^^^^^^^^^
 
 Output in `~/.bashrc` causes sftp to fail.
 Silence it.

@@ -11,5 +11,6 @@ Contents:
    elastic/index
    logstash/index
    monitoring/index
-   setup.rst
+   setup
+   endpoint
 

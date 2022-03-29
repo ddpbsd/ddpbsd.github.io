@@ -1,0 +1,21 @@
+
+
+syslog time stamp
+^^^^^^^^^^^^^^^^^
+
+.. code-block:: console
+
+   SYSLOGTIMESTAMP %{MONTH} +%{MONTHDAY} %{TIME}
+
+
+
+Custom
+
+`2022-02-17T15:41:32-05:00 `
+
+.. code-block:: console
+
+   UNIFITIMESTAMP 20%{YEAR}-%{MONTHNUM}-%{MONTHDAY}T%{HOUR}:?%{MINUTE}(?::?%{SECOND})%{ISO8601_TIMEZONE}
+
+UNIFITIMESTAMP 20%{YEAR}-%{MONTHNUM}-%{MONTHDAY}T%{HOUR}:?%{MINUTE}(?::?%{SECOND})%{ISO8601_TIMEZONE}
+

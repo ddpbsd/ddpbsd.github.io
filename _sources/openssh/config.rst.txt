@@ -1,8 +1,8 @@
 
 
 
-Automatically add ssh keys to ssh-agent:
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Automatically add ssh keys to ssh-agent
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 In `~/.ssh/config` add:
 
