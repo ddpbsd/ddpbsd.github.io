@@ -48,6 +48,11 @@ Once the pin was set I was able to use ssh-keygen to create an `ed25519-sk` key 
 
    $ ssh-keygen -t ed25519-sk -O resident
 
+The `resident` option keeps a "key handle" on the device, while it is normally stored in a private key
+on the filesystem.
+More information can be found in the `8.2 release notes <https://www.openssh.com/txt/release-8.2>`_ under
+the "FIDO2 resident keys" heading.
+
 It should prompt for the pin, and then the Y will flash for confirmation of presense.
 It may prompt to be touched, it may not.
 The flashing Y is a sign to touch it.

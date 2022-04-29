@@ -1,0 +1,37 @@
+===
+veb
+===
+
+`veb(4)` replaces `bridge(4)` and is setup similarly.
+
+**vport(4)**:
+
+Setup a vport for interaction with the veb.
+
+.. code-block:: console
+
+   # cat /etc/hostname.vport0
+   192.168.1.13/24
+   up
+
+**physical port**:
+
+Up the physical port.
+
+.. code-block:: console
+
+   # cat /etc/hostname.em0
+   up
+
+**veb0**:
+
+Add the child interfaces.
+
+.. code-block:: console
+
+   # cat /etc/hostname.veb0
+   add vport0
+   add em0
+   up
+
+

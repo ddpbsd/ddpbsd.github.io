@@ -15,6 +15,7 @@ Contents:
    hardware/index
    install
    misc
+   network/veb
    network/wg
    pledge/index
    vi

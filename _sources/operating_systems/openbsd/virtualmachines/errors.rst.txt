@@ -1,10 +1,9 @@
-.. _operating_systems_openbsd_virtualmachines_errors:
-
+======
 Errors
 ======
 
-No such file or directory:
-^^^^^^^^^^^^^^^^^^^^^^^^^^
+No such file or directory
+^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Error displayed when starting a VM.
 

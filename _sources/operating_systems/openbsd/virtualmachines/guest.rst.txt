@@ -1,10 +1,18 @@
 
 
-Change the timecounter:
-^^^^^^^^^^^^^^^^^^^^^^^
+Change the timecounter
+^^^^^^^^^^^^^^^^^^^^^^
 
 .. code-block:: console
 
    sysctl kern.timecounter.hardware=tsc
 
+Exit a VM cu
+^^^^^^^^^^^^
+
+tilde control-D
+
+.. code-block:: console
+
+   ~^D
 

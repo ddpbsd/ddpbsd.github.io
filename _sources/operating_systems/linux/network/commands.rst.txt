@@ -14,9 +14,18 @@ It's now `ss`. Goot luck. I still don't know how to do `-pan`.
 
 This gives more than I usually want, but it seems to give me more open ports than the above command.
 
+`-l` gives the listening ports.
+
 .. code-block:: console
 
    sudo ss -tulpn
+
+View the current connections
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: console
+
+   sudo ss -tpn
 
 ifconfig is broken?
 ^^^^^^^^^^^^^^^^^^^

@@ -121,6 +121,10 @@ I ran it in Windows 10 with administrator privs (won’t be able to access fido 
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>ssh-keygen -t ed25519-sk -O resident
 </pre></div>
 </div>
+<p>The <cite>resident</cite> option keeps a “key handle” on the device, while it is normally stored in a private key
+on the filesystem.
+More information can be found in the <a class="reference external" href="https://www.openssh.com/txt/release-8.2">8.2 release notes</a> under
+the “FIDO2 resident keys” heading.</p>
 <p>It should prompt for the pin, and then the Y will flash for confirmation of presense.
 It may prompt to be touched, it may not.
 The flashing Y is a sign to touch it.</p>
