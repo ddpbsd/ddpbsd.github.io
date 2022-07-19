@@ -1,7 +1,7 @@
 
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
@@ -12,6 +12,7 @@
     <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../_static/doctools.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -34,7 +35,7 @@
           <div class="body" role="main">
             
   <section id="simple-config-testing">
-<h1>Simple config testing<a class="headerlink" href="#simple-config-testing" title="Permalink to this headline">¶</a></h1>
+<h1>Simple config testing<a class="headerlink" href="#simple-config-testing" title="Permalink to this heading">¶</a></h1>
 <p>Create a simple configuration in a tmp directory. Only include the necessary bits.</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">input {</span>
 
@@ -101,14 +102,14 @@
 </div>
 </section>
 <section id="this-is-working-with-6-5">
-<h1>This is working with 6.5<a class="headerlink" href="#this-is-working-with-6-5" title="Permalink to this headline">¶</a></h1>
+<h1>This is working with 6.5<a class="headerlink" href="#this-is-working-with-6-5" title="Permalink to this heading">¶</a></h1>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">bin/logstash --path.config ./config/conf.d --path.settings ./config -t</span>
 </pre></div>
 </div>
 <p>Observe output.</p>
 </section>
 <section id="sincedb-path">
-<h1>sincedb path<a class="headerlink" href="#sincedb-path" title="Permalink to this headline">¶</a></h1>
+<h1>sincedb path<a class="headerlink" href="#sincedb-path" title="Permalink to this heading">¶</a></h1>
 <p>Set the <cite>sincedb_path</cite> to <cite>/dev/null</cite> to keep it from recording where it is in the file.
 If this isn’t set to something like <cite>/dev/null</cite>, delete the <cite>data</cite> dir after running to reset the state.</p>
 </section>
@@ -173,12 +174,12 @@ If this isn’t set to something like <cite>/dev/null</cite>, delete the <cite>d
   <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="../../search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
       <input type="submit" value="Go" />
     </form>
     </div>
 </div>
-<script>$('#searchbox').show(0);</script>
+<script>document.getElementById('searchbox').style.display = "block"</script>
         </div>
       </div>
       <div class="clearer"></div>

@@ -1,7 +1,7 @@
 
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
@@ -12,6 +12,7 @@
     <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
     <script src="../../../_static/jquery.js"></script>
     <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../../_static/doctools.js"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
@@ -34,55 +35,55 @@
           <div class="body" role="main">
             
   <section id="list-guests">
-<span id="virtualization-virtd-virsh"></span><h1>List guests:<a class="headerlink" href="#list-guests" title="Permalink to this headline">¶</a></h1>
+<span id="virtualization-virtd-virsh"></span><h1>List guests:<a class="headerlink" href="#list-guests" title="Permalink to this heading">¶</a></h1>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">virsh list</span>
 </pre></div>
 </div>
 </section>
 <section id="list-all-guests">
-<h1>List all guests:<a class="headerlink" href="#list-all-guests" title="Permalink to this headline">¶</a></h1>
+<h1>List all guests:<a class="headerlink" href="#list-all-guests" title="Permalink to this heading">¶</a></h1>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">virsh list --all</span>
 </pre></div>
 </div>
 </section>
 <section id="power-off-a-guest">
-<h1>Power off a guest:<a class="headerlink" href="#power-off-a-guest" title="Permalink to this headline">¶</a></h1>
+<h1>Power off a guest:<a class="headerlink" href="#power-off-a-guest" title="Permalink to this heading">¶</a></h1>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">virsh destroy HOST</span>
 </pre></div>
 </div>
 </section>
 <section id="edit-a-host-s-configuration">
-<h1>Edit a host’s configuration:<a class="headerlink" href="#edit-a-host-s-configuration" title="Permalink to this headline">¶</a></h1>
+<h1>Edit a host’s configuration:<a class="headerlink" href="#edit-a-host-s-configuration" title="Permalink to this heading">¶</a></h1>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">virsh edit HOST</span>
 </pre></div>
 </div>
 </section>
 <section id="list-the-networks">
-<h1>List the networks:<a class="headerlink" href="#list-the-networks" title="Permalink to this headline">¶</a></h1>
+<h1>List the networks:<a class="headerlink" href="#list-the-networks" title="Permalink to this heading">¶</a></h1>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">virsh net-list</span>
 </pre></div>
 </div>
 </section>
 <section id="destroy-a-network">
-<h1>Destroy a network:<a class="headerlink" href="#destroy-a-network" title="Permalink to this headline">¶</a></h1>
+<h1>Destroy a network:<a class="headerlink" href="#destroy-a-network" title="Permalink to this heading">¶</a></h1>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">virsh destroy NETWORK</span>
 </pre></div>
 </div>
 </section>
 <section id="see-the-dhcp-leases">
-<h1>See the dhcp leases:<a class="headerlink" href="#see-the-dhcp-leases" title="Permalink to this headline">¶</a></h1>
+<h1>See the dhcp leases:<a class="headerlink" href="#see-the-dhcp-leases" title="Permalink to this heading">¶</a></h1>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">virsh net-dhcp-leases NETWORK</span>
 </pre></div>
 </div>
 </section>
 <section id="edit-the-networks">
-<h1>Edit the networks:<a class="headerlink" href="#edit-the-networks" title="Permalink to this headline">¶</a></h1>
+<h1>Edit the networks:<a class="headerlink" href="#edit-the-networks" title="Permalink to this heading">¶</a></h1>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">virsh net-edit NETWORK</span>
 </pre></div>
 </div>
 </section>
 <section id="find-the-vnc-display-of-a-guest">
-<h1>Find the vnc display of a guest:<a class="headerlink" href="#find-the-vnc-display-of-a-guest" title="Permalink to this headline">¶</a></h1>
+<h1>Find the vnc display of a guest:<a class="headerlink" href="#find-the-vnc-display-of-a-guest" title="Permalink to this heading">¶</a></h1>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">virsh vncdisplay gamont</span>
 </pre></div>
 </div>
@@ -172,12 +173,12 @@
   <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="../../../search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
       <input type="submit" value="Go" />
     </form>
     </div>
 </div>
-<script>$('#searchbox').show(0);</script>
+<script>document.getElementById('searchbox').style.display = "block"</script>
         </div>
       </div>
       <div class="clearer"></div>

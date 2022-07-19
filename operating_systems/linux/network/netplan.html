@@ -1,7 +1,7 @@
 
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
@@ -12,6 +12,7 @@
     <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
     <script src="../../../_static/jquery.js"></script>
     <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../../_static/doctools.js"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
@@ -34,13 +35,13 @@
           <div class="body" role="main">
             
   <section id="netplan">
-<h1>Netplan<a class="headerlink" href="#netplan" title="Permalink to this headline">¶</a></h1>
+<h1>Netplan<a class="headerlink" href="#netplan" title="Permalink to this heading">¶</a></h1>
 <p>All of the other network configuration systems
 weren’t good enough, so a new one was created.
 I imagine it’s not very good either, but it uses
 YAML. So yay?</p>
 <section id="renderers">
-<h2>Renderers:<a class="headerlink" href="#renderers" title="Permalink to this headline">¶</a></h2>
+<h2>Renderers:<a class="headerlink" href="#renderers" title="Permalink to this heading">¶</a></h2>
 <p>netplan can configure <cite>systemd-networkd</cite> or <cite>NetworkManager</cite>
 but I have no idea which one to use on my system at the moment.
 I’m guessing <cite>networkd</cite> (which is the same as <cite>systemd-networkd</cite>?),
@@ -54,7 +55,7 @@ silly. <em>shrug</em></p>
 the value in this.</p>
 </section>
 <section id="netplan-generate">
-<h2>netplan generate:<a class="headerlink" href="#netplan-generate" title="Permalink to this headline">¶</a></h2>
+<h2>netplan generate:<a class="headerlink" href="#netplan-generate" title="Permalink to this heading">¶</a></h2>
 <p>It doesn’t really do anything until you have
 netplan setup. Why’s it on the front page before
 the explanation of how to make the yaml files I’ll
@@ -64,7 +65,7 @@ never know.</p>
 </div>
 </section>
 <section id="netplan-apply">
-<h2>netplan apply:<a class="headerlink" href="#netplan-apply" title="Permalink to this headline">¶</a></h2>
+<h2>netplan apply:<a class="headerlink" href="#netplan-apply" title="Permalink to this heading">¶</a></h2>
 <p>This segfaults. But it did delete my interface somehow?
 I’ll reboot and see if it helps.</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">netplan apply</span>
@@ -72,7 +73,7 @@ I’ll reboot and see if it helps.</p>
 </div>
 </section>
 <section id="basic-example">
-<h2>Basic example:<a class="headerlink" href="#basic-example" title="Permalink to this headline">¶</a></h2>
+<h2>Basic example:<a class="headerlink" href="#basic-example" title="Permalink to this heading">¶</a></h2>
 <p>I’m praying this works, but I’m not holding my breath.</p>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">network</span><span class="p">:</span><span class="w"></span>
 <span class="w">  </span><span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2</span><span class="w"></span>
@@ -149,12 +150,12 @@ I’ll reboot and see if it helps.</p>
   <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="../../../search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
       <input type="submit" value="Go" />
     </form>
     </div>
 </div>
-<script>$('#searchbox').show(0);</script>
+<script>document.getElementById('searchbox').style.display = "block"</script>
         </div>
       </div>
       <div class="clearer"></div>

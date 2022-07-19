@@ -1,7 +1,7 @@
 
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
@@ -12,6 +12,7 @@
     <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
     <script src="../../../../_static/jquery.js"></script>
     <script src="../../../../_static/underscore.js"></script>
+    <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../../../_static/doctools.js"></script>
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
@@ -34,20 +35,20 @@
           <div class="body" role="main">
             
   <section id="add-a-remote-image-server">
-<span id="lxd-images"></span><h1>Add a remote image server<a class="headerlink" href="#add-a-remote-image-server" title="Permalink to this headline">¶</a></h1>
+<span id="lxd-images"></span><h1>Add a remote image server<a class="headerlink" href="#add-a-remote-image-server" title="Permalink to this heading">¶</a></h1>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">ddplxc@earth:~$ </span>lxc remote add lxc images.linuxcontainers.org
 </pre></div>
 </div>
 </section>
 <section id="list-images-on-image-server">
-<h1>List images on image server<a class="headerlink" href="#list-images-on-image-server" title="Permalink to this headline">¶</a></h1>
+<h1>List images on image server<a class="headerlink" href="#list-images-on-image-server" title="Permalink to this heading">¶</a></h1>
 <p><cite>images:</cite> is the name of the remote image server.</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">ddplxc@earth:~$ </span>lxc images list images:
 </pre></div>
 </div>
 </section>
 <section id="launch-a-container-from-a-new-image">
-<h1>Launch a container from a “new” image<a class="headerlink" href="#launch-a-container-from-a-new-image" title="Permalink to this headline">¶</a></h1>
+<h1>Launch a container from a “new” image<a class="headerlink" href="#launch-a-container-from-a-new-image" title="Permalink to this heading">¶</a></h1>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">ddplxc@earth:~$ </span>lxc launch ubuntu/xenial/amd64 ubuntu-xenial-20160601
 </pre></div>
 </div>
@@ -57,7 +58,7 @@
 </div>
 </section>
 <section id="stop-a-running-container">
-<h1>Stop a running container<a class="headerlink" href="#stop-a-running-container" title="Permalink to this headline">¶</a></h1>
+<h1>Stop a running container<a class="headerlink" href="#stop-a-running-container" title="Permalink to this heading">¶</a></h1>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">ddplxc@earth:~$ </span>lxc stop ubuntu-xenial-20160601
 </pre></div>
 </div>
@@ -124,12 +125,12 @@
   <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="../../../../search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
       <input type="submit" value="Go" />
     </form>
     </div>
 </div>
-<script>$('#searchbox').show(0);</script>
+<script>document.getElementById('searchbox').style.display = "block"</script>
         </div>
       </div>
       <div class="clearer"></div>

@@ -1,7 +1,7 @@
 
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
@@ -12,6 +12,7 @@
     <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../_static/doctools.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -39,13 +40,13 @@
 Not sure if local settings override global, but I would hope so.</p>
 </div>
 <section id="sign-commits">
-<h1>Sign commits<a class="headerlink" href="#sign-commits" title="Permalink to this headline">¶</a></h1>
+<h1>Sign commits<a class="headerlink" href="#sign-commits" title="Permalink to this heading">¶</a></h1>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">git config --global user.signkey public 80E6A369  ## Replace 80E6A369 will private key ID</span>
 </pre></div>
 </div>
 </section>
 <section id="set-email-username">
-<h1>Set email/username<a class="headerlink" href="#set-email-username" title="Permalink to this headline">¶</a></h1>
+<h1>Set email/username<a class="headerlink" href="#set-email-username" title="Permalink to this heading">¶</a></h1>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">git config --global user.email=ddpbsd@gmail.com</span>
 <span class="go">git config --global user.name=ddp</span>
 </pre></div>
@@ -134,12 +135,12 @@ Not sure if local settings override global, but I would hope so.</p>
   <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="../../search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
       <input type="submit" value="Go" />
     </form>
     </div>
 </div>
-<script>$('#searchbox').show(0);</script>
+<script>document.getElementById('searchbox').style.display = "block"</script>
         </div>
       </div>
       <div class="clearer"></div>

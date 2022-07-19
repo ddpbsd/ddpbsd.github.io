@@ -1,0 +1,23 @@
+====================
+agent logs discovery
+====================
+
+interesting fields
+^^^^^^^^^^^^^^^^^^
+
+`agent.id`i & `elastic_agent.id` - A UUID value that can be found in the agent description in fleet.
+
+`agent.name` - The agent's name (possibly fqdn).
+
+`agent.type` - The type of beat that gathered the info.
+
+`agent.version` - The version of the agent software.
+
+`data_stream.dataset` & `event.dataset` - The type of data (kind of which integration it comes from?).
+
+`event.module` - Maybe the integration?
+
+
+
+
+

@@ -1,7 +1,7 @@
 
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
@@ -12,6 +12,7 @@
     <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
     <script src="../../../_static/jquery.js"></script>
     <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../../_static/doctools.js"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
@@ -34,17 +35,17 @@
           <div class="body" role="main">
             
   <section id="install-a-guest">
-<span id="virtualization-virtd-install-guest"></span><h1>Install a guest:<a class="headerlink" href="#install-a-guest" title="Permalink to this headline">¶</a></h1>
+<span id="virtualization-virtd-install-guest"></span><h1>Install a guest:<a class="headerlink" href="#install-a-guest" title="Permalink to this heading">¶</a></h1>
 </section>
 <section id="create-the-image">
-<h1>Create the image:<a class="headerlink" href="#create-the-image" title="Permalink to this headline">¶</a></h1>
+<h1>Create the image:<a class="headerlink" href="#create-the-image" title="Permalink to this heading">¶</a></h1>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">cd /data2tb/virtualmachines</span>
 <span class="go">qemu-img create -f qcow2 ./name.qcow2 8G</span>
 </pre></div>
 </div>
 </section>
 <section id="id1">
-<h1>Install a guest:<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<h1>Install a guest:<a class="headerlink" href="#id1" title="Permalink to this heading">¶</a></h1>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">virt-install --name kaitain --ram 1024 --disk path=/data2tb/virtualmachines/kaitain.img,size=100 --vcpus 1 --os-type linux --os-variant ubuntu16.04 --network bridge=br1 --cdrom /data1tb/ISO/ubuntu-16.04.3-server-amd64.iso</span>
 </pre></div>
 </div>
@@ -135,12 +136,12 @@
   <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="../../../search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
       <input type="submit" value="Go" />
     </form>
     </div>
 </div>
-<script>$('#searchbox').show(0);</script>
+<script>document.getElementById('searchbox').style.display = "block"</script>
         </div>
       </div>
       <div class="clearer"></div>

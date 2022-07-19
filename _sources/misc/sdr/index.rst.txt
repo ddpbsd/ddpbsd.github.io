@@ -1,0 +1,14 @@
+
+======================
+software defined radio
+======================
+
+Going to play with some sdr stuff.
+
+Contents:
+
+.. toctree::
+   :maxdepth: 2
+
+   hardware
+

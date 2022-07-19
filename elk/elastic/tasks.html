@@ -1,7 +1,7 @@
 
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
@@ -12,6 +12,7 @@
     <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../_static/doctools.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -34,21 +35,21 @@
           <div class="body" role="main">
             
   <section id="tasks">
-<h1>Tasks<a class="headerlink" href="#tasks" title="Permalink to this headline">¶</a></h1>
+<h1>Tasks<a class="headerlink" href="#tasks" title="Permalink to this heading">¶</a></h1>
 <section id="get-a-list-of-tasks">
-<h2>Get a list of tasks<a class="headerlink" href="#get-a-list-of-tasks" title="Permalink to this headline">¶</a></h2>
+<h2>Get a list of tasks<a class="headerlink" href="#get-a-list-of-tasks" title="Permalink to this heading">¶</a></h2>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">GET /_tasks</span>
 </pre></div>
 </div>
 </section>
 <section id="get-a-list-of-tasks-that-are-searches">
-<h2>Get a list of tasks that are searches<a class="headerlink" href="#get-a-list-of-tasks-that-are-searches" title="Permalink to this headline">¶</a></h2>
+<h2>Get a list of tasks that are searches<a class="headerlink" href="#get-a-list-of-tasks-that-are-searches" title="Permalink to this heading">¶</a></h2>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">GET /_tasks?actions=*search&amp;detailed</span>
 </pre></div>
 </div>
 </section>
 <section id="get-information-on-a-specific-task">
-<h2>Get information on a specific task<a class="headerlink" href="#get-information-on-a-specific-task" title="Permalink to this headline">¶</a></h2>
+<h2>Get information on a specific task<a class="headerlink" href="#get-information-on-a-specific-task" title="Permalink to this heading">¶</a></h2>
 <p>Get the TASK_ID from one of the above queries.</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">GET /_tasks/TASK_ID</span>
 </pre></div>
@@ -83,6 +84,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../logstash/index.html">logstash</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../monitoring/index.html">monitoring</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../setup.html">Setting up the whole thing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../endpoint.html">endpoint</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../k8s/index.html">kubernetes</a></li>
@@ -115,12 +117,12 @@
   <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="../../search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
       <input type="submit" value="Go" />
     </form>
     </div>
 </div>
-<script>$('#searchbox').show(0);</script>
+<script>document.getElementById('searchbox').style.display = "block"</script>
         </div>
       </div>
       <div class="clearer"></div>

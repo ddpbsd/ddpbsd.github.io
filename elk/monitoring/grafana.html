@@ -1,7 +1,7 @@
 
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
@@ -12,6 +12,7 @@
     <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../_static/doctools.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -34,11 +35,11 @@
           <div class="body" role="main">
             
   <section id="monitoring-elasticsearch-in-grafana">
-<h1>Monitoring elasticsearch in grafana<a class="headerlink" href="#monitoring-elasticsearch-in-grafana" title="Permalink to this headline">¶</a></h1>
+<h1>Monitoring elasticsearch in grafana<a class="headerlink" href="#monitoring-elasticsearch-in-grafana" title="Permalink to this heading">¶</a></h1>
 <p><a class="reference external" href="https://grafana.com/">grafana</a> is handy for graphing things.
 These examples use influxdb and telegraf.</p>
 <section id="free-disk-space">
-<h2>Free disk space<a class="headerlink" href="#free-disk-space" title="Permalink to this headline">¶</a></h2>
+<h2>Free disk space<a class="headerlink" href="#free-disk-space" title="Permalink to this heading">¶</a></h2>
 <p>See the percentage of free space for each node.</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">SELECT (last(&quot;total_available_in_bytes&quot;) / last(&quot;total_total_in_bytes&quot;) * 100) FROM &quot;elasticsearch_fs&quot; WHERE (&quot;cluster_name&quot; = &#39;wafflelab&#39;) AND $timeFilter GROUP BY time($__interval) fill(null)</span>
 </pre></div>
@@ -73,6 +74,7 @@ These examples use influxdb and telegraf.</p>
 <li class="toctree-l2"><a class="reference internal" href="../logstash/index.html">logstash</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="index.html">monitoring</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../setup.html">Setting up the whole thing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../endpoint.html">endpoint</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../k8s/index.html">kubernetes</a></li>
@@ -105,12 +107,12 @@ These examples use influxdb and telegraf.</p>
   <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="../../search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
       <input type="submit" value="Go" />
     </form>
     </div>
 </div>
-<script>$('#searchbox').show(0);</script>
+<script>document.getElementById('searchbox').style.display = "block"</script>
         </div>
       </div>
       <div class="clearer"></div>

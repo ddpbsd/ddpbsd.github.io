@@ -1,7 +1,7 @@
 
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
@@ -12,6 +12,7 @@
     <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../_static/doctools.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -34,7 +35,7 @@
           <div class="body" role="main">
             
   <section id="save-config-to-a-file">
-<h1>Save config to a file<a class="headerlink" href="#save-config-to-a-file" title="Permalink to this headline">¶</a></h1>
+<h1>Save config to a file<a class="headerlink" href="#save-config-to-a-file" title="Permalink to this heading">¶</a></h1>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">admin@device&gt; configure</span>
 <span class="gp">admin@device# </span>save config to 20180206_palo_config
 <span class="gp">admin@device# </span><span class="nb">exit</span>
@@ -43,45 +44,45 @@
 </div>
 </section>
 <section id="show-system-statistics">
-<h1>Show system statistics<a class="headerlink" href="#show-system-statistics" title="Permalink to this headline">¶</a></h1>
+<h1>Show system statistics<a class="headerlink" href="#show-system-statistics" title="Permalink to this heading">¶</a></h1>
 <p>Show some system statistics.</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">&gt; show system state browser</span>
 </pre></div>
 </div>
 </section>
 <section id="more-statistics">
-<h1>More statistics<a class="headerlink" href="#more-statistics" title="Permalink to this headline">¶</a></h1>
+<h1>More statistics<a class="headerlink" href="#more-statistics" title="Permalink to this heading">¶</a></h1>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">show system statistics (session|application)                 - shows total bandwidth passing through the PAN</span>
 </pre></div>
 </div>
 </section>
 <section id="information-about-the-cpu-usage">
-<h1>Information about the CPU usage<a class="headerlink" href="#information-about-the-cpu-usage" title="Permalink to this headline">¶</a></h1>
+<h1>Information about the CPU usage<a class="headerlink" href="#information-about-the-cpu-usage" title="Permalink to this heading">¶</a></h1>
 <p>More information can be found here: <a class="reference external" href="https://knowledgebase.paloaltonetworks.com/KCSArticleDetail?id=kA10g000000ClXwCAK">https://knowledgebase.paloaltonetworks.com/KCSArticleDetail?id=kA10g000000ClXwCAK</a></p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">show running resource-monitor           - shows data plane CPU usgae at different time intervals</span>
 </pre></div>
 </div>
 </section>
 <section id="basically-a-top-output">
-<h1>Basically a top output<a class="headerlink" href="#basically-a-top-output" title="Permalink to this headline">¶</a></h1>
+<h1>Basically a top output<a class="headerlink" href="#basically-a-top-output" title="Permalink to this heading">¶</a></h1>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">show system resources                   - shows management plane CPU usage</span>
 </pre></div>
 </div>
 </section>
 <section id="display-global-counters">
-<h1>Display Global counters<a class="headerlink" href="#display-global-counters" title="Permalink to this headline">¶</a></h1>
+<h1>Display Global counters<a class="headerlink" href="#display-global-counters" title="Permalink to this heading">¶</a></h1>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">show counter global</span>
 </pre></div>
 </div>
 </section>
 <section id="show-arp-table">
-<h1>Show arp table<a class="headerlink" href="#show-arp-table" title="Permalink to this headline">¶</a></h1>
+<h1>Show arp table<a class="headerlink" href="#show-arp-table" title="Permalink to this heading">¶</a></h1>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">&gt; show arp ethernet1/1</span>
 </pre></div>
 </div>
 </section>
 <section id="ping-a-host">
-<h1>ping a host<a class="headerlink" href="#ping-a-host" title="Permalink to this headline">¶</a></h1>
+<h1>ping a host<a class="headerlink" href="#ping-a-host" title="Permalink to this heading">¶</a></h1>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">&gt; ping host 10.10.10.10</span>
 </pre></div>
 </div>
@@ -147,12 +148,12 @@
   <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="../../search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
       <input type="submit" value="Go" />
     </form>
     </div>
 </div>
-<script>$('#searchbox').show(0);</script>
+<script>document.getElementById('searchbox').style.display = "block"</script>
         </div>
       </div>
       <div class="clearer"></div>

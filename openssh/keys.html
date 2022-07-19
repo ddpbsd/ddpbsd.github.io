@@ -1,7 +1,7 @@
 
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
@@ -12,6 +12,7 @@
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -34,9 +35,9 @@
           <div class="body" role="main">
             
   <section id="ssh-keys">
-<span id="openssh-keys"></span><h1>SSH keys<a class="headerlink" href="#ssh-keys" title="Permalink to this headline">¶</a></h1>
+<span id="openssh-keys"></span><h1>SSH keys<a class="headerlink" href="#ssh-keys" title="Permalink to this heading">¶</a></h1>
 <section id="determine-the-fingerprint-of-a-key">
-<h2>Determine the fingerprint of a key<a class="headerlink" href="#determine-the-fingerprint-of-a-key" title="Permalink to this headline">¶</a></h2>
+<h2>Determine the fingerprint of a key<a class="headerlink" href="#determine-the-fingerprint-of-a-key" title="Permalink to this heading">¶</a></h2>
 <p><cite>ssh-keygen</cite> can provide this information.
 It defaults to <cite>sha256</cite>, but <cite>-E md5</cite> is also available.</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">ssh-keygen -lf KEY</span>
@@ -44,31 +45,31 @@ It defaults to <cite>sha256</cite>, but <cite>-E md5</cite> is also available.</
 </div>
 </section>
 <section id="scp-only-key">
-<h2>scp only key<a class="headerlink" href="#scp-only-key" title="Permalink to this headline">¶</a></h2>
+<h2>scp only key<a class="headerlink" href="#scp-only-key" title="Permalink to this heading">¶</a></h2>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">no-port-forwarding,no-pty,command=&quot;scp -v -t /destination/path&quot; ssh-rsa ...</span>
 </pre></div>
 </div>
 </section>
 </section>
 <section id="hardware-keys">
-<h1>Hardware Keys<a class="headerlink" href="#hardware-keys" title="Permalink to this headline">¶</a></h1>
+<h1>Hardware Keys<a class="headerlink" href="#hardware-keys" title="Permalink to this heading">¶</a></h1>
 <section id="add-the-key-to-ssh-agent">
-<h2>Add the key to ssh-agent<a class="headerlink" href="#add-the-key-to-ssh-agent" title="Permalink to this headline">¶</a></h2>
+<h2>Add the key to ssh-agent<a class="headerlink" href="#add-the-key-to-ssh-agent" title="Permalink to this heading">¶</a></h2>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>ssh-add -K
 </pre></div>
 </div>
 </section>
 <section id="put-libfido2-into-debug-mode">
-<h2>Put libfido2 into debug mode<a class="headerlink" href="#put-libfido2-into-debug-mode" title="Permalink to this headline">¶</a></h2>
+<h2>Put libfido2 into debug mode<a class="headerlink" href="#put-libfido2-into-debug-mode" title="Permalink to this heading">¶</a></h2>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">env FIDO_DEBUG=1 ssh -vvv ...</span>
 </pre></div>
 </div>
 </section>
 </section>
 <section id="forwarding">
-<h1>Forwarding<a class="headerlink" href="#forwarding" title="Permalink to this headline">¶</a></h1>
+<h1>Forwarding<a class="headerlink" href="#forwarding" title="Permalink to this heading">¶</a></h1>
 <section id="agent-forwarding">
-<h2>Agent Forwarding<a class="headerlink" href="#agent-forwarding" title="Permalink to this headline">¶</a></h2>
+<h2>Agent Forwarding<a class="headerlink" href="#agent-forwarding" title="Permalink to this heading">¶</a></h2>
 <p><cite>ssh-agent</cite> must be running on the original client computer.</p>
 <p>Agent forwarding is enabled by default, but to utilize it pass the <cite>-A</cite> flag to <cite>ssh</cite> or enable it in <cite>.ssh/config</cite>.</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">Host host_identifier</span>
@@ -80,7 +81,7 @@ This can be checked by running <cite>ssh-add -l</cite> on the destination.
 The key should be listed in the output.</p>
 </section>
 <section id="restrictive-agent-forwarding">
-<h2>Restrictive Agent Forwarding<a class="headerlink" href="#restrictive-agent-forwarding" title="Permalink to this headline">¶</a></h2>
+<h2>Restrictive Agent Forwarding<a class="headerlink" href="#restrictive-agent-forwarding" title="Permalink to this heading">¶</a></h2>
 <p>To use the restrictive ForwardAgent, there must be a key in <cite>known_hosts</cite> that matches the hostname of all destinations.
 For instance, if we intend to reach <cite>node2</cite> via <cite>node1</cite>, both <cite>node2</cite> and <cite>node1</cite> require <cite>known_hosts</cite> entries.
 The hostnames in <cite>known_hosts</cite> should match the names provided in the restrictions (ssh-agent does a lookup to see if it “knows”
@@ -157,12 +158,12 @@ the destination).</p>
   <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="../search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
       <input type="submit" value="Go" />
     </form>
     </div>
 </div>
-<script>$('#searchbox').show(0);</script>
+<script>document.getElementById('searchbox').style.display = "block"</script>
         </div>
       </div>
       <div class="clearer"></div>

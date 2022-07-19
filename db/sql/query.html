@@ -1,7 +1,7 @@
 
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
@@ -12,6 +12,7 @@
     <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../_static/doctools.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -34,29 +35,33 @@
           <div class="body" role="main">
             
   <section id="count-the-number-of-times-each-domain-is-entered-sort-by-count-and-display-descending">
-<h1>Count the number of times each domain is entered, sort by count, and display descending<a class="headerlink" href="#count-the-number-of-times-each-domain-is-entered-sort-by-count-and-display-descending" title="Permalink to this headline">¶</a></h1>
+<h1>Count the number of times each domain is entered, sort by count, and display descending<a class="headerlink" href="#count-the-number-of-times-each-domain-is-entered-sort-by-count-and-display-descending" title="Permalink to this heading">¶</a></h1>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">SEELCT domain, count(*) FROM dump WHERE domain IS NOT NULL GROUP BY domain ORDER BY count DESC;</span>
 </pre></div>
 </div>
 </section>
 <section id="as-above-but-csv">
-<h1>As above, but csv<a class="headerlink" href="#as-above-but-csv" title="Permalink to this headline">¶</a></h1>
+<h1>As above, but csv<a class="headerlink" href="#as-above-but-csv" title="Permalink to this heading">¶</a></h1>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">COPY(SEELCT domain, count(*) FROM dump WHERE domain IS NOT NULL GROUP BY domain ORDER BY count DESC) TO STDOUT WITH CSV;</span>
 </pre></div>
 </div>
 </section>
 <section id="count-password-length">
-<h1>Count password length<a class="headerlink" href="#count-password-length" title="Permalink to this headline">¶</a></h1>
+<h1>Count password length<a class="headerlink" href="#count-password-length" title="Permalink to this heading">¶</a></h1>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">select char_length(password) as length, count(*) as count from dump where password is not null group by length order by count desc;</span>
 </pre></div>
 </div>
 </section>
 <section id="multiple-select-statements">
-<h1>multiple SELECT statements<a class="headerlink" href="#multiple-select-statements" title="Permalink to this headline">¶</a></h1>
+<h1>multiple SELECT statements<a class="headerlink" href="#multiple-select-statements" title="Permalink to this heading">¶</a></h1>
 <p>This will output <cite>filename|COUNT</cite> for all distinct filenames in the <cite>syscheck</cite> table.</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">select filename,count(*) from syscheck where filename in (select distinct filename from syscheck) group by filename;</span>
 </pre></div>
 </div>
+</section>
+<section id="order-by-date">
+<h1>ORDER BY date<a class="headerlink" href="#order-by-date" title="Permalink to this heading">¶</a></h1>
+<p>If the date is in a good format (<cite>YYYY-mm-dd HH:mm:ss</cite> or similar), an <cite>ORDER BY date_field DESC LIMIT 1</cite> is enough to get the latest entry by date.</p>
 </section>
 
 
@@ -116,12 +121,12 @@
   <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="../../search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
       <input type="submit" value="Go" />
     </form>
     </div>
 </div>
-<script>$('#searchbox').show(0);</script>
+<script>document.getElementById('searchbox').style.display = "block"</script>
         </div>
       </div>
       <div class="clearer"></div>

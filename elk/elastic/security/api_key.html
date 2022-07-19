@@ -1,7 +1,7 @@
 
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
@@ -12,6 +12,7 @@
     <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
     <script src="../../../_static/jquery.js"></script>
     <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../../_static/doctools.js"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
@@ -32,10 +33,10 @@
           <div class="body" role="main">
             
   <section id="api-key">
-<h1>api_key<a class="headerlink" href="#api-key" title="Permalink to this headline">¶</a></h1>
+<h1>api_key<a class="headerlink" href="#api-key" title="Permalink to this heading">¶</a></h1>
 <p>A quick walk-through for using an api_key for authentication.</p>
 <section id="preparing-elasticsearch">
-<h2>Preparing elasticsearch<a class="headerlink" href="#preparing-elasticsearch" title="Permalink to this headline">¶</a></h2>
+<h2>Preparing elasticsearch<a class="headerlink" href="#preparing-elasticsearch" title="Permalink to this heading">¶</a></h2>
 <p>At a minimum the following should be set:</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">xpack.security.enabled: true</span>
 <span class="go">xpack.security.authc.api_key.enabled: true</span>
@@ -45,7 +46,7 @@
 But I’m just testing at the moment.</p>
 </section>
 <section id="users">
-<h2>Users<a class="headerlink" href="#users" title="Permalink to this headline">¶</a></h2>
+<h2>Users<a class="headerlink" href="#users" title="Permalink to this heading">¶</a></h2>
 <p>When <cite>xpack.security.enabled</cite> is turned on, there needs to be a user that can authenticate to elasticsearch.
 Make sure there is one.</p>
 <p>This will add a user:</p>
@@ -57,10 +58,10 @@ The <cite>ROLE</cite> might need to be <cite>superuser</cite> for this initial u
 The <a class="reference external" href="./users.html">users</a> page will have more information on creating additional users via the API.</p>
 </section>
 <section id="creating-api-keys">
-<h2>Creating api keys<a class="headerlink" href="#creating-api-keys" title="Permalink to this headline">¶</a></h2>
+<h2>Creating api keys<a class="headerlink" href="#creating-api-keys" title="Permalink to this heading">¶</a></h2>
 <p>A <cite>GET</cite> to <cite>/_security/api_key</cite> can return an API key.
 The body of the request needs to include some information:</p>
-<div class="highlight-json notranslate"><div class="highlight"><pre><span></span>{
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span>{
   &quot;name&quot;: &quot;name-of-key&quot;,
   &quot;expiration: &quot;1d&quot;,
   &quot;role_descriptors&quot;: {
@@ -93,7 +94,7 @@ If an api key is used to authenticate to create an api key, <cite>role_descripto
 </div>
 </section>
 <section id="using-the-api-key">
-<h2>Using the api_key<a class="headerlink" href="#using-the-api-key" title="Permalink to this headline">¶</a></h2>
+<h2>Using the api_key<a class="headerlink" href="#using-the-api-key" title="Permalink to this heading">¶</a></h2>
 <p>The <cite>id</cite> and <cite>api_key</cite> returned need to be combined and base64 encoded to be used.
 The format is <cite>id:api_key</cite>, and there should be no new line.</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">echo -n &#39;dbCzLXwBkbNauQGnNBBd:S_EA77YvQCiG4DlHu_6Dsw&#39; | base64</span>
@@ -152,12 +153,12 @@ The format is <cite>id:api_key</cite>, and there should be no new line.</p>
   <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="../../../search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
       <input type="submit" value="Go" />
     </form>
     </div>
 </div>
-<script>$('#searchbox').show(0);</script>
+<script>document.getElementById('searchbox').style.display = "block"</script>
         </div>
       </div>
       <div class="clearer"></div>

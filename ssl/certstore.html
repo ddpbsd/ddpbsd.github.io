@@ -1,7 +1,7 @@
 
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
@@ -12,10 +12,11 @@
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Create a self signed cert:" href="create_self_signed_cert.html" />
+    <link rel="next" title="Create a self signed cert" href="create_self_signed_cert.html" />
     <link rel="prev" title="Download a certificate:" href="download_cert.html" />
    
   <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
@@ -34,9 +35,9 @@
           <div class="body" role="main">
             
   <section id="adding-a-cert-to-the-cert-store">
-<h1>Adding a cert to the cert store<a class="headerlink" href="#adding-a-cert-to-the-cert-store" title="Permalink to this headline">¶</a></h1>
+<h1>Adding a cert to the cert store<a class="headerlink" href="#adding-a-cert-to-the-cert-store" title="Permalink to this heading">¶</a></h1>
 <section id="centos-7">
-<h2>CentOS 7:<a class="headerlink" href="#centos-7" title="Permalink to this headline">¶</a></h2>
+<h2>CentOS 7:<a class="headerlink" href="#centos-7" title="Permalink to this heading">¶</a></h2>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp"># </span>cp cert-chain.crt /etc/pki/ca-trust/source/anchors/
 <span class="gp"># </span>update-ca-trust
 </pre></div>
@@ -75,8 +76,8 @@
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">ssl</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="download_cert.html">Download a certificate:</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Adding a cert to the cert store</a></li>
-<li class="toctree-l2"><a class="reference internal" href="create_self_signed_cert.html">Create a self signed cert:</a></li>
-<li class="toctree-l2"><a class="reference internal" href="create_self_signed_cert.html#remove-passphrase">Remove passphrase:</a></li>
+<li class="toctree-l2"><a class="reference internal" href="create_self_signed_cert.html">Create a self signed cert</a></li>
+<li class="toctree-l2"><a class="reference internal" href="create_self_signed_cert.html#remove-passphrase">Remove passphrase</a></li>
 <li class="toctree-l2"><a class="reference internal" href="test_for_ssl3.html">Check to see if ssl3 works:</a></li>
 <li class="toctree-l2"><a class="reference internal" href="test_for_ssl3.html#check-to-see-if-tls-1-2-works">Check to see if tls 1.2 works:</a></li>
 <li class="toctree-l2"><a class="reference internal" href="create_ca.html">Where I got this information:</a></li>
@@ -95,7 +96,7 @@
   <li><a href="../index.html">Documentation overview</a><ul>
   <li><a href="index.html">ssl</a><ul>
       <li>Previous: <a href="download_cert.html" title="previous chapter">Download a certificate:</a></li>
-      <li>Next: <a href="create_self_signed_cert.html" title="next chapter">Create a self signed cert:</a></li>
+      <li>Next: <a href="create_self_signed_cert.html" title="next chapter">Create a self signed cert</a></li>
   </ul></li>
   </ul></li>
 </ul>
@@ -104,12 +105,12 @@
   <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="../search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
       <input type="submit" value="Go" />
     </form>
     </div>
 </div>
-<script>$('#searchbox').show(0);</script>
+<script>document.getElementById('searchbox').style.display = "block"</script>
         </div>
       </div>
       <div class="clearer"></div>

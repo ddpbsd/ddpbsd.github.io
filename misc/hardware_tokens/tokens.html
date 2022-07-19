@@ -1,7 +1,7 @@
 
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
@@ -12,11 +12,12 @@
     <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../_static/doctools.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Imagemagick" href="../imagemagick/index.html" />
-    <link rel="prev" title="misc" href="../index.html" />
+    <link rel="prev" title="hardware" href="../sdr/hardware.html" />
    
   <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
   
@@ -34,19 +35,19 @@
           <div class="body" role="main">
             
   <section id="hardware-tokens">
-<h1>Hardware Tokens<a class="headerlink" href="#hardware-tokens" title="Permalink to this headline">¶</a></h1>
+<h1>Hardware Tokens<a class="headerlink" href="#hardware-tokens" title="Permalink to this heading">¶</a></h1>
 <p>My desk currently looks like a Yubikey graveyard.
 I need to figure out which ones do what, and which ones
 are worth keeping.
 Some of them are way too old to be useful.</p>
 <section id="using-a-hardware-token-with-openssh-8-2">
-<h2>Using a hardware token with OpenSSH 8.2+<a class="headerlink" href="#using-a-hardware-token-with-openssh-8-2" title="Permalink to this headline">¶</a></h2>
+<h2>Using a hardware token with OpenSSH 8.2+<a class="headerlink" href="#using-a-hardware-token-with-openssh-8-2" title="Permalink to this heading">¶</a></h2>
 <p>The documentation isn’t simple enough for me.
 It’s written as it should be (product agnostic), but I need something simpler.
 So, writing these directions for me.</p>
 </section>
 <section id="yubikey-features">
-<h2>Yubikey features<a class="headerlink" href="#yubikey-features" title="Permalink to this headline">¶</a></h2>
+<h2>Yubikey features<a class="headerlink" href="#yubikey-features" title="Permalink to this heading">¶</a></h2>
 <p>These are the features of the yubikeys on my desk.</p>
 <table class="docutils align-default">
 <colgroup>
@@ -113,7 +114,7 @@ So, writing these directions for me.</p>
 </table>
 </section>
 <section id="yubikey-5-nfc">
-<h2>Yubikey 5 NFC<a class="headerlink" href="#yubikey-5-nfc" title="Permalink to this headline">¶</a></h2>
+<h2>Yubikey 5 NFC<a class="headerlink" href="#yubikey-5-nfc" title="Permalink to this heading">¶</a></h2>
 <p>I used the <a class="reference external" href="https://www.yubico.com/products/services-software/download/yubikey-manager">Yubikey Manager</a>
 to change the FIDO2 pin.
 I ran it in Windows 10 with administrator privs (won’t be able to access fido without them).</p>
@@ -137,7 +138,7 @@ It will prompt for the pin.</p>
 <p>Using that key to connect to a system will require a touch (look for the flashing Y).</p>
 </section>
 <section id="solo-key">
-<h2>Solo Key<a class="headerlink" href="#solo-key" title="Permalink to this headline">¶</a></h2>
+<h2>Solo Key<a class="headerlink" href="#solo-key" title="Permalink to this heading">¶</a></h2>
 <p>Using firmware 4.0.0 the solokey just worked.
 Not sure what version I had triedpreviously</p>
 <p><a class="reference external" href="https://solokeys.com/">Solo Key</a> works with FIDO2, but only with ecdsa-sk keys.
@@ -146,7 +147,7 @@ RIP <cite>ed25519</cite>.</p>
 on OpenBSD.</p>
 </section>
 <section id="solo2-key">
-<h2>Solo2 Key<a class="headerlink" href="#solo2-key" title="Permalink to this headline">¶</a></h2>
+<h2>Solo2 Key<a class="headerlink" href="#solo2-key" title="Permalink to this heading">¶</a></h2>
 <p>My solo2 key is using ed25519.</p>
 </section>
 </section>
@@ -184,6 +185,7 @@ on OpenBSD.</p>
 <li class="toctree-l1"><a class="reference internal" href="../../tools/index.html">Tools</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../vendor_stuff/index.html">Vendor Stuff</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../index.html">misc</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../sdr/index.html">software defined radio</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Hardware Tokens</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../imagemagick/index.html">Imagemagick</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../kernel_build/index.html">Building a custom kernel</a></li>
@@ -203,7 +205,7 @@ on OpenBSD.</p>
 <ul>
   <li><a href="../../index.html">Documentation overview</a><ul>
   <li><a href="../index.html">misc</a><ul>
-      <li>Previous: <a href="../index.html" title="previous chapter">misc</a></li>
+      <li>Previous: <a href="../sdr/hardware.html" title="previous chapter">hardware</a></li>
       <li>Next: <a href="../imagemagick/index.html" title="next chapter">Imagemagick</a></li>
   </ul></li>
   </ul></li>
@@ -213,12 +215,12 @@ on OpenBSD.</p>
   <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="../../search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
       <input type="submit" value="Go" />
     </form>
     </div>
 </div>
-<script>$('#searchbox').show(0);</script>
+<script>document.getElementById('searchbox').style.display = "block"</script>
         </div>
       </div>
       <div class="clearer"></div>

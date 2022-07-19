@@ -1,7 +1,7 @@
 
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
@@ -12,6 +12,7 @@
     <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
     <script src="../../../../_static/jquery.js"></script>
     <script src="../../../../_static/underscore.js"></script>
+    <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../../../_static/doctools.js"></script>
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
@@ -34,14 +35,14 @@
           <div class="body" role="main">
             
   <section id="list-all-rules">
-<h1>list all rules<a class="headerlink" href="#list-all-rules" title="Permalink to this headline">¶</a></h1>
+<h1>list all rules<a class="headerlink" href="#list-all-rules" title="Permalink to this heading">¶</a></h1>
 <p>I think this lists everything.</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">nft list ruleset</span>
 </pre></div>
 </div>
 </section>
 <section id="list-rules-in-a-table">
-<h1>list rules in a table<a class="headerlink" href="#list-rules-in-a-table" title="Permalink to this headline">¶</a></h1>
+<h1>list rules in a table<a class="headerlink" href="#list-rules-in-a-table" title="Permalink to this heading">¶</a></h1>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">nft list table firewalld</span>
 </pre></div>
 </div>
@@ -53,13 +54,13 @@ Address families include (but are not limited to) ip (ipv4), ip6 (ipv6), inet (i
 </div>
 </section>
 <section id="list-rules-in-a-chain">
-<h1>list rules in a chain<a class="headerlink" href="#list-rules-in-a-chain" title="Permalink to this headline">¶</a></h1>
+<h1>list rules in a chain<a class="headerlink" href="#list-rules-in-a-chain" title="Permalink to this heading">¶</a></h1>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">nft --handle list chain inet firewalld filter_FWDO_FedoraServer</span>
 </pre></div>
 </div>
 </section>
 <section id="deleting-rules">
-<h1>deleting rules<a class="headerlink" href="#deleting-rules" title="Permalink to this headline">¶</a></h1>
+<h1>deleting rules<a class="headerlink" href="#deleting-rules" title="Permalink to this heading">¶</a></h1>
 <p>Deleting rules requires a handle as well as the table, chain, and possibly address family.
 The handle is a number for the rule, starting from 0.
 This seems to start from the beginning of the ruleset (I think).
@@ -136,12 +137,12 @@ I think the <cite>–handle</cite> should just be default.</p>
   <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="../../../../search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
       <input type="submit" value="Go" />
     </form>
     </div>
 </div>
-<script>$('#searchbox').show(0);</script>
+<script>document.getElementById('searchbox').style.display = "block"</script>
         </div>
       </div>
       <div class="clearer"></div>

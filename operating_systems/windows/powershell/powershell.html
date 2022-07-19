@@ -1,7 +1,7 @@
 
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
@@ -12,6 +12,7 @@
     <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
     <script src="../../../_static/jquery.js"></script>
     <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../../_static/doctools.js"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
@@ -34,10 +35,10 @@
           <div class="body" role="main">
             
   <section id="powershell-basics">
-<h1>Powershell Basics<a class="headerlink" href="#powershell-basics" title="Permalink to this headline">¶</a></h1>
+<h1>Powershell Basics<a class="headerlink" href="#powershell-basics" title="Permalink to this heading">¶</a></h1>
 <p>Some powershell basics.</p>
 <section id="get-the-version-of-powershell">
-<h2>Get the version of powershell<a class="headerlink" href="#get-the-version-of-powershell" title="Permalink to this headline">¶</a></h2>
+<h2>Get the version of powershell<a class="headerlink" href="#get-the-version-of-powershell" title="Permalink to this heading">¶</a></h2>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">PS C:\&gt; $PSVersionTable.PSVersion</span>
 
 <span class="go">Major  Minor  Build  Revision</span>
@@ -47,7 +48,7 @@
 </div>
 </section>
 <section id="delete-files-from-a-remote-pc">
-<h2>Delete files from a remote PC<a class="headerlink" href="#delete-files-from-a-remote-pc" title="Permalink to this headline">¶</a></h2>
+<h2>Delete files from a remote PC<a class="headerlink" href="#delete-files-from-a-remote-pc" title="Permalink to this heading">¶</a></h2>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">Remove-Item &quot;\\$computer\path\to\file.ext&quot;</span>
 </pre></div>
 </div>
@@ -57,38 +58,38 @@
 </div>
 </section>
 <section id="stop-a-service-on-a-remote-pc">
-<h2>Stop a service on a remote PC<a class="headerlink" href="#stop-a-service-on-a-remote-pc" title="Permalink to this headline">¶</a></h2>
+<h2>Stop a service on a remote PC<a class="headerlink" href="#stop-a-service-on-a-remote-pc" title="Permalink to this heading">¶</a></h2>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp gp-VirtualEnv">(get-service -ComputerName $computer -Name service_name)</span><span class="go">.Stop()</span>
 </pre></div>
 </div>
 </section>
 <section id="start-a-service-on-a-remote-pc">
-<h2>Start a service on a remote PC<a class="headerlink" href="#start-a-service-on-a-remote-pc" title="Permalink to this headline">¶</a></h2>
+<h2>Start a service on a remote PC<a class="headerlink" href="#start-a-service-on-a-remote-pc" title="Permalink to this heading">¶</a></h2>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp gp-VirtualEnv">(get-service -ComputerName $computer -Name service_name)</span><span class="go">.Start()</span>
 </pre></div>
 </div>
 </section>
 <section id="sleep-for-10-seconds">
-<h2>Sleep for 10 seconds<a class="headerlink" href="#sleep-for-10-seconds" title="Permalink to this headline">¶</a></h2>
+<h2>Sleep for 10 seconds<a class="headerlink" href="#sleep-for-10-seconds" title="Permalink to this heading">¶</a></h2>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">Start-Sleep -s 10</span>
 </pre></div>
 </div>
 </section>
 <section id="get-creds-in-a-pscredential-object">
-<h2>Get creds in a PSCredential object<a class="headerlink" href="#get-creds-in-a-pscredential-object" title="Permalink to this headline">¶</a></h2>
+<h2>Get creds in a PSCredential object<a class="headerlink" href="#get-creds-in-a-pscredential-object" title="Permalink to this heading">¶</a></h2>
 <p>Useful for <cite>-PSCredential</cite></p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span><span class="nv">mycreds</span> <span class="o">=</span> Get-Credential
 </pre></div>
 </div>
 </section>
 <section id="get-os-version-from-a-remote-computer">
-<h2>Get OS version from a remote computer<a class="headerlink" href="#get-os-version-from-a-remote-computer" title="Permalink to this headline">¶</a></h2>
+<h2>Get OS version from a remote computer<a class="headerlink" href="#get-os-version-from-a-remote-computer" title="Permalink to this heading">¶</a></h2>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">Get-WmiObject Win32_OperatingSystem -ComputerName &quot;va-is-ad02&quot; |Select PSComputerName, Captio, OSArchitecture, Version, BuildNumber | FL</span>
 </pre></div>
 </div>
 </section>
 <section id="get-ip-address-from-a-remote-computer">
-<h2>Get IP address from a remote computer<a class="headerlink" href="#get-ip-address-from-a-remote-computer" title="Permalink to this headline">¶</a></h2>
+<h2>Get IP address from a remote computer<a class="headerlink" href="#get-ip-address-from-a-remote-computer" title="Permalink to this heading">¶</a></h2>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">Get-WmiObject Win32_networkadapterconfiguration -filter &quot;ipenabled = &#39;True&#39;&quot; -ComputerName &quot;va-is-ad02&quot; |</span>
 <span class="go">Select PSComputername, @{Name = &quot;IPAddress&quot;;Expression = {</span>
 <span class="go">   [regex]$rx = &quot;(\d{1,3}(\.?)){4}&quot;</span>
@@ -157,12 +158,12 @@
   <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="../../../search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
       <input type="submit" value="Go" />
     </form>
     </div>
 </div>
-<script>$('#searchbox').show(0);</script>
+<script>document.getElementById('searchbox').style.display = "block"</script>
         </div>
       </div>
       <div class="clearer"></div>

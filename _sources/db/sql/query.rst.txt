@@ -31,3 +31,8 @@ This will output `filename|COUNT` for all distinct filenames in the `syscheck` t
 
    select filename,count(*) from syscheck where filename in (select distinct filename from syscheck) group by filename;
 
+ORDER BY date
+^^^^^^^^^^^^^
+
+If the date is in a good format (`YYYY-mm-dd HH:mm:ss` or similar), an `ORDER BY date_field DESC LIMIT 1` is enough to get the latest entry by date.
+

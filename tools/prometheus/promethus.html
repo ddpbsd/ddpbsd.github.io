@@ -1,7 +1,7 @@
 
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
@@ -12,6 +12,7 @@
     <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../_static/doctools.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -32,13 +33,13 @@
           <div class="body" role="main">
             
   <section id="targets">
-<h1>targets<a class="headerlink" href="#targets" title="Permalink to this headline">¶</a></h1>
+<h1>targets<a class="headerlink" href="#targets" title="Permalink to this heading">¶</a></h1>
 <p>Targets can be found at <cite>http://127.0.0.1:9090/targets</cite>.
 The query prometheus uses on the target can be found under Endpoint.
 Clicking the link will present all of the available metrics.</p>
 </section>
 <section id="queries">
-<h1>Queries<a class="headerlink" href="#queries" title="Permalink to this headline">¶</a></h1>
+<h1>Queries<a class="headerlink" href="#queries" title="Permalink to this heading">¶</a></h1>
 <p>This query will graph the bytes from for the <cite>/</cite> filesystem:</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">node_filesystem_free_bytes{device=&quot;/dev/sd1a&quot;,fstype=&quot;ffs&quot;,mountpoint=&quot;/&quot;}</span>
 </pre></div>
@@ -49,14 +50,14 @@ Clicking the link will present all of the available metrics.</p>
 </div>
 </section>
 <section id="prometheus-configuration">
-<h1>prometheus configuration<a class="headerlink" href="#prometheus-configuration" title="Permalink to this headline">¶</a></h1>
+<h1>prometheus configuration<a class="headerlink" href="#prometheus-configuration" title="Permalink to this heading">¶</a></h1>
 <p><cite>/etc/prometheus/prometheus.yml</cite></p>
 <p>This uses information from
 <a class="reference external" href="https://performance-monitoring-with-prometheus.readthedocs.io/en/latest/switch.html">this site</a>
 as well as the <cite>snmp_exporter</cite> and <cite>prometheus</cite> docs.</p>
 </section>
 <section id="snmp-config">
-<h1>snmp config<a class="headerlink" href="#snmp-config" title="Permalink to this headline">¶</a></h1>
+<h1>snmp config<a class="headerlink" href="#snmp-config" title="Permalink to this heading">¶</a></h1>
 <p>Query the snmp_exporter using the <cite>openbsd_pf</cite> config.</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">- job_name: &#39;openbsd_pf&#39;</span>
 <span class="go">    static_configs:</span>
@@ -122,12 +123,12 @@ as well as the <cite>snmp_exporter</cite> and <cite>prometheus</cite> docs.</p>
   <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="../../search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
       <input type="submit" value="Go" />
     </form>
     </div>
 </div>
-<script>$('#searchbox').show(0);</script>
+<script>document.getElementById('searchbox').style.display = "block"</script>
         </div>
       </div>
       <div class="clearer"></div>

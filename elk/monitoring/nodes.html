@@ -1,7 +1,7 @@
 
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
@@ -12,6 +12,7 @@
     <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../_static/doctools.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -34,11 +35,11 @@
           <div class="body" role="main">
             
   <section id="elastic-guide-for-monitoring-nodes">
-<h1>elastic guide for monitoring nodes<a class="headerlink" href="#elastic-guide-for-monitoring-nodes" title="Permalink to this headline">¶</a></h1>
+<h1>elastic guide for monitoring nodes<a class="headerlink" href="#elastic-guide-for-monitoring-nodes" title="Permalink to this heading">¶</a></h1>
 <p><a class="reference external" href="https://www.elastic.co/guide/en/elasticsearch/guide/current/_monitoring_individual_nodes.html">https://www.elastic.co/guide/en/elasticsearch/guide/current/_monitoring_individual_nodes.html</a></p>
 </section>
 <section id="head-used-percent">
-<h1>head_used_percent<a class="headerlink" href="#head-used-percent" title="Permalink to this headline">¶</a></h1>
+<h1>head_used_percent<a class="headerlink" href="#head-used-percent" title="Permalink to this heading">¶</a></h1>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>curl -s http://127.0.0.1:9200/_nodes/stats <span class="p">|</span> jq <span class="s1">&#39;.nodes[].jvm.mem.heap_used_percent&#39;</span>
 </pre></div>
 </div>
@@ -71,6 +72,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../logstash/index.html">logstash</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="index.html">monitoring</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../setup.html">Setting up the whole thing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../endpoint.html">endpoint</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../k8s/index.html">kubernetes</a></li>
@@ -103,12 +105,12 @@
   <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="../../search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
       <input type="submit" value="Go" />
     </form>
     </div>
 </div>
-<script>$('#searchbox').show(0);</script>
+<script>document.getElementById('searchbox').style.display = "block"</script>
         </div>
       </div>
       <div class="clearer"></div>

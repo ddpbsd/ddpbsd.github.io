@@ -1,7 +1,7 @@
 
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
@@ -12,6 +12,7 @@
     <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
     <script src="../../../_static/jquery.js"></script>
     <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../../_static/doctools.js"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
@@ -34,11 +35,11 @@
           <div class="body" role="main">
             
   <section id="usb-ethernet-devices">
-<h1>USB ethernet devices<a class="headerlink" href="#usb-ethernet-devices" title="Permalink to this headline">¶</a></h1>
+<h1>USB ethernet devices<a class="headerlink" href="#usb-ethernet-devices" title="Permalink to this heading">¶</a></h1>
 <p>These are mostly untested. <cite>axen(4)</cite> devices had proven to be unusable previously.
 The first <cite>ure(4)</cite> dees get used in a <cite>bridge(4)</cite> for <cite>vmd(8)</cite>.</p>
 <section id="unknown">
-<h2>UNKNOWN<a class="headerlink" href="#unknown" title="Permalink to this headline">¶</a></h2>
+<h2>UNKNOWN<a class="headerlink" href="#unknown" title="Permalink to this heading">¶</a></h2>
 <p>I can’t remember any designation on it, and I’m not near it at the moment.
 USB3 I think.</p>
 <p>dmesg info:</p>
@@ -49,7 +50,7 @@ USB3 I think.</p>
 </div>
 </section>
 <section id="ugreen">
-<h2>UGREEN<a class="headerlink" href="#ugreen" title="Permalink to this headline">¶</a></h2>
+<h2>UGREEN<a class="headerlink" href="#ugreen" title="Permalink to this heading">¶</a></h2>
 <p>USB3.</p>
 <p>dmesg info:</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">Sep 25 07:18:38 arrakis /bsd: axen0 at uhub0 port 18 configuration 1 interface 0 &quot;ASIX Elec. Corp. AX88179&quot; rev 3.00/1.00 addr 5</span>
@@ -61,7 +62,7 @@ USB3 I think.</p>
 </div>
 </section>
 <section id="cable-matters">
-<h2>Cable Matters<a class="headerlink" href="#cable-matters" title="Permalink to this headline">¶</a></h2>
+<h2>Cable Matters<a class="headerlink" href="#cable-matters" title="Permalink to this heading">¶</a></h2>
 <p>USB2.</p>
 <p>dmesg info:</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">Sep 25 07:20:12 arrakis /bsd: ure0 at uhub0 port 6 configuration 1 interface 0 &quot;Realtek USB 10/100 LAN&quot; rev 2.10/20.00 addr 5</span>
@@ -75,7 +76,7 @@ USB3 I think.</p>
 </div>
 </section>
 <section id="unitek-y-3057">
-<h2>UNITEK Y-3057<a class="headerlink" href="#unitek-y-3057" title="Permalink to this headline">¶</a></h2>
+<h2>UNITEK Y-3057<a class="headerlink" href="#unitek-y-3057" title="Permalink to this heading">¶</a></h2>
 <p>This device has a built in USB3 hub. I haven’t bothered to test it yet.</p>
 <p>dmesg info:</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">Sep 25 07:20:56 arrakis /bsd: uhub1 at uhub0 port 18 configuration 1 interface 0 &quot;VIA Labs, Inc. USB3.0 Hub&quot; rev 3.00/90.01 addr 5</span>
@@ -151,12 +152,12 @@ USB3 I think.</p>
   <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="../../../search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
       <input type="submit" value="Go" />
     </form>
     </div>
 </div>
-<script>$('#searchbox').show(0);</script>
+<script>document.getElementById('searchbox').style.display = "block"</script>
         </div>
       </div>
       <div class="clearer"></div>

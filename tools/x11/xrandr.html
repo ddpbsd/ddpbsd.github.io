@@ -1,7 +1,7 @@
 
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
@@ -12,6 +12,7 @@
     <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../_static/doctools.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -34,13 +35,13 @@
           <div class="body" role="main">
             
   <section id="enable-the-hdmi-monitor-above-my-laptop">
-<h1>Enable the HDMI monitor above my laptop<a class="headerlink" href="#enable-the-hdmi-monitor-above-my-laptop" title="Permalink to this headline">¶</a></h1>
+<h1>Enable the HDMI monitor above my laptop<a class="headerlink" href="#enable-the-hdmi-monitor-above-my-laptop" title="Permalink to this heading">¶</a></h1>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">xrandr --output HDMI-2 --auto --rotate normal --above eDP-1</span>
 </pre></div>
 </div>
 </section>
 <section id="switch-the-screens">
-<h1>Switch the screens<a class="headerlink" href="#switch-the-screens" title="Permalink to this headline">¶</a></h1>
+<h1>Switch the screens<a class="headerlink" href="#switch-the-screens" title="Permalink to this heading">¶</a></h1>
 <p>Move HDMI-2 to the left of eDP-1</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">xrandr --output HDMI-2 --left-of eDP-1</span>
 </pre></div>
@@ -129,12 +130,12 @@
   <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="../../search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
       <input type="submit" value="Go" />
     </form>
     </div>
 </div>
-<script>$('#searchbox').show(0);</script>
+<script>document.getElementById('searchbox').style.display = "block"</script>
         </div>
       </div>
       <div class="clearer"></div>

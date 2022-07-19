@@ -1,7 +1,7 @@
 
 
-Create a self signed cert:
-^^^^^^^^^^^^^^^^^^^^^^^^^^
+Create a self signed cert
+^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Create the initial key:
 
@@ -15,6 +15,12 @@ Create a Certificate Signing Request:
 
    openssl req -new -sha256 -key key.key -out csr.csr
 
+Use a custom configuration to create the csr:
+
+.. code-block:: console
+
+   openssl req -new -sha256 -config CONFIG.cnf -key key.key -out csr.csr
+
 Create the final Certificate:
 
 .. code-block:: console
@@ -22,8 +28,8 @@ Create the final Certificate:
    openssl req -x509 -sha256 -days 365 -key key.key -in csr.csr -out certificate.crt
 
 
-Remove passphrase:
-^^^^^^^^^^^^^^^^^^
+Remove passphrase
+^^^^^^^^^^^^^^^^^
 
 .. code-block:: console
 

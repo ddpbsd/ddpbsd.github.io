@@ -1,7 +1,7 @@
 
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
@@ -12,6 +12,7 @@
     <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../_static/doctools.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -34,38 +35,38 @@
           <div class="body" role="main">
             
   <section id="enter-the-cli">
-<span id="vendor-stuff-juniper-cli"></span><h1>Enter the cli:<a class="headerlink" href="#enter-the-cli" title="Permalink to this headline">¶</a></h1>
+<span id="vendor-stuff-juniper-cli"></span><h1>Enter the cli:<a class="headerlink" href="#enter-the-cli" title="Permalink to this heading">¶</a></h1>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">user@host% </span>cli
 </pre></div>
 </div>
 </section>
 <section id="enter-the-configuration">
-<h1>Enter the configuration:<a class="headerlink" href="#enter-the-configuration" title="Permalink to this headline">¶</a></h1>
+<h1>Enter the configuration:<a class="headerlink" href="#enter-the-configuration" title="Permalink to this heading">¶</a></h1>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">user@host&gt; configure</span>
 </pre></div>
 </div>
 </section>
 <section id="get-the-hardware-information">
-<h1>Get the hardware information:<a class="headerlink" href="#get-the-hardware-information" title="Permalink to this headline">¶</a></h1>
+<h1>Get the hardware information:<a class="headerlink" href="#get-the-hardware-information" title="Permalink to this heading">¶</a></h1>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">user@host# </span>cli show chassis hardware
 </pre></div>
 </div>
 </section>
 <section id="get-the-software-version">
-<h1>Get the software version:<a class="headerlink" href="#get-the-software-version" title="Permalink to this headline">¶</a></h1>
+<h1>Get the software version:<a class="headerlink" href="#get-the-software-version" title="Permalink to this heading">¶</a></h1>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">user@host# </span>cli show version
 </pre></div>
 </div>
 <p>More info <a class="reference external" href="http://www.juniper.net/techpubs/en_US/junos12.1x46/information-products/pathway-pages/junos-cli/junos-cli.html">here</a></p>
 </section>
 <section id="dump-the-configuration-to-a-file">
-<h1>Dump the configuration to a file:<a class="headerlink" href="#dump-the-configuration-to-a-file" title="Permalink to this headline">¶</a></h1>
+<h1>Dump the configuration to a file:<a class="headerlink" href="#dump-the-configuration-to-a-file" title="Permalink to this heading">¶</a></h1>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">ssh root@DEVICE &quot;cli show config&quot; &gt; saved_config</span>
 </pre></div>
 </div>
 </section>
 <section id="show-config-changes-before-commit">
-<h1>Show config changes before commit:<a class="headerlink" href="#show-config-changes-before-commit" title="Permalink to this headline">¶</a></h1>
+<h1>Show config changes before commit:<a class="headerlink" href="#show-config-changes-before-commit" title="Permalink to this heading">¶</a></h1>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">show | compare</span>
 </pre></div>
 </div>
@@ -131,12 +132,12 @@
   <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="../../search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
       <input type="submit" value="Go" />
     </form>
     </div>
 </div>
-<script>$('#searchbox').show(0);</script>
+<script>document.getElementById('searchbox').style.display = "block"</script>
         </div>
       </div>
       <div class="clearer"></div>

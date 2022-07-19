@@ -1,7 +1,7 @@
 
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
@@ -12,6 +12,7 @@
     <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
     <script src="../../../_static/jquery.js"></script>
     <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../../_static/doctools.js"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
@@ -34,13 +35,13 @@
           <div class="body" role="main">
             
   <section id="find-out-how-to-allow-something-that-is-being-denied">
-<span id="operating-systems-linux-auditd"></span><h1>Find out how to allow something that is being denied:<a class="headerlink" href="#find-out-how-to-allow-something-that-is-being-denied" title="Permalink to this headline">¶</a></h1>
+<span id="operating-systems-linux-auditd"></span><h1>Find out how to allow something that is being denied:<a class="headerlink" href="#find-out-how-to-allow-something-that-is-being-denied" title="Permalink to this heading">¶</a></h1>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">audit2allow -w -i /tmp/FILE_WITH_DENY_LOG</span>
 </pre></div>
 </div>
 </section>
 <section id="allow-something-blocked-by-selinux">
-<h1>Allow something blocked by selinux:<a class="headerlink" href="#allow-something-blocked-by-selinux" title="Permalink to this headline">¶</a></h1>
+<h1>Allow something blocked by selinux:<a class="headerlink" href="#allow-something-blocked-by-selinux" title="Permalink to this heading">¶</a></h1>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">audit2allow -M  NAME_OF_NEW_MODULE -i /tmp/FILE_WITH_DENY_LOG</span>
 <span class="go">semodule -i NAME_OF_NEW_MODULE</span>
 </pre></div>
@@ -106,12 +107,12 @@
   <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="../../../search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
       <input type="submit" value="Go" />
     </form>
     </div>
 </div>
-<script>$('#searchbox').show(0);</script>
+<script>document.getElementById('searchbox').style.display = "block"</script>
         </div>
       </div>
       <div class="clearer"></div>

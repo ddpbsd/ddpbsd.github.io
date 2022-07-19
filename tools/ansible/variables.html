@@ -1,7 +1,7 @@
 
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
@@ -12,6 +12,7 @@
     <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../_static/doctools.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -34,7 +35,7 @@
           <div class="body" role="main">
             
   <section id="vault-variables">
-<h1>Vault Variables<a class="headerlink" href="#vault-variables" title="Permalink to this headline">¶</a></h1>
+<h1>Vault Variables<a class="headerlink" href="#vault-variables" title="Permalink to this heading">¶</a></h1>
 <p>In the playbook add <cite>vars:</cite> followed by the variables to be defined.
 These can be <cite>ansible-vault</cite> encrypted strings.</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">---</span>
@@ -54,7 +55,7 @@ These can be <cite>ansible-vault</cite> encrypted strings.</p>
 </div>
 </section>
 <section id="playbook-specific-vaults">
-<h1>Playbook specific vaults<a class="headerlink" href="#playbook-specific-vaults" title="Permalink to this headline">¶</a></h1>
+<h1>Playbook specific vaults<a class="headerlink" href="#playbook-specific-vaults" title="Permalink to this heading">¶</a></h1>
 <p>Use <cite>vars_files</cite> to specify a vault for sensitive variables.</p>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nn">---</span><span class="w"></span>
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">hosts</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">localhost</span><span class="w"></span>
@@ -69,7 +70,7 @@ These can be <cite>ansible-vault</cite> encrypted strings.</p>
 </div>
 </section>
 <section id="special-variables">
-<h1>Special variables<a class="headerlink" href="#special-variables" title="Permalink to this headline">¶</a></h1>
+<h1>Special variables<a class="headerlink" href="#special-variables" title="Permalink to this heading">¶</a></h1>
 <p><cite>ansible special variables &lt;https://docs.ansible.com/ansible/latest/reference_appendices/special_variables.html&gt;</cite></p>
 <p>Special nod to <cite>inventory_hostname</cite> and <cite>inventory_hostname_short</cite></p>
 </section>
@@ -156,12 +157,12 @@ These can be <cite>ansible-vault</cite> encrypted strings.</p>
   <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="../../search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
       <input type="submit" value="Go" />
     </form>
     </div>
 </div>
-<script>$('#searchbox').show(0);</script>
+<script>document.getElementById('searchbox').style.display = "block"</script>
         </div>
       </div>
       <div class="clearer"></div>

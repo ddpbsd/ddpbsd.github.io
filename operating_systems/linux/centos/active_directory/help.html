@@ -1,7 +1,7 @@
 
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
@@ -12,6 +12,7 @@
     <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
     <script src="../../../../_static/jquery.js"></script>
     <script src="../../../../_static/underscore.js"></script>
+    <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../../../_static/doctools.js"></script>
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
@@ -34,15 +35,15 @@
           <div class="body" role="main">
             
   <section id="active-directory-auth">
-<h1>Active Directory Auth<a class="headerlink" href="#active-directory-auth" title="Permalink to this headline">¶</a></h1>
+<h1>Active Directory Auth<a class="headerlink" href="#active-directory-auth" title="Permalink to this heading">¶</a></h1>
 <section id="install-prerequisites">
-<h2>Install Prerequisites:<a class="headerlink" href="#install-prerequisites" title="Permalink to this headline">¶</a></h2>
+<h2>Install Prerequisites:<a class="headerlink" href="#install-prerequisites" title="Permalink to this heading">¶</a></h2>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">yum install -y samba pam_krb5 krb5-workstation samba</span>
 </pre></div>
 </div>
 </section>
 <section id="configure-kerberos">
-<h2>Configure kerberos:<a class="headerlink" href="#configure-kerberos" title="Permalink to this headline">¶</a></h2>
+<h2>Configure kerberos:<a class="headerlink" href="#configure-kerberos" title="Permalink to this heading">¶</a></h2>
 <p>Edit <cite>/etc/krb5.conf</cite></p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp"># </span>Configuration snippets may be placed <span class="k">in</span> this directory as well
 <span class="go">includedir /etc/krb5.conf.d/</span>
@@ -101,7 +102,7 @@
 </div>
 </section>
 <section id="test-it-out">
-<h2>Test it out:<a class="headerlink" href="#test-it-out" title="Permalink to this headline">¶</a></h2>
+<h2>Test it out:<a class="headerlink" href="#test-it-out" title="Permalink to this heading">¶</a></h2>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">kinit user@MYDOMAIN.COM</span>
 </pre></div>
 </div>
@@ -169,12 +170,12 @@
   <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="../../../../search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
       <input type="submit" value="Go" />
     </form>
     </div>
 </div>
-<script>$('#searchbox').show(0);</script>
+<script>document.getElementById('searchbox').style.display = "block"</script>
         </div>
       </div>
       <div class="clearer"></div>

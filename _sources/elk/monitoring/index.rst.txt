@@ -13,6 +13,7 @@ Contents:
 .. toctree::
    :maxdepth: 2
 
+   heartbeat-and-uptime
    monitoring
    nodes
    grafana

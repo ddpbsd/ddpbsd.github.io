@@ -1,7 +1,7 @@
 
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
@@ -12,6 +12,7 @@
     <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
     <script src="../../../_static/jquery.js"></script>
     <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../../_static/doctools.js"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
@@ -34,41 +35,41 @@
           <div class="body" role="main">
             
   <section id="active-directory">
-<h1>Active Directory<a class="headerlink" href="#active-directory" title="Permalink to this headline">¶</a></h1>
+<h1>Active Directory<a class="headerlink" href="#active-directory" title="Permalink to this heading">¶</a></h1>
 <p>Interact with AD through powershell.
 It’s fun!</p>
 <section id="get-domain-admins">
-<h2>Get Domain Admins<a class="headerlink" href="#get-domain-admins" title="Permalink to this headline">¶</a></h2>
+<h2>Get Domain Admins<a class="headerlink" href="#get-domain-admins" title="Permalink to this heading">¶</a></h2>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">Get-ADGroupMember &quot;Domain Admins&quot; | select name,distinguishedName</span>
 </pre></div>
 </div>
 </section>
 <section id="list-disabled-accounts">
-<h2>List disabled accounts<a class="headerlink" href="#list-disabled-accounts" title="Permalink to this headline">¶</a></h2>
+<h2>List disabled accounts<a class="headerlink" href="#list-disabled-accounts" title="Permalink to this heading">¶</a></h2>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">Search-ADAccount -AccountDisabled</span>
 </pre></div>
 </div>
 </section>
 <section id="sorted-by-last-logon-date">
-<h2>Sorted by last logon date<a class="headerlink" href="#sorted-by-last-logon-date" title="Permalink to this headline">¶</a></h2>
+<h2>Sorted by last logon date<a class="headerlink" href="#sorted-by-last-logon-date" title="Permalink to this heading">¶</a></h2>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">Search-ADAccount -AccountDisabled -UsersOnly | Sort-Object lastlogondate</span>
 </pre></div>
 </div>
 </section>
 <section id="disabled-users">
-<h2>Disabled users<a class="headerlink" href="#disabled-users" title="Permalink to this headline">¶</a></h2>
+<h2>Disabled users<a class="headerlink" href="#disabled-users" title="Permalink to this heading">¶</a></h2>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">Get-ADUser -Filter {enabled -eq &quot;false&quot; -and objectclass -eq &quot;user&quot;} -properties modified | sort-object modified</span>
 </pre></div>
 </div>
 </section>
 <section id="another-list-of-domain-admins">
-<h2>Another list of domain admins<a class="headerlink" href="#another-list-of-domain-admins" title="Permalink to this headline">¶</a></h2>
+<h2>Another list of domain admins<a class="headerlink" href="#another-list-of-domain-admins" title="Permalink to this heading">¶</a></h2>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">Get-ADGroup -Identity S-1-5-21-DOMAIN-512 | Get-ADGroupMember | Get-ADUser -Filter {enabled -eq &quot;false&quot;} -Properties *</span>
 </pre></div>
 </div>
 </section>
 <section id="list-users-who-haven-t-logged-in-in-over-90-days">
-<h2>List users who haven’t logged in in over 90 days<a class="headerlink" href="#list-users-who-haven-t-logged-in-in-over-90-days" title="Permalink to this headline">¶</a></h2>
+<h2>List users who haven’t logged in in over 90 days<a class="headerlink" href="#list-users-who-haven-t-logged-in-in-over-90-days" title="Permalink to this heading">¶</a></h2>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span><span class="nv">Date</span> <span class="o">=</span> <span class="o">(</span>Get-Date<span class="o">)</span>.AddDays<span class="o">(</span>-90<span class="o">)</span>
 
 <span class="gp"># </span>Only list enabled users
@@ -77,7 +78,7 @@ It’s fun!</p>
 </div>
 </section>
 <section id="list-domain-admins-sorted-by-last-logon-date">
-<h2>List Domain Admins sorted by last logon date<a class="headerlink" href="#list-domain-admins-sorted-by-last-logon-date" title="Permalink to this headline">¶</a></h2>
+<h2>List Domain Admins sorted by last logon date<a class="headerlink" href="#list-domain-admins-sorted-by-last-logon-date" title="Permalink to this heading">¶</a></h2>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">Get-ADGroup &quot;Domain Admins&quot; | Get-ADGroupMember | Get-ADUser -Properties LastLogonDate | Select Name,SamAccountName,LastLogonDate,Enabled | Sort LastLogonDate</span>
 </pre></div>
 </div>
@@ -87,13 +88,13 @@ It’s fun!</p>
 </div>
 </section>
 <section id="list-users-who-have-not-logged-in-within-30-days-and-disable-accounts">
-<h2>List users who have not logged in within 30 days and disable accounts<a class="headerlink" href="#list-users-who-have-not-logged-in-within-30-days-and-disable-accounts" title="Permalink to this headline">¶</a></h2>
+<h2>List users who have not logged in within 30 days and disable accounts<a class="headerlink" href="#list-users-who-have-not-logged-in-within-30-days-and-disable-accounts" title="Permalink to this heading">¶</a></h2>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">Search-ADAccount -AccountInactive -TimeSpan ([timespan]30d) -UsersOnly | Set-ADUser -Enabled $false -WhatIf</span>
 </pre></div>
 </div>
 </section>
 <section id="password-expiration">
-<h2>Password expiration<a class="headerlink" href="#password-expiration" title="Permalink to this headline">¶</a></h2>
+<h2>Password expiration<a class="headerlink" href="#password-expiration" title="Permalink to this heading">¶</a></h2>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">Get-ADUser -filter {Enabled -eq $True -and PasswordNeverExpires -eq $False} -Properties &quot;Display Name&quot;, &quot;msDS-UserPasswordExpiryTimeComputed&quot; -SearchBase &quot;CN=joshua nelson, CN=Users,DC=intelgd,DC=com&quot; | Select-Object -Property &quot;Displayname&quot;,@{Name=&quot;ExpiryDate&quot;;Expression={[datetime]::FromFileTime($_.&quot;msDS-UserPasswordExpiryTimeComputed&quot;)}}</span>
 </pre></div>
 </div>
@@ -159,12 +160,12 @@ It’s fun!</p>
   <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="../../../search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
       <input type="submit" value="Go" />
     </form>
     </div>
 </div>
-<script>$('#searchbox').show(0);</script>
+<script>document.getElementById('searchbox').style.display = "block"</script>
         </div>
       </div>
       <div class="clearer"></div>

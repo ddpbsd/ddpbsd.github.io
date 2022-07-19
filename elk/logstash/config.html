@@ -1,7 +1,7 @@
 
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
@@ -12,11 +12,12 @@
     <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../_static/doctools.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="filter" href="filter/index.html" />
-    <link rel="prev" title="logstash" href="index.html" />
+    <link rel="prev" title="logstash api" href="api.html" />
    
   <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
   
@@ -35,7 +36,7 @@
             
   <p>There’s probably a better way to do everything I’m doing here.</p>
 <section id="tags">
-<h1>tags<a class="headerlink" href="#tags" title="Permalink to this headline">¶</a></h1>
+<h1>tags<a class="headerlink" href="#tags" title="Permalink to this heading">¶</a></h1>
 <p>Tags seem to be important inside the logstash configuration file.
 Something I’ve started doing is tagging events that come in with <cite>parse</cite>.
 Then in the filter I remove the tag.</p>
@@ -63,7 +64,7 @@ Then in the filter I remove the tag.</p>
 going through each one for each message.</p>
 </section>
 <section id="example-config">
-<h1>Example config<a class="headerlink" href="#example-config" title="Permalink to this headline">¶</a></h1>
+<h1>Example config<a class="headerlink" href="#example-config" title="Permalink to this heading">¶</a></h1>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">   input {</span>
 <span class="go">    syslog {</span>
 <span class="go">        port =&gt; &quot;2514&quot;</span>
@@ -136,6 +137,7 @@ going through each one for each message.</p>
 <li class="toctree-l2 current"><a class="reference internal" href="index.html">logstash</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../monitoring/index.html">monitoring</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../setup.html">Setting up the whole thing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../endpoint.html">endpoint</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../k8s/index.html">kubernetes</a></li>
@@ -157,7 +159,7 @@ going through each one for each message.</p>
   <li><a href="../../index.html">Documentation overview</a><ul>
   <li><a href="../index.html">elastic stuff</a><ul>
   <li><a href="index.html">logstash</a><ul>
-      <li>Previous: <a href="index.html" title="previous chapter">logstash</a></li>
+      <li>Previous: <a href="api.html" title="previous chapter">logstash api</a></li>
       <li>Next: <a href="filter/index.html" title="next chapter">filter</a></li>
   </ul></li>
   </ul></li>
@@ -168,12 +170,12 @@ going through each one for each message.</p>
   <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="../../search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
       <input type="submit" value="Go" />
     </form>
     </div>
 </div>
-<script>$('#searchbox').show(0);</script>
+<script>document.getElementById('searchbox').style.display = "block"</script>
         </div>
       </div>
       <div class="clearer"></div>

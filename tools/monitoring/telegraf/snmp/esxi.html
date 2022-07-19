@@ -1,7 +1,7 @@
 
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
@@ -12,6 +12,7 @@
     <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
     <script src="../../../../_static/jquery.js"></script>
     <script src="../../../../_static/underscore.js"></script>
+    <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../../../_static/doctools.js"></script>
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
@@ -34,9 +35,9 @@
           <div class="body" role="main">
             
   <section id="esxi">
-<h1>esxi<a class="headerlink" href="#esxi" title="Permalink to this headline">¶</a></h1>
+<h1>esxi<a class="headerlink" href="#esxi" title="Permalink to this heading">¶</a></h1>
 <section id="enabling-snmp-on-esxi-5-5">
-<h2>Enabling snmp on esxi 5.5<a class="headerlink" href="#enabling-snmp-on-esxi-5-5" title="Permalink to this headline">¶</a></h2>
+<h2>Enabling snmp on esxi 5.5<a class="headerlink" href="#enabling-snmp-on-esxi-5-5" title="Permalink to this heading">¶</a></h2>
 <p>This is for version 2c.</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">esxcli system snmp set --communities STRING</span>
 <span class="go">esxcli system snmp set --port 161</span>
@@ -45,7 +46,7 @@
 </div>
 </section>
 <section id="esxi-firewalling">
-<h2>esxi firewalling<a class="headerlink" href="#esxi-firewalling" title="Permalink to this headline">¶</a></h2>
+<h2>esxi firewalling<a class="headerlink" href="#esxi-firewalling" title="Permalink to this heading">¶</a></h2>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">esxcli network firewall ruleset set --ruleset-id snmp --allowed-all false</span>
 <span class="go">esxcli network firewall ruleset allowedip add --ruleset-id snmp --ip-address IP_ADDRESS/MASK</span>
 <span class="go">esxcli network firewall ruleset set --ruleset-id snmp --enabled true</span>
@@ -53,7 +54,7 @@
 </div>
 </section>
 <section id="telegraf-configuration">
-<h2>telegraf configuration<a class="headerlink" href="#telegraf-configuration" title="Permalink to this headline">¶</a></h2>
+<h2>telegraf configuration<a class="headerlink" href="#telegraf-configuration" title="Permalink to this heading">¶</a></h2>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">[[inputs.snmp]]</span>
 <span class="go">   agents = [ &quot;10.20.20.20:161&quot; ]</span>
 <span class="go">   timeout = &quot;5s&quot;</span>
@@ -165,17 +166,17 @@
 </div>
 </section>
 <section id="troubleshooting">
-<h2>Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permalink to this headline">¶</a></h2>
+<h2>Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permalink to this heading">¶</a></h2>
 <p><a class="reference external" href="https://kb.vmware.com/s/article/2042772?lang=en_US">This</a> knowledge base
 article helped with a few mischevious systems.</p>
 <p>A lot of information came from <a class="reference external" href="https://viclab.se/combining-influxdb-telegraf-and-grafana-for-esxi-monitoring-2/">here</a></p>
 </section>
 <section id="snmp-stuff">
-<h2>snmp stuff<a class="headerlink" href="#snmp-stuff" title="Permalink to this headline">¶</a></h2>
+<h2>snmp stuff<a class="headerlink" href="#snmp-stuff" title="Permalink to this heading">¶</a></h2>
 <p>Dumping some stuff here until I figure out a better place for it.</p>
 </section>
 <section id="esxi-6-7-mib-files">
-<h2>ESXi (6.7) mib files<a class="headerlink" href="#esxi-6-7-mib-files" title="Permalink to this headline">¶</a></h2>
+<h2>ESXi (6.7) mib files<a class="headerlink" href="#esxi-6-7-mib-files" title="Permalink to this heading">¶</a></h2>
 <table class="docutils align-default">
 <colgroup>
 <col style="width: 34%" />
@@ -360,12 +361,12 @@ article helped with a few mischevious systems.</p>
   <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="../../../../search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
       <input type="submit" value="Go" />
     </form>
     </div>
 </div>
-<script>$('#searchbox').show(0);</script>
+<script>document.getElementById('searchbox').style.display = "block"</script>
         </div>
       </div>
       <div class="clearer"></div>

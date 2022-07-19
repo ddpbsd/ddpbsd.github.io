@@ -1,7 +1,7 @@
 
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
@@ -12,6 +12,7 @@
     <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
     <script src="../../../../_static/jquery.js"></script>
     <script src="../../../../_static/underscore.js"></script>
+    <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../../../_static/doctools.js"></script>
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
@@ -33,7 +34,7 @@
             
   <p>Holy moly this thing is a mess.</p>
 <section id="network">
-<h1>Network<a class="headerlink" href="#network" title="Permalink to this headline">¶</a></h1>
+<h1>Network<a class="headerlink" href="#network" title="Permalink to this heading">¶</a></h1>
 <p>Remove the default default network.
 Create a new default network.
 Start it and set it to autostart.</p>
@@ -45,7 +46,7 @@ Start it and set it to autostart.</p>
 </div>
 </section>
 <section id="storage">
-<h1>Storage<a class="headerlink" href="#storage" title="Permalink to this headline">¶</a></h1>
+<h1>Storage<a class="headerlink" href="#storage" title="Permalink to this heading">¶</a></h1>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">virsh pool-define-as --name virt-zfs --source-name data/virtualmachines --type zfs</span>
 <span class="go">virsh pool-autostart virt-zfs</span>
 <span class="go">virsh pool-start virt-zfs</span>
@@ -53,7 +54,7 @@ Start it and set it to autostart.</p>
 </div>
 </section>
 <section id="default-network-xml">
-<h1>default-network.xml<a class="headerlink" href="#default-network-xml" title="Permalink to this headline">¶</a></h1>
+<h1>default-network.xml<a class="headerlink" href="#default-network-xml" title="Permalink to this heading">¶</a></h1>
 <p>If I knew this file I could probably save a bunch of work.</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">&lt;network&gt;</span>
 <span class="go">  &lt;name&gt;default&lt;/name&gt;</span>
@@ -110,12 +111,12 @@ Start it and set it to autostart.</p>
   <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="../../../../search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
       <input type="submit" value="Go" />
     </form>
     </div>
 </div>
-<script>$('#searchbox').show(0);</script>
+<script>document.getElementById('searchbox').style.display = "block"</script>
         </div>
       </div>
       <div class="clearer"></div>

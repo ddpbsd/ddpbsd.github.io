@@ -1,7 +1,7 @@
 
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
@@ -12,6 +12,7 @@
     <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
     <script src="../../../_static/jquery.js"></script>
     <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../../_static/doctools.js"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
@@ -34,15 +35,15 @@
           <div class="body" role="main">
             
   <section id="kv-parser">
-<h1>kv parser<a class="headerlink" href="#kv-parser" title="Permalink to this headline">¶</a></h1>
+<h1>kv parser<a class="headerlink" href="#kv-parser" title="Permalink to this heading">¶</a></h1>
 <p>Key/Value pair blah blah</p>
 <section id="whitespace">
-<h2>whitespace:<a class="headerlink" href="#whitespace" title="Permalink to this headline">¶</a></h2>
+<h2>whitespace:<a class="headerlink" href="#whitespace" title="Permalink to this heading">¶</a></h2>
 <p>If you expect blank values, set whitespace to strict (if you are certain this won’t break
 everything).</p>
 </section>
 <section id="limitations">
-<h2>Limitations:<a class="headerlink" href="#limitations" title="Permalink to this headline">¶</a></h2>
+<h2>Limitations:<a class="headerlink" href="#limitations" title="Permalink to this heading">¶</a></h2>
 <p>It does not like spaces inside of a value. If a key is followed by
 a space, the next key will be the value of the first key.</p>
 <p>Message:</p>
@@ -83,6 +84,7 @@ a space, the next key will be the value of the first key.</p>
 <li class="toctree-l2 current"><a class="reference internal" href="../index.html">logstash</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../monitoring/index.html">monitoring</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../setup.html">Setting up the whole thing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../endpoint.html">endpoint</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../../k8s/index.html">kubernetes</a></li>
@@ -117,12 +119,12 @@ a space, the next key will be the value of the first key.</p>
   <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="../../../search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
       <input type="submit" value="Go" />
     </form>
     </div>
 </div>
-<script>$('#searchbox').show(0);</script>
+<script>document.getElementById('searchbox').style.display = "block"</script>
         </div>
       </div>
       <div class="clearer"></div>

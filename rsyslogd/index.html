@@ -1,7 +1,7 @@
 
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
@@ -12,6 +12,7 @@
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -34,9 +35,9 @@
           <div class="body" role="main">
             
   <section id="rsyslogd">
-<h1>rsyslogd<a class="headerlink" href="#rsyslogd" title="Permalink to this headline">¶</a></h1>
+<h1>rsyslogd<a class="headerlink" href="#rsyslogd" title="Permalink to this heading">¶</a></h1>
 <section id="log-to-var-log-hostname-messages-instead-of-var-log-messages">
-<h2>Log to /var/log/hostname/messages instead of /var/log/messages<a class="headerlink" href="#log-to-var-log-hostname-messages-instead-of-var-log-messages" title="Permalink to this headline">¶</a></h2>
+<h2>Log to /var/log/hostname/messages instead of /var/log/messages<a class="headerlink" href="#log-to-var-log-hostname-messages-instead-of-var-log-messages" title="Permalink to this heading">¶</a></h2>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">-host</span>
 <span class="go">*.info                  /var/log/messages</span>
 <span class="go">+host</span>
@@ -45,13 +46,13 @@
 </div>
 </section>
 <section id="listen-on-a-unix-socket">
-<h2>Listen on a unix socket<a class="headerlink" href="#listen-on-a-unix-socket" title="Permalink to this headline">¶</a></h2>
+<h2>Listen on a unix socket<a class="headerlink" href="#listen-on-a-unix-socket" title="Permalink to this heading">¶</a></h2>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>AddUnixListenSocket /var/log/socket
 </pre></div>
 </div>
 </section>
 <section id="log-to-a-file-and-stop-the-newer-way">
-<h2>Log to a file and stop (the newer way)<a class="headerlink" href="#log-to-a-file-and-stop-the-newer-way" title="Permalink to this headline">¶</a></h2>
+<h2>Log to a file and stop (the newer way)<a class="headerlink" href="#log-to-a-file-and-stop-the-newer-way" title="Permalink to this heading">¶</a></h2>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">if $FIELD == &quot;CONDITION&quot; then {</span>
 <span class="gp">    #</span><span class="c1"># Very simple</span>
 <span class="gp">    #</span>action<span class="o">(</span><span class="nv">type</span><span class="o">=</span><span class="s2">&quot;omfile&quot;</span> <span class="nv">file</span><span class="o">=</span><span class="s2">&quot;/var/log/FILE.log&quot;</span><span class="o">)</span>
@@ -118,12 +119,12 @@
   <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="../search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
       <input type="submit" value="Go" />
     </form>
     </div>
 </div>
-<script>$('#searchbox').show(0);</script>
+<script>document.getElementById('searchbox').style.display = "block"</script>
         </div>
       </div>
       <div class="clearer"></div>

@@ -1,7 +1,7 @@
 
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
@@ -12,6 +12,7 @@
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -34,12 +35,12 @@
           <div class="body" role="main">
             
   <section id="security-onion-16-04">
-<h1>Security Onion 16.04<a class="headerlink" href="#security-onion-16-04" title="Permalink to this headline">¶</a></h1>
+<h1>Security Onion 16.04<a class="headerlink" href="#security-onion-16-04" title="Permalink to this heading">¶</a></h1>
 <p>14.x wasn’t complicated enough, let’s add docker!</p>
 <p>I assume most of the bro stuff is the same.
 Elsa doesn’t exist anymore (yay!), but we get the elk stack instead.</p>
 <section id="docker">
-<h2>Docker:<a class="headerlink" href="#docker" title="Permalink to this headline">¶</a></h2>
+<h2>Docker:<a class="headerlink" href="#docker" title="Permalink to this heading">¶</a></h2>
 <p>docker images:</p>
 <table class="docutils align-default">
 <colgroup>
@@ -78,16 +79,16 @@ Elsa doesn’t exist anymore (yay!), but we get the elk stack instead.</p>
 </table>
 </section>
 <section id="ossec">
-<h2>OSSEC:<a class="headerlink" href="#ossec" title="Permalink to this headline">¶</a></h2>
+<h2>OSSEC:<a class="headerlink" href="#ossec" title="Permalink to this heading">¶</a></h2>
 <p>Nope! Now it’s <a class="reference external" href="https://wazuh.com/">Wazuh</a>!
 Another complication of simpler times.</p>
 </section>
 <section id="sostat">
-<h2>sostat:<a class="headerlink" href="#sostat" title="Permalink to this headline">¶</a></h2>
+<h2>sostat:<a class="headerlink" href="#sostat" title="Permalink to this heading">¶</a></h2>
 <p>The output got longer. Bigger is better, amirite?</p>
 </section>
 <section id="sostat-cross-cluster-search">
-<h2>sostat - Cross Cluster Search:<a class="headerlink" href="#sostat-cross-cluster-search" title="Permalink to this headline">¶</a></h2>
+<h2>sostat - Cross Cluster Search:<a class="headerlink" href="#sostat-cross-cluster-search" title="Permalink to this heading">¶</a></h2>
 <p>The meat and potatoes (from an admin perspective, instead of an analyst perspective I guess?) is
 the sensor status portion of the script. It’s at the end. This is good because it doesn’t scroll
 off the screen in the first 20 seconds of output. It’s also bad because it takes forever to see
@@ -99,7 +100,7 @@ json. There’s more magic in there, but that should be enough for now. Copy and
 lines from <cite>sostat</cite> give the appropriate output, so now I have that.</p>
 </section>
 <section id="restart-logstash">
-<h2>Restart logstash:<a class="headerlink" href="#restart-logstash" title="Permalink to this headline">¶</a></h2>
+<h2>Restart logstash:<a class="headerlink" href="#restart-logstash" title="Permalink to this heading">¶</a></h2>
 <p>If changes are made to the <cite>LOGSTASH_OPTIONS</cite> in the <cite>securityonion.conf</cite>, logstash should be
 restarted with:</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">sudo so-logstash-restart</span>
@@ -170,12 +171,12 @@ restarted with:</p>
   <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="../search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
       <input type="submit" value="Go" />
     </form>
     </div>
 </div>
-<script>$('#searchbox').show(0);</script>
+<script>document.getElementById('searchbox').style.display = "block"</script>
         </div>
       </div>
       <div class="clearer"></div>

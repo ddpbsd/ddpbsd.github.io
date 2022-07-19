@@ -1,7 +1,7 @@
 
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
@@ -12,6 +12,7 @@
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -34,7 +35,7 @@
           <div class="body" role="main">
             
   <section id="find-the-last-day-of-the-month">
-<h1>Find the last day of the month<a class="headerlink" href="#find-the-last-day-of-the-month" title="Permalink to this headline">¶</a></h1>
+<h1>Find the last day of the month<a class="headerlink" href="#find-the-last-day-of-the-month" title="Permalink to this heading">¶</a></h1>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span><span class="nb">set</span> <span class="k">$(</span>cal<span class="k">)</span>
 <span class="gp">$ </span><span class="nb">shift</span> <span class="k">$((</span><span class="nv">$#</span> <span class="o">-</span> <span class="m">1</span><span class="k">))</span>
 <span class="gp">$ </span><span class="nb">echo</span> <span class="nv">$1</span>
@@ -43,37 +44,37 @@
 </div>
 </section>
 <section id="encrypt-all-files-in-one-dir-and-save-to-another-dir-with-ansible-vault">
-<h1>Encrypt all files in one dir and save to another dir with ansible vault<a class="headerlink" href="#encrypt-all-files-in-one-dir-and-save-to-another-dir-with-ansible-vault" title="Permalink to this headline">¶</a></h1>
+<h1>Encrypt all files in one dir and save to another dir with ansible vault<a class="headerlink" href="#encrypt-all-files-in-one-dir-and-save-to-another-dir-with-ansible-vault" title="Permalink to this heading">¶</a></h1>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">ls files/source/ | xargs -I@ ansible-vault encrypt --vault-id $(pwd)/files/destination/@</span>
 </pre></div>
 </div>
 </section>
 <section id="find-the-current-dpi-in-x">
-<h1>Find the current dpi in X<a class="headerlink" href="#find-the-current-dpi-in-x" title="Permalink to this headline">¶</a></h1>
+<h1>Find the current dpi in X<a class="headerlink" href="#find-the-current-dpi-in-x" title="Permalink to this heading">¶</a></h1>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>xdpyinfo <span class="p">|</span> grep -i -V <span class="m">2</span> resolution
 </pre></div>
 </div>
 </section>
 <section id="go-to-a-specific-line-number-in-less">
-<h1>Go to a specific line number in less<a class="headerlink" href="#go-to-a-specific-line-number-in-less" title="Permalink to this headline">¶</a></h1>
+<h1>Go to a specific line number in less<a class="headerlink" href="#go-to-a-specific-line-number-in-less" title="Permalink to this heading">¶</a></h1>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">less +&lt;LINE_NUM&gt; FILE</span>
 </pre></div>
 </div>
 </section>
 <section id="go-to-a-specific-byte-offset-in-less">
-<h1>Go to a specific byte (offset?) in less<a class="headerlink" href="#go-to-a-specific-byte-offset-in-less" title="Permalink to this headline">¶</a></h1>
+<h1>Go to a specific byte (offset?) in less<a class="headerlink" href="#go-to-a-specific-byte-offset-in-less" title="Permalink to this heading">¶</a></h1>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">less +&lt;BYTE&gt;P FILE</span>
 </pre></div>
 </div>
 </section>
 <section id="show-a-specific-line-number-in-less">
-<h1>Show a specific line number in less<a class="headerlink" href="#show-a-specific-line-number-in-less" title="Permalink to this headline">¶</a></h1>
+<h1>Show a specific line number in less<a class="headerlink" href="#show-a-specific-line-number-in-less" title="Permalink to this heading">¶</a></h1>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">less -N +&lt;LINE_NUM&gt;g FILE</span>
 </pre></div>
 </div>
 </section>
 <section id="extract-a-specific-line-using-sed">
-<h1>Extract a specific line using sed<a class="headerlink" href="#extract-a-specific-line-using-sed" title="Permalink to this headline">¶</a></h1>
+<h1>Extract a specific line using sed<a class="headerlink" href="#extract-a-specific-line-using-sed" title="Permalink to this heading">¶</a></h1>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">sed -ne &#39;&lt;LINE_NUM&gt;P&#39; FILE</span>
 </pre></div>
 </div>
@@ -139,12 +140,12 @@
   <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="../search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
       <input type="submit" value="Go" />
     </form>
     </div>
 </div>
-<script>$('#searchbox').show(0);</script>
+<script>document.getElementById('searchbox').style.display = "block"</script>
         </div>
       </div>
       <div class="clearer"></div>

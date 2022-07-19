@@ -1,7 +1,7 @@
 
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
@@ -12,6 +12,7 @@
     <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../_static/doctools.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -34,38 +35,38 @@
           <div class="body" role="main">
             
   <section id="create-user">
-<span id="tools-databases-postgresql-simplestuff"></span><h1>Create user<a class="headerlink" href="#create-user" title="Permalink to this headline">¶</a></h1>
+<span id="tools-databases-postgresql-simplestuff"></span><h1>Create user<a class="headerlink" href="#create-user" title="Permalink to this heading">¶</a></h1>
 <div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">CREATE</span><span class="w"> </span><span class="k">ROLE</span><span class="w"> </span><span class="n">ansibledb</span><span class="w"> </span><span class="n">LOGIN</span><span class="p">;</span><span class="w"></span>
 </pre></div>
 </div>
 </section>
 <section id="create-database">
-<h1>Create database<a class="headerlink" href="#create-database" title="Permalink to this headline">¶</a></h1>
+<h1>Create database<a class="headerlink" href="#create-database" title="Permalink to this heading">¶</a></h1>
 <div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">CREATE</span><span class="w"> </span><span class="k">DATABASE</span><span class="w"> </span><span class="n">ansibledb</span><span class="w"> </span><span class="k">WITH</span><span class="w"> </span><span class="k">OWNER</span><span class="o">=</span><span class="s1">&#39;ansibledb&#39;</span><span class="p">;</span><span class="w"></span>
 </pre></div>
 </div>
 </section>
 <section id="timestamps-as-unix-epoch">
-<h1>timestamps as unix epoch<a class="headerlink" href="#timestamps-as-unix-epoch" title="Permalink to this headline">¶</a></h1>
+<h1>timestamps as unix epoch<a class="headerlink" href="#timestamps-as-unix-epoch" title="Permalink to this heading">¶</a></h1>
 <div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="k">extract</span><span class="p">(</span><span class="n">epoch</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="k">timestamp</span><span class="p">)</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">sensors</span><span class="p">;</span><span class="w"></span>
 </pre></div>
 </div>
 </section>
 <section id="change-a-user-s-password">
-<h1>Change a user’s password<a class="headerlink" href="#change-a-user-s-password" title="Permalink to this headline">¶</a></h1>
+<h1>Change a user’s password<a class="headerlink" href="#change-a-user-s-password" title="Permalink to this heading">¶</a></h1>
 <div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">ALTER</span><span class="w"> </span><span class="k">USER</span><span class="w"> </span><span class="n">my_user_name</span><span class="w"> </span><span class="k">with</span><span class="w"> </span><span class="n">password</span><span class="w"> </span><span class="s1">&#39;my_secure_password&#39;</span><span class="p">;</span><span class="w"></span>
 </pre></div>
 </div>
 </section>
 <section id="pg-hba-conf-location">
-<h1>pg_hba.conf location<a class="headerlink" href="#pg-hba-conf-location" title="Permalink to this headline">¶</a></h1>
+<h1>pg_hba.conf location<a class="headerlink" href="#pg-hba-conf-location" title="Permalink to this heading">¶</a></h1>
 <p>On ubuntu:</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">/etc/postgresql/9.5/main/pg_hba.conf</span>
 </pre></div>
 </div>
 </section>
 <section id="epoch-to-timestamp">
-<h1>epoch to timestamp<a class="headerlink" href="#epoch-to-timestamp" title="Permalink to this headline">¶</a></h1>
+<h1>epoch to timestamp<a class="headerlink" href="#epoch-to-timestamp" title="Permalink to this heading">¶</a></h1>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">select to_timestamp(field) from table;</span>
 </pre></div>
 </div>
@@ -128,12 +129,12 @@
   <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="../../search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
       <input type="submit" value="Go" />
     </form>
     </div>
 </div>
-<script>$('#searchbox').show(0);</script>
+<script>document.getElementById('searchbox').style.display = "block"</script>
         </div>
       </div>
       <div class="clearer"></div>

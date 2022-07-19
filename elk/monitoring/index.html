@@ -1,7 +1,7 @@
 
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
@@ -12,10 +12,11 @@
     <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../_static/doctools.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Monitoring" href="monitoring.html" />
+    <link rel="next" title="heartbeat and uptime" href="heartbeat-and-uptime.html" />
     <link rel="prev" title="Fix the kafka plugin" href="../logstash/plugins.html" />
    
   <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
@@ -34,7 +35,7 @@
           <div class="body" role="main">
             
   <section id="monitoring">
-<h1>monitoring<a class="headerlink" href="#monitoring" title="Permalink to this headline">¶</a></h1>
+<h1>monitoring<a class="headerlink" href="#monitoring" title="Permalink to this heading">¶</a></h1>
 <p>There are a lot of things to monitor in elasticsearch to make sure it’s actually working.
 Here are a few things I’ve figured out.
 It’s not much, but it’s mine.
@@ -42,6 +43,10 @@ But you can use it too.</p>
 <p>Contents:</p>
 <div class="toctree-wrapper compound">
 <ul>
+<li class="toctree-l1"><a class="reference internal" href="heartbeat-and-uptime.html">heartbeat and uptime</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="heartbeat-and-uptime.html#heartbeat-systemd-service-file">heartbeat systemd service file</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="monitoring.html">Monitoring</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="monitoring.html#sysadmin-type-stuff">Sysadmin type stuff</a></li>
 </ul>
@@ -90,6 +95,7 @@ But you can use it too.</p>
 <li class="toctree-l2"><a class="reference internal" href="../logstash/index.html">logstash</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">monitoring</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../setup.html">Setting up the whole thing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../endpoint.html">endpoint</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../k8s/index.html">kubernetes</a></li>
@@ -111,7 +117,7 @@ But you can use it too.</p>
   <li><a href="../../index.html">Documentation overview</a><ul>
   <li><a href="../index.html">elastic stuff</a><ul>
       <li>Previous: <a href="../logstash/plugins.html" title="previous chapter">Fix the kafka plugin</a></li>
-      <li>Next: <a href="monitoring.html" title="next chapter">Monitoring</a></li>
+      <li>Next: <a href="heartbeat-and-uptime.html" title="next chapter">heartbeat and uptime</a></li>
   </ul></li>
   </ul></li>
 </ul>
@@ -120,12 +126,12 @@ But you can use it too.</p>
   <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="../../search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
       <input type="submit" value="Go" />
     </form>
     </div>
 </div>
-<script>$('#searchbox').show(0);</script>
+<script>document.getElementById('searchbox').style.display = "block"</script>
         </div>
       </div>
       <div class="clearer"></div>

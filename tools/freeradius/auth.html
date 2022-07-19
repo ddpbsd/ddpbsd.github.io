@@ -1,7 +1,7 @@
 
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
@@ -12,6 +12,7 @@
     <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../_static/doctools.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -34,12 +35,12 @@
           <div class="body" role="main">
             
   <section id="ldap-google-auth">
-<h1>ldap + google auth<a class="headerlink" href="#ldap-google-auth" title="Permalink to this headline">¶</a></h1>
+<h1>ldap + google auth<a class="headerlink" href="#ldap-google-auth" title="Permalink to this heading">¶</a></h1>
 <p>Notes are sparse, because I don’t remember a lot.</p>
 <p>I remember setting up sssd for auth to active directory.
 There’s more to it than setting up the <cite>sssd.conf</cite>, but I’d have to look that up.</p>
 <section id="sssd-conf">
-<h2>sssd.conf:<a class="headerlink" href="#sssd-conf" title="Permalink to this headline">¶</a></h2>
+<h2>sssd.conf:<a class="headerlink" href="#sssd-conf" title="Permalink to this heading">¶</a></h2>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">[sssd]</span>
 <span class="go">domains = AD_DOMAIN</span>
 <span class="go">config_file_version = 2</span>
@@ -64,7 +65,7 @@ There’s more to it than setting up the <cite>sssd.conf</cite>, but I’d have 
 </div>
 </section>
 <section id="password-auth-pam">
-<h2>password-auth pam:<a class="headerlink" href="#password-auth-pam" title="Permalink to this headline">¶</a></h2>
+<h2>password-auth pam:<a class="headerlink" href="#password-auth-pam" title="Permalink to this heading">¶</a></h2>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">#</span>%PAM-1.0
 <span class="gp"># </span>This file is auto-generated.
 <span class="gp"># </span>User changes will be destroyed the next <span class="nb">time</span> authconfig is run.
@@ -108,7 +109,7 @@ There’s more to it than setting up the <cite>sssd.conf</cite>, but I’d have 
 </div>
 </section>
 <section id="radiusd-pam">
-<h2>radiusd pam:<a class="headerlink" href="#radiusd-pam" title="Permalink to this headline">¶</a></h2>
+<h2>radiusd pam:<a class="headerlink" href="#radiusd-pam" title="Permalink to this heading">¶</a></h2>
 <p>Setup <cite>pam_google_authenticator.so</cite> to <cite>forward_pass</cite> to the next piece.
 Use <cite>pam_sss.so</cite> to auth to active directory.</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">#</span>%PAM-1.0
@@ -210,12 +211,12 @@ Use <cite>pam_sss.so</cite> to auth to active directory.</p>
   <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="../../search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
       <input type="submit" value="Go" />
     </form>
     </div>
 </div>
-<script>$('#searchbox').show(0);</script>
+<script>document.getElementById('searchbox').style.display = "block"</script>
         </div>
       </div>
       <div class="clearer"></div>

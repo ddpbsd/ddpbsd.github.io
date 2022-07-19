@@ -1,7 +1,7 @@
 
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
@@ -12,6 +12,7 @@
     <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
     <script src="../../../../_static/jquery.js"></script>
     <script src="../../../../_static/underscore.js"></script>
+    <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../../../_static/doctools.js"></script>
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
@@ -34,33 +35,33 @@
           <div class="body" role="main">
             
   <section id="docker-config-info">
-<span id="operating-systems-linux-containers-docker"></span><h1>Docker config info<a class="headerlink" href="#docker-config-info" title="Permalink to this headline">¶</a></h1>
+<span id="operating-systems-linux-containers-docker"></span><h1>Docker config info<a class="headerlink" href="#docker-config-info" title="Permalink to this heading">¶</a></h1>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">docker system info</span>
 </pre></div>
 </div>
 </section>
 <section id="list-of-images">
-<h1>List of images:<a class="headerlink" href="#list-of-images" title="Permalink to this headline">¶</a></h1>
+<h1>List of images:<a class="headerlink" href="#list-of-images" title="Permalink to this heading">¶</a></h1>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">docker images</span>
 </pre></div>
 </div>
 </section>
 <section id="delete-an-image">
-<h1>Delete an image:<a class="headerlink" href="#delete-an-image" title="Permalink to this headline">¶</a></h1>
+<h1>Delete an image:<a class="headerlink" href="#delete-an-image" title="Permalink to this heading">¶</a></h1>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">docker rmi IMAGE</span>
 <span class="go">docker image rm IMAGE</span>
 </pre></div>
 </div>
 </section>
 <section id="delete-a-container">
-<h1>Delete a container:<a class="headerlink" href="#delete-a-container" title="Permalink to this headline">¶</a></h1>
+<h1>Delete a container:<a class="headerlink" href="#delete-a-container" title="Permalink to this heading">¶</a></h1>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">docker rm CONTAINER</span>
 <span class="go">docker container rm CONTAINER</span>
 </pre></div>
 </div>
 </section>
 <section id="container-run-example">
-<h1>Container run example:<a class="headerlink" href="#container-run-example" title="Permalink to this headline">¶</a></h1>
+<h1>Container run example:<a class="headerlink" href="#container-run-example" title="Permalink to this heading">¶</a></h1>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">docker run --name=gogs -p 10022:22 -p 10080:3000 -v /var/gogs:/data gogs/gogs</span>
 </pre></div>
 </div>
@@ -129,12 +130,12 @@ It stores stuff in <cite>/var/gogs</cite> on the host, which translates to <cite
   <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="../../../../search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
       <input type="submit" value="Go" />
     </form>
     </div>
 </div>
-<script>$('#searchbox').show(0);</script>
+<script>document.getElementById('searchbox').style.display = "block"</script>
         </div>
       </div>
       <div class="clearer"></div>

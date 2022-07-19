@@ -1,7 +1,7 @@
 
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
@@ -12,6 +12,7 @@
     <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../_static/doctools.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -34,9 +35,9 @@
           <div class="body" role="main">
             
   <section id="ssl-with-logstash-and-elasticsearch">
-<h1>SSL with logstash and elasticsearch<a class="headerlink" href="#ssl-with-logstash-and-elasticsearch" title="Permalink to this headline">¶</a></h1>
+<h1>SSL with logstash and elasticsearch<a class="headerlink" href="#ssl-with-logstash-and-elasticsearch" title="Permalink to this heading">¶</a></h1>
 <section id="self-signed-certificates">
-<h2>self-signed certificates:<a class="headerlink" href="#self-signed-certificates" title="Permalink to this headline">¶</a></h2>
+<h2>self-signed certificates:<a class="headerlink" href="#self-signed-certificates" title="Permalink to this heading">¶</a></h2>
 <p>The following setting should make it so self-signed certs aren’t rejected,
 but it doesn’t work for me.</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">ssl_certificate_verification =&gt; false</span>
@@ -83,6 +84,7 @@ the self-signed cert into the java <cite>cacerts</cite>:</p>
 <li class="toctree-l2 current"><a class="reference internal" href="index.html">logstash</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../monitoring/index.html">monitoring</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../setup.html">Setting up the whole thing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../endpoint.html">endpoint</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../k8s/index.html">kubernetes</a></li>
@@ -115,12 +117,12 @@ the self-signed cert into the java <cite>cacerts</cite>:</p>
   <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="../../search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
       <input type="submit" value="Go" />
     </form>
     </div>
 </div>
-<script>$('#searchbox').show(0);</script>
+<script>document.getElementById('searchbox').style.display = "block"</script>
         </div>
       </div>
       <div class="clearer"></div>

@@ -1,7 +1,7 @@
 
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
@@ -12,6 +12,7 @@
     <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
     <script src="../../../_static/jquery.js"></script>
     <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../../_static/doctools.js"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
@@ -44,7 +45,7 @@ A <cite>Volume Group</cite> (VG) consists of some number of PVs.
 The instructions there give a lot more detail.</p>
 </div>
 <section id="view-current-lvm-info">
-<h1>View current lvm info<a class="headerlink" href="#view-current-lvm-info" title="Permalink to this headline">¶</a></h1>
+<h1>View current lvm info<a class="headerlink" href="#view-current-lvm-info" title="Permalink to this heading">¶</a></h1>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">root@buzzell:/var/VM# </span>pvdisplay
 <span class="go">  --- Physical volume ---</span>
 <span class="go">  PV Name               /dev/sda3</span>
@@ -71,40 +72,40 @@ The instructions there give a lot more detail.</p>
 </div>
 </section>
 <section id="create-a-partition">
-<h1>Create a partition:<a class="headerlink" href="#create-a-partition" title="Permalink to this headline">¶</a></h1>
+<h1>Create a partition:<a class="headerlink" href="#create-a-partition" title="Permalink to this heading">¶</a></h1>
 <p>Apparently not always necessary or something.</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp"># </span>fdisk /dev/sdb
 </pre></div>
 </div>
 </section>
 <section id="create-a-physical-volume">
-<h1>Create a physical volume:<a class="headerlink" href="#create-a-physical-volume" title="Permalink to this headline">¶</a></h1>
+<h1>Create a physical volume:<a class="headerlink" href="#create-a-physical-volume" title="Permalink to this heading">¶</a></h1>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp"># </span>pvcreate /dev/sdb1
 </pre></div>
 </div>
 </section>
 <section id="add-to-the-volume-group">
-<h1>Add to the volume group:<a class="headerlink" href="#add-to-the-volume-group" title="Permalink to this headline">¶</a></h1>
+<h1>Add to the volume group:<a class="headerlink" href="#add-to-the-volume-group" title="Permalink to this heading">¶</a></h1>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp"># </span>lvs
 <span class="gp"># </span>vgextend buzzell-vg /dev/sdb1
 </pre></div>
 </div>
 </section>
 <section id="create-a-logical-volume">
-<h1>Create a logical volume:<a class="headerlink" href="#create-a-logical-volume" title="Permalink to this headline">¶</a></h1>
+<h1>Create a logical volume:<a class="headerlink" href="#create-a-logical-volume" title="Permalink to this heading">¶</a></h1>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp"># </span>lvcreate -L 50G -n var buzzell-vg
 </pre></div>
 </div>
 </section>
 <section id="format-and-mount">
-<h1>Format and Mount:<a class="headerlink" href="#format-and-mount" title="Permalink to this headline">¶</a></h1>
+<h1>Format and Mount:<a class="headerlink" href="#format-and-mount" title="Permalink to this heading">¶</a></h1>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp"># </span>mkfs -t ext4 /dev/mapper/buzzell--vg-var
 <span class="gp"># </span>mount /dev/mapper/buzzell--vg-var /mnt
 </pre></div>
 </div>
 </section>
 <section id="display-information-about-a-volume-group">
-<h1>Display information about a volume group:<a class="headerlink" href="#display-information-about-a-volume-group" title="Permalink to this headline">¶</a></h1>
+<h1>Display information about a volume group:<a class="headerlink" href="#display-information-about-a-volume-group" title="Permalink to this heading">¶</a></h1>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">root@buzzell:/var/VM# </span>vgdisplay
 <span class="go">  --- Volume group ---</span>
 <span class="go">  VG Name               buzzell-vg</span>
@@ -130,11 +131,11 @@ The instructions there give a lot more detail.</p>
 </div>
 </section>
 <section id="alternatives">
-<h1>Alternatives:<a class="headerlink" href="#alternatives" title="Permalink to this headline">¶</a></h1>
+<h1>Alternatives:<a class="headerlink" href="#alternatives" title="Permalink to this heading">¶</a></h1>
 <p><cite>pvs</cite>, <cite>vgs</cite>, <cite>lvs</cite></p>
 </section>
 <section id="display-logical-volumes">
-<h1>Display logical volumes:<a class="headerlink" href="#display-logical-volumes" title="Permalink to this headline">¶</a></h1>
+<h1>Display logical volumes:<a class="headerlink" href="#display-logical-volumes" title="Permalink to this heading">¶</a></h1>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">root@buzzell:/var/VM# </span>lvdisplay
 <span class="go">  --- Logical volume ---</span>
 <span class="go">  LV Path                /dev/buzzell-vg/root</span>
@@ -190,7 +191,7 @@ The instructions there give a lot more detail.</p>
 </div>
 </section>
 <section id="more-specific-logical-volume-info">
-<h1>More specific logical volume info:<a class="headerlink" href="#more-specific-logical-volume-info" title="Permalink to this headline">¶</a></h1>
+<h1>More specific logical volume info:<a class="headerlink" href="#more-specific-logical-volume-info" title="Permalink to this heading">¶</a></h1>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">root@buzzell:/var/VM# </span>lvdisplay -m /dev/buzzell-vg/var
 <span class="go">  --- Logical volume ---</span>
 <span class="go">  LV Path                /dev/buzzell-vg/var</span>
@@ -277,12 +278,12 @@ The instructions there give a lot more detail.</p>
   <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="../../../search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
       <input type="submit" value="Go" />
     </form>
     </div>
 </div>
-<script>$('#searchbox').show(0);</script>
+<script>document.getElementById('searchbox').style.display = "block"</script>
         </div>
       </div>
       <div class="clearer"></div>

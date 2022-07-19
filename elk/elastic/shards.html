@@ -1,7 +1,7 @@
 
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
@@ -12,6 +12,7 @@
     <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../_static/doctools.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -34,34 +35,34 @@
           <div class="body" role="main">
             
   <section id="shards">
-<h1>shards<a class="headerlink" href="#shards" title="Permalink to this headline">¶</a></h1>
+<h1>shards<a class="headerlink" href="#shards" title="Permalink to this heading">¶</a></h1>
 <section id="get-list-of-shards">
-<h2>Get list of shards<a class="headerlink" href="#get-list-of-shards" title="Permalink to this headline">¶</a></h2>
+<h2>Get list of shards<a class="headerlink" href="#get-list-of-shards" title="Permalink to this heading">¶</a></h2>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">GET /_cat/shards?v</span>
 </pre></div>
 </div>
 </section>
 <section id="get-a-list-of-unassigned-shards">
-<h2>Get a list of UNASSIGNED shards<a class="headerlink" href="#get-a-list-of-unassigned-shards" title="Permalink to this headline">¶</a></h2>
+<h2>Get a list of UNASSIGNED shards<a class="headerlink" href="#get-a-list-of-unassigned-shards" title="Permalink to this heading">¶</a></h2>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">curl -XGET &#39;http://elastic.example.com:9200/_cat/shards?h=index,shard,prirep,state,unassigned.reason&#39; | grep UNASSIGNED</span>
 </pre></div>
 </div>
 </section>
 <section id="sort-by-node-and-then-size-desc">
-<h2>Sort by node and then size (desc)<a class="headerlink" href="#sort-by-node-and-then-size-desc" title="Permalink to this headline">¶</a></h2>
+<h2>Sort by node and then size (desc)<a class="headerlink" href="#sort-by-node-and-then-size-desc" title="Permalink to this heading">¶</a></h2>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">GET /_cat/shards?v&amp;s=node,store</span>
 </pre></div>
 </div>
 </section>
 <section id="re-route-failed-shards">
-<h2>Re-route failed shards<a class="headerlink" href="#re-route-failed-shards" title="Permalink to this headline">¶</a></h2>
+<h2>Re-route failed shards<a class="headerlink" href="#re-route-failed-shards" title="Permalink to this heading">¶</a></h2>
 <p>If a shard is <cite>UNASSIGNED ALLOCATION_FAILED</cite> run the following to retry the reroute:</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">curl -XPOST &#39;http://elastic.example.com:9200/_cluster/reroute?retry_failed=true&#39;</span>
 </pre></div>
 </div>
 </section>
 <section id="enable-shard-allocation">
-<h2>Enable shard allocation<a class="headerlink" href="#enable-shard-allocation" title="Permalink to this headline">¶</a></h2>
+<h2>Enable shard allocation<a class="headerlink" href="#enable-shard-allocation" title="Permalink to this heading">¶</a></h2>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">curl -X PUT &quot;localhost:9200/_cluster/settings?pretty&quot; -H &#39;Content-Type: application/json&#39; -d&#39;</span>
 <span class="go">{</span>
 <span class="go">  &quot;transient&quot; : {</span>
@@ -101,6 +102,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../logstash/index.html">logstash</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../monitoring/index.html">monitoring</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../setup.html">Setting up the whole thing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../endpoint.html">endpoint</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../k8s/index.html">kubernetes</a></li>
@@ -133,12 +135,12 @@
   <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="../../search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
       <input type="submit" value="Go" />
     </form>
     </div>
 </div>
-<script>$('#searchbox').show(0);</script>
+<script>document.getElementById('searchbox').style.display = "block"</script>
         </div>
       </div>
       <div class="clearer"></div>

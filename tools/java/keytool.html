@@ -1,7 +1,7 @@
 
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
@@ -12,6 +12,7 @@
     <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../_static/doctools.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -34,33 +35,33 @@
           <div class="body" role="main">
             
   <section id="keytool">
-<h1>keytool<a class="headerlink" href="#keytool" title="Permalink to this headline">¶</a></h1>
+<h1>keytool<a class="headerlink" href="#keytool" title="Permalink to this heading">¶</a></h1>
 <section id="default-password-for-a-keystore">
-<h2>Default password for a keystore:<a class="headerlink" href="#default-password-for-a-keystore" title="Permalink to this headline">¶</a></h2>
+<h2>Default password for a keystore:<a class="headerlink" href="#default-password-for-a-keystore" title="Permalink to this heading">¶</a></h2>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">changeit</span>
 </pre></div>
 </div>
 </section>
 <section id="list-the-certificates-in-the-store">
-<h2>List the certificates in the store:<a class="headerlink" href="#list-the-certificates-in-the-store" title="Permalink to this headline">¶</a></h2>
+<h2>List the certificates in the store:<a class="headerlink" href="#list-the-certificates-in-the-store" title="Permalink to this heading">¶</a></h2>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">keytool -list -keystore ./keystore.jks</span>
 </pre></div>
 </div>
 </section>
 <section id="export-a-cert">
-<h2>Export a cert:<a class="headerlink" href="#export-a-cert" title="Permalink to this headline">¶</a></h2>
+<h2>Export a cert:<a class="headerlink" href="#export-a-cert" title="Permalink to this heading">¶</a></h2>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">keytool -export -alias ALIAS -keystore ./keystore.jks -file /tmp/FILE</span>
 </pre></div>
 </div>
 </section>
 <section id="look-at-the-exported-cert-with-openssl">
-<h2>Look at the exported cert with openssl:<a class="headerlink" href="#look-at-the-exported-cert-with-openssl" title="Permalink to this headline">¶</a></h2>
+<h2>Look at the exported cert with openssl:<a class="headerlink" href="#look-at-the-exported-cert-with-openssl" title="Permalink to this heading">¶</a></h2>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">openssl x509 -text -inform DER -in /tmp/FILE</span>
 </pre></div>
 </div>
 </section>
 <section id="import-a-certificate">
-<h2>Import a certificate:<a class="headerlink" href="#import-a-certificate" title="Permalink to this headline">¶</a></h2>
+<h2>Import a certificate:<a class="headerlink" href="#import-a-certificate" title="Permalink to this heading">¶</a></h2>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">keytool -import -alias root -keystore ../cacerts -file ./certificate.crt</span>
 </pre></div>
 </div>
@@ -149,12 +150,12 @@
   <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="../../search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
       <input type="submit" value="Go" />
     </form>
     </div>
 </div>
-<script>$('#searchbox').show(0);</script>
+<script>document.getElementById('searchbox').style.display = "block"</script>
         </div>
       </div>
       <div class="clearer"></div>
