@@ -5,7 +5,7 @@ plugins
 list plugins
 ^^^^^^^^^^^^
 
-.. code-block:: sql
+.. code-block:: console
 
    $ steampipe
    > select name from steampipe_registry_plugin;

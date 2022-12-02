@@ -18,39 +18,39 @@ node
 
 Individual machines (virtual or physical) where containerzed applications (things) can run.
 
-   kubelet
-   ^^^^^^^
+kubelet
+^^^^^^^
 
-   An agent that makes sure containers are running in a pod.
+An agent that makes sure containers are running in a pod.
 
-   kube-proxy
-   ^^^^^^^^^^
+kube-proxy
+^^^^^^^^^^
 
-   A network proxy to maintain network rules.
+A network proxy to maintain network rules.
 
 control plane
 ^^^^^^^^^^^^^
 
 Manages the worker nodes and pods.
 
-   kube-apiserver
-   ^^^^^^^^^^^^^^
+kube-apiserver
+^^^^^^^^^^^^^^
 
 
-   etcd
-   ^^^^
+etcd
+^^^^
 
 
-   kube-scheduler
-   ^^^^^^^^^^^^^^
+kube-scheduler
+^^^^^^^^^^^^^^
 
 
-   kube-controller-manager
-   ^^^^^^^^^^^^^^^^^^^^^^^
+kube-controller-manager
+^^^^^^^^^^^^^^^^^^^^^^^
 
 
-   cloud-controller-manager
-   ^^^^^^^^^^^^^^^^^^^^^^^^
+cloud-controller-manager
+^^^^^^^^^^^^^^^^^^^^^^^^
 
 
 pods

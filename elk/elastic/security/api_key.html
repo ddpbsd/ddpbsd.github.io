@@ -62,21 +62,21 @@ The <a class="reference external" href="./users.html">users</a> page will have m
 <h2>Creating api keys<a class="headerlink" href="#creating-api-keys" title="Permalink to this heading">¶</a></h2>
 <p>A <cite>GET</cite> to <cite>/_security/api_key</cite> can return an API key.
 The body of the request needs to include some information:</p>
-<div class="highlight-json notranslate"><div class="highlight"><pre><span></span>{
-  &quot;name&quot;: &quot;name-of-key&quot;,
-  &quot;expiration: &quot;1d&quot;,
-  &quot;role_descriptors&quot;: {
-    &quot;descriptive_name&quot;: {
-      &quot;cluster&quot;: [&quot;name-of-cluster&quot;],
-      &quot;index&quot;: [
-        {
-          &quot;names&quot;: [&quot;names&quot;,&quot;of&quot;,&quot;indexes&quot;],
-          &quot;privileges&quot;: [&quot;read&quot;]
-        }
-      ]
-    }
-  }
-}
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">{</span>
+<span class="go">  &quot;name&quot;: &quot;name-of-key&quot;,</span>
+<span class="go">  &quot;expiration: &quot;1d&quot;,</span>
+<span class="go">  &quot;role_descriptors&quot;: {</span>
+<span class="go">    &quot;descriptive_name&quot;: {</span>
+<span class="go">      &quot;cluster&quot;: [&quot;name-of-cluster&quot;],</span>
+<span class="go">      &quot;index&quot;: [</span>
+<span class="go">        {</span>
+<span class="go">          &quot;names&quot;: [&quot;names&quot;,&quot;of&quot;,&quot;indexes&quot;],</span>
+<span class="go">          &quot;privileges&quot;: [&quot;read&quot;]</span>
+<span class="go">        }</span>
+<span class="go">      ]</span>
+<span class="go">    }</span>
+<span class="go">  }</span>
+<span class="go">}</span>
 </pre></div>
 </div>
 <p><cite>role_descriptors</cite> and <cite>expiration</cite> are optional.

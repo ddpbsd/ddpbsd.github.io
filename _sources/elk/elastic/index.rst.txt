@@ -11,8 +11,6 @@ Contents:
    indexes/index
    dev
    status
-   security/logstash_user.rst
-   security/beats_user.rst
    templates
    shards 
    tasks
