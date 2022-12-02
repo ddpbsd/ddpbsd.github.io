@@ -41,7 +41,7 @@ Creating api keys
 A `GET` to `/_security/api_key` can return an API key.
 The body of the request needs to include some information:
 
-.. code-block:: javascript
+.. code-block:: json
 
    {
      "name": "name-of-key",

@@ -4,7 +4,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
     <title>wireguard &#8212; notes 0.1 documentation</title>
     <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
@@ -14,6 +14,7 @@
     <script src="../../../_static/underscore.js"></script>
     <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/sphinx_highlight.js"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
     <link rel="next" title="pledge(2) and unveil(2)" href="../pledge/index.html" />
@@ -36,10 +37,59 @@
             
   <section id="wireguard">
 <h1>wireguard<a class="headerlink" href="#wireguard" title="Permalink to this heading">¶</a></h1>
+<section id="better-info">
+<h2>Better info<a class="headerlink" href="#better-info" title="Permalink to this heading">¶</a></h2>
+<p><a class="reference external" href="https://dataswamp.org/~solene/2021-10-09-openbsd-wireguard-exit.html">Full WireGuard setup with OpenBSD</a></p>
+</section>
 <section id="no-handshake">
 <h2>No handshake<a class="headerlink" href="#no-handshake" title="Permalink to this heading">¶</a></h2>
 <p>Unless there is traffic going through wg, there is no indication that it’s working.
 So <cite>ping</cite> away, just to make sure.</p>
+</section>
+<section id="setup">
+<h2>Setup<a class="headerlink" href="#setup" title="Permalink to this heading">¶</a></h2>
+<p>Create the private key:</p>
+<p><cite>openssl rand -base64 32</cite></p>
+<p>Each system will need its own private key.</p>
+<p>Create an <cite>/etc/hostname.wg?</cite> file (replace the <cite>?</cite> with a number).</p>
+<p>For the client computer:</p>
+<blockquote>
+<div><p>Put the following information in it ($PRIVATE_KEY is the key made in the previous step):</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">#</span><span class="c1"># the priv key from above</span>
+<span class="go">wgkey $PRIVATE_KEY</span>
+<span class="gp">#</span><span class="c1"># wgpeer will get the pub key from the server, wgendpoint is the IP/port for the server, wgapi is the allowed IPs, and wgpsk is a pre-shared key</span>
+<span class="go">wgpeer wgendpoint $SERVER_IP PORT wgaip 0.0.0.0/0 wgpsk $PRESHARED_KEY</span>
+<span class="go">inet 192.168.100.2/24</span>
+<span class="go">up</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>For the server computer:</p>
+<blockquote>
+<div><p>Create a new private key:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">openssl rand -base64 32</span>
+</pre></div>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">#</span><span class="c1"># The private key made above</span>
+<span class="go">wgkey $PRIVATE_KEY</span>
+<span class="gp">#</span><span class="c1"># wgpeer will be filled in with the pub key of the client, wgaip is the acceptable IPs that are allowed to traverse the tunnel, wgpka is a keep alive timer</span>
+<span class="go">wgpeer wgaip 192.168.100.0/24 wgpsk $PRESHARED_KEY wgpka 25</span>
+<span class="go">inet 192.168.100.1/24</span>
+<span class="gp">#</span><span class="c1"># The listening port</span>
+<span class="go">wgport 7771</span>
+<span class="go">up</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>Create and bring up the interfaces on each system:</p>
+<p><cite>/bin/sh /etc/netstart wg0</cite></p>
+<p>Now the public key can be copied from the <cite>ifconfig</cite> output to the <cite>hostname.wg?</cite> files on the opposite systems (server’s pub key in client’s <cite>hostname.wg</cite>).
+Restart the interfaces and they should connect.</p>
+</section>
+<section id="don-t-forget-wgaip">
+<h2>Don’t forget wgaip!<a class="headerlink" href="#don-t-forget-wgaip" title="Permalink to this heading">¶</a></h2>
+<p><cite>wgaip</cite> is necessary and will mess up your day if you forget it.
+It can be specified multiple times for multiple ranges.</p>
 </section>
 </section>
 

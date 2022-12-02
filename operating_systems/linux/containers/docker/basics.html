@@ -4,7 +4,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
     <title>Docker config info &#8212; notes 0.1 documentation</title>
     <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css" />
@@ -14,6 +14,7 @@
     <script src="../../../../_static/underscore.js"></script>
     <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../../../_static/doctools.js"></script>
+    <script src="../../../../_static/sphinx_highlight.js"></script>
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
     <link rel="next" title="docker build:" href="build.html" />
@@ -41,32 +42,44 @@
 </div>
 </section>
 <section id="list-of-images">
-<h1>List of images:<a class="headerlink" href="#list-of-images" title="Permalink to this heading">¶</a></h1>
+<h1>List of images<a class="headerlink" href="#list-of-images" title="Permalink to this heading">¶</a></h1>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">docker images</span>
 </pre></div>
 </div>
 </section>
 <section id="delete-an-image">
-<h1>Delete an image:<a class="headerlink" href="#delete-an-image" title="Permalink to this heading">¶</a></h1>
+<h1>Delete an image<a class="headerlink" href="#delete-an-image" title="Permalink to this heading">¶</a></h1>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">docker rmi IMAGE</span>
 <span class="go">docker image rm IMAGE</span>
 </pre></div>
 </div>
 </section>
 <section id="delete-a-container">
-<h1>Delete a container:<a class="headerlink" href="#delete-a-container" title="Permalink to this heading">¶</a></h1>
+<h1>Delete a container<a class="headerlink" href="#delete-a-container" title="Permalink to this heading">¶</a></h1>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">docker rm CONTAINER</span>
 <span class="go">docker container rm CONTAINER</span>
 </pre></div>
 </div>
 </section>
 <section id="container-run-example">
-<h1>Container run example:<a class="headerlink" href="#container-run-example" title="Permalink to this heading">¶</a></h1>
+<h1>Container run example<a class="headerlink" href="#container-run-example" title="Permalink to this heading">¶</a></h1>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">docker run --name=gogs -p 10022:22 -p 10080:3000 -v /var/gogs:/data gogs/gogs</span>
 </pre></div>
 </div>
 <p>This runs a container named gogs. You can connect to it on port 10022 and port 10080 of the host.
 It stores stuff in <cite>/var/gogs</cite> on the host, which translates to <cite>/data</cite> in the container</p>
+</section>
+<section id="automagically-start">
+<h1>Automagically start<a class="headerlink" href="#automagically-start" title="Permalink to this heading">¶</a></h1>
+<p>Make sure the container is set to restart.
+I probably use <cite>unless-stopped</cite> or <cite>always</cite>.</p>
+</section>
+<section id="update-the-settings-of-a-running-container">
+<h1>Update the settings of a running container<a class="headerlink" href="#update-the-settings-of-a-running-container" title="Permalink to this heading">¶</a></h1>
+<p><cite>docker update</cite> can update settings.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">docker update --restart unless-stopped prometheus</span>
+</pre></div>
+</div>
 </section>
 
 

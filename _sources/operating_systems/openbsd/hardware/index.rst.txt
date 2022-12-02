@@ -10,4 +10,5 @@ Contents:
    :maxdepth: 2
 
    usb_ethernet
+   usbdevs
 

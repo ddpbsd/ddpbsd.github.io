@@ -9,5 +9,5 @@ Contents:
    :maxdepth: 2
 
    tables
-      
+   queries      
 

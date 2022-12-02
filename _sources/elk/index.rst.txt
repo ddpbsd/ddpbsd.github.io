@@ -13,4 +13,5 @@ Contents:
    monitoring/index
    setup
    endpoint
+   read
 

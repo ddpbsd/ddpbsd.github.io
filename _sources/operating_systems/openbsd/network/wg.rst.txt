@@ -1,9 +1,72 @@
+=========
 wireguard
 =========
+
+Better info
+^^^^^^^^^^^
+
+`Full WireGuard setup with OpenBSD <https://dataswamp.org/~solene/2021-10-09-openbsd-wireguard-exit.html>`_
 
 No handshake
 ^^^^^^^^^^^^
 
 Unless there is traffic going through wg, there is no indication that it's working.
 So `ping` away, just to make sure.
+
+
+Setup
+^^^^^
+
+Create the private key:
+
+`openssl rand -base64 32`
+
+Each system will need its own private key.
+
+Create an `/etc/hostname.wg?` file (replace the `?` with a number).
+
+For the client computer:
+
+   Put the following information in it ($PRIVATE_KEY is the key made in the previous step):
+
+   .. code-block:: console
+
+      ## the priv key from above
+      wgkey $PRIVATE_KEY
+      ## wgpeer will get the pub key from the server, wgendpoint is the IP/port for the server, wgapi is the allowed IPs, and wgpsk is a pre-shared key
+      wgpeer wgendpoint $SERVER_IP PORT wgaip 0.0.0.0/0 wgpsk $PRESHARED_KEY
+      inet 192.168.100.2/24
+      up
+
+For the server computer:
+
+   Create a new private key:
+
+   .. code-block:: console
+
+      openssl rand -base64 32
+
+   .. code-block:: console
+
+      ## The private key made above
+      wgkey $PRIVATE_KEY
+      ## wgpeer will be filled in with the pub key of the client, wgaip is the acceptable IPs that are allowed to traverse the tunnel, wgpka is a keep alive timer
+      wgpeer wgaip 192.168.100.0/24 wgpsk $PRESHARED_KEY wgpka 25
+      inet 192.168.100.1/24
+      ## The listening port
+      wgport 7771
+      up
+
+Create and bring up the interfaces on each system:
+
+`/bin/sh /etc/netstart wg0`
+
+Now the public key can be copied from the `ifconfig` output to the `hostname.wg?` files on the opposite systems (server's pub key in client's `hostname.wg`).
+Restart the interfaces and they should connect.
+
+Don't forget wgaip!
+^^^^^^^^^^^^^^^^^^^
+
+`wgaip` is necessary and will mess up your day if you forget it.
+It can be specified multiple times for multiple ranges.
 

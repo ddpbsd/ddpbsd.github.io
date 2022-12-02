@@ -30,6 +30,7 @@ Contents:
    perl/index
    prometheus/index
    python/index
+   steampipe/index
    su
    tcpdump/index
    tmux/index

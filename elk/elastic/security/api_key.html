@@ -4,7 +4,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
     <title>api_key &#8212; notes 0.1 documentation</title>
     <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
@@ -14,6 +14,7 @@
     <script src="../../../_static/underscore.js"></script>
     <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/sphinx_highlight.js"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
    
@@ -61,7 +62,7 @@ The <a class="reference external" href="./users.html">users</a> page will have m
 <h2>Creating api keys<a class="headerlink" href="#creating-api-keys" title="Permalink to this heading">¶</a></h2>
 <p>A <cite>GET</cite> to <cite>/_security/api_key</cite> can return an API key.
 The body of the request needs to include some information:</p>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span>{
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span>{
   &quot;name&quot;: &quot;name-of-key&quot;,
   &quot;expiration: &quot;1d&quot;,
   &quot;role_descriptors&quot;: {

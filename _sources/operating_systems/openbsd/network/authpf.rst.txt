@@ -1,0 +1,9 @@
+======
+authpf
+======
+
+User keeps getting kicked out
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Check user:group and permissions of `/etc/authpf`
+

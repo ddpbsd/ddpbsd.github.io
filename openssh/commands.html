@@ -4,7 +4,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
     <title>Command note &#8212; notes 0.1 documentation</title>
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
@@ -14,6 +14,7 @@
     <script src="../_static/underscore.js"></script>
     <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
+    <script src="../_static/sphinx_highlight.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Automatically add ssh keys to ssh-agent" href="config.html" />
@@ -37,6 +38,13 @@
   <section id="command-note">
 <span id="openssh-commands"></span><h1>Command note<a class="headerlink" href="#command-note" title="Permalink to this heading">¶</a></h1>
 <p>command=”command” stuff in authorized keys comes BEFORE the key.</p>
+</section>
+<section id="print-configuration">
+<h1>Print configuration<a class="headerlink" href="#print-configuration" title="Permalink to this heading">¶</a></h1>
+<p>Print the configuraiton used for DESTINATION.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">ssh -G DESTINATION</span>
+</pre></div>
+</div>
 </section>
 
 
@@ -64,6 +72,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../k8s/index.html">kubernetes</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">OpenSSH</a><ul class="current">
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Command note</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#print-configuration">Print configuration</a></li>
 <li class="toctree-l2"><a class="reference internal" href="config.html">Automatically add ssh keys to ssh-agent</a></li>
 <li class="toctree-l2"><a class="reference internal" href="keys.html">SSH keys</a></li>
 <li class="toctree-l2"><a class="reference internal" href="keys.html#hardware-keys">Hardware Keys</a></li>

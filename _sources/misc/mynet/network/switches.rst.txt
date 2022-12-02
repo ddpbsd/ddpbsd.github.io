@@ -59,6 +59,8 @@ wallach9 - netgear right
 blue netgear left - corrin?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+10.35.36.0/24
+
 +-------+---------+------------+
 | port  | system  | interface  |
 +=======+=========+============+
@@ -82,6 +84,7 @@ blue netgear left - corrin?
 white netgear
 ^^^^^^^^^^^^^
 
+admin network?
 
 +-------+----------------+------------+
 | port  | system         | interface  |

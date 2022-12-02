@@ -7,23 +7,23 @@ Docker config info
 
    docker system info
 
-List of images:
-^^^^^^^^^^^^^^^
+List of images
+^^^^^^^^^^^^^^
 
 .. code-block:: console
 
    docker images
 
-Delete an image:
-^^^^^^^^^^^^^^^^
+Delete an image
+^^^^^^^^^^^^^^^
 
 .. code-block:: console
 
    docker rmi IMAGE
    docker image rm IMAGE
 
-Delete a container:
-^^^^^^^^^^^^^^^^^^^
+Delete a container
+^^^^^^^^^^^^^^^^^^
 
 .. code-block:: console
 
@@ -31,8 +31,8 @@ Delete a container:
    docker container rm CONTAINER
 
 
-Container run example:
-^^^^^^^^^^^^^^^^^^^^^^
+Container run example
+^^^^^^^^^^^^^^^^^^^^^
 
 .. code-block:: console
 
@@ -41,4 +41,18 @@ Container run example:
 This runs a container named gogs. You can connect to it on port 10022 and port 10080 of the host.
 It stores stuff in `/var/gogs` on the host, which translates to `/data` in the container
 
+Automagically start
+^^^^^^^^^^^^^^^^^^^
+
+Make sure the container is set to restart.
+I probably use `unless-stopped` or `always`.
+
+Update the settings of a running container
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+`docker update` can update settings.
+
+.. code-block:: console
+
+   docker update --restart unless-stopped prometheus
 

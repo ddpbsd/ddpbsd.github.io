@@ -6,3 +6,12 @@ Command note
 
 command="command" stuff in authorized keys comes BEFORE the key.
 
+Print configuration
+^^^^^^^^^^^^^^^^^^^
+
+Print the configuraiton used for DESTINATION.
+
+.. code-block:: console
+
+   ssh -G DESTINATION
+

@@ -1,0 +1,18 @@
+=======
+plugins
+=======
+
+list plugins
+^^^^^^^^^^^^
+
+.. code-block:: sql
+
+   $ steampipe
+   > select name from steampipe_registry_plugin;
+
+install a plugin
+^^^^^^^^^^^^^^^^
+
+.. code-block:: console
+
+   $ steampipe plugin install prometheus

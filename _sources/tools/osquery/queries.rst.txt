@@ -1,0 +1,19 @@
+=======
+queries
+=======
+
+
+Check for unencrypted ssh keys
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Check for the current user:
+
+.. code-block:: console
+
+   select path from user_ssh_keys where encrypted=0 and uid=1000;
+
+Check for all users:
+
+.. code-block:: console
+
+   select users.uid, user_ssh_keys.path from users cross join user_ssh_keys using (uid) where encrypted=0;
