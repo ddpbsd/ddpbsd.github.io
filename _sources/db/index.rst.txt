@@ -10,5 +10,6 @@ Contents:
 
    mysql/index
    postgresql/index
+   sqlite
    sql/index
 

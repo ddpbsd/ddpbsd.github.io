@@ -1,6 +1,3 @@
-.. _linux_lvm:
-
-
 Linux LVM is complicated alchemy. It's entirely possible this is very wrong.
 
 `Physical Volumes` (PV) consist of a group of physical disks (disks, partitions, or LUNs).
@@ -47,8 +44,8 @@ View current lvm info
 
 
 
-Create a partition:
-^^^^^^^^^^^^^^^^^^^
+Create a partition
+^^^^^^^^^^^^^^^^^^
 
 Apparently not always necessary or something.
 
@@ -57,39 +54,39 @@ Apparently not always necessary or something.
    # fdisk /dev/sdb
 
 
-Create a physical volume:
-^^^^^^^^^^^^^^^^^^^^^^^^^
+Create a physical volume
+^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code-block:: console
 
    # pvcreate /dev/sdb1
 
 
-Add to the volume group:
-^^^^^^^^^^^^^^^^^^^^^^^^
+Add to the volume group
+^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code-block:: console
 
    # lvs
    # vgextend buzzell-vg /dev/sdb1
 
-Create a logical volume:
-^^^^^^^^^^^^^^^^^^^^^^^^
+Create a logical volume
+^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code-block:: console
 
    # lvcreate -L 50G -n var buzzell-vg
 
-Format and Mount:
-^^^^^^^^^^^^^^^^^
+Format and Mount
+^^^^^^^^^^^^^^^^
 
 .. code-block:: console
 
    # mkfs -t ext4 /dev/mapper/buzzell--vg-var
    # mount /dev/mapper/buzzell--vg-var /mnt
 
-Display information about a volume group:
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Display information about a volume group
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code-block:: console
 
@@ -116,13 +113,13 @@ Display information about a volume group:
      VG UUID               bPlGsE-Vmza-glR9-1fDd-SXtX-rR0A-F72a24
 
 
-Alternatives:
-^^^^^^^^^^^^^
+Alternatives
+^^^^^^^^^^^^
 
 `pvs`, `vgs`, `lvs`
 
-Display logical volumes:
-^^^^^^^^^^^^^^^^^^^^^^^^
+Display logical volumes
+^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code-block:: console
 
@@ -178,8 +175,8 @@ Display logical volumes:
      - currently set to     256
      Block device           252:2
 
-More specific logical volume info:
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+More specific logical volume info
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code-block:: console
 

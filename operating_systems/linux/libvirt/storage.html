@@ -1,20 +1,16 @@
-
 <!DOCTYPE html>
 
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>&lt;no title&gt; &#8212; notes 0.1 documentation</title>
-    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/alabaster.css" />
-    <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
-    <script src="../../../_static/jquery.js"></script>
-    <script src="../../../_static/underscore.js"></script>
-    <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="../../../_static/doctools.js"></script>
-    <script src="../../../_static/sphinx_highlight.js"></script>
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/alabaster.css?v=039e1c02" />
+    <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js?v=e031e9a9"></script>
+    <script src="../../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=4825356b"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
    
@@ -34,15 +30,15 @@
           <div class="body" role="main">
             
   <p>Error:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">root@earth:/data# </span>virsh pool-autostart virtimages
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">root@earth:/data# </span>virsh<span class="w"> </span>pool-autostart<span class="w"> </span>virtimages
 <span class="go">error: failed to mark pool virtimages as autostarted</span>
 <span class="go">error: internal error: pool has no config file</span>
 </pre></div>
 </div>
 <p>Fix:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">root@earth:/data# </span>virsh pool-edit virtimages
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">root@earth:/data# </span>virsh<span class="w"> </span>pool-edit<span class="w"> </span>virtimages
 <span class="go">Insert a comment or something</span>
-<span class="gp">root@earth:/data# </span>virsh pool-autostart virtimages
+<span class="gp">root@earth:/data# </span>virsh<span class="w"> </span>pool-autostart<span class="w"> </span>virtimages
 </pre></div>
 </div>
 

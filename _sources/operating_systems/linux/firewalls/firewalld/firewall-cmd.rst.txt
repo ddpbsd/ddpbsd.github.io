@@ -56,3 +56,11 @@ Reject connections to a port
    # add a src ip into the mix
    firewall-cmd --permanent --zone=public --add-rich-rule='rule family="ipv4" source address="10.0.0.2" port protocol="tcp" port="443" reject'
 
+Forward traffic from a specific address to another port
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: console
+
+   firewall-cmd --add-rich-rule='rule family=ipv4 source address=10.10.10.99 forward-port to-port=8080 protocol=tcp port=80'
+
+

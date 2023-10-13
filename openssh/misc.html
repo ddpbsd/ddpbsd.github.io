@@ -1,20 +1,16 @@
-
 <!DOCTYPE html>
 
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Disconnect from an SSH session &#8212; notes 0.1 documentation</title>
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css" />
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/sphinx_highlight.js"></script>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css?v=039e1c02" />
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js?v=e031e9a9"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=4825356b"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="message too long" href="sftp.html" />
@@ -47,6 +43,19 @@
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">~~.</span>
 </pre></div>
 </div>
+</section>
+<section id="x11-forwarding-not-working">
+<h1>X11 forwarding not working<a class="headerlink" href="#x11-forwarding-not-working" title="Permalink to this heading">¶</a></h1>
+<p>Run ssh in verbose mode and make sure xauth is working.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">debug1: Requesting X11 forwarding with authentication spoofing.</span>
+<span class="go">debug2: channel 0: request x11-req confirm 1</span>
+<span class="go">...</span>
+<span class="go">debug1: Remote: No xauth program; cannot forward X11.</span>
+<span class="go">X11 forwarding request failed on channel 0</span>
+</pre></div>
+</div>
+<p>Install xauth and it might work.
+For openSUSE I had to <cite>mkdir -p /usr/X11R6/bin &amp;&amp; ln -s /usr/bin/xauth /usr/X11R6/bin/xauth</cite> to make it work.</p>
 </section>
 
 
@@ -81,6 +90,7 @@
 <li class="toctree-l2"><a class="reference internal" href="keys.html#forwarding">Forwarding</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Disconnect from an SSH session</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#disconnect-from-a-nested-ssh-session">Disconnect from a nested SSH session</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#x11-forwarding-not-working">X11 forwarding not working</a></li>
 <li class="toctree-l2"><a class="reference internal" href="sftp.html">message too long</a></li>
 </ul>
 </li>

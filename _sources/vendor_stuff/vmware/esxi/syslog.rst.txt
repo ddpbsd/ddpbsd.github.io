@@ -1,0 +1,16 @@
+======
+syslog
+======
+
+Configure syslog with esxcli
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Send syslog to 10.10.10.10 port 514.
+Not sure if `udp://` needs to be there if sending via udp.
+
+.. code-block:: console
+
+   esxcli system syslog config get
+   esxcli system syslog config set --loghost=10.10.10.10:514
+   esxcli system syslog config set --loghost=tcp://10.10.10.10:514
+

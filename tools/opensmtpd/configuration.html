@@ -1,20 +1,16 @@
-
 <!DOCTYPE html>
 
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Default &#8212; notes 0.1 documentation</title>
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/alabaster.css" />
-    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
-    <script src="../../_static/jquery.js"></script>
-    <script src="../../_static/underscore.js"></script>
-    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/sphinx_highlight.js"></script>
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../_static/alabaster.css?v=039e1c02" />
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js?v=e031e9a9"></script>
+    <script src="../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../_static/sphinx_highlight.js?v=4825356b"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="osquery" href="../osquery/index.html" />
@@ -37,23 +33,23 @@
             
   <section id="default">
 <span id="opensmtpd-configuration"></span><h1>Default<a class="headerlink" href="#default" title="Permalink to this heading">¶</a></h1>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">#    </span><span class="nv">$OpenBSD</span>: smtpd.conf,v <span class="m">1</span>.11 <span class="m">2018</span>/06/04 <span class="m">21</span>:10:58 jmc Exp $
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">#    </span><span class="nv">$OpenBSD</span>:<span class="w"> </span>smtpd.conf,v<span class="w"> </span><span class="m">1</span>.11<span class="w"> </span><span class="m">2018</span>/06/04<span class="w"> </span><span class="m">21</span>:10:58<span class="w"> </span>jmc<span class="w"> </span>Exp<span class="w"> </span>$
 
-<span class="gp"># </span>This is the smtpd server system-wide configuration file.
-<span class="gp"># </span>See smtpd.conf<span class="o">(</span><span class="m">5</span><span class="o">)</span> <span class="k">for</span> more information.
+<span class="gp"># </span>This<span class="w"> </span>is<span class="w"> </span>the<span class="w"> </span>smtpd<span class="w"> </span>server<span class="w"> </span>system-wide<span class="w"> </span>configuration<span class="w"> </span>file.
+<span class="gp"># </span>See<span class="w"> </span>smtpd.conf<span class="o">(</span><span class="m">5</span><span class="o">)</span><span class="w"> </span><span class="k">for</span><span class="w"> </span>more<span class="w"> </span>information.
 
 <span class="go">table aliases file:/etc/mail/aliases</span>
 
-<span class="gp"># </span>To accept external mail, replace with: listen on all
+<span class="gp"># </span>To<span class="w"> </span>accept<span class="w"> </span>external<span class="w"> </span>mail,<span class="w"> </span>replace<span class="w"> </span>with:<span class="w"> </span>listen<span class="w"> </span>on<span class="w"> </span>all
 <span class="gp">#</span>
 <span class="go">listen on lo0</span>
 
 <span class="go">action &quot;local&quot; mbox alias &lt;aliases&gt;</span>
 <span class="go">action &quot;relay&quot; relay</span>
 
-<span class="gp"># </span>Uncomment the following to accept external mail <span class="k">for</span> domain <span class="s2">&quot;example.org&quot;</span>
+<span class="gp"># </span>Uncomment<span class="w"> </span>the<span class="w"> </span>following<span class="w"> </span>to<span class="w"> </span>accept<span class="w"> </span>external<span class="w"> </span>mail<span class="w"> </span><span class="k">for</span><span class="w"> </span>domain<span class="w"> </span><span class="s2">&quot;example.org&quot;</span>
 <span class="gp">#</span>
-<span class="gp"># </span>match from any <span class="k">for</span> domain <span class="s2">&quot;example.org&quot;</span> action <span class="s2">&quot;local&quot;</span>
+<span class="gp"># </span>match<span class="w"> </span>from<span class="w"> </span>any<span class="w"> </span><span class="k">for</span><span class="w"> </span>domain<span class="w"> </span><span class="s2">&quot;example.org&quot;</span><span class="w"> </span>action<span class="w"> </span><span class="s2">&quot;local&quot;</span>
 <span class="go">match for local action &quot;local&quot;</span>
 <span class="go">match for any action &quot;relay&quot;</span>
 </pre></div>

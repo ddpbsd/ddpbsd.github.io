@@ -2,8 +2,8 @@ SELinux
 =======
 
 
-Allow ssh keys for auth:
-^^^^^^^^^^^^^^^^^^^^^^^^
+Allow ssh keys for auth
+^^^^^^^^^^^^^^^^^^^^^^^
 
 For some reason `authorized_keys` isn't installed in the correct context.
 So make sure it's in the right context so it can work. Don't be fooled

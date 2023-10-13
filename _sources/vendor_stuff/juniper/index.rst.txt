@@ -16,5 +16,6 @@ Contents:
    nat
    route
    switch
+   syslog
 
 

@@ -22,3 +22,10 @@ Check the subject in a certificate:
 
    openssl x509 -noout -subject -in certificate.crt
 
+Check expiration with keytool
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: console
+
+   keytool -list -v -keystore keystore.jks
+

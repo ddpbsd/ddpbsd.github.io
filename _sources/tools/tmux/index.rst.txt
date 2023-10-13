@@ -1,115 +1,13 @@
-
 ====
 tmux
 ====
 
-I use ``o`` as my prefix key. The default is ``b``. 
 
-Set the prefix key to ``o``
-^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Contents:
 
-.. code-block:: console
+.. toctree::
+   :maxdepth: 2
 
-   unbind C-b
-   set-option -g prefix C-c
-   bind-key C-c send-prefix
+   misc.rst
+   search.rst
 
-
-Resize a pane
-^^^^^^^^^^^^^
-
-Increase size down:
-
-.. code-block:: console
-
-   ^o :resize-pane -D 10
-
-Zoom in/out in a pane
-^^^^^^^^^^^^^^^^^^^^^
-
-.. code-block:: console
-
-   ^o z
-
-Misc
-^^^^
-
-.. code-block:: console
-
-   ctrl+b followed by...
-   % - split pane vertically
-   " - split pane horizontally
-   arrow keys - change pane you're typing in
-   :new-window
-   2 - switch to window 2
-   x - kill pane
-   d - detach
-
-Run a program in a new session
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-.. code-block:: console
-
-   tmux new-session -d -s "top" /usr/bin/top
-
-
-Scrollback
-^^^^^^^^^^
-
-Enter copy mode.
-
-.. code-block:: console
-
-   ^b [
-
-After the above, the Up/Down arrows or PageUp/PageDown can be used to navigate.
-
-Exit copy mode.
-
-.. code-block:: console
-
-   q
-
-
-Name a session
-^^^^^^^^^^^^^^
-
-.. code-block:: console
-
-   tmux new-session -s "NAME"
-
-Start a detatched session
-^^^^^^^^^^^^^^^^^^^^^^^^^
-
-Start a new session, run a program, and detatch it.
-
-.. code-block:: console
-
-   tmux new-session -d -s "NAME" /path/to/program/to/run
-
-Rename a session
-^^^^^^^^^^^^^^^^
-
-control + b $
-
-.. code-block:: console
-
-   ^b $
-
-Rename a pane
-^^^^^^^^^^^^^
-
-control + b , (comma)
-
-.. code-block:: console
-
-   ^b ,
-
-Share a session
-^^^^^^^^^^^^^^^
-
-After session `shared` is created, run this to watch it:
-
-.. code-block:: console
-
-   tmux attach-session -t shared

@@ -1,20 +1,16 @@
-
 <!DOCTYPE html>
 
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Hardware Tokens &#8212; notes 0.1 documentation</title>
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/alabaster.css" />
-    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
-    <script src="../../_static/jquery.js"></script>
-    <script src="../../_static/underscore.js"></script>
-    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/sphinx_highlight.js"></script>
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../_static/alabaster.css?v=039e1c02" />
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js?v=e031e9a9"></script>
+    <script src="../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../_static/sphinx_highlight.js?v=4825356b"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Imagemagick" href="../imagemagick/index.html" />
@@ -112,7 +108,7 @@ So, writing these directions for me.</p>
 to change the FIDO2 pin.
 I ran it in Windows 10 with administrator privs (won’t be able to access fido without them).</p>
 <p>Once the pin was set I was able to use ssh-keygen to create an <cite>ed25519-sk</cite> key with the resident option.</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>ssh-keygen -t ed25519-sk -O resident
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>ssh-keygen<span class="w"> </span>-t<span class="w"> </span>ed25519-sk<span class="w"> </span>-O<span class="w"> </span>resident
 </pre></div>
 </div>
 <p>The <cite>resident</cite> option keeps a “key handle” on the device, while it is normally stored in a private key
@@ -125,7 +121,7 @@ The flashing Y is a sign to touch it.</p>
 <p>As usual the public key should be added to the user’s <cite>~/.ssh/authorized_keys</cite>.</p>
 <p>To use the resident key, use <cite>ssh-add</cite> to add it to <cite>ssh-agent</cite>.
 It will prompt for the pin.</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>ssh-add -K
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>ssh-add<span class="w"> </span>-K
 </pre></div>
 </div>
 <p>Using that key to connect to a system will require a touch (look for the flashing Y).</p>

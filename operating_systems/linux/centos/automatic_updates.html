@@ -1,23 +1,19 @@
-
 <!DOCTYPE html>
 
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Automatic updates: &#8212; notes 0.1 documentation</title>
-    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/alabaster.css" />
-    <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
-    <script src="../../../_static/jquery.js"></script>
-    <script src="../../../_static/underscore.js"></script>
-    <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="../../../_static/doctools.js"></script>
-    <script src="../../../_static/sphinx_highlight.js"></script>
+    <title>Automatic updates &#8212; notes 0.1 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/alabaster.css?v=039e1c02" />
+    <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js?v=e031e9a9"></script>
+    <script src="../../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=4825356b"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="CentOS:" href="centos.html" />
+    <link rel="next" title="CentOS" href="centos.html" />
     <link rel="prev" title="Active Directory Auth" href="active_directory/help.html" />
    
   <link rel="stylesheet" href="../../../_static/custom.css" type="text/css" />
@@ -36,18 +32,21 @@
           <div class="body" role="main">
             
   <section id="automatic-updates">
-<h1>Automatic updates:<a class="headerlink" href="#automatic-updates" title="Permalink to this heading">¶</a></h1>
+<h1>Automatic updates<a class="headerlink" href="#automatic-updates" title="Permalink to this heading">¶</a></h1>
+<section id="yum">
+<h2>yum<a class="headerlink" href="#yum" title="Permalink to this heading">¶</a></h2>
 <p>Install the <cite>yum-cron</cite> package.</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp"># </span>yum install -y yum-cron
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp"># </span>yum<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>yum-cron
 </pre></div>
 </div>
 </section>
 <section id="automatic-security-updates-only">
-<h1>Automatic security updates only:<a class="headerlink" href="#automatic-security-updates-only" title="Permalink to this heading">¶</a></h1>
+<h2>Automatic security updates only<a class="headerlink" href="#automatic-security-updates-only" title="Permalink to this heading">¶</a></h2>
 <p>Modify <cite>/etc/yum/yum-cron.conf</cite> and <cite>/etc/yum/yum-cron-hourly.conf</cite> so the <cite>update_cmd</cite> is <cite>security</cite>:</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">update_cmd = security</span>
 </pre></div>
 </div>
+</section>
 </section>
 
 
@@ -98,7 +97,7 @@
   <li><a href="../index.html">Linux</a><ul>
   <li><a href="index.html">CentOS</a><ul>
       <li>Previous: <a href="active_directory/help.html" title="previous chapter">Active Directory Auth</a></li>
-      <li>Next: <a href="centos.html" title="next chapter">CentOS:</a></li>
+      <li>Next: <a href="centos.html" title="next chapter">CentOS</a></li>
   </ul></li>
   </ul></li>
   </ul></li>

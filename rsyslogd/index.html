@@ -1,20 +1,16 @@
-
 <!DOCTYPE html>
 
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>rsyslogd &#8212; notes 0.1 documentation</title>
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css" />
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/sphinx_highlight.js"></script>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css?v=039e1c02" />
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js?v=e031e9a9"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=4825356b"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="SecurityOnion" href="../securityonion/index.html" />
@@ -48,7 +44,7 @@
 </section>
 <section id="listen-on-a-unix-socket">
 <h2>Listen on a unix socket<a class="headerlink" href="#listen-on-a-unix-socket" title="Permalink to this heading">¶</a></h2>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>AddUnixListenSocket /var/log/socket
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span>AddUnixListenSocket<span class="w"> </span>/var/log/socket
 </pre></div>
 </div>
 </section>
@@ -56,7 +52,7 @@
 <h2>Log to a file and stop (the newer way)<a class="headerlink" href="#log-to-a-file-and-stop-the-newer-way" title="Permalink to this heading">¶</a></h2>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">if $FIELD == &quot;CONDITION&quot; then {</span>
 <span class="gp">    #</span><span class="c1"># Very simple</span>
-<span class="gp">    #</span>action<span class="o">(</span><span class="nv">type</span><span class="o">=</span><span class="s2">&quot;omfile&quot;</span> <span class="nv">file</span><span class="o">=</span><span class="s2">&quot;/var/log/FILE.log&quot;</span><span class="o">)</span>
+<span class="gp">    #</span>action<span class="o">(</span><span class="nv">type</span><span class="o">=</span><span class="s2">&quot;omfile&quot;</span><span class="w"> </span><span class="nv">file</span><span class="o">=</span><span class="s2">&quot;/var/log/FILE.log&quot;</span><span class="o">)</span>
 
 <span class="gp">    #</span><span class="c1"># Not hard, but not as simple</span>
 <span class="go">    action(type=&quot;omfile&quot; fileOwner=&quot;root&quot; fileGroup=&quot;root&quot; dirOwner=&quot;root&quot; dirGroup=&quot;root&quot; FileCreateMode=&quot;0644&quot;  file=&quot;/var/log/FILE.log&quot;)</span>

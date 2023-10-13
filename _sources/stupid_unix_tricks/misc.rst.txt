@@ -52,3 +52,17 @@ Extract a specific line using sed
 
    sed -ne '<LINE_NUM>P' FILE
 
+Better ^w behavior
+^^^^^^^^^^^^^^^^^^
+
+Make `^w` delete up until a special character (like what happens on OpenBSD) in bash.
+
+Put this in `~/.inputrc`:
+
+.. code-block:: console
+
+   ## Not sure why, but this needs to be disabled
+   set bind-tty-special-chars off
+
+   "\X-w": backward-kill-word
+
