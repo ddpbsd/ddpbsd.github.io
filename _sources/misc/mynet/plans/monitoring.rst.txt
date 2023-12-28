@@ -1,9 +1,0 @@
-##########
-Monitoring
-##########
-
-icinga
-^^^^^^
-
-icinga2 currently runs on tiny.
-Need to setup the api stuff.

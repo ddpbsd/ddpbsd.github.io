@@ -1,9 +1,0 @@
-SMB
-===
-
-
-Detect, disable, and enable SMB:
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-`Instructions <https://support.microsoft.com/en-us/help/2696547/how-to-detect-enable-and-disable-smbv1-smbv2-and-smbv3-in-windows-and>`_
-

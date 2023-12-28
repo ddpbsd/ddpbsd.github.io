@@ -1,9 +1,0 @@
-.. _openbsd_vi::
-
-
-Insert a tab in a ``:s`` command:
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-USe ^v before hitting tab.
-
-

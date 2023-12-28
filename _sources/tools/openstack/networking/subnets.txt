@@ -1,9 +1,0 @@
-
-
-list subnets
-^^^^^^^^^^^^
-
-.. code-block:: console
-
-   openstack subnet list
-

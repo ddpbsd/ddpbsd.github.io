@@ -1,7 +1,0 @@
-
-
-Does it support Windows?
-^^^^^^^^^^^^^^^^^^^^^^^^
-
-http://docs.ansible.com/ansible/latest/intro_windows.html
-

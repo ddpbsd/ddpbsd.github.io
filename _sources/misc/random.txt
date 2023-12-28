@@ -1,7 +1,0 @@
-.. _misc_random:
-
-Stupid random stuff
-===================
-
-* octets are 8 bits
-

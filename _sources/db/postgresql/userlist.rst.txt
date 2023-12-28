@@ -1,7 +1,0 @@
-Create a list of database users
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-.. code-block:: console
-
-   \du
-

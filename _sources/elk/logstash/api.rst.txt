@@ -1,6 +1,0 @@
-============
-logstash api
-============
-
-`logstash api <https://www.elastic.co/guide/en/logstash/current/monitoring-logstash.html>`_ documentation
-

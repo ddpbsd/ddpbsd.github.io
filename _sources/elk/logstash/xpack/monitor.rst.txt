@@ -1,9 +1,0 @@
-
-
-xpack monitoring
-^^^^^^^^^^^^^^^^
-
-If using a separate monitoring cluster, you have to set the `xpack.monitor` stuff
-to the production cluster. The prod cluster will then push the monitoring stuff
-to the monitoring cluster.
-

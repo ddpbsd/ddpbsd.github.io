@@ -1,9 +1,0 @@
-Where to put local plugins
-^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-If this isn't quite exact, `terraform init` doesn't seem to be able to find it correctly.
-
-.. code-block:: console
-
-   ~/.terraform.d/plugins/registry.terraform.io/NAMESPACE/NAME/VERSION/OS_ARCH/terraform-provider-NAME_VERSION
-

@@ -1,8 +1,0 @@
-Phantom Automation and Orchestration
-====================================
-
-Glossary:
-^^^^^^^^^
-
-`container` - 
-`artifact` - 

@@ -1,7 +1,0 @@
-=================
-read from elastic
-=================
-
-`Elastic on Elastic <https://elastic.co/blog/elastic-on-elastic-deep-dive-into-our-siem-architecture>`_
-
-

@@ -1,7 +1,0 @@
-Get a list of details about log files
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-.. code-block:: console
-
-   Get-EventLog -List
-

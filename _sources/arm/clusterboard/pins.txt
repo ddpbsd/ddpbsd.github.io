@@ -1,9 +1,0 @@
-
-
-Pinouts
-^^^^^^^
-
-From the pine64 clusterboard forum.
-
-.. image:: images/pinout.png
-
