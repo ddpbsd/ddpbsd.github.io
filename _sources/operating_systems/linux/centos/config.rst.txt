@@ -1,7 +1,7 @@
 
 
-Reconfigure the system on the next boot
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Reconfigure the system on the next boot:
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 This should reset everything to an unconfigured state.
 

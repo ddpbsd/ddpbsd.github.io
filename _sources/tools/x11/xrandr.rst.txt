@@ -15,3 +15,11 @@ Move HDMI-2 to the left of eDP-1
 .. code-block:: console
 
    xrandr --output HDMI-2 --left-of eDP-1
+
+Mirror the screens on my laptop
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: console
+
+   xrandr --output HDMI-2 --same-as eDP-1
+

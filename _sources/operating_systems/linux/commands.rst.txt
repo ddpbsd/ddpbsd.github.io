@@ -1,17 +1,16 @@
-===============
 Random commands
 ===============
 
 
-List disks
-^^^^^^^^^^
+List disks:
+^^^^^^^^^^^
 
 .. code-block:: console
 
    lsblk
 
-pgrep - List child processes of a parent
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+pgrep - List child processes of a parent:
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code-block:: console
 

@@ -2,11 +2,21 @@
 Adding a cert to the cert store
 ===============================
 
-CentOS 7:
-^^^^^^^^^
+RHEL based distributions
+^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code-block:: console
 
    # cp cert-chain.crt /etc/pki/ca-trust/source/anchors/
    # update-ca-trust
+
+Ubuntu (and maybe other Debian derivatives)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: console
+
+   # apt-get install -y ca-certificates
+   # cp CERT-FILE.pem /usr/local/share/ca-certificates
+   # update-ca-certificates
+
 

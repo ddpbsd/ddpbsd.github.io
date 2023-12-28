@@ -1,7 +1,14 @@
-.. _misc_random:
-
+===================
 Stupid random stuff
 ===================
 
+Random
+^^^^^^
+
 * octets are 8 bits
+
+Color contrast finder
+^^^^^^^^^^^^^^^^^^^^^
+
+contrast-finder.tanaguru.com
 

@@ -33,10 +33,18 @@
             
   <section id="adding-a-cert-to-the-cert-store">
 <h1>Adding a cert to the cert store<a class="headerlink" href="#adding-a-cert-to-the-cert-store" title="Permalink to this heading">¶</a></h1>
-<section id="centos-7">
-<h2>CentOS 7:<a class="headerlink" href="#centos-7" title="Permalink to this heading">¶</a></h2>
+<section id="rhel-based-distributions">
+<h2>RHEL based distributions<a class="headerlink" href="#rhel-based-distributions" title="Permalink to this heading">¶</a></h2>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp"># </span>cp<span class="w"> </span>cert-chain.crt<span class="w"> </span>/etc/pki/ca-trust/source/anchors/
 <span class="gp"># </span>update-ca-trust
+</pre></div>
+</div>
+</section>
+<section id="ubuntu-and-maybe-other-debian-derivatives">
+<h2>Ubuntu (and maybe other Debian derivatives)<a class="headerlink" href="#ubuntu-and-maybe-other-debian-derivatives" title="Permalink to this heading">¶</a></h2>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp"># </span>apt-get<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>ca-certificates
+<span class="gp"># </span>cp<span class="w"> </span>CERT-FILE.pem<span class="w"> </span>/usr/local/share/ca-certificates
+<span class="gp"># </span>update-ca-certificates
 </pre></div>
 </div>
 </section>
@@ -79,6 +87,7 @@
 <li class="toctree-l2"><a class="reference internal" href="test_for_ssl3.html#check-to-see-if-tls-1-2-works">Check to see if tls 1.2 works:</a></li>
 <li class="toctree-l2"><a class="reference internal" href="create_ca.html">Where I got this information:</a></li>
 <li class="toctree-l2"><a class="reference internal" href="cert_checks.html">Look at certs!</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ca_certs.html">certs</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../stupid_unix_tricks/index.html">Stupid Unix Tricks</a></li>
