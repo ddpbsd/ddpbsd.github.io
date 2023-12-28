@@ -10,6 +10,9 @@ Contents:
 .. toctree::
    :maxdepth: 2
 
-   powershell
    active_directory
+   logs
+   powershell
    wsus
+
+

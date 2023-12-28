@@ -27,7 +27,6 @@ Contents:
    operating_systems/index
    ossec/index
    rsyslogd/index
-   securityonion/index
    ssl/index
    stupid_unix_tricks/index
    tools/index

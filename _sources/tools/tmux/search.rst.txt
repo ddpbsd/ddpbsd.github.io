@@ -1,6 +1,6 @@
-======
+=======
 seaarch
-======
+=======
 
 Search in the tmux buffer by going into scroll mode `^b` (`^o` for me thx)
 and using `^s` to search forward or `^r` to search reverse.

@@ -61,14 +61,17 @@ Use at your own risk.</p>
 <li class="toctree-l2"><a class="reference internal" href="elk/elastic/index.html">elasticsearch</a></li>
 <li class="toctree-l2"><a class="reference internal" href="elk/logstash/index.html">logstash</a></li>
 <li class="toctree-l2"><a class="reference internal" href="elk/monitoring/index.html">monitoring</a></li>
+<li class="toctree-l2"><a class="reference internal" href="elk/agent/index.html">agent</a></li>
 <li class="toctree-l2"><a class="reference internal" href="elk/setup.html">Setting up the whole thing</a></li>
 <li class="toctree-l2"><a class="reference internal" href="elk/endpoint.html">endpoint</a></li>
 <li class="toctree-l2"><a class="reference internal" href="elk/read.html">read from elastic</a></li>
+<li class="toctree-l2"><a class="reference internal" href="elk/docker/commands.html">docker commands</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="k8s/index.html">kubernetes</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="k8s/kubectl.html">kubectl</a></li>
 <li class="toctree-l2"><a class="reference internal" href="k8s/minikube/index.html">minikube</a></li>
+<li class="toctree-l2"><a class="reference internal" href="k8s/rancher.html">rancher</a></li>
 <li class="toctree-l2"><a class="reference internal" href="k8s/things.html">things</a></li>
 </ul>
 </li>
@@ -96,25 +99,13 @@ Use at your own risk.</p>
 <li class="toctree-l2"><a class="reference internal" href="ossec/src/index.html">OSSEC src</a></li>
 <li class="toctree-l2"><a class="reference internal" href="ossec/win-build.html">Required packages:</a></li>
 <li class="toctree-l2"><a class="reference internal" href="ossec/sysmon.html">Monitor sysmon logs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ossec/db/mysql.html">mariadb</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="rsyslogd/index.html">rsyslogd</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="rsyslogd/index.html#log-to-var-log-hostname-messages-instead-of-var-log-messages">Log to /var/log/hostname/messages instead of /var/log/messages</a></li>
 <li class="toctree-l2"><a class="reference internal" href="rsyslogd/index.html#listen-on-a-unix-socket">Listen on a unix socket</a></li>
 <li class="toctree-l2"><a class="reference internal" href="rsyslogd/index.html#log-to-a-file-and-stop-the-newer-way">Log to a file and stop (the newer way)</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="securityonion/index.html">SecurityOnion</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="securityonion/1604.html">Security Onion 16.04</a></li>
-<li class="toctree-l2"><a class="reference internal" href="securityonion/cef.html">My adventures with securityonion and cef</a></li>
-<li class="toctree-l2"><a class="reference internal" href="securityonion/commands.html">sostat</a></li>
-<li class="toctree-l2"><a class="reference internal" href="securityonion/elsa.html">Sphinx search process:</a></li>
-<li class="toctree-l2"><a class="reference internal" href="securityonion/hier.html">Filesystem Hierarchy:</a></li>
-<li class="toctree-l2"><a class="reference internal" href="securityonion/hier.html#elsa-logs">ELSA logs:</a></li>
-<li class="toctree-l2"><a class="reference internal" href="securityonion/hier.html#sguild-logs">sguild logs:</a></li>
-<li class="toctree-l2"><a class="reference internal" href="securityonion/bro/index.html">Bro on SecurityOnion</a></li>
-<li class="toctree-l2"><a class="reference internal" href="securityonion/salt.html">salt</a></li>
-<li class="toctree-l2"><a class="reference internal" href="securityonion/sostat.html">sostat</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="ssl/index.html">ssl</a><ul>
@@ -155,7 +146,7 @@ Use at your own risk.</p>
 <li class="toctree-l2"><a class="reference internal" href="tools/ldap/index.html">ldap</a></li>
 <li class="toctree-l2"><a class="reference internal" href="tools/messaging/index.html">Messaging</a></li>
 <li class="toctree-l2"><a class="reference internal" href="tools/monitoring/index.html">Monitoring Tools</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tools/netstat/netstat.html">netstat</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tools/netstat/index.html">Tools</a></li>
 <li class="toctree-l2"><a class="reference internal" href="tools/nmap/index.html">discovery-ignore-rst</a></li>
 <li class="toctree-l2"><a class="reference internal" href="tools/opensmtpd/index.html">opensmtpd</a></li>
 <li class="toctree-l2"><a class="reference internal" href="tools/osquery/index.html">osquery</a></li>
@@ -171,6 +162,10 @@ Use at your own risk.</p>
 <li class="toctree-l2"><a class="reference internal" href="tools/virtualization/index.html">Virtualization</a></li>
 <li class="toctree-l2"><a class="reference internal" href="tools/x11/index.html">x11</a></li>
 <li class="toctree-l2"><a class="reference internal" href="tools/retired/index.html">Retired</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tools/postfix/index.html">postfix</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tools/chromium/headless.html">headless on openbsd</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tools/chromium/headless.html#print-to-pdf">Print to pdf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tools/terraform/index.html">terraform/opentofu</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="vendor_stuff/index.html">Vendor Stuff</a><ul>
@@ -181,6 +176,13 @@ Use at your own risk.</p>
 <li class="toctree-l2"><a class="reference internal" href="vendor_stuff/paloalto/index.html">PaloAlto</a></li>
 <li class="toctree-l2"><a class="reference internal" href="vendor_stuff/splunk/index.html">splunk</a></li>
 <li class="toctree-l2"><a class="reference internal" href="vendor_stuff/vmware/index.html">VMWare</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vendor_stuff/hurricane_electric/dyndns.html">dynamic dns</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vendor_stuff/arcsight/rest_api.html">Location of some useful logs (auth and stuff)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vendor_stuff/arcsight/rest_api.html#banned-password-characters">Banned password characters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vendor_stuff/arcsight/rest_api.html#example-login">Example login</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vendor_stuff/arcsight/rest_api.html#example-logout">Example logout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vendor_stuff/arcsight/rest_api.html#view-all-entries-in-an-active-list">View all entries in an active list</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vendor_stuff/arcsight/rest_api.html#some-stuff">Some stuff</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="misc/index.html">misc</a><ul>
@@ -236,7 +238,6 @@ Use at your own risk.</p>
 <li class="toctree-l1"><a class="reference internal" href="operating_systems/index.html">Operating Systems</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ossec/index.html">OSSEC</a></li>
 <li class="toctree-l1"><a class="reference internal" href="rsyslogd/index.html">rsyslogd</a></li>
-<li class="toctree-l1"><a class="reference internal" href="securityonion/index.html">SecurityOnion</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ssl/index.html">ssl</a></li>
 <li class="toctree-l1"><a class="reference internal" href="stupid_unix_tricks/index.html">Stupid Unix Tricks</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tools/index.html">Tools</a></li>

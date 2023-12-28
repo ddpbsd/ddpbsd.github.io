@@ -20,7 +20,12 @@ Contents:
    lvm/index
    network/index
    rpm
+   kvm/index
+   libvirt/index
    selinux/php
    systemd/index
+   cgroups/notes
    ubuntu/index
+   alpine/index
+
 

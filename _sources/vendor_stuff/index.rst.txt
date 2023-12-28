@@ -1,4 +1,3 @@
-
 ============
 Vendor Stuff
 ============
@@ -18,4 +17,7 @@ Contents:
    paloalto/index
    splunk/index   
    vmware/index
+   hurricane_electric/dyndns
+   arcsight/rest_api
 
+      

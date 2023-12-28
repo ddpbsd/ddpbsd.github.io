@@ -1,5 +1,3 @@
-.. _tools_dns:
-
 ===
 dns
 ===
@@ -11,4 +9,5 @@ Contents:
 
    nsd/index
    unbound/index
-
+   bind/index
+   

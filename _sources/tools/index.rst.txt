@@ -1,5 +1,3 @@
-.. _tools:
-
 =====
 Tools
 =====
@@ -22,7 +20,7 @@ Contents:
    ldap/index
    messaging/index
    monitoring/index
-   netstat/netstat
+   netstat/index
    nmap/index
    opensmtpd/index
    osquery/index
@@ -38,4 +36,7 @@ Contents:
    virtualization/index
    x11/index
    retired/index
+   postfix/index
+   chromium/headless
+   terraform/index
 

@@ -16,4 +16,6 @@ Contents:
    sids
    gpo/index
    wef
+   ca/index
+   
 

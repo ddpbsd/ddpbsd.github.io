@@ -18,7 +18,7 @@ Assuming there is already a cnf file for this:
 Sign the csr
 ^^^^^^^^^^^^
 
-.. clode-block:: console
+.. code-block:: console
 
    openssl ca -batch -config intermediateCA-openssl.cnf -extensions server_cert -notext -in gitlab.csr
 

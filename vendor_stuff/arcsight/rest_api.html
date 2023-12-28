@@ -5,7 +5,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Location of some useful logs (auth and stuff): &#8212; notes 0.1 documentation</title>
+    <title>Location of some useful logs (auth and stuff) &#8212; notes 0.1 documentation</title>
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
     <link rel="stylesheet" type="text/css" href="../../_static/alabaster.css?v=039e1c02" />
     <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js?v=e031e9a9"></script>
@@ -13,6 +13,8 @@
     <script src="../../_static/sphinx_highlight.js?v=4825356b"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="misc" href="../../misc/index.html" />
+    <link rel="prev" title="dynamic dns" href="../hurricane_electric/dyndns.html" />
    
   <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
   
@@ -30,37 +32,35 @@
           <div class="body" role="main">
             
   <section id="location-of-some-useful-logs-auth-and-stuff">
-<span id="vendor-stuff-arcsight-rest-api"></span><h1>Location of some useful logs (auth and stuff):<a class="headerlink" href="#location-of-some-useful-logs-auth-and-stuff" title="Permalink to this heading">¶</a></h1>
+<h1>Location of some useful logs (auth and stuff)<a class="headerlink" href="#location-of-some-useful-logs-auth-and-stuff" title="Permalink to this heading">¶</a></h1>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">/opt/arcsight/manager/logs/default/server.log</span>
 </pre></div>
 </div>
 </section>
 <section id="banned-password-characters">
-<h1>Banned password characters:<a class="headerlink" href="#banned-password-characters" title="Permalink to this heading">¶</a></h1>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">^</span>
-</pre></div>
-</div>
+<h1>Banned password characters<a class="headerlink" href="#banned-password-characters" title="Permalink to this heading">¶</a></h1>
+<p>I guess this character was a problem at some point: <cite>^</cite></p>
 </section>
 <section id="example-login">
-<h1>Example login:<a class="headerlink" href="#example-login" title="Permalink to this heading">¶</a></h1>
+<h1>Example login<a class="headerlink" href="#example-login" title="Permalink to this heading">¶</a></h1>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">curl -D- -k -H &quot;Content-Type: application/x-www-form-urlencoded&quot; -XPOST  &#39;https://ESM_HOST:8443/www/core-service/rest/LoginService/login?login=USERNAME&amp;password=PASSWORD&amp;alt=json&#39;</span>
 </pre></div>
 </div>
 </section>
 <section id="example-logout">
-<h1>Example logout:<a class="headerlink" href="#example-logout" title="Permalink to this heading">¶</a></h1>
+<h1>Example logout<a class="headerlink" href="#example-logout" title="Permalink to this heading">¶</a></h1>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">curl -D- -k -H &quot;Content-Type: application/x-www-form-urlencoded&quot; -XPOST  &#39;https://ESM_HOST:8443/www/core-service/rest/LoginService/logout?authToken=HBfedZ5AefEosvFXSbgIfy5wzj9v426giAp7OihCabg.&#39;</span>
 </pre></div>
 </div>
 </section>
 <section id="view-all-entries-in-an-active-list">
-<h1>View all entries in an active list:<a class="headerlink" href="#view-all-entries-in-an-active-list" title="Permalink to this heading">¶</a></h1>
+<h1>View all entries in an active list<a class="headerlink" href="#view-all-entries-in-an-active-list" title="Permalink to this heading">¶</a></h1>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">URL: https://&lt;ESM manager host&gt;:8443/www/manager-service/rest/ActiveListService/getEntries?authToken=xxxxxxxxxxxxxxx.&amp;resourceId=xxxxxxxxxxxxxxxxxxx</span>
 </pre></div>
 </div>
 </section>
 <section id="some-stuff">
-<h1>Some stuff:<a class="headerlink" href="#some-stuff" title="Permalink to this heading">¶</a></h1>
+<h1>Some stuff<a class="headerlink" href="#some-stuff" title="Permalink to this heading">¶</a></h1>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">https://community.softwaregrp.com/t5/Archive-Discussion-Board/Full-REST-API-Documentation-For-ESM/td-p/1538807</span>
 </pre></div>
 </div>
@@ -83,7 +83,7 @@
 
 
 <h3>Navigation</h3>
-<ul>
+<ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../arm/index.html">arm</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../db/index.html">databases</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../dns/index.html">DNS stuff</a></li>
@@ -93,11 +93,26 @@
 <li class="toctree-l1"><a class="reference internal" href="../../operating_systems/index.html">Operating Systems</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../ossec/index.html">OSSEC</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../rsyslogd/index.html">rsyslogd</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../securityonion/index.html">SecurityOnion</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../ssl/index.html">ssl</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../stupid_unix_tricks/index.html">Stupid Unix Tricks</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../tools/index.html">Tools</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../index.html">Vendor Stuff</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Vendor Stuff</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../alienvault/index.html">AlienVault</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cisco/index.html">Cisco</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../juniper/index.html">Juniper</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nessus/index.html">nessus</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../paloalto/index.html">PaloAlto</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../splunk/index.html">splunk</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vmware/index.html">VMWare</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../hurricane_electric/dyndns.html">dynamic dns</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Location of some useful logs (auth and stuff)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#banned-password-characters">Banned password characters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#example-login">Example login</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#example-logout">Example logout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#view-all-entries-in-an-active-list">View all entries in an active list</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#some-stuff">Some stuff</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="../../misc/index.html">misc</a></li>
 </ul>
 
@@ -105,6 +120,10 @@
 <h3>Related Topics</h3>
 <ul>
   <li><a href="../../index.html">Documentation overview</a><ul>
+  <li><a href="../index.html">Vendor Stuff</a><ul>
+      <li>Previous: <a href="../hurricane_electric/dyndns.html" title="previous chapter">dynamic dns</a></li>
+      <li>Next: <a href="../../misc/index.html" title="next chapter">misc</a></li>
+  </ul></li>
   </ul></li>
 </ul>
 </div>
