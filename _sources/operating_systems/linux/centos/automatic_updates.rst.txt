@@ -1,7 +1,10 @@
+=================
+Automatic updates
+=================
 
 
-Automatic updates:
-^^^^^^^^^^^^^^^^^^
+yum
+^^^
 
 Install the `yum-cron` package.
 
@@ -9,8 +12,8 @@ Install the `yum-cron` package.
 
    # yum install -y yum-cron
 
-Automatic security updates only:
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Automatic security updates only
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Modify `/etc/yum/yum-cron.conf` and `/etc/yum/yum-cron-hourly.conf` so the `update_cmd` is `security`:
 

@@ -3,14 +3,14 @@ CentOS Networking
 
 `IF` should be replaced with the name of an interface.
 
-Interfaces:
-^^^^^^^^^^^
+Interfaces
+^^^^^^^^^^
 
 They can be named any damn thing, so be careful.
 
 
-Interface configuration:
-^^^^^^^^^^^^^^^^^^^^^^^^
+Interface configuration
+^^^^^^^^^^^^^^^^^^^^^^^
 
 Interfaces are configured in `/etc/sysconfig/network-scripts/ifcfg-IF`
 
@@ -40,8 +40,8 @@ CentOS `docs <https://www.centos.org/docs/5/html/Deployment_Guide-en-US/s1-netwo
 
 
 
-Static route:
-^^^^^^^^^^^^^
+Static route
+^^^^^^^^^^^^
 
 Static routes can be added to `/etc/sysconfig/network-scripts/route-IF`
 

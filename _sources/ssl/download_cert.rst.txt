@@ -1,7 +1,7 @@
 .. ssl_download_a_cert:
 
-Download a certificate:
-^^^^^^^^^^^^^^^^^^^^^^^
+Download a certificate
+^^^^^^^^^^^^^^^^^^^^^^
 
 .. code-block:: console
 

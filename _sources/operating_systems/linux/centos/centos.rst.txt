@@ -1,7 +1,5 @@
-.. _linux_centos:
-
-CentOS:
-^^^^^^^
+CentOS
+^^^^^^
 
 Why do I do this to myself?
 
