@@ -1,0 +1,17 @@
+.. _vendor_stuff_vmware_vcenter_inventory:
+
+Get a list of VMs in vCenter:
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+From `here <http://www.virtualizationteam.com/server-virtualization/how-to-export-your-vm-inventory-list-from-vcenter.html>`_
+
+.. code-block:: console
+
+   1- Open the vSphere Client and connect to your vCenter
+   2- From the top menu go to View ==> Inventory ==> VMs & Templates
+   3- From the inventory list on the left side choose the VMs you want to include in your inventory export or choose a top level folder that includes the VMs you want to export
+   4- Choose the Virtual Machines tab from the the tabs on the top of the right side.
+   5- You might want to modify the filter to include other items like Virtual machines IPs, Hostname, & the similar.
+   6- From the top menu go to File => Export => Export list.
+   7- Choose the format you want to save the list into (CSV, Html, & XML are some of the available format).
+

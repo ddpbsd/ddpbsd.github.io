@@ -1,0 +1,21 @@
+
+===========
+Imagemagick
+===========
+
+Screen shot
+^^^^^^^^^^^
+
+May have to click on the window if cross hairs come up.
+
+.. code-block:: console
+
+   import FILE.png
+   
+Another screen shot?
+^^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: console
+
+   sleep 3; import -window root 02_logstash_ossec_alert.png   
+

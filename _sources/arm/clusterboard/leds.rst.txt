@@ -1,0 +1,9 @@
+
+Possibly turn off the heartbeat led
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: console
+
+  cd /sys/class/leds/system_status
+  echo 0 > brightness
+

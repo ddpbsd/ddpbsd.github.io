@@ -1,0 +1,15 @@
+=============
+snmp_exporter
+=============
+
+This allows prometheus to grab info from snmp.
+Since snmp is full of dark magic, this is massively incomplete.
+I will have to consult the `Networknomicon <https://mwl.io/nonfiction/networking#networknomicon>`_ as I try to get more out of this.
+
+Contents:
+
+.. toctree::
+   :maxdepth: 2
+
+   snmp_exporter
+

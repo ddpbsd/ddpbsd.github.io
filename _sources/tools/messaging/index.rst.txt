@@ -1,0 +1,13 @@
+.. _tools_messaging:
+
+=========
+Messaging
+=========
+
+Contents:
+
+.. toctree::
+   :maxdepth: 2
+
+   kafka/index.rst
+

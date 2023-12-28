@@ -1,0 +1,37 @@
+========
+rsyslogd
+========
+
+
+Log to /var/log/hostname/messages instead of /var/log/messages
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: console
+
+   -host
+   *.info                  /var/log/messages
+   +host
+   *.info                  /var/log/host/messages
+
+Listen on a unix socket
+^^^^^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: console
+
+   $AddUnixListenSocket /var/log/socket
+
+
+Log to a file and stop (the newer way)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: console
+
+   if $FIELD == "CONDITION" then {
+       ## Very simple
+       #action(type="omfile" file="/var/log/FILE.log")
+
+       ## Not hard, but not as simple
+       action(type="omfile" fileOwner="root" fileGroup="root" dirOwner="root" dirGroup="root" FileCreateMode="0644"  file="/var/log/FILE.log")
+       & stop
+   }
+

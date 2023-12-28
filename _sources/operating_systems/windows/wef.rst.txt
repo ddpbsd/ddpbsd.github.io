@@ -1,0 +1,23 @@
+wef
+===
+
+wecutil.exe
+^^^^^^^^^^^
+
+Windows Event Collector UTILity
+
+enumerate subscriptions
+^^^^^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: console
+
+   wecutil es
+
+
+get details
+^^^^^^^^^^^
+
+.. code-block:: console
+
+   wecutil gs SUBSCRIPTION_NAME
+

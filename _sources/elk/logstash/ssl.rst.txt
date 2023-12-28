@@ -1,0 +1,33 @@
+
+===================================
+SSL with logstash and elasticsearch
+===================================
+
+
+self-signed certificates:
+^^^^^^^^^^^^^^^^^^^^^^^^^
+
+The following setting should make it so self-signed certs aren't rejected,
+but it doesn't work for me.
+
+.. code-block:: console
+
+   ssl_certificate_verification => false
+
+As a work around, until I figure out how I want to do certs, I imported
+the self-signed cert into the java `cacerts`:
+
+Grab the cert:
+
+.. code-block:: console
+
+   openssl s_client -connect hostname:port
+
+Import the cert:
+
+.. code-block:: console
+
+   keytool -import -trustcacerts -alias "HOSTNAME" -file /tmp/c -keystore /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.181-3.b13.el7_5.x86_64/jre/lib/security/cacerts
+
+It will prompt if you want to trust it, you do (at least this time).
+

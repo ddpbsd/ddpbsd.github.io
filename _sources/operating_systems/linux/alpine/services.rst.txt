@@ -1,0 +1,34 @@
+========
+services
+========
+
+Start a service
+^^^^^^^^^^^^^^^
+
+.. code-block:: console
+
+   rc-service SERVICE start
+
+Stop a service
+^^^^^^^^^^^^^^
+
+.. code-block:: console
+
+   rc-service SERVICE stop
+
+Enable a service
+^^^^^^^^^^^^^^^^
+
+.. code-block:: console
+
+   rc-update add SERVICE default
+
+
+Disable a service
+^^^^^^^^^^^^^^^^^
+
+.. code-block:: console
+
+   rc-update del SERVICE
+
+

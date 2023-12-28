@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>pine &#8212; notes 0.1 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/alabaster.css?v=039e1c02" />
+    <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js?v=e031e9a9"></script>
+    <script src="../../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=4825356b"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="pine64 clusterboard" href="pine64_clusterboard/index.html" />
+    <link rel="prev" title="jupiter" href="jupiter.html" />
+   
+  <link rel="stylesheet" href="../../../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="pine">
+<h1>pine<a class="headerlink" href="#pine" title="Permalink to this heading">¶</a></h1>
+<p>Currently a DNS server using <cite>nsd</cite> and <cite>unbound</cite>.</p>
+<section id="currently-running">
+<h2>Currently running<a class="headerlink" href="#currently-running" title="Permalink to this heading">¶</a></h2>
+<ul class="simple">
+<li><p>nsd</p></li>
+<li><p>unbound</p></li>
+</ul>
+</section>
+<section id="hardware">
+<h2>Hardware<a class="headerlink" href="#hardware" title="Permalink to this heading">¶</a></h2>
+<p>Pine64 A64+</p>
+</section>
+<section id="dmesg-for-pine">
+<h2>dmesg for pine<a class="headerlink" href="#dmesg-for-pine" title="Permalink to this heading">¶</a></h2>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">OpenBSD 6.2-current (GENERIC) #138: Sat Jan  6 20:56:31 MST 2018</span>
+<span class="go">    deraadt@arm64.openbsd.org:/usr/src/sys/arch/arm64/compile/GENERIC</span>
+<span class="go">real mem  = 2021666816 (1928MB)</span>
+<span class="go">avail mem = 1935560704 (1845MB)</span>
+<span class="go">mainbus0 at root: Pine64+</span>
+<span class="go">cpu0 at mainbus0: ARM Cortex-A53 r0p4</span>
+<span class="go">efi0 at mainbus0: UEFI 2.0.5</span>
+<span class="go">efi0: Das U-boot rev 0x0</span>
+<span class="go">psci0 at mainbus0</span>
+<span class="go">agtimer0 at mainbus0: tick rate 24000 KHz</span>
+<span class="go">simplebus0 at mainbus0: &quot;soc&quot;</span>
+<span class="go">sxiccmu0 at simplebus0</span>
+<span class="go">sxipio0 at simplebus0: 103 pins</span>
+<span class="go">sxipio1 at simplebus0: 13 pins</span>
+<span class="go">sximmc0 at simplebus0</span>
+<span class="go">sdmmc0 at sximmc0: 4-bit, sd high-speed, mmc high-speed, dma</span>
+<span class="go">ehci0 at simplebus0</span>
+<span class="go">usb0 at ehci0: USB revision 2.0</span>
+<span class="go">uhub0 at usb0 configuration 1 interface 0 &quot;Generic EHCI root hub&quot; rev 2.00/1.00 addr 1</span>
+<span class="go">com0 at simplebus0: ns16550, no working fifo</span>
+<span class="go">com0: console</span>
+<span class="go">sxitwi0 at simplebus0</span>
+<span class="go">iic0 at sxitwi0</span>
+<span class="go">ampintc0 at simplebus0 nirq 224, ncpu 4: &quot;interrupt-controller&quot;</span>
+<span class="go">sxirtc0 at simplebus0</span>
+<span class="go">dwxe0 at simplebus0: address 02:ba:fe:9b:4d:6e</span>
+<span class="go">rgephy0 at dwxe0 phy 0: RTL8169S/8110S/8211 PHY, rev. 5</span>
+<span class="go">rgephy1 at dwxe0 phy 1: RTL8169S/8110S/8211 PHY, rev. 5</span>
+<span class="go">gpio0 at sxipio0: 32 pins</span>
+<span class="go">gpio1 at sxipio0: 32 pins</span>
+<span class="go">gpio2 at sxipio0: 32 pins</span>
+<span class="go">gpio3 at sxipio0: 32 pins</span>
+<span class="go">gpio4 at sxipio0: 32 pins</span>
+<span class="go">gpio5 at sxipio0: 32 pins</span>
+<span class="go">gpio6 at sxipio0: 32 pins</span>
+<span class="go">gpio7 at sxipio0: 32 pins</span>
+<span class="go">gpio8 at sxipio1: 32 pins</span>
+<span class="go">scsibus0 at sdmmc0: 2 targets, initiator 0</span>
+<span class="go">sd0 at scsibus0 targ 1 lun 0: &lt;Sandisk, SA04G, 0003&gt; SCSI2 0/direct removable</span>
+<span class="go">sd0: 3782MB, 512 bytes/sector, 7745536 sectors</span>
+<span class="go">vscsi0 at root</span>
+<span class="go">scsibus1 at vscsi0: 256 targets</span>
+<span class="go">softraid0 at root</span>
+<span class="go">scsibus2 at softraid0: 256 targets</span>
+<span class="go">bootfile: sd0a:/bsd</span>
+<span class="go">boot device: sd0</span>
+<span class="go">root on sd0a (74c4340a4a226f85.a) swap on sd0b dump on sd0b</span>
+</pre></div>
+</div>
+</section>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../../../index.html">notes</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../arm/index.html">arm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../db/index.html">databases</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../dns/index.html">DNS stuff</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../elk/index.html">elastic stuff</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../k8s/index.html">kubernetes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../openssh/index.html">OpenSSH</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../operating_systems/index.html">Operating Systems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../ossec/index.html">OSSEC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../rsyslogd/index.html">rsyslogd</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../ssl/index.html">ssl</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../stupid_unix_tricks/index.html">Stupid Unix Tricks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../tools/index.html">Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../vendor_stuff/index.html">Vendor Stuff</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../index.html">misc</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../sdr/index.html">software defined radio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../hardware_tokens/tokens.html">Hardware Tokens</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../imagemagick/index.html">Imagemagick</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../kernel_build/index.html">Building a custom kernel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ksh/index.html">ksh</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../links/index.html">Links</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html">mynet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../projects/index.html">projects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../random.html">Stupid random stuff</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../junk/index.html">Junk</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../fediverse/glitch-soc.html">glitch-soc</a></li>
+</ul>
+</li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../../index.html">Documentation overview</a><ul>
+  <li><a href="../../index.html">misc</a><ul>
+  <li><a href="../index.html">mynet</a><ul>
+  <li><a href="index.html">computers</a><ul>
+      <li>Previous: <a href="jupiter.html" title="previous chapter">jupiter</a></li>
+      <li>Next: <a href="pine64_clusterboard/index.html" title="next chapter">pine64 clusterboard</a></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+        <!-- your html code here -->
+	<div class="footer">
+		<em>This information has a good chance of being wrong, inconsistent, out of date, or just bad. Use at your own risk.
+		Feel free to notify me of any issues though.</em>
+	</div>
+
+
+  </body>
+</html>

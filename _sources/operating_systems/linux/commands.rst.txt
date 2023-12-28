@@ -1,0 +1,19 @@
+===============
+Random commands
+===============
+
+
+List disks
+^^^^^^^^^^
+
+.. code-block:: console
+
+   lsblk
+
+pgrep - List child processes of a parent
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: console
+
+   pgrep -P PID_OF_PARENT
+

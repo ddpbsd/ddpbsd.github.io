@@ -1,0 +1,82 @@
+=================
+Powershell Basics
+=================
+
+Some powershell basics.
+
+Get the version of powershell
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: console
+
+   PS C:\> $PSVersionTable.PSVersion
+
+   Major  Minor  Build  Revision
+   -----  -----  -----  --------
+   4      0      -1     -1
+
+Delete files from a remote PC
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: console
+
+   Remove-Item "\\$computer\path\to\file.ext" 
+
+Add `-Recurse` to delete recursively:
+
+.. code-block:: console
+
+   Remove-Item "\\$computer\path\to\directory" -Recurse
+
+
+Stop a service on a remote PC
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: console
+
+   (get-service -ComputerName $computer -Name service_name).Stop()
+
+Start a service on a remote PC
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: console
+
+   (get-service -ComputerName $computer -Name service_name).Start()
+
+
+Sleep for 10 seconds
+^^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: console
+
+   Start-Sleep -s 10
+
+
+Get creds in a PSCredential object
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Useful for `-PSCredential`
+
+.. code-block:: console
+
+   $mycreds = Get-Credential
+
+Get OS version from a remote computer
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: console
+
+   Get-WmiObject Win32_OperatingSystem -ComputerName "va-is-ad02" |Select PSComputerName, Captio, OSArchitecture, Version, BuildNumber | FL
+
+
+Get IP address from a remote computer
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: console
+
+   Get-WmiObject Win32_networkadapterconfiguration -filter "ipenabled = 'True'" -ComputerName "va-is-ad02" |
+   Select PSComputername, @{Name = "IPAddress";Expression = {
+      [regex]$rx = "(\d{1,3}(\.?)){4}"
+      $rx.matches($_.IPAddress).Value}},MACAddress | export-csv "c:\users\dan.parriott_su\tmp\iplist.csv"
+
+

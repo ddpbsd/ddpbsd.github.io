@@ -1,0 +1,23 @@
+==========
+kubernetes
+==========
+
+Stuff about k8s.
+Mostly minikube right now.
+
+.. warning::
+
+   I'm just starting to explore this stuff.
+   This is less ready for anyone to see than what I have on the rest of the site.
+
+
+Contents:
+
+.. toctree::
+   :maxdepth: 2
+
+   kubectl
+   minikube/index
+   rancher
+   things      
+

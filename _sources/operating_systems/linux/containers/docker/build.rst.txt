@@ -1,0 +1,20 @@
+.. _operating_systems_linux_containers_docker_build:
+
+
+docker build:
+^^^^^^^^^^^^^
+
+Make a `Dockerfile`
+
+Run `docker build` to build an image:
+
+.. code-block:: console
+
+   docker build -t NAME:TAG .
+
+Run a container with that image:
+
+.. code-block:: console
+
+   docker run IMAGE:TAG
+

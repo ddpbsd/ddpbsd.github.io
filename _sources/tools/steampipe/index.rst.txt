@@ -1,0 +1,14 @@
+=========
+steampipe
+=========
+
+`steampipe <https://steampipe.io/>`_ allows
+you to query a bunch of stuff with sql-like syntax.
+
+Contents:
+
+.. toctree::
+   :maxdepth: 2
+
+   plugins
+

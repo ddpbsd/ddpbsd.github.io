@@ -1,0 +1,12 @@
+=====
+Kafka
+=====
+
+Some quick and dirty kafka notes.
+
+.. toctree::
+   :maxdepth: 2
+
+   commands
+   consumers
+

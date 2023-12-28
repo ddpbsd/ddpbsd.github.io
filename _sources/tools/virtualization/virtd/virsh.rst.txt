@@ -1,0 +1,65 @@
+.. _virtualization_virtd_virsh:
+
+List guests:
+^^^^^^^^^^^^
+
+.. code-block:: console
+
+   virsh list
+
+List all guests:
+^^^^^^^^^^^^^^^^
+
+.. code-block:: console
+
+  virsh list --all
+
+Power off a guest:
+^^^^^^^^^^^^^^^^^^
+
+.. code-block:: console
+
+   virsh destroy HOST
+
+Edit a host's configuration:
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: console
+
+   virsh edit HOST
+
+List the networks:
+^^^^^^^^^^^^^^^^^^
+
+.. code-block:: console
+
+   virsh net-list
+
+Destroy a network:
+^^^^^^^^^^^^^^^^^^
+
+.. code-block:: console
+
+   virsh destroy NETWORK
+
+See the dhcp leases:
+^^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: console
+
+   virsh net-dhcp-leases NETWORK
+
+Edit the networks:
+^^^^^^^^^^^^^^^^^^
+
+.. code-block:: console
+
+   virsh net-edit NETWORK
+
+Find the vnc display of a guest:
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: console
+
+   virsh vncdisplay gamont
+

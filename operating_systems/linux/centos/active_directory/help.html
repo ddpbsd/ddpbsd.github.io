@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Active Directory Auth &#8212; notes 0.1 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/alabaster.css?v=039e1c02" />
+    <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js?v=e031e9a9"></script>
+    <script src="../../../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../../../_static/sphinx_highlight.js?v=4825356b"></script>
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+    <link rel="next" title="Automatic updates" href="../automatic_updates.html" />
+    <link rel="prev" title="Packages to install:" href="google-auth.html" />
+   
+  <link rel="stylesheet" href="../../../../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="active-directory-auth">
+<h1>Active Directory Auth<a class="headerlink" href="#active-directory-auth" title="Permalink to this heading">¶</a></h1>
+<section id="install-prerequisites">
+<h2>Install Prerequisites:<a class="headerlink" href="#install-prerequisites" title="Permalink to this heading">¶</a></h2>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">yum install -y samba pam_krb5 krb5-workstation samba</span>
+</pre></div>
+</div>
+</section>
+<section id="configure-kerberos">
+<h2>Configure kerberos:<a class="headerlink" href="#configure-kerberos" title="Permalink to this heading">¶</a></h2>
+<p>Edit <cite>/etc/krb5.conf</cite></p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp"># </span>Configuration<span class="w"> </span>snippets<span class="w"> </span>may<span class="w"> </span>be<span class="w"> </span>placed<span class="w"> </span><span class="k">in</span><span class="w"> </span>this<span class="w"> </span>directory<span class="w"> </span>as<span class="w"> </span>well
+<span class="go">includedir /etc/krb5.conf.d/</span>
+
+<span class="go">[logging]</span>
+<span class="go"> default = FILE:/var/log/krb5libs.log</span>
+<span class="go"> kdc = FILE:/var/log/krb5kdc.log</span>
+<span class="go"> admin_server = FILE:/var/log/kadmind.log</span>
+
+<span class="go">[libdefaults]</span>
+<span class="go"> dns_lookup_realm = true</span>
+<span class="go"> dns_lookup_kdc = true</span>
+<span class="go"> ticket_lifetime = 24h</span>
+<span class="go"> renew_lifetime = 7d</span>
+<span class="go"> forwardable = true</span>
+<span class="go"> proxiable = true</span>
+<span class="go"> rdns = false</span>
+<span class="gp"># </span><span class="nv">default_realm</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>EXAMPLE.COM
+<span class="go"> default_realm = MYDOMAIN.COM</span>
+<span class="go"> default_ccache_name = KEYRING:persistent:%{uid}</span>
+
+<span class="go">[realms]</span>
+<span class="go"> MYDOMAIN.COM = {</span>
+<span class="go">  kdc = AD_SERVER.MYDOMAIN.COM</span>
+<span class="go">  admin_server = AD_SERVER.MYDOMAIN.COM</span>
+<span class="go">  default_domain = MYDOMAIN.COM</span>
+<span class="go"> }</span>
+
+<span class="go">[domain_realm]</span>
+<span class="go"> .kerberos.server = MYDOMAIN.COM</span>
+<span class="go"> .intelgd.com = MYDOMAIN.COM</span>
+<span class="go"> intelgd.com = MYDOMAIN.COM</span>
+<span class="go"> intelgd = MYDOMAIN.COM</span>
+
+<span class="go">[appdefaults]</span>
+<span class="go"> pam = {</span>
+<span class="go">  ticket_lifetime = 1d</span>
+<span class="go">  renew_lifetime = 1d</span>
+<span class="go">  forwardable = true</span>
+<span class="go">  proxiable = false</span>
+<span class="go">  retain_after_close = false</span>
+<span class="go">  minimum_uid = 0</span>
+<span class="go">  debug = false</span>
+<span class="go"> }</span>
+
+<span class="go">[realms]</span>
+<span class="gp"># </span>EXAMPLE.COM<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">{</span>
+<span class="gp">#  </span><span class="nv">kdc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>kerberos.example.com
+<span class="gp">#  </span><span class="nv">admin_server</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>kerberos.example.com
+<span class="gp"># </span><span class="o">}</span>
+
+<span class="go">[domain_realm]</span>
+<span class="gp"># </span>.example.com<span class="w"> </span><span class="o">=</span><span class="w"> </span>EXAMPLE.COM
+<span class="gp"># </span>example.com<span class="w"> </span><span class="o">=</span><span class="w"> </span>EXAMPLE.COM
+</pre></div>
+</div>
+</section>
+<section id="test-it-out">
+<h2>Test it out:<a class="headerlink" href="#test-it-out" title="Permalink to this heading">¶</a></h2>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">kinit user@MYDOMAIN.COM</span>
+</pre></div>
+</div>
+</section>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../../../../index.html">notes</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../../arm/index.html">arm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../db/index.html">databases</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../dns/index.html">DNS stuff</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../elk/index.html">elastic stuff</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../k8s/index.html">kubernetes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../openssh/index.html">OpenSSH</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../../index.html">Operating Systems</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../../index.html">Linux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../openbsd/index.html">OpenBSD</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../windows/index.html">Windows</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../ossec/index.html">OSSEC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../rsyslogd/index.html">rsyslogd</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../ssl/index.html">ssl</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../stupid_unix_tricks/index.html">Stupid Unix Tricks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../tools/index.html">Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../vendor_stuff/index.html">Vendor Stuff</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../misc/index.html">misc</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../../../index.html">Documentation overview</a><ul>
+  <li><a href="../../../index.html">Operating Systems</a><ul>
+  <li><a href="../../index.html">Linux</a><ul>
+  <li><a href="../index.html">CentOS</a><ul>
+  <li><a href="index.html">Active Directory</a><ul>
+      <li>Previous: <a href="google-auth.html" title="previous chapter">Packages to install:</a></li>
+      <li>Next: <a href="../automatic_updates.html" title="next chapter">Automatic updates</a></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+        <!-- your html code here -->
+	<div class="footer">
+		<em>This information has a good chance of being wrong, inconsistent, out of date, or just bad. Use at your own risk.
+		Feel free to notify me of any issues though.</em>
+	</div>
+
+
+  </body>
+</html>

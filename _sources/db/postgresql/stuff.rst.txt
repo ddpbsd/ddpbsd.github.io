@@ -1,0 +1,44 @@
+
+List databases
+^^^^^^^^^^^^^^
+
+.. code-block:: console
+
+   \l
+
+List tables
+^^^^^^^^^^^
+
+.. code-block:: console
+
+   \dt
+
+
+Connect to db
+^^^^^^^^^^^^^
+
+.. code-block:: console
+
+
+   \c DB_NAME
+
+
+date minus a couple of days
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Using date and interval is weird.
+`interval '2 days'` actually means yesterday.
+Today is the first day, yesterday is the second.
+
+
+.. code-block:: console
+
+   date > now() - interval '2 days'
+
+Convert epoch to timestamp
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: console
+
+   select timestamp 'epoch' + (hosts.firstseen) * interval '1 second' as first  from hosts;
+

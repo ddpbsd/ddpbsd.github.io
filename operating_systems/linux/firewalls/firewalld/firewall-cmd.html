@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>CentOS 7 firewall-cmd &#8212; notes 0.1 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/alabaster.css?v=039e1c02" />
+    <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js?v=e031e9a9"></script>
+    <script src="../../../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../../../_static/sphinx_highlight.js?v=4825356b"></script>
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+    <link rel="next" title="iptables" href="../iptables/index.html" />
+    <link rel="prev" title="Firewalld" href="index.html" />
+   
+  <link rel="stylesheet" href="../../../../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="centos-7-firewall-cmd">
+<span id="operating-systems-linux-firewalls-firewalld"></span><h1>CentOS 7 firewall-cmd<a class="headerlink" href="#centos-7-firewall-cmd" title="Permalink to this heading">¶</a></h1>
+<section id="list-active-ports">
+<h2>List active ports<a class="headerlink" href="#list-active-ports" title="Permalink to this heading">¶</a></h2>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">firewall-cmd --list-ports</span>
+</pre></div>
+</div>
+</section>
+<section id="get-active-zones">
+<h2>Get active zones<a class="headerlink" href="#get-active-zones" title="Permalink to this heading">¶</a></h2>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">firewall-cmd --get-active-zones</span>
+</pre></div>
+</div>
+</section>
+<section id="open-a-port">
+<h2>Open a port<a class="headerlink" href="#open-a-port" title="Permalink to this heading">¶</a></h2>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">firewall-cmd --permanent --zone=public --add-port=80/tcp</span>
+</pre></div>
+</div>
+</section>
+<section id="close-a-port">
+<h2>Close a port<a class="headerlink" href="#close-a-port" title="Permalink to this heading">¶</a></h2>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">firewall-cmd --remove-port=</span>
+</pre></div>
+</div>
+</section>
+<section id="enable-the-change">
+<h2>Enable the change<a class="headerlink" href="#enable-the-change" title="Permalink to this heading">¶</a></h2>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">firewall-cmd --reload</span>
+</pre></div>
+</div>
+</section>
+<section id="make-sure-the-change-is-in-effect">
+<h2>Make sure the change is in effect<a class="headerlink" href="#make-sure-the-change-is-in-effect" title="Permalink to this heading">¶</a></h2>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">firewall-cmd --zone=public --query-port=80/tcp</span>
+</pre></div>
+</div>
+</section>
+<section id="reject-connections-to-a-port">
+<h2>Reject connections to a port<a class="headerlink" href="#reject-connections-to-a-port" title="Permalink to this heading">¶</a></h2>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp"># </span>Simply<span class="w"> </span>reject<span class="w"> </span>all<span class="w"> </span>traffic<span class="w"> </span>to<span class="w"> </span><span class="m">443</span>
+<span class="go">firewall-cmd --permanent --zone=public --add-rich-rule=&#39;rule family=&quot;ipv4&quot; port protocol=&quot;tcp&quot; port=&quot;443&quot; reject&#39;</span>
+
+<span class="gp"># </span>add<span class="w"> </span>a<span class="w"> </span>src<span class="w"> </span>ip<span class="w"> </span>into<span class="w"> </span>the<span class="w"> </span>mix
+<span class="go">firewall-cmd --permanent --zone=public --add-rich-rule=&#39;rule family=&quot;ipv4&quot; source address=&quot;10.0.0.2&quot; port protocol=&quot;tcp&quot; port=&quot;443&quot; reject&#39;</span>
+</pre></div>
+</div>
+</section>
+<section id="forward-traffic-from-a-specific-address-to-another-port">
+<h2>Forward traffic from a specific address to another port<a class="headerlink" href="#forward-traffic-from-a-specific-address-to-another-port" title="Permalink to this heading">¶</a></h2>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">firewall-cmd --add-rich-rule=&#39;rule family=ipv4 source address=10.10.10.99 forward-port to-port=8080 protocol=tcp port=80&#39;</span>
+</pre></div>
+</div>
+</section>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../../../../index.html">notes</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../../arm/index.html">arm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../db/index.html">databases</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../dns/index.html">DNS stuff</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../elk/index.html">elastic stuff</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../k8s/index.html">kubernetes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../openssh/index.html">OpenSSH</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../../index.html">Operating Systems</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../../index.html">Linux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../openbsd/index.html">OpenBSD</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../windows/index.html">Windows</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../ossec/index.html">OSSEC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../rsyslogd/index.html">rsyslogd</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../ssl/index.html">ssl</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../stupid_unix_tricks/index.html">Stupid Unix Tricks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../tools/index.html">Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../vendor_stuff/index.html">Vendor Stuff</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../misc/index.html">misc</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../../../index.html">Documentation overview</a><ul>
+  <li><a href="../../../index.html">Operating Systems</a><ul>
+  <li><a href="../../index.html">Linux</a><ul>
+  <li><a href="../index.html">Firewalls</a><ul>
+  <li><a href="index.html">Firewalld</a><ul>
+      <li>Previous: <a href="index.html" title="previous chapter">Firewalld</a></li>
+      <li>Next: <a href="../iptables/index.html" title="next chapter">iptables</a></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+        <!-- your html code here -->
+	<div class="footer">
+		<em>This information has a good chance of being wrong, inconsistent, out of date, or just bad. Use at your own risk.
+		Feel free to notify me of any issues though.</em>
+	</div>
+
+
+  </body>
+</html>

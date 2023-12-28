@@ -1,0 +1,15 @@
+
+=======
+icinga2
+=======
+
+
+Contents:
+
+.. toctree::
+   :maxdepth: 2
+
+   configuration
+   notifications
+   ssh_checks
+

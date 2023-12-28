@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>OSSEC and Elasticstack &#8212; notes 0.1 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css?v=039e1c02" />
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js?v=e031e9a9"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=4825356b"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="OSSEC src" href="src/index.html" />
+    <link rel="prev" title="OSSEC" href="index.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="ossec-and-elasticstack">
+<h1>OSSEC and Elasticstack<a class="headerlink" href="#ossec-and-elasticstack" title="Permalink to this heading">¶</a></h1>
+<p>A tale of dread and woe.</p>
+<section id="turn-on-json-logging-in-ossec">
+<h2>Turn on json logging in OSSEC:<a class="headerlink" href="#turn-on-json-logging-in-ossec" title="Permalink to this heading">¶</a></h2>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;global&gt;</span>
+<span class="w">  </span><span class="nt">&lt;jsonout_output&gt;</span>yes<span class="nt">&lt;/jsonout_output&gt;</span>
+<span class="nt">&lt;/global&gt;</span>
+</pre></div>
+</div>
+</section>
+<section id="logstash-config">
+<h2>Logstash Config:<a class="headerlink" href="#logstash-config" title="Permalink to this heading">¶</a></h2>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">input {</span>
+<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">beats {</span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">id =&gt; &quot;beats_test&quot;</span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">port =&gt; 9001</span>
+<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">}</span>
+<span class="l l-Scalar l-Scalar-Plain">}</span>
+
+
+<span class="l l-Scalar l-Scalar-Plain">output {</span>
+<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">elasticsearch {</span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">index =&gt; &quot;ossec-%{+YYYY.MM.dd}&quot;</span>
+<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">}</span>
+
+<span class="l l-Scalar l-Scalar-Plain">#  stdout {</span>
+<span class="l l-Scalar l-Scalar-Plain">#  }</span>
+
+<span class="l l-Scalar l-Scalar-Plain">}</span>
+</pre></div>
+</div>
+<p>Install filebeat.</p>
+</section>
+<section id="filebeat-config">
+<h2>Filebeat Config:<a class="headerlink" href="#filebeat-config" title="Permalink to this heading">¶</a></h2>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">filebeat.prospectors</span><span class="p">:</span>
+
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">input_type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">log</span>
+<span class="w">  </span><span class="nt">paths</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/var/ossec/logs/alerts/alerts.json</span>
+
+<span class="w">  </span><span class="nt">json.keys_under_root</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+
+<span class="nt">output.logstash</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">hosts</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&quot;elastic:9001&quot;</span><span class="p p-Indicator">]</span>
+</pre></div>
+</div>
+</section>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../index.html">notes</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../arm/index.html">arm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../db/index.html">databases</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dns/index.html">DNS stuff</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../elk/index.html">elastic stuff</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../k8s/index.html">kubernetes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../openssh/index.html">OpenSSH</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../operating_systems/index.html">Operating Systems</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">OSSEC</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">OSSEC and Elasticstack</a></li>
+<li class="toctree-l2"><a class="reference internal" href="src/index.html">OSSEC src</a></li>
+<li class="toctree-l2"><a class="reference internal" href="win-build.html">Required packages:</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sysmon.html">Monitor sysmon logs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="db/mysql.html">mariadb</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../rsyslogd/index.html">rsyslogd</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ssl/index.html">ssl</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../stupid_unix_tricks/index.html">Stupid Unix Tricks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tools/index.html">Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../vendor_stuff/index.html">Vendor Stuff</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../misc/index.html">misc</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+  <li><a href="index.html">OSSEC</a><ul>
+      <li>Previous: <a href="index.html" title="previous chapter">OSSEC</a></li>
+      <li>Next: <a href="src/index.html" title="next chapter">OSSEC src</a></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+        <!-- your html code here -->
+	<div class="footer">
+		<em>This information has a good chance of being wrong, inconsistent, out of date, or just bad. Use at your own risk.
+		Feel free to notify me of any issues though.</em>
+	</div>
+
+
+  </body>
+</html>

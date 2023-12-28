@@ -1,0 +1,74 @@
+USB ethernet devices
+====================
+
+These are mostly untested. `axen(4)` devices had proven to be unusable previously.
+The first `ure(4)` dees get used in a `bridge(4)` for `vmd(8)`.
+
+UNKNOWN
+^^^^^^^
+
+I can't remember any designation on it, and I'm not near it at the moment.
+USB3 I think.
+
+dmesg info:
+
+.. code-block:: console
+
+   ure0 at uhub3 port 5 configuration 1 interface 0 "Realtek USB 10/100/1000 LAN" rev 2.10/30.00 addr 5
+   ure0: ver 5c20, address 00:e0:97:00:51:17
+   rgephy0 at ure0 phy 0: RTL8251 PHY, rev. 0
+
+
+UGREEN
+^^^^^^
+
+USB3.
+
+dmesg info:
+
+.. code-block:: console
+
+   Sep 25 07:18:38 arrakis /bsd: axen0 at uhub0 port 18 configuration 1 interface 0 "ASIX Elec. Corp. AX88179" rev 3.00/1.00 addr 5
+   Sep 25 07:18:38 arrakis /bsd: axen0: AX88179, address 00:0e:c6:a9:69:47
+   Sep 25 07:18:39 arrakis /bsd: rgephy0 at axen0 phy 3: RTL8169S/8110S/8211 PHY, rev. 5
+   Sep 25 07:18:58 arrakis /bsd: rgephy0 detached
+   Sep 25 07:18:58 arrakis /bsd: axen0 detached
+
+Cable Matters
+^^^^^^^^^^^^^
+
+USB2.
+
+dmesg info:
+
+.. code-block:: console
+
+   Sep 25 07:20:12 arrakis /bsd: ure0 at uhub0 port 6 configuration 1 interface 0 "Realtek USB 10/100 LAN" rev 2.10/20.00 addr 5
+   Sep 25 07:20:12 arrakis /bsd: ure0: 
+   Sep 25 07:20:12 arrakis /bsd: ver 4c10
+   Sep 25 07:20:12 arrakis /bsd: , address a0:ce:c8:06:e0:8a
+   Sep 25 07:20:12 arrakis /bsd: rlphy0 at ure0 phy 0: RTL8201E 10/100 PHY, rev. 2
+   Sep 25 07:20:21 arrakis /bsd: rlphy0 detached
+   Sep 25 07:20:21 arrakis /bsd: ure0 detached
+
+
+UNITEK Y-3057
+^^^^^^^^^^^^^
+
+This device has a built in USB3 hub. I haven't bothered to test it yet.
+
+dmesg info:
+
+.. code-block:: console
+
+   Sep 25 07:20:56 arrakis /bsd: uhub1 at uhub0 port 18 configuration 1 interface 0 "VIA Labs, Inc. USB3.0 Hub" rev 3.00/90.01 addr 5
+   Sep 25 07:20:57 arrakis /bsd: axen0 at uhub1 port 1 configuration 1 interface 0 "ASIX Elec. Corp. AX88179" rev 3.00/1.00 addr 6
+   Sep 25 07:20:57 arrakis /bsd: axen0: AX88179, address 00:0e:c6:c8:4d:72
+   Sep 25 07:20:57 arrakis /bsd: rgephy0 at axen0 phy 3: RTL8169S/8110S/8211 PHY, rev. 5
+   Sep 25 07:20:58 arrakis /bsd: uhub2 at uhub0 port 6 configuration 1 interface 0 "VIA Labs, Inc. USB2.0 Hub" rev 2.10/90.01 addr 7
+   Sep 25 07:21:01 arrakis /bsd: rgephy0 detached
+   Sep 25 07:21:01 arrakis /bsd: axen0 detached
+   Sep 25 07:21:01 arrakis /bsd: uhub1 detached
+   Sep 25 07:21:01 arrakis /bsd: uhub2 detached
+
+

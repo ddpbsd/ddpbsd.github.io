@@ -1,0 +1,14 @@
+
+=================
+logstash patterns
+=================
+
+Contents:
+
+.. toctree::
+   :maxdepth: 2
+
+   ossec
+   squid
+   times
+

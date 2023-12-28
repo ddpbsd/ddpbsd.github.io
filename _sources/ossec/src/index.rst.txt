@@ -1,0 +1,16 @@
+
+=========
+OSSEC src
+=========
+
+My notes about stuff as I read and play with the source.
+
+
+Contents:
+
+.. toctree::
+   :maxdepth: 2
+
+   rootcheck/index
+   windows/index   
+

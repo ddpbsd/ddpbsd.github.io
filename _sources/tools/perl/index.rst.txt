@@ -1,0 +1,13 @@
+.. _tools_perl:
+
+====
+Perl
+====
+
+Contents:
+
+.. toctree::
+   :maxdepth: 2
+
+   arrays
+   oneliners

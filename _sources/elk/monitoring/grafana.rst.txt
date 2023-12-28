@@ -1,0 +1,16 @@
+===================================
+Monitoring elasticsearch in grafana
+===================================
+
+`grafana <https://grafana.com/>`_ is handy for graphing things.
+These examples use influxdb and telegraf.
+
+Free disk space
+^^^^^^^^^^^^^^^
+
+See the percentage of free space for each node.
+
+.. code-block:: console
+
+   SELECT (last("total_available_in_bytes") / last("total_total_in_bytes") * 100) FROM "elasticsearch_fs" WHERE ("cluster_name" = 'wafflelab') AND $timeFilter GROUP BY time($__interval) fill(null)
+

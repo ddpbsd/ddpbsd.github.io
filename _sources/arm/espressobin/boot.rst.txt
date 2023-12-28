@@ -1,0 +1,67 @@
+
+
+Basics to get it booted (more details to follow).
+
+
+Important commands
+^^^^^^^^^^^^^^^^^^
+
+.. code-block:: console
+
+   scsi scan
+   setenv fdt_name /armada-3720-community.dtb
+   setenv image_name /image
+   setenv bootcmd scsi dev 0; fatload scsi 0:1 $kernel_addr $image_name; fatload scsi 0:1 $fdt_addr $fdt_name; setenv bootargs $console root=/dev/sda2 rw rootwait net.ifname=0 biosdevname=0; booti $kernel_addr - $fdt_addr
+
+
+.. code-block:: console
+
+   Marvell>> printenv
+   baudrate=115200
+   bootcmd=mmc dev 0; ext4load mmc 0:1 $kernel_addr $image_name;ext4load mmc 0:1 $fdt_addr $fdt_name;setenv bootargs $console root=/dev/mmcblk0p1 rw rootwait net.ifnames=0 biosdevname=0; booti $kernel_addr - $fdt_addr
+   bootdelay=2
+   console=console=ttyMV0,115200 earlycon=ar3700_uart,0xd0012000
+   eth1addr=00:51:82:11:22:01
+   eth2addr=00:51:82:11:22:02
+   eth3addr=00:51:82:11:22:03
+   ethact=neta@30000
+   ethaddr=F0:AD:4E:05:35:A2
+   ethprime=eth0
+   fdt_addr=0x4f00000
+   fdt_high=0xffffffffffffffff
+   fdt_name=/armada-3720-community.dtb
+   fdtcontroladdr=3f7161b8
+   gatewayip=10.4.50.254
+   get_images=tftpboot $kernel_addr $image_name; tftpboot $fdt_addr $fdt_name; run get_ramfs
+   get_ramfs=if test "${ramfs_name}" != "-"; then setenv ramfs_addr 0x8000000; tftpboot $ramfs_addr $ramfs_name; else setenv ramfs_addr -;fi
+   hostname=marvell
+   image_name=/image
+   initrd_addr=0xa00000
+   initrd_size=0x2000000
+   ipaddr=0.0.0.0
+   kernel_addr=0x5000000
+   loadaddr=0x5000000
+   netdev=eth0
+   netmask=255.255.255.0
+   ramfs_addr=0x8000000
+   ramfs_name=-
+   root=/dev/sda2 rw
+   rootfstype=ext4
+   rootpath=/srv/nfs/
+   serverip=0.0.0.0
+   set_bootargs=setenv bootargs $console $root ip=$ipaddr:$serverip:$gatewayip:$netmask:$hostname:$netdev:none nfsroot=$serverip:$rootpath $extra_params
+   stderr=serial@12000
+   stdin=serial@12000
+   stdout=serial@12000
+
+   Environment size: 1355/65532 bytes
+   Marvell>> setenv bootcmd scsi dev 0; fatload scsi 0:1 $kernel_addr $image_name; fatload scsi 0:1 $fdt_addr $fdt_name; setenv bootargs $console root=/dev/sda2 rw rootwait net.ifname=0 biosdevname=0; booti $kernel_addr - $fdt_addr
+   reading /image
+   12358656 bytes read in 194 ms (60.8 MiB/s)
+   reading /armada-3720-community.dtb
+   8175 bytes read in 6 ms (1.3 MiB/s)
+   ## Flattened Device Tree blob at 04f00000
+      Booting using the fdt blob at 0x4f00000
+      Using Device Tree in place at 0000000004f00000, end 0000000004f04fee
+
+

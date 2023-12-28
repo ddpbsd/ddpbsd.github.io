@@ -1,0 +1,12 @@
+
+======
+auditd
+======
+
+Contents:
+
+.. toctree::
+   :maxdepth: 2
+
+   audit2allow
+

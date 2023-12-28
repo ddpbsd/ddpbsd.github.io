@@ -1,0 +1,14 @@
+
+===
+ufw
+===
+
+uncomplicated firewall?
+
+Contents:
+
+.. toctree::
+   :maxdepth: 2
+
+   notes
+

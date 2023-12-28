@@ -1,0 +1,16 @@
+
+===========
+Restaurants
+===========
+
+I always forget my opinions and whatnot on restaurants.
+So keep a list.
+
+Contents:
+
+.. toctree::
+   :maxdepth: 2
+
+   
+   mission_bbq
+

@@ -1,0 +1,8 @@
+========
+hardware
+========
+
+Bought a `RTL2832 <https://www.adafruit.com/product/1497>`_ stick from adafruit.
+It is rtl_433 compatible.
+
+

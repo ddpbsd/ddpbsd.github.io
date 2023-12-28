@@ -1,0 +1,21 @@
+
+========
+projects
+========
+
+Some stuff about personal projects I'm working on.
+The info will be sparse and possibly out of date, but
+I will try to update it as I learn things. Feel free
+to send me info that will be helpful. I love nudges in
+a useful direction.
+
+Contents:
+
+.. toctree::
+   :maxdepth: 2
+
+   projects
+   arduino/index
+   homelab/index
+   ipv6/index
+

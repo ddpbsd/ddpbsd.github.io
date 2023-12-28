@@ -1,0 +1,13 @@
+
+===================
+pine64 clusterboard
+===================
+
+I got me one.
+
+Contents:
+
+.. toctree::
+   :maxdepth: 2
+
+   diary

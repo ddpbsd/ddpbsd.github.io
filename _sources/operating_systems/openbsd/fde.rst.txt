@@ -1,0 +1,21 @@
+.. _operating_systems_openbsd_fde:
+
+Full Disk Encryption
+--------------------
+
+`disklabel ioctl DIOCGDINFO: inappropriate ioctl for device`:
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Getting the above error when running `dd` on the soon to be encrypted drive might be because the device doesn't exist.
+
+Fix:
+
+.. code-block:: console
+
+   cd /dev && sh MAKEDEV sd1
+
+`dd if=/dev/random of=/dev/rsd0c bs=1m` takes a long time:
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Yep. Get coffee.
+

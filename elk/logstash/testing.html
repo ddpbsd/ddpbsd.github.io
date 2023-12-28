@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Simple config testing &#8212; notes 0.1 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../_static/alabaster.css?v=039e1c02" />
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js?v=e031e9a9"></script>
+    <script src="../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../_static/sphinx_highlight.js?v=4825356b"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="logstash usage" href="usage.html" />
+    <link rel="prev" title="SSL with logstash and elasticsearch" href="ssl.html" />
+   
+  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="simple-config-testing">
+<h1>Simple config testing<a class="headerlink" href="#simple-config-testing" title="Permalink to this heading">¶</a></h1>
+<p>Create a simple configuration in a tmp directory. Only include the necessary bits.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">input {</span>
+
+<span class="go">    file {</span>
+<span class="go">        path =&gt; &quot;/home/isdadmin/logstash/junos.log&quot;</span>
+<span class="go">        start_position =&gt; &quot;beginning&quot;</span>
+<span class="go">        sincedb_path =&gt; &quot;/dev/null&quot;</span>
+<span class="go">        tags =&gt; &quot;parse&quot;</span>
+<span class="go">    }</span>
+
+<span class="go">}</span>
+
+
+<span class="go">filter {</span>
+
+<span class="go">    if [tags] == &quot;parse&quot; {</span>
+<span class="go">    grok {</span>
+<span class="go">        match =&gt; {</span>
+<span class="go">            &quot;message&quot; =&gt; &quot;%{RT_FLOW2}&quot;</span>
+<span class="go">        }</span>
+<span class="go">        remove_tag =&gt; &quot;parse&quot;</span>
+
+<span class="go">    }</span>
+<span class="go">    }</span>
+
+<span class="go">    if [tags] == &quot;parse&quot; {</span>
+<span class="go">    grok {</span>
+<span class="go">        match =&gt; {</span>
+<span class="go">            &quot;message&quot; =&gt; &quot;%{RT_FLOW1}&quot;</span>
+<span class="go">        }</span>
+<span class="go">        remove_tag =&gt; &quot;parse&quot;</span>
+<span class="go">    }</span>
+<span class="go">    }</span>
+
+<span class="go">    if [tags] == &quot;parse&quot; {</span>
+<span class="go">        grok {</span>
+<span class="go">            match =&gt; {</span>
+<span class="go">                &quot;message&quot; =&gt; &quot;%{RT_FLOW3}&quot;</span>
+<span class="go">            }</span>
+<span class="go">            remove_tag =&gt; &quot;parse&quot;</span>
+<span class="go">        }</span>
+<span class="go">    }</span>
+
+<span class="go">}</span>
+
+
+<span class="go">output {</span>
+<span class="go">    stdout { codec =&gt; rubydebug }</span>
+<span class="go">}</span>
+</pre></div>
+</div>
+<p>Next create a file (junos.log) with a small selection of log samples.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">Sep 26 06:49:39 192.168.1.29 RT_FLOW: RT_FLOW_SESSION_CREATE: session created 192.168.1.4/123-&gt;10.1.1.1/123 junos-ntp 10.2.2.2/26300-&gt;10.1.1.1/123 nsw-src-interface None 17 Hyper_V_dns ISD_Srv Internet 432293 N/A(N/A) vlan.2 UNKNOWN UNKNOWN UNKNOWN</span>
+<span class="go">Sep 26 06:49:40 192.168.1.29 RT_FLOW: RT_FLOW_SESSION_CLOSE: session closed TCP RST: 192.168.1.42/61816-&gt;192.168.1.20/88 None 192.168.1.42/61816-&gt;192.168.1.20/88 None None 6 All_ISD_Wks_ISD_Srv ISD_Wks ISD_Srv 499914 6(1659) 6(1653) 2 UNKNOWN UNKNOWN N/A(N/A) vlan.1 UNKNOWN</span>
+</pre></div>
+</div>
+<p>Run logstash.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Not sure this works exactly. It worked at one point, but seemed to cause issues with the latest logstash?</p>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">/opt/logstash/bin/logstash -f ./logstash.conf --verbose</span>
+</pre></div>
+</div>
+</section>
+<section id="this-is-working-with-6-5">
+<h1>This is working with 6.5<a class="headerlink" href="#this-is-working-with-6-5" title="Permalink to this heading">¶</a></h1>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">bin/logstash --path.config ./config/conf.d --path.settings ./config -t</span>
+</pre></div>
+</div>
+<p>Observe output.</p>
+</section>
+<section id="sincedb-path">
+<h1>sincedb path<a class="headerlink" href="#sincedb-path" title="Permalink to this heading">¶</a></h1>
+<p>Set the <cite>sincedb_path</cite> to <cite>/dev/null</cite> to keep it from recording where it is in the file.
+If this isn’t set to something like <cite>/dev/null</cite>, delete the <cite>data</cite> dir after running to reset the state.</p>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../../index.html">notes</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../arm/index.html">arm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../db/index.html">databases</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dns/index.html">DNS stuff</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">elastic stuff</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../beats/index.html">Beats</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../elastic/index.html">elasticsearch</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">logstash</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../monitoring/index.html">monitoring</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../agent/index.html">agent</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../setup.html">Setting up the whole thing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../endpoint.html">endpoint</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../read.html">read from elastic</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../docker/commands.html">docker commands</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../k8s/index.html">kubernetes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../openssh/index.html">OpenSSH</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../operating_systems/index.html">Operating Systems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ossec/index.html">OSSEC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../rsyslogd/index.html">rsyslogd</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ssl/index.html">ssl</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../stupid_unix_tricks/index.html">Stupid Unix Tricks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tools/index.html">Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../vendor_stuff/index.html">Vendor Stuff</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../misc/index.html">misc</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../index.html">Documentation overview</a><ul>
+  <li><a href="../index.html">elastic stuff</a><ul>
+  <li><a href="index.html">logstash</a><ul>
+      <li>Previous: <a href="ssl.html" title="previous chapter">SSL with logstash and elasticsearch</a></li>
+      <li>Next: <a href="usage.html" title="next chapter">logstash usage</a></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+        <!-- your html code here -->
+	<div class="footer">
+		<em>This information has a good chance of being wrong, inconsistent, out of date, or just bad. Use at your own risk.
+		Feel free to notify me of any issues though.</em>
+	</div>
+
+
+  </body>
+</html>

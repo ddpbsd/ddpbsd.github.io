@@ -1,0 +1,21 @@
+
+=======
+Windows
+=======
+
+Contents:
+
+.. toctree::
+   :maxdepth: 2
+
+   active_directory/index.rst
+   cheatsheets
+   laps
+   misc
+   powershell/index
+   sid_stuff
+   smb
+   sysmon
+   wef
+   windows_credential_mgr.rst
+

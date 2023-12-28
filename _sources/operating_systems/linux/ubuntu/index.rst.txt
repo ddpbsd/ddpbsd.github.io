@@ -1,0 +1,15 @@
+
+======
+Ubuntu
+======
+
+Contents:
+
+.. toctree::
+   :maxdepth: 2
+
+   ubuntu
+   packages
+   unfuck
+
+

@@ -1,0 +1,13 @@
+=======
+rancher
+=======
+
+
+Reset paassword
+^^^^^^^^^^^^^^^
+
+.. code-block:: console
+
+   kubectl --kubecofig ~/.kube/config -n cattle-system exec $(kubectl --kubeconfig ~/.kube/config -n cattle-system  get pods -l app=rancher --no-headers | head -1 | awk '{ print $1 }') -c rancher -- reset password
+
+

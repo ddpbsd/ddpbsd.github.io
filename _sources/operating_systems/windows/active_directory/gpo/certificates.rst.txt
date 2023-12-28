@@ -1,0 +1,7 @@
+
+
+Distribute certificates to computers
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+`Microsoft Article <https://docs.microsoft.com/en-us/windows-server/identity/ad-fs/deployment/distribute-certificates-to-client-computers-by-using-group-policy>`_
+

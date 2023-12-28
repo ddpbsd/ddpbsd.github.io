@@ -1,0 +1,51 @@
+==============
+Look at certs!
+==============
+
+Check a private key
+^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: console
+
+   openssl rsa -in privateKey.key -check
+
+Check a certificate 
+^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: console
+
+   openssl x509 -in certificate.crt -text -noout
+
+Check the subject in a certificate
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: console
+
+   openssl x509 -noout -subject -in certificate.crt
+
+Check expiration with keytool
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: console
+
+   keytool -list -v -keystore keystore.jks
+
+Check key file
+^^^^^^^^^^^^^^
+
+.. code-block:: console
+
+   openssl rsa -in file.key -check
+
+   
+Check modulus of both key and certificate
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+If these don't match, the key and cert don't belong together.
+
+.. code-block:: console
+
+   openssl rsa -modulus -noout -in file.key | openssl md5
+   openssl x509 -modulus -noout -in file.crt | openssl md5
+
+   

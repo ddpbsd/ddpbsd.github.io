@@ -1,0 +1,26 @@
+
+====
+misc
+====
+
+Stuff that will probably be much much less in depth
+ (or less frequently used) than the rest.
+
+
+Contents:
+
+.. toctree::
+   :maxdepth: 2
+
+   sdr/index
+   hardware_tokens/tokens
+   imagemagick/index 
+   kernel_build/index
+   ksh/index
+   links/index
+   mynet/index
+   projects/index
+   random
+   junk/index
+   fediverse/glitch-soc.rst
+

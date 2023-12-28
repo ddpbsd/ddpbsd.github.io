@@ -1,0 +1,13 @@
+====
+tmux
+====
+
+
+Contents:
+
+.. toctree::
+   :maxdepth: 2
+
+   misc.rst
+   search.rst
+

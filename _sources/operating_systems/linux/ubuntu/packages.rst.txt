@@ -1,0 +1,74 @@
+
+dpkg
+====
+
+Lock a version of a package
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: console
+
+   echo "PKG_NAME hold" | dpkg --set-selections
+
+Release the lock
+^^^^^^^^^^^^^^^^
+
+.. code-block:: console
+
+   echo "<package-name> install" | sudo dpkg --set-selections
+
+See the current selections
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: console
+
+   dpkg --get-selections
+
+
+apt
+===
+
+Lock a version
+^^^^^^^^^^^^^^
+
+.. code-block:: console
+
+   sudo apt-mark hold <package-name>
+
+Remove the hold
+^^^^^^^^^^^^^^^
+
+.. code-block:: console
+
+   sudo apt-mark unhold <package-name>
+
+Look at info for a package
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: console
+
+   apt show <package-name>
+
+Find the files provided by a package
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: console
+
+   dpkg -L PACKAGE
+
+Upgrade one package
+^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: console
+
+   apt-get install --only-upgrade <packagename>
+
+
+Find available versions
+^^^^^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: console
+
+   apt-cache policy PACKAGE_NAME
+
+
+

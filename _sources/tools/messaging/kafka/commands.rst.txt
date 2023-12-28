@@ -1,0 +1,12 @@
+==============
+kafka commands
+==============
+
+list topics
+^^^^^^^^^^^
+
+.. code-block:: console
+
+   bin/kafka-topics.sh --list --bootstrap-server KAFKA_HOST:PORT
+
+

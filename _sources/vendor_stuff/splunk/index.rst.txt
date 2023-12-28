@@ -1,0 +1,13 @@
+
+======
+splunk
+======
+
+Contents:
+
+.. toctree::
+   :maxdepth: 2
+
+   searches/index
+   
+

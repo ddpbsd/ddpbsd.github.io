@@ -1,0 +1,24 @@
+
+=======
+OpenBSD
+=======
+
+
+Contents:
+
+.. toctree::
+   :maxdepth: 2
+
+   daemons/index
+   fde
+   fix_disk
+   hardware/index
+   install
+   misc
+   network/authpf
+   network/veb
+   network/wg
+   pledge/index
+   vi
+   virtualmachines/index
+

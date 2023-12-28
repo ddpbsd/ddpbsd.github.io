@@ -1,0 +1,48 @@
+.. _operating_systems_openbsd_pledge_pledge:
+
+pledge(2)
+=========
+
+Javascript:
+^^^^^^^^^^^
+
+`node-pledge <https://www.npmjs.com/package/node-pledge>`_
+
+Perl: 
+^^^^^
+
+`by Andrew Fresh (mirror) <http://cvsweb.openbsd.org/cgi-bin/cvsweb/src/gnu/usr.bin/perl/cpan/OpenBSD-Pledge/>`_
+
+`by rfarr <https://github.com/rfarr/Unix-Pledge>`_
+
+Python
+^^^^^^
+
+https://github.com/jarmani/py-openbsd-pledge
+
+Lua
+^^^
+
+https://github.com/n0la/lua-openbsd
+
+Haskell
+^^^^^^^
+
+http://openbsd-archive.7691.n7.nabble.com/pledge-2-binding-for-Haskell-td287889.html
+
+golang
+^^^^^^
+
+https://github.com/ylih/extrasys
+
+c#
+^^
+
+https://github.com/NattyNarwhal/pledge.cs
+
+Rust
+^^^^
+
+I guess the included file is gone?
+
+

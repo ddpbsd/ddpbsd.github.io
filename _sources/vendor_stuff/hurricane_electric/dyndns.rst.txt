@@ -1,0 +1,7 @@
+===========
+dynamic dns
+===========
+
+Just a quick note for now, the key is done in the zone.
+Click the little swirly arrows to reset the key.
+

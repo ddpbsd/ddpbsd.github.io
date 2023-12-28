@@ -1,0 +1,14 @@
+
+================
+Monitoring Tools
+================
+
+
+Contents:
+
+.. toctree::
+   :maxdepth: 2
+
+   icinga2/index
+   telegraf/index
+

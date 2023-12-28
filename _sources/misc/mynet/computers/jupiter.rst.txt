@@ -1,0 +1,16 @@
+.. _misc_mynet_systems_jupiter:
+
+jupiter
+=======
+
+
+Currently running:
+^^^^^^^^^^^^^^^^^^
+
+Ubuntu
+
+Hardware:
+^^^^^^^^^
+
+Lenovo Thinkcentre m92p
+

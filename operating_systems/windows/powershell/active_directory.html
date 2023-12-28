@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Active Directory &#8212; notes 0.1 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/alabaster.css?v=039e1c02" />
+    <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js?v=e031e9a9"></script>
+    <script src="../../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=4825356b"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Get a list of details about log files" href="logs.html" />
+    <link rel="prev" title="Powershell" href="index.html" />
+   
+  <link rel="stylesheet" href="../../../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="active-directory">
+<h1>Active Directory<a class="headerlink" href="#active-directory" title="Permalink to this heading">¶</a></h1>
+<p>Interact with AD through powershell.
+It’s fun!</p>
+<section id="get-domain-admins">
+<h2>Get Domain Admins<a class="headerlink" href="#get-domain-admins" title="Permalink to this heading">¶</a></h2>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">Get-ADGroupMember &quot;Domain Admins&quot; | select name,distinguishedName</span>
+</pre></div>
+</div>
+</section>
+<section id="list-disabled-accounts">
+<h2>List disabled accounts<a class="headerlink" href="#list-disabled-accounts" title="Permalink to this heading">¶</a></h2>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">Search-ADAccount -AccountDisabled</span>
+</pre></div>
+</div>
+</section>
+<section id="sorted-by-last-logon-date">
+<h2>Sorted by last logon date<a class="headerlink" href="#sorted-by-last-logon-date" title="Permalink to this heading">¶</a></h2>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">Search-ADAccount -AccountDisabled -UsersOnly | Sort-Object lastlogondate</span>
+</pre></div>
+</div>
+</section>
+<section id="disabled-users">
+<h2>Disabled users<a class="headerlink" href="#disabled-users" title="Permalink to this heading">¶</a></h2>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">Get-ADUser -Filter {enabled -eq &quot;false&quot; -and objectclass -eq &quot;user&quot;} -properties modified | sort-object modified</span>
+</pre></div>
+</div>
+</section>
+<section id="another-list-of-domain-admins">
+<h2>Another list of domain admins<a class="headerlink" href="#another-list-of-domain-admins" title="Permalink to this heading">¶</a></h2>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">Get-ADGroup -Identity S-1-5-21-DOMAIN-512 | Get-ADGroupMember | Get-ADUser -Filter {enabled -eq &quot;false&quot;} -Properties *</span>
+</pre></div>
+</div>
+</section>
+<section id="list-users-who-haven-t-logged-in-in-over-90-days">
+<h2>List users who haven’t logged in in over 90 days<a class="headerlink" href="#list-users-who-haven-t-logged-in-in-over-90-days" title="Permalink to this heading">¶</a></h2>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span><span class="nv">Date</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">(</span>Get-Date<span class="o">)</span>.AddDays<span class="o">(</span>-90<span class="o">)</span>
+
+<span class="gp"># </span>Only<span class="w"> </span>list<span class="w"> </span>enabled<span class="w"> </span>users
+<span class="go">Get-ADUser -Filter {((Enabled -eq $true) -and (LastLogonDate -lt $Date))} -Properties LastLogonDate | select samaccountname, Name, LastLogonDate | Sort-Object LastLogonDate</span>
+</pre></div>
+</div>
+</section>
+<section id="list-domain-admins-sorted-by-last-logon-date">
+<h2>List Domain Admins sorted by last logon date<a class="headerlink" href="#list-domain-admins-sorted-by-last-logon-date" title="Permalink to this heading">¶</a></h2>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">Get-ADGroup &quot;Domain Admins&quot; | Get-ADGroupMember | Get-ADUser -Properties LastLogonDate | Select Name,SamAccountName,LastLogonDate,Enabled | Sort LastLogonDate</span>
+</pre></div>
+</div>
+<p>This one does <cite>-recurse</cite>, which I don’t know if it’s necessary.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">Get-ADGroupMember -Identity &quot;Domain Admins&quot; | foreach {Get-ADUser -Identity $_.distinguishedname -Properties displayname, samaccountname, lastlogondate | select displayname, samaccountname, lastlogondate, Enabled} | sort LastLogonDate</span>
+</pre></div>
+</div>
+</section>
+<section id="list-users-who-have-not-logged-in-within-30-days-and-disable-accounts">
+<h2>List users who have not logged in within 30 days and disable accounts<a class="headerlink" href="#list-users-who-have-not-logged-in-within-30-days-and-disable-accounts" title="Permalink to this heading">¶</a></h2>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">Search-ADAccount -AccountInactive -TimeSpan ([timespan]30d) -UsersOnly | Set-ADUser -Enabled $false -WhatIf</span>
+</pre></div>
+</div>
+</section>
+<section id="password-expiration">
+<h2>Password expiration<a class="headerlink" href="#password-expiration" title="Permalink to this heading">¶</a></h2>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">Get-ADUser -filter {Enabled -eq $True -and PasswordNeverExpires -eq $False} -Properties &quot;Display Name&quot;, &quot;msDS-UserPasswordExpiryTimeComputed&quot; -SearchBase &quot;CN=joshua nelson, CN=Users,DC=intelgd,DC=com&quot; | Select-Object -Property &quot;Displayname&quot;,@{Name=&quot;ExpiryDate&quot;;Expression={[datetime]::FromFileTime($_.&quot;msDS-UserPasswordExpiryTimeComputed&quot;)}}</span>
+</pre></div>
+</div>
+</section>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../../../index.html">notes</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../arm/index.html">arm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../db/index.html">databases</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../dns/index.html">DNS stuff</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../elk/index.html">elastic stuff</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../k8s/index.html">kubernetes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../openssh/index.html">OpenSSH</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../index.html">Operating Systems</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../linux/index.html">Linux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../openbsd/index.html">OpenBSD</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html">Windows</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../ossec/index.html">OSSEC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../rsyslogd/index.html">rsyslogd</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../ssl/index.html">ssl</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../stupid_unix_tricks/index.html">Stupid Unix Tricks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../tools/index.html">Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../vendor_stuff/index.html">Vendor Stuff</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../misc/index.html">misc</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../../index.html">Documentation overview</a><ul>
+  <li><a href="../../index.html">Operating Systems</a><ul>
+  <li><a href="../index.html">Windows</a><ul>
+  <li><a href="index.html">Powershell</a><ul>
+      <li>Previous: <a href="index.html" title="previous chapter">Powershell</a></li>
+      <li>Next: <a href="logs.html" title="next chapter">Get a list of details about log files</a></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+        <!-- your html code here -->
+	<div class="footer">
+		<em>This information has a good chance of being wrong, inconsistent, out of date, or just bad. Use at your own risk.
+		Feel free to notify me of any issues though.</em>
+	</div>
+
+
+  </body>
+</html>

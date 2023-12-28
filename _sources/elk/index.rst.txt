@@ -1,0 +1,19 @@
+=============
+elastic stuff
+=============
+
+Contents:
+
+.. toctree::
+   :maxdepth: 2
+
+   beats/index
+   elastic/index
+   logstash/index
+   monitoring/index
+   agent/index
+   setup
+   endpoint
+   read
+   docker/commands
+

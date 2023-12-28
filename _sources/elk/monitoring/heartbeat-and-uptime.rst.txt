@@ -1,0 +1,15 @@
+====================
+heartbeat and uptime
+====================
+
+
+heartbeat systemd service file
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+The service is `heartbeat-elastic.service` (instead of putting elastic first like they do for agent, they decided to put it after).
+
+.. code-block:: console
+
+   systemctl enable heartbeat-elastic.service
+   systemctl start heartbeat-elastic.service
+

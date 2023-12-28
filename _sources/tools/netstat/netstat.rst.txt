@@ -1,0 +1,22 @@
+=======
+netstat
+=======
+
+
+Check protocol statistics
+^^^^^^^^^^^^^^^^^^^^^^^^^
+
+udp:
+
+.. code-block:: console
+
+   netstat -s -p udp
+
+
+tcp:
+
+.. code-block:: console
+
+   netstat -s -p tcp
+
+

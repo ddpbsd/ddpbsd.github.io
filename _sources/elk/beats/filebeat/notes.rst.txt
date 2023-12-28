@@ -1,0 +1,16 @@
+
+========
+Filebeat
+========
+
+Added fields:
+^^^^^^^^^^^^^
+
+Filebeat appears to add some fields:
+
+* `host` - Not sure if it's the beats host or what
+
+* `source` - Log file that the messages are grabbed from
+
+There may be more, but these are what I have so far.
+

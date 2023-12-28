@@ -1,0 +1,21 @@
+
+======
+dmesgs
+======
+
+dmesgs for my OpenBSD systems.
+
+Contents:
+
+.. toctree::
+   :maxdepth: 2
+
+   arrakis
+   buzzell
+   ix
+   ipyr
+   junction   
+   jupiter
+   pine
+   tiny
+

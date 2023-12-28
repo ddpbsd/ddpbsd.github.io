@@ -1,0 +1,54 @@
+check_rc_ports
+==============
+
+
+
+run_netstat:
+^^^^^^^^^^^^
+
+`static int run_netstat(int proto, int port)`
+
+** PROCESS: **
+
+Uses netstat to check for a specific port.
+
+** RETURN VALUES: **
+
+`0` - port found
+`1` - port not found
+
+** ISSUES: **
+
+`netstat | grep` can be very intensive on busy systems.
+
+conn_port:
+^^^^^^^^^^
+
+`static int conn_port(int proto, int port)`
+
+** PROCESS: **
+
+Try to bind(2) to a port. If it is successful, the port is not opened
+by another process. Attempts to check both ipv4 and ipv6.
+
+** RETURN VALUES: **
+
+`0` - successful bind() to port
+`1` - unsuccessful bind()
+
+
+test_ports:
+^^^^^^^^^^^
+
+`static void test_ports(int proto, int *_errors, int *_total)`
+
+** PROCESS: **
+
+
+
+** RETURN VALUES: **
+
+
+
+
+

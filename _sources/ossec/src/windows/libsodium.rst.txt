@@ -1,0 +1,22 @@
+
+Compile the Windows agent with libsodium support
+------------------------------------------------
+
+
+Download the libsodium mingw release from: https://download.libsodium.org/libsodium/releases/
+
+Untar it in `ossec-hids-*/src/external/`
+
+
+.. code-block:: console
+
+    @@ -646,7 +650,7 @@ $(error Do not use 'winagent' directly, use 'TARGET=winagent')
+    endif
+    .PHONY: winagent
+    winagent:
+   -       ${MAKE} ${WINDOWS_BINS} CFLAGS="-DCLIENT -DWIN32 -I./${EXTERNAL_ZLIB}" LDFLAGS="-lwsock32 -lwevtapi -lshlwapi -lcomctl32 -lws2_32"
+   +       ${MAKE} ${WINDOWS_BINS} CFLAGS="-DCLIENT -DWIN32 -I./${EXTERNAL_ZLIB} -I./external/libsodium-win64/include -L./external/libsodium-win64/lib" LDFLAGS="-lwsock32 -lwevtapi -lshlwapi -lcomctl32 -lws2_32 -lsodium"
+           cd ${EXTERNAL_LUA}src/ && ${MAKE} CC=${MING_BASE}${CC} -f Makefile.mingw mingw
+           cp ${EXTERNAL_LUA}src/ossec-lua.exe win32/
+           cp ${EXTERNAL_LUA}src/ossec-luac.exe win32/
+

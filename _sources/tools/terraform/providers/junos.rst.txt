@@ -1,0 +1,18 @@
+
+
+junos provider
+
+Import an interface before configuring it
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Trying to configure an interface that already exists causes errors.
+So create the configuration, then import the interface.
+
+.. code-block:: console
+
+   terraform import junos_interface.interface16 "ge-0/0/16"
+
+.. warning::
+
+   `junos_interface` is apparently being deprecated.
+

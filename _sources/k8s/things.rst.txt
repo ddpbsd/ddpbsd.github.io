@@ -1,0 +1,75 @@
+======
+things
+======
+
+There are a lot of things in k8s.
+I have no idea what each one is yet.
+
+The `k8s glossary <https://kubernetes.io/docs/reference/glossary/fundamental=true>`_ has a lot of things.
+
+
+cluster
+^^^^^^^
+
+The collection of things that make the whole thing work.
+
+node
+^^^^
+
+Individual machines (virtual or physical) where containerzed applications (things) can run.
+
+kubelet
+^^^^^^^
+
+An agent that makes sure containers are running in a pod.
+
+kube-proxy
+^^^^^^^^^^
+
+A network proxy to maintain network rules.
+
+control plane
+^^^^^^^^^^^^^
+
+Manages the worker nodes and pods.
+
+kube-apiserver
+^^^^^^^^^^^^^^
+
+
+etcd
+^^^^
+
+
+kube-scheduler
+^^^^^^^^^^^^^^
+
+
+kube-controller-manager
+^^^^^^^^^^^^^^^^^^^^^^^
+
+
+cloud-controller-manager
+^^^^^^^^^^^^^^^^^^^^^^^^
+
+
+pods
+^^^^
+
+Represents a set of running containers.
+
+stateful sets
+^^^^^^^^^^^^^
+
+Not sure WTF they are just yet, but I spent way too much time trying to figure out how to stop some things in k8s.
+I really need to look for a glossary or something.
+
+services
+^^^^^^^^
+
+logs
+^^^^
+
+At least on my system, some logs are in `/var/log/pods`.
+
+

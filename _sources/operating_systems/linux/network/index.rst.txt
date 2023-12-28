@@ -1,0 +1,17 @@
+
+==========
+networking
+==========
+
+Contents:
+
+.. toctree::
+   :maxdepth: 2
+
+   commands
+   interfaces
+   ip
+   netplan
+   network_manager
+   vnstat
+

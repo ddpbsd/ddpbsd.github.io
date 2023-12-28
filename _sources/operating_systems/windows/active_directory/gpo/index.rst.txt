@@ -1,0 +1,15 @@
+====================
+Group Policy Objects
+====================
+
+Some GPO stuff.
+
+Contents:
+
+.. toctree::
+   :maxdepth: 2
+
+   certificates
+   client
+   gpo_cmd
+

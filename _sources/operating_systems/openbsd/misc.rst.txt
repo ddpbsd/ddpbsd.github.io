@@ -1,0 +1,11 @@
+
+Find unlinked files
+^^^^^^^^^^^^^^^^^^^
+
+This command will find open file descriptors that belong to unlinked files.
+(In case a program has a file open, but that file is deleted.)
+
+.. code-block:: console
+
+   fstat | grep -F '* -'
+

@@ -1,0 +1,15 @@
+
+=======
+systemd
+=======
+
+Contents:
+
+.. toctree::
+   :maxdepth: 2
+
+   journalctl
+   systemctl
+   
+      
+

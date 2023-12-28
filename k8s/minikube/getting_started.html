@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Getting started &#8212; notes 0.1 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../_static/alabaster.css?v=039e1c02" />
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js?v=e031e9a9"></script>
+    <script src="../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../_static/sphinx_highlight.js?v=4825356b"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="kubectl" href="kubectl.html" />
+    <link rel="prev" title="minikube" href="index.html" />
+   
+  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="getting-started">
+<h1>Getting started<a class="headerlink" href="#getting-started" title="Permalink to this heading">¶</a></h1>
+<section id="kubectl">
+<h2>kubectl<a class="headerlink" href="#kubectl" title="Permalink to this heading">¶</a></h2>
+<p>To run kubectl stuff, there needs to be <cite>–</cite> between <cite>kubectl</cite> and the rest of the command.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>minikube<span class="w"> </span>kubectl<span class="w"> </span>--<span class="w"> </span>COMMAND
+</pre></div>
+</div>
+<p>For example, to run the nginx example deployment, run this.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>minikube<span class="w">  </span>kubectl<span class="w"> </span>--<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span>https://k8s.io/examples/application/deployment.yaml
+</pre></div>
+</div>
+</section>
+<section id="get-details-about-deployment">
+<h2>Get details about deployment<a class="headerlink" href="#get-details-about-deployment" title="Permalink to this heading">¶</a></h2>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>minikube<span class="w"> </span>kubectl<span class="w"> </span>--<span class="w"> </span>describe<span class="w"> </span>deployment<span class="w"> </span>nginx-deployment
+
+<span class="go">Name:                   nginx-deployment</span>
+<span class="go">Namespace:              default</span>
+<span class="go">CreationTimestamp:      Fri, 24 Sep 2021 12:34:28 -0400</span>
+<span class="go">Labels:                 &lt;none&gt;</span>
+<span class="go">Annotations:            deployment.kubernetes.io/revision: 1</span>
+<span class="go">Selector:               app=nginx</span>
+<span class="go">Replicas:               2 desired | 2 updated | 2 total | 2 available | 0 unavailable</span>
+<span class="go">StrategyType:           RollingUpdate</span>
+<span class="go">MinReadySeconds:        0</span>
+<span class="go">RollingUpdateStrategy:  25% max unavailable, 25% max surge</span>
+<span class="go">Pod Template:</span>
+<span class="go">  Labels:  app=nginx</span>
+<span class="go">  Containers:</span>
+<span class="go">   nginx:</span>
+<span class="go">    Image:        nginx:1.14.2</span>
+<span class="go">    Port:         80/TCP</span>
+<span class="go">    Host Port:    0/TCP</span>
+<span class="go">    Environment:  &lt;none&gt;</span>
+<span class="go">    Mounts:       &lt;none&gt;</span>
+<span class="go">  Volumes:        &lt;none&gt;</span>
+<span class="go">Conditions:</span>
+<span class="go">  Type           Status  Reason</span>
+<span class="go">  ----           ------  ------</span>
+<span class="go">  Available      True    MinimumReplicasAvailable</span>
+<span class="go">  Progressing    True    NewReplicaSetAvailable</span>
+<span class="go">OldReplicaSets:  &lt;none&gt;</span>
+<span class="go">NewReplicaSet:   nginx-deployment-66b6c48dd5 (2/2 replicas created)</span>
+<span class="go">Events:</span>
+<span class="go">  Type    Reason             Age   From                   Message</span>
+<span class="go">  ----    ------             ----  ----                   -------</span>
+<span class="go">  Normal  ScalingReplicaSet  26m   deployment-controller  Scaled up replica set nginx-deployment-66b6c48dd5 to 2</span>
+</pre></div>
+</div>
+</section>
+<section id="list-deployments">
+<h2>List deployments<a class="headerlink" href="#list-deployments" title="Permalink to this heading">¶</a></h2>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>minikube<span class="w"> </span>kubectl<span class="w">  </span>--<span class="w"> </span>get<span class="w"> </span>deployments
+
+<span class="go">NAME               READY   UP-TO-DATE   AVAILABLE   AGE</span>
+<span class="go">nginx-deployment   2/2     2            2           138m</span>
+</pre></div>
+</div>
+</section>
+<section id="delete-deployment">
+<h2>Delete deployment<a class="headerlink" href="#delete-deployment" title="Permalink to this heading">¶</a></h2>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>minikube<span class="w"> </span>kubectl<span class="w">  </span>--<span class="w"> </span>delete<span class="w"> </span>deployment<span class="w"> </span>nginx-deployment
+</pre></div>
+</div>
+</section>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../../index.html">notes</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../arm/index.html">arm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../db/index.html">databases</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dns/index.html">DNS stuff</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../elk/index.html">elastic stuff</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">kubernetes</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../kubectl.html">kubectl</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">minikube</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../rancher.html">rancher</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../things.html">things</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../openssh/index.html">OpenSSH</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../operating_systems/index.html">Operating Systems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ossec/index.html">OSSEC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../rsyslogd/index.html">rsyslogd</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ssl/index.html">ssl</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../stupid_unix_tricks/index.html">Stupid Unix Tricks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tools/index.html">Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../vendor_stuff/index.html">Vendor Stuff</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../misc/index.html">misc</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../index.html">Documentation overview</a><ul>
+  <li><a href="../index.html">kubernetes</a><ul>
+  <li><a href="index.html">minikube</a><ul>
+      <li>Previous: <a href="index.html" title="previous chapter">minikube</a></li>
+      <li>Next: <a href="kubectl.html" title="next chapter">kubectl</a></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+        <!-- your html code here -->
+	<div class="footer">
+		<em>This information has a good chance of being wrong, inconsistent, out of date, or just bad. Use at your own risk.
+		Feel free to notify me of any issues though.</em>
+	</div>
+
+
+  </body>
+</html>

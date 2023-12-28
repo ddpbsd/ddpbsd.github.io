@@ -1,0 +1,43 @@
+===============
+docker commands
+===============
+
+Bootstrap the host
+^^^^^^^^^^^^^^^^^^
+
+.. code-block:: console
+
+   sysctl -w vm.max_map_count=262144
+
+
+Create a shared volume for generated certificates
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: console
+
+   docker volume create certs
+
+Create an elasticsearch network
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: console
+
+   docker network create elastic
+
+
+Start elasticsearch
+^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: console
+
+   docker run --name es01 --net elastic -p 9200:9200 -m 512m -e ES_JAVA_OPTS="-Xms512m -Xmx512m" -it elasticsearch:8.4.3
+
+
+Start kibana
+^^^^^^^^^^^^
+
+.. code-block:: console
+
+   docker run --name kibana --net elastic -p 5601:5601 -m 256m -e ELASTICSEARCH_HOSTS="https://es01:9200" -e ENROLLMENT_TOKEN=blahblahblah -it kibana:8.4.3
+
+

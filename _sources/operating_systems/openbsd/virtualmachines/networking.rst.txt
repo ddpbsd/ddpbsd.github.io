@@ -1,0 +1,12 @@
+Networking
+==========
+
+The OpenBSD `FAQ entry <http://www.openbsd.org/faq/faq6.html#VMMnet>`_
+has some information, but I need more.
+
+`This <http://blog.hermes-technology.de/openbsd/server/virtualmachine/network/2017/06/12/vmd-for-a-virtual-server-network.html>`_
+has more information as well.
+
+Use a `veb(4)` to do bridged networking.
+
+

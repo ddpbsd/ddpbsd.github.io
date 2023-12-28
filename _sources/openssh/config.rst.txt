@@ -1,0 +1,12 @@
+
+
+
+Automatically add ssh keys to ssh-agent
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+In `~/.ssh/config` add:
+
+.. code-block:: console
+
+   AddKeysToAgent yes
+

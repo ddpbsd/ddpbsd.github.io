@@ -1,0 +1,39 @@
+
+Linux has removed a bunch of useful commands.
+=============================================
+
+Where is netstat?
+^^^^^^^^^^^^^^^^^
+
+It's now `ss`. Goot luck. I still don't know how to do `-pan`.
+
+.. code-block:: console
+
+   ss -l4n
+
+
+This gives more than I usually want, but it seems to give me more open ports than the above command.
+
+`-l` gives the listening ports.
+
+.. code-block:: console
+
+   sudo ss -tulpn
+
+View the current connections
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: console
+
+   sudo ss -tpn
+
+ifconfig is broken?
+^^^^^^^^^^^^^^^^^^^
+
+No, they just don't install it.
+Use `ip` instead. Good luck.
+
+.. code-block:: console
+
+   ip addr
+

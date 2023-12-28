@@ -1,0 +1,9 @@
+
+For a serial connection
+^^^^^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: console
+
+   9 - ground
+   8 - connect to tx
+   7 - connect to rx

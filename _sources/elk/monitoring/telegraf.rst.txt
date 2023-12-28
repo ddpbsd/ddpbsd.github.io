@@ -1,0 +1,56 @@
+========
+telegraf
+========
+
+`telegraf <https://www.influxdata.com/time-series-platform/telegraf/>`_
+has support for monitoring elasticsearch.
+
+
+Example config
+^^^^^^^^^^^^^^
+
+There are many more options, including auth and tls.
+But this is a very basic configuration.
+
+.. code-block:: yaml
+
+   [[inputs.elasticsearch]]
+     servers = ["http://elastic.example.com"]
+     http_timeout = "10s"
+     local = false
+     cluster_health = true
+     cluster_stats = true
+
+Roles for telegraf
+^^^^^^^^^^^^^^^^^^
+
+These roles allow telegraf to monitor elasticsearch itself,
+as well as indexes.
+
+.. code-block:: console
+
+   remote_monitoring_agent, grafana, icinga-log-check
+
+
+grafana role
+^^^^^^^^^^^^
+
+Permissions for monitoring elasticsearch indexes.
+
+Index privileges necessary
+
+.. code-block:: console
+
+   index read view_index_metadata
+
+icinga-log-check role
+^^^^^^^^^^^^^^^^^^^^^
+
+Permissions for monitoring elasticsearch indexes.
+
+Index privileges necessary
+
+.. code-block:: console
+
+   read view_index_metadata
+

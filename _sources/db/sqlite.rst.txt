@@ -1,0 +1,11 @@
+======
+sqlite
+======
+
+import from cli
+^^^^^^^^^^^^^^^
+
+.. code-block:: console
+
+   sqlite3 --csv database.db ".import file.csv table_name"
+

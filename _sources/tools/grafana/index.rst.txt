@@ -1,0 +1,16 @@
+.. _tools_grafana:
+
+=======
+grafana
+=======
+
+Contents:
+
+.. toctree::
+   :maxdepth: 2
+
+   ldap
+   elasticsearch/free_space
+   influxdb
+   prometheus
+

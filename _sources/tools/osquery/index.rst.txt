@@ -1,0 +1,13 @@
+
+=======
+osquery
+=======
+
+Contents:
+
+.. toctree::
+   :maxdepth: 2
+
+   tables
+   queries      
+

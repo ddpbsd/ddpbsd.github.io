@@ -1,0 +1,9 @@
+
+
+View the GPO on a client computer
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: console
+
+   rsop.msc
+

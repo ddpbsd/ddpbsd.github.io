@@ -1,0 +1,84 @@
+There's probably a better way to do everything I'm doing here.
+
+tags
+^^^^
+
+Tags seem to be important inside the logstash configuration file.
+Something I've started doing is tagging events that come in with `parse`.
+Then in the filter I remove the tag.
+
+Example:
+
+.. code-block:: console
+
+   input {
+      file {
+         path => "/var/log/logfile"
+         tags => "parse"
+      }
+   }
+   filter {
+      if "parse" in [tags] and [message] =~ "Something something" {
+          grok {
+             match => {
+                "message" => "GROK STUFF"
+             }
+             remove_tag => "parse"
+          }
+      }
+      
+   }
+
+
+This allows me to use multiple grok parsers for a message without (hopefully)
+going through each one for each message.
+
+Example config
+^^^^^^^^^^^^^^  
+  
+.. code-block:: console
+  
+     input {
+      syslog {
+          port => "2514"
+          type => "generic"
+      }
+  
+      tcp {
+          port => "2515"
+          type => "squid-access"
+      }
+  
+  }
+  
+  
+  filter {
+      if [type] == 'squid-access' {
+          grok {
+            match => {
+                "message" => "%{POSINT:timestamp}.%{WORD:timestamp_ms}\s+%{NUMBER:response_time} %{IPORHOST:src_ip} %{WORD:squid_request_status}/%{NUMBER:http_status_code} %{NUMBER:reply_size_include_header} %{WORD:http_method} %{NOTSPA
+  CE:request_url} %{NOTSPACE:user} %{WORD:squid}/%{IP:server_ip} %{NOTSPACE:content_type}"
+            }
+          }
+      }
+  }
+  
+  
+  output {
+      if [type] == 'generic' {
+          elasticsearch {
+              index => "logstash-%{+YYYY.MM.dd}"
+          }
+      }
+  
+      if [type] == 'squid-access' {
+          elasticsearch {
+              index => "squid-access"
+          }
+      }
+  
+  
+  }
+  
+  
+  

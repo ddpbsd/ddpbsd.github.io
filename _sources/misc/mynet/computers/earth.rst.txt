@@ -1,0 +1,19 @@
+.. _misc_mynet_systems_earth:
+
+earth
+=====
+
+Going to use it as a KVM/lxd host.
+Just set it up though, so nothing running on it at the moment.
+
+Currently running
+^^^^^^^^^^^^^^^^^
+
+* Nothing
+
+Hardware
+^^^^^^^^
+
+Dell Poweredge T310
+
+

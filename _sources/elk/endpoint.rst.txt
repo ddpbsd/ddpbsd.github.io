@@ -1,0 +1,13 @@
+========
+endpoint
+========
+
+Elastic Agent
+^^^^^^^^^^^^^
+
+Elastic Endpoint Security
+^^^^^^^^^^^^^^^^^^^^^^^^^
+
+systemd unit is `/etc/systemd/system/ElasticEndpoint.service`
+
+

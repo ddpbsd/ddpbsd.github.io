@@ -1,0 +1,14 @@
+
+Installing it on windows
+^^^^^^^^^^^^^^^^^^^^^^^^
+
+Installed python via the microsoft store, then `pip install pyinstaller`.
+It worked, and put pyinstaller in:
+
+.. code-block:: console
+
+   C:\Users\danp\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\Scripts
+
+Which isn't in my PATH or anything.
+Lots of fun.
+

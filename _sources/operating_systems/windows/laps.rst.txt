@@ -1,0 +1,19 @@
+
+LAPS
+====
+
+https://technet.microsoft.com/en-us/mt227395.aspx
+
+
+Delegate read to a user
+^^^^^^^^^^^^^^^^^^^^^^^
+
+To allow a user to read the local admin paasswords for a group of computers,
+run:
+
+.. code-block:: console
+
+   Set-AdmPwdReadPasswordPermission -Identity "COMPUTER.GROUP" -AllowedPrincipals "USER.NAME"
+
+`COMPUTER.GROUP` is the grouping for the computers in Active Directory Users and Computers.
+

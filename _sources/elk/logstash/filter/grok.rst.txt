@@ -1,0 +1,21 @@
+
+grok documentation
+^^^^^^^^^^^^^^^^^^
+
+.. _elk_logstash_grok:
+
+The `grok <https://www.elastic.co/guide/en/logstash/current/plugins-filters-grok.html>`_ documentation almost
+makes sense to me.  
+
+
+
+optional fields:
+^^^^^^^^^^^^^^^^
+
+.. code-block:: console
+
+
+  (stuff=%{WORD:value})?
+
+
+

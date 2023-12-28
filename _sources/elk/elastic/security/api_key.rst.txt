@@ -1,0 +1,99 @@
+=======
+api_key
+=======
+
+A quick walk-through for using an api_key for authentication.
+
+Preparing elasticsearch
+^^^^^^^^^^^^^^^^^^^^^^^
+
+At a minimum the following should be set:
+
+.. code-block:: console
+
+   xpack.security.enabled: true
+   xpack.security.authc.api_key.enabled: true
+
+Realistically, tls should be enabled as well.
+But I'm just testing at the moment.
+
+
+Users
+^^^^^
+
+When `xpack.security.enabled` is turned on, there needs to be a user that can authenticate to elasticsearch.
+Make sure there is one.
+
+This will add a user:
+
+.. code-block:: console
+
+   bin/elasticsearch-users adduser USERNAME -r ROLE
+
+This will prompt for a password, but the `-p` flag allows you to set it in the command.
+The `ROLE` might need to be `superuser` for this initial user.
+The `users <./users.html>`_ page will have more information on creating additional users via the API.
+
+
+Creating api keys
+^^^^^^^^^^^^^^^^^
+
+A `GET` to `/_security/api_key` can return an API key.
+The body of the request needs to include some information:
+
+.. code-block:: console
+
+   {
+     "name": "name-of-key",
+     "expiration: "1d",
+     "role_descriptors": {
+       "descriptive_name": {
+         "cluster": ["name-of-cluster"],
+         "index": [
+           {
+             "names": ["names","of","indexes"],
+             "privileges": ["read"]
+           }
+         ]
+       }
+     }
+   }
+
+`role_descriptors` and `expiration` are optional.
+If `role_descriptions` is absent, the current user's permissions are used.
+If an api key is used to authenticate to create an api key, `role_descriptors` should not be included.
+
+Multiple `descriptors` can be listed under `role_descriptors`.
+`Index privileges <https://www.elastic.co/guide/en/elasticsearch/reference/current/security-privileges.html#privileges-list-indices>`_ apply to all indices in `names`.
+
+If successful, the request should return something like:
+
+.. code-block:: json
+
+   {                                          
+     "id": "dbCzLXwBkbNauQGnNBBd",   
+     "name": "test1-api",           
+     "expiration": 1632857891532,
+     "api_key": "S_EA77YvQCiG4DlHu_6Dsw"
+   }
+
+Using the api_key
+^^^^^^^^^^^^^^^^^
+
+The `id` and `api_key` returned need to be combined and base64 encoded to be used. 
+The format is `id:api_key`, and there should be no new line.
+
+.. code-block:: console
+
+   echo -n 'dbCzLXwBkbNauQGnNBBd:S_EA77YvQCiG4DlHu_6Dsw' | base64
+
+
+With this, set an `Authorization` header:
+
+.. code-block:: console
+
+   curl -s -H 'Authorization: ApiKey BASE664_ENCODED_KEY' http://127.0.0.1:9200/_cluster/health
+
+
+
+

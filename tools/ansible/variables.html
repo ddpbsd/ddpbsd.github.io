@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Vault Variables &#8212; notes 0.1 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../_static/alabaster.css?v=039e1c02" />
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js?v=e031e9a9"></script>
+    <script src="../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../_static/sphinx_highlight.js?v=4825356b"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="awx" href="awx/index.html" />
+    <link rel="prev" title="Get setup output" href="ansible-cmdb.html" />
+   
+  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="vault-variables">
+<h1>Vault Variables<a class="headerlink" href="#vault-variables" title="Permalink to this heading">¶</a></h1>
+<p>In the playbook add <cite>vars:</cite> followed by the variables to be defined.
+These can be <cite>ansible-vault</cite> encrypted strings.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">---</span>
+<span class="go">- name: a sample playbook</span>
+<span class="go">  hosts: localhost</span>
+<span class="go">  become: yes</span>
+<span class="go">  remote_user: stevc</span>
+
+<span class="go">  vars:</span>
+<span class="go">    sample_variable: !vault |</span>
+<span class="gp">           $</span>ANSIBLE_VAULT<span class="p">;</span><span class="m">1</span>.1<span class="p">;</span>AES256
+<span class="go">           STUFF STUFF STUFF</span>
+
+<span class="go">  tasks:</span>
+<span class="go">    - do stuff</span>
+</pre></div>
+</div>
+</section>
+<section id="playbook-specific-vaults">
+<h1>Playbook specific vaults<a class="headerlink" href="#playbook-specific-vaults" title="Permalink to this heading">¶</a></h1>
+<p>Use <cite>vars_files</cite> to specify a vault for sensitive variables.</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nn">---</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">hosts</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">localhost</span>
+<span class="w">  </span><span class="nt">user</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ansible</span>
+
+<span class="w">  </span><span class="nt">vars_files</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">vars/vault.yml</span>
+
+<span class="w">  </span><span class="nt">vars</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">variable1</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">test</span>
+</pre></div>
+</div>
+</section>
+<section id="special-variables">
+<h1>Special variables<a class="headerlink" href="#special-variables" title="Permalink to this heading">¶</a></h1>
+<p><cite>ansible special variables &lt;https://docs.ansible.com/ansible/latest/reference_appendices/special_variables.html&gt;</cite></p>
+<p>Special nod to <cite>inventory_hostname</cite> and <cite>inventory_hostname_short</cite></p>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../../index.html">notes</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../arm/index.html">arm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../db/index.html">databases</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dns/index.html">DNS stuff</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../elk/index.html">elastic stuff</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../k8s/index.html">kubernetes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../openssh/index.html">OpenSSH</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../operating_systems/index.html">Operating Systems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ossec/index.html">OSSEC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../rsyslogd/index.html">rsyslogd</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ssl/index.html">ssl</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../stupid_unix_tricks/index.html">Stupid Unix Tricks</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Tools</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">ansible</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../certstrap/index.html">certstrap</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../curl/http_codes.html">Output http code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dns/index.html">dns</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../freeradius/index.html">FreeRadius</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../git/index.html">git</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gpg/index.html">gpg</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grafana/index.html">grafana</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../java/index.html">Java</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../jq.html">jq</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ldap/index.html">ldap</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../messaging/index.html">Messaging</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../monitoring/index.html">Monitoring Tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../netstat/index.html">Tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nmap/index.html">discovery-ignore-rst</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../opensmtpd/index.html">opensmtpd</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../osquery/index.html">osquery</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../packer/index.html">HashiCorp packer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../perl/index.html">Perl</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../prometheus/index.html">prometheus</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../python/index.html">Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../steampipe/index.html">steampipe</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../su.html">su</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tcpdump/index.html">tcpdump</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tmux/index.html">tmux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vim/index.html">vim</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../virtualization/index.html">Virtualization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x11/index.html">x11</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../retired/index.html">Retired</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../postfix/index.html">postfix</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chromium/headless.html">headless on openbsd</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chromium/headless.html#print-to-pdf">Print to pdf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../terraform/index.html">terraform/opentofu</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../vendor_stuff/index.html">Vendor Stuff</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../misc/index.html">misc</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../index.html">Documentation overview</a><ul>
+  <li><a href="../index.html">Tools</a><ul>
+  <li><a href="index.html">ansible</a><ul>
+      <li>Previous: <a href="ansible-cmdb.html" title="previous chapter">Get setup output</a></li>
+      <li>Next: <a href="awx/index.html" title="next chapter">awx</a></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+        <!-- your html code here -->
+	<div class="footer">
+		<em>This information has a good chance of being wrong, inconsistent, out of date, or just bad. Use at your own risk.
+		Feel free to notify me of any issues though.</em>
+	</div>
+
+
+  </body>
+</html>

@@ -1,0 +1,14 @@
+
+==============
+Hardware Notes
+==============
+
+
+Contents:
+
+.. toctree::
+   :maxdepth: 2
+
+   usb_ethernet
+   usbdevs
+

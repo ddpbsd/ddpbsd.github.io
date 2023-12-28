@@ -1,0 +1,49 @@
+
+======
+shards
+======
+
+Get list of shards
+^^^^^^^^^^^^^^^^^^
+
+.. code-block:: console
+
+   GET /_cat/shards?v
+
+Get a list of UNASSIGNED shards
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: console
+
+   curl -XGET 'http://elastic.example.com:9200/_cat/shards?h=index,shard,prirep,state,unassigned.reason' | grep UNASSIGNED
+
+Sort by node and then size (desc)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: console
+
+   GET /_cat/shards?v&s=node,store
+
+Re-route failed shards
+^^^^^^^^^^^^^^^^^^^^^^
+
+If a shard is `UNASSIGNED ALLOCATION_FAILED` run the following to retry the reroute:
+
+.. code-block:: console
+
+   curl -XPOST 'http://elastic.example.com:9200/_cluster/reroute?retry_failed=true'
+
+Enable shard allocation
+^^^^^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: console
+
+   curl -X PUT "localhost:9200/_cluster/settings?pretty" -H 'Content-Type: application/json' -d'
+   {
+     "transient" : {
+       "cluster.routing.allocation.enable" : "all"
+     }
+   }
+   '
+
+

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>pledge(2) &#8212; notes 0.1 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/alabaster.css?v=039e1c02" />
+    <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js?v=e031e9a9"></script>
+    <script src="../../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=4825356b"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="unveil(2)" href="unveil.html" />
+    <link rel="prev" title="pledge(2) and unveil(2)" href="index.html" />
+   
+  <link rel="stylesheet" href="../../../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="pledge-2">
+<span id="operating-systems-openbsd-pledge-pledge"></span><h1>pledge(2)<a class="headerlink" href="#pledge-2" title="Permalink to this heading">¶</a></h1>
+<section id="javascript">
+<h2>Javascript:<a class="headerlink" href="#javascript" title="Permalink to this heading">¶</a></h2>
+<p><a class="reference external" href="https://www.npmjs.com/package/node-pledge">node-pledge</a></p>
+</section>
+<section id="perl">
+<h2>Perl:<a class="headerlink" href="#perl" title="Permalink to this heading">¶</a></h2>
+<p><a class="reference external" href="http://cvsweb.openbsd.org/cgi-bin/cvsweb/src/gnu/usr.bin/perl/cpan/OpenBSD-Pledge/">by Andrew Fresh (mirror)</a></p>
+<p><a class="reference external" href="https://github.com/rfarr/Unix-Pledge">by rfarr</a></p>
+</section>
+<section id="python">
+<h2>Python<a class="headerlink" href="#python" title="Permalink to this heading">¶</a></h2>
+<p><a class="reference external" href="https://github.com/jarmani/py-openbsd-pledge">https://github.com/jarmani/py-openbsd-pledge</a></p>
+</section>
+<section id="lua">
+<h2>Lua<a class="headerlink" href="#lua" title="Permalink to this heading">¶</a></h2>
+<p><a class="reference external" href="https://github.com/n0la/lua-openbsd">https://github.com/n0la/lua-openbsd</a></p>
+</section>
+<section id="haskell">
+<h2>Haskell<a class="headerlink" href="#haskell" title="Permalink to this heading">¶</a></h2>
+<p><a class="reference external" href="http://openbsd-archive.7691.n7.nabble.com/pledge-2-binding-for-Haskell-td287889.html">http://openbsd-archive.7691.n7.nabble.com/pledge-2-binding-for-Haskell-td287889.html</a></p>
+</section>
+<section id="golang">
+<h2>golang<a class="headerlink" href="#golang" title="Permalink to this heading">¶</a></h2>
+<p><a class="reference external" href="https://github.com/ylih/extrasys">https://github.com/ylih/extrasys</a></p>
+</section>
+<section id="c">
+<h2>c#<a class="headerlink" href="#c" title="Permalink to this heading">¶</a></h2>
+<p><a class="reference external" href="https://github.com/NattyNarwhal/pledge.cs">https://github.com/NattyNarwhal/pledge.cs</a></p>
+</section>
+<section id="rust">
+<h2>Rust<a class="headerlink" href="#rust" title="Permalink to this heading">¶</a></h2>
+<p>I guess the included file is gone?</p>
+</section>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../../../index.html">notes</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../arm/index.html">arm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../db/index.html">databases</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../dns/index.html">DNS stuff</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../elk/index.html">elastic stuff</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../k8s/index.html">kubernetes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../openssh/index.html">OpenSSH</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../index.html">Operating Systems</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../linux/index.html">Linux</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html">OpenBSD</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../windows/index.html">Windows</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../ossec/index.html">OSSEC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../rsyslogd/index.html">rsyslogd</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../ssl/index.html">ssl</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../stupid_unix_tricks/index.html">Stupid Unix Tricks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../tools/index.html">Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../vendor_stuff/index.html">Vendor Stuff</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../misc/index.html">misc</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../../index.html">Documentation overview</a><ul>
+  <li><a href="../../index.html">Operating Systems</a><ul>
+  <li><a href="../index.html">OpenBSD</a><ul>
+  <li><a href="index.html">pledge(2) and unveil(2)</a><ul>
+      <li>Previous: <a href="index.html" title="previous chapter">pledge(2) and unveil(2)</a></li>
+      <li>Next: <a href="unveil.html" title="next chapter">unveil(2)</a></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+        <!-- your html code here -->
+	<div class="footer">
+		<em>This information has a good chance of being wrong, inconsistent, out of date, or just bad. Use at your own risk.
+		Feel free to notify me of any issues though.</em>
+	</div>
+
+
+  </body>
+</html>

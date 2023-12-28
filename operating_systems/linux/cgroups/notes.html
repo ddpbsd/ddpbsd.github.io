@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>View available cgroups &#8212; notes 0.1 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/alabaster.css?v=039e1c02" />
+    <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js?v=e031e9a9"></script>
+    <script src="../../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=4825356b"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Ubuntu" href="../ubuntu/index.html" />
+    <link rel="prev" title="systemctl enable SOMETHING.something: “Failed to execute operation: No such file or directory”" href="../systemd/systemctl.html" />
+   
+  <link rel="stylesheet" href="../../../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="view-available-cgroups">
+<h1>View available cgroups<a class="headerlink" href="#view-available-cgroups" title="Permalink to this heading">¶</a></h1>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">tiny:~$ </span>cat<span class="w"> </span>/proc/cgroups
+<span class="gp">#</span>subsys_name<span class="w">    </span>hierarchy<span class="w">       </span>num_cgroups<span class="w">     </span>enabled
+<span class="go">cpuset  0       1       1</span>
+<span class="go">cpu     0       1       1</span>
+<span class="go">cpuacct 0       1       1</span>
+<span class="go">blkio   0       1       1</span>
+<span class="go">memory  0       1       1</span>
+<span class="go">devices 0       1       1</span>
+<span class="go">freezer 0       1       1</span>
+<span class="go">net_cls 0       1       1</span>
+<span class="go">perf_event      0       1       1</span>
+<span class="go">net_prio        0       1       1</span>
+<span class="go">hugetlb 0       1       1</span>
+<span class="go">pids    0       1       1</span>
+</pre></div>
+</div>
+</section>
+<section id="cpuset">
+<h1>cpuset<a class="headerlink" href="#cpuset" title="Permalink to this heading">¶</a></h1>
+<p>If it’s mounted, check the available cpusets.
+(It looks more impressive with more CPUs, so I faked the output.)</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">[ddp@fed33 cgroup]$ </span>cat<span class="w"> </span>/sys/fs/cgroup/cpuset.cpus.effective
+<span class="go">0-2</span>
+</pre></div>
+</div>
+</section>
+<section id="links">
+<h1>Links<a class="headerlink" href="#links" title="Permalink to this heading">¶</a></h1>
+<p><a class="reference external" href="https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/resource_management_guide/chap-introduction_to_control_groups">RH docs</a></p>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../../../index.html">notes</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../arm/index.html">arm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../db/index.html">databases</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../dns/index.html">DNS stuff</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../elk/index.html">elastic stuff</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../k8s/index.html">kubernetes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../openssh/index.html">OpenSSH</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../index.html">Operating Systems</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html">Linux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../openbsd/index.html">OpenBSD</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../windows/index.html">Windows</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../ossec/index.html">OSSEC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../rsyslogd/index.html">rsyslogd</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../ssl/index.html">ssl</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../stupid_unix_tricks/index.html">Stupid Unix Tricks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../tools/index.html">Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../vendor_stuff/index.html">Vendor Stuff</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../misc/index.html">misc</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../../index.html">Documentation overview</a><ul>
+  <li><a href="../../index.html">Operating Systems</a><ul>
+  <li><a href="../index.html">Linux</a><ul>
+      <li>Previous: <a href="../systemd/systemctl.html" title="previous chapter">systemctl enable SOMETHING.something: “Failed to execute operation: No such file or directory”</a></li>
+      <li>Next: <a href="../ubuntu/index.html" title="next chapter">Ubuntu</a></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+        <!-- your html code here -->
+	<div class="footer">
+		<em>This information has a good chance of being wrong, inconsistent, out of date, or just bad. Use at your own risk.
+		Feel free to notify me of any issues though.</em>
+	</div>
+
+
+  </body>
+</html>

@@ -1,0 +1,14 @@
+.. _operating_systems_linux_network_interfaces:
+
+
+Set promisc mode:
+^^^^^^^^^^^^^^^^^
+
+.. code-block:: console
+
+   auto eth1
+   iface eth1 inet manual
+      up ifconfig eth1 promisc up
+      down ifconfig eth1 promisc down
+
+

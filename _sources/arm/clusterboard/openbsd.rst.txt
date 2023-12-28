@@ -1,0 +1,56 @@
+
+
+=======
+OpenBSD
+=======
+
+None of this worked. Will get back to it eventually.
+
+
+Load the dtb
+^^^^^^^^^^^^
+
+From Jonathan Gray on an OpenBSD mailing list.
+https://marc.info/?l=openbsd-misc&m=152363766318429&w=2
+
+.. code-block:: console
+
+
+   The sopine U-Boot image does not currently include the sopine device 
+   tree as there isn't a sopine device tree in U-Boot. 
+
+   Until that changes, on the msdos/efi partition create an 'allwinner' 
+   directory, install the dtb port and copy 
+   /usr/local/share/dtb/arm64/allwinner/sun50i-a64-sopine-baseboard.dtb 
+   to 
+   allwinner/sun50i-a64-pine64-plus.dtb 
+
+   or to a different path and change fdtfile in the U-Boot environment. 
+
+
+Random
+^^^^^^
+
+.. code-block:: console
+
+   # pwd
+   /usr/local/share/u-boot/sopine_baseboard
+   ix# ls
+   sunxi-spl.bin               u-boot                      u-boot-sunxi-with-spl.bin   u-boot.bin                  u-boot.img                  u-boot.itb
+   ix# dd if=./u-boot-sunxi-with-spl.bin of=/dev/rsd4c bs=1024 seek=8
+   dd: /dev/rsd4c: Invalid argument
+   546+1 records in
+   546+0 records out
+   559104 bytes transferred in 0.429 secs (1301555 bytes/sec)
+   ix# mount /dev/sd4i /mnt
+   ix# cd /mnt
+   ix# ls
+   System Volume Information   bcm2710-rpi-3-b.dtb         config.txt                  old                         u-boot.bin
+   allwinner                   bcm2710-rpi-cm3.dtb         efi                         pine64
+   bcm2710-rpi-3-b-plus.dtb    bootcode.bin                fixup.dat                   start.elf
+   ix# cd allwinner/
+   ix# ls
+   sun50i-a64-pine64-plus.dtb       sun50i-a64-pine64.dtb            sun50i-a64-sopine-baseboard.dtb  sun50i-h6-pine-h64.dtb
+   ix# cp /usr/local/share/dtb/arm64/allwinner/sun50i-a64-sopine-baseboard.dtb sun50i-a64-pine64-plus.dtb
+ 
+

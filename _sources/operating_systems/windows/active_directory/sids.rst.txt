@@ -1,0 +1,6 @@
+Common SIDS
+^^^^^^^^^^^
+
+`List <https://support.microsoft.com/en-us/help/243330/well-known-security-identifiers-in-windows-operating-systems>`_
+of common SIDS in an active directory environment.
+

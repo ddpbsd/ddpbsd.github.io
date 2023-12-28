@@ -1,0 +1,206 @@
+Linux LVM is complicated alchemy. It's entirely possible this is very wrong.
+
+`Physical Volumes` (PV) consist of a group of physical disks (disks, partitions, or LUNs).
+A `Volume Group` (VG) consists of some number of PVs.
+`Logical Volumes` are virtual disk partitions on top of the VG.
+
+
+.. note::
+
+   Some of this was taken from
+   `howtogeek <http://www.howtogeek.com/howto/40702/how-to-manage-and-use-lvm-logical-volume-management-in-ubuntu/>`_
+   The instructions there give a lot more detail.
+
+
+
+View current lvm info
+^^^^^^^^^^^^^^^^^^^^^
+
+
+.. code-block:: console
+
+   root@buzzell:/var/VM# pvdisplay
+     --- Physical volume ---
+     PV Name               /dev/sda3
+     VG Name               buzzell-vg
+     PV Size               28.84 GiB / not usable 4.00 MiB
+     Allocatable           yes (but full)
+     PE Size               4.00 MiB
+     Total PE              7382
+     Free PE               0
+     Allocated PE          7382
+     PV UUID               qeoUD3-Yj11-Z7Jl-kSkR-uo4j-XTXz-OF3y4g
+
+     --- Physical volume ---
+     PV Name               /dev/sdb
+     VG Name               buzzell-vg
+     PV Size               149.01 GiB / not usable 3.89 MiB
+     Allocatable           yes
+     PE Size               4.00 MiB
+     Total PE              38146
+     Free PE               2306
+     Allocated PE          35840
+     PV UUID               3SCOg4-Wr50-Lped-6KvB-taJE-KhUd-innUoN
+
+
+
+Create a partition
+^^^^^^^^^^^^^^^^^^
+
+Apparently not always necessary or something.
+
+.. code-block:: console
+
+   # fdisk /dev/sdb
+
+
+Create a physical volume
+^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: console
+
+   # pvcreate /dev/sdb1
+
+
+Add to the volume group
+^^^^^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: console
+
+   # lvs
+   # vgextend buzzell-vg /dev/sdb1
+
+Create a logical volume
+^^^^^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: console
+
+   # lvcreate -L 50G -n var buzzell-vg
+
+Format and Mount
+^^^^^^^^^^^^^^^^
+
+.. code-block:: console
+
+   # mkfs -t ext4 /dev/mapper/buzzell--vg-var
+   # mount /dev/mapper/buzzell--vg-var /mnt
+
+Display information about a volume group
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: console
+
+   root@buzzell:/var/VM# vgdisplay
+     --- Volume group ---
+     VG Name               buzzell-vg
+     System ID
+     Format                lvm2
+     Metadata Areas        2
+     Metadata Sequence No  9
+     VG Access             read/write
+     VG Status             resizable
+     MAX LV                0
+     Cur LV                3
+     Open LV               3
+     Max PV                0
+     Cur PV                2
+     Act PV                2
+     VG Size               177.84 GiB
+     PE Size               4.00 MiB
+     Total PE              45528
+     Alloc PE / Size       20182 / 78.84 GiB
+     Free  PE / Size       25346 / 99.01 GiB
+     VG UUID               bPlGsE-Vmza-glR9-1fDd-SXtX-rR0A-F72a24
+
+
+Alternatives
+^^^^^^^^^^^^
+
+`pvs`, `vgs`, `lvs`
+
+Display logical volumes
+^^^^^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: console
+
+   root@buzzell:/var/VM# lvdisplay
+     --- Logical volume ---
+     LV Path                /dev/buzzell-vg/root
+     LV Name                root
+     VG Name                buzzell-vg
+     LV UUID                QLwq48-72bW-TzQ9-g10P-rim2-cmwo-7CcoVk
+     LV Write Access        read/write
+     LV Creation host, time buzzell, 2016-09-05 19:22:25 -0400
+     LV Status              available
+     # open                 1
+     LV Size                20.93 GiB
+     Current LE             5359
+     Segments               1
+     Allocation             inherit
+     Read ahead sectors     auto
+     - currently set to     256
+     Block device           252:0
+
+     --- Logical volume ---
+     LV Path                /dev/buzzell-vg/swap_1
+     LV Name                swap_1
+     VG Name                buzzell-vg
+     LV UUID                ui1amd-cA0f-bPrC-pGiJ-IUG4-Qc4L-qRlQGQ
+     LV Write Access        read/write
+     LV Creation host, time buzzell, 2016-09-05 19:22:25 -0400
+     LV Status              available
+     # open                 2
+     LV Size                7.90 GiB
+     Current LE             2023
+     Segments               1
+     Allocation             inherit
+     Read ahead sectors     auto
+     - currently set to     256
+     Block device           252:1
+
+     --- Logical volume ---
+     LV Path                /dev/buzzell-vg/var
+     LV Name                var
+     VG Name                buzzell-vg
+     LV UUID                ou9CP7-9Gkg-kbqb-OiAS-S7N5-90ki-3RQcsv
+     LV Write Access        read/write
+     LV Creation host, time buzzell, 2016-09-22 10:52:46 -0400
+     LV Status              available
+     # open                 1
+     LV Size                50.00 GiB
+     Current LE             12800
+     Segments               1
+     Allocation             inherit
+     Read ahead sectors     auto
+     - currently set to     256
+     Block device           252:2
+
+More specific logical volume info
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: console
+
+   root@buzzell:/var/VM# lvdisplay -m /dev/buzzell-vg/var
+     --- Logical volume ---
+     LV Path                /dev/buzzell-vg/var
+     LV Name                var
+     VG Name                buzzell-vg
+     LV UUID                ou9CP7-9Gkg-kbqb-OiAS-S7N5-90ki-3RQcsv
+     LV Write Access        read/write
+     LV Creation host, time buzzell, 2016-09-22 10:52:46 -0400
+     LV Status              available
+     # open                 1
+     LV Size                50.00 GiB
+     Current LE             12800
+     Segments               1
+     Allocation             inherit
+     Read ahead sectors     auto
+     - currently set to     256
+     Block device           252:2
+
+     --- Segments ---
+     Logical extents 0 to 12799:
+       Type                linear
+       Physical volume     /dev/sdb
+       Physical extents    0 to 12799
+

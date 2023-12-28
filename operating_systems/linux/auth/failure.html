@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>User can login locally but not via ssh &#8212; notes 0.1 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/alabaster.css?v=039e1c02" />
+    <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js?v=e031e9a9"></script>
+    <script src="../../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=4825356b"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="mount: unknown filesystem type ‘vfat’" href="../boot.html" />
+    <link rel="prev" title="Find out which repository a package comes from:" href="../apt.html" />
+   
+  <link rel="stylesheet" href="../../../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="user-can-login-locally-but-not-via-ssh">
+<h1>User can login locally but not via ssh<a class="headerlink" href="#user-can-login-locally-but-not-via-ssh" title="Permalink to this heading">¶</a></h1>
+<p>Add debug to <cite>/etc/pam.d/sshd</cite> (probably to more lines than this):</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">auth       required     pam_sepermit.so debug</span>
+</pre></div>
+</div>
+<p>Look for <cite>pam_sepermit</cite> log messages:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">Mar 16 09:36:42 SERVER sshd[20620]: pam_sepermit(sshd:auth): Parsing config file: /etc/security/sepermit.conf</span>
+<span class="go">Mar 16 09:36:42 SERVER sshd[20620]: pam_sepermit(sshd:auth): Access will not be allowed on match</span>
+<span class="go">Mar 16 09:36:42 SERVER sshd[20620]: pam_sepermit(sshd:auth): Matching user USERNAME against user USERNAME</span>
+<span class="go">Mar 16 09:36:42 SERVER sshd[20620]: pam_sepermit(sshd:auth): sepermit_match returned: 0</span>
+<span class="go">Mar 16 09:37:07 SERVER sshd[20620]: pam_sepermit(sshd:auth): Parsing config file: /etc/security/sepermit.conf</span>
+<span class="go">Mar 16 09:37:07 SERVER sshd[20620]: pam_sepermit(sshd:auth): Access will not be allowed on match</span>
+<span class="go">Mar 16 09:37:07 SERVER sshd[20620]: pam_sepermit(sshd:auth): sepermit_match returned: -1</span>
+</pre></div>
+</div>
+</section>
+<section id="unlock-accounts">
+<h1>Unlock accounts<a class="headerlink" href="#unlock-accounts" title="Permalink to this heading">¶</a></h1>
+<p>Use <cite>passwd</cite>:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp"># </span>passwd<span class="w"> </span>-u<span class="w"> </span>USERNAME
+</pre></div>
+</div>
+<p>Or <cite>usermod</cite>:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp"># </span>usermode<span class="w"> </span>-U<span class="w"> </span>USERNAME
+</pre></div>
+</div>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../../../index.html">notes</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../arm/index.html">arm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../db/index.html">databases</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../dns/index.html">DNS stuff</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../elk/index.html">elastic stuff</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../k8s/index.html">kubernetes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../openssh/index.html">OpenSSH</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../index.html">Operating Systems</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html">Linux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../openbsd/index.html">OpenBSD</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../windows/index.html">Windows</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../ossec/index.html">OSSEC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../rsyslogd/index.html">rsyslogd</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../ssl/index.html">ssl</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../stupid_unix_tricks/index.html">Stupid Unix Tricks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../tools/index.html">Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../vendor_stuff/index.html">Vendor Stuff</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../misc/index.html">misc</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../../index.html">Documentation overview</a><ul>
+  <li><a href="../../index.html">Operating Systems</a><ul>
+  <li><a href="../index.html">Linux</a><ul>
+      <li>Previous: <a href="../apt.html" title="previous chapter">Find out which repository a package comes from:</a></li>
+      <li>Next: <a href="../boot.html" title="next chapter">mount: unknown filesystem type ‘vfat’</a></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+        <!-- your html code here -->
+	<div class="footer">
+		<em>This information has a good chance of being wrong, inconsistent, out of date, or just bad. Use at your own risk.
+		Feel free to notify me of any issues though.</em>
+	</div>
+
+
+  </body>
+</html>

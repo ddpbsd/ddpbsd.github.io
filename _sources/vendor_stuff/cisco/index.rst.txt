@@ -1,0 +1,16 @@
+
+=====
+Cisco
+=====
+
+Stuff from various vendors. Usually proprietary.
+
+
+Contents:
+
+.. toctree::
+   :maxdepth: 2
+
+   cli
+   sg300
+

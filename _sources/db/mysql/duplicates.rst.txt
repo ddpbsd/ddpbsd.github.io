@@ -1,0 +1,10 @@
+.. _db_mysql_duplicates:
+
+
+Find duplicates
+^^^^^^^^^^^^^^^
+
+.. code-block:: console
+
+   SELECT name, COUNT(*) c FROM table GROUP BY name HAVING c > 1;
+

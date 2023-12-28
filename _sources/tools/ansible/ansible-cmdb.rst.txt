@@ -1,0 +1,24 @@
+
+
+Get setup output
+^^^^^^^^^^^^^^^^
+
+.. code-block:: console
+
+   mkdir out
+   ansible -m setup --tree out/ all
+
+
+Get the overview page
+^^^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: console
+
+   ansible-cmdb out/ > overview.html
+
+
+Where can I get it?
+^^^^^^^^^^^^^^^^^^^
+
+https://github.com/fboender/ansible-cmdb
+

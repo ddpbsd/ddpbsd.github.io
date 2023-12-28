@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>things &#8212; notes 0.1 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css?v=039e1c02" />
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js?v=e031e9a9"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=4825356b"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="OpenSSH" href="../openssh/index.html" />
+    <link rel="prev" title="rancher" href="rancher.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="things">
+<h1>things<a class="headerlink" href="#things" title="Permalink to this heading">¶</a></h1>
+<p>There are a lot of things in k8s.
+I have no idea what each one is yet.</p>
+<p>The <a class="reference external" href="https://kubernetes.io/docs/reference/glossary/fundamental=true">k8s glossary</a> has a lot of things.</p>
+<section id="cluster">
+<h2>cluster<a class="headerlink" href="#cluster" title="Permalink to this heading">¶</a></h2>
+<p>The collection of things that make the whole thing work.</p>
+</section>
+<section id="node">
+<h2>node<a class="headerlink" href="#node" title="Permalink to this heading">¶</a></h2>
+<p>Individual machines (virtual or physical) where containerzed applications (things) can run.</p>
+</section>
+<section id="kubelet">
+<h2>kubelet<a class="headerlink" href="#kubelet" title="Permalink to this heading">¶</a></h2>
+<p>An agent that makes sure containers are running in a pod.</p>
+</section>
+<section id="kube-proxy">
+<h2>kube-proxy<a class="headerlink" href="#kube-proxy" title="Permalink to this heading">¶</a></h2>
+<p>A network proxy to maintain network rules.</p>
+</section>
+<section id="control-plane">
+<h2>control plane<a class="headerlink" href="#control-plane" title="Permalink to this heading">¶</a></h2>
+<p>Manages the worker nodes and pods.</p>
+</section>
+<section id="kube-apiserver">
+<h2>kube-apiserver<a class="headerlink" href="#kube-apiserver" title="Permalink to this heading">¶</a></h2>
+</section>
+<section id="etcd">
+<h2>etcd<a class="headerlink" href="#etcd" title="Permalink to this heading">¶</a></h2>
+</section>
+<section id="kube-scheduler">
+<h2>kube-scheduler<a class="headerlink" href="#kube-scheduler" title="Permalink to this heading">¶</a></h2>
+</section>
+<section id="kube-controller-manager">
+<h2>kube-controller-manager<a class="headerlink" href="#kube-controller-manager" title="Permalink to this heading">¶</a></h2>
+</section>
+<section id="cloud-controller-manager">
+<h2>cloud-controller-manager<a class="headerlink" href="#cloud-controller-manager" title="Permalink to this heading">¶</a></h2>
+</section>
+<section id="pods">
+<h2>pods<a class="headerlink" href="#pods" title="Permalink to this heading">¶</a></h2>
+<p>Represents a set of running containers.</p>
+</section>
+<section id="stateful-sets">
+<h2>stateful sets<a class="headerlink" href="#stateful-sets" title="Permalink to this heading">¶</a></h2>
+<p>Not sure WTF they are just yet, but I spent way too much time trying to figure out how to stop some things in k8s.
+I really need to look for a glossary or something.</p>
+</section>
+<section id="services">
+<h2>services<a class="headerlink" href="#services" title="Permalink to this heading">¶</a></h2>
+</section>
+<section id="logs">
+<h2>logs<a class="headerlink" href="#logs" title="Permalink to this heading">¶</a></h2>
+<p>At least on my system, some logs are in <cite>/var/log/pods</cite>.</p>
+</section>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../index.html">notes</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../arm/index.html">arm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../db/index.html">databases</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dns/index.html">DNS stuff</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../elk/index.html">elastic stuff</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">kubernetes</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="kubectl.html">kubectl</a></li>
+<li class="toctree-l2"><a class="reference internal" href="minikube/index.html">minikube</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rancher.html">rancher</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">things</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../openssh/index.html">OpenSSH</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../operating_systems/index.html">Operating Systems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ossec/index.html">OSSEC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../rsyslogd/index.html">rsyslogd</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ssl/index.html">ssl</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../stupid_unix_tricks/index.html">Stupid Unix Tricks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tools/index.html">Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../vendor_stuff/index.html">Vendor Stuff</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../misc/index.html">misc</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+  <li><a href="index.html">kubernetes</a><ul>
+      <li>Previous: <a href="rancher.html" title="previous chapter">rancher</a></li>
+      <li>Next: <a href="../openssh/index.html" title="next chapter">OpenSSH</a></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+        <!-- your html code here -->
+	<div class="footer">
+		<em>This information has a good chance of being wrong, inconsistent, out of date, or just bad. Use at your own risk.
+		Feel free to notify me of any issues though.</em>
+	</div>
+
+
+  </body>
+</html>

@@ -1,0 +1,12 @@
+
+========================
+Building a custom kernel
+========================
+
+General
+^^^^^^^
+
+.. literalinclude:: kernel_build.txt
+   
+   
+

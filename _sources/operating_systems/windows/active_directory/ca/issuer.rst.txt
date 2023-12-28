@@ -1,0 +1,19 @@
+
+Get the issuer certificate
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+
+Run cmd as an administator.
+Run mmc
+File->Add/Remove Snap-in
+Select Certificates
+
+On the left, select Certificates (Local Computer)->Trusted Root Certification Authorities->Certificates.
+
+From there, find the issuer certificate.
+
+Right click the certificate->Open->Details
+
+Copy To File->Next->Base-64 encoded X.509
+
+

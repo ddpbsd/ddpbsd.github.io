@@ -1,0 +1,50 @@
+
+
+
+Packages to install:
+^^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: console
+
+   yum install -y google-authenticator freeradius freeradius-utils
+
+
+`/etc/raddb/radiusd.conf`:
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Unfortunately `radiusd` needs to be running as root to utilize `PAM`?
+
+.. code-block:: console
+
+   user = root
+   group = root
+
+
+`/etc/pam.d/radiusd`:
+^^^^^^^^^^^^^^^^^^^^^
+
+This seems to be working so far.
+
+.. code-block:: console
+
+   auth required pam_google_authenticator.so debug forward_pass
+   auth required pam_unix.so debug use_first_pass
+   #auth required pam_unix.so debug
+   account required        pam_unix.so
+
+
+
+`/etc/raddb/users`:
+^^^^^^^^^^^^^^^^^^^
+
+Add the first `DEFAULT` line above the second.
+
+.. code-block:: console
+
+   DEFAULT Auth-Type := PAM
+
+   DEFAULT Framed-Protocol == PPP
+           Framed-Protocol = PPP,
+           Framed-Compression = Van-Jacobson-TCP-IP
+
+

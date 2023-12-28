@@ -1,0 +1,15 @@
+
+=======
+arduino
+=======
+
+I want to learn some arduino stuff.
+
+Contents:
+
+.. toctree::
+   :maxdepth: 2
+
+   
+   openbsd
+

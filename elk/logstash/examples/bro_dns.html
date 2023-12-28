@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Bro DNS log: &#8212; notes 0.1 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/alabaster.css?v=039e1c02" />
+    <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js?v=e031e9a9"></script>
+    <script src="../../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=4825356b"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Errors" href="../errors/index.html" />
+    <link rel="prev" title="Examples" href="index.html" />
+   
+  <link rel="stylesheet" href="../../../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="bro-dns-log">
+<h1>Bro DNS log:<a class="headerlink" href="#bro-dns-log" title="Permalink to this heading">¶</a></h1>
+<p>I think this will work for most bro logs,
+but dns is the only one I’ve tried.
+Obviously the <cite>columns</cite> would have to change
+for each log type.</p>
+<p>Now that the basics are working, I can try the mutate stuff again.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">filter {</span>
+<span class="go">  if([fields][log_type] == &quot;brodns&quot;) {</span>
+<span class="go">    if([message] =~ /^#/) {</span>
+<span class="go">      drop { }</span>
+<span class="go">    }</span>
+<span class="go">    csv {</span>
+<span class="go">        columns =&gt; [&quot;ts&quot;,&quot;uid&quot;,&quot;id.orig_h&quot;,&quot;id.orig_p&quot;,&quot;id.resp_h&quot;,&quot;id.resp_p&quot;,&quot;proto&quot;,&quot;trans_id&quot;,&quot;rtt&quot;,&quot;query&quot;,&quot;qclass&quot;,&quot;qclass_name&quot;,&quot;qtype&quot;,&quot;qtype_name&quot;,&quot;rcode&quot;,&quot;rcode_name&quot;,&quot;AA&quot;,&quot;TC&quot;,&quot;RD&quot;,&quot;RA&quot;,&quot;Z&quot;,&quot;answers&quot;,&quot;TTLs&quot;,&quot;rejected&quot;]</span>
+<span class="go">        separator =&gt; &quot;  &quot;</span>
+<span class="go">    }</span>
+<span class="go">    date {</span>
+<span class="go">      match =&gt; [&quot;ts&quot;, &quot;UNIX&quot;]</span>
+<span class="go">    }</span>
+<span class="gp">#    </span>mutate<span class="w"> </span><span class="o">{</span>
+<span class="gp">#      </span><span class="nv">rename</span><span class="w"> </span><span class="o">=</span>&gt;<span class="w">  </span><span class="o">[</span><span class="w"> </span><span class="s2">&quot;id.orig_h&quot;</span>,<span class="w"> </span><span class="s2">&quot;id_orig_host&quot;</span><span class="w"> </span><span class="o">]</span>
+<span class="gp">#      </span><span class="nv">rename</span><span class="w"> </span><span class="o">=</span>&gt;<span class="w">  </span><span class="o">[</span><span class="w"> </span><span class="s2">&quot;id.orig_p&quot;</span>,<span class="w"> </span><span class="s2">&quot;id_orig_port&quot;</span><span class="w"> </span><span class="o">]</span>
+<span class="gp">#      </span><span class="nv">rename</span><span class="w"> </span><span class="o">=</span>&gt;<span class="w">  </span><span class="o">[</span><span class="w"> </span><span class="s2">&quot;id.resp_h&quot;</span>,<span class="w"> </span><span class="s2">&quot;id_resp_host&quot;</span><span class="w"> </span><span class="o">]</span>
+<span class="gp">#      </span><span class="nv">rename</span><span class="w"> </span><span class="o">=</span>&gt;<span class="w">  </span><span class="o">[</span><span class="w"> </span><span class="s2">&quot;id.resp_p&quot;</span>,<span class="w"> </span><span class="s2">&quot;id_resp_port&quot;</span><span class="w"> </span><span class="o">]</span>
+<span class="gp">#    </span><span class="o">}</span>
+<span class="go">  }</span>
+<span class="go">}</span>
+</pre></div>
+</div>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../../../index.html">notes</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../arm/index.html">arm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../db/index.html">databases</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../dns/index.html">DNS stuff</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../index.html">elastic stuff</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../beats/index.html">Beats</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../elastic/index.html">elasticsearch</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html">logstash</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../monitoring/index.html">monitoring</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../agent/index.html">agent</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../setup.html">Setting up the whole thing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../endpoint.html">endpoint</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../read.html">read from elastic</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../docker/commands.html">docker commands</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../k8s/index.html">kubernetes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../openssh/index.html">OpenSSH</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../operating_systems/index.html">Operating Systems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../ossec/index.html">OSSEC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../rsyslogd/index.html">rsyslogd</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../ssl/index.html">ssl</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../stupid_unix_tricks/index.html">Stupid Unix Tricks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../tools/index.html">Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../vendor_stuff/index.html">Vendor Stuff</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../misc/index.html">misc</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../../index.html">Documentation overview</a><ul>
+  <li><a href="../../index.html">elastic stuff</a><ul>
+  <li><a href="../index.html">logstash</a><ul>
+  <li><a href="index.html">Examples</a><ul>
+      <li>Previous: <a href="index.html" title="previous chapter">Examples</a></li>
+      <li>Next: <a href="../errors/index.html" title="next chapter">Errors</a></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+        <!-- your html code here -->
+	<div class="footer">
+		<em>This information has a good chance of being wrong, inconsistent, out of date, or just bad. Use at your own risk.
+		Feel free to notify me of any issues though.</em>
+	</div>
+
+
+  </body>
+</html>

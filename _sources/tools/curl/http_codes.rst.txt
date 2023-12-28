@@ -1,0 +1,15 @@
+
+Output http code
+^^^^^^^^^^^^^^^^
+
+.. code-block:: console
+
+   curl -i https://example.com
+
+or
+
+.. code-block:: console
+
+   curl -I https://example.com
+
+
