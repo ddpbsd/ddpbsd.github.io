@@ -23,3 +23,15 @@ Sign the csr
    openssl ca -batch -config intermediateCA-openssl.cnf -extensions server_cert -notext -in gitlab.csr
 
 
+format of the index.txt file
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tab delimited
+
+1. Certificate status (V = valid, R = revoked, E = expired)
+2. Expiration date in YYMMDDHHMMSSZ format
+3. Cert revocation date
+4. serial number in hex
+5. filename or unknown
+6. Certificate distinguished name
+

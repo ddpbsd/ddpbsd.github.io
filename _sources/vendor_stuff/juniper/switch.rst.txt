@@ -13,3 +13,24 @@ Add an interface to a vlan.
 
    set vlans VLAN_NAME interface ge-0/0/16
 
+
+Another way:
+
+.. code-block:: console
+
+   set interfaces ge-0/0/4.0 family ethernet-switching port-mode access vlan members work
+   
+View the arp table
+^^^^^^^^^^^^^^^^^^
+
+.. code-block:: console
+
+   show ethernet-switching table
+
+also:
+
+.. code-block:: console
+
+   how arp
+
+

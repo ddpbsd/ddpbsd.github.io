@@ -41,3 +41,16 @@ Start kibana
    docker run --name kibana --net elastic -p 5601:5601 -m 256m -e ELASTICSEARCH_HOSTS="https://es01:9200" -e ENROLLMENT_TOKEN=blahblahblah -it kibana:8.4.3
 
 
+logstash
+^^^^^^^^
+
+This will use `docker` to run logstash.
+It will listen on port `5044`.
+The settings directory will be available to logstash with the logstash.yml, pipelines.yml, etc. in it.
+The `ro` makes sure it's read only, and the `Z` makes sure the SELinux context is correct (at least temporarily).
+Same thing for the pipeline (where the pipelines are stored, surprise!).
+
+.. code-block:: console
+
+   docker run --rm -it -p 5044:5044 -v ~/local/elk/settings/:/usr/share/logstash/config/:ro,Z -v ~/local/elk/pipeline/:/usr/share/logstash/pipeline/:ro,Z docker.elastic.co/logstash/logstash:8.12.1
+   

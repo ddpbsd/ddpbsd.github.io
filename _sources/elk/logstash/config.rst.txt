@@ -26,7 +26,6 @@ Example:
              remove_tag => "parse"
           }
       }
-      
    }
 
 
@@ -34,24 +33,23 @@ This allows me to use multiple grok parsers for a message without (hopefully)
 going through each one for each message.
 
 Example config
-^^^^^^^^^^^^^^  
-  
+^^^^^^^^^^^^^^
+
 .. code-block:: console
-  
+
      input {
       syslog {
           port => "2514"
           type => "generic"
       }
-  
+
       tcp {
           port => "2515"
           type => "squid-access"
       }
-  
+
   }
-  
-  
+
   filter {
       if [type] == 'squid-access' {
           grok {
@@ -62,23 +60,19 @@ Example config
           }
       }
   }
-  
-  
+
+
   output {
       if [type] == 'generic' {
           elasticsearch {
               index => "logstash-%{+YYYY.MM.dd}"
           }
       }
-  
+
       if [type] == 'squid-access' {
           elasticsearch {
               index => "squid-access"
           }
       }
-  
-  
   }
-  
-  
-  
+

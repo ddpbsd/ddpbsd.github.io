@@ -63,6 +63,17 @@
 </pre></div>
 </div>
 </section>
+<section id="logstash">
+<h2>logstash<a class="headerlink" href="#logstash" title="Permalink to this heading">¶</a></h2>
+<p>This will use <cite>docker</cite> to run logstash.
+It will listen on port <cite>5044</cite>.
+The settings directory will be available to logstash with the logstash.yml, pipelines.yml, etc. in it.
+The <cite>ro</cite> makes sure it’s read only, and the <cite>Z</cite> makes sure the SELinux context is correct (at least temporarily).
+Same thing for the pipeline (where the pipelines are stored, surprise!).</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">docker run --rm -it -p 5044:5044 -v ~/local/elk/settings/:/usr/share/logstash/config/:ro,Z -v ~/local/elk/pipeline/:/usr/share/logstash/pipeline/:ro,Z docker.elastic.co/logstash/logstash:8.12.1</span>
+</pre></div>
+</div>
+</section>
 </section>
 
 

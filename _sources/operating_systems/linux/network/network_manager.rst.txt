@@ -1,7 +1,5 @@
-.. _operating_systems_linux_network_network_manager:
-
-Switch from network manager to plain networking in Fedora:
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Switch from network manager to plain networking in Fedora
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code-block:: console
 
@@ -9,3 +7,20 @@ Switch from network manager to plain networking in Fedora:
    # systemctl disable NetworkManager.service
    # systemctl enable network.service 
    # systemctl start network.service
+
+nmcli for dummies
+^^^^^^^^^^^^^^^^^
+
+It's me, I'm the dummy.
+
+.. code-block:: console
+
+   nmcli con show ## show the available connections
+   nmcli con mod Wired\ connection\ 1 ipv4.addresses 192.168.18.225/24
+   nmcli con mod Wired\ connection\ 1 ipv4.addresses 192.168.18.223/24
+   nmcli con mod Wired\ connection\ 1 ipv4.gateway 192.168.18.1
+   nmcli con mod Wired\ connection\ 1 ipv4.dns "192.168.17.17"
+   nmcli con mod Wired\ connection\ 1 ipv4.method manual
+   nmcli con mod Wired\ connection\ 1 ipv4.dns-search "lab.wafflelab.online"
+   nmcli con up Wired\ connection\ 1
+

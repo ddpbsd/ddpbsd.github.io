@@ -41,6 +41,20 @@
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">set vlans VLAN_NAME interface ge-0/0/16</span>
 </pre></div>
 </div>
+<p>Another way:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">set interfaces ge-0/0/4.0 family ethernet-switching port-mode access vlan members work</span>
+</pre></div>
+</div>
+</section>
+<section id="view-the-arp-table">
+<h1>View the arp table<a class="headerlink" href="#view-the-arp-table" title="Permalink to this heading">¶</a></h1>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">show ethernet-switching table</span>
+</pre></div>
+</div>
+<p>also:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">how arp</span>
+</pre></div>
+</div>
 </section>
 
 
@@ -74,7 +88,6 @@
 <li class="toctree-l1"><a class="reference internal" href="../../stupid_unix_tricks/index.html">Stupid Unix Tricks</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../tools/index.html">Tools</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../index.html">Vendor Stuff</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="../alienvault/index.html">AlienVault</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../cisco/index.html">Cisco</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="index.html">Juniper</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../nessus/index.html">nessus</a></li>

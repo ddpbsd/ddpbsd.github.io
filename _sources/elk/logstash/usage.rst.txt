@@ -10,7 +10,7 @@ Command line options:
 
    Usage:
        bin/logstash [OPTIONS]
-   
+
    Options:
        -n, --node.name NAME          Specify the name of this logstash instance, if no value is given
                                      it will default to the current hostname.
@@ -35,13 +35,13 @@ Command line options:
                                       (default: nil)
        --field-reference-parser MODE Use the given MODE when parsing field
                                      references.
-   
+
                                      The field reference parser is used to expand
                                      field references in your pipeline configs,
                                      and will be becoming more strict to better
                                      handle illegal and ambbiguous inputs in a
                                      future release of Logstash.
-   
+
                                      Available MODEs are:
                                       - `LEGACY`: parse with the legacy parser,
                                         which is known to handle ambiguous- and

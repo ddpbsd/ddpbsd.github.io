@@ -1,5 +1,3 @@
-
-
 =======
 OpenBSD
 =======
@@ -15,17 +13,14 @@ https://marc.info/?l=openbsd-misc&m=152363766318429&w=2
 
 .. code-block:: console
 
+   The sopine U-Boot image does not currently include the sopine device
+   tree as there isn't a sopine device tree in U-Boot.
 
-   The sopine U-Boot image does not currently include the sopine device 
-   tree as there isn't a sopine device tree in U-Boot. 
-
-   Until that changes, on the msdos/efi partition create an 'allwinner' 
-   directory, install the dtb port and copy 
-   /usr/local/share/dtb/arm64/allwinner/sun50i-a64-sopine-baseboard.dtb 
-   to 
-   allwinner/sun50i-a64-pine64-plus.dtb 
-
-   or to a different path and change fdtfile in the U-Boot environment. 
+   Until that changes, on the msdos/efi partition create an 'allwinner'
+   directory, install the dtb port and copy
+   /usr/local/share/dtb/arm64/allwinner/sun50i-a64-sopine-baseboard.dtb
+   to allwinner/sun50i-a64-pine64-plus.dtb or to a different path and
+   change fdtfile in the U-Boot environment.
 
 
 Random
@@ -52,5 +47,5 @@ Random
    ix# ls
    sun50i-a64-pine64-plus.dtb       sun50i-a64-pine64.dtb            sun50i-a64-sopine-baseboard.dtb  sun50i-h6-pine-h64.dtb
    ix# cp /usr/local/share/dtb/arm64/allwinner/sun50i-a64-sopine-baseboard.dtb sun50i-a64-pine64-plus.dtb
- 
+
 

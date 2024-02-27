@@ -70,9 +70,9 @@ If successful, the request should return something like:
 
 .. code-block:: json
 
-   {                                          
-     "id": "dbCzLXwBkbNauQGnNBBd",   
-     "name": "test1-api",           
+   {
+     "id": "dbCzLXwBkbNauQGnNBBd",
+     "name": "test1-api",
      "expiration": 1632857891532,
      "api_key": "S_EA77YvQCiG4DlHu_6Dsw"
    }
@@ -80,7 +80,7 @@ If successful, the request should return something like:
 Using the api_key
 ^^^^^^^^^^^^^^^^^
 
-The `id` and `api_key` returned need to be combined and base64 encoded to be used. 
+The `id` and `api_key` returned need to be combined and base64 encoded to be used.
 The format is `id:api_key`, and there should be no new line.
 
 .. code-block:: console

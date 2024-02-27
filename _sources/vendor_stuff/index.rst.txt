@@ -10,7 +10,6 @@ Contents:
 .. toctree::
    :maxdepth: 2
 
-   alienvault/index
    cisco/index
    juniper/index
    nessus/index

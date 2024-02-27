@@ -42,6 +42,8 @@
 </section>
 <section id="ubuntu-and-maybe-other-debian-derivatives">
 <h2>Ubuntu (and maybe other Debian derivatives)<a class="headerlink" href="#ubuntu-and-maybe-other-debian-derivatives" title="Permalink to this heading">¶</a></h2>
+<p>Make sure the file has a <cite>.crt</cite> extension.
+It won’t work with <cite>.pem</cite> for some reason.</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp"># </span>apt-get<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>ca-certificates
 <span class="gp"># </span>cp<span class="w"> </span>CERT-FILE.pem<span class="w"> </span>/usr/local/share/ca-certificates
 <span class="gp"># </span>update-ca-certificates

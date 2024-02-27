@@ -1,7 +1,7 @@
 Error: Could not initialize SDL(No available video device)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Possible solution by ` <https://rubenerd.com/annexe-disable-qemu-sdl-in-packer/>`_
+Possible solution by `<https://rubenerd.com/annexe-disable-qemu-sdl-in-packer/>`_
 
 Run it headless by adding this to the json file:
 

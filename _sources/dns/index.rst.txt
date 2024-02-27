@@ -1,4 +1,3 @@
-
 =========
 DNS stuff
 =========
@@ -8,6 +7,5 @@ Contents:
 .. toctree::
    :maxdepth: 2
 
-   nsd/index 
-      
+   nsd/index
 

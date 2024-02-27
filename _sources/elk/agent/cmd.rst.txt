@@ -5,7 +5,7 @@ agent status
 Get the status of an agent and the integrations.
 
 .. code-block:: console
-   
+
    monitor0:/opt/Elastic/Agent # ./elastic-agent status
    Status: HEALTHY
    Message: (no message)

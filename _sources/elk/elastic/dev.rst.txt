@@ -8,7 +8,7 @@ This is a temporary change, and probably a dumb one.
 
    curl -XPUT localhost:9200/_cluster/settings -d '{
      "transient" : {
-       "indices.breaker.request.limit" : "41%" 
+       "indices.breaker.request.limit" : "41%"
      }
    }'
 

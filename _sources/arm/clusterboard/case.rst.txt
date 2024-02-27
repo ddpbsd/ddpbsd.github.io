@@ -5,7 +5,7 @@
 C4Labs
 ======
 
-`C4Labs <https://c4labs.com>`_ released a custom case for the 
+`C4Labs <https://c4labs.com>`_ released a custom case for the
 `clusterboard <https://www.c4labs.com/product/presale-pine64-cluster-case-pine64-clusterboard-with-7-sopine-compute-module-slots/>`_.
 
 It's very nice, but not perfect.

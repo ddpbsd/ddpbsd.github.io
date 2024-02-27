@@ -3,36 +3,45 @@
 keytool
 =======
 
-Default password for a keystore:
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Default password for a keystore
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code-block:: console
 
    changeit
 
-List the certificates in the store:
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+List the certificates in the store
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code-block:: console
 
    keytool -list -keystore ./keystore.jks
 
-Export a cert:
-^^^^^^^^^^^^^^
+Export a cert
+^^^^^^^^^^^^^
 
 .. code-block:: console
 
    keytool -export -alias ALIAS -keystore ./keystore.jks -file /tmp/FILE
 
-Look at the exported cert with openssl:
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Look at the exported cert with openssl
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code-block:: console
 
    openssl x509 -text -inform DER -in /tmp/FILE
 
-Import a certificate:
-^^^^^^^^^^^^^^^^^^^^^
+Look at a cert's detalis with keytool
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Provides *very* similar to the openssl command above.
+
+.. code-block:: console
+
+   keytool -keystore keystore.jks -list -v
+
+Import a certificate
+^^^^^^^^^^^^^^^^^^^^
 
 .. code-block:: console
 

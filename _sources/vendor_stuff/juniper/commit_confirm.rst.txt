@@ -1,11 +1,8 @@
-
-
-
 Commit the configuration changes, then roll back after 10 minutes:
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code-block:: console
 
    commit confirm 10
-   commit	## Don't roll back
+   commit  ## Don't roll back
 
