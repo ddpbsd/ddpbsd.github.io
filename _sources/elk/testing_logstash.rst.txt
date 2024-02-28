@@ -1,0 +1,73 @@
+================
+testing logstash
+================
+
+Testing pipelines in logstash isn't necessarily fun.
+This kind of complicates it, and kind of doesn't.
+
+In this setup `logstash` is run in a container, and filebeat
+feeds it using a log file.
+
+`filebeat` is *not* run in a container at the moment, and I doubt
+I will change that anytime soon.
+
+logstash setup
+^^^^^^^^^^^^^^
+
+I'm using `podman <https://podman.io/>`_ to run logstash in an attempt
+to learn a bit more about podman and make cleanup easier.
+Because of this, everything else is more complicated.
+
+I have several directories setup to help with this, all under
+`~/local/elk`.
+
+There is `settings` which contains the `logstash.yml`, `pipelines.yml`,
+`startup.options`, `jvm.options`, and `log4j2.properties`.
+Basically the logstash config directory.
+
+There is also the `pipeline` directory, which contains all of my
+filter configurations.
+As usual I have a basic `00-input.conf` to handle most of the input,
+which is basically a beats listener at the moment.
+
+configuration
+^^^^^^^^^^^^^
+
+`logstash.yml` only really has `node.name` and `http.host` defined
+(it probably doesn't need `http.host`).
+
+`pipelines.yml` defines `main` and any custom pipelines I'm using.
+
+`jvm.options` limits the ram for logstash.
+
+pipelines
+^^^^^^^^^
+
+Currently the output is using `stdout{}`, but I need to figure out
+something cleaner.
+
+Mounting an output file and using the `file{}` output might work.
+
+running logstash
+^^^^^^^^^^^^^^^^
+
+I run it with the command:
+
+.. code-block:: console
+
+   podman run --rm -it -p 5044:5044 \
+   -v ~/local/elk/settings/:/usr/share/logstash/config:ro,Z \
+   -v ~/local/elk/pipeline/:/usr/share/logstash/pipeline/:ro,Z \
+   -v ~/local/elk/logstashoutput.log:/logstashoutput.log \
+   docker.elastic.co/logstash/logstash:8.10.4
+
+The `ro` makes the volumes read only, and the `Z` makes sure the
+SELinux contexts are correct.
+
+Adding `-v ~/local/elk/logstashoutput.log:/logstashoutput.log:rw,Z`
+and configuring the pipeline to log to it might solve the logging
+issue.
+
+Logstash will listen on `127.0.0.1:5044`, which is the default for
+`beats` connections.
+

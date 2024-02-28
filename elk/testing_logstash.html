@@ -5,7 +5,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>read from elastic &#8212; notes 0.1 documentation</title>
+    <title>testing logstash &#8212; notes 0.1 documentation</title>
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
     <link rel="stylesheet" type="text/css" href="../_static/alabaster.css?v=039e1c02" />
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js?v=e031e9a9"></script>
@@ -13,8 +13,8 @@
     <script src="../_static/sphinx_highlight.js?v=4825356b"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="docker commands" href="docker/commands.html" />
-    <link rel="prev" title="endpoint" href="endpoint.html" />
+    <link rel="next" title="kubernetes" href="../k8s/index.html" />
+    <link rel="prev" title="docker commands" href="docker/commands.html" />
    
   <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
   
@@ -31,9 +31,60 @@
 
           <div class="body" role="main">
             
-  <section id="read-from-elastic">
-<h1>read from elastic<a class="headerlink" href="#read-from-elastic" title="Permalink to this heading">¶</a></h1>
-<p><a class="reference external" href="https://elastic.co/blog/elastic-on-elastic-deep-dive-into-our-siem-architecture">Elastic on Elastic</a></p>
+  <section id="testing-logstash">
+<h1>testing logstash<a class="headerlink" href="#testing-logstash" title="Permalink to this heading">¶</a></h1>
+<p>Testing pipelines in logstash isn’t necessarily fun.
+This kind of complicates it, and kind of doesn’t.</p>
+<p>In this setup <cite>logstash</cite> is run in a container, and filebeat
+feeds it using a log file.</p>
+<p><cite>filebeat</cite> is <em>not</em> run in a container at the moment, and I doubt
+I will change that anytime soon.</p>
+<section id="logstash-setup">
+<h2>logstash setup<a class="headerlink" href="#logstash-setup" title="Permalink to this heading">¶</a></h2>
+<p>I’m using <a class="reference external" href="https://podman.io/">podman</a> to run logstash in an attempt
+to learn a bit more about podman and make cleanup easier.
+Because of this, everything else is more complicated.</p>
+<p>I have several directories setup to help with this, all under
+<cite>~/local/elk</cite>.</p>
+<p>There is <cite>settings</cite> which contains the <cite>logstash.yml</cite>, <cite>pipelines.yml</cite>,
+<cite>startup.options</cite>, <cite>jvm.options</cite>, and <cite>log4j2.properties</cite>.
+Basically the logstash config directory.</p>
+<p>There is also the <cite>pipeline</cite> directory, which contains all of my
+filter configurations.
+As usual I have a basic <cite>00-input.conf</cite> to handle most of the input,
+which is basically a beats listener at the moment.</p>
+</section>
+<section id="configuration">
+<h2>configuration<a class="headerlink" href="#configuration" title="Permalink to this heading">¶</a></h2>
+<p><cite>logstash.yml</cite> only really has <cite>node.name</cite> and <cite>http.host</cite> defined
+(it probably doesn’t need <cite>http.host</cite>).</p>
+<p><cite>pipelines.yml</cite> defines <cite>main</cite> and any custom pipelines I’m using.</p>
+<p><cite>jvm.options</cite> limits the ram for logstash.</p>
+</section>
+<section id="pipelines">
+<h2>pipelines<a class="headerlink" href="#pipelines" title="Permalink to this heading">¶</a></h2>
+<p>Currently the output is using <cite>stdout{}</cite>, but I need to figure out
+something cleaner.</p>
+<p>Mounting an output file and using the <cite>file{}</cite> output might work.</p>
+</section>
+<section id="running-logstash">
+<h2>running logstash<a class="headerlink" href="#running-logstash" title="Permalink to this heading">¶</a></h2>
+<p>I run it with the command:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">podman run --rm -it -p 5044:5044 \</span>
+<span class="go">-v ~/local/elk/settings/:/usr/share/logstash/config:ro,Z \</span>
+<span class="go">-v ~/local/elk/pipeline/:/usr/share/logstash/pipeline/:ro,Z \</span>
+<span class="go">-v ~/local/elk/logstashoutput.log:/logstashoutput.log \</span>
+<span class="go">docker.elastic.co/logstash/logstash:8.10.4</span>
+</pre></div>
+</div>
+<p>The <cite>ro</cite> makes the volumes read only, and the <cite>Z</cite> makes sure the
+SELinux contexts are correct.</p>
+<p>Adding <cite>-v ~/local/elk/logstashoutput.log:/logstashoutput.log:rw,Z</cite>
+and configuring the pipeline to log to it might solve the logging
+issue.</p>
+<p>Logstash will listen on <cite>127.0.0.1:5044</cite>, which is the default for
+<cite>beats</cite> connections.</p>
+</section>
 </section>
 
 
@@ -65,9 +116,9 @@
 <li class="toctree-l2"><a class="reference internal" href="agent/index.html">agent</a></li>
 <li class="toctree-l2"><a class="reference internal" href="setup.html">Setting up the whole thing</a></li>
 <li class="toctree-l2"><a class="reference internal" href="endpoint.html">endpoint</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">read from elastic</a></li>
+<li class="toctree-l2"><a class="reference internal" href="read.html">read from elastic</a></li>
 <li class="toctree-l2"><a class="reference internal" href="docker/commands.html">docker commands</a></li>
-<li class="toctree-l2"><a class="reference internal" href="testing_logstash.html">testing logstash</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">testing logstash</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../k8s/index.html">kubernetes</a></li>
@@ -87,8 +138,8 @@
 <ul>
   <li><a href="../index.html">Documentation overview</a><ul>
   <li><a href="index.html">elastic stuff</a><ul>
-      <li>Previous: <a href="endpoint.html" title="previous chapter">endpoint</a></li>
-      <li>Next: <a href="docker/commands.html" title="next chapter">docker commands</a></li>
+      <li>Previous: <a href="docker/commands.html" title="previous chapter">docker commands</a></li>
+      <li>Next: <a href="../k8s/index.html" title="next chapter">kubernetes</a></li>
   </ul></li>
   </ul></li>
 </ul>

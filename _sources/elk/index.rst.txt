@@ -16,4 +16,5 @@ Contents:
    endpoint
    read
    docker/commands
+   testing_logstash
 
