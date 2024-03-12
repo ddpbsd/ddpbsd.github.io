@@ -1,0 +1,11 @@
+=====
+debug
+=====
+
+The `-d` flag enables debug mode, but it requires a "selector" to be
+chosen.
+For errors regarding pushing to elasticsearch, the selector
+`elasticsearch` is the one to use.
+
+`metricbeat -e -d "elasticsearch"`
+

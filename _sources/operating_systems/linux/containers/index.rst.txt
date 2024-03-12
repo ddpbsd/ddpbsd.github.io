@@ -10,3 +10,5 @@ Contents:
 
    docker/index
    lxd/index
+   misc
+   

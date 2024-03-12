@@ -1,0 +1,12 @@
+====
+misc
+====
+
+see processes in different namespaces
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: console
+
+   systemd-cgls
+
+

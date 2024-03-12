@@ -28,6 +28,7 @@ Contents:
    perl/index
    prometheus/index
    python/index
+   snmp/index
    steampipe/index
    su
    tcpdump/index

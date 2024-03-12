@@ -37,3 +37,18 @@ Show version of package with yum
 
    yum info PACKAGE
 
+
+Show multiple versions of a package
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: console
+
+   dnf --showduplicates PACKAGE
+
+Install specific version
+^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: console
+
+   dnf install PACKAGE-VERSION
+

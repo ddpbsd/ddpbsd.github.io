@@ -1,0 +1,25 @@
+========
+snmpwalk
+========
+
+
+snmpwalk with v3
+^^^^^^^^^^^^^^^^
+
+This is all in reference to an OpenSNMPd implementation.
+
+.. code-block:: console
+
+   snmpwalk -v3 -l authPriv -u USER -a SHA-256 -A "AUTHKEY" -x AES -X "ENCKEY" TARGET
+
+`-a` should align with the auth hmac encryption, just formatted
+slightly differently.
+
+`-A` will be the user's password, or `authkey`.
+
+`-x` will be AES or DES (so AES).
+
+`-X` will be the `enckey` from the config.
+
+`TARGET` is the host to run this against.
+

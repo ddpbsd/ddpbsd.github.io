@@ -1,0 +1,36 @@
+=====
+input
+=====
+
+blah blah blah
+
+.. _snmp input:
+
+snmp input
+^^^^^^^^^^
+
+`Elastic documentation <https://elastic.co/guide/en/logstash/current/plugins-inputs.snmp.html>`_
+
+`auth_pass` is the user's password.
+
+`priv_pass` is the enc key.
+
+`get` pulls the value from specific OIDs.
+
+`walk` pulls the values from specific OIDs and their children.
+
+.. code-block:: console
+
+     snmp {
+       hosts => [{host => "udp:192.168.17.100/161" version => "3"}]
+       get => ["1.3.6.1.2.1.1.1.0"]
+       security_name => ""
+       auth_protocol => "hmac192sha256"
+       auth_pass => ""
+       priv_pass => ""
+       priv_protocol => "aes"
+       security_level => "authPriv"
+       target => "snmp"
+       tags => ["snmp"]
+     }
+
