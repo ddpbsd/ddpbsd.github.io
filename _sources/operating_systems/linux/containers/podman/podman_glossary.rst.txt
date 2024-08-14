@@ -1,0 +1,21 @@
+========
+glossary
+========
+
+
+terms
+^^^^^
+
+* container - A linux userland running in a non-default namespace to be segregated from the regular system processes.
+* image - A base system that a container will be using, almost like a template (think "golden image"). An image can also be a container at rest.
+* pod - A group of containers running together and sharing resources, much like with kubernetes.
+* registry - 
+* volume -
+* runtime - 
+* `OCI runtime spec - <https://github.com/opencontainers/runtime-spec>`_ is the standard against which containers can be built to be interoperable.
+
+links
+^^^^^
+
+* RedHat's `introduction to containers <https://developers.redhat.com/blog/2018/02/22/container-terminology-practical-introduction#h.j2uq93kgxe0e>`_ 
+* `What is podman <https://www.redhat.com/en/topics/containers/what-is-podman>`_

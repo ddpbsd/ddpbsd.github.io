@@ -32,3 +32,14 @@ Run ssh in verbose mode and make sure xauth is working.
 Install xauth and it might work.
 For openSUSE I had to `mkdir -p /usr/X11R6/bin && ln -s /usr/bin/xauth /usr/X11R6/bin/xauth` to make it work. 
 
+get a fingerprint from a public key in your known_hosts file
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Stupid trick time:
+
+.. code-block:: console
+
+   grep github ~/.ssh/known_hosts | ssh-keygen -l -f -
+
+This will print out the fingerprints for each entry that matches the grep.
+

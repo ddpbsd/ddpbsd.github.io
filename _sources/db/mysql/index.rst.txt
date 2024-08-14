@@ -1,7 +1,9 @@
-
 =====
 MySQL
 =====
+
+I should switch this to mariadb, but haven't had a need to use it lately.
+Add it to the todo!
 
 Contents:
 
@@ -9,7 +11,5 @@ Contents:
    :maxdepth: 2
 
    defaults
-   duplicates
-   timediff
-   userlist
+   mysql_misc
 

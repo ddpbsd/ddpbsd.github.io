@@ -1,16 +1,17 @@
 <!DOCTYPE html>
 
-<html lang="en">
+<html lang="en" data-content_root="../../../">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>List all VMs &#8212; notes 0.1 documentation</title>
     <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=fa44fd50" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/alabaster.css?v=12dfc556" />
-    <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js?v=e031e9a9"></script>
-    <script src="../../../_static/doctools.js?v=888ff710"></script>
-    <script src="../../../_static/sphinx_highlight.js?v=4825356b"></script>
+    <link rel="stylesheet" type="text/css" href="../../../_static/basic.css?v=c058f7c8" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/alabaster.css?v=27fed22d" />
+    <script src="../../../_static/documentation_options.js?v=2709fde1"></script>
+    <script src="../../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
     <link rel="next" title="Don’t fill the disk" href="datastore.html" />
@@ -38,31 +39,31 @@
 You probably shouldn’t use these.</p>
 </div>
 <section id="list-all-vms">
-<h1>List all VMs<a class="headerlink" href="#list-all-vms" title="Permalink to this heading">¶</a></h1>
+<h1>List all VMs<a class="headerlink" href="#list-all-vms" title="Link to this heading">¶</a></h1>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">vim-cmd vmsvc/getallvms</span>
 </pre></div>
 </div>
 </section>
 <section id="get-the-power-state-of-a-vm">
-<h1>Get the power state of a VM:<a class="headerlink" href="#get-the-power-state-of-a-vm" title="Permalink to this heading">¶</a></h1>
+<h1>Get the power state of a VM:<a class="headerlink" href="#get-the-power-state-of-a-vm" title="Link to this heading">¶</a></h1>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">vim-cmd vmsvc/power.getstate 1</span>
 </pre></div>
 </div>
 </section>
 <section id="power-on-a-device">
-<h1>Power on a device<a class="headerlink" href="#power-on-a-device" title="Permalink to this heading">¶</a></h1>
+<h1>Power on a device<a class="headerlink" href="#power-on-a-device" title="Link to this heading">¶</a></h1>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">vim-cmd vmsvc/power.on 320</span>
 </pre></div>
 </div>
 </section>
 <section id="reboot-a-vm-if-vmtools-is-installed">
-<h1>Reboot a VM if vmtools is installed<a class="headerlink" href="#reboot-a-vm-if-vmtools-is-installed" title="Permalink to this heading">¶</a></h1>
+<h1>Reboot a VM if vmtools is installed<a class="headerlink" href="#reboot-a-vm-if-vmtools-is-installed" title="Link to this heading">¶</a></h1>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">vim-cmd vmsvc/power.reboot 176</span>
 </pre></div>
 </div>
 </section>
 <section id="list-current-tasks">
-<h1>List current tasks:<a class="headerlink" href="#list-current-tasks" title="Permalink to this heading">¶</a></h1>
+<h1>List current tasks:<a class="headerlink" href="#list-current-tasks" title="Link to this heading">¶</a></h1>
 <p>This should get a task for a specific VM.</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">vim-cmd vmsvc/get.tasklist VM_ID</span>
 </pre></div>
@@ -73,31 +74,31 @@ You probably shouldn’t use these.</p>
 </div>
 </section>
 <section id="get-info-for-a-task">
-<h1>Get info for a task:<a class="headerlink" href="#get-info-for-a-task" title="Permalink to this heading">¶</a></h1>
+<h1>Get info for a task:<a class="headerlink" href="#get-info-for-a-task" title="Link to this heading">¶</a></h1>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">vim-cmd vimsvc/task_info TASK_ID</span>
 </pre></div>
 </div>
 </section>
 <section id="installing-updates">
-<h1>installing updates<a class="headerlink" href="#installing-updates" title="Permalink to this heading">¶</a></h1>
+<h1>installing updates<a class="headerlink" href="#installing-updates" title="Link to this heading">¶</a></h1>
 <p><a class="reference external" href="https://kb.vmware.com/s/article/2008939">https://kb.vmware.com/s/article/2008939</a></p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">[root@blah:/file/location] esxcli software vib install -d /full/path/to/vib.zip</span>
 </pre></div>
 </div>
 </section>
 <section id="conflicting-vib-stuff-with-dell-iso">
-<h1>conflicting vib stuff with dell iso<a class="headerlink" href="#conflicting-vib-stuff-with-dell-iso" title="Permalink to this heading">¶</a></h1>
+<h1>conflicting vib stuff with dell iso<a class="headerlink" href="#conflicting-vib-stuff-with-dell-iso" title="Link to this heading">¶</a></h1>
 <p><a class="reference external" href="https://vmadminthoughts.wordpress.com/2020/09/04/conflicting-vibs-on-esxi-6-7u1-with-dell-image-profile/">https://vmadminthoughts.wordpress.com/2020/09/04/conflicting-vibs-on-esxi-6-7u1-with-dell-image-profile/</a></p>
 <p>Remove qlogic vib stuff, then install the big thing.</p>
 </section>
 <section id="powercli">
-<h1>powercli<a class="headerlink" href="#powercli" title="Permalink to this heading">¶</a></h1>
+<h1>powercli<a class="headerlink" href="#powercli" title="Link to this heading">¶</a></h1>
 <p>Can’t create advanced settings with PowerCLI or something:
 <cite>Current license or ESXi version prohibits execution of the requested operation.</cite></p>
 <p>Use <cite>esxcfg-advcfg</cite></p>
 </section>
 <section id="esxcfg-advcfg">
-<h1>esxcfg-advcfg<a class="headerlink" href="#esxcfg-advcfg" title="Permalink to this heading">¶</a></h1>
+<h1>esxcfg-advcfg<a class="headerlink" href="#esxcfg-advcfg" title="Link to this heading">¶</a></h1>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">esxcfg-advcfg --add-option isolation.device.edit.disable --add-type string --add-desc &quot;CIS 8.2.6&quot; --add-default &quot;True&quot;</span>
 </pre></div>
 </div>
@@ -108,7 +109,7 @@ You probably shouldn’t use these.</p>
           
         </div>
       </div>
-      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
         <div class="sphinxsidebarwrapper">
 <h1 class="logo"><a href="../../../index.html">notes</a></h1>
 
@@ -121,9 +122,7 @@ You probably shouldn’t use these.</p>
 
 <h3>Navigation</h3>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../../../arm/index.html">arm</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../db/index.html">databases</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../dns/index.html">DNS stuff</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../elk/index.html">elastic stuff</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../k8s/index.html">kubernetes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../openssh/index.html">OpenSSH</a></li>
@@ -167,7 +166,7 @@ You probably shouldn’t use these.</p>
   </ul></li>
 </ul>
 </div>
-<div id="searchbox" style="display: none" role="search">
+<search id="searchbox" style="display: none" role="search">
   <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="../../../search.html" method="get">
@@ -175,7 +174,7 @@ You probably shouldn’t use these.</p>
       <input type="submit" value="Go" />
     </form>
     </div>
-</div>
+</search>
 <script>document.getElementById('searchbox').style.display = "block"</script>
         </div>
       </div>

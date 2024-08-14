@@ -10,5 +10,6 @@ Contents:
 
    docker/index
    lxd/index
+   podman/index
    misc
    

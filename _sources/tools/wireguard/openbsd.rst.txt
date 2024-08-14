@@ -1,0 +1,13 @@
+=================
+wireguard openbsd
+=================
+
+client example config
+^^^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: console
+
+   wgkey CLIENT_PRIV_KEY
+   wgpeer SERVER_PUB_KEY wgendpoint SERVER_IP SERVER_PORT wgaip 172.18.18.0/24 wgdescr DESCRIPTION
+   inet 172.17.30.2/24
+

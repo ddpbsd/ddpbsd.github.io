@@ -1,16 +1,17 @@
 <!DOCTYPE html>
 
-<html lang="en">
+<html lang="en" data-content_root="../../../">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Network stuff &#8212; notes 0.1 documentation</title>
     <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=fa44fd50" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/alabaster.css?v=12dfc556" />
-    <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js?v=e031e9a9"></script>
-    <script src="../../../_static/doctools.js?v=888ff710"></script>
-    <script src="../../../_static/sphinx_highlight.js?v=4825356b"></script>
+    <link rel="stylesheet" type="text/css" href="../../../_static/basic.css?v=c058f7c8" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/alabaster.css?v=27fed22d" />
+    <script src="../../../_static/documentation_options.js?v=2709fde1"></script>
+    <script src="../../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
     <link rel="next" title="Get the current config" href="snmp.html" />
@@ -33,17 +34,17 @@
           <div class="body" role="main">
             
   <section id="network-stuff">
-<h1>Network stuff<a class="headerlink" href="#network-stuff" title="Permalink to this heading">¶</a></h1>
+<h1>Network stuff<a class="headerlink" href="#network-stuff" title="Link to this heading">¶</a></h1>
 <p>ESXi networking is a bundle of sadness.
 Hopefully these commands help.</p>
 <section id="change-ip-of-management-network">
-<h2>Change IP of management network:<a class="headerlink" href="#change-ip-of-management-network" title="Permalink to this heading">¶</a></h2>
+<h2>Change IP of management network:<a class="headerlink" href="#change-ip-of-management-network" title="Link to this heading">¶</a></h2>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">esxcfg-vmknic &quot;Management Network&quot; -i [newip] -n [newsubnetmask]</span>
 </pre></div>
 </div>
 </section>
 <section id="change-default-route">
-<h2>Change default route:<a class="headerlink" href="#change-default-route" title="Permalink to this heading">¶</a></h2>
+<h2>Change default route:<a class="headerlink" href="#change-default-route" title="Link to this heading">¶</a></h2>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">esxcfg-route -d default 0.0.0.0 [olddefaultgw]</span>
 <span class="go">esxcfg-route -a default 0.0.0.0 [newdefaultgw]</span>
 <span class="go">/sbin/services.sh restart</span>
@@ -57,7 +58,7 @@ Hopefully these commands help.</p>
           
         </div>
       </div>
-      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
         <div class="sphinxsidebarwrapper">
 <h1 class="logo"><a href="../../../index.html">notes</a></h1>
 
@@ -70,9 +71,7 @@ Hopefully these commands help.</p>
 
 <h3>Navigation</h3>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../../../arm/index.html">arm</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../db/index.html">databases</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../dns/index.html">DNS stuff</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../elk/index.html">elastic stuff</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../k8s/index.html">kubernetes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../openssh/index.html">OpenSSH</a></li>
@@ -116,7 +115,7 @@ Hopefully these commands help.</p>
   </ul></li>
 </ul>
 </div>
-<div id="searchbox" style="display: none" role="search">
+<search id="searchbox" style="display: none" role="search">
   <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="../../../search.html" method="get">
@@ -124,7 +123,7 @@ Hopefully these commands help.</p>
       <input type="submit" value="Go" />
     </form>
     </div>
-</div>
+</search>
 <script>document.getElementById('searchbox').style.display = "block"</script>
         </div>
       </div>

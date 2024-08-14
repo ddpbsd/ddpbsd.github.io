@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>sql &#8212; notes 0.1 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/basic.css?v=c058f7c8" />
+    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css?v=27fed22d" />
+    <script src="../_static/documentation_options.js?v=2709fde1"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="MySQL" href="mysql/index.html" />
+    <link rel="prev" title="databases" href="index.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+
+  
+  
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="sql">
+<h1>sql<a class="headerlink" href="#sql" title="Link to this heading">¶</a></h1>
+<section id="sql-count-the-number-of-times-each-domain-is-entered-sort-by-count-and-display-descending">
+<h2>sql | count the number of times each domain is entered, sort by count, and display descending<a class="headerlink" href="#sql-count-the-number-of-times-each-domain-is-entered-sort-by-count-and-display-descending" title="Link to this heading">¶</a></h2>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">SELECT domain, count(*) FROM dump WHERE domain IS NOT NULL GROUP BY domain ORDER BY count DESC;</span>
+</pre></div>
+</div>
+</section>
+<section id="sql-as-above-but-csv">
+<h2>sql | as above, but csv<a class="headerlink" href="#sql-as-above-but-csv" title="Link to this heading">¶</a></h2>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">COPY(SELECT domain, count(*) FROM dump WHERE domain IS NOT NULL GROUP BY domain ORDER BY count DESC) TO STDOUT WITH CSV;</span>
+</pre></div>
+</div>
+</section>
+<section id="sql-count-password-length">
+<h2>sql | count password length<a class="headerlink" href="#sql-count-password-length" title="Link to this heading">¶</a></h2>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="k">char_length</span><span class="p">(</span><span class="n">password</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="k">length</span><span class="p">,</span><span class="w"> </span><span class="k">count</span><span class="p">(</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="k">count</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">dump</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">password</span><span class="w"> </span><span class="k">IS</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">null</span><span class="w"> </span><span class="k">GROUP</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="k">length</span><span class="w"> </span><span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="k">count</span><span class="w"> </span><span class="k">DESC</span><span class="p">;</span>
+</pre></div>
+</div>
+</section>
+<section id="sql-multiple-select-statements">
+<h2>sql | multiple SELECT statements<a class="headerlink" href="#sql-multiple-select-statements" title="Link to this heading">¶</a></h2>
+<p>This will output <cite>filename|COUNT</cite> for all distinct filenames in the <cite>syscheck</cite> table.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">SELECT filename,count(*) FROM syscheck WHERE filename IN (SELECT DISTINCT filename FROM syscheck) GROUP BY filename;</span>
+</pre></div>
+</div>
+</section>
+<section id="sql-order-by-date">
+<h2>sql | ORDER BY date<a class="headerlink" href="#sql-order-by-date" title="Link to this heading">¶</a></h2>
+<p>If the date is in a good format (<cite>YYYY-mm-dd HH:mm:ss</cite> or similar), an <cite>ORDER BY date_field DESC LIMIT 1</cite> is enough to get the latest entry by date.</p>
+</section>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../index.html">notes</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">databases</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">sql</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mysql/index.html">MySQL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="postgresql/index.html">PostgreSQL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sqlite.html">sqlite</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../elk/index.html">elastic stuff</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../k8s/index.html">kubernetes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../openssh/index.html">OpenSSH</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../operating_systems/index.html">Operating Systems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ossec/index.html">OSSEC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../rsyslogd/index.html">rsyslogd</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ssl/index.html">ssl</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../stupid_unix_tricks/index.html">Stupid Unix Tricks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tools/index.html">Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../vendor_stuff/index.html">Vendor Stuff</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../misc/index.html">misc</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+  <li><a href="index.html">databases</a><ul>
+      <li>Previous: <a href="index.html" title="previous chapter">databases</a></li>
+      <li>Next: <a href="mysql/index.html" title="next chapter">MySQL</a></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<search id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+        <!-- your html code here -->
+	<div class="footer">
+		<em>This information has a good chance of being wrong, inconsistent, out of date, or just bad. Use at your own risk.
+		Feel free to notify me of any issues though.</em>
+	</div>
+
+
+  </body>
+</html>

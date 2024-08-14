@@ -43,7 +43,7 @@ Show multiple versions of a package
 
 .. code-block:: console
 
-   dnf --showduplicates PACKAGE
+   dnf --showduplicates search PACKAGE
 
 Install specific version
 ^^^^^^^^^^^^^^^^^^^^^^^^
@@ -52,3 +52,17 @@ Install specific version
 
    dnf install PACKAGE-VERSION
 
+dnf show security updates
+^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: console
+
+   dnf updateinfo list updates security
+
+dnf install security updates
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: console
+
+   dnf update --security
+   

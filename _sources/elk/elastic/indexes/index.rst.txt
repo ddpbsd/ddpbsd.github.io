@@ -12,3 +12,5 @@ Contents:
 
    create_index
    ilm
+   errors
+

@@ -5,7 +5,7 @@ agent logs discovery
 interesting fields
 ^^^^^^^^^^^^^^^^^^
 
-`agent.id`i & `elastic_agent.id` - A UUID value that can be found in the agent description in fleet.
+`agent.id` & `elastic_agent.id` - A UUID value that can be found in the agent description in fleet.
 
 `agent.name` - The agent's name (possibly fqdn).
 
@@ -18,6 +18,9 @@ interesting fields
 `event.module` - Maybe the integration?
 
 
+search for agent in fleet
+^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Use the field `local_metadata.host.hostname` to search for an agent in the fleet interface.
 
 

@@ -1,20 +1,21 @@
 <!DOCTYPE html>
 
-<html lang="en">
+<html lang="en" data-content_root="../">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>elastic stuff &#8212; notes 0.1 documentation</title>
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
-    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css?v=12dfc556" />
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js?v=e031e9a9"></script>
-    <script src="../_static/doctools.js?v=888ff710"></script>
-    <script src="../_static/sphinx_highlight.js?v=4825356b"></script>
+    <link rel="stylesheet" type="text/css" href="../_static/basic.css?v=c058f7c8" />
+    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css?v=27fed22d" />
+    <script src="../_static/documentation_options.js?v=2709fde1"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Beats" href="beats/index.html" />
-    <link rel="prev" title="Create key" href="../dns/nsd/keys.html" />
+    <link rel="prev" title="sqlite" href="../db/sqlite.html" />
    
   <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
   
@@ -33,7 +34,7 @@
           <div class="body" role="main">
             
   <section id="elastic-stuff">
-<h1>elastic stuff<a class="headerlink" href="#elastic-stuff" title="Permalink to this heading">¶</a></h1>
+<h1>elastic stuff<a class="headerlink" href="#elastic-stuff" title="Link to this heading">¶</a></h1>
 <p>Contents:</p>
 <div class="toctree-wrapper compound">
 <ul>
@@ -45,6 +46,10 @@
 <li class="toctree-l1"><a class="reference internal" href="elastic/index.html">elasticsearch</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="elastic/indexes/index.html">indexes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="elastic/dev.html">Change the breaker limit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="elastic/dev.html#get-info-about-nodes-in-cluster">get info about nodes in cluster</a></li>
+<li class="toctree-l2"><a class="reference internal" href="elastic/dev.html#get-pipeline-statistics-for-troubleshooting-ingest-processing-times">get pipeline statistics for troubleshooting ingest processing times</a></li>
+<li class="toctree-l2"><a class="reference internal" href="elastic/dev.html#get-number-of-indexing-failures-for-all-indices">get number of indexing failures for all indices</a></li>
+<li class="toctree-l2"><a class="reference internal" href="elastic/dev.html#show-the-current-write-thread-pool-statistics">show the current write thread pool statistics</a></li>
 <li class="toctree-l2"><a class="reference internal" href="elastic/status.html">Get the status of ES</a></li>
 <li class="toctree-l2"><a class="reference internal" href="elastic/status.html#filesystem-stats">Filesystem stats</a></li>
 <li class="toctree-l2"><a class="reference internal" href="elastic/status.html#get-version-and-other-info">Get version and other info</a></li>
@@ -53,6 +58,7 @@
 <li class="toctree-l2"><a class="reference internal" href="elastic/shards.html">shards</a></li>
 <li class="toctree-l2"><a class="reference internal" href="elastic/tasks.html">Tasks</a></li>
 <li class="toctree-l2"><a class="reference internal" href="elastic/security/index.html">security</a></li>
+<li class="toctree-l2"><a class="reference internal" href="elastic/interesting.html">interesting stuff</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="logstash/index.html">logstash</a><ul>
@@ -65,6 +71,7 @@
 <li class="toctree-l2"><a class="reference internal" href="logstash/testing.html">Simple config testing</a></li>
 <li class="toctree-l2"><a class="reference internal" href="logstash/testing.html#this-is-working-with-6-5">This is working with 6.5</a></li>
 <li class="toctree-l2"><a class="reference internal" href="logstash/testing.html#sincedb-path">sincedb path</a></li>
+<li class="toctree-l2"><a class="reference internal" href="logstash/testing.html#plugin-statistics">plugin statistics</a></li>
 <li class="toctree-l2"><a class="reference internal" href="logstash/usage.html">logstash usage</a></li>
 <li class="toctree-l2"><a class="reference internal" href="logstash/patterns/index.html">logstash patterns</a></li>
 <li class="toctree-l2"><a class="reference internal" href="logstash/examples/index.html">Examples</a></li>
@@ -86,6 +93,15 @@
 <li class="toctree-l2"><a class="reference internal" href="agent/discover.html">agent logs discovery</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="api.html">api</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="api.html#add-a-space-to-kibana-api">add a space to kibana api</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="parsing.html">parsing</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="parsing.html#geoip-processor-ingest-pipeline">geoip processor ingest pipeline</a></li>
+<li class="toctree-l2"><a class="reference internal" href="parsing.html#remove-empty-fields">remove empty fields</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="setup.html">Setting up the whole thing</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="setup.html#systems">Systems</a></li>
 <li class="toctree-l2"><a class="reference internal" href="setup.html#elasticsearch-installation">elasticsearch installation</a></li>
@@ -93,7 +109,7 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="endpoint.html">endpoint</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="endpoint.html#elastic-agent">Elastic Agent</a></li>
-<li class="toctree-l2"><a class="reference internal" href="endpoint.html#elastic-endpoint-security">Elastic Endpoint Security</a></li>
+<li class="toctree-l2"><a class="reference internal" href="endpoint.html#elastic-endpoint-security-defend">Elastic Endpoint Security (defend)</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="read.html">read from elastic</a></li>
@@ -113,6 +129,10 @@
 <li class="toctree-l2"><a class="reference internal" href="testing_logstash.html#running-logstash">running logstash</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="elastic-cloud.html">elastic-cloud</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="elastic-cloud.html#restart-an-elasticsearch-resource">Restart an elasticsearch resource</a></li>
+</ul>
+</li>
 </ul>
 </div>
 </section>
@@ -122,7 +142,7 @@
           
         </div>
       </div>
-      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
         <div class="sphinxsidebarwrapper">
 <h1 class="logo"><a href="../index.html">notes</a></h1>
 
@@ -135,20 +155,21 @@
 
 <h3>Navigation</h3>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../arm/index.html">arm</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../db/index.html">databases</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../dns/index.html">DNS stuff</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">elastic stuff</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="beats/index.html">Beats</a></li>
 <li class="toctree-l2"><a class="reference internal" href="elastic/index.html">elasticsearch</a></li>
 <li class="toctree-l2"><a class="reference internal" href="logstash/index.html">logstash</a></li>
 <li class="toctree-l2"><a class="reference internal" href="monitoring/index.html">monitoring</a></li>
 <li class="toctree-l2"><a class="reference internal" href="agent/index.html">agent</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api.html">api</a></li>
+<li class="toctree-l2"><a class="reference internal" href="parsing.html">parsing</a></li>
 <li class="toctree-l2"><a class="reference internal" href="setup.html">Setting up the whole thing</a></li>
 <li class="toctree-l2"><a class="reference internal" href="endpoint.html">endpoint</a></li>
 <li class="toctree-l2"><a class="reference internal" href="read.html">read from elastic</a></li>
 <li class="toctree-l2"><a class="reference internal" href="docker/commands.html">docker commands</a></li>
 <li class="toctree-l2"><a class="reference internal" href="testing_logstash.html">testing logstash</a></li>
+<li class="toctree-l2"><a class="reference internal" href="elastic-cloud.html">elastic-cloud</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../k8s/index.html">kubernetes</a></li>
@@ -167,12 +188,12 @@
 <h3>Related Topics</h3>
 <ul>
   <li><a href="../index.html">Documentation overview</a><ul>
-      <li>Previous: <a href="../dns/nsd/keys.html" title="previous chapter">Create key</a></li>
+      <li>Previous: <a href="../db/sqlite.html" title="previous chapter">sqlite</a></li>
       <li>Next: <a href="beats/index.html" title="next chapter">Beats</a></li>
   </ul></li>
 </ul>
 </div>
-<div id="searchbox" style="display: none" role="search">
+<search id="searchbox" style="display: none" role="search">
   <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="../search.html" method="get">
@@ -180,7 +201,7 @@
       <input type="submit" value="Go" />
     </form>
     </div>
-</div>
+</search>
 <script>document.getElementById('searchbox').style.display = "block"</script>
         </div>
       </div>

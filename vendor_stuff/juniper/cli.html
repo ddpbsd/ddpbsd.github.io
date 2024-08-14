@@ -1,16 +1,17 @@
 <!DOCTYPE html>
 
-<html lang="en">
+<html lang="en" data-content_root="../../">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Enter the cli: &#8212; notes 0.1 documentation</title>
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
-    <link rel="stylesheet" type="text/css" href="../../_static/alabaster.css?v=12dfc556" />
-    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js?v=e031e9a9"></script>
-    <script src="../../_static/doctools.js?v=888ff710"></script>
-    <script src="../../_static/sphinx_highlight.js?v=4825356b"></script>
+    <link rel="stylesheet" type="text/css" href="../../_static/basic.css?v=c058f7c8" />
+    <link rel="stylesheet" type="text/css" href="../../_static/alabaster.css?v=27fed22d" />
+    <script src="../../_static/documentation_options.js?v=2709fde1"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Commit the configuration changes, then roll back after 10 minutes:" href="commit_confirm.html" />
@@ -33,38 +34,38 @@
           <div class="body" role="main">
             
   <section id="enter-the-cli">
-<span id="vendor-stuff-juniper-cli"></span><h1>Enter the cli:<a class="headerlink" href="#enter-the-cli" title="Permalink to this heading">¶</a></h1>
+<span id="vendor-stuff-juniper-cli"></span><h1>Enter the cli:<a class="headerlink" href="#enter-the-cli" title="Link to this heading">¶</a></h1>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">user@host% </span>cli
 </pre></div>
 </div>
 </section>
 <section id="enter-the-configuration">
-<h1>Enter the configuration:<a class="headerlink" href="#enter-the-configuration" title="Permalink to this heading">¶</a></h1>
+<h1>Enter the configuration:<a class="headerlink" href="#enter-the-configuration" title="Link to this heading">¶</a></h1>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">user@host&gt; configure</span>
 </pre></div>
 </div>
 </section>
 <section id="get-the-hardware-information">
-<h1>Get the hardware information:<a class="headerlink" href="#get-the-hardware-information" title="Permalink to this heading">¶</a></h1>
+<h1>Get the hardware information:<a class="headerlink" href="#get-the-hardware-information" title="Link to this heading">¶</a></h1>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">user@host# </span>cli<span class="w"> </span>show<span class="w"> </span>chassis<span class="w"> </span>hardware
 </pre></div>
 </div>
 </section>
 <section id="get-the-software-version">
-<h1>Get the software version:<a class="headerlink" href="#get-the-software-version" title="Permalink to this heading">¶</a></h1>
+<h1>Get the software version:<a class="headerlink" href="#get-the-software-version" title="Link to this heading">¶</a></h1>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">user@host# </span>cli<span class="w"> </span>show<span class="w"> </span>version
 </pre></div>
 </div>
 <p>More info <a class="reference external" href="http://www.juniper.net/techpubs/en_US/junos12.1x46/information-products/pathway-pages/junos-cli/junos-cli.html">here</a></p>
 </section>
 <section id="dump-the-configuration-to-a-file">
-<h1>Dump the configuration to a file:<a class="headerlink" href="#dump-the-configuration-to-a-file" title="Permalink to this heading">¶</a></h1>
+<h1>Dump the configuration to a file:<a class="headerlink" href="#dump-the-configuration-to-a-file" title="Link to this heading">¶</a></h1>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">ssh root@DEVICE &quot;cli show config&quot; &gt; saved_config</span>
 </pre></div>
 </div>
 </section>
 <section id="show-config-changes-before-commit">
-<h1>Show config changes before commit:<a class="headerlink" href="#show-config-changes-before-commit" title="Permalink to this heading">¶</a></h1>
+<h1>Show config changes before commit:<a class="headerlink" href="#show-config-changes-before-commit" title="Link to this heading">¶</a></h1>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">show | compare</span>
 </pre></div>
 </div>
@@ -75,7 +76,7 @@
           
         </div>
       </div>
-      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
         <div class="sphinxsidebarwrapper">
 <h1 class="logo"><a href="../../index.html">notes</a></h1>
 
@@ -88,9 +89,7 @@
 
 <h3>Navigation</h3>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../../arm/index.html">arm</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../db/index.html">databases</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../dns/index.html">DNS stuff</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../elk/index.html">elastic stuff</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../k8s/index.html">kubernetes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../openssh/index.html">OpenSSH</a></li>
@@ -132,7 +131,7 @@
   </ul></li>
 </ul>
 </div>
-<div id="searchbox" style="display: none" role="search">
+<search id="searchbox" style="display: none" role="search">
   <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="../../search.html" method="get">
@@ -140,7 +139,7 @@
       <input type="submit" value="Go" />
     </form>
     </div>
-</div>
+</search>
 <script>document.getElementById('searchbox').style.display = "block"</script>
         </div>
       </div>

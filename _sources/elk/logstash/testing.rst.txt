@@ -90,3 +90,11 @@ sincedb path
 Set the `sincedb_path` to `/dev/null` to keep it from recording where it is in the file.
 If this isn't set to something like `/dev/null`, delete the `data` dir after running to reset the state.
 
+plugin statistics
+^^^^^^^^^^^^^^^^^
+
+Look at the `[Metrics Logstash] Logstash Single Pipeline View` dashboard.
+Not sure what provides this, maybe metricbeat or agent?
+
+
+

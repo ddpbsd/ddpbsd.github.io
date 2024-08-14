@@ -1,0 +1,16 @@
+=============
+elastic-cloud
+=============
+
+Restart an elasticsearch resource
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+It's part of the `deployments api <https://www.elastic.co/guide/en/cloud/current/ec-api-deployment-other.html>`_ I guess.
+
+`REF_ID` is the `ref_id` in the deployments output.
+`RESOURCE_KIND` is `elasticsearch`, `kibana`, `apm`, `integrations_server`, `appsearch`, `enterprise_search`
+
+.. code-block:: console
+
+   curl -XPOST -H"Authorization: ApiKey APIKEY" https://api.elastic-cloud.com/api/v1/deployments/DEPLOYMENT_ID/RESOURCE_KIND/REF_ID/_restart
+

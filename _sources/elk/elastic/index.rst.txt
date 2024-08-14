@@ -15,4 +15,5 @@ Contents:
    shards
    tasks
    security/index
+   interesting
 

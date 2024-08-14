@@ -1,0 +1,29 @@
+
+
+install
+^^^^^^^
+
+.. code-block:: console
+
+   # dnf install postgresql-server
+
+init
+^^^^
+
+Will initialize a db in `/var/lib/pgsql/data`
+
+.. code-block:: console
+
+   # postgresql-setup --initdb
+
+Unfortunately it does a shitty job of dealing with passwords.
+
+Put the super user password in a file and try:
+
+.. code-block:: console
+
+   env PGSETUP_INITDB_OPTIONS="-A scram-sha-256 --pwfile=/PATH/TO/FILE" postgresql-setup --initdb
+
+The `--pwprompt` option doesn't seem to work as this is a wrapper around `initdb(1)`.
+
+

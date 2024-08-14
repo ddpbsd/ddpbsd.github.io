@@ -40,4 +40,5 @@ Contents:
    postfix/index
    chromium/headless
    terraform/index
+   wireguard/index
 

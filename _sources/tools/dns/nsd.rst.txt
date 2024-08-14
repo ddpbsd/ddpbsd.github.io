@@ -1,0 +1,31 @@
+===
+nsd
+===
+
+Create key
+^^^^^^^^^^
+
+.. code-block:: console
+
+   dd if=/dev/random of=/dev/stdout count=1 bs=32 | base64
+
+Configuration example
+^^^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: console
+
+   key:
+        name: "host1_key"
+        algorithm: hmac-sha256
+        secret: "KEY_KEY_KEY"
+
+        name: "host2_key"
+        algorithm: hmac-sha256
+        secret: "KEY_KEY_KEY"
+
+   zone:
+        name: "example.com"
+        zonefile: "master/example.com"
+        notify: host1@153 host1_key
+        provide-xfr: host1@153 host1_key
+

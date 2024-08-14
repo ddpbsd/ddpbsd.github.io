@@ -5,6 +5,11 @@ kubernetes
 Stuff about k8s.
 Mostly minikube right now.
 
+.. note::
+
+   I will be transitioning anything useful from here to `policyviolation <https://policyviolation.org/k8s/>`_.
+   That is the new home for my k8s/eck stuff.
+
 .. warning::
 
    I'm just starting to explore this stuff.
@@ -16,8 +21,5 @@ Contents:
 .. toctree::
    :maxdepth: 2
 
-   kubectl
    minikube/index
-   rancher
-   things      
 

@@ -6,7 +6,7 @@ PostgreSQL
 .. toctree::
    :maxdepth: 2
 
-   simplestuff
-   userlist
-   stuff
+   defaults
+   postgresql_stuff
+   rocky9
 

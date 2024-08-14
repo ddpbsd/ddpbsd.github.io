@@ -17,10 +17,7 @@ Contents:
 .. toctree::
    :maxdepth: 2
 
-
-   arm/index
    db/index
-   dns/index
    elk/index
    k8s/index
    openssh/index

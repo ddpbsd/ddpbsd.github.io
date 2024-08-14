@@ -1,16 +1,17 @@
 <!DOCTYPE html>
 
-<html lang="en">
+<html lang="en" data-content_root="../../">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Hardware Tokens &#8212; notes 0.1 documentation</title>
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
-    <link rel="stylesheet" type="text/css" href="../../_static/alabaster.css?v=12dfc556" />
-    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js?v=e031e9a9"></script>
-    <script src="../../_static/doctools.js?v=888ff710"></script>
-    <script src="../../_static/sphinx_highlight.js?v=4825356b"></script>
+    <link rel="stylesheet" type="text/css" href="../../_static/basic.css?v=c058f7c8" />
+    <link rel="stylesheet" type="text/css" href="../../_static/alabaster.css?v=27fed22d" />
+    <script src="../../_static/documentation_options.js?v=2709fde1"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Imagemagick" href="../imagemagick/index.html" />
@@ -33,19 +34,19 @@
           <div class="body" role="main">
             
   <section id="hardware-tokens">
-<h1>Hardware Tokens<a class="headerlink" href="#hardware-tokens" title="Permalink to this heading">¶</a></h1>
+<h1>Hardware Tokens<a class="headerlink" href="#hardware-tokens" title="Link to this heading">¶</a></h1>
 <p>My desk currently looks like a Yubikey graveyard.
 I need to figure out which ones do what, and which ones
 are worth keeping.
 Some of them are way too old to be useful.</p>
 <section id="using-a-hardware-token-with-openssh-8-2">
-<h2>Using a hardware token with OpenSSH 8.2+<a class="headerlink" href="#using-a-hardware-token-with-openssh-8-2" title="Permalink to this heading">¶</a></h2>
+<h2>Using a hardware token with OpenSSH 8.2+<a class="headerlink" href="#using-a-hardware-token-with-openssh-8-2" title="Link to this heading">¶</a></h2>
 <p>The documentation isn’t simple enough for me.
 It’s written as it should be (product agnostic), but I need something simpler.
 So, writing these directions for me.</p>
 </section>
 <section id="yubikey-features">
-<h2>Yubikey features<a class="headerlink" href="#yubikey-features" title="Permalink to this heading">¶</a></h2>
+<h2>Yubikey features<a class="headerlink" href="#yubikey-features" title="Link to this heading">¶</a></h2>
 <p>These are the features of the yubikeys on my desk.</p>
 <table class="docutils align-default">
 <thead>
@@ -104,7 +105,7 @@ So, writing these directions for me.</p>
 </table>
 </section>
 <section id="yubikey-5-nfc">
-<h2>Yubikey 5 NFC<a class="headerlink" href="#yubikey-5-nfc" title="Permalink to this heading">¶</a></h2>
+<h2>Yubikey 5 NFC<a class="headerlink" href="#yubikey-5-nfc" title="Link to this heading">¶</a></h2>
 <p>I used the <a class="reference external" href="https://www.yubico.com/products/services-software/download/yubikey-manager">Yubikey Manager</a>
 to change the FIDO2 pin.
 I ran it in Windows 10 with administrator privs (won’t be able to access fido without them).</p>
@@ -128,7 +129,7 @@ It will prompt for the pin.</p>
 <p>Using that key to connect to a system will require a touch (look for the flashing Y).</p>
 </section>
 <section id="solo-key">
-<h2>Solo Key<a class="headerlink" href="#solo-key" title="Permalink to this heading">¶</a></h2>
+<h2>Solo Key<a class="headerlink" href="#solo-key" title="Link to this heading">¶</a></h2>
 <p>Using firmware 4.0.0 the solokey just worked.
 Not sure what version I had triedpreviously</p>
 <p><a class="reference external" href="https://solokeys.com/">Solo Key</a> works with FIDO2, but only with ecdsa-sk keys.
@@ -137,7 +138,7 @@ RIP <cite>ed25519</cite>.</p>
 on OpenBSD.</p>
 </section>
 <section id="solo2-key">
-<h2>Solo2 Key<a class="headerlink" href="#solo2-key" title="Permalink to this heading">¶</a></h2>
+<h2>Solo2 Key<a class="headerlink" href="#solo2-key" title="Link to this heading">¶</a></h2>
 <p>My solo2 key is using ed25519.</p>
 </section>
 </section>
@@ -147,7 +148,7 @@ on OpenBSD.</p>
           
         </div>
       </div>
-      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
         <div class="sphinxsidebarwrapper">
 <h1 class="logo"><a href="../../index.html">notes</a></h1>
 
@@ -160,9 +161,7 @@ on OpenBSD.</p>
 
 <h3>Navigation</h3>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../../arm/index.html">arm</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../db/index.html">databases</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../dns/index.html">DNS stuff</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../elk/index.html">elastic stuff</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../k8s/index.html">kubernetes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../openssh/index.html">OpenSSH</a></li>
@@ -174,14 +173,13 @@ on OpenBSD.</p>
 <li class="toctree-l1"><a class="reference internal" href="../../tools/index.html">Tools</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../vendor_stuff/index.html">Vendor Stuff</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../index.html">misc</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../arm/index.html">arm</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../sdr/index.html">software defined radio</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Hardware Tokens</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../imagemagick/index.html">Imagemagick</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../kernel_build/index.html">Building a custom kernel</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../ksh/index.html">ksh</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../links/index.html">Links</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../mynet/index.html">mynet</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../projects/index.html">projects</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../random.html">Stupid random stuff</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../junk/index.html">Junk</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../fediverse/glitch-soc.html">glitch-soc</a></li>
@@ -200,7 +198,7 @@ on OpenBSD.</p>
   </ul></li>
 </ul>
 </div>
-<div id="searchbox" style="display: none" role="search">
+<search id="searchbox" style="display: none" role="search">
   <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="../../search.html" method="get">
@@ -208,7 +206,7 @@ on OpenBSD.</p>
       <input type="submit" value="Go" />
     </form>
     </div>
-</div>
+</search>
 <script>document.getElementById('searchbox').style.display = "block"</script>
         </div>
       </div>

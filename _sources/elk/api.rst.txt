@@ -1,0 +1,11 @@
+===
+api
+===
+
+add a space to kibana api
+^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: console
+
+   curl -XPOST https://kibana/s/SPACENAME/api
+

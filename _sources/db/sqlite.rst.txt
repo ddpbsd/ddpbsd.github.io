@@ -2,8 +2,10 @@
 sqlite
 ======
 
-import from cli
-^^^^^^^^^^^^^^^
+sqlite | import from cli
+^^^^^^^^^^^^^^^^^^^^^^^^
+
+The table will need to have the same number of columns as the csv file.
 
 .. code-block:: console
 

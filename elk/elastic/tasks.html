@@ -1,16 +1,17 @@
 <!DOCTYPE html>
 
-<html lang="en">
+<html lang="en" data-content_root="../../">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Tasks &#8212; notes 0.1 documentation</title>
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
-    <link rel="stylesheet" type="text/css" href="../../_static/alabaster.css?v=12dfc556" />
-    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js?v=e031e9a9"></script>
-    <script src="../../_static/doctools.js?v=888ff710"></script>
-    <script src="../../_static/sphinx_highlight.js?v=4825356b"></script>
+    <link rel="stylesheet" type="text/css" href="../../_static/basic.css?v=c058f7c8" />
+    <link rel="stylesheet" type="text/css" href="../../_static/alabaster.css?v=27fed22d" />
+    <script src="../../_static/documentation_options.js?v=2709fde1"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="security" href="security/index.html" />
@@ -33,21 +34,21 @@
           <div class="body" role="main">
             
   <section id="tasks">
-<h1>Tasks<a class="headerlink" href="#tasks" title="Permalink to this heading">¶</a></h1>
+<h1>Tasks<a class="headerlink" href="#tasks" title="Link to this heading">¶</a></h1>
 <section id="get-a-list-of-tasks">
-<h2>Get a list of tasks<a class="headerlink" href="#get-a-list-of-tasks" title="Permalink to this heading">¶</a></h2>
+<h2>Get a list of tasks<a class="headerlink" href="#get-a-list-of-tasks" title="Link to this heading">¶</a></h2>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">GET /_tasks</span>
 </pre></div>
 </div>
 </section>
 <section id="get-a-list-of-tasks-that-are-searches">
-<h2>Get a list of tasks that are searches<a class="headerlink" href="#get-a-list-of-tasks-that-are-searches" title="Permalink to this heading">¶</a></h2>
+<h2>Get a list of tasks that are searches<a class="headerlink" href="#get-a-list-of-tasks-that-are-searches" title="Link to this heading">¶</a></h2>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">GET /_tasks?actions=*search&amp;detailed</span>
 </pre></div>
 </div>
 </section>
 <section id="get-information-on-a-specific-task">
-<h2>Get information on a specific task<a class="headerlink" href="#get-information-on-a-specific-task" title="Permalink to this heading">¶</a></h2>
+<h2>Get information on a specific task<a class="headerlink" href="#get-information-on-a-specific-task" title="Link to this heading">¶</a></h2>
 <p>Get the TASK_ID from one of the above queries.</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">GET /_tasks/TASK_ID</span>
 </pre></div>
@@ -60,7 +61,7 @@
           
         </div>
       </div>
-      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
         <div class="sphinxsidebarwrapper">
 <h1 class="logo"><a href="../../index.html">notes</a></h1>
 
@@ -73,20 +74,21 @@
 
 <h3>Navigation</h3>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../../arm/index.html">arm</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../db/index.html">databases</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../dns/index.html">DNS stuff</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../index.html">elastic stuff</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../beats/index.html">Beats</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="index.html">elasticsearch</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../logstash/index.html">logstash</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../monitoring/index.html">monitoring</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../agent/index.html">agent</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api.html">api</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../parsing.html">parsing</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../setup.html">Setting up the whole thing</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../endpoint.html">endpoint</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../read.html">read from elastic</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../docker/commands.html">docker commands</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../testing_logstash.html">testing logstash</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../elastic-cloud.html">elastic-cloud</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../k8s/index.html">kubernetes</a></li>
@@ -114,7 +116,7 @@
   </ul></li>
 </ul>
 </div>
-<div id="searchbox" style="display: none" role="search">
+<search id="searchbox" style="display: none" role="search">
   <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="../../search.html" method="get">
@@ -122,7 +124,7 @@
       <input type="submit" value="Go" />
     </form>
     </div>
-</div>
+</search>
 <script>document.getElementById('searchbox').style.display = "block"</script>
         </div>
       </div>

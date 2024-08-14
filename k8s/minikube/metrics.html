@@ -1,19 +1,20 @@
 <!DOCTYPE html>
 
-<html lang="en">
+<html lang="en" data-content_root="../../">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>metrics &#8212; notes 0.1 documentation</title>
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
-    <link rel="stylesheet" type="text/css" href="../../_static/alabaster.css?v=12dfc556" />
-    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js?v=e031e9a9"></script>
-    <script src="../../_static/doctools.js?v=888ff710"></script>
-    <script src="../../_static/sphinx_highlight.js?v=4825356b"></script>
+    <link rel="stylesheet" type="text/css" href="../../_static/basic.css?v=c058f7c8" />
+    <link rel="stylesheet" type="text/css" href="../../_static/alabaster.css?v=27fed22d" />
+    <script src="../../_static/documentation_options.js?v=2709fde1"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="rancher" href="../rancher.html" />
+    <link rel="next" title="OpenSSH" href="../../openssh/index.html" />
     <link rel="prev" title="kubectl" href="kubectl.html" />
    
   <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
@@ -33,15 +34,15 @@
           <div class="body" role="main">
             
   <section id="metrics">
-<h1>metrics<a class="headerlink" href="#metrics" title="Permalink to this heading">¶</a></h1>
+<h1>metrics<a class="headerlink" href="#metrics" title="Link to this heading">¶</a></h1>
 <section id="enable-metrics-server">
-<h2>enable metrics-server<a class="headerlink" href="#enable-metrics-server" title="Permalink to this heading">¶</a></h2>
+<h2>enable metrics-server<a class="headerlink" href="#enable-metrics-server" title="Link to this heading">¶</a></h2>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">minikube addons enable metrics-server</span>
 </pre></div>
 </div>
 </section>
 <section id="query">
-<h2>Query<a class="headerlink" href="#query" title="Permalink to this heading">¶</a></h2>
+<h2>Query<a class="headerlink" href="#query" title="Link to this heading">¶</a></h2>
 <p>Start the proxy and metrics might be accessable from <cite>127.0.0.1:8001</cite></p>
 <p>Get some info from something about the metrics-server:</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">curl -s 127.0.0.1:8001/api/v1/namespaces/kube-system/services/metrics-server | jq &#39;.&#39;</span>
@@ -55,7 +56,7 @@
           
         </div>
       </div>
-      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
         <div class="sphinxsidebarwrapper">
 <h1 class="logo"><a href="../../index.html">notes</a></h1>
 
@@ -68,15 +69,10 @@
 
 <h3>Navigation</h3>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../../arm/index.html">arm</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../db/index.html">databases</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../dns/index.html">DNS stuff</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../elk/index.html">elastic stuff</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../index.html">kubernetes</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="../kubectl.html">kubectl</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="index.html">minikube</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../rancher.html">rancher</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../things.html">things</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../openssh/index.html">OpenSSH</a></li>
@@ -97,13 +93,13 @@
   <li><a href="../index.html">kubernetes</a><ul>
   <li><a href="index.html">minikube</a><ul>
       <li>Previous: <a href="kubectl.html" title="previous chapter">kubectl</a></li>
-      <li>Next: <a href="../rancher.html" title="next chapter">rancher</a></li>
+      <li>Next: <a href="../../openssh/index.html" title="next chapter">OpenSSH</a></li>
   </ul></li>
   </ul></li>
   </ul></li>
 </ul>
 </div>
-<div id="searchbox" style="display: none" role="search">
+<search id="searchbox" style="display: none" role="search">
   <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="../../search.html" method="get">
@@ -111,7 +107,7 @@
       <input type="submit" value="Go" />
     </form>
     </div>
-</div>
+</search>
 <script>document.getElementById('searchbox').style.display = "block"</script>
         </div>
       </div>

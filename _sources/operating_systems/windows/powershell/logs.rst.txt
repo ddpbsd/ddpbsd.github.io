@@ -5,3 +5,14 @@ Get a list of details about log files
 
    Get-EventLog -List
 
+get a list of event channels
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+In powershell
+
+.. code-block:: console
+
+   Get-WinEvent -ListLog *
+
+`Source <https://help.sumologic.com/docs/send-data/installed-collectors/sources/windows-event-source-custom-channels/>`_
+

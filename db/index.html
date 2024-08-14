@@ -1,20 +1,21 @@
 <!DOCTYPE html>
 
-<html lang="en">
+<html lang="en" data-content_root="../">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>databases &#8212; notes 0.1 documentation</title>
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
-    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css?v=12dfc556" />
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js?v=e031e9a9"></script>
-    <script src="../_static/doctools.js?v=888ff710"></script>
-    <script src="../_static/sphinx_highlight.js?v=4825356b"></script>
+    <link rel="stylesheet" type="text/css" href="../_static/basic.css?v=c058f7c8" />
+    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css?v=27fed22d" />
+    <script src="../_static/documentation_options.js?v=2709fde1"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="MySQL" href="mysql/index.html" />
-    <link rel="prev" title="For a serial connection" href="../arm/pine64aplus/pins.html" />
+    <link rel="next" title="sql" href="sql.html" />
+    <link rel="prev" title="Welcome to ddpbsd’s notes!" href="../index.html" />
    
   <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
   
@@ -33,44 +34,14 @@
           <div class="body" role="main">
             
   <section id="databases">
-<h1>databases<a class="headerlink" href="#databases" title="Permalink to this heading">¶</a></h1>
+<h1>databases<a class="headerlink" href="#databases" title="Link to this heading">¶</a></h1>
 <p>Contents:</p>
 <div class="toctree-wrapper compound">
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="mysql/index.html">MySQL</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="mysql/defaults.html">Defaults file</a></li>
-<li class="toctree-l2"><a class="reference internal" href="mysql/duplicates.html">Find duplicates</a></li>
-<li class="toctree-l2"><a class="reference internal" href="mysql/timediff.html">Do a timediff</a></li>
-<li class="toctree-l2"><a class="reference internal" href="mysql/userlist.html">Get a list of users</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="postgresql/index.html">PostgreSQL</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="postgresql/simplestuff.html">Create user</a></li>
-<li class="toctree-l2"><a class="reference internal" href="postgresql/simplestuff.html#create-database">Create database</a></li>
-<li class="toctree-l2"><a class="reference internal" href="postgresql/simplestuff.html#timestamps-as-unix-epoch">timestamps as unix epoch</a></li>
-<li class="toctree-l2"><a class="reference internal" href="postgresql/simplestuff.html#change-a-user-s-password">Change a user’s password</a></li>
-<li class="toctree-l2"><a class="reference internal" href="postgresql/simplestuff.html#pg-hba-conf-location">pg_hba.conf location</a></li>
-<li class="toctree-l2"><a class="reference internal" href="postgresql/simplestuff.html#epoch-to-timestamp">epoch to timestamp</a></li>
-<li class="toctree-l2"><a class="reference internal" href="postgresql/userlist.html">Create a list of database users</a></li>
-<li class="toctree-l2"><a class="reference internal" href="postgresql/stuff.html">List databases</a></li>
-<li class="toctree-l2"><a class="reference internal" href="postgresql/stuff.html#list-tables">List tables</a></li>
-<li class="toctree-l2"><a class="reference internal" href="postgresql/stuff.html#connect-to-db">Connect to db</a></li>
-<li class="toctree-l2"><a class="reference internal" href="postgresql/stuff.html#date-minus-a-couple-of-days">date minus a couple of days</a></li>
-<li class="toctree-l2"><a class="reference internal" href="postgresql/stuff.html#convert-epoch-to-timestamp">Convert epoch to timestamp</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="sqlite.html">sqlite</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="sqlite.html#import-from-cli">import from cli</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="sql/index.html">SQL Stuff</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="sql/query.html">Count the number of times each domain is entered, sort by count, and display descending</a></li>
-<li class="toctree-l2"><a class="reference internal" href="sql/query.html#as-above-but-csv">As above, but csv</a></li>
-<li class="toctree-l2"><a class="reference internal" href="sql/query.html#count-password-length">Count password length</a></li>
-<li class="toctree-l2"><a class="reference internal" href="sql/query.html#multiple-select-statements">multiple SELECT statements</a></li>
-<li class="toctree-l2"><a class="reference internal" href="sql/query.html#order-by-date">ORDER BY date</a></li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="sql.html">sql</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mysql/index.html">MySQL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="postgresql/index.html">PostgreSQL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sqlite.html">sqlite</a></li>
 </ul>
 </div>
 </section>
@@ -80,7 +51,7 @@
           
         </div>
       </div>
-      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
         <div class="sphinxsidebarwrapper">
 <h1 class="logo"><a href="../index.html">notes</a></h1>
 
@@ -93,15 +64,13 @@
 
 <h3>Navigation</h3>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../arm/index.html">arm</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">databases</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="sql.html">sql</a></li>
 <li class="toctree-l2"><a class="reference internal" href="mysql/index.html">MySQL</a></li>
 <li class="toctree-l2"><a class="reference internal" href="postgresql/index.html">PostgreSQL</a></li>
 <li class="toctree-l2"><a class="reference internal" href="sqlite.html">sqlite</a></li>
-<li class="toctree-l2"><a class="reference internal" href="sql/index.html">SQL Stuff</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../dns/index.html">DNS stuff</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../elk/index.html">elastic stuff</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../k8s/index.html">kubernetes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../openssh/index.html">OpenSSH</a></li>
@@ -119,12 +88,12 @@
 <h3>Related Topics</h3>
 <ul>
   <li><a href="../index.html">Documentation overview</a><ul>
-      <li>Previous: <a href="../arm/pine64aplus/pins.html" title="previous chapter">For a serial connection</a></li>
-      <li>Next: <a href="mysql/index.html" title="next chapter">MySQL</a></li>
+      <li>Previous: <a href="../index.html" title="previous chapter">Welcome to ddpbsd’s notes!</a></li>
+      <li>Next: <a href="sql.html" title="next chapter">sql</a></li>
   </ul></li>
 </ul>
 </div>
-<div id="searchbox" style="display: none" role="search">
+<search id="searchbox" style="display: none" role="search">
   <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="../search.html" method="get">
@@ -132,7 +101,7 @@
       <input type="submit" value="Go" />
     </form>
     </div>
-</div>
+</search>
 <script>document.getElementById('searchbox').style.display = "block"</script>
         </div>
       </div>

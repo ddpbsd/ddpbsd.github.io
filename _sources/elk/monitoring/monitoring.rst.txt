@@ -112,5 +112,9 @@ Lots of stats
 
    GET /_stats
 
+elasticsearch logs
+^^^^^^^^^^^^^^^^^^
+
+From elastic cloud console, clicking the `View` in `Logs and metrics` takes you to `Observability/Logs/Stream` in Kibana.
 
 

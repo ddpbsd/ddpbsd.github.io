@@ -24,6 +24,16 @@ Sort by node and then size (desc)
 
    GET /_cat/shards?v&s=node,store
 
+find out why a shard is unallocated
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+This guide from Elastic might help with these issues:
+`Diagnose unassigned shards <https://www.elastic.co/guide/en/elasticsearch/reference/current/diagnose-unassigned-shards.html>`_
+
+.. code-block:: console
+
+   GET _cluster/allocation/explain
+
 Re-route failed shards
 ^^^^^^^^^^^^^^^^^^^^^^
 
@@ -46,4 +56,19 @@ Enable shard allocation
    }
    '
 
+get all shards
+^^^^^^^^^^^^^^
+
+sort by node then number of docs
+
+.. code-block:: console
+
+   GET _cat/shards?v&h=index,shard,prirep,state,store,docs,node&node,docs
+
+get cluster shard status along with curent health
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: console
+
+   GET _cluster/health?filter_path=status,*_shards
 

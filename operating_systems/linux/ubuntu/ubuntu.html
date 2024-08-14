@@ -1,16 +1,17 @@
 <!DOCTYPE html>
 
-<html lang="en">
+<html lang="en" data-content_root="../../../">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Only upgrade security related packages: &#8212; notes 0.1 documentation</title>
     <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=fa44fd50" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/alabaster.css?v=12dfc556" />
-    <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js?v=e031e9a9"></script>
-    <script src="../../../_static/doctools.js?v=888ff710"></script>
-    <script src="../../../_static/sphinx_highlight.js?v=4825356b"></script>
+    <link rel="stylesheet" type="text/css" href="../../../_static/basic.css?v=c058f7c8" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/alabaster.css?v=27fed22d" />
+    <script src="../../../_static/documentation_options.js?v=2709fde1"></script>
+    <script src="../../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
     <link rel="next" title="dpkg" href="packages.html" />
@@ -33,7 +34,7 @@
           <div class="body" role="main">
             
   <section id="only-upgrade-security-related-packages">
-<span id="linux-ubuntu"></span><h1>Only upgrade security related packages:<a class="headerlink" href="#only-upgrade-security-related-packages" title="Permalink to this heading">¶</a></h1>
+<span id="linux-ubuntu"></span><h1>Only upgrade security related packages:<a class="headerlink" href="#only-upgrade-security-related-packages" title="Link to this heading">¶</a></h1>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>From iam-TJ at <a class="reference external" href="https://news.ycombinator.com/item?id=11475474">https://news.ycombinator.com/item?id=11475474</a></p>
@@ -49,19 +50,19 @@ It is configured as a system service that runs automatically at shutdown.</p>
 </div>
 </section>
 <section id="enable-a-service">
-<h1>Enable a service:<a class="headerlink" href="#enable-a-service" title="Permalink to this heading">¶</a></h1>
+<h1>Enable a service:<a class="headerlink" href="#enable-a-service" title="Link to this heading">¶</a></h1>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">update-rc.d ssh enable</span>
 </pre></div>
 </div>
 </section>
 <section id="import-a-gpg-key-into-apt">
-<h1>Import a gpg key into apt:<a class="headerlink" href="#import-a-gpg-key-into-apt" title="Permalink to this heading">¶</a></h1>
+<h1>Import a gpg key into apt:<a class="headerlink" href="#import-a-gpg-key-into-apt" title="Link to this heading">¶</a></h1>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">apt-key adv --keyserver pgp.mit.edu --recv-key KEY_STUFF</span>
 </pre></div>
 </div>
 </section>
 <section id="find-the-ubuntu-version">
-<h1>Find the Ubuntu version:<a class="headerlink" href="#find-the-ubuntu-version" title="Permalink to this heading">¶</a></h1>
+<h1>Find the Ubuntu version:<a class="headerlink" href="#find-the-ubuntu-version" title="Link to this heading">¶</a></h1>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>lsb_release<span class="w"> </span>-a
 <span class="go">No LSB modules are available.</span>
 <span class="go">Distributor ID: Ubuntu</span>
@@ -77,7 +78,7 @@ It is configured as a system service that runs automatically at shutdown.</p>
           
         </div>
       </div>
-      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
         <div class="sphinxsidebarwrapper">
 <h1 class="logo"><a href="../../../index.html">notes</a></h1>
 
@@ -90,9 +91,7 @@ It is configured as a system service that runs automatically at shutdown.</p>
 
 <h3>Navigation</h3>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../../../arm/index.html">arm</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../db/index.html">databases</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../dns/index.html">DNS stuff</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../elk/index.html">elastic stuff</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../k8s/index.html">kubernetes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../openssh/index.html">OpenSSH</a></li>
@@ -126,7 +125,7 @@ It is configured as a system service that runs automatically at shutdown.</p>
   </ul></li>
 </ul>
 </div>
-<div id="searchbox" style="display: none" role="search">
+<search id="searchbox" style="display: none" role="search">
   <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="../../../search.html" method="get">
@@ -134,7 +133,7 @@ It is configured as a system service that runs automatically at shutdown.</p>
       <input type="submit" value="Go" />
     </form>
     </div>
-</div>
+</search>
 <script>document.getElementById('searchbox').style.display = "block"</script>
         </div>
       </div>

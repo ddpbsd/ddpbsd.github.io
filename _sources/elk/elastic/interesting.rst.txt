@@ -1,0 +1,51 @@
+=================
+interesting stuff
+=================
+
+
+.. code-block:: console
+
+   GET _cat/recovery?v&s=stage&active_only=true
+
+  
+.. code-block:: console
+
+   GET _tasks?pretty&human&detailed=true&actions=indices:data/read/search
+
+.. code-block:: console
+
+   POST _cluster/reroute?metric=none
+   {
+     "commands": [
+      {
+        "move": {
+          "index": "NAME",
+          "shard": 0,
+          "from_node": "node1",
+          "to_node": "node2"
+        }
+      },
+      {
+        "allocate_replica": {
+          "index": "NAME",
+          "shard": 1,
+          "node": "node3"
+        }
+      }
+    ]
+  }
+
+.. code-block:: console
+
+   PUT INDEX_NAME/_settings
+   {
+     "index": {
+      "number_of_replicas": 0
+    }
+   }
+
+
+.. code-block:: console
+
+   GET _cat/indices?h=index,status,store.size,docs.count,creation.date.string&s=index,creation.date&format=json&bytes=b
+  

@@ -1,0 +1,17 @@
+
+======
+podman
+======
+
+`Podman <https://podman.io>`_ is a daemonless container system for linux.
+It's mostly `docker <https://docker.com>`_ compatible from a command line perspective.
+Podman containers can be run by root or a non-root user.
+
+Contents:
+
+.. toctree::
+   :maxdepth: 2
+
+   podman_glossary
+   getting_started
+      

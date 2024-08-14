@@ -13,6 +13,15 @@ Sign commits
 
    git config --global user.signkey public 80E6A369  ## Replace 80E6A369 will private key ID
 
+sign commits with ssh
+^^^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: console
+
+   git config --global gpg.format ssh
+   git config --global user.signingkey ~/.ssh/gitlab_lab.pub
+   git config --global commit.gpgsign true
+
 Set email/username
 ^^^^^^^^^^^^^^^^^^
 

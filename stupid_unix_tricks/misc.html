@@ -1,16 +1,17 @@
 <!DOCTYPE html>
 
-<html lang="en">
+<html lang="en" data-content_root="../">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Find the last day of the month &#8212; notes 0.1 documentation</title>
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
-    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css?v=12dfc556" />
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js?v=e031e9a9"></script>
-    <script src="../_static/doctools.js?v=888ff710"></script>
-    <script src="../_static/sphinx_highlight.js?v=4825356b"></script>
+    <link rel="stylesheet" type="text/css" href="../_static/basic.css?v=c058f7c8" />
+    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css?v=27fed22d" />
+    <script src="../_static/documentation_options.js?v=2709fde1"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Tools" href="../tools/index.html" />
@@ -33,7 +34,7 @@
           <div class="body" role="main">
             
   <section id="find-the-last-day-of-the-month">
-<h1>Find the last day of the month<a class="headerlink" href="#find-the-last-day-of-the-month" title="Permalink to this heading">¶</a></h1>
+<h1>Find the last day of the month<a class="headerlink" href="#find-the-last-day-of-the-month" title="Link to this heading">¶</a></h1>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span><span class="nb">set</span><span class="w"> </span><span class="k">$(</span>cal<span class="k">)</span>
 <span class="gp">$ </span><span class="nb">shift</span><span class="w"> </span><span class="k">$((</span><span class="nv">$#</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="m">1</span><span class="k">))</span>
 <span class="gp">$ </span><span class="nb">echo</span><span class="w"> </span><span class="nv">$1</span>
@@ -42,43 +43,43 @@
 </div>
 </section>
 <section id="encrypt-all-files-in-one-dir-and-save-to-another-dir-with-ansible-vault">
-<h1>Encrypt all files in one dir and save to another dir with ansible vault<a class="headerlink" href="#encrypt-all-files-in-one-dir-and-save-to-another-dir-with-ansible-vault" title="Permalink to this heading">¶</a></h1>
+<h1>Encrypt all files in one dir and save to another dir with ansible vault<a class="headerlink" href="#encrypt-all-files-in-one-dir-and-save-to-another-dir-with-ansible-vault" title="Link to this heading">¶</a></h1>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">ls files/source/ | xargs -I@ ansible-vault encrypt --vault-id $(pwd)/files/destination/@</span>
 </pre></div>
 </div>
 </section>
 <section id="find-the-current-dpi-in-x">
-<h1>Find the current dpi in X<a class="headerlink" href="#find-the-current-dpi-in-x" title="Permalink to this heading">¶</a></h1>
+<h1>Find the current dpi in X<a class="headerlink" href="#find-the-current-dpi-in-x" title="Link to this heading">¶</a></h1>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>xdpyinfo<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>-i<span class="w"> </span>-V<span class="w"> </span><span class="m">2</span><span class="w"> </span>resolution
 </pre></div>
 </div>
 </section>
 <section id="go-to-a-specific-line-number-in-less">
-<h1>Go to a specific line number in less<a class="headerlink" href="#go-to-a-specific-line-number-in-less" title="Permalink to this heading">¶</a></h1>
+<h1>Go to a specific line number in less<a class="headerlink" href="#go-to-a-specific-line-number-in-less" title="Link to this heading">¶</a></h1>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">less +&lt;LINE_NUM&gt; FILE</span>
 </pre></div>
 </div>
 </section>
 <section id="go-to-a-specific-byte-offset-in-less">
-<h1>Go to a specific byte (offset?) in less<a class="headerlink" href="#go-to-a-specific-byte-offset-in-less" title="Permalink to this heading">¶</a></h1>
+<h1>Go to a specific byte (offset?) in less<a class="headerlink" href="#go-to-a-specific-byte-offset-in-less" title="Link to this heading">¶</a></h1>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">less +&lt;BYTE&gt;P FILE</span>
 </pre></div>
 </div>
 </section>
 <section id="show-a-specific-line-number-in-less">
-<h1>Show a specific line number in less<a class="headerlink" href="#show-a-specific-line-number-in-less" title="Permalink to this heading">¶</a></h1>
+<h1>Show a specific line number in less<a class="headerlink" href="#show-a-specific-line-number-in-less" title="Link to this heading">¶</a></h1>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">less -N +&lt;LINE_NUM&gt;g FILE</span>
 </pre></div>
 </div>
 </section>
 <section id="extract-a-specific-line-using-sed">
-<h1>Extract a specific line using sed<a class="headerlink" href="#extract-a-specific-line-using-sed" title="Permalink to this heading">¶</a></h1>
+<h1>Extract a specific line using sed<a class="headerlink" href="#extract-a-specific-line-using-sed" title="Link to this heading">¶</a></h1>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">sed -ne &#39;&lt;LINE_NUM&gt;P&#39; FILE</span>
 </pre></div>
 </div>
 </section>
 <section id="better-w-behavior">
-<h1>Better ^w behavior<a class="headerlink" href="#better-w-behavior" title="Permalink to this heading">¶</a></h1>
+<h1>Better ^w behavior<a class="headerlink" href="#better-w-behavior" title="Link to this heading">¶</a></h1>
 <p>Make <cite>^w</cite> delete up until a special character (like what happens on OpenBSD) in bash.</p>
 <p>Put this in <cite>~/.inputrc</cite>:</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">#</span><span class="c1"># Not sure why, but this needs to be disabled</span>
@@ -94,7 +95,7 @@
           
         </div>
       </div>
-      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
         <div class="sphinxsidebarwrapper">
 <h1 class="logo"><a href="../index.html">notes</a></h1>
 
@@ -107,9 +108,7 @@
 
 <h3>Navigation</h3>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../arm/index.html">arm</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../db/index.html">databases</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../dns/index.html">DNS stuff</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../elk/index.html">elastic stuff</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../k8s/index.html">kubernetes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../openssh/index.html">OpenSSH</a></li>
@@ -145,7 +144,7 @@
   </ul></li>
 </ul>
 </div>
-<div id="searchbox" style="display: none" role="search">
+<search id="searchbox" style="display: none" role="search">
   <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="../search.html" method="get">
@@ -153,7 +152,7 @@
       <input type="submit" value="Go" />
     </form>
     </div>
-</div>
+</search>
 <script>document.getElementById('searchbox').style.display = "block"</script>
         </div>
       </div>

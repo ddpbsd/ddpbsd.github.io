@@ -5,9 +5,9 @@ dns
 Contents:
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
 
-   nsd/index
-   unbound/index
-   bind/index
+   nsd
+   unbound
+   bind
    

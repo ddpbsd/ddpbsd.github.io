@@ -1,20 +1,21 @@
 <!DOCTYPE html>
 
-<html lang="en">
+<html lang="en" data-content_root="../">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>kubernetes &#8212; notes 0.1 documentation</title>
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
-    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css?v=12dfc556" />
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js?v=e031e9a9"></script>
-    <script src="../_static/doctools.js?v=888ff710"></script>
-    <script src="../_static/sphinx_highlight.js?v=4825356b"></script>
+    <link rel="stylesheet" type="text/css" href="../_static/basic.css?v=c058f7c8" />
+    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css?v=27fed22d" />
+    <script src="../_static/documentation_options.js?v=2709fde1"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="kubectl" href="kubectl.html" />
-    <link rel="prev" title="testing logstash" href="../elk/testing_logstash.html" />
+    <link rel="next" title="minikube" href="minikube/index.html" />
+    <link rel="prev" title="elastic-cloud" href="../elk/elastic-cloud.html" />
    
   <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
   
@@ -33,9 +34,14 @@
           <div class="body" role="main">
             
   <section id="kubernetes">
-<h1>kubernetes<a class="headerlink" href="#kubernetes" title="Permalink to this heading">¶</a></h1>
+<h1>kubernetes<a class="headerlink" href="#kubernetes" title="Link to this heading">¶</a></h1>
 <p>Stuff about k8s.
 Mostly minikube right now.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>I will be transitioning anything useful from here to <a class="reference external" href="https://policyviolation.org/k8s/">policyviolation</a>.
+That is the new home for my k8s/eck stuff.</p>
+</div>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>I’m just starting to explore this stuff.
@@ -44,37 +50,10 @@ This is less ready for anyone to see than what I have on the rest of the site.</
 <p>Contents:</p>
 <div class="toctree-wrapper compound">
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="kubectl.html">kubectl</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="kubectl.html#nodes">nodes</a></li>
-<li class="toctree-l2"><a class="reference internal" href="kubectl.html#namespaces">namespaces</a></li>
-<li class="toctree-l2"><a class="reference internal" href="kubectl.html#pods">pods</a></li>
-</ul>
-</li>
 <li class="toctree-l1"><a class="reference internal" href="minikube/index.html">minikube</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="minikube/getting_started.html">Getting started</a></li>
 <li class="toctree-l2"><a class="reference internal" href="minikube/kubectl.html">kubectl</a></li>
 <li class="toctree-l2"><a class="reference internal" href="minikube/metrics.html">metrics</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="rancher.html">rancher</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="rancher.html#reset-paassword">Reset paassword</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="things.html">things</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="things.html#cluster">cluster</a></li>
-<li class="toctree-l2"><a class="reference internal" href="things.html#node">node</a></li>
-<li class="toctree-l2"><a class="reference internal" href="things.html#kubelet">kubelet</a></li>
-<li class="toctree-l2"><a class="reference internal" href="things.html#kube-proxy">kube-proxy</a></li>
-<li class="toctree-l2"><a class="reference internal" href="things.html#control-plane">control plane</a></li>
-<li class="toctree-l2"><a class="reference internal" href="things.html#kube-apiserver">kube-apiserver</a></li>
-<li class="toctree-l2"><a class="reference internal" href="things.html#etcd">etcd</a></li>
-<li class="toctree-l2"><a class="reference internal" href="things.html#kube-scheduler">kube-scheduler</a></li>
-<li class="toctree-l2"><a class="reference internal" href="things.html#kube-controller-manager">kube-controller-manager</a></li>
-<li class="toctree-l2"><a class="reference internal" href="things.html#cloud-controller-manager">cloud-controller-manager</a></li>
-<li class="toctree-l2"><a class="reference internal" href="things.html#pods">pods</a></li>
-<li class="toctree-l2"><a class="reference internal" href="things.html#stateful-sets">stateful sets</a></li>
-<li class="toctree-l2"><a class="reference internal" href="things.html#services">services</a></li>
-<li class="toctree-l2"><a class="reference internal" href="things.html#logs">logs</a></li>
 </ul>
 </li>
 </ul>
@@ -86,7 +65,7 @@ This is less ready for anyone to see than what I have on the rest of the site.</
           
         </div>
       </div>
-      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
         <div class="sphinxsidebarwrapper">
 <h1 class="logo"><a href="../index.html">notes</a></h1>
 
@@ -99,15 +78,10 @@ This is less ready for anyone to see than what I have on the rest of the site.</
 
 <h3>Navigation</h3>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../arm/index.html">arm</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../db/index.html">databases</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../dns/index.html">DNS stuff</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../elk/index.html">elastic stuff</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">kubernetes</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="kubectl.html">kubectl</a></li>
 <li class="toctree-l2"><a class="reference internal" href="minikube/index.html">minikube</a></li>
-<li class="toctree-l2"><a class="reference internal" href="rancher.html">rancher</a></li>
-<li class="toctree-l2"><a class="reference internal" href="things.html">things</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../openssh/index.html">OpenSSH</a></li>
@@ -125,12 +99,12 @@ This is less ready for anyone to see than what I have on the rest of the site.</
 <h3>Related Topics</h3>
 <ul>
   <li><a href="../index.html">Documentation overview</a><ul>
-      <li>Previous: <a href="../elk/testing_logstash.html" title="previous chapter">testing logstash</a></li>
-      <li>Next: <a href="kubectl.html" title="next chapter">kubectl</a></li>
+      <li>Previous: <a href="../elk/elastic-cloud.html" title="previous chapter">elastic-cloud</a></li>
+      <li>Next: <a href="minikube/index.html" title="next chapter">minikube</a></li>
   </ul></li>
 </ul>
 </div>
-<div id="searchbox" style="display: none" role="search">
+<search id="searchbox" style="display: none" role="search">
   <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="../search.html" method="get">
@@ -138,7 +112,7 @@ This is less ready for anyone to see than what I have on the rest of the site.</
       <input type="submit" value="Go" />
     </form>
     </div>
-</div>
+</search>
 <script>document.getElementById('searchbox').style.display = "block"</script>
         </div>
       </div>

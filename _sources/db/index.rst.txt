@@ -6,10 +6,10 @@ databases
 Contents:
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
 
+   sql
    mysql/index
    postgresql/index
    sqlite
-   sql/index
 

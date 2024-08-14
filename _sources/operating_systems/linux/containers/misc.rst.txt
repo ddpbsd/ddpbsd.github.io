@@ -9,4 +9,30 @@ see processes in different namespaces
 
    systemd-cgls
 
+context for rocky stuff
+^^^^^^^^^^^^^^^^^^^^^^^
+
+While playing with rootless containers I ran into context issues.
+The files that were being mounted in a container needed to be:
+`system_u:system_r:container_file_t:s0`, but that's not what was
+presented in the logs.
+
+rootless user namespaces
+^^^^^^^^^^^^^^^^^^^^^^^^
+
+`The podman docs <https://docs.podman.io/en/v4.6.0/markdown/options/userns.container.html>`_
+
+`/etc/subuid` contains info on sub uids for each user.
+The format is `USERNAME:first uid:last uid` (it might actually be the
+uids between those numbers, non-inclusive(but that seems confusing)).
+
+There is also an `/etc/subgid` that does the same thing for groups.
+
+When running with podman you can use
+`--userns keep-id:uid=1000,gid=1000` to map the user account (running
+podman?) to uid and gid (in this case) `1000` inside the container.
+So this makes sure files owned by `uid 1000` outside of the container
+would be owned by `uid 1000` inside the container.
+
+
 

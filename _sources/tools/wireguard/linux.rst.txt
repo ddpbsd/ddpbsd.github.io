@@ -1,0 +1,27 @@
+===========
+wg on linux
+===========
+
+turn on debug
+^^^^^^^^^^^^^
+
+
+`echo "module wireguard +p" | tee /sys/kernel/debug/dynamic_debug/control`
+
+this is kinda cool too `dmesg -wT`
+
+server example config
+^^^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: console
+
+   [Interface]
+   Address = 172.18.18.1/24
+   SaveConfig = true
+   ListenPort = 7771
+   PrivateKey = SERVER_PRIVATE_KEY
+
+After the config is loaded, add a peer:
+
+`wg set wg peer CLIENT_PUBLIC_KEY allowed-ips 172.18.18.0/24`
+

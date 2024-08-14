@@ -1,0 +1,9 @@
+postgresql | pg_hba.conf location
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+On ubuntu:
+
+.. code-block:: console
+
+   /etc/postgresql/9.5/main/pg_hba.conf
+

@@ -1,20 +1,21 @@
 <!DOCTYPE html>
 
-<html lang="en">
+<html lang="en" data-content_root="../../../">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>misc &#8212; notes 0.1 documentation</title>
     <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=fa44fd50" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/alabaster.css?v=12dfc556" />
-    <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js?v=e031e9a9"></script>
-    <script src="../../../_static/doctools.js?v=888ff710"></script>
-    <script src="../../../_static/sphinx_highlight.js?v=4825356b"></script>
+    <link rel="stylesheet" type="text/css" href="../../../_static/basic.css?v=c058f7c8" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/alabaster.css?v=27fed22d" />
+    <script src="../../../_static/documentation_options.js?v=2709fde1"></script>
+    <script src="../../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
     <link rel="next" title="Firewalls" href="../firewalls/index.html" />
-    <link rel="prev" title="Auto start on boot" href="lxd/start.html" />
+    <link rel="prev" title="getting started" href="podman/getting_started.html" />
    
   <link rel="stylesheet" href="../../../_static/custom.css" type="text/css" />
   
@@ -33,12 +34,32 @@
           <div class="body" role="main">
             
   <section id="misc">
-<h1>misc<a class="headerlink" href="#misc" title="Permalink to this heading">¶</a></h1>
+<h1>misc<a class="headerlink" href="#misc" title="Link to this heading">¶</a></h1>
 <section id="see-processes-in-different-namespaces">
-<h2>see processes in different namespaces<a class="headerlink" href="#see-processes-in-different-namespaces" title="Permalink to this heading">¶</a></h2>
+<h2>see processes in different namespaces<a class="headerlink" href="#see-processes-in-different-namespaces" title="Link to this heading">¶</a></h2>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">systemd-cgls</span>
 </pre></div>
 </div>
+</section>
+<section id="context-for-rocky-stuff">
+<h2>context for rocky stuff<a class="headerlink" href="#context-for-rocky-stuff" title="Link to this heading">¶</a></h2>
+<p>While playing with rootless containers I ran into context issues.
+The files that were being mounted in a container needed to be:
+<cite>system_u:system_r:container_file_t:s0</cite>, but that’s not what was
+presented in the logs.</p>
+</section>
+<section id="rootless-user-namespaces">
+<h2>rootless user namespaces<a class="headerlink" href="#rootless-user-namespaces" title="Link to this heading">¶</a></h2>
+<p><a class="reference external" href="https://docs.podman.io/en/v4.6.0/markdown/options/userns.container.html">The podman docs</a></p>
+<p><cite>/etc/subuid</cite> contains info on sub uids for each user.
+The format is <cite>USERNAME:first uid:last uid</cite> (it might actually be the
+uids between those numbers, non-inclusive(but that seems confusing)).</p>
+<p>There is also an <cite>/etc/subgid</cite> that does the same thing for groups.</p>
+<p>When running with podman you can use
+<cite>–userns keep-id:uid=1000,gid=1000</cite> to map the user account (running
+podman?) to uid and gid (in this case) <cite>1000</cite> inside the container.
+So this makes sure files owned by <cite>uid 1000</cite> outside of the container
+would be owned by <cite>uid 1000</cite> inside the container.</p>
 </section>
 </section>
 
@@ -47,7 +68,7 @@
           
         </div>
       </div>
-      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
         <div class="sphinxsidebarwrapper">
 <h1 class="logo"><a href="../../../index.html">notes</a></h1>
 
@@ -60,9 +81,7 @@
 
 <h3>Navigation</h3>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../../../arm/index.html">arm</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../db/index.html">databases</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../dns/index.html">DNS stuff</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../elk/index.html">elastic stuff</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../k8s/index.html">kubernetes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../openssh/index.html">OpenSSH</a></li>
@@ -88,7 +107,7 @@
   <li><a href="../../index.html">Operating Systems</a><ul>
   <li><a href="../index.html">Linux</a><ul>
   <li><a href="index.html">containers</a><ul>
-      <li>Previous: <a href="lxd/start.html" title="previous chapter">Auto start on boot</a></li>
+      <li>Previous: <a href="podman/getting_started.html" title="previous chapter">getting started</a></li>
       <li>Next: <a href="../firewalls/index.html" title="next chapter">Firewalls</a></li>
   </ul></li>
   </ul></li>
@@ -96,7 +115,7 @@
   </ul></li>
 </ul>
 </div>
-<div id="searchbox" style="display: none" role="search">
+<search id="searchbox" style="display: none" role="search">
   <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="../../../search.html" method="get">
@@ -104,7 +123,7 @@
       <input type="submit" value="Go" />
     </form>
     </div>
-</div>
+</search>
 <script>document.getElementById('searchbox').style.display = "block"</script>
         </div>
       </div>

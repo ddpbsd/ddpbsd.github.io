@@ -12,9 +12,12 @@ Contents:
    logstash/index
    monitoring/index
    agent/index
+   api
+   parsing
    setup
    endpoint
    read
    docker/commands
    testing_logstash
+   elastic-cloud
 

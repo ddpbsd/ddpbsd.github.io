@@ -1,0 +1,37 @@
+===============
+getting started
+===============
+
+
+
+network
+^^^^^^^
+
+By default podman creates a bridge names `podman`.
+View the available networks with `podman network ls` and see the details for a network with `podman network inspect NETWORK_NAME`.
+
+I don't see a way to inspect the bridge with system level tools (like `brctl`, `ifconfig`, or `ip`).
+To restrict the containers to a specific interface (in a multi-homed system), I think the `macvlan` or `ipvlan` options would be necessary.
+As of the time I'm writing this, macvlanand ipvlan don't support `port forwarding <https://docs.podman.io/en/latest/markdown/podman-network-create.1.html>`_.
+I'm not entirely sure how that affects my uses yet.
+
+pods
+^^^^
+
+Creating and using `pods`_ is simple:
+
+.. code-block:: console
+
+   $ podman pod create PODNAME
+   $ podman run --pod PODNAME -it docker.io/library/busybox
+
+More can be added to the pod creation to limit resources.
+
+links
+^^^^^
+
+* `rootless tutorial <https://github.com/containers/podman/blob/main/docs/tutorials/rootless_tutorial.md>`_
+
+* `Why can't I use sudo with rootless Podman <https://www.redhat.com/sysadmin/sudo-rootless-podman>`_
+
+* `pods <https://developers.redhat.com/blog/2019/01/15/podman-managing-containers-pods>`_

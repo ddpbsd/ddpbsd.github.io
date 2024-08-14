@@ -1,0 +1,40 @@
+===
+sql
+===
+
+sql | count the number of times each domain is entered, sort by count, and display descending
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: console
+
+   SELECT domain, count(*) FROM dump WHERE domain IS NOT NULL GROUP BY domain ORDER BY count DESC;
+
+sql | as above, but csv
+^^^^^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: console
+
+   COPY(SELECT domain, count(*) FROM dump WHERE domain IS NOT NULL GROUP BY domain ORDER BY count DESC) TO STDOUT WITH CSV;
+
+sql | count password length
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: sql
+
+   SELECT char_length(password) AS length, count(*) AS count FROM dump WHERE password IS NOT null GROUP BY length ORDER BY count DESC;
+
+
+sql | multiple SELECT statements
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+This will output `filename|COUNT` for all distinct filenames in the `syscheck` table.
+
+.. code-block:: console
+
+   SELECT filename,count(*) FROM syscheck WHERE filename IN (SELECT DISTINCT filename FROM syscheck) GROUP BY filename;
+
+sql | ORDER BY date
+^^^^^^^^^^^^^^^^^^^
+
+If the date is in a good format (`YYYY-mm-dd HH:mm:ss` or similar), an `ORDER BY date_field DESC LIMIT 1` is enough to get the latest entry by date.
+

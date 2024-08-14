@@ -1,16 +1,17 @@
 <!DOCTYPE html>
 
-<html lang="en">
+<html lang="en" data-content_root="../../../">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Unfuck centos &#8212; notes 0.1 documentation</title>
     <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=fa44fd50" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/alabaster.css?v=12dfc556" />
-    <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js?v=e031e9a9"></script>
-    <script src="../../../_static/doctools.js?v=888ff710"></script>
-    <script src="../../../_static/sphinx_highlight.js?v=4825356b"></script>
+    <link rel="stylesheet" type="text/css" href="../../../_static/basic.css?v=c058f7c8" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/alabaster.css?v=27fed22d" />
+    <script src="../../../_static/documentation_options.js?v=2709fde1"></script>
+    <script src="../../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
     <link rel="next" title="SELinux" href="selinux.html" />
@@ -33,15 +34,15 @@
           <div class="body" role="main">
             
   <section id="unfuck-centos">
-<h1>Unfuck centos<a class="headerlink" href="#unfuck-centos" title="Permalink to this heading">¶</a></h1>
+<h1>Unfuck centos<a class="headerlink" href="#unfuck-centos" title="Link to this heading">¶</a></h1>
 <section id="install-net-tools">
-<h2>Install net-tools<a class="headerlink" href="#install-net-tools" title="Permalink to this heading">¶</a></h2>
+<h2>Install net-tools<a class="headerlink" href="#install-net-tools" title="Link to this heading">¶</a></h2>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">yum install -y net-tools</span>
 </pre></div>
 </div>
 </section>
 <section id="rpm-db-is-fubar">
-<h2>RPM db is fubar<a class="headerlink" href="#rpm-db-is-fubar" title="Permalink to this heading">¶</a></h2>
+<h2>RPM db is fubar<a class="headerlink" href="#rpm-db-is-fubar" title="Link to this heading">¶</a></h2>
 <p>Error:</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">rpmdb: Thread/process 7926/140488136480512 failed: Thread died in Berkeley DB library</span>
 <span class="go">error: db3 error(-30974) from dbenv-&gt;failchk: DB_RUNRECOVERY: Fatal error, run database recovery</span>
@@ -60,20 +61,32 @@ $ yum clean all</p>
 </div></blockquote>
 </section>
 <section id="show-version-of-package-with-yum">
-<h2>Show version of package with yum<a class="headerlink" href="#show-version-of-package-with-yum" title="Permalink to this heading">¶</a></h2>
+<h2>Show version of package with yum<a class="headerlink" href="#show-version-of-package-with-yum" title="Link to this heading">¶</a></h2>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">yum info PACKAGE</span>
 </pre></div>
 </div>
 </section>
 <section id="show-multiple-versions-of-a-package">
-<h2>Show multiple versions of a package<a class="headerlink" href="#show-multiple-versions-of-a-package" title="Permalink to this heading">¶</a></h2>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">dnf --showduplicates PACKAGE</span>
+<h2>Show multiple versions of a package<a class="headerlink" href="#show-multiple-versions-of-a-package" title="Link to this heading">¶</a></h2>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">dnf --showduplicates search PACKAGE</span>
 </pre></div>
 </div>
 </section>
 <section id="install-specific-version">
-<h2>Install specific version<a class="headerlink" href="#install-specific-version" title="Permalink to this heading">¶</a></h2>
+<h2>Install specific version<a class="headerlink" href="#install-specific-version" title="Link to this heading">¶</a></h2>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">dnf install PACKAGE-VERSION</span>
+</pre></div>
+</div>
+</section>
+<section id="dnf-show-security-updates">
+<h2>dnf show security updates<a class="headerlink" href="#dnf-show-security-updates" title="Link to this heading">¶</a></h2>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">dnf updateinfo list updates security</span>
+</pre></div>
+</div>
+</section>
+<section id="dnf-install-security-updates">
+<h2>dnf install security updates<a class="headerlink" href="#dnf-install-security-updates" title="Link to this heading">¶</a></h2>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">dnf update --security</span>
 </pre></div>
 </div>
 </section>
@@ -84,7 +97,7 @@ $ yum clean all</p>
           
         </div>
       </div>
-      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
         <div class="sphinxsidebarwrapper">
 <h1 class="logo"><a href="../../../index.html">notes</a></h1>
 
@@ -97,9 +110,7 @@ $ yum clean all</p>
 
 <h3>Navigation</h3>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../../../arm/index.html">arm</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../db/index.html">databases</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../dns/index.html">DNS stuff</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../elk/index.html">elastic stuff</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../k8s/index.html">kubernetes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../openssh/index.html">OpenSSH</a></li>
@@ -133,7 +144,7 @@ $ yum clean all</p>
   </ul></li>
 </ul>
 </div>
-<div id="searchbox" style="display: none" role="search">
+<search id="searchbox" style="display: none" role="search">
   <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="../../../search.html" method="get">
@@ -141,7 +152,7 @@ $ yum clean all</p>
       <input type="submit" value="Go" />
     </form>
     </div>
-</div>
+</search>
 <script>document.getElementById('searchbox').style.display = "block"</script>
         </div>
       </div>

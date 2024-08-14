@@ -12,3 +12,38 @@ This is a temporary change, and probably a dumb one.
      }
    }'
 
+
+get info about nodes in cluster
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+sort by role, then disk usage
+
+.. code-block:: console
+
+   GET _cat/nodes?v&h=name,role,master,shardStatsTotalCount,diskTotal,diskUsedPercent,cpu,load_1m,load_5m,load_15m,heapMax,heapCurrent,heapPercent&s=role,diskUsedPercent
+
+get pipeline statistics for troubleshooting ingest processing times
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: console
+
+   GET _nodes/stats/ingest?filter_path=nodes.*.ingest
+
+get number of indexing failures for all indices
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: console
+
+   GET _all/_stats/indexing?filter_path=indices.*.total.indexing.index_failed
+
+show the current write thread pool statistics
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+queue is particularly useful for diagnosing the overall write load on the cluster
+see: `cat-thread-pool <https://www.elastic.co/guide/en/elasticsearch/reference/current/cat-thread-pool.html>`_
+
+.. code-block:: console
+
+   GET _cat/thread_pool/write?v&h=node_name,name,active,size_queue,queue_size,rejected
+
+

@@ -1,16 +1,17 @@
 <!DOCTYPE html>
 
-<html lang="en">
+<html lang="en" data-content_root="../../">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>shards &#8212; notes 0.1 documentation</title>
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
-    <link rel="stylesheet" type="text/css" href="../../_static/alabaster.css?v=12dfc556" />
-    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js?v=e031e9a9"></script>
-    <script src="../../_static/doctools.js?v=888ff710"></script>
-    <script src="../../_static/sphinx_highlight.js?v=4825356b"></script>
+    <link rel="stylesheet" type="text/css" href="../../_static/basic.css?v=c058f7c8" />
+    <link rel="stylesheet" type="text/css" href="../../_static/alabaster.css?v=27fed22d" />
+    <script src="../../_static/documentation_options.js?v=2709fde1"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Tasks" href="tasks.html" />
@@ -33,34 +34,42 @@
           <div class="body" role="main">
             
   <section id="shards">
-<h1>shards<a class="headerlink" href="#shards" title="Permalink to this heading">¶</a></h1>
+<h1>shards<a class="headerlink" href="#shards" title="Link to this heading">¶</a></h1>
 <section id="get-list-of-shards">
-<h2>Get list of shards<a class="headerlink" href="#get-list-of-shards" title="Permalink to this heading">¶</a></h2>
+<h2>Get list of shards<a class="headerlink" href="#get-list-of-shards" title="Link to this heading">¶</a></h2>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">GET /_cat/shards?v</span>
 </pre></div>
 </div>
 </section>
 <section id="get-a-list-of-unassigned-shards">
-<h2>Get a list of UNASSIGNED shards<a class="headerlink" href="#get-a-list-of-unassigned-shards" title="Permalink to this heading">¶</a></h2>
+<h2>Get a list of UNASSIGNED shards<a class="headerlink" href="#get-a-list-of-unassigned-shards" title="Link to this heading">¶</a></h2>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">curl -XGET &#39;http://elastic.example.com:9200/_cat/shards?h=index,shard,prirep,state,unassigned.reason&#39; | grep UNASSIGNED</span>
 </pre></div>
 </div>
 </section>
 <section id="sort-by-node-and-then-size-desc">
-<h2>Sort by node and then size (desc)<a class="headerlink" href="#sort-by-node-and-then-size-desc" title="Permalink to this heading">¶</a></h2>
+<h2>Sort by node and then size (desc)<a class="headerlink" href="#sort-by-node-and-then-size-desc" title="Link to this heading">¶</a></h2>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">GET /_cat/shards?v&amp;s=node,store</span>
 </pre></div>
 </div>
 </section>
+<section id="find-out-why-a-shard-is-unallocated">
+<h2>find out why a shard is unallocated<a class="headerlink" href="#find-out-why-a-shard-is-unallocated" title="Link to this heading">¶</a></h2>
+<p>This guide from Elastic might help with these issues:
+<a class="reference external" href="https://www.elastic.co/guide/en/elasticsearch/reference/current/diagnose-unassigned-shards.html">Diagnose unassigned shards</a></p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">GET _cluster/allocation/explain</span>
+</pre></div>
+</div>
+</section>
 <section id="re-route-failed-shards">
-<h2>Re-route failed shards<a class="headerlink" href="#re-route-failed-shards" title="Permalink to this heading">¶</a></h2>
+<h2>Re-route failed shards<a class="headerlink" href="#re-route-failed-shards" title="Link to this heading">¶</a></h2>
 <p>If a shard is <cite>UNASSIGNED ALLOCATION_FAILED</cite> run the following to retry the reroute:</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">curl -XPOST &#39;http://elastic.example.com:9200/_cluster/reroute?retry_failed=true&#39;</span>
 </pre></div>
 </div>
 </section>
 <section id="enable-shard-allocation">
-<h2>Enable shard allocation<a class="headerlink" href="#enable-shard-allocation" title="Permalink to this heading">¶</a></h2>
+<h2>Enable shard allocation<a class="headerlink" href="#enable-shard-allocation" title="Link to this heading">¶</a></h2>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">curl -X PUT &quot;localhost:9200/_cluster/settings?pretty&quot; -H &#39;Content-Type: application/json&#39; -d&#39;</span>
 <span class="go">{</span>
 <span class="go">  &quot;transient&quot; : {</span>
@@ -71,6 +80,19 @@
 </pre></div>
 </div>
 </section>
+<section id="get-all-shards">
+<h2>get all shards<a class="headerlink" href="#get-all-shards" title="Link to this heading">¶</a></h2>
+<p>sort by node then number of docs</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">GET _cat/shards?v&amp;h=index,shard,prirep,state,store,docs,node&amp;node,docs</span>
+</pre></div>
+</div>
+</section>
+<section id="get-cluster-shard-status-along-with-curent-health">
+<h2>get cluster shard status along with curent health<a class="headerlink" href="#get-cluster-shard-status-along-with-curent-health" title="Link to this heading">¶</a></h2>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">GET _cluster/health?filter_path=status,*_shards</span>
+</pre></div>
+</div>
+</section>
 </section>
 
 
@@ -78,7 +100,7 @@
           
         </div>
       </div>
-      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
         <div class="sphinxsidebarwrapper">
 <h1 class="logo"><a href="../../index.html">notes</a></h1>
 
@@ -91,20 +113,21 @@
 
 <h3>Navigation</h3>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../../arm/index.html">arm</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../db/index.html">databases</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../dns/index.html">DNS stuff</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../index.html">elastic stuff</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../beats/index.html">Beats</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="index.html">elasticsearch</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../logstash/index.html">logstash</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../monitoring/index.html">monitoring</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../agent/index.html">agent</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api.html">api</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../parsing.html">parsing</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../setup.html">Setting up the whole thing</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../endpoint.html">endpoint</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../read.html">read from elastic</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../docker/commands.html">docker commands</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../testing_logstash.html">testing logstash</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../elastic-cloud.html">elastic-cloud</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../k8s/index.html">kubernetes</a></li>
@@ -132,7 +155,7 @@
   </ul></li>
 </ul>
 </div>
-<div id="searchbox" style="display: none" role="search">
+<search id="searchbox" style="display: none" role="search">
   <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="../../search.html" method="get">
@@ -140,7 +163,7 @@
       <input type="submit" value="Go" />
     </form>
     </div>
-</div>
+</search>
 <script>document.getElementById('searchbox').style.display = "block"</script>
         </div>
       </div>

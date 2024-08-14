@@ -1,5 +1,6 @@
-.. _linux_systemd_systemctl:
-
+=========
+systemctl
+=========
 
 systemctl enable SOMETHING.something: "Failed to execute operation: No such file or directory"
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -10,4 +11,12 @@ After copying the target/service files into `/etc/systemd/system/` systemctl has
 
    systemctl daemon-reload
 
+bus error blah blah
+^^^^^^^^^^^^^^^^^^^
+
+When you `su` to a user, make sure `XDG_RUNTIME_DIR` is set to `/run/user/$(id -u)`
+
+.. code-block:: console
+
+   export XDG_RUNTIME_DIR=/run/user/$(id -u)
 
