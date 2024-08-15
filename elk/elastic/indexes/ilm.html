@@ -135,6 +135,30 @@ This adds it to the lifecycle policy (can also be done in Kibana).</p></li>
 </pre></div>
 </div>
 </section>
+<section id="migrate-a-datastream-index-to-another-ilm-step">
+<h2>migrate a datastream/index to another ilm step<a class="headerlink" href="#migrate-a-datastream-index-to-another-ilm-step" title="Link to this heading">¶</a></h2>
+<p>move an index to frozen:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">POST _ilm/move/INDEX</span>
+<span class="go">{</span>
+<span class="go">  &quot;current_step&quot;: {</span>
+<span class="go">    &quot;phase&quot;: &quot;warm&quot;,</span>
+<span class="go">    &quot;action&quot;: &quot;complete&quot;,</span>
+<span class="go">    &quot;name&quot;: &quot;complete&quot;</span>
+<span class="go">  },</span>
+<span class="go">  &quot;next_step&quot;: {</span>
+<span class="go">    &quot;phase&quot;: &quot;frozen&quot;</span>
+<span class="go">  }</span>
+<span class="go">}</span>
+</pre></div>
+</div>
+<p>It doens’t provide any reasonable feedback, and <cite>_cat/shards</cite> won’t
+tell you, but it’s starting the process of getting ready to move to
+the frozen tier.</p>
+<p>Checking <cite>_ilm/explain</cite> will give more information.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">GET INDEX/_ilm/explain</span>
+</pre></div>
+</div>
+</section>
 </section>
 
 

@@ -119,3 +119,32 @@ get all indices' ilm policy, phase, steps, and actions
 
    GET _all/_ilm/explain?filter_path=indices.*.step,indices.*.action,indices.*.phase
 
+migrate a datastream/index to another ilm step
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+move an index to frozen:
+
+.. code-block:: console
+
+   POST _ilm/move/INDEX
+   {
+     "current_step": {
+       "phase": "warm",
+       "action": "complete",
+       "name": "complete"
+     },
+     "next_step": {
+       "phase": "frozen"
+     }
+   }
+
+It doens't provide any reasonable feedback, and `_cat/shards` won't
+tell you, but it's starting the process of getting ready to move to
+the frozen tier.
+
+Checking `_ilm/explain` will give more information.
+
+.. code-block:: console
+
+   GET INDEX/_ilm/explain
+
