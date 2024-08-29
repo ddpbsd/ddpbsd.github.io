@@ -15,6 +15,7 @@ Contents:
    git/index
    gpg/index
    grafana/index
+   helix/helix
    java/index
    jq
    ldap/index

@@ -1,0 +1,14 @@
+=====
+helix
+=====
+
+space mode
+^^^^^^^^^^
+
+In `normal` mode (not input mode), hit `space`.
+
+code actions
+^^^^^^^^^^^^
+
+`a` - apply a code action from the LSP (like adding a table of contents).
+ 

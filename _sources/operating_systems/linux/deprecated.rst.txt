@@ -10,15 +10,30 @@ netstat
 
 `ss`
 
+Limit to tcp only:
+`ss -t`
+
+UDP only:
+`ss -u`
+
+I usually use `ss -tlpn` or `ss -ulpn` to see which processes are listening on which ports.
+
 ifconfig
 ^^^^^^^^
 
-`ip`
+Get a list of IPs and whatnot:
+
+`ip addr`
+
+route
+^^^^^
+
+`ip route`
 
 arp
 ^^^
 
-ip n`
+`ip neigh`
 
 iptunnel
 ^^^^^^^^

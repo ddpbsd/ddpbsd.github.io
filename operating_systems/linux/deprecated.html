@@ -40,14 +40,24 @@ From <a class="reference external" href="https://twitter.com/LinuxSeb">LinuxSeb<
 <section id="netstat">
 <h2>netstat<a class="headerlink" href="#netstat" title="Link to this heading">¶</a></h2>
 <p><cite>ss</cite></p>
+<p>Limit to tcp only:
+<cite>ss -t</cite></p>
+<p>UDP only:
+<cite>ss -u</cite></p>
+<p>I usually use <cite>ss -tlpn</cite> or <cite>ss -ulpn</cite> to see which processes are listening on which ports.</p>
 </section>
 <section id="ifconfig">
 <h2>ifconfig<a class="headerlink" href="#ifconfig" title="Link to this heading">¶</a></h2>
-<p><cite>ip</cite></p>
+<p>Get a list of IPs and whatnot:</p>
+<p><cite>ip addr</cite></p>
+</section>
+<section id="route">
+<h2>route<a class="headerlink" href="#route" title="Link to this heading">¶</a></h2>
+<p><cite>ip route</cite></p>
 </section>
 <section id="arp">
 <h2>arp<a class="headerlink" href="#arp" title="Link to this heading">¶</a></h2>
-<p>ip n`</p>
+<p><cite>ip neigh</cite></p>
 </section>
 <section id="iptunnel">
 <h2>iptunnel<a class="headerlink" href="#iptunnel" title="Link to this heading">¶</a></h2>
