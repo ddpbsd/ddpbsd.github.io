@@ -14,4 +14,5 @@ Contents:
 
    podman_glossary
    getting_started
+   misc
       

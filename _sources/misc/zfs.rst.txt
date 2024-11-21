@@ -1,0 +1,29 @@
+===
+zfs
+===
+
+import a pool from one system to another
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+I installed a different distribution and wanted to import my zfs pool (on an untouched drive).
+`zpool import` to the rescue!
+
+.. code-block::
+
+   root@caladan:/home/ddp# zpool import
+      pool: data
+        id: 14940038568498653083
+     state: ONLINE
+   status: The pool was last accessed by another system.
+    action: The pool can be imported using its name or numeric identifier and
+           the '-f' flag.
+      see: https://openzfs.github.io/openzfs-docs/msg/ZFS-8000-EY
+    config:
+
+           data        ONLINE
+             nvme0n1   ONLINE
+   root@caladan:/home/ddp# zpool import -f data
+   root@caladan:/home/ddp# zpool list
+   NAME   SIZE  ALLOC   FREE  CKPOINT  EXPANDSZ   FRAG    CAP  DEDUP    HEALTH  ALTROOT
+   data   928G   242G   686G        -         -     2%    26%  1.00x    ONLINE  -
+

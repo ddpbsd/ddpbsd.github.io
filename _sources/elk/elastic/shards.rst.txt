@@ -72,3 +72,13 @@ get cluster shard status along with curent health
 
    GET _cluster/health?filter_path=status,*_shards
 
+increase the number of shards that can be in the relocating state
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+The default is 2, and elastic says you shouldn't change it.
+But sometimes you just gotta.
+
+.. code-block:: console
+
+   cluster.routing.allocation.node_concurrent_recoveries
+

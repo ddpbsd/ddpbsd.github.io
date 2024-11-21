@@ -1,0 +1,43 @@
+===========
+agent stuff
+===========
+
+
+find an agent by  name in fleet
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+The search field is very elasticy, so filter by `local_metadata.host.name` to search based on the name in the `Host` field.
+
+
+agent status
+^^^^^^^^^^^^
+
+Get the status of an agent and the integrations.
+
+.. code-block:: console
+
+   monitor0:/opt/Elastic/Agent # ./elastic-agent status
+   Status: HEALTHY
+   Message: (no message)
+   Applications:
+     * endpoint-security      (HEALTHY)
+                              Protecting with policy {910a8f4a-1642-4d16-b21a-17773eede78b}
+     * filebeat               (HEALTHY)
+                              Running
+     * metricbeat             (HEALTHY)
+                              Running
+     * filebeat_monitoring    (HEALTHY)
+                              Running
+     * metricbeat_monitoring  (HEALTHY)
+                              Running
+     * osquerybeat            (HEALTHY)
+                              Running
+
+check the fleet server status
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+`curl https://fleet-server:8220/api/status`
+
+Should get something like this back:
+`{"name": "fleet-server", "status": "HEALTHY"}`
+

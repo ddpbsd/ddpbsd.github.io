@@ -5,3 +5,20 @@ Does it support Windows?
 
 http://docs.ansible.com/ansible/latest/intro_windows.html
 
+SSH multiplexing
+^^^^^^^^^^^^^^^^
+
+Add this to the ansible.cfg:
+
+.. code-block:: INI
+
+   [default]
+   transport = ssh
+   [ssh_connection]
+   ssh_args = -o ControlMaster=auto -o ControlPersist=3600
+   control_path = ~/.ssh/controlmaster/host-%%r@%%h:%%p
+
+.. warning::
+
+   Pay attention to the double `%` in the control path.
+

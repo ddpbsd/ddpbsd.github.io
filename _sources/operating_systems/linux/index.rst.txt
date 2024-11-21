@@ -22,6 +22,7 @@ Contents:
    rpm
    kvm/index
    libvirt/index
+   selinux/enabling
    selinux/php
    systemd/index
    cgroups/notes

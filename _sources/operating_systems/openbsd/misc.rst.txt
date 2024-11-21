@@ -9,3 +9,16 @@ This command will find open file descriptors that belong to unlinked files.
 
    fstat | grep -F '* -'
 
+memory and swap
+^^^^^^^^^^^^^^^
+
+From otto:
+.. code-block:: console
+
+   Yes, a physical memory shortage in the past can lead to swapped out
+   pages. Pages remain in swap if the pages are untouched since then,
+   even after the memory shortage is gone. You can look for processes
+   that have a large virtual size (SIZE column in top) but much less
+   memory in the resident set (RES column in top).
+
+

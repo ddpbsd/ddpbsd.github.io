@@ -1,0 +1,32 @@
+================
+enabling selinux
+================
+
+It's probably already enabled.
+Here's how to disable it.
+
+termporarily disable selinux
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+`setenforce` to 0 will disable enforcement.
+
+.. code-block:: console
+
+  # setenforce 0
+
+or:
+
+.. code-block:: console
+
+   # echo 0 > /sys/fs/selinux/enfoRce
+
+
+disable permanently
+^^^^^^^^^^^^^^^^^^^
+
+Change the `/etc/selinux/config` to permissive.
+
+.. code-block:: INI
+
+   SELINUX=permissive
+

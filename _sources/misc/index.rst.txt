@@ -22,4 +22,5 @@ Contents:
    random
    junk/index
    fediverse/glitch-soc.rst
+   zfs
 

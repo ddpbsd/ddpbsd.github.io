@@ -93,6 +93,14 @@
 </pre></div>
 </div>
 </section>
+<section id="increase-the-number-of-shards-that-can-be-in-the-relocating-state">
+<h2>increase the number of shards that can be in the relocating state<a class="headerlink" href="#increase-the-number-of-shards-that-can-be-in-the-relocating-state" title="Link to this heading">¶</a></h2>
+<p>The default is 2, and elastic says you shouldn’t change it.
+But sometimes you just gotta.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">cluster.routing.allocation.node_concurrent_recoveries</span>
+</pre></div>
+</div>
+</section>
 </section>
 
 

@@ -63,4 +63,15 @@ Forward traffic from a specific address to another port
 
    firewall-cmd --add-rich-rule='rule family=ipv4 source address=10.10.10.99 forward-port to-port=8080 protocol=tcp port=80'
 
+another way to forward traffic without rich rules
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Send traffic coming in on 514/udp to OTHER_IP:9004
+
+.. code-block:: console
+
+   firewall-cmd --new-zone=FORWARD_whatever --permanent
+   firewall-cmd --reload
+   firewall-cmd --zone=FORWARD_whatever --add-source=SOURCE_IP/32 --permanent
+   firewall-cmd --zone=FORWARD_whatever --permanent --add-forward-port=port=514:proto=udp:toaddr=OTHER_IP:toport=9004
 

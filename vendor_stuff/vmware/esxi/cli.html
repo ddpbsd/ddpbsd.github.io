@@ -5,7 +5,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>List all VMs &#8212; notes 0.1 documentation</title>
+    <title>get version &#8212; notes 0.1 documentation</title>
     <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=fa44fd50" />
     <link rel="stylesheet" type="text/css" href="../../../_static/basic.css?v=c058f7c8" />
     <link rel="stylesheet" type="text/css" href="../../../_static/alabaster.css?v=27fed22d" />
@@ -38,32 +38,38 @@
 <p>These are probably way outdated now.
 You probably shouldn’t use these.</p>
 </div>
+<section id="get-version">
+<h1>get version<a class="headerlink" href="#get-version" title="Link to this heading">¶</a></h1>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">esxcli system version get</span>
+</pre></div>
+</div>
+</section>
 <section id="list-all-vms">
-<h1>List all VMs<a class="headerlink" href="#list-all-vms" title="Link to this heading">¶</a></h1>
+<h1>list all VMs<a class="headerlink" href="#list-all-vms" title="Link to this heading">¶</a></h1>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">vim-cmd vmsvc/getallvms</span>
 </pre></div>
 </div>
 </section>
 <section id="get-the-power-state-of-a-vm">
-<h1>Get the power state of a VM:<a class="headerlink" href="#get-the-power-state-of-a-vm" title="Link to this heading">¶</a></h1>
+<h1>get the power state of a VM<a class="headerlink" href="#get-the-power-state-of-a-vm" title="Link to this heading">¶</a></h1>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">vim-cmd vmsvc/power.getstate 1</span>
 </pre></div>
 </div>
 </section>
 <section id="power-on-a-device">
-<h1>Power on a device<a class="headerlink" href="#power-on-a-device" title="Link to this heading">¶</a></h1>
+<h1>power on a device<a class="headerlink" href="#power-on-a-device" title="Link to this heading">¶</a></h1>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">vim-cmd vmsvc/power.on 320</span>
 </pre></div>
 </div>
 </section>
 <section id="reboot-a-vm-if-vmtools-is-installed">
-<h1>Reboot a VM if vmtools is installed<a class="headerlink" href="#reboot-a-vm-if-vmtools-is-installed" title="Link to this heading">¶</a></h1>
+<h1>reboot a VM if vmtools is installed<a class="headerlink" href="#reboot-a-vm-if-vmtools-is-installed" title="Link to this heading">¶</a></h1>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">vim-cmd vmsvc/power.reboot 176</span>
 </pre></div>
 </div>
 </section>
 <section id="list-current-tasks">
-<h1>List current tasks:<a class="headerlink" href="#list-current-tasks" title="Link to this heading">¶</a></h1>
+<h1>list current tasks<a class="headerlink" href="#list-current-tasks" title="Link to this heading">¶</a></h1>
 <p>This should get a task for a specific VM.</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">vim-cmd vmsvc/get.tasklist VM_ID</span>
 </pre></div>
@@ -74,7 +80,7 @@ You probably shouldn’t use these.</p>
 </div>
 </section>
 <section id="get-info-for-a-task">
-<h1>Get info for a task:<a class="headerlink" href="#get-info-for-a-task" title="Link to this heading">¶</a></h1>
+<h1>get info for a task<a class="headerlink" href="#get-info-for-a-task" title="Link to this heading">¶</a></h1>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">vim-cmd vimsvc/task_info TASK_ID</span>
 </pre></div>
 </div>

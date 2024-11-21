@@ -1,0 +1,11 @@
+===================
+monitoring logstash
+===================
+
+pipeline stats
+^^^^^^^^^^^^^^
+
+.. code-block:: console
+
+   $ curl http://127.0.0.1:9600/_node/stats/pipelines
+

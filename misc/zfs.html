@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>zfs &#8212; notes 0.1 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/basic.css?v=c058f7c8" />
+    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css?v=27fed22d" />
+    <script src="../_static/documentation_options.js?v=2709fde1"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="glitch-soc" href="fediverse/glitch-soc.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+
+  
+  
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="zfs">
+<h1>zfs<a class="headerlink" href="#zfs" title="Link to this heading">¶</a></h1>
+<section id="import-a-pool-from-one-system-to-another">
+<h2>import a pool from one system to another<a class="headerlink" href="#import-a-pool-from-one-system-to-another" title="Link to this heading">¶</a></h2>
+<p>I installed a different distribution and wanted to import my zfs pool (on an untouched drive).
+<cite>zpool import</cite> to the rescue!</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">root</span><span class="nd">@caladan</span><span class="p">:</span><span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">ddp</span><span class="c1"># zpool import</span>
+   <span class="n">pool</span><span class="p">:</span> <span class="n">data</span>
+     <span class="nb">id</span><span class="p">:</span> <span class="mi">14940038568498653083</span>
+  <span class="n">state</span><span class="p">:</span> <span class="n">ONLINE</span>
+<span class="n">status</span><span class="p">:</span> <span class="n">The</span> <span class="n">pool</span> <span class="n">was</span> <span class="n">last</span> <span class="n">accessed</span> <span class="n">by</span> <span class="n">another</span> <span class="n">system</span><span class="o">.</span>
+ <span class="n">action</span><span class="p">:</span> <span class="n">The</span> <span class="n">pool</span> <span class="n">can</span> <span class="n">be</span> <span class="n">imported</span> <span class="n">using</span> <span class="n">its</span> <span class="n">name</span> <span class="ow">or</span> <span class="n">numeric</span> <span class="n">identifier</span> <span class="ow">and</span>
+        <span class="n">the</span> <span class="s1">&#39;-f&#39;</span> <span class="n">flag</span><span class="o">.</span>
+   <span class="n">see</span><span class="p">:</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">openzfs</span><span class="o">.</span><span class="n">github</span><span class="o">.</span><span class="n">io</span><span class="o">/</span><span class="n">openzfs</span><span class="o">-</span><span class="n">docs</span><span class="o">/</span><span class="n">msg</span><span class="o">/</span><span class="n">ZFS</span><span class="o">-</span><span class="mi">8000</span><span class="o">-</span><span class="n">EY</span>
+ <span class="n">config</span><span class="p">:</span>
+
+        <span class="n">data</span>        <span class="n">ONLINE</span>
+          <span class="n">nvme0n1</span>   <span class="n">ONLINE</span>
+<span class="n">root</span><span class="nd">@caladan</span><span class="p">:</span><span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">ddp</span><span class="c1"># zpool import -f data</span>
+<span class="n">root</span><span class="nd">@caladan</span><span class="p">:</span><span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">ddp</span><span class="c1"># zpool list</span>
+<span class="n">NAME</span>   <span class="n">SIZE</span>  <span class="n">ALLOC</span>   <span class="n">FREE</span>  <span class="n">CKPOINT</span>  <span class="n">EXPANDSZ</span>   <span class="n">FRAG</span>    <span class="n">CAP</span>  <span class="n">DEDUP</span>    <span class="n">HEALTH</span>  <span class="n">ALTROOT</span>
+<span class="n">data</span>   <span class="mi">928</span><span class="n">G</span>   <span class="mi">242</span><span class="n">G</span>   <span class="mi">686</span><span class="n">G</span>        <span class="o">-</span>         <span class="o">-</span>     <span class="mi">2</span><span class="o">%</span>    <span class="mi">26</span><span class="o">%</span>  <span class="mf">1.00</span><span class="n">x</span>    <span class="n">ONLINE</span>  <span class="o">-</span>
+</pre></div>
+</div>
+</section>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../index.html">notes</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../db/index.html">databases</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../elk/index.html">elastic stuff</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../k8s/index.html">kubernetes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../openssh/index.html">OpenSSH</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../operating_systems/index.html">Operating Systems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ossec/index.html">OSSEC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../rsyslogd/index.html">rsyslogd</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ssl/index.html">ssl</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../stupid_unix_tricks/index.html">Stupid Unix Tricks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tools/index.html">Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../vendor_stuff/index.html">Vendor Stuff</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">misc</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="arm/index.html">arm</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sdr/index.html">software defined radio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hardware_tokens/tokens.html">Hardware Tokens</a></li>
+<li class="toctree-l2"><a class="reference internal" href="imagemagick/index.html">Imagemagick</a></li>
+<li class="toctree-l2"><a class="reference internal" href="kernel_build/index.html">Building a custom kernel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ksh/index.html">ksh</a></li>
+<li class="toctree-l2"><a class="reference internal" href="links/index.html">Links</a></li>
+<li class="toctree-l2"><a class="reference internal" href="random.html">Stupid random stuff</a></li>
+<li class="toctree-l2"><a class="reference internal" href="junk/index.html">Junk</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fediverse/glitch-soc.html">glitch-soc</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">zfs</a></li>
+</ul>
+</li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+  <li><a href="index.html">misc</a><ul>
+      <li>Previous: <a href="fediverse/glitch-soc.html" title="previous chapter">glitch-soc</a></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<search id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+        <!-- your html code here -->
+	<div class="footer">
+		<em>This information has a good chance of being wrong, inconsistent, out of date, or just bad. Use at your own risk.
+		Feel free to notify me of any issues though.</em>
+	</div>
+
+
+  </body>
+</html>

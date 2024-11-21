@@ -65,4 +65,14 @@ dnf install security updates
 .. code-block:: console
 
    dnf update --security
-   
+  
+stop bash from asking to install something after a mistype
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+It's the fault of the `PackageKit-command-not-found` package.
+What a disaster. 
+
+.. code-block:: console
+
+   dnf remove PackageKit-command-not-found
+

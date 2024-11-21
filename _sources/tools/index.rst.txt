@@ -22,6 +22,7 @@ Contents:
    messaging/index
    monitoring/index
    netstat/index
+   network
    nmap/index
    opensmtpd/index
    osquery/index

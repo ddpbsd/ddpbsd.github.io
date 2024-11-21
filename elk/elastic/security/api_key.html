@@ -106,6 +106,35 @@ The format is <cite>id:api_key</cite>, and there should be no new line.</p>
 </pre></div>
 </div>
 </section>
+<section id="logstash-api-key">
+<h2>logstash api key<a class="headerlink" href="#logstash-api-key" title="Link to this heading">¶</a></h2>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">POST _security/api_key</span>
+<span class="go">{</span>
+<span class="go">  &quot;name&quot;: &quot;logstash-writer&quot;,</span>
+<span class="go">  &quot;role_descriptors&quot;: {</span>
+<span class="go">    &quot;logstash_writer&quot;: {</span>
+<span class="go">      &quot;cluster&quot;: [</span>
+<span class="go">        &quot;monitor,</span>
+<span class="go">        &quot;manage_ilm&quot;,</span>
+<span class="go">        &quot;read_ilm&quot;</span>
+<span class="go">      ],</span>
+<span class="go">      &quot;index&quot;: [</span>
+<span class="go">        {</span>
+<span class="go">          &quot;names&quot;: [ &quot;*&quot; ],</span>
+<span class="go">          &quot;privileges&quot;: [</span>
+<span class="go">            &quot;view_index_metadata&quot;,</span>
+<span class="go">            &quot;create_doc&quot;,</span>
+<span class="go">            &quot;create_index&quot;,</span>
+<span class="go">            &quot;write&quot;</span>
+<span class="go">          ]</span>
+<span class="go">        }</span>
+<span class="go">      ]</span>
+<span class="go">    }</span>
+<span class="go">  }</span>
+<span class="go">}</span>
+</pre></div>
+</div>
+</section>
 </section>
 
 

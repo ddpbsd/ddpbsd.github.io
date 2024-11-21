@@ -1,0 +1,10 @@
+====
+misc
+====
+
+
+How much space is it using
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+`podman system df -v`
+

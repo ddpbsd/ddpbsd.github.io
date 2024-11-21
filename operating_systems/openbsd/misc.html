@@ -41,6 +41,18 @@
 </pre></div>
 </div>
 </section>
+<section id="memory-and-swap">
+<h1>memory and swap<a class="headerlink" href="#memory-and-swap" title="Link to this heading">¶</a></h1>
+<p>From otto:
+.. code-block:: console</p>
+<blockquote>
+<div><p>Yes, a physical memory shortage in the past can lead to swapped out
+pages. Pages remain in swap if the pages are untouched since then,
+even after the memory shortage is gone. You can look for processes
+that have a large virtual size (SIZE column in top) but much less
+memory in the resident set (RES column in top).</p>
+</div></blockquote>
+</section>
 
 
           </div>

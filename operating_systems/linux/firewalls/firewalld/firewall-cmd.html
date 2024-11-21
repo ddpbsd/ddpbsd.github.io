@@ -87,6 +87,16 @@
 </pre></div>
 </div>
 </section>
+<section id="another-way-to-forward-traffic-without-rich-rules">
+<h2>another way to forward traffic without rich rules<a class="headerlink" href="#another-way-to-forward-traffic-without-rich-rules" title="Link to this heading">¶</a></h2>
+<p>Send traffic coming in on 514/udp to OTHER_IP:9004</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">firewall-cmd --new-zone=FORWARD_whatever --permanent</span>
+<span class="go">firewall-cmd --reload</span>
+<span class="go">firewall-cmd --zone=FORWARD_whatever --add-source=SOURCE_IP/32 --permanent</span>
+<span class="go">firewall-cmd --zone=FORWARD_whatever --permanent --add-forward-port=port=514:proto=udp:toaddr=OTHER_IP:toport=9004</span>
+</pre></div>
+</div>
+</section>
 </section>
 
 

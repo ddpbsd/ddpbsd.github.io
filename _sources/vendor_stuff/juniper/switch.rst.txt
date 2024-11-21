@@ -1,3 +1,19 @@
+======
+switch
+======
+
+configuration
+^^^^^^^^^^^^^
+
+configuration commands
+^^^^^^^^^^^^^^^^^^^^^^
+
+Show the commands used to configure something:
+
+.. code-block:: console
+
+   show interfaces ge-0/0/46 | display set
+
 vlan
 ^^^^
 
@@ -31,6 +47,12 @@ Another way:
 .. code-block:: console
 
    set interfaces ge-0/0/4.0 family ethernet-switching port-mode access vlan members work
+
+Remove a vlan:
+
+.. code-block:: console
+
+   delete interfaces ge-0/0/45 unit 0 family ethernet-switching vlan members 20
    
 View the arp table
 ^^^^^^^^^^^^^^^^^^
@@ -39,10 +61,16 @@ View the arp table
 
    show ethernet-switching table
 
+or for less(?) info:
+
+.. code-block:: console
+
+   show ethernet-switching table brief
+
 also:
 
 .. code-block:: console
 
-   how arp
+   show arp
 
 

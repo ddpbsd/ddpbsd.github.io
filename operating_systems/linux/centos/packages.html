@@ -90,6 +90,14 @@ $ yum clean all</p>
 </pre></div>
 </div>
 </section>
+<section id="stop-bash-from-asking-to-install-something-after-a-mistype">
+<h2>stop bash from asking to install something after a mistype<a class="headerlink" href="#stop-bash-from-asking-to-install-something-after-a-mistype" title="Link to this heading">¶</a></h2>
+<p>It’s the fault of the <cite>PackageKit-command-not-found</cite> package.
+What a disaster.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">dnf remove PackageKit-command-not-found</span>
+</pre></div>
+</div>
+</section>
 </section>
 
 

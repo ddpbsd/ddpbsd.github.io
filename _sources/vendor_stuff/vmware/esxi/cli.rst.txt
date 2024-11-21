@@ -5,22 +5,28 @@
    These are probably way outdated now.
    You probably shouldn't use these.
 
+get version
+^^^^^^^^^^^
 
-List all VMs
+.. code-block:: console
+
+   esxcli system version get
+
+list all VMs
 ^^^^^^^^^^^^
 
 .. code-block:: console
 
    vim-cmd vmsvc/getallvms
 
-Get the power state of a VM:
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+get the power state of a VM
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code-block:: console
 
    vim-cmd vmsvc/power.getstate 1
 
-Power on a device
+power on a device
 ^^^^^^^^^^^^^^^^^
 
 .. code-block:: console
@@ -28,15 +34,15 @@ Power on a device
    vim-cmd vmsvc/power.on 320
 
 
-Reboot a VM if vmtools is installed
+reboot a VM if vmtools is installed
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code-block:: console
 
    vim-cmd vmsvc/power.reboot 176
 
-List current tasks:
-^^^^^^^^^^^^^^^^^^^
+list current tasks
+^^^^^^^^^^^^^^^^^^
 
 This should get a task for a specific VM.
 
@@ -50,8 +56,8 @@ Not sure exactly what this one does.
 
    vim-cmd vimsvc/task_list
 
-Get info for a task:
-^^^^^^^^^^^^^^^^^^^^
+get info for a task
+^^^^^^^^^^^^^^^^^^^
 
 .. code-block:: console
 
@@ -88,7 +94,4 @@ esxcfg-advcfg
 .. code-block:: console
 
    esxcfg-advcfg --add-option isolation.device.edit.disable --add-type string --add-desc "CIS 8.2.6" --add-default "True"
-
-
-
 

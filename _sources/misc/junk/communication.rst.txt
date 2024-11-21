@@ -1,0 +1,11 @@
+=============
+communication
+=============
+
+include, if possible
+^^^^^^^^^^^^^^^^^^^^
+
+* highlight the issue/facts
+* highlight the impact
+* provide recommendation
+

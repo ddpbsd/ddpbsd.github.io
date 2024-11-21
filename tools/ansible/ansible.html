@@ -37,6 +37,21 @@
 <h1>Does it support Windows?<a class="headerlink" href="#does-it-support-windows" title="Link to this heading">¶</a></h1>
 <p><a class="reference external" href="http://docs.ansible.com/ansible/latest/intro_windows.html">http://docs.ansible.com/ansible/latest/intro_windows.html</a></p>
 </section>
+<section id="ssh-multiplexing">
+<h1>SSH multiplexing<a class="headerlink" href="#ssh-multiplexing" title="Link to this heading">¶</a></h1>
+<p>Add this to the ansible.cfg:</p>
+<div class="highlight-INI notranslate"><div class="highlight"><pre><span></span><span class="k">[default]</span>
+<span class="na">transport</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">ssh</span>
+<span class="k">[ssh_connection]</span>
+<span class="na">ssh_args</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">-o ControlMaster=auto -o ControlPersist=3600</span>
+<span class="na">control_path</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">~/.ssh/controlmaster/host-%%r@%%h:%%p</span>
+</pre></div>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Pay attention to the double <cite>%</cite> in the control path.</p>
+</div>
+</section>
 
 
           </div>
@@ -81,6 +96,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../messaging/index.html">Messaging</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../monitoring/index.html">Monitoring Tools</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../netstat/index.html">Tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../network.html">network tools</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../nmap/index.html">discovery-ignore-rst</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../opensmtpd/index.html">opensmtpd</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../osquery/index.html">osquery</a></li>
