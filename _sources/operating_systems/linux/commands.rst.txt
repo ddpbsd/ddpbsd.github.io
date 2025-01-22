@@ -17,3 +17,8 @@ pgrep - List child processes of a parent
 
    pgrep -P PID_OF_PARENT
 
+last reboot
+^^^^^^^^^^^
+
+See information in `/var/log/wtmp` about the last reboots.
+

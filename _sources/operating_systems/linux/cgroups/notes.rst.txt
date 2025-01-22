@@ -1,6 +1,11 @@
+get version
+^^^^^^^^^^^
 
+.. code-block:: console
 
-View available cgroups
+   stat -fc %T /sys/fs/cgroup/
+
+view available cgroups
 ^^^^^^^^^^^^^^^^^^^^^^
 
 .. code-block:: console
@@ -35,7 +40,7 @@ If it's mounted, check the available cpusets.
 
 
 
-Links
+links
 ^^^^^
 
 `RH docs <https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/resource_management_guide/chap-introduction_to_control_groups>`_

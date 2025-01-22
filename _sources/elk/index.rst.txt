@@ -20,4 +20,5 @@ Contents:
    docker/commands
    testing_logstash
    elastic-cloud
+   query/index
 

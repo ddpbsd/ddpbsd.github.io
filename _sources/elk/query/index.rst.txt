@@ -1,0 +1,11 @@
+=================================
+querying elasticsearch and kibana
+=================================
+
+Contents:
+
+.. toctree::
+   :maxdepth: 2
+
+   elasticsearch-esql
+

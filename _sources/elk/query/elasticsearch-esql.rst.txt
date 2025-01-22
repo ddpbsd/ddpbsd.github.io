@@ -1,0 +1,17 @@
+=====
+es|ql
+=====
+
+
+example
+^^^^^^^
+
+Get a list of IP addresses and the count of events from those IPs from logs containing `log.source.address`.
+It has to remove the port from the address, and only outputs the IP and count.
+This example is using cisco_ios logs
+
+.. code-block:: console
+
+   FROM logs-* | WHERE log.source.address IS NOT NULL AND event.dataset == "cisco_ios.log" | DISSECT log.source.address """%{ipaddress}:%{port}""" | KEEP ipaddress |
+   STATS c = COUNT(*) BY ipaddress | KEEP ipaddress,c | SORT c DESC
+

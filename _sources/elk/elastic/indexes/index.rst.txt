@@ -1,9 +1,7 @@
+=========================
+indicies and data streams
+=========================
 
-=======
-indexes
-=======
-
-indices?
 
 Contents:
 
@@ -13,4 +11,5 @@ Contents:
    create_index
    ilm
    errors
+   datastream
 

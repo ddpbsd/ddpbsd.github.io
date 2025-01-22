@@ -48,4 +48,14 @@ interesting stuff
 .. code-block:: console
 
    GET _cat/indices?h=index,status,store.size,docs.count,creation.date.string&s=index,creation.date&format=json&bytes=b
-  
+ 
+get status of relocating shards
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Covers relocating and recovering shards.
+
+.. code-block:: console
+
+   GET _cat/recovery?v&active_only=true&h=index,shard,source_node,target_node,bytes_percent,bytes_total,time
+
+ 
