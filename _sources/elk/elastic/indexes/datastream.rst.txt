@@ -7,6 +7,9 @@ data streams
 decommission a data stream
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+.. warning::
+   This doesn't actually do what we want.
+
 If a data stream won't be used any longer but the old data needs
 to be kept, it can be modified using the `modify_data_stream` api
 to not have a write index anymore.
