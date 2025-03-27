@@ -43,3 +43,10 @@ Format json using python
 
    :%!python -m json.tool
 
+remove blank lines
+^^^^^^^^^^^^^^^^^^
+
+.. code-block:: console
+
+   :g/^\s*$/d
+

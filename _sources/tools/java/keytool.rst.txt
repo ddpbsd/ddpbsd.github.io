@@ -47,3 +47,10 @@ Import a certificate
 
    keytool -import -alias root -keystore ../cacerts -file ./certificate.crt
 
+Export an entry from one keystore and import into another keystore
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: console
+
+   keytool -importkeystore -v -srckeystore SOURCE.p12 -destkeystore DEST.p12 -srcstoretype PKCS12 -srcalias localhost -destalias localhost
+

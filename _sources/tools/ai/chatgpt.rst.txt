@@ -1,0 +1,143 @@
+=======
+chatgpt
+=======
+
+ask what a command does
+^^^^^^^^^^^^^^^^^^^^^^^
+
+Ask it what a command does and it will tell you what the parameters do.
+You can give it the `--help` page or whatever for a better response.
+
+I'm not sure how this is better than pulling up the `man` page and figuring it out.
+
+ask how to do a thing with a command
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Tell CGPT what you want to do with a command, and it will tell you how to do that.
+
+Again, read the docs and learn something?
+
+parse unformatted data
+^^^^^^^^^^^^^^^^^^^^^^
+
+Feed it random data and tell CGPT to format it nicely for you.
+
+ThioJoe says "don't trust it with mission critical data" so why bother?
+
+parse an error to make it nicer to read
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+This might be helpful with the god awful elastic logs.
+
+put data into a specific format
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Like turning a markdown table into a csv.
+
+Really?
+
+reverse dictionary
+^^^^^^^^^^^^^^^^^^
+
+Describe a thing and have CGPT tell you what it is called.
+
+You can upload a picture as well.
+
+ask it what the fluffiest towel out there is
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+I don't know how this is actually useful.
+
+translate a word into many languages with a specific context
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Say `file` in the context of a computer file.
+This one is pretty nifty, but ThioJoe says he wouldn't use it for mission critical stuff.
+
+add comments to your code
+^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Then recheck their comments.
+wtf why is this thing allowed near my code?
+
+add debug print statements
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+fuuuuuuuuuuuuuuuuuuuuucking hell
+
+calculate subscription break even point
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+At what point is an unlimited plan worth it over a "pay as you go" type of plan.
+ThioJoe used a wolfram alpha plugin to do the math because CGPT can't do math?
+
+what ip range does a given ip fall into
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Given an ip, find the range out of a list of ranges that the IP falls into.
+
+CGPT apparently used python to do the stuff which ThioJoe could have done with python?
+
+
+Hayls World
+^^^^^^^^^^^
+
+summarize an article or youtube video for you
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Hot damn now I don't need to read or watch things.
+
+How do I make sure it didn't hallucinate anything?
+
+CGPT can teach you things by giving you guides on a topic
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Not sure why this is better than tfm, but ok cool.
+
+CGPT can do your homework for you
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Wolfram Alpha did this previously, but now it's AI!
+
+It can grade your homework
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+yay?
+
+doc-GPT?
+^^^^^^^^
+
+It can give you a detailed exercise plan for losing weight or builking up or whatever.
+It can also do meal plans with calorie allowances and turn this into a shopping list.
+It can also come up with a recipe if you give it some recipes, kind of like a bunch of other sites did back in the day.
+
+analyze a message to make it write like you
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Give it some of your writing and it can copy the style.
+
+After watching her ask it how to deal with a roommate that steals her bananas I closed the video.
+Its answers were text book stuff.
+
+
+Ok Jeff Su, help me out!
+
+context cheating
+^^^^^^^^^^^^^^^^
+
+Steal data off of websites to give it to CGPT instead of understanding it yourself.
+
+convert with intention
+^^^^^^^^^^^^^^^^^^^^^^
+
+I'm too lazy to read things, so make CGPT give me a structured outline of a report.
+You can make it customize the outline to a specific thing by specifying the purpose.
+Like "outline this fashion report to help company X fight off companies Y and Z in this industry."
+
+
+answer leveling
+^^^^^^^^^^^^^^^
+
+Ask CGPT to give you different levels for your answers.
+like level 1: email marketing, level 2: off-line event, level 3: gimme ideas based on l1&l2.
+

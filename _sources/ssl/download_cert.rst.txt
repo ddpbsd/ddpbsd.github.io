@@ -7,3 +7,10 @@ Download a certificate
 
    openssl s_client -connect ecx.dellroad.org:443
 
+Auth with tls certificate
+^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: console
+
+   openssl s_client -connect server.example.com -host client.example.com -servername server.client.com -key key.pem -cert cert.pem
+

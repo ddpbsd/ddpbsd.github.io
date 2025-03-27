@@ -1,11 +1,10 @@
-
 ====
 tmux
 ====
 
 I use ``o`` as my prefix key. The default is ``b``. 
 
-Set the prefix key to ``o``
+set the prefix key to ``o``
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code-block:: console
@@ -15,7 +14,7 @@ Set the prefix key to ``o``
    bind-key C-c send-prefix
 
 
-Resize a pane
+resize a pane
 ^^^^^^^^^^^^^
 
 Increase size down:
@@ -24,14 +23,20 @@ Increase size down:
 
    ^o :resize-pane -D 10
 
-Zoom in/out in a pane
+This will also work to resize down:
+
+.. code-block:: console
+
+   ^o ALT-DOWN
+
+zoom in/out in a pane
 ^^^^^^^^^^^^^^^^^^^^^
 
 .. code-block:: console
 
    ^o z
 
-Misc
+misc
 ^^^^
 
 .. code-block:: console
@@ -45,7 +50,7 @@ Misc
    x - kill pane
    d - detach
 
-Run a program in a new session
+run a program in a new session
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code-block:: console
@@ -53,7 +58,7 @@ Run a program in a new session
    tmux new-session -d -s "top" /usr/bin/top
 
 
-Scrollback
+scrollback
 ^^^^^^^^^^
 
 Enter copy mode.
@@ -70,15 +75,14 @@ Exit copy mode.
 
    q
 
-
-Name a session
+name a session
 ^^^^^^^^^^^^^^
 
 .. code-block:: console
 
    tmux new-session -s "NAME"
 
-Start a detatched session
+start a detatched session
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Start a new session, run a program, and detatch it.
@@ -87,7 +91,7 @@ Start a new session, run a program, and detatch it.
 
    tmux new-session -d -s "NAME" /path/to/program/to/run
 
-Rename a session
+rename a session
 ^^^^^^^^^^^^^^^^
 
 control + b $
@@ -96,7 +100,7 @@ control + b $
 
    ^b $
 
-Rename a pane
+rename a pane
 ^^^^^^^^^^^^^
 
 control + b , (comma)
@@ -105,7 +109,7 @@ control + b , (comma)
 
    ^b ,
 
-Share a session
+share a session
 ^^^^^^^^^^^^^^^
 
 After session `shared` is created, run this to watch it:
@@ -113,3 +117,21 @@ After session `shared` is created, run this to watch it:
 .. code-block:: console
 
    tmux attach-session -t shared
+
+copy the buffer
+^^^^^^^^^^^^^^^
+
+This puts the text into a buffer, but I'm not entirely sure what that means.
+`-3000` is the number of lines you want to copy.
+
+.. code-block:: console
+
+   ^o:capture-pane -S -3000
+
+save buffer to a file
+^^^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: console
+
+   ^o:save-buffer ~/filename.txt
+
