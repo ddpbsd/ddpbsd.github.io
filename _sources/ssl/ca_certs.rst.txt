@@ -40,7 +40,7 @@ update the db
 
 This will expire certs and stuff.
 
-.. code-bock:: console
+.. code-block:: console
 
    openssl ca -updatedb -config ./intermediateCA-openssl.cnf
 

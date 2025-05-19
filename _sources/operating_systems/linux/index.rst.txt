@@ -13,6 +13,7 @@ Contents:
    boot
    commands
    deprecated
+   disks
    auditd/index
    centos/index
    containers/index

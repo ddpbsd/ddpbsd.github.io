@@ -190,7 +190,8 @@
 <section id="volume-groups">
 <h2>Volume Groups<a class="headerlink" href="#volume-groups" title="Link to this heading">¶</a></h2>
 <blockquote>
-<div><p>Use <cite>vgcreate</cite> to create a Virtual Group</p>
+<div><p>vgcreate</p>
+<p>Use <cite>vgcreate</cite> to create a Virtual Group</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">[root@geidi ddp]# </span>vgcreate<span class="w"> </span>iscsi_stuff<span class="w"> </span>/dev/nvme0n1p1
 
 <span class="gp">[root@geidi ddp]# </span>vgs
@@ -257,7 +258,8 @@
 <section id="logical-volumes">
 <h2>Logical Volumes<a class="headerlink" href="#logical-volumes" title="Link to this heading">¶</a></h2>
 <blockquote>
-<div><p>Logical Volumes</p>
+<div><p>lvcreate</p>
+<p>Logical Volumes</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">[root@geidi ddp]# </span>lvcreate<span class="w"> </span>-L<span class="w"> </span>10G<span class="w"> </span>-n<span class="w"> </span>test_lv<span class="w"> </span>iscsi_stuff
 
 <span class="gp">[root@geidi ddp]# </span>lvs

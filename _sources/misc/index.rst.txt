@@ -23,4 +23,5 @@ Contents:
    junk/index
    fediverse/glitch-soc.rst
    zfs
+   mynet/switches
 

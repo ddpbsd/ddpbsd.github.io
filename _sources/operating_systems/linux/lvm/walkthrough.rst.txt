@@ -155,7 +155,6 @@ Volume Groups
 ^^^^^^^^^^^^^
 
    vgcreate
-   ^^^^^^^^
 
    Use `vgcreate` to create a Virtual Group
 
@@ -225,7 +224,6 @@ Logical Volumes
 ^^^^^^^^^^^^^^^
 
    lvcreate
-   ^^^^^^^^
 
    Logical Volumes
 
