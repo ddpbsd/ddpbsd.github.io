@@ -5,7 +5,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Firewalls &#8212; notes 0.1 documentation</title>
+    <title>ufw &#8212; notes 0.1 documentation</title>
     <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=03e43079" />
     <link rel="stylesheet" type="text/css" href="../../../_static/basic.css?v=b08954a9" />
     <link rel="stylesheet" type="text/css" href="../../../_static/alabaster.css?v=27fed22d" />
@@ -14,8 +14,8 @@
     <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="firewalld" href="firewalld.html" />
-    <link rel="prev" title="misc" href="../containers/misc.html" />
+    <link rel="next" title="lvm" href="../lvm/index.html" />
+    <link rel="prev" title="nft" href="nft.html" />
    
   <link rel="stylesheet" href="../../../_static/custom.css" type="text/css" />
   
@@ -33,43 +33,32 @@
 
           <div class="body" role="main">
             
-  <section id="firewalls">
-<h1>Firewalls<a class="headerlink" href="#firewalls" title="Link to this heading">¶</a></h1>
-<p>Contents:</p>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="firewalld.html">firewalld</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="firewalld.html#list-active-ports">List active ports</a></li>
-<li class="toctree-l2"><a class="reference internal" href="firewalld.html#get-active-zones">Get active zones</a></li>
-<li class="toctree-l2"><a class="reference internal" href="firewalld.html#open-a-port">Open a port</a></li>
-<li class="toctree-l2"><a class="reference internal" href="firewalld.html#close-a-port">Close a port</a></li>
-<li class="toctree-l2"><a class="reference internal" href="firewalld.html#enable-the-change">Enable the change</a></li>
-<li class="toctree-l2"><a class="reference internal" href="firewalld.html#make-sure-the-change-is-in-effect">Make sure the change is in effect</a></li>
-<li class="toctree-l2"><a class="reference internal" href="firewalld.html#reject-connections-to-a-port">Reject connections to a port</a></li>
-<li class="toctree-l2"><a class="reference internal" href="firewalld.html#forward-traffic-from-a-specific-address-to-another-port">Forward traffic from a specific address to another port</a></li>
-<li class="toctree-l2"><a class="reference internal" href="firewalld.html#remove-a-traffic-forwarding-rule">remove a traffic forwarding rule</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="iptables.html">iptables</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="iptables.html#save-the-current-iptables-ruleset">Save the current iptables ruleset</a></li>
-<li class="toctree-l2"><a class="reference internal" href="iptables.html#load-a-ruleset">Load a ruleset</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="nft.html">nft</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="nft.html#list-all-rules">list all rules</a></li>
-<li class="toctree-l2"><a class="reference internal" href="nft.html#list-rules-in-a-table">list rules in a table</a></li>
-<li class="toctree-l2"><a class="reference internal" href="nft.html#list-rules-in-a-chain">list rules in a chain</a></li>
-<li class="toctree-l2"><a class="reference internal" href="nft.html#deleting-rules">deleting rules</a></li>
-<li class="toctree-l2"><a class="reference internal" href="nft.html#links">Links</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="ufw.html">ufw</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="ufw.html#basic-stuff">Basic stuff:</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ufw.html#note-form-the-man-page">Note form the man page:</a></li>
-</ul>
-</li>
-</ul>
+  <section id="ufw">
+<h1>ufw<a class="headerlink" href="#ufw" title="Link to this heading">¶</a></h1>
+<p>So I know where to find this info later when I have to look it up.
+Again.</p>
+<section id="basic-stuff">
+<h2>Basic stuff:<a class="headerlink" href="#basic-stuff" title="Link to this heading">¶</a></h2>
+<p>From the man page.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">ufw allow in on eth0 from 192.168.0.0/16</span>
+<span class="go">ufw allow out on eth1 to 10.0.0.0/8</span>
+<span class="go">ufw route allow in on eth0 out on eth1 to 10.0.0.0/8 from 192.168.0.0/16</span>
+<span class="go">ufw limit 2222/tcp comment &#39;SSH port&#39;</span>
+</pre></div>
 </div>
+</section>
+<section id="note-form-the-man-page">
+<h2>Note form the man page:<a class="headerlink" href="#note-form-the-man-page" title="Link to this heading">¶</a></h2>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">ufw allow 8080/tcp</span>
+<span class="go">ufw allow proto tcp from 192.168.17.11 to 192.168.17.8 port 8080</span>
+</pre></div>
+</div>
+<p>On ubuntu 14.04 rules are saved in:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">/etc/ufw     # system rules</span>
+<span class="go">/lib/ufw     # user rules</span>
+</pre></div>
+</div>
+</section>
 </section>
 
 
@@ -115,8 +104,10 @@
   <li><a href="../../../index.html">Documentation overview</a><ul>
   <li><a href="../../index.html">Operating Systems</a><ul>
   <li><a href="../index.html">Linux</a><ul>
-      <li>Previous: <a href="../containers/misc.html" title="previous chapter">misc</a></li>
-      <li>Next: <a href="firewalld.html" title="next chapter">firewalld</a></li>
+  <li><a href="index.html">Firewalls</a><ul>
+      <li>Previous: <a href="nft.html" title="previous chapter">nft</a></li>
+      <li>Next: <a href="../lvm/index.html" title="next chapter">lvm</a></li>
+  </ul></li>
   </ul></li>
   </ul></li>
   </ul></li>

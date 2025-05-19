@@ -1,0 +1,9 @@
+=====
+disks
+=====
+
+identify a disk by uuid
+^^^^^^^^^^^^^^^^^^^^^^^
+
+There are symlinks from `/dev/disk/by-uuid` to the disk itself to help identify them.
+

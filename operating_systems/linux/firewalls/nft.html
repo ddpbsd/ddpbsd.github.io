@@ -5,7 +5,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Firewalls &#8212; notes 0.1 documentation</title>
+    <title>nft &#8212; notes 0.1 documentation</title>
     <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=03e43079" />
     <link rel="stylesheet" type="text/css" href="../../../_static/basic.css?v=b08954a9" />
     <link rel="stylesheet" type="text/css" href="../../../_static/alabaster.css?v=27fed22d" />
@@ -14,8 +14,8 @@
     <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="firewalld" href="firewalld.html" />
-    <link rel="prev" title="misc" href="../containers/misc.html" />
+    <link rel="next" title="ufw" href="ufw.html" />
+    <link rel="prev" title="iptables" href="iptables.html" />
    
   <link rel="stylesheet" href="../../../_static/custom.css" type="text/css" />
   
@@ -33,43 +33,57 @@
 
           <div class="body" role="main">
             
-  <section id="firewalls">
-<h1>Firewalls<a class="headerlink" href="#firewalls" title="Link to this heading">¶</a></h1>
-<p>Contents:</p>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="firewalld.html">firewalld</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="firewalld.html#list-active-ports">List active ports</a></li>
-<li class="toctree-l2"><a class="reference internal" href="firewalld.html#get-active-zones">Get active zones</a></li>
-<li class="toctree-l2"><a class="reference internal" href="firewalld.html#open-a-port">Open a port</a></li>
-<li class="toctree-l2"><a class="reference internal" href="firewalld.html#close-a-port">Close a port</a></li>
-<li class="toctree-l2"><a class="reference internal" href="firewalld.html#enable-the-change">Enable the change</a></li>
-<li class="toctree-l2"><a class="reference internal" href="firewalld.html#make-sure-the-change-is-in-effect">Make sure the change is in effect</a></li>
-<li class="toctree-l2"><a class="reference internal" href="firewalld.html#reject-connections-to-a-port">Reject connections to a port</a></li>
-<li class="toctree-l2"><a class="reference internal" href="firewalld.html#forward-traffic-from-a-specific-address-to-another-port">Forward traffic from a specific address to another port</a></li>
-<li class="toctree-l2"><a class="reference internal" href="firewalld.html#remove-a-traffic-forwarding-rule">remove a traffic forwarding rule</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="iptables.html">iptables</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="iptables.html#save-the-current-iptables-ruleset">Save the current iptables ruleset</a></li>
-<li class="toctree-l2"><a class="reference internal" href="iptables.html#load-a-ruleset">Load a ruleset</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="nft.html">nft</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="nft.html#list-all-rules">list all rules</a></li>
-<li class="toctree-l2"><a class="reference internal" href="nft.html#list-rules-in-a-table">list rules in a table</a></li>
-<li class="toctree-l2"><a class="reference internal" href="nft.html#list-rules-in-a-chain">list rules in a chain</a></li>
-<li class="toctree-l2"><a class="reference internal" href="nft.html#deleting-rules">deleting rules</a></li>
-<li class="toctree-l2"><a class="reference internal" href="nft.html#links">Links</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="ufw.html">ufw</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="ufw.html#basic-stuff">Basic stuff:</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ufw.html#note-form-the-man-page">Note form the man page:</a></li>
-</ul>
-</li>
-</ul>
+  <section id="nft">
+<h1>nft<a class="headerlink" href="#nft" title="Link to this heading">¶</a></h1>
+<p>oh god it gets worse</p>
+<p>In <cite>nft</cite> there are tables, chains, and rules (and probably other stuff, fml).
+Each piece can be operated on.</p>
+<section id="list-all-rules">
+<h2>list all rules<a class="headerlink" href="#list-all-rules" title="Link to this heading">¶</a></h2>
+<p>I think this lists everything.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">nft list ruleset</span>
+</pre></div>
 </div>
+</section>
+<section id="list-rules-in-a-table">
+<h2>list rules in a table<a class="headerlink" href="#list-rules-in-a-table" title="Link to this heading">¶</a></h2>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">nft list table firewalld</span>
+</pre></div>
+</div>
+<p>Unless there is an address family.
+There can be a <cite>firewalld</cite> table for each address family.
+Address families include (but are not limited to) ip (ipv4), ip6 (ipv6), inet (ipv4 and ipv6), etc.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">nft list table inet firewalld</span>
+</pre></div>
+</div>
+</section>
+<section id="list-rules-in-a-chain">
+<h2>list rules in a chain<a class="headerlink" href="#list-rules-in-a-chain" title="Link to this heading">¶</a></h2>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">nft --handle list chain inet firewalld filter_FWDO_FedoraServer</span>
+</pre></div>
+</div>
+</section>
+<section id="deleting-rules">
+<h2>deleting rules<a class="headerlink" href="#deleting-rules" title="Link to this heading">¶</a></h2>
+<p>Deleting rules requires a handle as well as the table, chain, and possibly address family.
+The handle is a number for the rule, starting from 0.
+This seems to start from the beginning of the ruleset (I think).
+Don’t count though, there’s a command to get the handles.
+I think the <cite>–handle</cite> should just be default.</p>
+<p>Get the handle:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">nft --handle list table inet firewalld</span>
+</pre></div>
+</div>
+<p>Delete the rule:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">nft delete rule inet firewalld filter_IN_FedoraServer_allow handle 65</span>
+</pre></div>
+</div>
+</section>
+<section id="links">
+<h2>Links<a class="headerlink" href="#links" title="Link to this heading">¶</a></h2>
+<p>Of course the <a class="reference external" href="https://wiki.archlinux.org/index.php/nftables">Arch Wiki</a> has useful information on <cite>nft</cite>.</p>
+<p>The nft wiki <a class="reference external" href="https://wiki.nftables.org/wiki-nftables/index.php/Simple_rule_management">Simple Rule Management</a> page is anything but simple.</p>
+</section>
 </section>
 
 
@@ -115,8 +129,10 @@
   <li><a href="../../../index.html">Documentation overview</a><ul>
   <li><a href="../../index.html">Operating Systems</a><ul>
   <li><a href="../index.html">Linux</a><ul>
-      <li>Previous: <a href="../containers/misc.html" title="previous chapter">misc</a></li>
-      <li>Next: <a href="firewalld.html" title="next chapter">firewalld</a></li>
+  <li><a href="index.html">Firewalls</a><ul>
+      <li>Previous: <a href="iptables.html" title="previous chapter">iptables</a></li>
+      <li>Next: <a href="ufw.html" title="next chapter">ufw</a></li>
+  </ul></li>
   </ul></li>
   </ul></li>
   </ul></li>

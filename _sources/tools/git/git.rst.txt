@@ -1,0 +1,11 @@
+===
+git
+===
+
+see all of the changes to a single file
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+```
+git log --follow --patch -- FILENAME
+```
+

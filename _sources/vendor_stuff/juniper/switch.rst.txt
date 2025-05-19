@@ -73,4 +73,13 @@ also:
 
    show arp
 
+lldp
+^^^^
+
+.. code-block:: console
+
+   edit
+   edit protocols lldp
+   set interface all
+   commit
 

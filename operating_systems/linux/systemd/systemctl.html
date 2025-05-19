@@ -35,6 +35,14 @@
             
   <section id="systemctl">
 <h1>systemctl<a class="headerlink" href="#systemctl" title="Link to this heading">¶</a></h1>
+<section id="show-enabled-but-not-running-services">
+<h2>show enabled but not running services<a class="headerlink" href="#show-enabled-but-not-running-services" title="Link to this heading">¶</a></h2>
+<p><cite>failed</cite> is probably the state I’m really curious about.</p>
+<p><code class="docutils literal notranslate"><span class="pre">`</span>
+<span class="pre">systemctl</span> <span class="pre">list-units</span> <span class="pre">-all</span> <span class="pre">--state=inactive</span>
+<span class="pre">systemctl</span> <span class="pre">list-units</span> <span class="pre">-all</span> <span class="pre">--state=failed</span>
+<span class="pre">`</span></code></p>
+</section>
 <section id="systemctl-enable-something-something-failed-to-execute-operation-no-such-file-or-directory">
 <h2>systemctl enable SOMETHING.something: “Failed to execute operation: No such file or directory”<a class="headerlink" href="#systemctl-enable-something-something-failed-to-execute-operation-no-such-file-or-directory" title="Link to this heading">¶</a></h2>
 <p>After copying the target/service files into <cite>/etc/systemd/system/</cite> systemctl has to learn about them?</p>

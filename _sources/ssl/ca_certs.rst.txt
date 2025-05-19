@@ -35,3 +35,12 @@ tab delimited
 5. filename or unknown
 6. Certificate distinguished name
 
+update the db
+^^^^^^^^^^^^^
+
+This will expire certs and stuff.
+
+.. code-bock:: console
+
+   openssl ca -updatedb -config ./intermediateCA-openssl.cnf
+

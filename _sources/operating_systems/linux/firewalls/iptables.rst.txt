@@ -1,0 +1,26 @@
+========
+iptables
+========
+
+Save the current iptables ruleset
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. note::
+
+   I've done this on an appliancized Debian 8.4.
+   No clue where else it may work.
+
+This saves the currently running ruleset to a file that can then be modified,
+and loaded as below.
+
+.. code-block:: console
+
+   iptables-save > FILE
+
+Load a ruleset
+^^^^^^^^^^^^^^
+
+.. code-block:: console
+
+   iptables-restore FILE
+

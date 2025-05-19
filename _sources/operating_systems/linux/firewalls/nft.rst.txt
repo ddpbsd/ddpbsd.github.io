@@ -1,0 +1,68 @@
+===
+nft
+===
+
+oh god it gets worse
+
+In `nft` there are tables, chains, and rules (and probably other stuff, fml).
+Each piece can be operated on.
+
+list all rules
+^^^^^^^^^^^^^^
+
+I think this lists everything.
+
+.. code-block:: console
+
+   nft list ruleset
+
+list rules in a table
+^^^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: console
+
+   nft list table firewalld
+
+Unless there is an address family.
+There can be a `firewalld` table for each address family.
+Address families include (but are not limited to) ip (ipv4), ip6 (ipv6), inet (ipv4 and ipv6), etc.
+
+.. code-block:: console
+
+   nft list table inet firewalld
+
+list rules in a chain
+^^^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: console
+
+   nft --handle list chain inet firewalld filter_FWDO_FedoraServer
+
+deleting rules
+^^^^^^^^^^^^^^
+
+Deleting rules requires a handle as well as the table, chain, and possibly address family.
+The handle is a number for the rule, starting from 0.
+This seems to start from the beginning of the ruleset (I think).
+Don't count though, there's a command to get the handles.
+I think the `--handle` should just be default.
+
+Get the handle:
+
+.. code-block:: console
+
+   nft --handle list table inet firewalld
+
+Delete the rule:
+
+.. code-block:: console
+
+   nft delete rule inet firewalld filter_IN_FedoraServer_allow handle 65
+
+Links
+^^^^^
+
+Of course the `Arch Wiki <https://wiki.archlinux.org/index.php/nftables>`_ has useful information on `nft`.
+
+The nft wiki `Simple Rule Management <https://wiki.nftables.org/wiki-nftables/index.php/Simple_rule_management>`_ page is anything but simple.
+

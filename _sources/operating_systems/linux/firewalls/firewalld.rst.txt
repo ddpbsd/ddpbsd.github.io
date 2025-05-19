@@ -1,0 +1,73 @@
+=========
+firewalld
+=========
+
+List active ports
+^^^^^^^^^^^^^^^^^
+
+.. code-block:: console
+
+   firewall-cmd --list-ports
+
+Get active zones
+^^^^^^^^^^^^^^^^
+
+.. code-block:: console
+
+   firewall-cmd --get-active-zones
+
+Open a port
+^^^^^^^^^^^
+
+.. code-block:: console
+
+   firewall-cmd --permanent --zone=public --add-port=80/tcp
+
+Close a port
+^^^^^^^^^^^^
+
+.. code-block:: console
+
+   firewall-cmd --remove-port=
+
+Enable the change
+^^^^^^^^^^^^^^^^^
+
+.. code-block:: console
+
+   firewall-cmd --reload
+
+Make sure the change is in effect
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: console
+
+   firewall-cmd --zone=public --query-port=80/tcp
+
+Reject connections to a port
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: console
+
+   # Simply reject all traffic to 443
+   firewall-cmd --permanent --zone=public --add-rich-rule='rule family="ipv4" port protocol="tcp" port="443" reject'
+
+   # add a src ip into the mix
+   firewall-cmd --permanent --zone=public --add-rich-rule='rule family="ipv4" source address="10.0.0.2" port protocol="tcp" port="443" reject'
+
+Forward traffic from a specific address to another port
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: console
+
+   firewall-cmd --permanent --add-forward-port=514:proto=udp:toport=8000:toaddr=10.10.10.11
+   firewall-cmd --add-masquerade ## I guess this is necessary?
+   firewall-cmd --reload
+
+remove a traffic forwarding rule
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: console
+
+   firewall-cmd --permanent --remove-forward-port=514:proto=udp:toport=8000:toaddr=10.10.10.11
+
