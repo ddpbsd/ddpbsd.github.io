@@ -8,7 +8,6 @@ Find the last day of the month
     $ echo $1
     30
 
-
 Encrypt all files in one dir and save to another dir with ansible vault
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -65,4 +64,14 @@ Put this in `~/.inputrc`:
    set bind-tty-special-chars off
 
    "\X-w": backward-kill-word
+
+perl one liner to get rid of windows new lines
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+All these `^M` get on my nerves.
+Borrowed from broquaint on perlmonks.
+
+.. code-block:: console
+
+   perl -pi -e -'s/\r\n?/\n/' FILE
 

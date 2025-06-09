@@ -14,7 +14,7 @@
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Download a certificate" href="download_cert.html" />
+    <link rel="next" title="openssl: download a certificate" href="useful_commands.html" />
     <link rel="prev" title="rsyslogd" href="../rsyslogd/index.html" />
    
   <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
@@ -38,32 +38,38 @@
 <p>Contents:</p>
 <div class="toctree-wrapper compound">
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="download_cert.html">Download a certificate</a></li>
-<li class="toctree-l1"><a class="reference internal" href="download_cert.html#auth-with-tls-certificate">Auth with tls certificate</a></li>
-<li class="toctree-l1"><a class="reference internal" href="certstore.html">Adding a cert to the cert store</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="certstore.html#rhel-based-distributions">RHEL based distributions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="certstore.html#ubuntu-and-maybe-other-debian-derivatives">Ubuntu (and maybe other Debian derivatives)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="useful_commands.html">openssl: download a certificate</a></li>
+<li class="toctree-l1"><a class="reference internal" href="useful_commands.html#openssl-auth-via-tls-certificate-in-s-client">openssl: auth via tls certificate in s_client</a></li>
+<li class="toctree-l1"><a class="reference internal" href="useful_commands.html#openssl-check-to-see-if-ssl3-works">openssl: check to see if ssl3 works</a></li>
+<li class="toctree-l1"><a class="reference internal" href="useful_commands.html#openssl-check-to-see-if-tls-1-2-works">openssl: check to see if tls 1.2 works</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cert_files.html">certificate files</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="cert_files.html#rhel-add-a-certificate-to-trust-store">rhel: add a certificate to trust store</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cert_files.html#debian-add-a-certificate-to-the-trust-store">debian: add a certificate to the trust store</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cert_files.html#pkcs-12-extract-key-and-cert-from-keystore">pkcs #12: extract key and cert from keystore</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cert_files.html#pkcs-12-create-a-file">pkcs #12: create a file</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cert_files.html#see-a-cert-s-fingerprint">see a cert’s fingerprint</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="create_self_signed_cert.html">Create a self signed cert</a></li>
-<li class="toctree-l1"><a class="reference internal" href="create_self_signed_cert.html#remove-passphrase">Remove passphrase</a></li>
-<li class="toctree-l1"><a class="reference internal" href="test_for_ssl3.html">Check to see if ssl3 works</a></li>
-<li class="toctree-l1"><a class="reference internal" href="test_for_ssl3.html#check-to-see-if-tls-1-2-works">Check to see if tls 1.2 works</a></li>
+<li class="toctree-l1"><a class="reference internal" href="create_certificate.html">creating a certificate</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="create_certificate.html#create-a-key">create a key</a></li>
+<li class="toctree-l2"><a class="reference internal" href="create_certificate.html#create-a-certificate-signing-request-csr">create a certificate signing request (csr)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="create_certificate.html#create-a-csr-with-a-custom-configuration">create a csr with a custom configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="create_certificate.html#creating-a-key-and-csr-in-1-step">creating a key and csr in 1 step</a></li>
+<li class="toctree-l2"><a class="reference internal" href="create_certificate.html#create-a-self-signed-certificate">create a self-signed certificate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="create_certificate.html#ca-sign-the-csr">ca: sign the csr</a></li>
+<li class="toctree-l2"><a class="reference internal" href="create_certificate.html#ca-update-the-db">ca: update the db</a></li>
+<li class="toctree-l2"><a class="reference internal" href="create_certificate.html#ca-format-of-the-index-txt-file">ca: format of the index.txt file</a></li>
+<li class="toctree-l2"><a class="reference internal" href="create_certificate.html#remove-the-passphrase-form-a-key">remove the passphrase form a key</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="create_ca.html">Where I got this information</a></li>
-<li class="toctree-l1"><a class="reference internal" href="checks.html">Look at certs!</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="checks.html#check-a-private-key">Check a private key</a></li>
-<li class="toctree-l2"><a class="reference internal" href="checks.html#check-a-certificate">Check a certificate</a></li>
-<li class="toctree-l2"><a class="reference internal" href="checks.html#check-the-subject-in-a-certificate">Check the subject in a certificate</a></li>
-<li class="toctree-l2"><a class="reference internal" href="checks.html#check-expiration-with-keytool">Check expiration with keytool</a></li>
-<li class="toctree-l2"><a class="reference internal" href="checks.html#check-key-file">Check key file</a></li>
-<li class="toctree-l2"><a class="reference internal" href="checks.html#check-modulus-of-both-key-and-certificate">Check modulus of both key and certificate</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="ca_certs.html">certs</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="ca_certs.html#create-a-csr-and-key">Create a csr and key</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ca_certs.html#sign-the-csr">Sign the csr</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ca_certs.html#format-of-the-index-txt-file">format of the index.txt file</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ca_certs.html#update-the-db">update the db</a></li>
+<li class="toctree-l1"><a class="reference internal" href="checks.html">look at certs!</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="checks.html#openssl-check-a-private-key">openssl: check a private key</a></li>
+<li class="toctree-l2"><a class="reference internal" href="checks.html#openssl-check-a-certificate">openssl: check a certificate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="checks.html#openssl-check-the-subject-in-a-certificate">openssl: check the subject in a certificate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="checks.html#keytool-check-expiration">keytool: check expiration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="checks.html#openssl-check-key-file">openssl: check key file</a></li>
+<li class="toctree-l2"><a class="reference internal" href="checks.html#openssl-check-modulus-of-both-key-and-certificate">openssl: check modulus of both key and certificate</a></li>
 </ul>
 </li>
 </ul>
@@ -96,16 +102,14 @@
 <li class="toctree-l1"><a class="reference internal" href="../ossec/index.html">OSSEC</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../rsyslogd/index.html">rsyslogd</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">ssl</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="download_cert.html">Download a certificate</a></li>
-<li class="toctree-l2"><a class="reference internal" href="download_cert.html#auth-with-tls-certificate">Auth with tls certificate</a></li>
-<li class="toctree-l2"><a class="reference internal" href="certstore.html">Adding a cert to the cert store</a></li>
-<li class="toctree-l2"><a class="reference internal" href="create_self_signed_cert.html">Create a self signed cert</a></li>
-<li class="toctree-l2"><a class="reference internal" href="create_self_signed_cert.html#remove-passphrase">Remove passphrase</a></li>
-<li class="toctree-l2"><a class="reference internal" href="test_for_ssl3.html">Check to see if ssl3 works</a></li>
-<li class="toctree-l2"><a class="reference internal" href="test_for_ssl3.html#check-to-see-if-tls-1-2-works">Check to see if tls 1.2 works</a></li>
+<li class="toctree-l2"><a class="reference internal" href="useful_commands.html">openssl: download a certificate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="useful_commands.html#openssl-auth-via-tls-certificate-in-s-client">openssl: auth via tls certificate in s_client</a></li>
+<li class="toctree-l2"><a class="reference internal" href="useful_commands.html#openssl-check-to-see-if-ssl3-works">openssl: check to see if ssl3 works</a></li>
+<li class="toctree-l2"><a class="reference internal" href="useful_commands.html#openssl-check-to-see-if-tls-1-2-works">openssl: check to see if tls 1.2 works</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cert_files.html">certificate files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="create_certificate.html">creating a certificate</a></li>
 <li class="toctree-l2"><a class="reference internal" href="create_ca.html">Where I got this information</a></li>
-<li class="toctree-l2"><a class="reference internal" href="checks.html">Look at certs!</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ca_certs.html">certs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="checks.html">look at certs!</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../stupid_unix_tricks/index.html">Stupid Unix Tricks</a></li>
@@ -119,7 +123,7 @@
 <ul>
   <li><a href="../index.html">Documentation overview</a><ul>
       <li>Previous: <a href="../rsyslogd/index.html" title="previous chapter">rsyslogd</a></li>
-      <li>Next: <a href="download_cert.html" title="next chapter">Download a certificate</a></li>
+      <li>Next: <a href="useful_commands.html" title="next chapter">openssl: download a certificate</a></li>
   </ul></li>
 </ul>
 </div>

@@ -1,0 +1,92 @@
+======================
+creating a certificate
+======================
+
+create a key
+^^^^^^^^^^^^
+
+`2048` bit keys are probably good enough, but if you're paranoid `4096` is bigger.
+
+.. code-block:: console
+
+   openssl genrsa -aes256 -out key.key 2048
+
+create a certificate signing request (csr)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+This uses the key from the previous step.
+
+.. code-block:: console
+
+   openssl req -new -sha256 -key key.key -out csr.csr
+
+
+create a csr with a custom configuration
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Prepopulate the `CONFIG.cnf` with whatever settings you want.
+Use the key from the `create a key` step above.
+
+.. code-block:: console
+
+   openssl req -new -sha256 -config CONFIG.cnf -key key.key -out csr.csr
+
+creating a key and csr in 1 step
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+I like doing this in 2 steps, but to each their own.
+
+.. code-block::console
+
+   openssl req -newkey rsa:2048 -nodes -keyout NEWKEY.key -config CONFIG.cnf -out NEWCSR.csr -new -sha256
+
+create a self-signed certificate
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Expirations are getting shorter and shorter, hopefully 1 year will be good enough for a while.
+
+.. code-block:: console
+
+   openssl req -x509 -sha256 -days 365 -key key.key -in csr.csr -out certificate.crt
+
+
+ca: sign the csr
+^^^^^^^^^^^^^^^^
+
+If you're silly and have your own certificate authority (ca), you can sign your own csr files.
+
+.. code-block:: console
+
+   openssl ca -batch -config intermediateCA-openssl.cnf -extensions server_cert -notext -in gitlab.csr -out gitlab.crt
+
+ca: update the db
+^^^^^^^^^^^^^^^^^
+
+This will expire certs in the db.
+
+.. code-block:: console
+
+   openssl ca -updatedb -config ./intermediateCA-openssl.cnf
+
+ca: format of the index.txt file
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tab delimited
+
+1. Certificate status (V = valid, R = revoked, E = expired)
+2. Expiration date in YYMMDDHHMMSSZ format
+3. Cert revocation date
+4. serial number in hex
+5. filename or unknown
+6. Certificate distinguished name
+
+
+remove the passphrase form a key
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+You probably shouldn't do this, but you can.
+
+.. code-block:: console
+
+   openssl rsa -in [file1.key] -out [file2.key]
+

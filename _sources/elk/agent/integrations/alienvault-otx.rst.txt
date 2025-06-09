@@ -1,0 +1,9 @@
+==============
+alienvault otx
+==============
+
+Indicators go into `logs-ti_otx.pulses_subscribed-*` via a CEL input.
+There is some processing done with ingest pipelines.
+A transform gets the `active` IoCs and puts them in `logs-ti_otx.pulses_subscribed-*`.
+
+

@@ -5,7 +5,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>User can login locally but not via ssh &#8212; notes 0.1 documentation</title>
+    <title>sssd &#8212; notes 0.1 documentation</title>
     <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=03e43079" />
     <link rel="stylesheet" type="text/css" href="../../../_static/basic.css?v=b08954a9" />
     <link rel="stylesheet" type="text/css" href="../../../_static/alabaster.css?v=27fed22d" />
@@ -14,8 +14,8 @@
     <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="sssd" href="sssd.html" />
-    <link rel="prev" title="Find out which repository a package comes from:" href="../apt.html" />
+    <link rel="next" title="mount: unknown filesystem type ‘vfat’" href="../boot.html" />
+    <link rel="prev" title="User can login locally but not via ssh" href="failure.html" />
    
   <link rel="stylesheet" href="../../../_static/custom.css" type="text/css" />
   
@@ -33,33 +33,13 @@
 
           <div class="body" role="main">
             
-  <section id="user-can-login-locally-but-not-via-ssh">
-<h1>User can login locally but not via ssh<a class="headerlink" href="#user-can-login-locally-but-not-via-ssh" title="Link to this heading">¶</a></h1>
-<p>Add debug to <cite>/etc/pam.d/sshd</cite> (probably to more lines than this):</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">auth       required     pam_sepermit.so debug</span>
-</pre></div>
-</div>
-<p>Look for <cite>pam_sepermit</cite> log messages:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">Mar 16 09:36:42 SERVER sshd[20620]: pam_sepermit(sshd:auth): Parsing config file: /etc/security/sepermit.conf</span>
-<span class="go">Mar 16 09:36:42 SERVER sshd[20620]: pam_sepermit(sshd:auth): Access will not be allowed on match</span>
-<span class="go">Mar 16 09:36:42 SERVER sshd[20620]: pam_sepermit(sshd:auth): Matching user USERNAME against user USERNAME</span>
-<span class="go">Mar 16 09:36:42 SERVER sshd[20620]: pam_sepermit(sshd:auth): sepermit_match returned: 0</span>
-<span class="go">Mar 16 09:37:07 SERVER sshd[20620]: pam_sepermit(sshd:auth): Parsing config file: /etc/security/sepermit.conf</span>
-<span class="go">Mar 16 09:37:07 SERVER sshd[20620]: pam_sepermit(sshd:auth): Access will not be allowed on match</span>
-<span class="go">Mar 16 09:37:07 SERVER sshd[20620]: pam_sepermit(sshd:auth): sepermit_match returned: -1</span>
-</pre></div>
-</div>
+  <section id="sssd">
+<h1>sssd<a class="headerlink" href="#sssd" title="Link to this heading">¶</a></h1>
+<section id="the-data-provider-returned-an-error-org-freedesktop-sssd-error-dataprovider-offline">
+<h2>The Data Provider returned an error [org.freedesktop.sssd.Error.DataProvider.Offline]<a class="headerlink" href="#the-data-provider-returned-an-error-org-freedesktop-sssd-error-dataprovider-offline" title="Link to this heading">¶</a></h2>
+<p>When the system was added to AD or whatever it used a server that is no longer present.
+Either add or update the <cite>ad_server</cite> line in <cite>/etc/sssd/sssd.conf</cite> with a comma separated list of AD servers.</p>
 </section>
-<section id="unlock-accounts">
-<h1>Unlock accounts<a class="headerlink" href="#unlock-accounts" title="Link to this heading">¶</a></h1>
-<p>Use <cite>passwd</cite>:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp"># </span>passwd<span class="w"> </span>-u<span class="w"> </span>USERNAME
-</pre></div>
-</div>
-<p>Or <cite>usermod</cite>:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp"># </span>usermode<span class="w"> </span>-U<span class="w"> </span>USERNAME
-</pre></div>
-</div>
 </section>
 
 
@@ -105,8 +85,8 @@
   <li><a href="../../../index.html">Documentation overview</a><ul>
   <li><a href="../../index.html">Operating Systems</a><ul>
   <li><a href="../index.html">Linux</a><ul>
-      <li>Previous: <a href="../apt.html" title="previous chapter">Find out which repository a package comes from:</a></li>
-      <li>Next: <a href="sssd.html" title="next chapter">sssd</a></li>
+      <li>Previous: <a href="failure.html" title="previous chapter">User can login locally but not via ssh</a></li>
+      <li>Next: <a href="../boot.html" title="next chapter">mount: unknown filesystem type ‘vfat’</a></li>
   </ul></li>
   </ul></li>
   </ul></li>

@@ -8,11 +8,9 @@ Contents:
 .. toctree::
    :maxdepth: 2
 
-   download_cert
-   certstore
-   create_self_signed_cert
-   test_for_ssl3
+   useful_commands
+   cert_files
+   create_certificate
    create_ca
    checks
-   ca_certs
 

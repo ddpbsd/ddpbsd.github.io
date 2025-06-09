@@ -1,0 +1,31 @@
+openssl: download a certificate
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: console
+
+   openssl s_client -connect ecx.dellroad.org:443
+
+openssl: auth via tls certificate in s_client
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+If you've gotten yourself into a corner and need to test tls authentication, you can use this.
+
+.. code-block:: console
+
+   openssl s_client -connect server.example.com -host client.example.com -servername server.client.com -key key.pem -cert cert.pem
+
+openssl: check to see if ssl3 works
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: console
+
+   openssl s_client -connect 10.99.1.19:443 -ssl3
+
+
+openssl: check to see if tls 1.2 works
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: console
+
+   openssl s_client -connect 10.99.1.19:443 -tls1_2
+

@@ -5,7 +5,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Where I got this information &#8212; notes 0.1 documentation</title>
+    <title>openssl: download a certificate &#8212; notes 0.1 documentation</title>
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
     <link rel="stylesheet" type="text/css" href="../_static/basic.css?v=b08954a9" />
     <link rel="stylesheet" type="text/css" href="../_static/alabaster.css?v=27fed22d" />
@@ -14,8 +14,8 @@
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="look at certs!" href="checks.html" />
-    <link rel="prev" title="creating a certificate" href="create_certificate.html" />
+    <link rel="next" title="certificate files" href="cert_files.html" />
+    <link rel="prev" title="ssl" href="index.html" />
    
   <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
   
@@ -33,9 +33,30 @@
 
           <div class="body" role="main">
             
-  <section id="where-i-got-this-information">
-<span id="ssl-create-ca"></span><h1>Where I got this information<a class="headerlink" href="#where-i-got-this-information" title="Link to this heading">¶</a></h1>
-<p><a class="reference external" href="https://jamielinux.com/docs/openssl-certificate-authority/create-the-root-pair.html">https://jamielinux.com/docs/openssl-certificate-authority/create-the-root-pair.html</a></p>
+  <section id="openssl-download-a-certificate">
+<h1>openssl: download a certificate<a class="headerlink" href="#openssl-download-a-certificate" title="Link to this heading">¶</a></h1>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">openssl s_client -connect ecx.dellroad.org:443</span>
+</pre></div>
+</div>
+</section>
+<section id="openssl-auth-via-tls-certificate-in-s-client">
+<h1>openssl: auth via tls certificate in s_client<a class="headerlink" href="#openssl-auth-via-tls-certificate-in-s-client" title="Link to this heading">¶</a></h1>
+<p>If you’ve gotten yourself into a corner and need to test tls authentication, you can use this.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">openssl s_client -connect server.example.com -host client.example.com -servername server.client.com -key key.pem -cert cert.pem</span>
+</pre></div>
+</div>
+</section>
+<section id="openssl-check-to-see-if-ssl3-works">
+<h1>openssl: check to see if ssl3 works<a class="headerlink" href="#openssl-check-to-see-if-ssl3-works" title="Link to this heading">¶</a></h1>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">openssl s_client -connect 10.99.1.19:443 -ssl3</span>
+</pre></div>
+</div>
+</section>
+<section id="openssl-check-to-see-if-tls-1-2-works">
+<h1>openssl: check to see if tls 1.2 works<a class="headerlink" href="#openssl-check-to-see-if-tls-1-2-works" title="Link to this heading">¶</a></h1>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">openssl s_client -connect 10.99.1.19:443 -tls1_2</span>
+</pre></div>
+</div>
 </section>
 
 
@@ -64,13 +85,13 @@
 <li class="toctree-l1"><a class="reference internal" href="../ossec/index.html">OSSEC</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../rsyslogd/index.html">rsyslogd</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">ssl</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="useful_commands.html">openssl: download a certificate</a></li>
-<li class="toctree-l2"><a class="reference internal" href="useful_commands.html#openssl-auth-via-tls-certificate-in-s-client">openssl: auth via tls certificate in s_client</a></li>
-<li class="toctree-l2"><a class="reference internal" href="useful_commands.html#openssl-check-to-see-if-ssl3-works">openssl: check to see if ssl3 works</a></li>
-<li class="toctree-l2"><a class="reference internal" href="useful_commands.html#openssl-check-to-see-if-tls-1-2-works">openssl: check to see if tls 1.2 works</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">openssl: download a certificate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#openssl-auth-via-tls-certificate-in-s-client">openssl: auth via tls certificate in s_client</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#openssl-check-to-see-if-ssl3-works">openssl: check to see if ssl3 works</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#openssl-check-to-see-if-tls-1-2-works">openssl: check to see if tls 1.2 works</a></li>
 <li class="toctree-l2"><a class="reference internal" href="cert_files.html">certificate files</a></li>
 <li class="toctree-l2"><a class="reference internal" href="create_certificate.html">creating a certificate</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Where I got this information</a></li>
+<li class="toctree-l2"><a class="reference internal" href="create_ca.html">Where I got this information</a></li>
 <li class="toctree-l2"><a class="reference internal" href="checks.html">look at certs!</a></li>
 </ul>
 </li>
@@ -85,8 +106,8 @@
 <ul>
   <li><a href="../index.html">Documentation overview</a><ul>
   <li><a href="index.html">ssl</a><ul>
-      <li>Previous: <a href="create_certificate.html" title="previous chapter">creating a certificate</a></li>
-      <li>Next: <a href="checks.html" title="next chapter">look at certs!</a></li>
+      <li>Previous: <a href="index.html" title="previous chapter">ssl</a></li>
+      <li>Next: <a href="cert_files.html" title="next chapter">certificate files</a></li>
   </ul></li>
   </ul></li>
 </ul>

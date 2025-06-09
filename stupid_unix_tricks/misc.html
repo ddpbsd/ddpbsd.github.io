@@ -89,6 +89,14 @@
 </pre></div>
 </div>
 </section>
+<section id="perl-one-liner-to-get-rid-of-windows-new-lines">
+<h1>perl one liner to get rid of windows new lines<a class="headerlink" href="#perl-one-liner-to-get-rid-of-windows-new-lines" title="Link to this heading">¶</a></h1>
+<p>All these <cite>^M</cite> get on my nerves.
+Borrowed from broquaint on perlmonks.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">perl -pi -e -&#39;s/\r\n?/\n/&#39; FILE</span>
+</pre></div>
+</div>
+</section>
 
 
           </div>
@@ -126,6 +134,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#show-a-specific-line-number-in-less">Show a specific line number in less</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#extract-a-specific-line-using-sed">Extract a specific line using sed</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#better-w-behavior">Better ^w behavior</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#perl-one-liner-to-get-rid-of-windows-new-lines">perl one liner to get rid of windows new lines</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../tools/index.html">Tools</a></li>

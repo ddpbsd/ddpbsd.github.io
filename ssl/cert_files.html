@@ -5,7 +5,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Where I got this information &#8212; notes 0.1 documentation</title>
+    <title>certificate files &#8212; notes 0.1 documentation</title>
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
     <link rel="stylesheet" type="text/css" href="../_static/basic.css?v=b08954a9" />
     <link rel="stylesheet" type="text/css" href="../_static/alabaster.css?v=27fed22d" />
@@ -14,8 +14,8 @@
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="look at certs!" href="checks.html" />
-    <link rel="prev" title="creating a certificate" href="create_certificate.html" />
+    <link rel="next" title="creating a certificate" href="create_certificate.html" />
+    <link rel="prev" title="openssl: download a certificate" href="useful_commands.html" />
    
   <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
   
@@ -33,9 +33,45 @@
 
           <div class="body" role="main">
             
-  <section id="where-i-got-this-information">
-<span id="ssl-create-ca"></span><h1>Where I got this information<a class="headerlink" href="#where-i-got-this-information" title="Link to this heading">¶</a></h1>
-<p><a class="reference external" href="https://jamielinux.com/docs/openssl-certificate-authority/create-the-root-pair.html">https://jamielinux.com/docs/openssl-certificate-authority/create-the-root-pair.html</a></p>
+  <section id="certificate-files">
+<h1>certificate files<a class="headerlink" href="#certificate-files" title="Link to this heading">¶</a></h1>
+<section id="rhel-add-a-certificate-to-trust-store">
+<h2>rhel: add a certificate to trust store<a class="headerlink" href="#rhel-add-a-certificate-to-trust-store" title="Link to this heading">¶</a></h2>
+<p>This may apply to rhel based distributions as well as rhel itself.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp"># </span>cp<span class="w"> </span>cert-chain.crt<span class="w"> </span>/etc/pki/ca-trust/source/anchors/
+<span class="gp"># </span>update-ca-trust
+</pre></div>
+</div>
+</section>
+<section id="debian-add-a-certificate-to-the-trust-store">
+<h2>debian: add a certificate to the trust store<a class="headerlink" href="#debian-add-a-certificate-to-the-trust-store" title="Link to this heading">¶</a></h2>
+<p>This applies to ubuntu and maybe other debian based distributions.</p>
+<p>Make sure the file has a <cite>.crt</cite> extension.
+It won’t work with <cite>.pem</cite> for some reason.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp"># </span>apt-get<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>ca-certificates
+<span class="gp"># </span>cp<span class="w"> </span>CERT-FILE.pem<span class="w"> </span>/usr/local/share/ca-certificates
+<span class="gp"># </span>update-ca-certificates
+</pre></div>
+</div>
+</section>
+<section id="pkcs-12-extract-key-and-cert-from-keystore">
+<h2>pkcs #12: extract key and cert from keystore<a class="headerlink" href="#pkcs-12-extract-key-and-cert-from-keystore" title="Link to this heading">¶</a></h2>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">openssl pkcs12 -info -in KEYSTORE.p12 -nodes</span>
+</pre></div>
+</div>
+</section>
+<section id="pkcs-12-create-a-file">
+<h2>pkcs #12: create a file<a class="headerlink" href="#pkcs-12-create-a-file" title="Link to this heading">¶</a></h2>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">openssl pkcs12 -export -out KEYSTORE.p12 -inkey KEY.key -in CERT.pem -name ALIAS</span>
+</pre></div>
+</div>
+</section>
+<section id="see-a-cert-s-fingerprint">
+<h2>see a cert’s fingerprint<a class="headerlink" href="#see-a-cert-s-fingerprint" title="Link to this heading">¶</a></h2>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">openssl x509 -in FILE.pem -noout -fingerprint</span>
+</pre></div>
+</div>
+</section>
 </section>
 
 
@@ -68,9 +104,9 @@
 <li class="toctree-l2"><a class="reference internal" href="useful_commands.html#openssl-auth-via-tls-certificate-in-s-client">openssl: auth via tls certificate in s_client</a></li>
 <li class="toctree-l2"><a class="reference internal" href="useful_commands.html#openssl-check-to-see-if-ssl3-works">openssl: check to see if ssl3 works</a></li>
 <li class="toctree-l2"><a class="reference internal" href="useful_commands.html#openssl-check-to-see-if-tls-1-2-works">openssl: check to see if tls 1.2 works</a></li>
-<li class="toctree-l2"><a class="reference internal" href="cert_files.html">certificate files</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">certificate files</a></li>
 <li class="toctree-l2"><a class="reference internal" href="create_certificate.html">creating a certificate</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Where I got this information</a></li>
+<li class="toctree-l2"><a class="reference internal" href="create_ca.html">Where I got this information</a></li>
 <li class="toctree-l2"><a class="reference internal" href="checks.html">look at certs!</a></li>
 </ul>
 </li>
@@ -85,8 +121,8 @@
 <ul>
   <li><a href="../index.html">Documentation overview</a><ul>
   <li><a href="index.html">ssl</a><ul>
-      <li>Previous: <a href="create_certificate.html" title="previous chapter">creating a certificate</a></li>
-      <li>Next: <a href="checks.html" title="next chapter">look at certs!</a></li>
+      <li>Previous: <a href="useful_commands.html" title="previous chapter">openssl: download a certificate</a></li>
+      <li>Next: <a href="create_certificate.html" title="next chapter">creating a certificate</a></li>
   </ul></li>
   </ul></li>
 </ul>

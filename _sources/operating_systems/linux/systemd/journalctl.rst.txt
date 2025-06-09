@@ -19,3 +19,12 @@ View the last 100 lines
 
    journalctl --no-pager -n 100 --unit=my.service
 
+since 5 minutes ago
+^^^^^^^^^^^^^^^^^^^
+
+The `ago` is very important for some reason. :|
+
+.. code-block:: console
+
+   journalctl -u --since "5 minutes ago"
+

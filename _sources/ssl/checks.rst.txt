@@ -1,45 +1,51 @@
 ==============
-Look at certs!
+look at certs!
 ==============
 
-Check a private key
-^^^^^^^^^^^^^^^^^^^
+openssl: check a private key
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code-block:: console
 
    openssl rsa -in privateKey.key -check
 
-Check a certificate 
-^^^^^^^^^^^^^^^^^^^
+openssl: check a certificate 
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+This will print out the details.
 
 .. code-block:: console
 
    openssl x509 -in certificate.crt -text -noout
 
-Check the subject in a certificate
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+openssl: check the subject in a certificate
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Show just the `subject` of the certificate.
 
 .. code-block:: console
 
    openssl x509 -noout -subject -in certificate.crt
 
-Check expiration with keytool
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+keytool: check expiration
+^^^^^^^^^^^^^^^^^^^^^^^^^
+
+java yay
 
 .. code-block:: console
 
    keytool -list -v -keystore keystore.jks
 
-Check key file
-^^^^^^^^^^^^^^
+openssl: check key file
+^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code-block:: console
 
    openssl rsa -in file.key -check
 
    
-Check modulus of both key and certificate
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+openssl: check modulus of both key and certificate
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 If these don't match, the key and cert don't belong together.
 
@@ -48,4 +54,3 @@ If these don't match, the key and cert don't belong together.
    openssl rsa -modulus -noout -in file.key | openssl md5
    openssl x509 -modulus -noout -in file.crt | openssl md5
 
-   

@@ -5,7 +5,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>look at certs! &#8212; notes 0.1 documentation</title>
+    <title>creating a certificate &#8212; notes 0.1 documentation</title>
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
     <link rel="stylesheet" type="text/css" href="../_static/basic.css?v=b08954a9" />
     <link rel="stylesheet" type="text/css" href="../_static/alabaster.css?v=27fed22d" />
@@ -14,8 +14,8 @@
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Stupid Unix Tricks" href="../stupid_unix_tricks/index.html" />
-    <link rel="prev" title="Where I got this information" href="create_ca.html" />
+    <link rel="next" title="Where I got this information" href="create_ca.html" />
+    <link rel="prev" title="certificate files" href="cert_files.html" />
    
   <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
   
@@ -33,46 +33,71 @@
 
           <div class="body" role="main">
             
-  <section id="look-at-certs">
-<h1>look at certs!<a class="headerlink" href="#look-at-certs" title="Link to this heading">¶</a></h1>
-<section id="openssl-check-a-private-key">
-<h2>openssl: check a private key<a class="headerlink" href="#openssl-check-a-private-key" title="Link to this heading">¶</a></h2>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">openssl rsa -in privateKey.key -check</span>
+  <section id="creating-a-certificate">
+<h1>creating a certificate<a class="headerlink" href="#creating-a-certificate" title="Link to this heading">¶</a></h1>
+<section id="create-a-key">
+<h2>create a key<a class="headerlink" href="#create-a-key" title="Link to this heading">¶</a></h2>
+<p><cite>2048</cite> bit keys are probably good enough, but if you’re paranoid <cite>4096</cite> is bigger.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">openssl genrsa -aes256 -out key.key 2048</span>
 </pre></div>
 </div>
 </section>
-<section id="openssl-check-a-certificate">
-<h2>openssl: check a certificate<a class="headerlink" href="#openssl-check-a-certificate" title="Link to this heading">¶</a></h2>
-<p>This will print out the details.</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">openssl x509 -in certificate.crt -text -noout</span>
+<section id="create-a-certificate-signing-request-csr">
+<h2>create a certificate signing request (csr)<a class="headerlink" href="#create-a-certificate-signing-request-csr" title="Link to this heading">¶</a></h2>
+<p>This uses the key from the previous step.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">openssl req -new -sha256 -key key.key -out csr.csr</span>
 </pre></div>
 </div>
 </section>
-<section id="openssl-check-the-subject-in-a-certificate">
-<h2>openssl: check the subject in a certificate<a class="headerlink" href="#openssl-check-the-subject-in-a-certificate" title="Link to this heading">¶</a></h2>
-<p>Show just the <cite>subject</cite> of the certificate.</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">openssl x509 -noout -subject -in certificate.crt</span>
+<section id="create-a-csr-with-a-custom-configuration">
+<h2>create a csr with a custom configuration<a class="headerlink" href="#create-a-csr-with-a-custom-configuration" title="Link to this heading">¶</a></h2>
+<p>Prepopulate the <cite>CONFIG.cnf</cite> with whatever settings you want.
+Use the key from the <cite>create a key</cite> step above.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">openssl req -new -sha256 -config CONFIG.cnf -key key.key -out csr.csr</span>
 </pre></div>
 </div>
 </section>
-<section id="keytool-check-expiration">
-<h2>keytool: check expiration<a class="headerlink" href="#keytool-check-expiration" title="Link to this heading">¶</a></h2>
-<p>java yay</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">keytool -list -v -keystore keystore.jks</span>
+<section id="creating-a-key-and-csr-in-1-step">
+<h2>creating a key and csr in 1 step<a class="headerlink" href="#creating-a-key-and-csr-in-1-step" title="Link to this heading">¶</a></h2>
+<p>I like doing this in 2 steps, but to each their own.</p>
+</section>
+<section id="create-a-self-signed-certificate">
+<h2>create a self-signed certificate<a class="headerlink" href="#create-a-self-signed-certificate" title="Link to this heading">¶</a></h2>
+<p>Expirations are getting shorter and shorter, hopefully 1 year will be good enough for a while.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">openssl req -x509 -sha256 -days 365 -key key.key -in csr.csr -out certificate.crt</span>
 </pre></div>
 </div>
 </section>
-<section id="openssl-check-key-file">
-<h2>openssl: check key file<a class="headerlink" href="#openssl-check-key-file" title="Link to this heading">¶</a></h2>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">openssl rsa -in file.key -check</span>
+<section id="ca-sign-the-csr">
+<h2>ca: sign the csr<a class="headerlink" href="#ca-sign-the-csr" title="Link to this heading">¶</a></h2>
+<p>If you’re silly and have your own certificate authority (ca), you can sign your own csr files.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">openssl ca -batch -config intermediateCA-openssl.cnf -extensions server_cert -notext -in gitlab.csr -out gitlab.crt</span>
 </pre></div>
 </div>
 </section>
-<section id="openssl-check-modulus-of-both-key-and-certificate">
-<h2>openssl: check modulus of both key and certificate<a class="headerlink" href="#openssl-check-modulus-of-both-key-and-certificate" title="Link to this heading">¶</a></h2>
-<p>If these don’t match, the key and cert don’t belong together.</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">openssl rsa -modulus -noout -in file.key | openssl md5</span>
-<span class="go">openssl x509 -modulus -noout -in file.crt | openssl md5</span>
+<section id="ca-update-the-db">
+<h2>ca: update the db<a class="headerlink" href="#ca-update-the-db" title="Link to this heading">¶</a></h2>
+<p>This will expire certs in the db.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">openssl ca -updatedb -config ./intermediateCA-openssl.cnf</span>
+</pre></div>
+</div>
+</section>
+<section id="ca-format-of-the-index-txt-file">
+<h2>ca: format of the index.txt file<a class="headerlink" href="#ca-format-of-the-index-txt-file" title="Link to this heading">¶</a></h2>
+<p>tab delimited</p>
+<ol class="arabic simple">
+<li><p>Certificate status (V = valid, R = revoked, E = expired)</p></li>
+<li><p>Expiration date in YYMMDDHHMMSSZ format</p></li>
+<li><p>Cert revocation date</p></li>
+<li><p>serial number in hex</p></li>
+<li><p>filename or unknown</p></li>
+<li><p>Certificate distinguished name</p></li>
+</ol>
+</section>
+<section id="remove-the-passphrase-form-a-key">
+<h2>remove the passphrase form a key<a class="headerlink" href="#remove-the-passphrase-form-a-key" title="Link to this heading">¶</a></h2>
+<p>You probably shouldn’t do this, but you can.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">openssl rsa -in [file1.key] -out [file2.key]</span>
 </pre></div>
 </div>
 </section>
@@ -109,9 +134,9 @@
 <li class="toctree-l2"><a class="reference internal" href="useful_commands.html#openssl-check-to-see-if-ssl3-works">openssl: check to see if ssl3 works</a></li>
 <li class="toctree-l2"><a class="reference internal" href="useful_commands.html#openssl-check-to-see-if-tls-1-2-works">openssl: check to see if tls 1.2 works</a></li>
 <li class="toctree-l2"><a class="reference internal" href="cert_files.html">certificate files</a></li>
-<li class="toctree-l2"><a class="reference internal" href="create_certificate.html">creating a certificate</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">creating a certificate</a></li>
 <li class="toctree-l2"><a class="reference internal" href="create_ca.html">Where I got this information</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">look at certs!</a></li>
+<li class="toctree-l2"><a class="reference internal" href="checks.html">look at certs!</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../stupid_unix_tricks/index.html">Stupid Unix Tricks</a></li>
@@ -125,8 +150,8 @@
 <ul>
   <li><a href="../index.html">Documentation overview</a><ul>
   <li><a href="index.html">ssl</a><ul>
-      <li>Previous: <a href="create_ca.html" title="previous chapter">Where I got this information</a></li>
-      <li>Next: <a href="../stupid_unix_tricks/index.html" title="next chapter">Stupid Unix Tricks</a></li>
+      <li>Previous: <a href="cert_files.html" title="previous chapter">certificate files</a></li>
+      <li>Next: <a href="create_ca.html" title="next chapter">Where I got this information</a></li>
   </ul></li>
   </ul></li>
 </ul>

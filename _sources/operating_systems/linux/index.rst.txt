@@ -10,6 +10,7 @@ Contents:
 
    apt
    auth/failure
+   auth/sssd
    boot
    commands
    deprecated

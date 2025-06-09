@@ -1,0 +1,51 @@
+=================
+certificate files
+=================
+
+rhel: add a certificate to trust store
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+This may apply to rhel based distributions as well as rhel itself.
+
+.. code-block:: console
+
+   # cp cert-chain.crt /etc/pki/ca-trust/source/anchors/
+   # update-ca-trust
+
+debian: add a certificate to the trust store
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+This applies to ubuntu and maybe other debian based distributions.
+
+Make sure the file has a `.crt` extension.
+It won't work with `.pem` for some reason.
+
+.. code-block:: console
+
+   # apt-get install -y ca-certificates
+   # cp CERT-FILE.pem /usr/local/share/ca-certificates
+   # update-ca-certificates
+
+
+pkcs #12: extract key and cert from keystore
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: console
+
+   openssl pkcs12 -info -in KEYSTORE.p12 -nodes
+
+pkcs #12: create a file
+^^^^^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: console
+
+   openssl pkcs12 -export -out KEYSTORE.p12 -inkey KEY.key -in CERT.pem -name ALIAS
+
+
+see a cert's fingerprint
+^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: console
+
+   openssl x509 -in FILE.pem -noout -fingerprint
+

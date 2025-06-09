@@ -1,0 +1,10 @@
+====
+sssd
+====
+
+The Data Provider returned an error [org.freedesktop.sssd.Error.DataProvider.Offline]
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+When the system was added to AD or whatever it used a server that is no longer present.
+Either add or update the `ad_server` line in `/etc/sssd/sssd.conf` with a comma separated list of AD servers.
+
