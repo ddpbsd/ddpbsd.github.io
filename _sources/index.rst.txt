@@ -19,11 +19,9 @@ Contents:
 
    db/index
    elk/index
-   k8s/index
    openssh/index
    operating_systems/index
    ossec/index
-   rsyslogd/index
    ssl/index
    stupid_unix_tricks/index
    tools/index
