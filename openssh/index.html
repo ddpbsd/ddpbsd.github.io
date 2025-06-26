@@ -42,7 +42,7 @@
 <li class="toctree-l1"><a class="reference internal" href="commands.html#print-configuration">Print configuration</a></li>
 <li class="toctree-l1"><a class="reference internal" href="config.html">Automatically add ssh keys to ssh-agent</a></li>
 <li class="toctree-l1"><a class="reference internal" href="keys.html">SSH keys</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="keys.html#determine-the-fingerprint-of-a-key">Determine the fingerprint of a key</a></li>
+<li class="toctree-l2"><a class="reference internal" href="keys.html#determine-the-fingerprint-of-a-key">determine the fingerprint of a key</a></li>
 <li class="toctree-l2"><a class="reference internal" href="keys.html#scp-only-key">scp only key</a></li>
 </ul>
 </li>
@@ -52,8 +52,16 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="keys.html#forwarding">Forwarding</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="keys.html#agent-forwarding">Agent Forwarding</a></li>
-<li class="toctree-l2"><a class="reference internal" href="keys.html#restrictive-agent-forwarding">Restrictive Agent Forwarding</a></li>
+<li class="toctree-l2"><a class="reference internal" href="keys.html#agent-forwarding">agent forwarding</a></li>
+<li class="toctree-l2"><a class="reference internal" href="keys.html#restrictive-agent-forwarding">restrictive Agent Forwarding</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="certificates.html">certificate authentication</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="certificates.html#create-the-ca-keypair">create the CA keypair</a></li>
+<li class="toctree-l2"><a class="reference internal" href="certificates.html#create-a-host-key-and-sign-it">create a host key and sign it</a></li>
+<li class="toctree-l2"><a class="reference internal" href="certificates.html#create-a-user-key-and-sign-it">create a user key and sign it</a></li>
+<li class="toctree-l2"><a class="reference internal" href="certificates.html#check-the-options-that-a-key-was-signed-with">check the options that a key was signed with</a></li>
+<li class="toctree-l2"><a class="reference internal" href="certificates.html#add-the-user-ca-pub-file-to-the-server-s-sshd-config">add the user_ca.pub file to the server’s sshd_config</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="misc.html">Disconnect from an SSH session</a></li>
@@ -92,6 +100,7 @@
 <li class="toctree-l2"><a class="reference internal" href="keys.html">SSH keys</a></li>
 <li class="toctree-l2"><a class="reference internal" href="keys.html#hardware-keys">Hardware Keys</a></li>
 <li class="toctree-l2"><a class="reference internal" href="keys.html#forwarding">Forwarding</a></li>
+<li class="toctree-l2"><a class="reference internal" href="certificates.html">certificate authentication</a></li>
 <li class="toctree-l2"><a class="reference internal" href="misc.html">Disconnect from an SSH session</a></li>
 <li class="toctree-l2"><a class="reference internal" href="misc.html#disconnect-from-a-nested-ssh-session">Disconnect from a nested SSH session</a></li>
 <li class="toctree-l2"><a class="reference internal" href="misc.html#x11-forwarding-not-working">X11 forwarding not working</a></li>

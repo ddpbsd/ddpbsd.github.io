@@ -101,6 +101,14 @@ But sometimes you just gotta.</p>
 </pre></div>
 </div>
 </section>
+<section id="see-the-max-shards-per-node">
+<h2>see the max shards per node<a class="headerlink" href="#see-the-max-shards-per-node" title="Link to this heading">¶</a></h2>
+<p><cite>cluster.max_shards_per_node</cite> default: <cite>1000</cite></p>
+<p>This will show up as <cite>-1</cite> which is unlimited</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">GET _cluster/settings?include_defaults=true&amp;filter-path=cluster.routing.allocation.total_shards_per_node</span>
+</pre></div>
+</div>
+</section>
 </section>
 
 

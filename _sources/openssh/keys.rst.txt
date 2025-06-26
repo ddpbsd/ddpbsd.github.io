@@ -1,10 +1,8 @@
-.. _openssh_keys:
-
 ========
 SSH keys
 ========
 
-Determine the fingerprint of a key
+determine the fingerprint of a key
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 `ssh-keygen` can provide this information.
@@ -44,7 +42,7 @@ Put libfido2 into debug mode
 Forwarding
 ==========
 
-Agent Forwarding
+agent forwarding
 ^^^^^^^^^^^^^^^^
 
 `ssh-agent` must be running on the original client computer.
@@ -60,7 +58,7 @@ The key should be added to the `ssh-agent` on the original destination automagic
 This can be checked by running `ssh-add -l` on the destination.
 The key should be listed in the output.
 
-Restrictive Agent Forwarding
+restrictive Agent Forwarding
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 To use the restrictive ForwardAgent, there must be a key in `known_hosts` that matches the hostname of all destinations.
@@ -80,6 +78,4 @@ First add a constraint for the original destination, then add further constraint
 .. code-block:: console
 
    $ ssh-add -h "ix.example.com" -h "ix.example.com>vmconnect.example.com" .ssh/id_rsa
-
-
 

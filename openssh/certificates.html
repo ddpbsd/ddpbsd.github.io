@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>certificate authentication &#8212; notes 0.1 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/basic.css?v=b08954a9" />
+    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css?v=27fed22d" />
+    <script src="../_static/documentation_options.js?v=2709fde1"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Disconnect from an SSH session" href="misc.html" />
+    <link rel="prev" title="SSH keys" href="keys.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+
+  
+  
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="certificate-authentication">
+<h1>certificate authentication<a class="headerlink" href="#certificate-authentication" title="Link to this heading">¶</a></h1>
+<p>The basic instructions are coming from <a class="reference external" href="https://goteleport.com/blog/how-to-configure-ssh-certificate-based-authentication">How to Generate and Configure SSH Certificate-based Authentication</a></p>
+<p>Information on using a yubikey for the CA can be found at <a class="reference external" href="https://gist.github.com/jamesog/b156c7a85e7f95046ca8b95f6f857f70">https://gist.github.com/jamesog/b156c7a85e7f95046ca8b95f6f857f70</a></p>
+<p>Complicated PKI stuff.</p>
+<ul class="simple">
+<li><p>blah blah host signing key pair</p></li>
+<li><p>user signing key pair</p></li>
+</ul>
+<section id="create-the-ca-keypair">
+<h2>create the CA keypair<a class="headerlink" href="#create-the-ca-keypair" title="Link to this heading">¶</a></h2>
+<p>The first set will be for signing host keys.</p>
+<ul class="simple">
+<li><p>~~I do not know if it requires the <cite>rsa</cite> type, but I want to find out.~~ <cite>rsa</cite> is not required, better keys work</p></li>
+<li><p><cite>-C host_ca</cite> is a comment, and I think that’s weak sauce.</p></li>
+<li><p>If <cite>rsa</cite> keys are used, make sure to use a bigger keysize like <cite>-b 4096</cite></p></li>
+</ul>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">ssh-keygen -t ed25519 -f host_ca -C host_ca</span>
+</pre></div>
+</div>
+<p>And the pair for signing the user certs:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">ssh-keygen -t ed25519 -f user_ca -C user_ca</span>
+</pre></div>
+</div>
+</section>
+<section id="create-a-host-key-and-sign-it">
+<h2>create a host key and sign it<a class="headerlink" href="#create-a-host-key-and-sign-it" title="Link to this heading">¶</a></h2>
+<p>Generate the key with <cite>ssh-keygen</cite>:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">ssh-keygen -f ssh_host_key -N &#39;&#39; -t ed25519</span>
+</pre></div>
+</div>
+<p>And finally sign it.</p>
+<ul class="simple">
+<li><p><cite>-I hostname</cite> is the certificate’s identity, using the hostname makes management easier</p></li>
+<li><p><cite>-n hostname</cite> is a comma-separated list of principals that will be valid, FQDN and/or short names that you’ll be using are the proper values</p></li>
+<li><p><cite>-V +52w</cite> is the validity period, in thie case 52 weeks, if unset they will be valid forever</p></li>
+</ul>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">ssh-keygen -s host_ca -I host.wafflelab.online -h -n host.wafflelab.online,host -V +52w ssh_host_key.pub</span>
+</pre></div>
+</div>
+<p>Add the following to the server’s <cite>sshd_config</cite> and make sure to load the private key as well:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">HostCertificate /etc/ssh/ssh_host_key.pub</span>
+<span class="go">HostKey /etc/ssh/ssh_host_key</span>
+</pre></div>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Using the <cite>Hostname</cite> option in your ssh config file for a host can cause a mismatch between the host and the principals.
+For instance, I have the IP address for a host in the <cite>Hostname</cite> field, so SSHing to the system’s hostname causes a mismatch.
+Commenting out that configuration option “fixes” the issue (as would adding the IP address to the principals).</p>
+</div>
+</section>
+<section id="create-a-user-key-and-sign-it">
+<h2>create a user key and sign it<a class="headerlink" href="#create-a-user-key-and-sign-it" title="Link to this heading">¶</a></h2>
+<p>Generate the key as usual:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">ssh-keygen -f USER-user-key -t ed25519</span>
+</pre></div>
+</div>
+<p>And sign it:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">ssh-keygen -s user_ca -I USERNAME -n USERNAME -V +1d USER-user-key.pub</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><cite>-s user_ca</cite> is the key to sign with</p></li>
+<li><p><cite>-I USERNAME</cite> is something to identify the key, a username or email address makes it easy</p></li>
+<li><p><cite>-n USERNAME</cite> the accounts the user can use to login with</p></li>
+<li><p><cite>-V 1d</cite> is the validity time, a short one is preferable</p></li>
+</ul>
+</section>
+<section id="check-the-options-that-a-key-was-signed-with">
+<h2>check the options that a key was signed with<a class="headerlink" href="#check-the-options-that-a-key-was-signed-with" title="Link to this heading">¶</a></h2>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">ssh-keygen -L -f USER-user-key.pub</span>
+</pre></div>
+</div>
+</section>
+<section id="add-the-user-ca-pub-file-to-the-server-s-sshd-config">
+<h2>add the user_ca.pub file to the server’s sshd_config<a class="headerlink" href="#add-the-user-ca-pub-file-to-the-server-s-sshd-config" title="Link to this heading">¶</a></h2>
+<p>Add the following to the <cite>/etc/sshd_config</cite>:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">TrustedUserCAKeys /etc/ssh/user_ca.pub</span>
+</pre></div>
+</div>
+<p>Of course, you’ll have to copy that file to that location.</p>
+</section>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../index.html">notes</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../db/index.html">databases</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../elk/index.html">elastic stuff</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">OpenSSH</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="commands.html">Command note</a></li>
+<li class="toctree-l2"><a class="reference internal" href="commands.html#print-configuration">Print configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="config.html">Automatically add ssh keys to ssh-agent</a></li>
+<li class="toctree-l2"><a class="reference internal" href="keys.html">SSH keys</a></li>
+<li class="toctree-l2"><a class="reference internal" href="keys.html#hardware-keys">Hardware Keys</a></li>
+<li class="toctree-l2"><a class="reference internal" href="keys.html#forwarding">Forwarding</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">certificate authentication</a></li>
+<li class="toctree-l2"><a class="reference internal" href="misc.html">Disconnect from an SSH session</a></li>
+<li class="toctree-l2"><a class="reference internal" href="misc.html#disconnect-from-a-nested-ssh-session">Disconnect from a nested SSH session</a></li>
+<li class="toctree-l2"><a class="reference internal" href="misc.html#x11-forwarding-not-working">X11 forwarding not working</a></li>
+<li class="toctree-l2"><a class="reference internal" href="misc.html#get-a-fingerprint-from-a-public-key-in-your-known-hosts-file">get a fingerprint from a public key in your known_hosts file</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sftp.html">message too long</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../operating_systems/index.html">Operating Systems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ossec/index.html">OSSEC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ssl/index.html">ssl</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../stupid_unix_tricks/index.html">Stupid Unix Tricks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tools/index.html">Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../vendor_stuff/index.html">Vendor Stuff</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../misc/index.html">misc</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+  <li><a href="index.html">OpenSSH</a><ul>
+      <li>Previous: <a href="keys.html" title="previous chapter">SSH keys</a></li>
+      <li>Next: <a href="misc.html" title="next chapter">Disconnect from an SSH session</a></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<search id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+        <!-- your html code here -->
+	<div class="footer">
+		<em>This information has a good chance of being wrong, inconsistent, out of date, or just bad. Use at your own risk.
+		Feel free to notify me of any issues though.</em>
+	</div>
+
+
+  </body>
+</html>
