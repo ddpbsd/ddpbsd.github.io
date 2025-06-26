@@ -16,7 +16,7 @@ create the CA keypair
 
 The first set will be for signing host keys.
 
-* ~~I do not know if it requires the `rsa` type, but I want to find out.~~ `rsa` is not required, better keys work
+* The `rsa` key type is not required, better keys work too
 * `-C host_ca` is a comment, and I think that's weak sauce.
 * If `rsa` keys are used, make sure to use a bigger keysize like `-b 4096`
 
