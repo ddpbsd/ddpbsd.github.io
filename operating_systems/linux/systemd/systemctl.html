@@ -38,10 +38,18 @@
 <section id="show-enabled-but-not-running-services">
 <h2>show enabled but not running services<a class="headerlink" href="#show-enabled-but-not-running-services" title="Link to this heading">¶</a></h2>
 <p><cite>failed</cite> is probably the state I’m really curious about.</p>
-<p><code class="docutils literal notranslate"><span class="pre">`</span>
-<span class="pre">systemctl</span> <span class="pre">list-units</span> <span class="pre">-all</span> <span class="pre">--state=inactive</span>
-<span class="pre">systemctl</span> <span class="pre">list-units</span> <span class="pre">-all</span> <span class="pre">--state=failed</span>
-<span class="pre">`</span></code></p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">systemctl list-units -all --state=inactive</span>
+<span class="go">systemctl list-units -all --state=failed</span>
+</pre></div>
+</div>
+</section>
+<section id="check-if-a-service-is-running">
+<h2>check if a service is running<a class="headerlink" href="#check-if-a-service-is-running" title="Link to this heading">¶</a></h2>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">systemctl is-active SERVICENAME</span>
+<span class="gp">#</span><span class="c1"># or quietly</span>
+<span class="go">systemctl is-active --quiet SERVICENAME</span>
+</pre></div>
+</div>
 </section>
 <section id="systemctl-enable-something-something-failed-to-execute-operation-no-such-file-or-directory">
 <h2>systemctl enable SOMETHING.something: “Failed to execute operation: No such file or directory”<a class="headerlink" href="#systemctl-enable-something-something-failed-to-execute-operation-no-such-file-or-directory" title="Link to this heading">¶</a></h2>

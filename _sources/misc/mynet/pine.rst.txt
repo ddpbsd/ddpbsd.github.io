@@ -1,0 +1,24 @@
+====
+pine
+====
+
+Stuff for pine.
+
+fstab
+^^^^^
+
+.. code-block:: console
+
+   e344b2be6eb2cce4.b none swap sw
+   e344b2be6eb2cce4.a / ffs rw 1 1
+   e344b2be6eb2cce4.k /home ffs rw,nodev,nosuid 1 2
+   e344b2be6eb2cce4.d /tmp ffs rw,nodev,nosuid 1 2
+   e344b2be6eb2cce4.f /usr ffs rw,nodev 1 2
+   e344b2be6eb2cce4.g /usr/X11R6 ffs rw,nodev 1 2
+   e344b2be6eb2cce4.h /usr/local ffs rw,wxallowed,nodev 1 2
+   e344b2be6eb2cce4.e /var ffs rw,nodev,nosuid 1 2
+   e344b2be6eb2cce4.j /var/log-backup ffs rw,nodev,nosuid 1 2
+   swap /var/log mfs rw,nodev,nosuid,-s=200m,-P=/var/log-backup 0 0
+   77a302db418c8098.d /usr/src ffs rw,nodev,softdep,noauto 0 0
+   77a302db418c8098.e /usr/ports ffs rw,nodev,softdep,noauto 0 0
+

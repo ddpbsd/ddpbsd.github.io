@@ -53,7 +53,7 @@ Add the following to the server's `sshd_config` and make sure to load the privat
 
 .. code-block:: console
 
-   HostCertificate /etc/ssh/ssh_host_key.pub
+   HostCertificate /etc/ssh/ssh_host_key-cert.pub
    HostKey /etc/ssh/ssh_host_key
 
 .. warning::
@@ -61,6 +61,17 @@ Add the following to the server's `sshd_config` and make sure to load the privat
    Using the `Hostname` option in your ssh config file for a host can cause a mismatch between the host and the principals.
    For instance, I have the IP address for a host in the `Hostname` field, so SSHing to the system's hostname causes a mismatch.
    Commenting out that configuration option "fixes" the issue (as would adding the IP address to the principals).
+
+check the host cert
+^^^^^^^^^^^^^^^^^^^
+
+Add the following to your `known_hosts` file to specify the public CA cert as one to use as a `cert-authority`:
+
+.. code-block:: console
+
+   @cert-authority HOSTNAME ssh-ed25519 ...
+
+Change `HOSTNAME` to something that identifies the hosts that will use that CA.
 
 create a user key and sign it
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -82,6 +93,17 @@ And sign it:
 * `-n USERNAME` the accounts the user can use to login with
 * `-V 1d` is the validity time, a short one is preferable
 
+adjust the user's config
+^^^^^^^^^^^^^^^^^^^^^^^^
+
+`CertificateFile` and `IdentityFile` should be added to your `.ssh/config` file for the appropriate host.
+These will be passed to the server for authentication and verification.
+
+.. code-block:: console
+
+   CertificateFile ~/.ssh/id_ed25591-cert.pub
+   IdentityFile ~/.ssh/id_ed25519
+
 check the options that a key was signed with
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -98,5 +120,5 @@ Add the following to the `/etc/sshd_config`:
 
    TrustedUserCAKeys /etc/ssh/user_ca.pub
 
-Of course, you'll have to copy that file to that location.
+Of course, you'll have to copy this CA file to the specified location.
 
