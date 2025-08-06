@@ -1,0 +1,18 @@
+===
+dur
+===
+
+`dur` is a raspberry pi zero 2W.
+
+
+auto login
+^^^^^^^^^^
+
+For some reason rapberry pi OS is setup to auto login, but this is undesirable (of course).
+There is a menu option to change it or it can be changed in `/etc/lightdm/lightdm.conf`.
+
+wifi
+^^^^
+
+It has it, but my connections are super slow so far.
+

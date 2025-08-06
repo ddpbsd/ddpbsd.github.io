@@ -1,5 +1,4 @@
-.. _linux_rpm:
-
+===
 RPM
 ===
 
@@ -16,5 +15,11 @@ error: "zlib-devel" specifies multiple packages
 
 .. code-block:: console
 
-   rpm -q --queryformat "%{name}.%{arch}\n" PACKAGE NAME
+   rpm -q --queryformat "%{name}.%{arch}\n" PACKAGE_NAME
 
+see the files in an rpm
+^^^^^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: console
+
+   rpm -ql PACKAGE_NAME

@@ -10,6 +10,7 @@ Contents:
 
    indexes/index
    dev
+   enrich_policy
    status
    templates
    shards

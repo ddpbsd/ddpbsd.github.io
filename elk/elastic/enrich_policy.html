@@ -5,7 +5,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>git &#8212; notes 0.1 documentation</title>
+    <title>enrich policy &#8212; notes 0.1 documentation</title>
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
     <link rel="stylesheet" type="text/css" href="../../_static/basic.css?v=b08954a9" />
     <link rel="stylesheet" type="text/css" href="../../_static/alabaster.css?v=27fed22d" />
@@ -14,6 +14,8 @@
     <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Get the status of ES" href="status.html" />
+    <link rel="prev" title="Change the breaker limit" href="dev.html" />
    
   <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
   
@@ -31,13 +33,16 @@
 
           <div class="body" role="main">
             
-  <section id="git">
-<h1>git<a class="headerlink" href="#git" title="Link to this heading">¶</a></h1>
-<section id="see-all-of-the-changes-to-a-single-file">
-<h2>see all of the changes to a single file<a class="headerlink" href="#see-all-of-the-changes-to-a-single-file" title="Link to this heading">¶</a></h2>
-<p><code class="docutils literal notranslate"><span class="pre">`</span>
-<span class="pre">git</span> <span class="pre">log</span> <span class="pre">--follow</span> <span class="pre">--patch</span> <span class="pre">--</span> <span class="pre">FILENAME</span>
-<span class="pre">`</span></code></p>
+  <section id="enrich-policy">
+<h1>enrich policy<a class="headerlink" href="#enrich-policy" title="Link to this heading">¶</a></h1>
+<section id="enrichment-policies-can-only-have-1-match">
+<h2>enrichment policies can only have 1 match<a class="headerlink" href="#enrichment-policies-can-only-have-1-match" title="Link to this heading">¶</a></h2>
+<p>I guess we need to make sure there is only 1 field you want to match against.
+I could not find information about this in the documentation, but that is not a surprise.</p>
+</section>
+<section id="race-conditions">
+<h2>race conditions<a class="headerlink" href="#race-conditions" title="Link to this heading">¶</a></h2>
+<p>If a new enrichment policy is put in place and executed, wait until it is finished before installing an ingest pipeline that uses it.</p>
 </section>
 </section>
 
@@ -58,15 +63,31 @@
 
 
 <h3>Navigation</h3>
-<ul>
+<ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../db/index.html">databases</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../elk/index.html">elastic stuff</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">elastic stuff</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../beats/index.html">Beats</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">elasticsearch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../logstash/index.html">logstash</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../monitoring/index.html">monitoring</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../agent/index.html">agent</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api.html">api</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../parsing.html">parsing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../setup.html">Setting up the whole thing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../endpoint.html">endpoint</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../read.html">read from elastic</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../docker/commands.html">docker commands</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../testing_logstash.html">testing logstash</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../elastic-cloud.html">elastic-cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../query/index.html">querying elasticsearch and kibana</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="../../openssh/index.html">OpenSSH</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../operating_systems/index.html">Operating Systems</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../ossec/index.html">OSSEC</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../ssl/index.html">ssl</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../stupid_unix_tricks/index.html">Stupid Unix Tricks</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../index.html">Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tools/index.html">Tools</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../vendor_stuff/index.html">Vendor Stuff</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../misc/index.html">misc</a></li>
 </ul>
@@ -75,6 +96,12 @@
 <h3>Related Topics</h3>
 <ul>
   <li><a href="../../index.html">Documentation overview</a><ul>
+  <li><a href="../index.html">elastic stuff</a><ul>
+  <li><a href="index.html">elasticsearch</a><ul>
+      <li>Previous: <a href="dev.html" title="previous chapter">Change the breaker limit</a></li>
+      <li>Next: <a href="status.html" title="next chapter">Get the status of ES</a></li>
+  </ul></li>
+  </ul></li>
   </ul></li>
 </ul>
 </div>

@@ -1,0 +1,54 @@
+==========
+signatures
+==========
+
+.. note::
+
+   Can probably use ``local`` instead of ``global`` for per-project settings.
+   Not sure if local settings override global, but I would hope so.
+
+Sign commits
+^^^^^^^^^^^^
+
+.. code-block:: console
+
+   git config --global user.signkey public 80E6A369  ## Replace 80E6A369 will private key ID
+
+sign commits with ssh
+^^^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: console
+
+   git config --global gpg.format ssh
+   git config --global user.signingkey ~/.ssh/gitlab_lab.pub
+   git config --global commit.gpgsign true
+
+Set email/username
+^^^^^^^^^^^^^^^^^^
+
+.. code-block:: console
+
+   git config --global user.email=ddpbsd@gmail.com
+   git config --global user.name=ddp
+
+show signatures
+^^^^^^^^^^^^^^^
+
+For git signed commits:
+
+.. code-block:: console
+
+   git log --show-signature
+
+For ssh signed commits an `allowedSignersFile` needs to be defined and present.
+The format of this file is `email_address public_key` (although `email_address namespaces="git" public_key` also works?).
+
+Next, add the following to your `~/.gitconfig` file (this might work as a local config option as well), changing the path to the `allowed_signers` file as necessary:
+
+.. code-block:: ini
+
+   [gpg "ssh"]
+      allowedSignersFile = ~/.ssh/allowed_signers
+
+After this change, the `--show-signature` flag can be used to check the signatures.
+

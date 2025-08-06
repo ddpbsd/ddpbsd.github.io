@@ -34,7 +34,7 @@
           <div class="body" role="main">
             
   <section id="rpm">
-<span id="linux-rpm"></span><h1>RPM<a class="headerlink" href="#rpm" title="Link to this heading">¶</a></h1>
+<h1>RPM<a class="headerlink" href="#rpm" title="Link to this heading">¶</a></h1>
 <section id="which-rpm-contains-file">
 <h2>Which RPM contains FILE<a class="headerlink" href="#which-rpm-contains-file" title="Link to this heading">¶</a></h2>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">rpm -qf /path/to/FILE</span>
@@ -43,7 +43,13 @@
 </section>
 <section id="error-zlib-devel-specifies-multiple-packages">
 <h2>error: “zlib-devel” specifies multiple packages<a class="headerlink" href="#error-zlib-devel-specifies-multiple-packages" title="Link to this heading">¶</a></h2>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">rpm -q --queryformat &quot;%{name}.%{arch}\n&quot; PACKAGE NAME</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">rpm -q --queryformat &quot;%{name}.%{arch}\n&quot; PACKAGE_NAME</span>
+</pre></div>
+</div>
+</section>
+<section id="see-the-files-in-an-rpm">
+<h2>see the files in an rpm<a class="headerlink" href="#see-the-files-in-an-rpm" title="Link to this heading">¶</a></h2>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">rpm -ql PACKAGE_NAME</span>
 </pre></div>
 </div>
 </section>

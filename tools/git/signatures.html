@@ -5,7 +5,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Create an archive of the OSSEC code &#8212; notes 0.1 documentation</title>
+    <title>signatures &#8212; notes 0.1 documentation</title>
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
     <link rel="stylesheet" type="text/css" href="../../_static/basic.css?v=b08954a9" />
     <link rel="stylesheet" type="text/css" href="../../_static/alabaster.css?v=27fed22d" />
@@ -14,8 +14,8 @@
     <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Add multiple origins" href="remote.html" />
-    <link rel="prev" title="git" href="index.html" />
+    <link rel="next" title="gpg" href="../gpg/index.html" />
+    <link rel="prev" title="Add multiple origins" href="remote.html" />
    
   <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
   
@@ -33,11 +33,49 @@
 
           <div class="body" role="main">
             
-  <section id="create-an-archive-of-the-ossec-code">
-<span id="git-archive"></span><h1>Create an archive of the OSSEC code<a class="headerlink" href="#create-an-archive-of-the-ossec-code" title="Link to this heading">¶</a></h1>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">git archive --prefix=&quot;ossec-hids-2.9b5/&quot; -o /tmp/ossec-hids-2.9b5.tar origin/2.9b5</span>
+  <section id="signatures">
+<h1>signatures<a class="headerlink" href="#signatures" title="Link to this heading">¶</a></h1>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Can probably use <code class="docutils literal notranslate"><span class="pre">local</span></code> instead of <code class="docutils literal notranslate"><span class="pre">global</span></code> for per-project settings.
+Not sure if local settings override global, but I would hope so.</p>
+</div>
+<section id="sign-commits">
+<h2>Sign commits<a class="headerlink" href="#sign-commits" title="Link to this heading">¶</a></h2>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">git config --global user.signkey public 80E6A369  ## Replace 80E6A369 will private key ID</span>
 </pre></div>
 </div>
+</section>
+<section id="sign-commits-with-ssh">
+<h2>sign commits with ssh<a class="headerlink" href="#sign-commits-with-ssh" title="Link to this heading">¶</a></h2>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">git config --global gpg.format ssh</span>
+<span class="go">git config --global user.signingkey ~/.ssh/gitlab_lab.pub</span>
+<span class="go">git config --global commit.gpgsign true</span>
+</pre></div>
+</div>
+</section>
+<section id="set-email-username">
+<h2>Set email/username<a class="headerlink" href="#set-email-username" title="Link to this heading">¶</a></h2>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">git config --global user.email=ddpbsd@gmail.com</span>
+<span class="go">git config --global user.name=ddp</span>
+</pre></div>
+</div>
+</section>
+<section id="show-signatures">
+<h2>show signatures<a class="headerlink" href="#show-signatures" title="Link to this heading">¶</a></h2>
+<p>For git signed commits:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">git log --show-signature</span>
+</pre></div>
+</div>
+<p>For ssh signed commits an <cite>allowedSignersFile</cite> needs to be defined and present.
+The format of this file is <cite>email_address public_key</cite> (although <cite>email_address namespaces=”git” public_key</cite> also works?).</p>
+<p>Next, add the following to your <cite>~/.gitconfig</cite> file (this might work as a local config option as well), changing the path to the <cite>allowed_signers</cite> file as necessary:</p>
+<div class="highlight-ini notranslate"><div class="highlight"><pre><span></span><span class="k">[gpg &quot;ssh&quot;]</span>
+<span class="w">   </span><span class="na">allowedSignersFile</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">~/.ssh/allowed_signers</span>
+</pre></div>
+</div>
+<p>After this change, the <cite>–show-signature</cite> flag can be used to check the signatures.</p>
+</section>
 </section>
 
 
@@ -115,8 +153,8 @@
   <li><a href="../../index.html">Documentation overview</a><ul>
   <li><a href="../index.html">Tools</a><ul>
   <li><a href="index.html">git</a><ul>
-      <li>Previous: <a href="index.html" title="previous chapter">git</a></li>
-      <li>Next: <a href="remote.html" title="next chapter">Add multiple origins</a></li>
+      <li>Previous: <a href="remote.html" title="previous chapter">Add multiple origins</a></li>
+      <li>Next: <a href="../gpg/index.html" title="next chapter">gpg</a></li>
   </ul></li>
   </ul></li>
   </ul></li>

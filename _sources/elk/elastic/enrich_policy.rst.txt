@@ -1,0 +1,16 @@
+=============
+enrich policy
+=============
+
+
+enrichment policies can only have 1 match
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+I guess we need to make sure there is only 1 field you want to match against.
+I could not find information about this in the documentation, but that is not a surprise.
+
+race conditions
+^^^^^^^^^^^^^^^
+
+If a new enrichment policy is put in place and executed, wait until it is finished before installing an ingest pipeline that uses it.
+
