@@ -2,8 +2,6 @@
 getting started
 ===============
 
-
-
 network
 ^^^^^^^
 
@@ -34,4 +32,5 @@ links
 
 * `Why can't I use sudo with rootless Podman <https://www.redhat.com/sysadmin/sudo-rootless-podman>`_
 
-* `pods <https://developers.redhat.com/blog/2019/01/15/podman-managing-containers-pods>`_
+* `podman managing containers <https://developers.redhat.com/blog/2019/01/15/podman-managing-containers-pods>`_
+

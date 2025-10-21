@@ -1,0 +1,17 @@
+========
+security
+========
+
+* acl
+* elasticsearch audit logs
+* kibana audit logs
+* email domain allowlist
+* MFA (where applicable)
+* kibana authentication: external IAM
+* kibana authorization: rbac implemented and follows principle of least privs
+* kibana sessions:
+  * idle session timeout configured
+  * max session length configured
+  * periodically clear sessions
+* verify api keys are for legit users
+

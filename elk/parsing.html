@@ -94,6 +94,21 @@
 </pre></div>
 </div>
 </section>
+<section id="loop-through-a-flattened-field-to-pull-values">
+<h2>loop through a flattened field to pull values<a class="headerlink" href="#loop-through-a-flattened-field-to-pull-values" title="Link to this heading">¶</a></h2>
+<p>This loops through a flattened field named <cite>test.flattened</cite> and puts the value of <cite>desired</cite> into <cite>test.output.desired</cite> if <cite>test.flattened.item == ‘jewelry’</cite>.
+The loop is necessary if <cite>test.flattened</cite> is an array and has multiple entries.
+If not, the value in the field can just be copied directly (<cite>test.flattened.desired</cite> can be copied).</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">define</span><span class="w"> </span><span class="nx">output</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">ArrayList</span><span class="p">();</span>
+<span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="nx">i</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="nx">ctx</span><span class="p">.</span><span class="nx">flattened</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">i</span><span class="p">[</span><span class="s1">&#39;item&#39;</span><span class="p">]</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s2">&quot;jewelry&quot;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">output</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="nx">i</span><span class="p">[</span><span class="s1">&#39;desired&#39;</span><span class="p">])</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+<span class="nx">ctx</span><span class="p">.</span><span class="nx">test</span><span class="p">.</span><span class="nx">output</span><span class="p">.</span><span class="nx">desired</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">output</span><span class="p">;</span>
+</pre></div>
+</div>
+</section>
 </section>
 
 
@@ -130,6 +145,7 @@
 <li class="toctree-l2"><a class="reference internal" href="testing_logstash.html">testing logstash</a></li>
 <li class="toctree-l2"><a class="reference internal" href="elastic-cloud.html">elastic-cloud</a></li>
 <li class="toctree-l2"><a class="reference internal" href="query/index.html">querying elasticsearch and kibana</a></li>
+<li class="toctree-l2"><a class="reference internal" href="health-check/index.html">system health check</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../openssh/index.html">OpenSSH</a></li>

@@ -59,6 +59,7 @@
 <li class="toctree-l2"><a class="reference internal" href="elastic/shards.html">shards</a></li>
 <li class="toctree-l2"><a class="reference internal" href="elastic/tasks.html">Tasks</a></li>
 <li class="toctree-l2"><a class="reference internal" href="elastic/security/index.html">security</a></li>
+<li class="toctree-l2"><a class="reference internal" href="elastic/ingest_pipelines.html">ingest pipelines</a></li>
 <li class="toctree-l2"><a class="reference internal" href="elastic/interesting.html">interesting stuff</a></li>
 </ul>
 </li>
@@ -66,6 +67,7 @@
 <li class="toctree-l2"><a class="reference internal" href="logstash/api.html">logstash api</a></li>
 <li class="toctree-l2"><a class="reference internal" href="logstash/config.html">tags</a></li>
 <li class="toctree-l2"><a class="reference internal" href="logstash/config.html#example-config">Example config</a></li>
+<li class="toctree-l2"><a class="reference internal" href="logstash/config.html#dead-letter-queue">dead_letter_queue</a></li>
 <li class="toctree-l2"><a class="reference internal" href="logstash/filter/index.html">filter</a></li>
 <li class="toctree-l2"><a class="reference internal" href="logstash/input.html">input</a></li>
 <li class="toctree-l2"><a class="reference internal" href="logstash/ssl.html">SSL with logstash and elasticsearch</a></li>
@@ -82,6 +84,7 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="monitoring/index.html">monitoring</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="monitoring/health-checks.html">health check</a></li>
 <li class="toctree-l2"><a class="reference internal" href="monitoring/heartbeat-and-uptime.html">heartbeat and uptime</a></li>
 <li class="toctree-l2"><a class="reference internal" href="monitoring/monitoring.html">Monitoring</a></li>
 <li class="toctree-l2"><a class="reference internal" href="monitoring/nodes.html">elastic guide for monitoring nodes</a></li>
@@ -103,6 +106,7 @@
 <li class="toctree-l1"><a class="reference internal" href="parsing.html">parsing</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="parsing.html#geoip-processor-ingest-pipeline">geoip processor ingest pipeline</a></li>
 <li class="toctree-l2"><a class="reference internal" href="parsing.html#remove-empty-fields">remove empty fields</a></li>
+<li class="toctree-l2"><a class="reference internal" href="parsing.html#loop-through-a-flattened-field-to-pull-values">loop through a flattened field to pull values</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="setup.html">Setting up the whole thing</a><ul>
@@ -138,6 +142,15 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="query/index.html">querying elasticsearch and kibana</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="query/elasticsearch-esql.html">es|ql</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="health-check/index.html">system health check</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="health-check/platforms.html">platforms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="health-check/cluster-architecture.html">cluster architecture</a></li>
+<li class="toctree-l2"><a class="reference internal" href="health-check/performance.html">performance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="health-check/sharding-and-data-management.html">sharding and data management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="health-check/security.html">security</a></li>
+<li class="toctree-l2"><a class="reference internal" href="health-check/fleet-and-agent.html">fleet and agent</a></li>
 </ul>
 </li>
 </ul>
@@ -178,6 +191,7 @@
 <li class="toctree-l2"><a class="reference internal" href="testing_logstash.html">testing logstash</a></li>
 <li class="toctree-l2"><a class="reference internal" href="elastic-cloud.html">elastic-cloud</a></li>
 <li class="toctree-l2"><a class="reference internal" href="query/index.html">querying elasticsearch and kibana</a></li>
+<li class="toctree-l2"><a class="reference internal" href="health-check/index.html">system health check</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../openssh/index.html">OpenSSH</a></li>

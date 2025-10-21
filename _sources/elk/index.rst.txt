@@ -21,4 +21,5 @@ Contents:
    testing_logstash
    elastic-cloud
    query/index
+   health-check/index
 

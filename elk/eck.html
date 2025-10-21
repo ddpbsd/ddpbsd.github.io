@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>eck - Elastic Cloud on Kubernetes &#8212; notes 0.1 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/basic.css?v=b08954a9" />
+    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css?v=27fed22d" />
+    <script src="../_static/documentation_options.js?v=2709fde1"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+
+  
+  
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="eck-elastic-cloud-on-kubernetes">
+<h1>eck - Elastic Cloud on Kubernetes<a class="headerlink" href="#eck-elastic-cloud-on-kubernetes" title="Link to this heading">¶</a></h1>
+<p>I’m installing it to be available in all namespaces using the helm chart.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">#</span><span class="c1"># add the helm repo</span>
+<span class="gp">$ </span>helm<span class="w"> </span>repo<span class="w"> </span>add<span class="w"> </span>elastic<span class="w"> </span>https://helm.elastic.co
+<span class="go">&quot;elastic&quot; has been added to your repositories</span>
+<span class="gp">$ </span>helm<span class="w"> </span>repo<span class="w"> </span>update
+<span class="go">Hang tight while we grab the latest from your chart repositories...</span>
+<span class="go">...Successfully got an update from the &quot;metallb&quot; chart repository</span>
+<span class="go">...Successfully got an update from the &quot;elastic&quot; chart repository</span>
+<span class="go">...Successfully got an update from the &quot;jetstack&quot; chart repository</span>
+<span class="go">...Successfully got an update from the &quot;rancher-latest&quot; chart repository</span>
+<span class="go">Update Complete. _Happy Helming!_</span>
+
+<span class="gp">#</span><span class="c1"># install cluster-wide</span>
+<span class="gp">$ </span>helm<span class="w"> </span>install<span class="w"> </span>elastic-operator<span class="w"> </span>elastic/eck-operator<span class="w"> </span>-n<span class="w"> </span>elastic-system<span class="w"> </span>--create-namespace
+<span class="go">NAME: elastic-operator</span>
+<span class="go">LAST DEPLOYED: Wed Oct  8 16:43:10 2025</span>
+<span class="go">NAMESPACE: elastic-system</span>
+<span class="go">STATUS: deployed</span>
+<span class="go">REVISION: 1</span>
+<span class="go">TEST SUITE: None</span>
+<span class="go">NOTES:</span>
+<span class="go">1. Inspect the operator logs by running the following command:</span>
+<span class="go">   kubectl logs -n elastic-system sts/elastic-operator</span>
+</pre></div>
+</div>
+<section id="install-elasticsearch">
+<h2>install elasticsearch<a class="headerlink" href="#install-elasticsearch" title="Link to this heading">¶</a></h2>
+</section>
+<section id="install-kibana">
+<h2>install kibana<a class="headerlink" href="#install-kibana" title="Link to this heading">¶</a></h2>
+</section>
+<section id="get-the-password">
+<h2>get the password<a class="headerlink" href="#get-the-password" title="Link to this heading">¶</a></h2>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>kubectl<span class="w"> </span>get<span class="w"> </span>secret<span class="w"> </span>elasticsearch-es-elastic-user<span class="w">  </span>-o<span class="w"> </span>go-template<span class="o">=</span><span class="s1">&#39;{{.data.elastic | base64decode }}&#39;</span>
+<span class="go">PASSWORD</span>
+</pre></div>
+</div>
+</section>
+<section id="links">
+<h2>links<a class="headerlink" href="#links" title="Link to this heading">¶</a></h2>
+<p><a class="reference external" href="https://www.elastic.co/docs/deploy-manage/deploy/cloud-on-k8s/install-using-helm-chart">Instructions from elastic</a></p>
+</section>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../index.html">notes</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../db/index.html">databases</a></li>
+<li class="toctree-l1"><a class="reference internal" href="index.html">elastic stuff</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../openssh/index.html">OpenSSH</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../operating_systems/index.html">Operating Systems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ossec/index.html">OSSEC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ssl/index.html">ssl</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../stupid_unix_tricks/index.html">Stupid Unix Tricks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tools/index.html">Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../vendor_stuff/index.html">Vendor Stuff</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../misc/index.html">misc</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+<search id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+        <!-- your html code here -->
+	<div class="footer">
+		<em>This information has a good chance of being wrong, inconsistent, out of date, or just bad. Use at your own risk.
+		Feel free to notify me of any issues though.</em>
+	</div>
+
+
+  </body>
+</html>

@@ -1,0 +1,22 @@
+==========================
+common expression language
+==========================
+
+grab a list of members from the elastic cloud
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+This is currently formatted for `filebeat`
+
+.. code-block:: console
+
+   - type: cel
+     interval: 1m
+     resource.url: https://api.elastic-cloud.com/api/v1/organizations/ORGID/members
+     auth.token.enabled: true
+     auth.token.type: apikey
+     auth.token.value: APIKEY
+     program: |
+       get(state.url).Body.as(body, {
+         "events": [body.decode_json()]
+       }]
+

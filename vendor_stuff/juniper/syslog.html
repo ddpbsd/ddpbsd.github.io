@@ -40,8 +40,8 @@
 <p>Not sure what else I want to see yet.</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">configure</span>
 <span class="go">set system syslog user * any emergency</span>
-<span class="go">set syslog host &lt;SYSLOG_IP&gt; port 9512 ay any</span>
-<span class="gp">#</span><span class="nb">set</span><span class="w"> </span>system<span class="w"> </span>syslog<span class="w"> </span>host<span class="w"> </span>&lt;SYSLOG_IP&gt;<span class="w"> </span>user<span class="w"> </span>info
+<span class="go">set syslog host &lt;SYSLOG_IP&gt; port 9512 any any</span>
+<span class="go">set system syslog host &lt;SYSLOG_IP&gt; user info</span>
 <span class="go">set system syslog host &lt;SYSLOG_IP&gt; change-log notice</span>
 <span class="go">set system syslog host &lt;SYSLOG_IP&gt; interactive-commands notice</span>
 </pre></div>

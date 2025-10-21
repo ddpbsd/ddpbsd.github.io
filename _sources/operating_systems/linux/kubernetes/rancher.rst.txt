@@ -1,0 +1,61 @@
+=======
+rancher
+=======
+
+Technically this isn't a piece of k8s, but I'm putting it here for me.
+
+install
+^^^^^^^
+
+Make sure you try to connect to it with the hostname, and not by IP.
+It won't work with just the IP.
+
+.. code-block:: console
+
+   ## add the helm repo
+   $ helm repo add rancher-latest https://releases.rancher.com/server-charts/latest
+   "rancher-latest" has been added to your repositories
+
+   ## create the namespace
+   $ kubectl create namespace cattle-system
+   namespace/cattle-system created
+
+   ## install rancher
+   $ helm install rancher rancher-latest/rancher --namespace cattle-system \
+       --set hostname=rancher.k8s.wafflelab.online \
+       --set bootstrapPassword=temporarypassword \
+       --set ingress.tls.source=certmanager \
+       --set certmanager.version=v1.18.2
+
+   NAME: rancher
+   LAST DEPLOYED: Wed Oct  8 15:25:21 2025
+   NAMESPACE: cattle-system
+   STATUS: deployed
+   REVISION: 1
+   TEST SUITE: None
+   NOTES:
+   Rancher Server has been installed.
+
+   NOTE: Rancher may take several minutes to fully initialize. Please standby while Certificates are being issued, Containers are started and the Ingress rule comes up.
+
+   Check out our docs at https://rancher.com/docs/
+
+   ## First Time Login
+
+   If you provided your own bootstrap password during installation, browse to https://rancher.k8s.wafflelab.online to get started.
+   If this is the first time you installed Rancher, get started by running this command and clicking the URL it generates:
+
+   echo https://rancher.k8s.wafflelab.online/dashboard/?setup=$(kubectl get secret --namespace cattle-system bootstrap-secret -o go-template='{{.data.bootstrapPassword|base64decode}}')
+
+   To get just the bootstrap password on its own, run:
+
+   kubectl get secret --namespace cattle-system bootstrap-secret -o go-template='{{.data.bootstrapPassword|base64decode}}{{ "\n" }}'
+
+   Happy Containering!
+
+
+troubleshooting
+^^^^^^^^^^^^^^^
+
+`install-upgrade troubleshooting <https://ranchermanager.docs.rancher.com/getting-started/installation-and-upgrade/install-upgrade-on-a-kubernetes-cluster/troubleshooting>`_
+

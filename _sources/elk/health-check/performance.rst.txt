@@ -1,0 +1,21 @@
+===========
+performance
+===========
+
+performance
+^^^^^^^^^^^
+
+* cpu utilization
+* memory utilization
+* disk utilization
+* cluster health (traffic light?)
+
+cluster monitoring
+^^^^^^^^^^^^^^^^^^
+
+These will be in relation to the cluster (logs is actually "cluster logs").
+
+* logs
+* metrics
+* health alerts
+

@@ -14,7 +14,7 @@
     <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="prev" title="zfs" href="../zfs.html" />
+    <link rel="prev" title="pine" href="pine.html" />
    
   <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
   
@@ -38,7 +38,14 @@
 <section id="neptune">
 <h2>neptune<a class="headerlink" href="#neptune" title="Link to this heading">¶</a></h2>
 <p>Old juniper 48 port switch.</p>
-<table class="docutils align-default">
+<table class="docutils align-default" id="id1">
+<caption><span class="caption-text">neptune</span><a class="headerlink" href="#id1" title="Link to this table">¶</a></caption>
+<colgroup>
+<col style="width: 25.0%" />
+<col style="width: 25.0%" />
+<col style="width: 25.0%" />
+<col style="width: 25.0%" />
+</colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>interface</p></th>
 <th class="head"><p>system</p></th>
@@ -98,8 +105,8 @@
 <td></td>
 </tr>
 <tr class="row-even"><td><p>ge-0/0/10</p></td>
-<td></td>
-<td></td>
+<td><p>wallach</p></td>
+<td><p>black</p></td>
 <td></td>
 </tr>
 <tr class="row-odd"><td><p>ge-0/0/11</p></td>
@@ -198,14 +205,14 @@
 <td></td>
 </tr>
 <tr class="row-even"><td><p>ge-0/0/30</p></td>
-<td></td>
-<td></td>
+<td><p>yardin</p></td>
+<td><p>blue</p></td>
 <td></td>
 </tr>
 <tr class="row-odd"><td><p>ge-0/0/31</p></td>
-<td></td>
-<td></td>
-<td></td>
+<td><p>buzzell</p></td>
+<td><p>green</p></td>
+<td><p>lab</p></td>
 </tr>
 <tr class="row-even"><td><p>ge-0/0/32</p></td>
 <td><p>salusa</p></td>
@@ -250,42 +257,42 @@
 <tr class="row-even"><td><p>ge-0/0/40</p></td>
 <td></td>
 <td></td>
-<td></td>
+<td><p>k8s/8</p></td>
 </tr>
 <tr class="row-odd"><td><p>ge-0/0/41</p></td>
 <td></td>
 <td></td>
-<td></td>
+<td><p>k8s/8</p></td>
 </tr>
 <tr class="row-even"><td><p>ge-0/0/42</p></td>
-<td></td>
-<td></td>
-<td></td>
+<td><p>geidi</p></td>
+<td><p>green</p></td>
+<td><p>k8s/8</p></td>
 </tr>
 <tr class="row-odd"><td><p>ge-0/0/43</p></td>
 <td></td>
 <td></td>
-<td></td>
+<td><p>k8s/8</p></td>
 </tr>
 <tr class="row-even"><td><p>ge-0/0/44</p></td>
 <td></td>
 <td></td>
-<td></td>
+<td><p>k8s/8</p></td>
 </tr>
 <tr class="row-odd"><td><p>ge-0/0/45</p></td>
 <td><p>rossak</p></td>
 <td><p>green</p></td>
-<td></td>
+<td><p>k8s/8</p></td>
 </tr>
 <tr class="row-even"><td><p>ge-0/0/46</p></td>
 <td><p>caladan</p></td>
 <td><p>green</p></td>
-<td></td>
+<td><p>k8s/8</p></td>
 </tr>
 <tr class="row-odd"><td><p>ge-0/0/47</p></td>
 <td><p>synchrony</p></td>
 <td><p>green</p></td>
-<td></td>
+<td><p>k8s/8</p></td>
 </tr>
 <tr class="row-even"><td><p>ge-0/0/48</p></td>
 <td></td>
@@ -295,10 +302,65 @@
 </tbody>
 </table>
 </section>
+<section id="neptune-vlans">
+<h2>neptune vlans<a class="headerlink" href="#neptune-vlans" title="Link to this heading">¶</a></h2>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">ddp@neptune# </span>show<span class="w"> </span>vlans
+<span class="go">default {</span>
+<span class="go">    l3-interface vlan.0;</span>
+<span class="go">}</span>
+<span class="go">internal {</span>
+<span class="go">    description &quot;internal vlan&quot;;</span>
+<span class="go">    vlan-id 17;</span>
+<span class="go">    interface {</span>
+<span class="go">        ge-0/0/14.0;</span>
+<span class="go">        ge-0/0/16.0;</span>
+<span class="go">    }</span>
+<span class="go">}</span>
+<span class="go">iotnet {</span>
+<span class="go">    description &quot;iotnet vlan&quot;;</span>
+<span class="go">    vlan-id 20;</span>
+<span class="go">}</span>
+<span class="go">k8s {</span>
+<span class="go">    vlan-id 8;</span>
+<span class="go">    interface {</span>
+<span class="go">        ge-0/0/40.0;</span>
+<span class="go">        ge-0/0/41.0;</span>
+<span class="go">        ge-0/0/42.0;</span>
+<span class="go">        ge-0/0/43.0;</span>
+<span class="go">        ge-0/0/44.0;</span>
+<span class="go">        ge-0/0/45.0;</span>
+<span class="go">        ge-0/0/46.0;</span>
+<span class="go">        ge-0/0/47.0;</span>
+<span class="go">    }</span>
+<span class="go">}</span>
+<span class="go">lab {</span>
+<span class="go">    description &quot;lab vlan&quot;;</span>
+<span class="go">    vlan-id 18;</span>
+<span class="go">}</span>
+<span class="go">test {</span>
+<span class="go">    description &quot;test vlan&quot;;</span>
+<span class="go">    vlan-id 140;</span>
+<span class="go">}</span>
+<span class="go">test1 {</span>
+<span class="go">    description &quot;test1 vlan&quot;;</span>
+<span class="go">    vlan-id 1;</span>
+<span class="go">}</span>
+<span class="go">work {</span>
+<span class="go">    description &quot;work vlan&quot;;</span>
+<span class="go">    vlan-id 21;</span>
+<span class="go">}</span>
+</pre></div>
+</div>
+</section>
 <section id="cisco">
 <h2>cisco<a class="headerlink" href="#cisco" title="Link to this heading">¶</a></h2>
 <p>Small cisco switch for mgmt network.</p>
-<table class="docutils align-default">
+<table class="docutils align-default" id="id2">
+<caption><span class="caption-text">neptune</span><a class="headerlink" href="#id2" title="Link to this table">¶</a></caption>
+<colgroup>
+<col style="width: 50.0%" />
+<col style="width: 50.0%" />
+</colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>interface</p></th>
 <th class="head"><p>host</p></th>
@@ -309,19 +371,19 @@
 <td><p>ix</p></td>
 </tr>
 <tr class="row-odd"><td><p>2</p></td>
-<td></td>
+<td><p>neptune</p></td>
 </tr>
 <tr class="row-even"><td><p>3</p></td>
-<td></td>
+<td><p>synchrony</p></td>
 </tr>
 <tr class="row-odd"><td><p>4</p></td>
-<td></td>
+<td><p>caladan</p></td>
 </tr>
 <tr class="row-even"><td><p>5</p></td>
-<td></td>
+<td><p>rossak</p></td>
 </tr>
 <tr class="row-odd"><td><p>6</p></td>
-<td></td>
+<td><p>geidi</p></td>
 </tr>
 <tr class="row-even"><td><p>7</p></td>
 <td></td>
@@ -369,11 +431,12 @@
 <li class="toctree-l2"><a class="reference internal" href="../kernel_build/index.html">Building a custom kernel</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../ksh/index.html">ksh</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../links/index.html">Links</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../policyviolation.html">policyviolation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../random.html">Stupid random stuff</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../junk/index.html">Junk</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../fediverse/glitch-soc.html">glitch-soc</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../zfs.html">zfs</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">switches</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">mynet</a></li>
 </ul>
 </li>
 </ul>
@@ -383,7 +446,9 @@
 <ul>
   <li><a href="../../index.html">Documentation overview</a><ul>
   <li><a href="../index.html">misc</a><ul>
-      <li>Previous: <a href="../zfs.html" title="previous chapter">zfs</a></li>
+  <li><a href="index.html">mynet</a><ul>
+      <li>Previous: <a href="pine.html" title="previous chapter">pine</a></li>
+  </ul></li>
   </ul></li>
   </ul></li>
 </ul>

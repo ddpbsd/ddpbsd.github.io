@@ -11,8 +11,8 @@ Not sure what else I want to see yet.
 
    configure
    set system syslog user * any emergency
-   set syslog host <SYSLOG_IP> port 9512 ay any
-   #set system syslog host <SYSLOG_IP> user info
+   set syslog host <SYSLOG_IP> port 9512 any any
+   set system syslog host <SYSLOG_IP> user info
    set system syslog host <SYSLOG_IP> change-log notice
    set system syslog host <SYSLOG_IP> interactive-commands notice
 

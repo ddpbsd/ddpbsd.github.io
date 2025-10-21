@@ -1,0 +1,8 @@
+====================
+cluster architecture
+====================
+
+* deployment version
+* high availability
+* data tiering
+

@@ -5,7 +5,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Set promisc mode: &#8212; notes 0.1 documentation</title>
+    <title>interfaces &#8212; notes 0.1 documentation</title>
     <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=03e43079" />
     <link rel="stylesheet" type="text/css" href="../../../_static/basic.css?v=b08954a9" />
     <link rel="stylesheet" type="text/css" href="../../../_static/alabaster.css?v=27fed22d" />
@@ -33,14 +33,29 @@
 
           <div class="body" role="main">
             
-  <section id="set-promisc-mode">
-<span id="operating-systems-linux-network-interfaces"></span><h1>Set promisc mode:<a class="headerlink" href="#set-promisc-mode" title="Link to this heading">¶</a></h1>
+  <section id="interfaces">
+<h1>interfaces<a class="headerlink" href="#interfaces" title="Link to this heading">¶</a></h1>
+<section id="set-promisc-mode">
+<h2>set promisc mode<a class="headerlink" href="#set-promisc-mode" title="Link to this heading">¶</a></h2>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">auto eth1</span>
 <span class="go">iface eth1 inet manual</span>
 <span class="go">   up ifconfig eth1 promisc up</span>
 <span class="go">   down ifconfig eth1 promisc down</span>
 </pre></div>
 </div>
+</section>
+<section id="turn-off-power-save-for-wifi">
+<h2>turn off power save for wifi<a class="headerlink" href="#turn-off-power-save-for-wifi" title="Link to this heading">¶</a></h2>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">iw wlan0 set power_save off</span>
+</pre></div>
+</div>
+</section>
+<section id="show-the-current-power-save-status-for-wifi">
+<h2>show the current power save status for wifi<a class="headerlink" href="#show-the-current-power-save-status-for-wifi" title="Link to this heading">¶</a></h2>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">iw wlan0 get power_save</span>
+</pre></div>
+</div>
+</section>
 </section>
 
 

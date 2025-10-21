@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>common expression language &#8212; notes 0.1 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/basic.css?v=b08954a9" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/alabaster.css?v=27fed22d" />
+    <script src="../../../_static/documentation_options.js?v=2709fde1"></script>
+    <script src="../../../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="api" href="../../api.html" />
+    <link rel="prev" title="alienvault otx" href="alienvault-otx.html" />
+   
+  <link rel="stylesheet" href="../../../_static/custom.css" type="text/css" />
+  
+
+  
+  
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="common-expression-language">
+<h1>common expression language<a class="headerlink" href="#common-expression-language" title="Link to this heading">¶</a></h1>
+<section id="grab-a-list-of-members-from-the-elastic-cloud">
+<h2>grab a list of members from the elastic cloud<a class="headerlink" href="#grab-a-list-of-members-from-the-elastic-cloud" title="Link to this heading">¶</a></h2>
+<p>This is currently formatted for <cite>filebeat</cite></p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">- type: cel</span>
+<span class="go">  interval: 1m</span>
+<span class="go">  resource.url: https://api.elastic-cloud.com/api/v1/organizations/ORGID/members</span>
+<span class="go">  auth.token.enabled: true</span>
+<span class="go">  auth.token.type: apikey</span>
+<span class="go">  auth.token.value: APIKEY</span>
+<span class="go">  program: |</span>
+<span class="go">    get(state.url).Body.as(body, {</span>
+<span class="go">      &quot;events&quot;: [body.decode_json()]</span>
+<span class="go">    }]</span>
+</pre></div>
+</div>
+</section>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../../../index.html">notes</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../db/index.html">databases</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../index.html">elastic stuff</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../beats/index.html">Beats</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../elastic/index.html">elasticsearch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../logstash/index.html">logstash</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../monitoring/index.html">monitoring</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html">agent</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api.html">api</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../parsing.html">parsing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../setup.html">Setting up the whole thing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../endpoint.html">endpoint</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../read.html">read from elastic</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../docker/commands.html">docker commands</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../testing_logstash.html">testing logstash</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../elastic-cloud.html">elastic-cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../query/index.html">querying elasticsearch and kibana</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../health-check/index.html">system health check</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../openssh/index.html">OpenSSH</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../operating_systems/index.html">Operating Systems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../ossec/index.html">OSSEC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../ssl/index.html">ssl</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../stupid_unix_tricks/index.html">Stupid Unix Tricks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../tools/index.html">Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../vendor_stuff/index.html">Vendor Stuff</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../misc/index.html">misc</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../../index.html">Documentation overview</a><ul>
+  <li><a href="../../index.html">elastic stuff</a><ul>
+  <li><a href="../index.html">agent</a><ul>
+  <li><a href="index.html">integrations</a><ul>
+      <li>Previous: <a href="alienvault-otx.html" title="previous chapter">alienvault otx</a></li>
+      <li>Next: <a href="../../api.html" title="next chapter">api</a></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<search id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+        <!-- your html code here -->
+	<div class="footer">
+		<em>This information has a good chance of being wrong, inconsistent, out of date, or just bad. Use at your own risk.
+		Feel free to notify me of any issues though.</em>
+	</div>
+
+
+  </body>
+</html>

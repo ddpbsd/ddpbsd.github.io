@@ -7,8 +7,8 @@ Contents:
 .. toctree::
    :maxdepth: 2
 
+   git
    archive
-   gpg 
    remote
    signatures
 

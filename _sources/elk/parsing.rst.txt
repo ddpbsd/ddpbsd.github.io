@@ -68,3 +68,21 @@ in logstash with ruby:
     }
    }
 
+
+loop through a flattened field to pull values
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+This loops through a flattened field named `test.flattened` and puts the value of `desired` into `test.output.desired` if `test.flattened.item == 'jewelry'`.
+The loop is necessary if `test.flattened` is an array and has multiple entries.
+If not, the value in the field can just be copied directly (`test.flattened.desired` can be copied).
+
+.. code-block:: javascript
+
+   define output = new ArrayList();
+   for (i in ctx.flattened) {
+     if (i['item'] == "jewelry") {
+       output.add(i['desired'])
+     }
+   }
+   ctx.test.output.desired = output;
+

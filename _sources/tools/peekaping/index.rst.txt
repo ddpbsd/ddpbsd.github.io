@@ -1,0 +1,7 @@
+=========
+peekaping
+=========
+
+`Peekaping <https://peekaping.com>`_ is an open source and self hosted uptime monitoring tool.
+It looks pretty cool, but I'll have to look at things a bit to get them working with rootless podman.
+

@@ -1,0 +1,33 @@
+============================
+sharding and data management
+============================
+
+sharding
+^^^^^^^^
+
+* empty shards
+* shard size
+* shard limits: hot/warm/cold
+* shard limits: frozen
+
+
+data management
+^^^^^^^^^^^^^^^
+
+* index templates
+* data streams
+* logsdb?
+* elastic common schema
+* ilm
+  * exists
+  * isn't configured stupidly
+* data views
+* transforms are healthy
+* snapshots: enabled
+* snapshots: scope includes all indices, global state, and partial shards
+* snapshots: frequency (1hr)
+* snapshots: healthy?
+* snapshots: repository
+  * compression
+  * server side encryption
+

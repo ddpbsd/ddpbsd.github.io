@@ -1,0 +1,12 @@
+===============
+fleet and agent
+===============
+
+* agents are managed centrally via fleet
+* integrations are up to date
+* agents are healthy
+* agents on recent version
+* agent monitoring:
+  * agent logs enabled
+  * agent metrics enabled
+

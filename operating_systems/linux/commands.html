@@ -51,6 +51,26 @@
 <h2>last reboot<a class="headerlink" href="#last-reboot" title="Link to this heading">¶</a></h2>
 <p>See information in <cite>/var/log/wtmp</cite> about the last reboots.</p>
 </section>
+<section id="links">
+<h2>links<a class="headerlink" href="#links" title="Link to this heading">¶</a></h2>
+<p><a class="reference external" href="https://linux-commands.labex.io/">linux commands cheat sheet</a></p>
+</section>
+<section id="turn-off-the-backlight">
+<h2>turn off the backlight<a class="headerlink" href="#turn-off-the-backlight" title="Link to this heading">¶</a></h2>
+<p>This won’t work everywhere, but might be a clue for those situations.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">echo &quot;0&quot; &gt; /sys/class/backlight/intel_backlight/brightness</span>
+</pre></div>
+</div>
+</section>
+<section id="lidswitch-logind-conf">
+<h2>lidswitch logind.conf<a class="headerlink" href="#lidswitch-logind-conf" title="Link to this heading">¶</a></h2>
+<p>edit <cite>/etc/systemd/logind.conf</cite> to turn off stuff that happens when the lid is closed on a laptop.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">HandleLidSwitch=ignore</span>
+<span class="go">HandleListSwitchExternalPower=ignore</span>
+<span class="go">HandleLidSwitch=Docker=ignore</span>
+</pre></div>
+</div>
+</section>
 </section>
 
 

@@ -76,3 +76,17 @@ Example config
       }
   }
 
+
+dead_letter_queue
+^^^^^^^^^^^^^^^^^
+
+When using the `dead_letter_queue` input, use the following for the output to see the issue:
+
+.. code-block:: console
+
+   output {
+     stdout {
+       codec => rubydebug { metadata => true }
+     }
+   }
+

@@ -16,3 +16,10 @@ wifi
 
 It has it, but my connections are super slow so far.
 
+` Wifi lags ... <https://forums.raspberrypi.com/viewtopic.php?t=348367 has some info.>`
+
+* turn off PMF (Protected Management Frames) - not able to disable in my setup?
+* turn off Band Steering - forces capable clients to 5ghz instead of 2.4 - was on, now off
+
+Switching to a non-unifi device has made it much better.
+

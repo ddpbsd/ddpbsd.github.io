@@ -1,0 +1,11 @@
+=====
+nodes
+=====
+
+add a role to a node
+^^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: console
+
+   kubectl label node buzzell node-role.kubernetes.io/worker=worker
+

@@ -1,8 +1,9 @@
-.. _operating_systems_linux_network_interfaces:
+==========
+interfaces
+==========
 
-
-Set promisc mode:
-^^^^^^^^^^^^^^^^^
+set promisc mode
+^^^^^^^^^^^^^^^^
 
 .. code-block:: console
 
@@ -11,4 +12,17 @@ Set promisc mode:
       up ifconfig eth1 promisc up
       down ifconfig eth1 promisc down
 
+turn off power save for wifi
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: console
+
+   iw wlan0 set power_save off
+
+show the current power save status for wifi
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: console
+
+   iw wlan0 get power_save
 

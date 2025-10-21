@@ -1,0 +1,18 @@
+===================
+system health check
+===================
+
+Ideas for performing a health check on an elastic cluster.
+
+Contents:
+
+.. toctree::
+   :maxdepth: 2
+
+   platforms
+   cluster-architecture
+   performance
+   sharding-and-data-management
+   security
+   fleet-and-agent
+

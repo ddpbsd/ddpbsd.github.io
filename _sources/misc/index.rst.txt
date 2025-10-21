@@ -19,9 +19,10 @@ Contents:
    kernel_build/index
    ksh/index
    links/index
+   policyviolation
    random
    junk/index
    fediverse/glitch-soc.rst
    zfs
-   mynet/switches
+   mynet/index
 

@@ -15,3 +15,12 @@ Print the configuraiton used for DESTINATION.
 
    ssh -G DESTINATION
 
+extended test
+^^^^^^^^^^^^^
+
+Run an extended test and output the effective configuration.
+
+.. code-block:: console
+
+   sshd -T
+

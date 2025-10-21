@@ -118,3 +118,11 @@ elasticsearch logs
 From elastic cloud console, clicking the `View` in `Logs and metrics` takes you to `Observability/Logs/Stream` in Kibana.
 
 
+logstash
+^^^^^^^^
+
+dlq
+###
+
+Have some kind of check on the dlq to make sure it isn't growing horribly.
+

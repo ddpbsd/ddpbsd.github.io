@@ -1,0 +1,172 @@
+===============
+useful commands
+===============
+
+kubectl: get pod
+^^^^^^^^^^^^^^^^
+
+get information about all running pods
+
+.. code-block:: console
+
+   kubectl get pod
+
+kubectl: describe pod
+^^^^^^^^^^^^^^^^^^^^^
+
+Get more information about one pod.
+
+.. code-block:: console
+
+   kubectl describe pod PODNAME
+
+kubectl: expose pod
+^^^^^^^^^^^^^^^^^^^
+
+expose the port of a pod (creates a new service)
+
+.. code-block:: console
+
+   kubectl expose pod PODNAME --port=PORT_NUMBER --name=FRONTEND
+
+
+kubectl: port-forward
+^^^^^^^^^^^^^^^^^^^^^
+
+port forward the exposed pod port on your local machine
+
+.. code-block:: console
+
+   kubectl port-forward PODNAME PORT_NUMBER
+
+kubectl: attach
+^^^^^^^^^^^^^^^
+
+attach to a pod
+
+.. code-block:: console
+
+   kubectl attach PODNAME -i
+
+kubectl: exec
+^^^^^^^^^^^^^
+
+Execute a command
+
+.. code-block:: console
+
+   kubectl exec PODNAME -- COMMAND
+
+kubectl: label pods
+^^^^^^^^^^^^^^^^^^^
+
+Add a enw label to a pod
+
+.. code-block:: console
+
+   kubectl label pods PODNAME mylabel=LABEL
+
+kubectl: run
+^^^^^^^^^^^^
+
+Run a shell in a pod.
+This should run `sh` inside a `busybox` container.
+
+.. code-block:: console
+
+   kubectl run -i --tty busybox --image=busybox --restart=Never -- sh
+
+kubectl: get deployments
+^^^^^^^^^^^^^^^^^^^^^^^^
+
+show information on current deployments
+
+.. code-block:: console
+
+   kubectl get deployments
+
+kubectl: get rs
+^^^^^^^^^^^^^^^
+
+get information on replica sets
+
+.. code-block:: console
+
+   kubectl get rs
+
+kubectl: show pod labels
+^^^^^^^^^^^^^^^^^^^^^^^^
+
+get pods and show the labels
+
+.. code-block:: console
+
+   kubectl get pods --show-labels
+
+kubectl: rollout status
+^^^^^^^^^^^^^^^^^^^^^^^
+
+get deployment status
+
+.. code-block:: console
+
+   kubectl rollout status deployment/DEPLOYMENT_NAME
+
+
+kubectl: set image
+^^^^^^^^^^^^^^^^^^
+
+Run a deployment with a new image label.
+Can be used to run multiple versions.
+
+.. code-block:: console
+
+   kubectl set image deployment/DEPLOYMENT_NAME k8s-demo=k8s-demo:2
+
+kubectl: edit
+^^^^^^^^^^^^^
+
+edit the deployment object
+
+.. code-block:: console
+
+   kubectl edit dpeloyment/DEPLOYMENT_NAME
+
+kubectl: rollout status
+^^^^^^^^^^^^^^^^^^^^^^^
+
+get the status of a rollout
+
+.. code-block:: console
+
+   kubectl rollout status deployment/DEPLOYMENT_NAME
+
+kubectl: rollout history
+^^^^^^^^^^^^^^^^^^^^^^^^
+
+get the rollout history
+
+.. code-block:: console
+
+   kubectl rollout history deployment/DEPLOYMENT_NAME
+
+kubectl: rollout undo
+^^^^^^^^^^^^^^^^^^^^^
+
+rollback to a previous version
+
+.. code-block:: console
+
+   kubectl rollout undo deployment/DEPLOYMENT_NAME
+
+
+To rollback to a specific version use:
+
+.. code-block:: console
+
+   kubectl rollout undo deployment/DEPLOYMENT_NAME --to-revision=n
+
+get a certificate from a tls secret
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+`kubectl -n cert-manager get secret wafflelab-ca-secret -o jsonpath='{.data.ca\.crt}' | base64 -d`

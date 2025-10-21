@@ -1,0 +1,55 @@
+=================================
+eck - Elastic Cloud on Kubernetes
+=================================
+
+I'm installing it to be available in all namespaces using the helm chart.
+
+.. code-block:: console
+
+   ## add the helm repo
+   $ helm repo add elastic https://helm.elastic.co
+   "elastic" has been added to your repositories
+   $ helm repo update
+   Hang tight while we grab the latest from your chart repositories...
+   ...Successfully got an update from the "metallb" chart repository
+   ...Successfully got an update from the "elastic" chart repository
+   ...Successfully got an update from the "jetstack" chart repository
+   ...Successfully got an update from the "rancher-latest" chart repository
+   Update Complete. _Happy Helming!_
+
+   ## install cluster-wide
+   $ helm install elastic-operator elastic/eck-operator -n elastic-system --create-namespace
+   NAME: elastic-operator
+   LAST DEPLOYED: Wed Oct  8 16:43:10 2025
+   NAMESPACE: elastic-system
+   STATUS: deployed
+   REVISION: 1
+   TEST SUITE: None
+   NOTES:
+   1. Inspect the operator logs by running the following command:
+      kubectl logs -n elastic-system sts/elastic-operator
+
+
+install elasticsearch
+^^^^^^^^^^^^^^^^^^^^^
+
+.. XXX
+
+install kibana
+^^^^^^^^^^^^^^
+
+.. XXX
+
+get the password
+^^^^^^^^^^^^^^^^
+
+.. code-block:: console
+
+   $ kubectl get secret elasticsearch-es-elastic-user  -o go-template='{{.data.elastic | base64decode }}'
+   PASSWORD
+
+links
+^^^^^
+
+`Instructions from elastic <https://www.elastic.co/docs/deploy-manage/deploy/cloud-on-k8s/install-using-helm-chart>`_
+

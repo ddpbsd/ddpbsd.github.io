@@ -1,0 +1,10 @@
+==========
+namespaces
+==========
+
+see all namespaces
+^^^^^^^^^^^^^^^^^^
+
+`lsns` will show all namespaces.
+Use `--type TYPE` to select a specific type of namespace: `lsns --type net`
+

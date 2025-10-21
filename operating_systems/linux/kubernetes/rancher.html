@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>rancher &#8212; notes 0.1 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/basic.css?v=b08954a9" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/alabaster.css?v=27fed22d" />
+    <script src="../../../_static/documentation_options.js?v=2709fde1"></script>
+    <script src="../../../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="OpenBSD" href="../../openbsd/index.html" />
+    <link rel="prev" title="nodes" href="nodes.html" />
+   
+  <link rel="stylesheet" href="../../../_static/custom.css" type="text/css" />
+  
+
+  
+  
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="rancher">
+<h1>rancher<a class="headerlink" href="#rancher" title="Link to this heading">¶</a></h1>
+<p>Technically this isn’t a piece of k8s, but I’m putting it here for me.</p>
+<section id="install">
+<h2>install<a class="headerlink" href="#install" title="Link to this heading">¶</a></h2>
+<p>Make sure you try to connect to it with the hostname, and not by IP.
+It won’t work with just the IP.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">#</span><span class="c1"># add the helm repo</span>
+<span class="gp">$ </span>helm<span class="w"> </span>repo<span class="w"> </span>add<span class="w"> </span>rancher-latest<span class="w"> </span>https://releases.rancher.com/server-charts/latest
+<span class="go">&quot;rancher-latest&quot; has been added to your repositories</span>
+
+<span class="gp">#</span><span class="c1"># create the namespace</span>
+<span class="gp">$ </span>kubectl<span class="w"> </span>create<span class="w"> </span>namespace<span class="w"> </span>cattle-system
+<span class="go">namespace/cattle-system created</span>
+
+<span class="gp">#</span><span class="c1"># install rancher</span>
+<span class="gp">$ </span>helm<span class="w"> </span>install<span class="w"> </span>rancher<span class="w"> </span>rancher-latest/rancher<span class="w"> </span>--namespace<span class="w"> </span>cattle-system<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--set<span class="w"> </span><span class="nv">hostname</span><span class="o">=</span>rancher.k8s.wafflelab.online<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--set<span class="w"> </span><span class="nv">bootstrapPassword</span><span class="o">=</span>temporarypassword<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--set<span class="w"> </span>ingress.tls.source<span class="o">=</span>certmanager<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--set<span class="w"> </span>certmanager.version<span class="o">=</span>v1.18.2
+
+<span class="go">NAME: rancher</span>
+<span class="go">LAST DEPLOYED: Wed Oct  8 15:25:21 2025</span>
+<span class="go">NAMESPACE: cattle-system</span>
+<span class="go">STATUS: deployed</span>
+<span class="go">REVISION: 1</span>
+<span class="go">TEST SUITE: None</span>
+<span class="go">NOTES:</span>
+<span class="go">Rancher Server has been installed.</span>
+
+<span class="go">NOTE: Rancher may take several minutes to fully initialize. Please standby while Certificates are being issued, Containers are started and the Ingress rule comes up.</span>
+
+<span class="go">Check out our docs at https://rancher.com/docs/</span>
+
+<span class="gp">#</span><span class="c1"># First Time Login</span>
+
+<span class="go">If you provided your own bootstrap password during installation, browse to https://rancher.k8s.wafflelab.online to get started.</span>
+<span class="go">If this is the first time you installed Rancher, get started by running this command and clicking the URL it generates:</span>
+
+<span class="go">echo https://rancher.k8s.wafflelab.online/dashboard/?setup=$(kubectl get secret --namespace cattle-system bootstrap-secret -o go-template=&#39;{{.data.bootstrapPassword|base64decode}}&#39;)</span>
+
+<span class="go">To get just the bootstrap password on its own, run:</span>
+
+<span class="go">kubectl get secret --namespace cattle-system bootstrap-secret -o go-template=&#39;{{.data.bootstrapPassword|base64decode}}{{ &quot;\n&quot; }}&#39;</span>
+
+<span class="go">Happy Containering!</span>
+</pre></div>
+</div>
+</section>
+<section id="troubleshooting">
+<h2>troubleshooting<a class="headerlink" href="#troubleshooting" title="Link to this heading">¶</a></h2>
+<p><a class="reference external" href="https://ranchermanager.docs.rancher.com/getting-started/installation-and-upgrade/install-upgrade-on-a-kubernetes-cluster/troubleshooting">install-upgrade troubleshooting</a></p>
+</section>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../../../index.html">notes</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../db/index.html">databases</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../elk/index.html">elastic stuff</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../openssh/index.html">OpenSSH</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../index.html">Operating Systems</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html">Linux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../openbsd/index.html">OpenBSD</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../windows/index.html">Windows</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../ossec/index.html">OSSEC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../ssl/index.html">ssl</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../stupid_unix_tricks/index.html">Stupid Unix Tricks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../tools/index.html">Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../vendor_stuff/index.html">Vendor Stuff</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../misc/index.html">misc</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../../index.html">Documentation overview</a><ul>
+  <li><a href="../../index.html">Operating Systems</a><ul>
+  <li><a href="../index.html">Linux</a><ul>
+  <li><a href="index.html">kubernetes</a><ul>
+      <li>Previous: <a href="nodes.html" title="previous chapter">nodes</a></li>
+      <li>Next: <a href="../../openbsd/index.html" title="next chapter">OpenBSD</a></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<search id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+        <!-- your html code here -->
+	<div class="footer">
+		<em>This information has a good chance of being wrong, inconsistent, out of date, or just bad. Use at your own risk.
+		Feel free to notify me of any issues though.</em>
+	</div>
+
+
+  </body>
+</html>

@@ -1,0 +1,26 @@
+====
+helm
+====
+
+list installed stuff
+^^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: console
+
+   helm list
+
+list repos
+^^^^^^^^^^
+
+.. code-block:: console
+
+   helm repo list
+
+remove a repo
+^^^^^^^^^^^^^
+
+.. code-block:: console
+
+   helm repo remove REPO
+
+

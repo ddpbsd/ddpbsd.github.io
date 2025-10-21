@@ -1,0 +1,78 @@
+============
+health check
+============
+
+These are some health check stuff I learned from elastic.
+
+segments
+^^^^^^^^
+
+count the segments for each index
+#################################
+
+I'm not entirely sure how this will help, or what it tells us.
+
+.. code-block:: console
+
+   cat cat/cat_segments.txt | tr -s '[:blank:]' | cut -d ' ' -f1 | sort | uniq -c | sort
+
+tasks
+^^^^^
+
+count by action:
+################
+
+.. code-block:: console
+
+   cat tasks.json | jq -r '.notes[] | .tasks[] | .action' | sort | uniq -c | sort
+
+sum up running time in seconds by action:
+#########################################
+
+.. code-block:: console
+
+   jq '[.nodes] | to_entries[] | .value.tasks | to_entries[] | .value | {action: .action, running_time_in_seconds: (.running_time_in_nanos / 1000000000)}] | group_by(.action) | map({action: .[0].action, total_running_time_in_seconds: (map(.running_time_in_seconds) | add)})' tasks.json
+
+aggregate by description:
+#########################
+
+.. code-block:: console
+
+   $ cat ./tasks.json | jq =r '.nodes[] | .tasks[] | .description' | sort | uniq -c | sort
+
+find long running tasks
+#######################
+
+.. code-block:: console
+
+   cat ./tasks.json | jq -r '.nodes[] | .tasks[] | [.running_time_in_nanos, .action, .description] | @tsv' | sort -n | tail -10
+
+shards
+^^^^^^
+
+count shards
+############
+
+.. code-block:: console
+
+   cat cat/cat_shards.txt | cut -d ' ' -f1 | sort | uniq -c | sort
+
+count the number of docs for each shard
+#######################################
+
+.. code-block:: console
+
+   cat shards.json | jq -r 'sort_by(.docs | tonumber) | .[] | select(.prirep=="p") | [.index, .shard, .prirep, .docs] | @csv'
+
+index
+^^^^^
+
+extract mappings for a particular index
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+The index is `.kibana_1` in this example.
+
+.. code-block:: console
+
+   cat mapping.json | jq '.[".kibana_1"]'
+

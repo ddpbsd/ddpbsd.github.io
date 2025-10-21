@@ -2,7 +2,6 @@
 Random commands
 ===============
 
-
 List disks
 ^^^^^^^^^^
 
@@ -21,4 +20,29 @@ last reboot
 ^^^^^^^^^^^
 
 See information in `/var/log/wtmp` about the last reboots.
+
+links
+^^^^^
+
+`linux commands cheat sheet <https://linux-commands.labex.io/>`_
+
+turn off the backlight
+^^^^^^^^^^^^^^^^^^^^^^
+
+This won't work everywhere, but might be a clue for those situations.
+
+.. code-block:: console
+
+   echo "0" > /sys/class/backlight/intel_backlight/brightness
+
+lidswitch logind.conf
+^^^^^^^^^^^^^^^^^^^^^
+
+edit `/etc/systemd/logind.conf` to turn off stuff that happens when the lid is closed on a laptop.
+
+.. code-block:: console
+
+   HandleLidSwitch=ignore
+   HandleListSwitchExternalPower=ignore
+   HandleLidSwitch=Docker=ignore
 

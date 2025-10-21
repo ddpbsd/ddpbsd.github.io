@@ -27,6 +27,7 @@ Contents:
    opensmtpd/index
    osquery/index
    packer/index
+   peekaping/index
    perl/index
    prometheus/index
    python/index

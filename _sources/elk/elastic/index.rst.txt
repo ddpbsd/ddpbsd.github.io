@@ -16,5 +16,6 @@ Contents:
    shards
    tasks
    security/index
+   ingest_pipelines
    interesting
 

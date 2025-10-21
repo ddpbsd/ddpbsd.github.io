@@ -1,0 +1,30 @@
+=========
+platforms
+=========
+
+Common
+^^^^^^
+
+Elatic Cloud: Hosted
+^^^^^^^^^^^^^^^^^^^^
+
+
+Elastic Cloud: Enterprise
+^^^^^^^^^^^^^^^^^^^^^^^^^
+
+
+Elastic Cloud: Serverless
+^^^^^^^^^^^^^^^^^^^^^^^^^
+
+
+Elastic Cloud on Kuberenetes
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+
+Docker
+^^^^^^
+
+
+Bare-metal
+^^^^^^^^^^
+

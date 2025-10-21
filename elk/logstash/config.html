@@ -104,6 +104,17 @@ going through each one for each message.</p>
 </pre></div>
 </div>
 </section>
+<section id="dead-letter-queue">
+<h1>dead_letter_queue<a class="headerlink" href="#dead-letter-queue" title="Link to this heading">¶</a></h1>
+<p>When using the <cite>dead_letter_queue</cite> input, use the following for the output to see the issue:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">output {</span>
+<span class="go">  stdout {</span>
+<span class="go">    codec =&gt; rubydebug { metadata =&gt; true }</span>
+<span class="go">  }</span>
+<span class="go">}</span>
+</pre></div>
+</div>
+</section>
 
 
           </div>
@@ -139,6 +150,7 @@ going through each one for each message.</p>
 <li class="toctree-l2"><a class="reference internal" href="../testing_logstash.html">testing logstash</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../elastic-cloud.html">elastic-cloud</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../query/index.html">querying elasticsearch and kibana</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../health-check/index.html">system health check</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../openssh/index.html">OpenSSH</a></li>

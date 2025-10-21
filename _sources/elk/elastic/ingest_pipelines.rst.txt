@@ -1,0 +1,30 @@
+================
+ingest pipelines
+================
+
+
+split an event into multiple
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+use the `script` processor:
+
+.. code-block:: console
+
+   "script": {
+     "lang": "painless",
+     "source": """
+       if (ctx.containsKey('my_array_field') && ctx['my_array_field' instanceof List) {
+         List new_events = new ArrayList();
+         for (def item : ctx['myarray_field']) {
+           Map new_doc = new HashMap(ctx); // copy orig document
+           new_doc.remove('my_array_field'); // remove the orig array field
+           new_doc.put('single_item_field', item); // add the individual item
+           new_events.add(new_doc);
+         }
+         ctx.remove('my_array_field'); // remove the original array field from the current document
+         ctx._ingest.on_failure = (e) => { /* handle potential failures? */ };
+         ctx._ingest.new_documents = new_events;
+       }
+     """
+   }
+

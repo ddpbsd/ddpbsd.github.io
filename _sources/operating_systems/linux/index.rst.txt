@@ -20,6 +20,7 @@ Contents:
    containers/index
    firewalls/index
    lvm/index
+   namespaces
    network/index
    rpm
    kvm/index
@@ -30,5 +31,5 @@ Contents:
    cgroups/notes
    ubuntu/index
    alpine/index
-
+   kubernetes/index
 

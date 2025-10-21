@@ -3,15 +3,13 @@
 mynet
 =====
 
-My home lab stuff.
 
 Contents:
 
 .. toctree::
    :maxdepth: 2
 
-   dmesgs/index
-   systems
-   computers/index
-
+   dur
+   pine
+   switches
 
