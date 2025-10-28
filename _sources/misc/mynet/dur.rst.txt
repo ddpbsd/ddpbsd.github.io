@@ -4,7 +4,6 @@ dur
 
 `dur` is a raspberry pi zero 2W.
 
-
 auto login
 ^^^^^^^^^^
 

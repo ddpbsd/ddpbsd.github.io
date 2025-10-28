@@ -59,6 +59,18 @@ These are probably notes about the roles required?</p>
 </pre></div>
 </div>
 </section>
+<section id="saml-auth">
+<h1>saml auth<a class="headerlink" href="#saml-auth" title="Link to this heading">¶</a></h1>
+<p>Turn on debugging</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">PUT _cluster/settings</span>
+<span class="go">{</span>
+<span class="go">  &quot;persistent&quot;: {</span>
+<span class="go">    &quot;logger.org.elasticsearch.xpack.security.authc.saml: &quot;debug&quot;</span>
+<span class="go">  }</span>
+<span class="go">}</span>
+</pre></div>
+</div>
+</section>
 
 
           </div>

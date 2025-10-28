@@ -1,4 +1,3 @@
-
 ====
 Junk
 ====
@@ -19,5 +18,6 @@ Contents:
    gardening/index
    podcasts
    restaurants/index
+   tcgs
    minecraft/playtime2.rst
 

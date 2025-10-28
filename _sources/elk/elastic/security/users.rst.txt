@@ -31,3 +31,18 @@ These are probably notes about the roles required?
    indices: `*beat*`
    priviledges: write create delete create_index manage manage_ilm
 
+
+saml auth
+^^^^^^^^^
+
+Turn on debugging
+
+.. code-block:: console
+
+   PUT _cluster/settings
+   {
+     "persistent": {
+       "logger.org.elasticsearch.xpack.security.authc.saml: "debug"
+     }
+   }
+

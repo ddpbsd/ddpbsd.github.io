@@ -66,7 +66,7 @@
 </section>
 <section id="get-the-password">
 <h2>get the password<a class="headerlink" href="#get-the-password" title="Link to this heading">¶</a></h2>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>kubectl<span class="w"> </span>get<span class="w"> </span>secret<span class="w"> </span>elasticsearch-es-elastic-user<span class="w">  </span>-o<span class="w"> </span>go-template<span class="o">=</span><span class="s1">&#39;{{.data.elastic | base64decode }}&#39;</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>kubectl<span class="w"> </span>get<span class="w"> </span>secret<span class="w"> </span>elasticsearch-wln-es-elastic-user<span class="w">  </span>-o<span class="w"> </span>go-template<span class="o">=</span><span class="s1">&#39;{{.data.elastic | base64decode }}&#39;</span>
 <span class="go">PASSWORD</span>
 </pre></div>
 </div>
