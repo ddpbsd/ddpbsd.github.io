@@ -8,3 +8,11 @@ see all namespaces
 `lsns` will show all namespaces.
 Use `--type TYPE` to select a specific type of namespace: `lsns --type net`
 
+run a program in a namespace
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Use `nsenter` to run a program in a namespace.
+This can come in handy when troublehsooting by running `ss` and friends in a net namespace.
+
+`sudo nsenter -n -t PID ss -tlpn` to get a list of TCP ports listening in the same net namespace as the PID process.
+

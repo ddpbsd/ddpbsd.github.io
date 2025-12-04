@@ -14,6 +14,8 @@
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="OpenSSH" href="../openssh/index.html" />
+    <link rel="prev" title="es|ql" href="query/elasticsearch-esql.html" />
    
   <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
   
@@ -66,7 +68,7 @@
 </section>
 <section id="get-the-password">
 <h2>get the password<a class="headerlink" href="#get-the-password" title="Link to this heading">¶</a></h2>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>kubectl<span class="w"> </span>get<span class="w"> </span>secret<span class="w"> </span>elasticsearch-wln-es-elastic-user<span class="w">  </span>-o<span class="w"> </span>go-template<span class="o">=</span><span class="s1">&#39;{{.data.elastic | base64decode }}&#39;</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>kubectl<span class="w"> </span>get<span class="w"> </span>secret<span class="w"> </span>elasticsearch-es-elastic-user<span class="w">  </span>-o<span class="w"> </span>go-template<span class="o">=</span><span class="s1">&#39;{{.data.elastic | base64decode }}&#39;</span>
 <span class="go">PASSWORD</span>
 </pre></div>
 </div>
@@ -94,9 +96,27 @@
 
 
 <h3>Navigation</h3>
-<ul>
+<ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../db/index.html">databases</a></li>
-<li class="toctree-l1"><a class="reference internal" href="index.html">elastic stuff</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">elastic stuff</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="beats/index.html">Beats</a></li>
+<li class="toctree-l2"><a class="reference internal" href="elasticsearch/index.html">elasticsearch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="kibana.html">kibana</a></li>
+<li class="toctree-l2"><a class="reference internal" href="logstash/index.html">logstash</a></li>
+<li class="toctree-l2"><a class="reference internal" href="monitoring/index.html">monitoring</a></li>
+<li class="toctree-l2"><a class="reference internal" href="agent/index.html">agent</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api.html">api</a></li>
+<li class="toctree-l2"><a class="reference internal" href="parsing.html">parsing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="setup.html">Setting up the whole thing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="endpoint.html">endpoint</a></li>
+<li class="toctree-l2"><a class="reference internal" href="read.html">read from elastic</a></li>
+<li class="toctree-l2"><a class="reference internal" href="docker/commands.html">docker commands</a></li>
+<li class="toctree-l2"><a class="reference internal" href="testing_logstash.html">testing logstash</a></li>
+<li class="toctree-l2"><a class="reference internal" href="elastic-cloud.html">elastic-cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="query/index.html">querying elasticsearch and kibana</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">eck - Elastic Cloud on Kubernetes</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="../openssh/index.html">OpenSSH</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../operating_systems/index.html">Operating Systems</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../ossec/index.html">OSSEC</a></li>
@@ -111,6 +131,10 @@
 <h3>Related Topics</h3>
 <ul>
   <li><a href="../index.html">Documentation overview</a><ul>
+  <li><a href="index.html">elastic stuff</a><ul>
+      <li>Previous: <a href="query/elasticsearch-esql.html" title="previous chapter">es|ql</a></li>
+      <li>Next: <a href="../openssh/index.html" title="next chapter">OpenSSH</a></li>
+  </ul></li>
   </ul></li>
 </ul>
 </div>

@@ -63,6 +63,13 @@ Address families include (but are not limited to) ip (ipv4), ip6 (ipv6), inet (i
 </pre></div>
 </div>
 </section>
+<section id="adding-rules">
+<h2>adding rules<a class="headerlink" href="#adding-rules" title="Link to this heading">¶</a></h2>
+<p><cite>firewalld</cite> is the table, <cite>filter_IN_public_allow</cite> is the chain.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">nft add rule inet firewalld filter_IN_public_allow tcp dport 8080 accept</span>
+</pre></div>
+</div>
+</section>
 <section id="deleting-rules">
 <h2>deleting rules<a class="headerlink" href="#deleting-rules" title="Link to this heading">¶</a></h2>
 <p>Deleting rules requires a handle as well as the table, chain, and possibly address family.

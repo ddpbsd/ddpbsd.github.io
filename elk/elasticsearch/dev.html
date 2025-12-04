@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Change the breaker limit &#8212; notes 0.1 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../_static/basic.css?v=b08954a9" />
+    <link rel="stylesheet" type="text/css" href="../../_static/alabaster.css?v=27fed22d" />
+    <script src="../../_static/documentation_options.js?v=2709fde1"></script>
+    <script src="../../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="enrich policy" href="enrich_policy.html" />
+    <link rel="prev" title="data streams" href="indices/datastream.html" />
+   
+  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+  
+
+  
+  
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="change-the-breaker-limit">
+<h1>Change the breaker limit<a class="headerlink" href="#change-the-breaker-limit" title="Link to this heading">¶</a></h1>
+<p>This is a temporary change, and probably a dumb one.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">curl -XPUT localhost:9200/_cluster/settings -d &#39;{</span>
+<span class="go">  &quot;transient&quot; : {</span>
+<span class="go">    &quot;indices.breaker.request.limit&quot; : &quot;41%&quot;</span>
+<span class="go">  }</span>
+<span class="go">}&#39;</span>
+</pre></div>
+</div>
+</section>
+<section id="get-info-about-nodes-in-cluster">
+<h1>get info about nodes in cluster<a class="headerlink" href="#get-info-about-nodes-in-cluster" title="Link to this heading">¶</a></h1>
+<p>sort by role, then disk usage</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">GET _cat/nodes?v&amp;h=name,role,master,shardStatsTotalCount,diskTotal,diskUsedPercent,cpu,load_1m,load_5m,load_15m,heapMax,heapCurrent,heapPercent&amp;s=role,diskUsedPercent</span>
+</pre></div>
+</div>
+</section>
+<section id="get-pipeline-statistics-for-troubleshooting-ingest-processing-times">
+<h1>get pipeline statistics for troubleshooting ingest processing times<a class="headerlink" href="#get-pipeline-statistics-for-troubleshooting-ingest-processing-times" title="Link to this heading">¶</a></h1>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">GET _nodes/stats/ingest?filter_path=nodes.*.ingest</span>
+</pre></div>
+</div>
+</section>
+<section id="get-number-of-indexing-failures-for-all-indices">
+<h1>get number of indexing failures for all indices<a class="headerlink" href="#get-number-of-indexing-failures-for-all-indices" title="Link to this heading">¶</a></h1>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">GET _all/_stats/indexing?filter_path=indices.*.total.indexing.index_failed</span>
+</pre></div>
+</div>
+</section>
+<section id="show-the-current-write-thread-pool-statistics">
+<h1>show the current write thread pool statistics<a class="headerlink" href="#show-the-current-write-thread-pool-statistics" title="Link to this heading">¶</a></h1>
+<p>queue is particularly useful for diagnosing the overall write load on the cluster
+see: <a class="reference external" href="https://www.elastic.co/guide/en/elasticsearch/reference/current/cat-thread-pool.html">cat-thread-pool</a></p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">GET _cat/thread_pool/write?v&amp;h=node_name,name,active,size_queue,queue_size,rejected</span>
+</pre></div>
+</div>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../../index.html">notes</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../db/index.html">databases</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">elastic stuff</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../beats/index.html">Beats</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">elasticsearch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../kibana.html">kibana</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../logstash/index.html">logstash</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../monitoring/index.html">monitoring</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../agent/index.html">agent</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api.html">api</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../parsing.html">parsing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../setup.html">Setting up the whole thing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../endpoint.html">endpoint</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../read.html">read from elastic</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../docker/commands.html">docker commands</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../testing_logstash.html">testing logstash</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../elastic-cloud.html">elastic-cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../query/index.html">querying elasticsearch and kibana</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../eck.html">eck - Elastic Cloud on Kubernetes</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../openssh/index.html">OpenSSH</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../operating_systems/index.html">Operating Systems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ossec/index.html">OSSEC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ssl/index.html">ssl</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../stupid_unix_tricks/index.html">Stupid Unix Tricks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tools/index.html">Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../vendor_stuff/index.html">Vendor Stuff</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../misc/index.html">misc</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../index.html">Documentation overview</a><ul>
+  <li><a href="../index.html">elastic stuff</a><ul>
+  <li><a href="index.html">elasticsearch</a><ul>
+      <li>Previous: <a href="indices/datastream.html" title="previous chapter">data streams</a></li>
+      <li>Next: <a href="enrich_policy.html" title="next chapter">enrich policy</a></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<search id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+        <!-- your html code here -->
+	<div class="footer">
+		<em>This information has a good chance of being wrong, inconsistent, out of date, or just bad. Use at your own risk.
+		Feel free to notify me of any issues though.</em>
+	</div>
+
+
+  </body>
+</html>

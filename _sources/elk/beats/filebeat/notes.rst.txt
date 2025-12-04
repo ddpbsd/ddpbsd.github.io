@@ -3,8 +3,8 @@
 Filebeat
 ========
 
-Added fields:
-^^^^^^^^^^^^^
+added fields
+^^^^^^^^^^^^
 
 Filebeat appears to add some fields:
 
@@ -13,4 +13,27 @@ Filebeat appears to add some fields:
 * `source` - Log file that the messages are grabbed from
 
 There may be more, but these are what I have so far.
+
+filestream input
+^^^^^^^^^^^^^^^^
+
+The filestream input requires the files to be greater than 1024 bytes in size to be read.
+This can be a problem for testing.
+
+Adjusting the `prospector` settings can make this easier, but `64` is the absolute minimum.
+I believe the `offset` starts the read at that offset, but I could be mistaken.
+I'm leaving it in because it's what I used and it worked for my uses.
+
+.. code-block:: yaml
+
+   - type: filestream
+     id: logs
+     paths:
+       - /var/log/test.log
+     enabled: true
+     prospector:
+       scanner:
+         fingerprint:
+           length: 64
+           offset: 0
 

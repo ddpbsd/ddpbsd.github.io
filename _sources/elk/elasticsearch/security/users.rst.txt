@@ -1,0 +1,48 @@
+
+logstash user
+^^^^^^^^^^^^^
+
+Create a user with the `logstash_writer` role for logstash.
+
+.. code-block:: console
+
+   POST /_security/user/logstash_internal
+   {
+     "password" : "x-pack-test-password",
+     "roles" : [ "logstash_writer"],
+     "full_name" : "Internal Logstash User"
+   }
+
+
+beats user
+^^^^^^^^^^
+
+I'm not sure what I was doing here.
+These are probably notes about the roles required?
+
+.. code-block:: console
+
+   manage_index_templates
+   monitor
+   manage_ilm
+
+.. code-block:: console
+
+   indices: `*beat*`
+   priviledges: write create delete create_index manage manage_ilm
+
+
+saml auth
+^^^^^^^^^
+
+Turn on debugging
+
+.. code-block:: console
+
+   PUT _cluster/settings
+   {
+     "persistent": {
+       "logger.org.elasticsearch.xpack.security.authc.saml: "debug"
+     }
+   }
+

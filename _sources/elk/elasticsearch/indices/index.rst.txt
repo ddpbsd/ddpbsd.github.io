@@ -1,0 +1,15 @@
+=========================
+indicies and data streams
+=========================
+
+
+Contents:
+
+.. toctree::
+   :maxdepth: 1
+
+   create_index
+   ilm
+   errors
+   datastream
+

@@ -1,0 +1,7 @@
+====
+siem
+====
+
+
+https://www.elastic.co/blog/elastic-on-elastic-deep-dive-into-our-siem-architecture
+

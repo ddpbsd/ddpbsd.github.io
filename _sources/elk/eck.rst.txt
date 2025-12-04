@@ -45,7 +45,7 @@ get the password
 
 .. code-block:: console
 
-   $ kubectl get secret elasticsearch-wln-es-elastic-user  -o go-template='{{.data.elastic | base64decode }}'
+   $ kubectl get secret elasticsearch-es-elastic-user  -o go-template='{{.data.elastic | base64decode }}'
    PASSWORD
 
 links

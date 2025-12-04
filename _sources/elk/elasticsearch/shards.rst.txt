@@ -1,0 +1,94 @@
+======
+shards
+======
+
+Get list of shards
+^^^^^^^^^^^^^^^^^^
+
+.. code-block:: console
+
+   GET /_cat/shards?v
+
+Get a list of UNASSIGNED shards
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: console
+
+   curl -XGET 'http://elastic.example.com:9200/_cat/shards?h=index,shard,prirep,state,unassigned.reason' | grep UNASSIGNED
+
+Sort by node and then size (desc)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: console
+
+   GET /_cat/shards?v&s=node,store
+
+find out why a shard is unallocated
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+This guide from Elastic might help with these issues:
+`Diagnose unassigned shards <https://www.elastic.co/guide/en/elasticsearch/reference/current/diagnose-unassigned-shards.html>`_
+
+.. code-block:: console
+
+   GET _cluster/allocation/explain
+
+Re-route failed shards
+^^^^^^^^^^^^^^^^^^^^^^
+
+If a shard is `UNASSIGNED ALLOCATION_FAILED` run the following to retry the reroute:
+
+.. code-block:: console
+
+   curl -XPOST 'http://elastic.example.com:9200/_cluster/reroute?retry_failed=true'
+
+Enable shard allocation
+^^^^^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: console
+
+   curl -X PUT "localhost:9200/_cluster/settings?pretty" -H 'Content-Type: application/json' -d'
+   {
+     "transient" : {
+       "cluster.routing.allocation.enable" : "all"
+     }
+   }
+   '
+
+get all shards
+^^^^^^^^^^^^^^
+
+sort by node then number of docs
+
+.. code-block:: console
+
+   GET _cat/shards?v&h=index,shard,prirep,state,store,docs,node&node,docs
+
+get cluster shard status along with curent health
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: console
+
+   GET _cluster/health?filter_path=status,*_shards
+
+increase the number of shards that can be in the relocating state
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+The default is 2, and elastic says you shouldn't change it.
+But sometimes you just gotta.
+
+.. code-block:: console
+
+   cluster.routing.allocation.node_concurrent_recoveries
+
+see the max shards per node
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+`cluster.max_shards_per_node` default: `1000`
+
+This will show up as `-1` which is unlimited
+
+.. code-block:: console
+
+   GET _cluster/settings?include_defaults=true&filter-path=cluster.routing.allocation.total_shards_per_node
+

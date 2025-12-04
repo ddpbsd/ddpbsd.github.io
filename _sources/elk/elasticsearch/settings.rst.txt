@@ -1,0 +1,35 @@
+======================
+elasticsearch settings
+======================
+
+These settings are configured in the `elasticsearch.yml` file.
+
+audit
+^^^^^
+
+enable auditing
+###############
+
+.. code-block:: YAML
+
+   xpack:
+     security:
+       audit:
+         enabled: true
+
+ignore some audit events
+########################
+
+.. code-block:: YAML
+
+   xpack:
+     security:
+       audit:
+         logfile.events.ignore_filters:
+           ignore_fleet_writes:
+             users: ["elastic/fleet-server"]
+             actions: ["indices:data/write/index:op_type/create"]
+           ignore_logstash_writes:
+             users: ["logstash_writer"]
+             actions: ["indices:data/write/index:op_type/create"]
+

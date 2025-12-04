@@ -1,0 +1,27 @@
+======
+errors
+======
+
+rollover target does not point to a write index
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Set one of the indices behind an alias to be the write index.
+
+.. code-block:: console
+
+   POST _aliases
+   {
+	"actions": {
+		"index": "index_name-000001",
+		"alias": "index_alias",
+		"is_write_index": true
+	}
+   }
+
+
+
+restore from snapshot
+^^^^^^^^^^^^^^^^^^^^^
+
+https://elastic.co/guide/en/elasticsearch/reference/current/restore-from-snapshot.html
+

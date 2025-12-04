@@ -10,3 +10,4 @@ Contents:
    kubectl
    nodes
    rancher
+   helm

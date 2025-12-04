@@ -166,7 +166,3 @@ To rollback to a specific version use:
 
    kubectl rollout undo deployment/DEPLOYMENT_NAME --to-revision=n
 
-get a certificate from a tls secret
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-`kubectl -n cert-manager get secret wafflelab-ca-secret -o jsonpath='{.data.ca\.crt}' | base64 -d`

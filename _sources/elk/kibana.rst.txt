@@ -1,0 +1,71 @@
+======
+kibana
+======
+
+kibana session management
+^^^^^^^^^^^^^^^^^^^^^^^^^
+
+More information for these settings can be found  in the `kibana documentation <https://elastic.co/docs/deploy-manage/security/kibana-session-management>`_.
+
+These settings are configured in the `kibana.yml`.
+If they are modified, the kibana process will need to be restarted.
+
+session idle timeout
+####################
+
+Session timeout after this amount of time of inactivity.
+The timeout value is formatted as `COUNT[ms|s|m|h|d|w|M|Y]`
+
+.. code-block:: YAML
+
+   xpack.security.session.idleTimeout: "30m"
+
+session lifespan
+################
+
+This is an absolute timeout for the session.
+
+.. code-block:: YAML
+
+   xpack:
+     security:
+       session:
+         lifespan: "7d"
+
+session cleanup interval
+########################
+
+If the previous settings are not set the session info will be inserted into the index and not cleaned up until an explicit logout.
+This will clean up the data more often.
+
+.. code-block:: YAML
+
+   xpack:
+     security:
+       session:
+         cleanupInterval: "1d"
+
+maximum number of concurrent sessions
+#####################################
+
+.. code-block:: YAML
+
+   xpack:
+     security:
+       session:
+         concurrentSessions:
+           maxSessions: 3
+
+kibana audit
+^^^^^^^^^^^^
+
+enable auditing
+###############
+
+.. code-block:: YAML
+
+   xpack:
+     security:
+       audit:
+         enabled: true
+

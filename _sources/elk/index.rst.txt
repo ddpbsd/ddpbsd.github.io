@@ -8,7 +8,8 @@ Contents:
    :maxdepth: 2
 
    beats/index
-   elastic/index
+   elasticsearch/index
+   kibana
    logstash/index
    monitoring/index
    agent/index
@@ -21,5 +22,5 @@ Contents:
    testing_logstash
    elastic-cloud
    query/index
-   health-check/index
+   eck
 

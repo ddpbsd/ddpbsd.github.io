@@ -1,0 +1,35 @@
+============
+data streams
+============
+
+
+
+decommission a data stream
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. warning::
+   This doesn't actually do what we want.
+
+If a data stream won't be used any longer but the old data needs
+to be kept, it can be modified using the `modify_data_stream` api
+to not have a write index anymore.
+This prevents an empty data stream from sitting around taking up space
+and valuable shards.
+
+.. code-block:: console
+
+   POST /_data_stream/_modify
+   {
+     "actions": [
+       {
+         "remove_backing_index": {
+           "data_stream": "logs-xxx-default",
+           "index": ".ds-logs-xxx-default-000002"
+         }
+       }
+     ]
+   }
+
+Leave the ILM policy intact, so the old indices can continue through
+their stages of life.
+

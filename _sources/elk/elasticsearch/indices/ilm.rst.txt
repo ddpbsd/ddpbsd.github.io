@@ -1,0 +1,150 @@
+Index Lifecycle Management
+==========================
+
+I have some mental block with ILM.
+So trying to get a grasp on it has been difficult.
+
+This could all be wrong, and is definitely incomplete.
+
+transition timeframes
+^^^^^^^^^^^^^^^^^^^^^
+
+When a tier (like `cold`) is set to `Move data into phase when: X days old`,
+it means X days after the initial rollover from hot to warm.
+
+
+Basic steps
+^^^^^^^^^^^
+
+#. Create the Lifecycle policy
+
+#. Create index template
+
+#. Add the lifecycle policy to the template
+
+#. Bootstrap the index
+
+#. Rejoice?
+
+There are probably a few steps missing, including a lot of cursing.
+
+Index Template
+^^^^^^^^^^^^^^
+
+* Do not include `aliases` information in the template.
+  If the aliases section is populated it will cause errors about
+  the alias pointing to multiple indexes.
+
+* Include this information in the index template.
+  This adds it to the lifecycle policy (can also be done in Kibana).
+
+.. code-block:: json
+
+   {
+     "settings": {
+       "index": {
+         "lifecycle": {
+           "name": "ILM_POLICY_NAME",
+           "rollover_alias": "INDEX_ALIAS",
+
+
+Index Bootstrap
+^^^^^^^^^^^^^^^
+
+Boostrap the index with the following settings:
+
+.. code-block:: console
+
+   PUT /INDEX_ALIAS-000001
+   {
+     "aliases": {
+       "INDEX_ALIAS": {
+         "is_write_index": true
+       }
+     },
+     "settings": {
+       "index": {
+         "lifecycle": {
+           "origination_date": TODAYS_DATE_IN_UNIX_EPOCH
+         }
+       }
+
+     }
+   }
+
+The origination_date might not be necessary, but so far it is working.
+
+get all indices with step: ERROR
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: console
+
+   GET _all/_ilm/explain?only_errors=true
+
+get shards in motion/recovery with status of progress
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: console
+
+   GET _cat/recovery?v&active_only=true&h=index,shard,source_node,target_node,bytes_percent,bytes_total,time
+
+retry all failed ILM sets
+^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: console
+
+   POST _cluster/reroute?retry_failed&metric=none
+
+move an index to a specific ILM phase
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: console
+
+   POST _ilm/move/INDEX_NAME
+   {
+     "current_step": {
+       "phase": "hot",
+       "action": "complete",
+       "name": "complete"
+     },
+     "next_step": {
+       "phase": "warm"
+     }
+   }
+
+get all indices' ilm policy, phase, steps, and actions
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: console
+
+   GET _all/_ilm/explain?filter_path=indices.*.step,indices.*.action,indices.*.phase
+
+migrate a datastream/index to another ilm step
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+move an index to frozen:
+
+.. code-block:: console
+
+   POST _ilm/move/INDEX
+   {
+     "current_step": {
+       "phase": "warm",
+       "action": "complete",
+       "name": "complete"
+     },
+     "next_step": {
+       "phase": "frozen"
+     }
+   }
+
+It doens't provide any reasonable feedback, and `_cat/shards` won't
+tell you, but it's starting the process of getting ready to move to
+the frozen tier.
+
+Checking `_ilm/explain` will give more information.
+
+.. code-block:: console
+
+   GET INDEX/_ilm/explain
+

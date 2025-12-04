@@ -10,4 +10,4 @@ Contents:
 
    alienvault-otx
    cel
-
+   custom-logs

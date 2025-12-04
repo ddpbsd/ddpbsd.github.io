@@ -38,6 +38,15 @@ list rules in a chain
 
    nft --handle list chain inet firewalld filter_FWDO_FedoraServer
 
+adding rules
+^^^^^^^^^^^^
+
+`firewalld` is the table, `filter_IN_public_allow` is the chain.
+
+.. code-block:: console
+
+   nft add rule inet firewalld filter_IN_public_allow tcp dport 8080 accept
+
 deleting rules
 ^^^^^^^^^^^^^^
 
@@ -65,4 +74,5 @@ Links
 Of course the `Arch Wiki <https://wiki.archlinux.org/index.php/nftables>`_ has useful information on `nft`.
 
 The nft wiki `Simple Rule Management <https://wiki.nftables.org/wiki-nftables/index.php/Simple_rule_management>`_ page is anything but simple.
+
 

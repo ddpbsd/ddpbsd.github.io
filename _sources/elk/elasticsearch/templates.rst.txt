@@ -1,0 +1,24 @@
+=========
+Templates
+=========
+
+List templates
+^^^^^^^^^^^^^^
+
+.. code-block:: console
+
+   curl -s http://elastic0:9200/_cat/templates
+
+View a template
+^^^^^^^^^^^^^^^
+
+.. code-block:: console
+
+   curl -s http://elastic0:9200/_template/template_name
+
+Upload a template
+^^^^^^^^^^^^^^^^^
+
+.. code-block:: console
+
+   curl -s -XPUT -H 'Content-Type: application/json' http://elastic0:9200/_template/bro-dns -d @template_file
