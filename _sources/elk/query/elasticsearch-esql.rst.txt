@@ -2,9 +2,14 @@
 es|ql
 =====
 
+FROM
+^^^^
 
-example
-^^^^^^^
+`METADATA _index` can be added to the `FROM` command to include the listed metadata fields.
+
+
+examples
+^^^^^^^^
 
 Get a list of IP addresses and the count of events from those IPs from logs containing `log.source.address`.
 It has to remove the port from the address, and only outputs the IP and count.

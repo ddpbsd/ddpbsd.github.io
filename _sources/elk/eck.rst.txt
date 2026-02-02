@@ -53,3 +53,8 @@ links
 
 `Instructions from elastic <https://www.elastic.co/docs/deploy-manage/deploy/cloud-on-k8s/install-using-helm-chart>`_
 
+get the ca certficate
+^^^^^^^^^^^^^^^^^^^^^
+
+`kubectl get secret elasticsearch-es-secret -o jsonpath="{['data']['ca\.crt']}" | base64 -d`
+

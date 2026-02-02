@@ -75,4 +75,3 @@ Of course the `Arch Wiki <https://wiki.archlinux.org/index.php/nftables>`_ has u
 
 The nft wiki `Simple Rule Management <https://wiki.nftables.org/wiki-nftables/index.php/Simple_rule_management>`_ page is anything but simple.
 
-

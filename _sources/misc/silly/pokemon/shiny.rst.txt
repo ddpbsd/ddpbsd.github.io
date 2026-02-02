@@ -1,0 +1,8 @@
+===================
+shiny pokemon cards
+===================
+
+.. csv-table:: shiny pokemon cards
+   :file: shiny.csv
+   :header-rows: 1
+

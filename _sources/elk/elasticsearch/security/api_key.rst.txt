@@ -124,6 +124,49 @@ logstash api key
      }
    }
 
+api key to get agent status
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+`POST _security/api_key`
+
+.. code-block:: json
+
+   {
+     "grant_type": "password",
+     "username": "USERNAME",
+     "password": "PASSWORD",
+     "api_key": {
+       "name": "agent_info_test1",
+       "expiration": "1d",
+       "role_descriptors": {
+         "first": {
+           "cluster": [
+             "all"
+           ],
+           "indices": [
+             {
+               "names": [
+                 "*"
+               ],
+               "privileges": [
+                 "read"
+               ]
+             }
+           ],
+           "applications": [
+             {
+               "application": "kibana-.kibana",
+               "privileges": [
+                 "read"
+               ],
+               "resources": [
+                 "*"
+               ]
+             }
+           ]
+         }
+       }
+     }
+   }
 
 

@@ -1,5 +1,78 @@
-logstash role
-^^^^^^^^^^^^^
+=====
+roles
+=====
+
+
+applications
+^^^^^^^^^^^^
+
+kibana features
+###############
+
+These are the available application privileges available for the `kibana-.kibana` application.
+
+.. code-block:: json
+
+    "applications": [
+      {   
+        "application": "kibana-.kibana", 
+        "privileges": [
+          "feature_canvas.all",
+          "feature_dashboard_v2.all",
+          "feature_savedQueryManagement.all",
+          "feature_discover_v2.all",
+          "feature_graph.all",
+          "feature_maps_v2.all",
+          "feature_ml.read",
+          "feature_savedObjectsManagement.read",
+          "feature_securitySolutionCasesV3.all",
+          "feature_securitySolutionTimeline.read",
+          "feature_securitySolutionNotes.read",
+          "feature_siemV4.all",
+          "feature_visualize_v2.all"
+        ],
+
+feature_canvas
+##############
+
+feature_dashboard_v2
+####################
+
+feature_savedQueryManagement
+############################
+
+feature_discover_v2
+###################
+
+feature_graph
+#############
+
+feature_maps_v2
+###############
+
+feature_ml
+##########
+
+feature_savedObjectsManagement
+##############################
+
+feature_securitySolutionsCaseV3
+###############################
+
+feature_securitySolutionTimeline
+################################
+
+feature_securitySolutionNotes
+#############################
+
+feature_siemV4
+##############
+
+feature_visualize_v2
+####################
+
+example logstash role
+^^^^^^^^^^^^^^^^^^^^^
 
 Create a role for a user that will allow logstash to write to the `logstash-*`
 indexes.

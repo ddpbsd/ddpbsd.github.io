@@ -5,13 +5,13 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>logstash role &#8212; notes 0.1 documentation</title>
+    <title>roles &#8212; notes 0.1 documentation</title>
     <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=03e43079" />
     <link rel="stylesheet" type="text/css" href="../../../_static/basic.css?v=b08954a9" />
     <link rel="stylesheet" type="text/css" href="../../../_static/alabaster.css?v=27fed22d" />
     <script src="../../../_static/documentation_options.js?v=2709fde1"></script>
-    <script src="../../../_static/doctools.js?v=9bcbadda"></script>
-    <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=6ffebe34"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
     <link rel="next" title="logstash user" href="users.html" />
@@ -33,8 +33,76 @@
 
           <div class="body" role="main">
             
-  <section id="logstash-role">
-<h1>logstash role<a class="headerlink" href="#logstash-role" title="Link to this heading">¶</a></h1>
+  <section id="roles">
+<h1>roles<a class="headerlink" href="#roles" title="Link to this heading">¶</a></h1>
+<section id="applications">
+<h2>applications<a class="headerlink" href="#applications" title="Link to this heading">¶</a></h2>
+<section id="kibana-features">
+<h3>kibana features<a class="headerlink" href="#kibana-features" title="Link to this heading">¶</a></h3>
+<p>These are the available application privileges available for the <cite>kibana-.kibana</cite> application.</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="nt">&quot;applications&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">  </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;application&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;kibana-.kibana&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;privileges&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">      </span><span class="s2">&quot;feature_canvas.all&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="s2">&quot;feature_dashboard_v2.all&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="s2">&quot;feature_savedQueryManagement.all&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="s2">&quot;feature_discover_v2.all&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="s2">&quot;feature_graph.all&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="s2">&quot;feature_maps_v2.all&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="s2">&quot;feature_ml.read&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="s2">&quot;feature_savedObjectsManagement.read&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="s2">&quot;feature_securitySolutionCasesV3.all&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="s2">&quot;feature_securitySolutionTimeline.read&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="s2">&quot;feature_securitySolutionNotes.read&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="s2">&quot;feature_siemV4.all&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="s2">&quot;feature_visualize_v2.all&quot;</span>
+<span class="w">    </span><span class="p">],</span>
+</pre></div>
+</div>
+</section>
+<section id="feature-canvas">
+<h3>feature_canvas<a class="headerlink" href="#feature-canvas" title="Link to this heading">¶</a></h3>
+</section>
+<section id="feature-dashboard-v2">
+<h3>feature_dashboard_v2<a class="headerlink" href="#feature-dashboard-v2" title="Link to this heading">¶</a></h3>
+</section>
+<section id="feature-savedquerymanagement">
+<h3>feature_savedQueryManagement<a class="headerlink" href="#feature-savedquerymanagement" title="Link to this heading">¶</a></h3>
+</section>
+<section id="feature-discover-v2">
+<h3>feature_discover_v2<a class="headerlink" href="#feature-discover-v2" title="Link to this heading">¶</a></h3>
+</section>
+<section id="feature-graph">
+<h3>feature_graph<a class="headerlink" href="#feature-graph" title="Link to this heading">¶</a></h3>
+</section>
+<section id="feature-maps-v2">
+<h3>feature_maps_v2<a class="headerlink" href="#feature-maps-v2" title="Link to this heading">¶</a></h3>
+</section>
+<section id="feature-ml">
+<h3>feature_ml<a class="headerlink" href="#feature-ml" title="Link to this heading">¶</a></h3>
+</section>
+<section id="feature-savedobjectsmanagement">
+<h3>feature_savedObjectsManagement<a class="headerlink" href="#feature-savedobjectsmanagement" title="Link to this heading">¶</a></h3>
+</section>
+<section id="feature-securitysolutionscasev3">
+<h3>feature_securitySolutionsCaseV3<a class="headerlink" href="#feature-securitysolutionscasev3" title="Link to this heading">¶</a></h3>
+</section>
+<section id="feature-securitysolutiontimeline">
+<h3>feature_securitySolutionTimeline<a class="headerlink" href="#feature-securitysolutiontimeline" title="Link to this heading">¶</a></h3>
+</section>
+<section id="feature-securitysolutionnotes">
+<h3>feature_securitySolutionNotes<a class="headerlink" href="#feature-securitysolutionnotes" title="Link to this heading">¶</a></h3>
+</section>
+<section id="feature-siemv4">
+<h3>feature_siemV4<a class="headerlink" href="#feature-siemv4" title="Link to this heading">¶</a></h3>
+</section>
+<section id="feature-visualize-v2">
+<h3>feature_visualize_v2<a class="headerlink" href="#feature-visualize-v2" title="Link to this heading">¶</a></h3>
+</section>
+</section>
+<section id="example-logstash-role">
+<h2>example logstash role<a class="headerlink" href="#example-logstash-role" title="Link to this heading">¶</a></h2>
 <p>Create a role for a user that will allow logstash to write to the <cite>logstash-*</cite>
 indexes.</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">POST /_security/role/logstash_writer</span>
@@ -49,6 +117,7 @@ indexes.</p>
 <span class="go">}</span>
 </pre></div>
 </div>
+</section>
 </section>
 
 

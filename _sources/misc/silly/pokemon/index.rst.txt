@@ -1,0 +1,14 @@
+
+=======
+pokemon
+=======
+
+silly pokemon and stuff
+
+Contents:
+
+.. toctree::
+   :maxdepth: 2
+
+   shiny
+

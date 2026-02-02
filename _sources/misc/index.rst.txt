@@ -25,4 +25,5 @@ Contents:
    fediverse/glitch-soc.rst
    zfs
    mynet/index
+   silly/pokemon/index
 
