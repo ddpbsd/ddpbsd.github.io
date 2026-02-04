@@ -22,8 +22,9 @@ Contents:
    policyviolation
    random
    junk/index
-   fediverse/glitch-soc.rst
+   fediverse/glitch-soc
    zfs
    mynet/index
    silly/pokemon/index
+   silly/sensors/temp-hum
 

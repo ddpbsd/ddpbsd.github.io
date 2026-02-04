@@ -2,6 +2,8 @@
 shiny pokemon cards
 ===================
 
+This list probably has some typos and is definitely incomplete.
+
 .. csv-table:: shiny pokemon cards
    :file: shiny.csv
    :header-rows: 1
